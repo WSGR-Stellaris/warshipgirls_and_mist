@@ -1,0 +1,117 @@
+﻿l_english:
+ HIVE_MIND_NO_FACTIONS:0 "§R This species does not produce factions. §!"
+#################################
+ wsg_hidden_capital:0 "Abyssal Hidden Command Center"
+ wsg_hidden_capital_DESC:0 "Now our senior executives can give orders in this hidden asteroid base without being threatened by enemy attacks."
+ wsg_hidden_capital_MEGASTRUCTURE_DETAILS:0 "To avoid the threat of attack, we decided to secretly transform an asteroid into a hidden capital. A large amount of alloy guarantees the structural strength and several sending devices will ensure that no accidents will occur."
+ 
+ requires_only_one_wsg_hidden_capital:0 "We already have a hidden capital"
+#################################
+ dyson_yamato:0 "Warship girl Dyson Cloud"
+ dyson_yamato_DESC:0 "The similarity between the picture and the real object is 99.9999999%"
+ dyson_yamato_MEGASTRUCTURE_DETAILS:0 "Hundreds of millions of small solar panel arrays will form Dyson Clouds to surround our stars, although they are far less than Dyson Spheres but still provide a lot of power"
+ 
+ requires_only_one_yamato_in_system:0 "A star system can only build one Dyson cloud"
+#################################
+ wsg_mining_station:0 "Warship girl Large Mining Station"
+ wsg_mining_station_DESC:0 "A large mining station for mining minerals throughout the asteroid belt. The energy source continuously provides us with qualified minerals."
+ wsg_mining_station_MEGASTRUCTURE_DETAILS:0 "A large mining station for mining minerals throughout the asteroid belt. The energy source continuously provides us with qualified minerals."
+ 
+ requires_only_one_wsg_mining_station_in_system:0 "A star system can only build one giant mining station"
+#################################
+ wsg_station:0 "Warship girl Giant Orbital Station"
+ wsg_station_DESC:0 "A huge synchronous orbital station, an important military and industrial base."
+ wsg_station_MEGASTRUCTURE_DETAILS:0 "A huge synchronous orbit station is an important military and industrial base. Only one connector is needed to produce a large number of spacecraft for the stellar base."
+ 
+ sm_wsgshipyard:0 "Orbital Dock Connection Module"
+ sm_wsgshipyard_desc:0 "A facility used to connect to an orbital station. Once completed, docks on the orbital station can be used for production."
+ 
+ requires_only_one_in_system:0 "A star system can only build one giant orbital station"
+ requires_colonizeable_planet:0 "must be a colonized planet"
+ requires_maximum_eight:0 "Maximum 8 giant orbital stations"
+ ##############
+ wg_space_mine_0:0 "Stellar Minelayer"
+ wg_space_mine_0_DESC:0 "The huge galaxy mine arranger base address, once completed, it will ensure that no spacecraft can pass through this galaxy in 5 years."
+ wg_space_mine_1:0 "Stellar Minelayer"
+ wg_space_mine_1_DESC:0 "A large number of undetectable mines have been placed in every corner of the galaxy, and every month the mine arranger will replenish expired mines. Any spacecraft trying to pass through will be destroyed, whether they are intentional or not Unintentional."
+ wg_space_mine_0_MEGASTRUCTURE_DETAILS:0 "A facility that can create the insurmountable Great Wall of mines. Once completed, no spaceship can cross this galaxy."
+ 
+ requires_only_one_in_system:0 "A galaxy can only build one giant orbital station"
+ requires_colonizeable_planet:0 "must be a colonized planet"
+ ##############
+ scout_UAV:0 "Attack Drone"
+ scout_UAV_section:0 "Light Reconnaissance Drone"
+ scout_UAV_section1:0 "Light reconnaissance drone"
+ scout_UAV_section2:0 "Medium Combat Drone"
+ scout_UAV_section3:0 "Heavy Combat Drone"
+ scout_UAV_section4:0 "Spine Peak Super Drone"
+ 
+ UAV_FISSION_REACTOR:0 "$ FISSION_REACTOR $"
+ UAV_FISSION_REACTOR_DESC:0 "$ FISSION_REACTOR_DESC $"
+ UAV_FUSION_REACTOR:0 "$ FUSION_REACTOR $"
+ UAV_FUSION_REACTOR_DESC:0 "$ FUSION_REACTOR_DESC $"
+ UAV_COLD_FUSION_REACTOR:0 "$ COLD_FUSION_REACTOR $"
+ UAV_COLD_FUSION_REACTOR_DESC:0 "$ COLD_FUSION_REACTOR_DESC $"
+ UAV_ZERO_POINT_REACTOR:0 "$ ZERO_POINT_REACTOR $"
+ UAV_ZERO_POINT_REACTOR_DESC:0 "$ ZERO_POINT_REACTOR_DESC $"
+ UAV_ANTIMATTER_REACTOR:0 "$ ANTIMATTER_REACTOR $"
+ UAV_ANTIMATTER_REACTOR_DESC:0 "$ ANTIMATTER_REACTOR_DESC $"
+ UAV_DARK_MATTER_REACTOR:0 "$ DARK_MATTER_REACTOR $"
+ UAV_DARK_MATTER_REACTOR_DESC:0 "$ DARK_MATTER_REACTOR_DESC $"
+ 
+ UAV_THRUSTER_1:0 "$ SHIP_THRUSTER_1 $"
+ UAV_THRUSTER_1_DESC:0 "$ SHIP_THRUSTER_1_DESC $"
+ UAV_THRUSTER_2:0 "$ SHIP_THRUSTER_2 $"
+ UAV_THRUSTER_2_DESC:0 "$ SHIP_THRUSTER_2_DESC $"
+ UAV_THRUSTER_3:0 "$ SHIP_THRUSTER_3 $"
+ UAV_THRUSTER_3_DESC:0 "$ SHIP_THRUSTER_3_DESC $"
+ UAV_THRUSTER_4:0 "$ SHIP_THRUSTER_4 $"
+ UAV_THRUSTER_4_DESC:0 "$ SHIP_THRUSTER_4_DESC $"
+ UAV_THRUSTER_5:0 "$ SHIP_THRUSTER_5 $"
+ UAV_THRUSTER_5_DESC:0 "$ SHIP_THRUSTER_5_DESC $"
+ 
+ COMBAT_COMPUTER_UAV:0 "Microcomputer"
+ COMBAT_COMPUTER_UAV_DESC:0 "Fleet, move forward ten light seconds."
+ 
+ tech_uav:0 "Warship girl Attack Drone"
+ tech_uav_desc:0 "We have added some basic weapons to some unmanned detectors, both as a pathfinder and as a simple combat ship."
+ tech_uav2:0 "Combat Drone"
+ tech_uav2_desc:0 "Reduces protection and installs larger weapons."
+ tech_uav3:0 "Heavy Combat Drone"
+ tech_uav3_desc:0 "A large artillery that was exaggerated in size for the drone was installed, while its protection capability was reduced to the lowest level, and it was also impossible to install the most advanced reactors and thrusters due to size problems."
+ tech_uav4:0 "Spine Peak Super Drone"
+ tech_uav4_desc:0 "It was a complete abandonment of protection to install battleship-class ridge-peak weapons for drones. Some weapon scientists believe that a single round of attack before they are destroyed can greatly reverse the war situation."
+ tech_sh_senergy_uav:0 "Miniature drone components"
+ tech_sh_senergy_uav_desc:0 "With the help of the latest technology, the miniaturization of Abyssal energy core reactors has become a reality, so more powerful drone spacecraft weapons have emerged as the times require."
+ tech_wsg_alpha_uav:0 "Miniature drone components"
+ tech_wsg_alpha_uav_desc:0 "With the help of the latest technology, the miniaturization of alpha crystal reactors has become a reality, so more powerful drone spacecraft weapons have emerged as the times require."
+ 
+ TECH_UNLOCK_UAV_CONSTRUCTION_TITLE:0 "§HUnlock the spacecraft§!: Warship girl attack drone§!"
+ TECH_UNLOCK_UAV_CONSTRUCTION_DESC:0 "armed drone"
+ TECH_UNLOCK_UAV2_CONSTRUCTION_TITLE:0 "§HUnlock spaceship zoning§!: Medium combat drone§!"
+ TECH_UNLOCK_UAV2_CONSTRUCTION_DESC:0 "armed drone"
+ TECH_UNLOCK_UAV3_CONSTRUCTION_TITLE:0 "§HUnlock spaceship zoning§!: Heavy combat drone§!"
+ TECH_UNLOCK_UAV3_CONSTRUCTION_DESC:0 "armed drone"
+ TECH_UNLOCK_UAV4_CONSTRUCTION_TITLE:0 "§HUnlock spaceship zoning§!: Ridge Peak Super Drone§!"
+ TECH_UNLOCK_UAV4_CONSTRUCTION_DESC:0 "armed drone"
+ 
+ wsg_dreadnought: "Dreadnought"
+ uf_Juggernaut: "Juggernaut"
+ wsg_dreadnought_dark: "Dark Dreadnought"
+ 
+ sh_modifier_lack_food:0 "Missing food, assembly slows down"
+ wsg_modifier_lack_food:0 "Warship girl is hungry, spare change?"
+
+ r_united_fleet_active:0 "Explore the secrets of the United Fleet"
+ sh_base:0 "Pantsu Protocol"
+ #####################
+ sm_srse_industory:0 "Abyssal Energy Core Production Module"
+ sm_srse_industory_desc:0 "In order to reduce the damage to the planet caused by the huge amount of radiation generated in the core production of Abyssal energy, it is a good choice to choose to transport it to the star base."
+ sm_neo_industory:0 "NEO Production Module"
+ sm_neo_industory_desc:0 "The production of NEO in a stellar base is a good option to increase its output."
+
+ ##################################
+ ## primitive age
+ ##################################
+ information_age:0 "Information Age"
+ information_age_desc:0 "Aboriginal people on this planet have been able to use various energy sources other than nuclear fusion to boil water, and have developed global information industry technology, which has greatly facilitated the travel and communication of residents in various regions. Ascension. "

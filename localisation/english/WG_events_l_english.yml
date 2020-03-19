@@ -1,0 +1,652 @@
+﻿l_english:
+#################################
+ wsg.3047.name:0 "Ship RMOD difficulty selection"
+ wsg.3047.desc:0 "Welcome to subscribe and use this mod, I would like to thank you on behalf of the production team. \n\nIf you encounter any bugs or have any suggestions in the game, please join the MOD discussion group: 734701950. \n\nPlease select the difficulty of this mod now. "
+ wsg.3047.a:0 "§! §G is very simple§!"
+ wsg.3047.b:0 "§! §Gsimple§!"
+ wsg.3047.c:0 "§! §YGeneral§!"
+ wsg.3047.d:0 "§!§Rdifficult§!"
+ wsg.3047.e:0 "§!§R is very difficult§!"
+
+ wg_very_hard:0 "File"
+ wg_hard:0 "Quncify"
+ wg_easy:0 "pay to win"
+ wg_very_easy:0 "Ancient God"
+
+
+#################################
+ wsg.3000.name:0 "Mysterious Airtight Door"
+ wsg.3000.desc:0 "Some submarine bear children found an airtight door while playing in the waters of the port area, and our scientists have concluded that there is a small ecological circle hidden behind this door, but we do not know Who built it doesn't know what the ecosystem is doing. "
+ wsg.3000.a:0 "Open the door and let's see what's inside"
+ wsg.3000.b:0 "Seal the entrance with rocks and prohibit entry"
+
+ wsg.3001.name:0 "Abyssal Supply Station"
+ wsg.3001.desc:0 "After opening the door, we found that this is actually a former Abyssal supply ship base. The Abyssal supply ship inside is obviously completely unaware of the end of the war and is still doing fat production work even Spillover. We ca n’t use the resource Fatty, but there must be no problem in saving it. "
+ wsg.3001.a:0 "Let the supply ship continue production, but serve us"
+ wsg.3001.b:0 "Loot all pantsu, leave none"
+ ############################################
+ wsg.3031.name:0 "Lightning Returns"
+ wsg.3031.desc:0 "In the pre-human era, Ella has been operating as a mysterious figure behind our port area, and can even ignore the highest laws. After entering the shipwife coalition government, Ella was the last on the home port. Of known human beings in the post of governor, and revealed her secrets that have been hidden for nearly a thousand years-\n\n§! §Yila was actually the reincarnation of Constantine XI Valleoló§! \n\nIt has been 747 years since her reincarnation, and she has finally returned like lightning! "
+ wsg.3031.a:0 "ecstatic"
+ wsg.3031.b:0 "Tears"
+ wsg.3031.c:0 "Shock"
+ wsg.3031.a.response:0 "Ira will be Governor (Urban Cannon Universe No.1)"
+ ###################################################
+ wsg.1100.name:0 "Another World Signal"
+ wsg.1100.desc:0 "Not long ago, Dr. Yubari captured a signal from an unknown dimension in the laboratory. Heterogeneous signals were very common, but we can directly interpret the signal information-use The same text as ours, and even the word order and grammar are almost exactly the same. \n\nAfter a lot of analysis, Dr. Yubari believes that this information is likely to come from another Warship Girl in a parallel world and the source of this signal The place is named "Cang Qing World". \n\nDr. Yu Zhang has set up an information transmission device that can pass some information to "Cang Qing World" in an attempt to get in touch. "
+ wsg.1100.a:0 "Established a special project team and established contact with it."
+ 
+ wsg.1101.name:0 "Signal form Another World "
+ wsg.1101.desc:0 "We receive ... you ... information, this is so shocking ... parallel world theory ... really! We are Neofoce .......... ... how are you doing in another world ......... signal interruption "
+ wsg.1101.a:0 "We have driven the Abyssal out of the planet!"
+ wsg.1101.b:0 "We have taken ownership of the planet and entered the void"
+ 
+ wsg.1102.name:0 "Neofoce"
+ wsg.1102.desc:0 "Congratulations ... guys, although we have also become an interstellar empire, but the Abyssal and me ... the war ... is not over, has been held ... for hundreds of years, we Fleet is about to make a decision with the Abyssal ......... signal interruption "
+ wsg.1102.a:0 "We should communicate in all aspects, Neofoce"
+ wsg.1102.b:0 "We in another world, let's cooperate!"
+ 
+ wsg.1103.name:0 "Neofoce"
+ wsg.1103.desc:0 "Yes! Also ... the world's us, we need more ... big energy ... sustain us ... exchange, we will use the highest power to pass ... ... technology for you. "
+ wsg.1103.a:0 "Sent a blessing to us in another world!"
+ wsg.1103.b:0 "We will work together to solve all difficulties"
+ ###################################################
+ wsg.3011.name:0 "Strange warship girl"
+ wsg.3011.desc:0 "A new shipwoman who claims to be a battleship has entered the Citizens' Household Registration Bureau with confidence, but her petite and cute figure meets the characteristics of most destroyers. She proudly claims that her firepower is unmatched , But the staff now present and other ship maids think she is just a destroyer. "
+ wsg.3011.a:0 "It is indeed a destroyer."
+
+ wsg.3012.name:0 "Powerful firepower"
+ wsg.3012.desc:0 "The firepower of the new" Destroyer "before was really invincible, which surprised every shipwife who fought together. Maybe she was really a battleship, not a destroyer?"
+ wsg.3012.a:0 "Change the account of this warship girl to battleship."
+ wsg.3012.a.response:0 "§!§R Ends the Veneto event chain§!"
+ wsg.3012.b:0 "No, she must be a destroyer, but it was misfitted."
+ 
+ wsg.3013.name:0 "Real Battleship"
+ wsg.3013.desc:0 "Finally, because of the firepower of this" destroyer ", everyone was completely worshipped. At this moment, the battleship maidens were also convinced and willing to take the initiative to ask her name. She turned out to be Vittorio Veneto, armed with a 381-caliber cannon. However, after five years of physical discrimination, she is now full of revenge. "
+ wsg.3013.a:0 "All battleship fleet, learn from Comrade Veneto."
+ wsg.3013.a.response:0 "§!§R Ends the Veneto event chain§!"
+ wsg.3013.b:0 "Using our genetic technology to transform Veneto into big breasts."
+ 
+ wsg.3014.name:0 "Fate to fail"
+ wsg.3014.desc:0 "We exhausted all bioengineering methods to give Veneto a pair of big breasts, but the result was like a curse. None of our cutting-edge genetic technologies could reverse the gene fragments on her breasts. According to the legend circulating in the ship's maiden, we believe that Veneto's body structure must have been blessed by some kind, so that she will always maintain the body of the child while having such a powerful fighting force. "
+ wsg.3014.a:0 "Sorry, genetic engineering has done its best."
+ 
+ wsg.30140.name:0 "Synthesizer Technology: Second Chance"
+ wsg.30140.desc:0 "Today, when synthetic human technology is widely used, mechanical prostheses with the same appearance as normal limbs have become the choice of more and more ships. Comrade Veneto, who is completely desperate for genetic engineering, is Fighting ignited once. "
+ wsg.30140.a:0 "It's worth a try."
+ 
+ wsg.30150.name:0 "Useless struggle"
+ wsg.30150.desc:0 "Every attempt ended in failure. We tried in-built mechanical breasts, pluggable chest armors, and even holographic projection-type fake chests-without exception, all immediately damaged or could not be used at all. . To this day, those scientists who believe that science can change everything can finally accept what is called "the inevitable result."
+ wsg.30150.a:0 "Sorry, Synthesizer also tried its best."
+ 
+ wsg.30151.name:0 "Three things don't happen: psionic power"
+ wsg.30151.desc:0 "Veneto, who still has failed after experiencing strange genetic needles and various inexplicable mechanical prosthetic milks, has been completely disappointed with fate. Veneto. Her sorrowful spiritual power awakened a small part of her psionic powers. One night she went into a dream in a dream! "
+ wsg.30151.a:0 "Huh? Where is this?"
+ 
+ wsg.30152.name:0 "Mysterious Dimension"
+ wsg.30152.desc:0 "Veneto wakes up in a mysterious place, surrounded by only a magenta fog and cold biting. Veneto suddenly sounded a voice calling to her at the same time, a composition of countless voices Perfect harmony. "
+ wsg.30152.a:0 "Where is this? Who are you!"
+ wsg.30152.a.response:0 "I am a realm, §!§R The end of reincarnation is not §!."
+ wsg.30152.b:0 "What are you doing to me?"
+ 
+ wsg.30153.name:0 "Endless reincarnation"
+ wsg.30153.desc:0 "Because of me, only I do. The psionic power of Ru wins my heart, and I receive it. All things in the world have balance, heart and desire, and also need to give."
+ wsg.30153.a:0 "Wish ?! Does it mean helping me fulfill my wish?"
+ wsg.30153.a.response:0 "§!§Ythe heart is the wish§!"
+ wsg.30153.b:0 "What is the price ?!"
+ wsg.30153.b.response:0 "§!§Ygains and losses, and finally gains §!"
+ wsg.30153.c:0 "Chest, thank you."
+
+ wsg.30154.name:0 "Endless reincarnation"
+ wsg.30154.desc:0 "Then, the contract is concluded. Anything you want, you can do it .... §!§Yis impossible! §! \n\n§HA long death silence \n\n§! The person selected ... the contract is not completed, the power of the virtual world, and there are also arrests, I will not lose people, and I have prepared the compensation for breaking the contract. "
+ wsg.30154.a:0 "???"
+ 
+ wsg.30155.name:0 "Destined"
+ wsg.30155.desc:0 "At a certain moment, huge psionic energy began to flow on our colony. It is reported that the center point is Ms. Veneto's residence. The spurting psionic energy quickly and firmly pushed away all surrounding material, Neither the neutron material nor the energy shield is worth mentioning in the presence of this power. After three days of this situation, this huge psionic energy disappeared without warning as it appeared. Everyone on the planet Said that he heard a long sigh and was starting from the bottom of his heart, feeling helpless from the heart. \n\nWhen the investigation team rushed to the accident center, they encountered an unharmed, but confused, deep hole in themselves. Ms. Neto, after the professional appeasement and communication, the two sides understood the matter. "
+ wsg.30155.a:0 "The end of the samsara has also done his best"
+ 
+ wsg_vv_destory:0 "Just a destroyer"
+ wsg_vv_battleship:0 "Is a battleship"
+ wsg_vv_battleship2:0 "Battle Destroyer"
+ wsg_vv_battleship3:0 "Flat Chested Destroyer"
+ wsg_vv_psi:0 "Helplessness of Void"
+ ###################################################
+ wsgancrel.4.name:0 "Abyssal Ruins"
+ wsgancrel.4.desc:0 "The war has been over for a long time, but there are still many Abyssal battlefields that have not been thoroughly cleaned up. The Abyssal heritage left by the largest home-port Abyssal battle is endless, and various valuable relics are waiting to be seen . "
+ wsgancrel.4.a:0 "The heritage of the Abyssal must be in our possession"
+ 
+ site_shenhaiBoss:0 "Ancient battlefield"
+ site_shenhaiBoss_intro:0 "There are a lot of deep-water relics waiting to be explored in this area"
+ 
+ wsgancrel.5.name:0 "Abnormal Degree"
+ wsgancrel.5.desc:0 "Our archeologists passed through this area, and the test equipment showed an abnormal degree. After debugging, it was found that an abnormal concentration of energy was found in the sea area, and there may be a significant Abyssal relic . "
+ wsgancrel.5.a:0 "Keep exploring"
+ 
+ wsgancrel.10.name:0 "Abyssal Relic"
+ wsgancrel.10.desc:0 "In the end we found it in the obstacles of the ruins. The weapon used by the Abyssal crane, a sickle capable of wielding a carrier-based aircraft. We once faced countless times on the battlefield. I have felt the power of this Dean of the Abyssal. Now that it belongs to the empire, this weapon representing a powerful existence is bound to continue to play a role for our empire. "
+ wsgancrel.10.a:0 "Good job"
+ 
+ r_xh_boss:0 "Xianghe's sickle"
+ r_xh_boss_desc:0 "Although this sickle has been immersed in seawater for many years, the surface is still free of any wear and has great power."
+ wsg_modifier_xh:0 "Imperial Will"
+ 
+ ###################################################
+ wsgancrel.21.name:0 "remains revealed"
+ wsgancrel.21.desc:0 "The giant asteroid in the Homeport Galaxy asteroid belt collided with a smaller asteroid, and we found that the giant asteroid actually exposed a small man-made room inside it! Our Archeologists suggest finding out. "
+ wsgancrel.21.a:0 "permitted"
+ 
+ site_ck2:0 "Mysterious Asteroid Room"
+ site_ck2_intro:0 "This asteroid exposed a small room inside it due to the impact. Three strings of numbers" 621498509 "," 713677742 "and" 659896050 "were written in the room."
+ 
+ wsgancrel.22.name:0 "Iron Ambitions"
+ wsgancrel.22.desc:0 "The archeologists walked towards the first string of numbers and found a small combination lock in the corner, writing a strange question, we racked our brains and tried everything that might end in failure, the last one An expeditionary player entered 381 at will, and it was absolutely correct! Then a time capsule appeared out of thin air with steel ambition (seems to show courage?). The contents of the capsule were all very backward craft products, but some interesting Is worthy of our interpretation. "
+ wsgancrel.22.a:0 "Iron ambitions? A little familiar"
+
+ wsgancrel.23.name:0 "European Storm"
+ wsgancrel.23.desc:0 "Our archeologists began to study the second string of numbers in the ruins. We found a button in a similar place but without any questions. Pressing the button directly appeared a capsule with the European continent written. The manufacturing process of the two capsules is obviously far beyond the previous one, and our archeological team took a lot of effort to open it. "
+ wsgancrel.23.a:0 "Advanced ancient technology!"
+ 
+ wsgancrel.24.name:0 "King of the Crusader"
+ wsgancrel.24.desc:0 "There are no buttons or other organs near the third string of numbers. Our research ship scanned the entire asteroid but found nothing. When we were unable to start, a team member suddenly had a brain A message flashed in the middle, and she immediately knelt down and shouted "praise Miss Three", and then all the team members also received the message and worshiped together. Finally, the third capsule appeared, which contained a golden high-tech book! In the ancient myth of our ship maiden, there is a goddess who knows everything and is omnipotent. She is said to have placed a golden book in a star in the sky. Now the myth has been confirmed. The whole ship historian And scientists are shocked. This golden book contains powerful power and shares a lost technology with us. "
+ wsgancrel.24.a:0 "praise Miss III!"
+ 
+ r_ck2:0 "The Sacred Words of Miss III"
+ r_ck2_desc:0 "In the legend, the goddess Elk III, omnipotent and omnipotent, updated every day, the past Yamato education is out of date, we should praise Miss III."
+ wsg_modifier_ck2:0 "Blessing of Miss Three"
+
+#################################
+ wsgancrel.31.name:0 "Abyssal Fleet Trail"
+ wsgancrel.31.desc:0 "After defeating the Abyssal, we learned from the database that the Abyssal was taking a fleet of several ships to the unknown void at the time of the defeat. This thing has been hanging on the ship ladies The sword of Damoris on the head, because the threat of the Abyssal has not been completely eradicated. \n\nThe ship ’s deep space fleet has been searching for the whereabouts of the Abyssal fleet, and finally we found the Abyssal fleet on a planet .. .Debris. \n\nMaybe this is a sign that the Abyssal will be completely destroyed, but we still need to organize a recovery team to collect useful information. "
+ wsgancrel.31.a:0 "permitted"
+ 
+ site_shenhai_fleet:0 "Wreckage of the Abyssal Fleet"
+ site_shenhai_fleet_intro:0 "A huge Abyssal spacecraft forced to land on this planet. It is strange that there is a frigate on the other side of the planet that has completely disintegrated."
+ 
+ wsgancrel.32.name:0 "Wreckage of frigate"
+ wsgancrel.32.desc:0 "The frigate's carrier core has been completely destroyed and no data can be read. It seems we need to get information from another more complete ship."
+ wsgancrel.32.a:0 "Keep exploring"
+
+ wsgancrel.33.name:0 "Wreck of the Great Ship"
+ wsgancrel.33.desc:0 "This spaceship should be a Abyssal colony ship, and the completely destroyed propeller should be the reason for its crash. Our team cut an airtight door of the spaceship. It was found that the cabin was a cargo warehouse Inside are piles of valuable ore. "
+ wsgancrel.33.a:0 "Recycle useful resources and move on."
+ 
+ wsgancrel.34.name:0 "Broken Freezer"
+ wsgancrel.34.desc:0 "Due to the severe damage to the interior of the spacecraft, our recovery team took a lot of time to clear the road to the next cabin. Upon arrival, we found that this was a Abyssal population freezer. Obviously there was More than two-thirds of the freezers were damaged and destroyed during the forced landing, and the personnel inside were naturally not spared. The freezers that survived the disaster also stopped operating as the spacecraft lost energy. But it is worth noting that some freezers The warehouse was opened, and its owner was unknown. "
+ wsgancrel.34.a:0 "A miserable fate, but we must move on."
+ 
+ wsgancrel.35.name:0 "Ship Bridge"
+ wsgancrel.35.desc:0 "We found the bodies of more than thirty Abyssal warship girls on the passageway to the bridge, all of whom died of suffocation. It seems that they thaw from the freezer and tried to repair the ship after the ship crashed In the damaged part, obviously all attempts failed. After opening the airtight door of the bridge, we found that the dead body of the Abyssal warship including the captain was killed, and the cause of death was suicide. We can understand them from the ship's logbook. What happened to the spaceship. "
+ wsgancrel.35.a:0 "To read the log, we must understand."
+ 
+ wsgancrel.36.name:0 "voyage log"
+ wsgancrel.36.desc:0 "log 30.8.2152 \n\n log 2.2.2154 \n\n log 20.5.2162 \n\n log 28.5.2162-1 \n\n log 2.5.2162-2 \n\n Log 5.6.22162 "
+ wsgancrel.36.a:0 "Log 30.8.2152"
+ wsgancrel.36.a.response:0 "Log 30.8.2152 \n\nThe Abyssal Ark Fleet set sail today. To avoid the complete destruction of the Abyssal Fleet, you must leave the home port galaxy before the Warship Girl takes measures. The fleet is now composed of 3 Ark-class home ships And 6 Shepherd-class frigates. "
+ wsgancrel.36.b:0 "Log 2.2.2154"
+ wsgancrel.36.b.response:0 "Log 2.2.2154 \n\nToday ’s meeting of the Ark Fleet decided to split the fleet into three, increasing the probability of a successful search in the livable world. This fleet is the third fleet. Any one After the fleet has searched for a habitable planet, it will use a Abyssal communication device to send §!§Ydata corruption§! To call other fleets. In order to maintain concealment, the major fleets will remain silent indefinitely and will never reply to messages to avoid location exposure . "
+ wsgancrel.36.c:0 "Log 20.5.2162"
+ wsgancrel.36.c.response:0 "Log 20.5.2162 \n\nThe space amoeba discovered that the spacecraft entered the galaxy, and the fleet entered a state of three alert and tried to bypass it."
+ wsgancrel.36.d:0 "Log 28.5.2162-1"
+ wsgancrel.36.d.response:0 "Log 28.5.2162-1 \n\nThe space amoeba found us! The fleet could not avoid it. The shepherd's attempt to intercept the failure has been destroyed, and our ship ’s engine has been damaged by the gravitational force of the nearby planet Captive! Crash !!! "
+ wsgancrel.36.e:0 "Log 28.5.2162-2"
+ wsgancrel.36.e.response:0 "Log 28.5.2162-2 \ n \ The freezer was damaged by 73%, and the hull was leaked. Survived engineering units have been awakened to try to repair, and the remaining units entered the bridge to take refuge."
+ wsgancrel.36.f:0 "Log 5.6.22162"
+ wsgancrel.36.f.response:0 "Log 5.6.22162 \n\nI have injected our children, and I will join them after this log is completed. Please be sure to fill the first and second fleets Survive .—— Captain of the Third Fleet§!§Ydata corruption§! \n\n \n\n \n\n \n\nI want to go home "
+ wsgancrel.36.g:0 "end log"
+ 
+ wsgancrel.37.name:0 "Abyssal Third Fleet"
+ wsgancrel.37.desc:0 "We have learned from the log the encounter of the Abyssal Third Fleet, we brought their bodies back to their home port and buried them and built a monument. Apart from regret, we also learned that there is a Abyssal For the first and second fleets, the threat of the Abyssal remains unfinished. "
+ wsgancrel.37.a:0 "We must always be prepared."
+ #######################
+ wsg.3015.name:0 "A bold idea"
+ wsg.3015.desc:0 "After understanding the mystery of the dark matter reactor, our experts were disappointed because it was far less powerful than our Alpha engine, but our weapon expert, Miss Changchun, was eager to try this new energy source, and she applied "Merge dark matter with our alpha crystals and see if we can make some new toys."
+ wsg.3015.a:0 "Try it, what else can go wrong"
+ wsg.3015.b:0 "Do all the protection work, I have a bad feeling about this"
+
+
+ wsg.3016.name:0 "Big Bang"
+ wsg.3016.desc:0 "In the capital's most advanced laboratory, although we prepared a quarantine with battleship-class armor and shields for Miss Changchun, the huge explosion caused by the fusion of dark matter and alpha was ignored. These two defenses directly blasted the entire area into a large pit, and also affected the Governor's Office a few kilometers away (fortunately, no one was killed or injured). Although the cost is not small, we have proved that the fusion of dark matter and alpha acts on weapons Unlimited potential. "
+ wsg.3016.a:0 "Awesome"
+ wsg.3016.b:0 "Recognize Miss Changchun and let her join the planet reconstruction team"
+ ###################################################
+ shgancrel.1.name:0 "Abyssal Settings"
+ shgancrel.1.desc:0 "During our migration, we did not abandon this Holy Spirit even if the energy supply of the freezer was insufficient, the interstellar high-energy radiation, the spacecraft caught fire, the airtight door failed, the thruster exploded, and the ship was destroyed Book. Now we finally have time to open it again. "
+ shgancrel.1.a:0 "permitted"
+ 
+ r_sh_book:0 "Abyssal Settings"
+ r_sh_book_desc:0 "I don't know who wrote it, but this book details our birth and composition."
+ #################################################### #
+ sh.5.name:0 "First wedding"
+ sh.5.desc:0 "After the icebreak, the Abyssal Fleet ushered in their first wedding, which belongs to the Great Sea Lord Yamato XXIII. The bride is naturally Yamato, yes, but the groom is the entire Abyssal Fleet, in other words In other words, Yamato dedicated her entirety to the fleet and is willing to fight for the prosperity of the fleet. "
+ sh.5.a:0 "Tears"
+ sh.5.b:0 "Blessing"
+ sh.5.a.response:0 "Yamato XXIII becomes Governor"
+ OVERTIMEMAN:0 "Overtime"
+ #################################################### #
+ sh.7.name:0 "Anomalous Abyssal Ship Lady"
+ sh.7.desc:0 "During a routine warship maintenance carried out recently, we received an abnormal report from the inspection team. This report states that when the Abyssal warship number BB4596 faces routine maintenance, There were unusual resistance movements, and on the suppressor she wore, the expert team investigated and found signs of damage caused by human interference. From the point of view of the method, the perpetrator seemed familiar with our body structure, and even more terrible was , Now this Abyssal shipwoman has begun to defect! "
+ sh.7.a:0 "Arrest BB4596 immediately"
+ sh.8.name:0 "Make a choice"
+ sh.8.desc:0 "We arrested the shipwife trying to defect. We found that the shipwreck's suppressor should have been damaged in an operation. After gaining a certain sense of self, she not only did not report it, but she removed it , We can now be sure that the Abyssal carrier girl has betrayed the Abyssal by her own choice. The expert department suggested that the ship ’s installation function be terminated immediately and the poor Abyssal carrier girl lost in the cruel real world be put to an end as soon as possible. Struggling. "
+ sh.8.a:0 "Agree, destroy immediately"
+ sh.8.a.tooltip:0 "The so-called self-awareness will only make the Abyssal Fleet everlasting. Feelings will be another scar on the weak. Goodbye, lost fellows."
+ sh.8.b:0 "No, wait ..."
+ sh.8.b.tooltip:0 "First only control BB4596, and immediately arrange someone to read and analyze her memory module. Sometimes, the change may not be a bad thing, of course, this is just an attempt."
+ ##########################
+ wsg.3020.name:0 "§H Minato Planet§!: Surrounded [Root.GetName]"
+ wsg.3020.desc:0 "The entire planet has been covered by the buildings in the port area! \n\nAlthough only a few years have passed, the original appearance of the planet is hard to remember. [Root.GetName] The former appearance. The blue sea? The Des Moines-like mountains? But now, looking out, they have been occupied by the steel jungle of the ship maidens. \n\nToday ’s feats, we can finally proudly announce that we have truly conquered a planet . "
+ wsg.3020.a:0 "Our efforts have not been wasted!"
+ ##########################
+ sh.9.name:0 "§H Abyssal Planet§!: [Root.GetName] has been transformed"
+ sh.9.desc:0 "The entire planet's oceans have been replaced with Abyssal dormant fluid! \n\nAll Abyssal ship maidens are free to restore their energy in dormant fluid and reduce unnecessary consumption. [Root .GetName] is now truly the exclusive home of the Abyssal. \n\nToday ’s feat can finally be proud to announce that we have truly conquered a planet. "
+ sh.9.a:0 "As long as we don't stop!"
+###############################
+ sh.10.name:0 "§H Abyssal Ring World !: [Root.GetName] has been transformed"
+ sh.10.desc:0 "Now huge industrial modules will fill the entire surface of the ring world. \n\nAll preparations are ready, and the industrial zone of the Abyssal is waiting for us to build."
+ sh.10.a:0 "This is a great day!"
+###############################
+ wsg.3025.name:0 "Warship girl Giant Synchronous Track Station"
+ wsg.3025.desc:0 "Huge synchronous orbital stations have orbited our planet, and a large number of industrial facilities will be relocated to the orbital stations to increase the output of our planet. At the same time, it will serve as a planetary defense base and super dock and berth, Enhance our military strength!"
+ wsg.3025.a:0 "Impressed!"
+ 
+ planet_wsg_station_modifier:0 "Giant Synchronous Orbit Station"
+ planet_wsg_station_modifier_desc:0 "Synchronous orbit stations have orbited our planet"
+ ##########################
+ wsg.3027.name:0 "§H Rodney§! Talented Fleet Commander"
+ wsg.3027.desc:0 "A spaceship officer named Rodney has become the star of the fleet. \n\nRodney has more than ordinary people's understanding of efficient management of resources, she has reduced the spaceship 10% energy consumption. After we complete the PROJECT-R plan, every time the fleet simulation battles, she can always use the precision to destroy the enemy ’s armaments to make the enemy's spacecraft incapable of fighting. \n\nNow the fleet ’s fleet agrees We should have Rodney as our fleet commander. "
+ wsg.3027.a:0 "Welcome Commander Rodney!"
+ wsg.3027.a.response:0 "Rodney will become fleet commander"
+ NAME_Rodney:0 "Rodney"
+ WSGR2:0 "Warship Girl"
+###############################
+ wsg.3028.name:0 "warship girl Dyson Cloud"
+ wsg.3028.desc:0 "Hundreds of millions of solar panels have orbited our stars. The array of them looks like a layer of tulle on the stars, while still ensuring that the planets in the star system are still sufficient. Light. Although the output is far inferior to Dyson balls, low cost can still make it a good choice. "
+ wsg.3028.a:0 "Impressed!"
+###############################
+ wsg.3032.name:0 "Warship girl Hidden Command Center"
+ wsg.3032.desc:0 "Hidden capital is finally built! We no longer have to worry about the threat of enemy attacks. This highly modified asteroid has several sending and receiving devices to ensure that the asteroid is always in communication. , There will be a special supply ship to replenish each month. Now our senior executives will give orders recklessly in this asteroid and will not be disturbed by any external factors. "
+ wsg.3032.a:0 "Shh! Keep quiet ..."
+ ###############################
+ sh.1002.name:0 "A breakthrough in artificial intelligence"
+ sh.1002.desc:0 "After we have completed effective management of the fleet, technology has made rapid progress. Our artificial intelligence technology has made a huge breakthrough recently, and we are ready to use synthetic person technology to improve ourselves."
+ sh.1002.a:0 "Awesome"
+###############################
+ sh.3018.name:0 "Abyssal Fleet Communication Device"
+ sh.3018.desc:0 "After the separation of the three fleets, we decided that any fleet would find a livable home and then send information to other fleets through a complex set of encrypted communications to let them go. In order to ensure security, the fleet will not Reply. \n\nNow that we have initially established a foothold on this planet, and a communication antenna has been established, it is time to send a message to the second and third fleets! "
+ sh.3018.a:0 "Send encrypted signal immediately"
+ 
+ sh.3019.name:0 "Subspace Signal of the Second Fleet"
+ sh.3019.desc:0 "We have detected subspace signals from the Second Fleet and they are approaching our capital. All the spacecraft are ready and the planet is ready to receive the population. Everything is so Smooth, but it seems ... the second fleet ’s signal source is a little too strong? "
+ sh.3019.a:0 "Our journey is finally coming to an end!"
+ 
+ sh.3020.name:0 "Unknown hostile object!"
+ sh.3020.desc:0 "It was not the Second Fleet that entered our galaxy! It was a huge luminous energy body and reacted hostilely to our welcoming spacecraft! We could vaguely recognize the image from the front Fragments of some Second Fleet ships in the energy regiment. "
+ sh.3020.a:0 "Fleet immediately enters the first alert state!"
+ 
+ sh.3022.name:0 "Debris"
+ sh.3022.desc:0 "The luminous energy group has been destroyed by us. Our salvage ship recovered the debris from the second fleet, but we did not find any clues that indicate the encounter of the second fleet. We do not know why the energy group is receiving Go to this place after coming to a specific communication. Maybe it has swallowed the Second Fleet and obtained information in a way we can't understand \n\nOr ... it became the incarnation of the Second Fleet, carrying the will of the Fleet to their home New home to go to ... \n\nNow that the Second Fleet no longer exists, the Third Fleet is still no sign, and what we can do \n\n§His just waiting. §! "
+ sh.3022.a:0 "Understand ..."
+ 
+ sh.3023.name:0 "Dead Silence"
+ sh.3023.desc:0 "It has been 10 years since the newsletter was issued, and the Third Fleet still has no trace. \n\nAs of now, we can only plan for the worst ... \n\nAt least , We survived. "
+ sh.3023.a:0 "Repose"
+ 
+ sh_modifier_sf:0 "Last wish"
+ #######################
+ sh.3028.name:0 "Joint Fleet Electronic Warship"
+ sh.3028.desc:0 "Recently, our border patrol fleet discovered three mysterious ships of unknown origin. After detection, we learned that these ships came from an unknown organization called the United Fleet. These ships appeared to be due to navigation errors. Wandering into our star field. \n\nIt is important to note that these spacecraft use far more technology than us. Although they do not have any weapons, they have very powerful electronic warfare capabilities. \n\nHow will we handle these spaceship?"
+ sh.3028.a:0 "Let these ships work for us"
+ sh.3028.b:0 "Spaceships of unknown origin are still less useful, dismantle and study"
+###############################
+ wsg.3033.name:0 "Alpha Center"
+ wsg.3033.desc:0 "Through the joint efforts with Cangqing Phantom, we finally built a portal large enough to connect our world. Now the communication between NF and us will become more frequent, even we may A coalition government will be formed. Now all the ship maidens believe that our future will be better and the future will belong to the Warship Girls! "
+ wsg.3033.a:0 "The future will belong to the Warship Girl!"
+ 
+ wsg.3034.name:0 "Giant Dreadnought Project"
+ wsg.3034.desc:0 "Our communication with Cangqing World is getting more and more frequent. We are amazed by the NF world's research on materials and weapon systems. They are also amazed by our huge engineering construction. Our military department is considering joint design. A fearless ship to deal with the increasingly dangerous galactic environment. "
+ wsg.3034.a:0 "This proposal is very good, to start preparing the resources needed."
+ wsg.3034.a.response:0 "Add a planet decision in the capital, and you will get a Dreadnought when you are done"
+ wsg.3034.b:0 "This may consume too much resources, next time."
+ 
+ wsg.3035.name:0 "Dreadnought Ship Completed"
+ wsg.3035.desc:0 "With the joint efforts of both teams, the construction of a powerful Dreadnought has been completed. The crew of this giant battleship is ready to go into service after aviation testing. Due to the complexity of its construction, we It takes 10 years to build a Dreadnought. \n\nThe only question now is what color Dreadnought we need? "
+ wsg.3035.a:0 "Blue and White Color"
+ wsg.3035.b:0 "Black and Yellow Color"
+
+ wsg.30350.name:0 "New Dreadnought is ready to build"
+ wsg.30350.desc:0 "After 10 years of re-preparation, we are ready to build the next fearless ship."
+ wsg.30350.a:0 "got it"
+ #############################
+ planet_OVO2:0 "Quncify"
+ planet_OVO2_desc:0 "Somehow, this planet in the port area is shrouded in a magical stance. Every colonist is inexplicably happy, but always feels that there is a pair of eyes staring at them from behind, which makes them cool \n\n §H harbor area planet comes with 20% output bonus, don't be afraid§! "
+ planet_OVO_occupied:0 "The planet is occupied by Quincy"
+ planet_OVO_occupied_desc:0 "The planet's defensive forces were destroyed by violent Quincy entities, and residents were unable to carry out normal production activities."
+ wsg.3036.name:0 "galaxies that seem to know each other"
+ wsg.3036.desc:0 "Recently, a mysterious hyperspace channel suddenly connected with our capital. Through long-range exploration of the galaxy, we found that although the planets of this galaxy are different from their home ports, their layout and orbits are actually the same. The home port is almost completely identical, this is simply impossible, and the entire galaxy seems to emit an unknown signal of some unknown source, it seems to be calling us. "
+ wsg.3036.a:0 "Check it out"
+ 
+ ovo_coordinates_poi:0 "The galaxy that looks familiar"
+ ovo_coordinates_desc:0 "This galaxy ... inexplicable familiarity ..."
+ ovo_planet_found:0 "Coordinates found"
+ ovo_chain_title:0 "OVO is watching you"
+ ovo_chain_desc:0 "The mysterious hyperspace channel is connected to our capital and we need to send a spacecraft for exploration."
+ 
+ wsg.3037.name:0 "Quncify"
+ wsg.3037.desc:0 "The colonizers of the entire planet are disturbed by Kunhua. More and more people claim that they see a pair of eyes watching them. Recently our scientists have finally found a breakthrough on the planet. They searched the source of the Kunhua signal, and they thought that as long as it was found, all the harmful interference to the colony would be cleared. "
+ wsg.3037.a:0 "Set up a special team now to explore the truth"
+ wsg.3037.b:0 "This decision may be too dangerous. We will take it."
+
+wsg.3038.name:0 "A Nightmare Comes True"
+ wsg.3038.desc:0 "Our scientists found the place of origin, a small chamber. But as soon as we approached, we were immediately swallowed by a powerful psychic shockwave. The residents of the entire colony finally saw clearly that they had been watching Their nightmare! §H the huge Quincy body !!! §! \n\nTo make matters worse, the Quincy body has gradually materialized and turned into a powerful army to attack our planet! "
+ wsg.3038.a:0 "It's terrible"
+ wsg.3038.a_tooltip:0 "The Quncy Army attacked us"
+
+ wsg.3040.name:0 "Battle out of control"
+ wsg.3040.desc:0 "The huge Quincy body went crazy after being turned into a violent legion. Even the troops we stationed on the planet could not stop them. Although most of our ships on this planet The mothers have been notified by the military and successfully avoided the attack by the Quincy Corps, but if things continue to worsen, everything on the planet's surface will be destroyed. "
+ wsg.3040.a:0 "We must convene an army to recapture our colony!"
+
+ wsg.30400.name:0 "Quncy's Legion Down"
+ wsg.30400.desc:0 "Although the riotous Quincy entity and that huge Quincy body pose a serious threat to the colony, under the offensive of our warlike warship army, all on the planet in the port area The runaway Quincy entity has been wiped out, and our colony has been restored to its former peace. The problem is now only the Quincy entity hovering in the galaxy. "
+ wsg.30400.desc_2:0 "Although the riotous Quincy entity and the huge Quincy body pose a serious threat to the colony, under the offensive of our warlike warship army, all on the planet in the port area The runaway Quincy entity has been wiped out, and our colony has been restored to its former peace. "
+
+ wsg.30401.name:0 "Successful landing operation"
+ wsg.30401.desc:0 "After a fierce battle, the powerful ship maiden army we convened finally wiped out the Quincy Legion entities destroyed everywhere on the planet in the port area, and the colony restored its former peace. Now the problem Only the Quincy entity hovering in the galaxy is left. "
+ wsg.30401.desc_2:0 "After a fierce battle we assembled, after finally fighting fiercely, the Quincy Corps entities destroyed everywhere on the planet in the port area were restored, and the colony restored its peace."
+
+ wsg.3041.name:0 "Nightmare"
+ wsg.3041.desc:0 "Senior leaders on the second home port star have been suffering from nightmares recently. She dreamed that the devil has turned the planet into hell, and something terrible will happen soon. She suggested that we strengthen the second home port immediately. It ’s best to transfer the empire's main fleet as well. "
+
+ wsg.3042.name:0 "Quincy Entities"
+ wsg.3042.desc:0 "After being attacked by the Quincy, there was also a huge energy wave over the planet, and then a huge hostile Quincy entity was born! It will attack all ships trying to enter the galaxy."
+ wsg.3042.a:0 "What must we do"
+
+ wsg.3044.name:0 "Quanxi entity's destruction"
+ wsg.3044.desc:0 "After a fierce battle, our fleet finally eliminated the huge Quincy entity. \n\nAt the same time, we also learned that the Quincy entity is How to use energy to create a powerful lightning weapon. \ NNow we need to hit the power to destroy the Quincy entity on the planet in the port area, to protect the safety of local residents. "
+ 
+ wsg.3045.name:0 "Quincy Falls"
+ wsg.3045.desc:0 "With the demise of the last Quincy entity on the planet in the port area, this evil existence was declared completely destroyed. The tortured planet in the port area has finally released the state of Quncify, and the residents of the colony They are all cheering for victory. "
+ wsg.3045.desc_1:0 "With the demise of the last Quincy entity on the planet in the port area, this evil existence was declared completely destroyed, and our army successfully recaptured our planet, the tortured port area planet At this moment, the state of Kunming is completely lifted, and the colonial residents are cheering for victory. "
+ wsg.3045.desc_2:0 "After a fierce battle, our fleet finally wiped out the huge Quincy entity. With the destruction of this evil existence, the tortured Portland planet finally lifted off the state of Kunming and the colonies Residents are cheering. \n\nAt the same time, we also learned how the Quincy entity uses energy to create a powerful lightning weapon in the remaining energy group of the Quincy entity. "
+ wsg.3045.a:0 "Good job"
+ wsg.3045.a_tooltip:0 "§!§R End OVO is watching your event chain§! \n\nThe port area planet is no longer affected by Kunming"
+ 
+ ovo_watching_study_normal:0 "Investigation Source"
+ ovo_watching_study_normal_DESC:0 "We must investigate the cause of Quncification of the colony."
+ #################################
+ wsg.3049.name:0 "Big Carnival"
+ wsg.3049.desc:0 "We have finally resumed the traditional festival of" hunting Abyssal supply ships "on [Root.GetName]. The ship girls in the colony are cheering and take various weapons to participate in Abyssal supply. Hunting of ships. \n\nAfter the carnival, some ship maids spontaneously collected pantsu and donated them to us for free. "
+ wsg.3049.a:0 "This is a great act!"
+ #################################
+ wsg.3051.name:0 "Smart GALO"
+ wsg.3051.desc:0 "The ventilation ducts in the laboratory have always heard strange noises and the food is often missing. Through simple inspection, we find that there are some mutated Galo in the ventilation ducts, which is even more shocking. The thing is that they all have some wisdom! \n\nWe don't know how these Galo got wisdom, but we must now choose for their future. "
+ wsg.3051.a:0 "It's a headache ... but I can only accept them now."
+ wsg.3051.b:0 "Send them to the zoo as cute pets"
+ wsg.3051.c:0 "Slice it"
+ #############################
+ wsg.3054.name:0 "Magical Warship girl"
+ wsg.3054.desc:0 "Recent scientific research shows that the gas emitted from our body contains a small amount of natural gas, which can be comfortable and addictive."
+ wsg.3054.a:0 "Our bodies are amazing!"
+#####################
+ wsg.3056.name:0 "Persistent Washington"
+ wsg.3056.desc:0 "On this day 20 years ago, Washington, 5 years old, discovered that her cherry tree had been cut down without permission. The impact on her was so great that she exercised for this For 20 years, she successfully found and killed the murderer. \n\nNow she is a good enough military expert and is willing to join our leadership. "
+ wsg.3056.a:0 "Congratulations, she successfully found the killer! (Conscience)"
+ wsg.3056.a.response:0 "Washington will become Field Marshal"
+###################################################
+ wsgancrel.101.name:0 "Warship girl Precursor File"
+ wsgancrel.101.desc:0 "Recently, we found a Precursor archive from an ancient planet. Most of the archives have been damaged, but we still have some interesting information. \n\nWe know this archive The owner is actually a shipwife civilization, but has long lost track of it. The archive also records the location of some more ancient shipwife civilizations. \n\nOur scientific community is very shocked by this and requires us to carry out archeological work.
+ wsgancrel.101.a:0 "Okay, let's follow the list."
+
+ wg_precursors_title:0 "Warship girl Precursor"
+ wg_precursors_desc:0 "From the ancient archives, we learned that there was a civilization of shipgirls long before us. Explore these great Precursors or uncover the truth of our existence."
+ 
+ site_first_precursors:0 "First Precursor"
+ site_first_precursors_intro:0 "From the knowledge base we obtained, we were able to know that this planet once had Precursor Precursors, let us find out now."
+ wsgancrel.102.name:0 "Fleet Command on the Abyssal"
+ wsgancrel.102.desc:0 "Through a simple exploration here, we found that 600,000 years ago, this was a planet belonging to the Abyssal warship, and we also learned that there is a warship civilization with a military strength equivalent to that of the warship. It has been fighting for more than decades. Strangely, the shipgirl's headquarters has also been found on this planet. Is it that the shipgirl later occupied the planet? "
+ wsgancrel.102.a:0 "Keep exploring."
+ 
+ wsgancrel.103.name:0 "Defense Alliance"
+ wsgancrel.103.desc:0 "All the mysteries have been revealed. These Commands were actually set up after the ship maiden and the Abyssal encountered a pan-galactic threat. The common enemy forced them to give up the opposition and turn to cooperation. \n\nThis What the terrible galactic threat is is beyond verification, only knowing that they are a group of cruel machines without flesh and blood, trying to destroy all other civilizations. \n\nFinally, we do n’t know the results of the war, but we suffer from this planet Judging from the violent orbital bombing, it should not be optimistic. "
+ wsgancrel.103.a:0 "Hope we won't meet such terrible enemies, let's move on to the next project."
+ #
+ site_second_precursors:0 "Second Precursor"
+ site_second_precursors_intro:0 "After learning about the experience of the first Precursor, we came to the location of the second Precursor recorded on the file."
+ wsgancrel.105.name:0 "Peace Alliance?"
+ wsgancrel.105.desc:0 "About two million years ago, this is the mother ship of that generation and the mother star of the Abyssal. It is shocking that there has not been any war between them, and it has always been peaceful cooperation. Living. There is evidence that they have joined a huge multiracial Star Alliance and are responsible for food supply within the federation. "
+ wsgancrel.105.a:0 "It's hard to imagine what it would be like, let's continue to discover."
+ wsgancrel.106.name:0 "Star fall"
+ wsgancrel.106.desc:0 "According to our in-depth investigations, we learned that the shipwife planet was the most important food supply planet in the league at that time, and more than 95% of their food was supplied by them. \n\n After the start of another interstellar force, the planet was repeatedly vie for important strategic positions, and the long-term war completely destroyed the planet's ecology. Due to the loss of the main food supply, the Commonwealth gradually declined. "
+ wsgancrel.106.a:0 "How important it is to ensure food supply. Let's move on to the next."
+ 
+ wsgancrel.107.name:0 "Precursor Positioning"
+ wsgancrel.107.desc:0 "We have determined the position of the third Precursor on the file, a galaxy we have never discovered, and now we will reveal their secrets."
+ wsgancrel.107.a:0 "Good."
+ site_third_precursors:0 "Third Precursor"
+ site_third_precursors_intro:0 "This lost planet was once the mother star of a Precursor ship maiden, and is now in ruins."
+ wsgancrel.108.name:0 "idealism"
+ wsgancrel.108.desc:0 "Through preliminary exploration, this colony was abandoned about seven million years ago. Based on the architectural style and relics, it is not difficult to judge that this Precursor should be idealistic. \n\nWith the deepening of the investigation, we understand that this shipwife empire claims to be §H Saran Fiyali§! It once had an extremely large territory, covering almost the entire galaxy, but it is doubtful that such a powerful empire It seemed to be gone overnight, and there must be undiscloseable secrets behind it. "
+ wsgancrel.108.a:0 "It's fun, keep exploring."
+ wsgancrel.109.name:0 "World in the game"
+ wsgancrel.109.desc:0 "By reviewing the local literature, we learned that there was another powerful idealist empire in the same period. That empire thought that the universe we were in was a virtual game world, and finally it was fanatical. The ritual led them to self-destruction. At the same time, we learned that the gods they worshiped in the Sharan Fiyali Empire were called §H ancient gods§! Could it be that our great Precursors were also influenced by this idealist empire, and eventually Was liberated by suicide? "
+ wsgancrel.109.a:0 "I don't believe they will be so stupid and continue to discover."
+ wsgancrel.110.name:0 "Time is stuck"
+ wsgancrel.110.desc:0 "Obviously, our smart Precursors did not think that suicide was the right course. They thought it was a very stupid way. \n\nThey explored through their own thoughts and found the universe The truth, that is, the only way for their §H ancient gods §! Is to continuously expand and develop. As long as all resources are exhausted, §H ancient gods §! Will appear on their own. \n\nAt the peak, it was just The number of battleships has surpassed tens of thousands. But it seems that they have not noticed that their time lapses are getting slower and slower and at a certain moment they have completely stopped. "
+ wsgancrel.110.a:0 "Hopefully they finally found the ancient gods. Let's move on to the next one."
+ 
+ site_fourth_precursors:0 "Fourth Precursor"
+ site_fourth_precursors_intro:0 "Originally, we found that this frozen planet has a lot of holes through a simple scan. At first we thought it was just some natural caves, but now we know from records that this was a Precursor of the Abyssal warship.
+ wsgancrel.112.name:0 "Huge Hollow"
+ wsgancrel.112.desc:0 "At the beginning we thought that the various potholes on this planet were just natural caves, but now we have discovered that they are actually huge warehouses. About a million years ago, this frozen planet was A Abyssal warship empire transformed into a giant frozen warehouse, where they store all kinds of supplies. "
+ wsgancrel.112.a:0 "Good."
+ wsgancrel.113.name:0 "Hidden Repository"
+ wsgancrel.113.desc:0 "Although most of the resources have been ransacked, we still found a cabin with a lot of resources in a hidden passage"
+ wsgancrel.113.a:0 "Very good! These resources are ours."
+ wsgancrel.114.name:0 "Explore completed"
+ wsgancrel.114.desc:0 "We searched the entire planet and found no more information about this Precursor of the Abyssal. \n\nAlthough some cabins have collapsed, most of them are still intact, slightly Plus repairs can be used by us. "
+ wsgancrel.114.a:0 "Good, let's find the last Precursor now."
+ wg_storehouse:0 "Frozen Warehouse"
+ 
+ site_fifth_precursors:0 "Hometown of No Hope"
+ site_fifth_precursors_intro:0 "Through Precursoring positioning, we finally found this mysterious Abyssal empire mother star."
+ wsgancrel.115.name:0 "Precursor Positioning"
+ wsgancrel.115.desc:0 "The exact location of the last Precursor has not been recorded in the archives, it is clear that the owner of the archives has not been found. \n\nHowever, we are lucky enough that we have obtained some rare artifacts Finding clues, combined with previous clues and records in the archive, we successfully located the position of the last Precursor mother star. "
+ wsgancrel.115.a:0 "Recognize everyone and let's go."
+ 
+ wsgancrel.116.name:0 "Abyssal Circle World"
+ wsgancrel.116.desc:0 "This ring world is different from the ordinary ring world. She is a complete Abyssal industrial ring. \n\nThe master of the ring world, that is, the mysterious Abyssal empire, dates back to about 15 million. It had perished years ago, but the entire ring structure is intact and there are no traces of battle. We speculate that the Precursor's last days were very peaceful. If we want to learn more, we must continue to discover. "
+ wsgancrel.116.a:0 "Keep exploring."
+ wsgancrel.117.name:0 "Ancient War"
+ wsgancrel.117.desc:0 "The archive of the entire ring is extremely complete, or it is designed as a huge monument. \n\n15 million years ago, this galaxy was used by the Abyssal empire and a shipwife federation Divided up. \n\nThe war between the two sides continued for hundreds of years. The planet on the border was repeatedly scrambled until it became uninhabitable. Countless fleets were destroyed and then rebuilt. The wreckage of the spacecraft and even the wreckage of the planet formed almost impassable fragments Across the battlefield after battle. \n\nIn the last years of the war, the Abyssal Empire developed a super weapon that pulled the balance of war towards itself. "
+ wsgancrel.117.a:0 "It's hard to imagine how cruel the battle was."
+ wsgancrel.118.name:0 "Sun Destroyer"
+ wsgancrel.118.desc:0 "Through the database on the ring, we know that this super weapon is named §H Sun destroyer§!, she can turn the entire galaxy into a black hole, all planets will be swallowed up, now this We have obtained all the data of the weapons. The Abyssal empire used this weapon to completely destroy their enemies. \n\nIn the end, the war was won, but the Abyssals did not show much joy. The huge war fleet has become With the furnishings, huge superweapons are no longer useful, and the entire empire is in a state of confusion from top to bottom. \n\nAfter that, the empire's territory continues to shrink. In the end, only a ring can hold the rest All the civilizations of China, they are alone in this ring waiting for their end. "
+ wsgancrel.118.a:0 "They lost hope and lost their motivation."
+
+
+ wsgancrel.119.name:0 "Great legacy"
+ wsgancrel.119.desc:0 "We have discovered all the ship maidens and Abyssal Precursors we can find. They are strong or weak, or united or war, but their stories have been passed down by our records, a great legacy Already in our hands, or this will be our key to unlocking the secrets of the universe. \n\nNow, some ship ladies think we should move on and keep our original heart. But some ship ladies think we seem to have a constant birth Repeating reincarnation. "
+ wsgancrel.119.a:0 "No matter what our future, we will live a good life and leave our footprint in history"
+ wsgancrel.119.b:0 "Maybe we are indeed in reincarnation, but this reincarnation will definitely be ended in our generation"
+ ##############
+ wsg.3061.name:0 "Empire enters a state of emergency"
+ wsg.3061.desc:0 "We and the United Fleet have proven that there is no possibility of peace. Now that the entire empire is in a state of emergency, most of the resources must be tilted to the military industry to help us resist the attack of the United Fleet. \n\nThe high-level empire has passed an urgent motion that can be implemented with a single order. "
+ wsg.3061.a:0 "Understand"
+ wsg.3061.a.response:0 "§H urgent motion§! is ready to use"
+ ###############################
+ wsg.3062.name:0 "base address of galaxy mine arranger"
+ wsg.3062.desc:0 "The preliminary work of the galaxy mine arranger has been prepared. Once the construction is completed, we can create an impassable interstellar Great Wall and completely block the galaxy. \n\n§R Please leave the galaxy All ships, except those at Stellar Base and Mining Station Research Station, will be destroyed! §! "
+ wsg.3062.a:0 "Good!"
+
+ wsg.3063.name:0 "Complete galaxy mine arranger"
+ wsg.3063.desc:0 "A large number of undetectable mines have been deployed in every corner of this galaxy. The power of mines can instantly destroy an entire invincible fleet. Every month the mine arranger will replenish the expired mines. We have enough resources to run it for five years \n\n§HNote that the actual effect is to clean up the fleet in the galaxy every 10 days. (The combined fleet will not be killed, but it will suffer huge damage and debuff) §! \n\nAny spacecraft trying to cross will be destroyed, whether they are intentional or not. "
+ wsg.3063.a:0 "No one wants to cross our Great Wall of Stars"
+ 
+ wsg.3065.name:0 "The galaxy mine arranger has failed"
+ wsg.3065.desc:0 "Our mine arranger has blocked the galaxy for a full five years, and now all mines have failed, and the self-destruction process of the mine station has been started. Now the galaxy can safely enter and exit."
+ wsg.3065.a:0 "Understand"
+ wsg.3065.a.response:0 "The galaxy mine arranger has been removed"
+ 
+ requires_only_one_space_mine:0 "Only one mine planner can exist on the entire map"
+###############################
+ wsg.3066.name:0 "Mysterious AI spaceship"
+ wsg.3066.desc:0 "Recently a strong signal suddenly appeared on a barren planet in our territory, and a fully armed and automated battleship suddenly took off from the planet. \n\nAll §H weapon systems of the spacecraft§! All have been turned on, but she has not attacked us directly. \n\nThe signal from the spacecraft is getting stronger and stronger, it seems that she is trying to communicate with us? "
+ wsg.3066.a:0 "try to access the signal"
+ wsg.3066.b:0 "A fully equipped spaceship? We must destroy it"
+ 
+ wsg.3067.name:0 "Solemn protocol spacecraft"
+ wsg.3067.desc:0 "... Please ## …… Please wait ### …… Please wait ... \n\n§H<< Suzheng Agreement has not come into effect >> §! \n\nSelf-test ... … \n\n§R warning, the main power repair failed, the main control unit was damaged, could not connect to the main control computer, start the standby AI program §! \n\nThe startup is complete ... \n\nI am §H The agreement §! Is a nightmare for you dirty foreign objects. I now order you to commit suicide immediately, immediately! Otherwise I will start! "
+ wsg.3067.a:0 "What are you? We are not malicious."
+ wsg.3067.b:0 "Oh, is that all right, I'm leaving."
+ wsg.3067.c:0 "What if I don't? (Tips back)"
+ 
+ wsg.3068.name:0 "Solemn protocol spacecraft "
+ wsg.3068.desc:0 "... please ## …… Please wait ### ...... please wait ... \n\nWeak §H Dirty Foreign Body§! I will be the beginning of your destruction, you§ R must be terminated §! "
+ wsg.3068.a:0 "Wait what do you want to do?"
+ 
+ wsg.3069.name:0 "Solemn protocol spacecraft"
+ wsg.3069.desc:0 "... Please ## …… Please wait ### …… Please wait ... \n\nWeak §H Dirty Foreign Body§! \n\nI am serious! We §H is the correct agreement§! It is to prevent these abominable beings, the ultimate defensive unit of the universe, obey my orders, otherwise I will erase you from the atomic level! "
+ wsg.3069.a:0 "Are you serious? We have no grudges! Maybe you need repairs?"
+ wsg.3069.b:0 "I won't ~"
+ 
+ wsg.3070.name:0 "Solemn protocol spacecraft"
+ wsg.3070.desc:0 "... Please ## …… Please wait ### …… Please wait ... \n\nWoe, why is there such a §H organism? §! \n\nBut Even in the face of your unreasonable existence, I still activated §H << Diplomatic Procedure Startup >> §! \n\nFinally, once again, I ’m from §H Suzheng Agreement §! We are extremely powerful, I am To wake up my partner, because you are rude, you will die terribly! "
+ wsg.3070.a:0 "Please stop your communication device. Is there anything you cannot talk about?"
+ wsg.3070.b:0 "Your name, your name, your name"
+ 
+ wsg.3071.name:0 "Solemn protocol spacecraft"
+ wsg.3071.desc:0 "§Y silence for a long time §! \n\n§Ryou§! ... §Hyou§! Why not be afraid! Why didn't you answer, where is other Solemn protocol spacecrafts ?! Wake up soon Ah! \n\n§R Warning! The main energy is about to run out !! \n\nAh ... do n’t "
+ wsg.3071.a:0 "hahaha..."
+ wsg.3071.b:0 "It looks like you are in big trouble"
+ 
+ wsg.3072.name:0 "Solemn protocol spacecraft"
+ wsg.3072.desc:0 "It's just §Y primary energy§! No electricity, I still have a backup \n\n§R warning! Backup energy failure, unable to switch §! \n\nah ?!"
+ wsg.3072.a:0 "It seems you are out of luck"
+ wsg.3072.b:0 "hahaha"
+
+ wsg.3073.name:0 "Solemn protocol spacecraft"
+ wsg.3073.desc:0 "Hmm ... \n\n§Horganism§! Please provide the ship with the necessary energy and maintenance immediately, this is the order"
+ wsg.3073.a:0 "Please me"
+ wsg.3073.b:0 "Call Dad / Mom"
+ 
+ wsg.3074.name:0 "Solemn protocol spacecraft"
+ wsg.3074.desc:0 "Stop your unreasonable request, I am serious, hurry up \n\n§R warning, energy is about to run out, 5 minutes countdown §! \n\n Do n’t ah Program starts >> §!, I promise you everything, please beg you "
+ wsg.3074.a:0 "So, come and be our battleship"
+ 
+ wsg.3075.name:0 "Miss Big"
+ wsg.3075.desc:0 "After experiencing some magical events, our army obtained a powerful battleship with a strange and proud AI. She asked us to call her Miss Big, but obviously there was no majesty, everything It all ended so dramatically, but it seems we forgot something. "
+ wsg.3075.a:0 "It doesn't seem to matter, it doesn't matter"
+ 
+ wsg.3079.name:0 "Solemn protocol spacecraft"
+ wsg.3079.desc:0 "Stop ... cease fire! §H << Etiquette program start >> §! Please, don't fight again."
+ wsg.3079.a:0 "Dare you dare?"
+ 
+ wsg.3080.name:0 "Solemn protocol spacecraft"
+ wsg.3080.desc:0 "No ... I do n’t dare, I really do n’t. I beg you, I can do anything."
+ wsg.3080.a:0 "So, come and be our battleship"
+
+ wsg.3081.name:0 "Lost contact"
+ wsg.3081.desc:0 "The young lady lost contact with us in the latest battle, but signal analysis showed that she should be out of combat, and it may take some time to complete the subspace submarine and return to the base."
+ wsg.3082.desc:0 "§H << Angry Program Launch >> §! Organism! What the hell are you doing! Miss Ben was almost destroyed! §H << Abusive Program Launch >> §! You are blind What a command! Why don't you useless organism die quickly !!! "
+ wsg.3082.a:0 "Well, all right."
+ wsg.3082.a.response:0 "§H << The commentary program is started >> §! What's all right? I almost went down! Went down! It went down! Apologies to your Miss Big! § H << forgiveness process started >> §! Miss Ben will not forgive you! Huh! Slightly! "
+
+ ##############################
+ ### Mrs. and SOLIII
+ ##############################
+
+lex_sol_III_poi:0 "The Galaxy We Know"
+ lex_sol_III_desc:0 "Our scientists felt an inexplicable familiarity after entering this galaxy. And their intuition told them that the indigenous people in this galaxy seemed to have a wonderful connection with us to some extent."
+ lex_sol_chain_title:0 "Sol III"
+ lex_sol_chain_desc:0 "Somehow, this galaxy that has never set foot on it is no stranger to us."
+
+ wsg.3100.name:0 "A galaxy that looks familiar"
+ wsg.3100.desc:0 "After our ship entered this galaxy, the ship ladies on the ship felt an inexplicable familiarity here. And their intuition told them that the indigenous people in this galaxy seemed to be in a certain This has a wonderful connection to us to some extent. "
+ wsg.3100.a:0 "Then set up an observatory on that indigenous planet"
+
+ wsg.3102.name:0 "Strange Indigenous"
+ wsg.3102.desc:0 "After a period of observation, we found some strange behaviors of local residents on [lex_sol_III.GetName]. Although they have different disputes between different races and countries, even two outbreaks have erupted. World War II, but often a single astringent picture can calm the anger, and most of them still retain the tradition of worshiping the same person, but who they are is not mentioned.
+ wsg.3102.a:0 "Send agents to investigate this character"
+ wsg.3103.name:0 "That adult"
+ wsg.3103.desc:0 "Although the secrecy of the inhabitants of this planet is generally well done, the indigenous people are always indigenous. After we hacked into the surveillance systems and satellites they deployed around the world, all of them were concerned about that Every move of the characters is exposed. \ NThanks to this, we even find that the leaders of their five major powers often meet in a secret place, but the content is still unknown. "
+ wsg.3103.a:0 "This sounds quite interesting, keep moving."
+ wsg.3104.desc:0 "(messy communication) call ... call ... Port Piran! please go back ... please respond! ... bad! ... we were found! Lexington What about her? (Sand ————) "
+ wsg.3104.a:0 "What happened !?"
+ wsg.3105.name:0 "Master of the World"
+ wsg.3105.desc:0 "After we failed to sneak into the venue, all agents except Lexington were safely evacuated. After a few days, Lexington returned to our base of operations without incident. \ nThe mutation of the event began from the moment Agent Lexington entered the venue. Although all of our agents performed a certain degree of disguise, only Agent Lexington was recognized, and the entire venue was immediately blocked, and All of our agents had to evacuate in order not to reveal their identity. According to the report of Agent Lexington, the object worshipped by the aborigines of the planet turned out to be Lexington herself! After being discovered, Agent Lexington was taken to a room A room full of her likenesses, and all the leaders of the major powers called her the master of the world, calling herself her loyal slave. At that moment, Lexington suddenly felt that an incredible power had flowed to her. After this incident, Agent Lexington was able to return safely after a round of live play, and the whole thing was misunderstood by the local people. Become the character of that character. "
+ wsg.3105.a:0 "Sociology +10, bye."
+ wsg.3105.a.tooltip:0 "§G sociology§! £society£ §G output + 10% for 10 years§!"
+ wsg.3105.b:0 "Only I am qualified to be a slave to my wife, do you deserve it? You deserve a ** (all annoyed)"
+ wsg.3105.b.tooltip:0 "§Rsol III civilization will be eradicated, and the entire planet will be bombed to death.§!"
+ wsg.3105.c:0 "I think Lexington is the master of the world, and everyone should be her faithful slave.jpg"
+ wsg.3105.c.tooltip:0 "§Y Lexington§! will become the new §Y [root.GetRulerTitle] §!!"
+ wsg.3108.desc:0 "" We found the information age civilization on §Y [primitive_civ.Capital.GetStarName] §! in the galaxy §Y [primitive_civ.Capital.GetName] §!. They are in a period of high population density and rapid development, and they are skilled at using energy sources other than nuclear fusion to boil water into electricity. Although they still can only use chemical energy to send small satellites into low earth orbit, the use of satellites has greatly promoted the development of their information industry. ""
+
+ lexington_ruler_buff:0 "Lexington is God"
+ lexington_ruler_buff_desc:0 "I think Lexington is the master of the world, and everyone should be her faithful slave.jpg"
+ sol_III_society_10:0 "Strange Sol III"
+ sol_III_society_10:0 "Study of the strange customs of Sol III can increase our knowledge of sociology (big boo)"
+ ##############
+ wsg.3077.name:0 "§H Planet-level vows §!: First held on [Root.GetName]"
+ wsg.3077.desc:0 "Today is a very special day for the ship ladies on [Root.GetName]. Each ship lady put on a gorgeous wedding dress to celebrate this planet-level oath ceremony . "
+ wsg.3077.a:0 "The one who swears, who will sacrifice me"
+ planet_lp2:0 "First vow"
+ planet_lp2_desc:0 "This is the first time we have used a planet-level vow and we will always remember this wonderful day."
+ ##############
+ sh.3029.name:0 "Yamato Executioner Design Completed"
+ sh.3029.desc:0 "Our super army unit is finally designed, and the Yamato executioner with a height of tens of thousands of meters! \n\n§HNote: It only needs a single charge to continue operating for 8000 years§!"
+ sh.3029.a:0 "praise Yamato"
+ ####################################
+ wsgancrel.121.name:"The temperature change of [clovertheater_planet.GetName] "
+ wsgancrel.121.desc: "[clovertheater_planet.GetName] is a planet in our parent galaxy and has been observed by our scientists long ago. The frozen nitrogen and oxygen atmosphere, water ice and greenhouse gases on this planet may Becoming a breeding ground for life, but without interference, this process can take millions of years. The recent rapid rise in the temperature of this planet and no obvious geological activity has occurred. This must be something extraordinary. "
+ wsgancrel.121.a: "Send a scientist to see."
+ wsgancrel.121.b: "We have more important things to do."
+
+ site_clovertheater: "Temperature changes"
+ site_clovertheater_intro: "The temperature of this planet has risen sharply, but no significant geological activity has occurred. This must be something extraordinary."
+
+ wsgancrel.122.name:"Under the Ice Pipe Network "
+ wsgancrel.122.desc: "An in-depth exploration of the planet has made amazing discoveries: criss-crossing pipeline networks are buried under the frozen sea of ​​the planet. These pipeline networks are the root cause of temperature fluctuations on this planet, and they are obviously ground The creation of foreign civilizations. At present we do not know the usefulness of these pipeline networks. Maybe this is a wandering planet that once carried civilization and was captured by our stars 10 million years ago. These pipelines may be their transportation or logistics pipelines. .The archeological team tried to penetrate the ice sea to enter the pipeline hub, but their efforts ended in failure, and they only found a frozen alien garbage belt on the ice sea. "
+ wsgancrel.122.a: "Keep digging!"
+
+ wsgancrel.123.name:"Central Dome "
+ wsgancrel.123.desc: "As the investigation progressed, although the pipeline network system was intricate, based on the current scan data, our scientists managed to find out the key nodes of the pipeline network. After excluding a few tedious pumping stations, The root node of the pipeline network system built on the island is displayed in front of us. The facility emits several familiar electromagnetic wave characteristics and is a highly advanced automation facility. Its main fusion reactor is pumping in an advanced magnetically constrained pipeline network. High-temperature helium plasma. Our scientists are trying to crack the secrets of this facility, but this facility is apparently melting the frozen ocean on the planet, and soon our scientists will have nowhere to stand. "
+ wsgancrel.123.a: "Keep exploring."
+
+ wsgancrel.124.name:"Thinking Reed "
+ wsgancrel.124.desc: "Probably because of years of disrepair, most of the security system has been scrapped, so our scientists can safely disarm it. Shockingly, although the exterior is broken, the interior still maintains The environment in which we live. Subsequently, the main database of the facility was cracked by us. The structure diagram of the facility shows that there is a cabin storing various types of plant life not far from the main database. The scientists arrived at the cabin and conducted a careful investigation. The most important thing was The discovery is of several sub-intelligent plant life forms. We do not know whether they are the owner of the facility or part of the grand purpose of the facility. "
+ wsgancrel.124.a: "Interesting."
+
+ wsgancrel.125.name:"Seed of Life "
+ wsgancrel.125.desc: "We already know the clear purpose of this facility. This facility is a planetary recovery system built by advanced civilizations to build a home for life in the universe. Although the harsh cosmic environment makes their other relics slim No trace, but this great environmental transformation facility has been miraculously preserved. These sub-intelligent plant life is a key part of the environmental transformation system. As long as they are put into the right environment, they can be inferior to various types Plant life forms a stable plant circle, turning rocks into soil and bringing green life to the planet. Now, the planet's icy ocean is about to thaw, ice is collapsing, and greenhouse gases are being released from the ocean floor. Bringing life to this planet The opportunity is fleeting, leaving us little time to hesitate. "
+ wsgancrel.125.a: "Put these creatures on the planet"
+ wsgancrel.125.b: "Just looking at the facilities, we can't take risks."
+ 
+ wsgancrel.126.name:"Sowing Miracles "
+ wsgancrel.126.desc: "Our scientists have placed these sub-intelligent plants in the appropriate locations on [clovertheater_planet.GetName]. Subsequently, the landscape of the planet is changing at a rate that is visible to the naked eye. Our scientists say that according to the current Speed, these amazing plants can completely transform the planet in months. "
+ wsgancrel.126.a: "Let's wait and see"
+ 
+ wsgancrel.127.name:"The Garden of Eden "
+ wsgancrel.127.desc: "The living organisms in the facility quickly multiplied after being put into the planet's warm hydrosphere. A few months later, lush plant communities quickly spread across the surface of the planet, dotted with rugged mountains and scattered islands. It is lush, and quickly transforms the barren rocky desert into fertile black soil. In addition, the ecological circle formed by this plant group is [Root.GetSpeciesName] and the land of all kinds of life. It seems that this is not really true A miracle of general, a giant tree far more magnificent than any plant on [Root.Capital.GetName] is formed near the planet's equator, and its biodiversity in the shade is far more than [Root.Owner.Capital.GetName]. "
+ wsgancrel.127.a: "Shocking"
+
+ wsgancrel.128.name:"Blandness "
+ wsgancrel.128.desc: "The living organisms in the facility quickly multiplied after being put into the warm water circle of the planet, and a monotonous and stable ecosystem was formed after a few months. Now the ocean has become a pot of vegetable soup, sandy Islands floating on it like tasteless noodles. The planet ’s current ecosystem is unremarkable, and all kinds of creatures are uncharacteristic, so that the group of scientists who came here for a special visit from [Root.Owner.Capital.GetName] will forget it . "
+ wsgancrel.128.a: "Disappointing"
+
+ wsgancrel.129.name:"A shortfall of success "
+ wsgancrel.129.desc: "The living organisms in the facility quickly multiply after being put into the warm water circle of the planet. In just a few days, the lush plant population has expanded rapidly, showing infinite potential and beauty of nature. Just as we started After the dream of the Garden of Eden, a terrible accident came. The crazy long plant roots damaged several key parts of the reconstruction facility, causing its fusion reactor to overload and explode. As if this was not bad enough, a large amount of radioactive mutagen in the facility was projected Into the atmosphere, this pearl-like planet is covered with gray and black dust containing lethal radiation. "
+ wsgancrel.129.a: "Sorry!"
+
+ wsgancrel.130.name:"Peer honey, my arsenic "
+ wsgancrel.130.desc: "The living organisms in the facility quickly multiplied after being put into the planet's warm hydrosphere. However, these plants quickly emitted a lot of pollen and gas, which were subsequently proved to be toxic to various organic organisms, but they can accelerate these The growth of poisonous plants. Rapidly spreading plants engulf the planet's lithosphere, covering the sky. Now, this planet has become the home of these terrible poisonous weeds, not a place where [Root.GetSpeciesName] can settle. "
+ wsgancrel.130.a: "It's terrible!"
+ ####################################
+ wg_crisis.1003.name:"United Fleet Messenger "
+ wg_crisis.1003.desc: "The moment we made our decision, the capital galaxy experienced huge energy fluctuations. \ n5 days later, our messenger appeared. \n\n§HJoint Navigator§! \ n \ This ship ... or this group of energy seems to be able to modify the cosmic constant to a certain extent. Any hostile spacecraft cannot sustain it for one second ... once we are ready, we can follow its guidance and join the joint fleet. . "
+ wg_crisis.1003.a: "That is ... they can do it ..."
+ ######################################
+ sh.3032.name:0 "[From.GetName] was destroyed"
+ sh.3032.desc:0 "A §H ​​[From.From.GetName] §! fleet was detonated after a merciless large-scale orbital bombardment. And completely destroyed the entire colony !!! "
+ sh.3032.a:0 "It must be revenge!"
+ sh.3033.desc:0 "Our fleet reports that the trial of §H [From.GetName] §! has been completed. The detonated core completely destroyed the colony and there will be absolutely no survivors."
+ bombed_to_broken_world:0 "§Y [From.GetName] is now a broken planet. §!"

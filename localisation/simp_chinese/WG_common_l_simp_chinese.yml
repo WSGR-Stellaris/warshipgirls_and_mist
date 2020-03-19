@@ -1,0 +1,149 @@
+﻿l_simp_chinese:
+ HIVE_MIND_NO_FACTIONS:0 "§R这种物种不会产生派系。§!"
+###############################
+ wsg_hidden_capital:0 "舰娘隐藏首都"
+ wsg_hidden_capital_DESC:0 "现在我们的高级行政人员可以在这个隐藏的小行星基地里发号施令且不受上游一号的威胁。"
+ wsg_hidden_capital_MEGASTRUCTURE_DETAILS:0 "为避免上游一号的威胁，我们决定将一颗小行星秘密改造为隐藏首都。大量的合金保证了结构强度，且会数个发信装置来确保不会出现任何意外情况。"
+ 
+ requires_only_one_wsg_hidden_capital:0 "我们已经拥有了隐藏首都"
+###############################
+ dyson_yamato:0 "舰娘戴森云"
+ dyson_yamato_DESC:0 "图片与实物相似度99.9999999%"
+ dyson_yamato_MEGASTRUCTURE_DETAILS:0 "数以亿计的小型太阳能电池板阵列将组成戴森云环绕我们的恒星，虽然远不及戴森球但依然能提供大量的电力"
+ 
+ requires_only_one_yamato_in_system:0 "一个星系只能建造一个戴森云"
+###############################
+ wsg_mining_station:0 "舰娘大型采矿站"
+ wsg_mining_station_DESC:0 "一座用于开采整个小行星带矿物的大型采矿站，能源源不断的为我们提供合格的矿物。"
+ wsg_mining_station_MEGASTRUCTURE_DETAILS:0 "一座用于开采整个小行星带矿物的大型采矿站，能源源不断的为我们提供合格的矿物。"
+ 
+ requires_only_one_wsg_mining_station_in_system:0 "一个星系只能建造一个巨型采矿站"
+###############################
+ wsg_station:0 "舰娘巨型轨道站"
+ wsg_station_DESC:0 "一座巨大的同步轨道站，是重要的军事和工业基地。"
+ wsg_station_MEGASTRUCTURE_DETAILS:0 "一座巨大的同步轨道站，是重要的军事和工业基地,还能用于生产舰船。"
+ 
+ sm_wsgshipyard:0 "轨道船坞连模块"
+ sm_wsgshipyard_desc:0 "一个用于与轨道站连接的装置，一旦建成便可动用轨道站上的船坞进行生产。"
+ 
+ requires_only_one_in_system:0 "一个星系只能建造一个巨型轨道站"
+ requires_colonizeable_planet:0 "必须是已经殖民的星球"
+ requires_maximum_eight:0 "最多拥有8个巨型轨道站"
+ ############
+ wg_space_mine_0:0 "星系水雷布置器基址"
+ wg_space_mine_0_DESC:0 "巨大的星系水雷布置器基址，一旦彻底完成，它能确保5年内没有任何飞船可以穿过这个星系。"
+ wg_space_mine_1:0 "星系水雷布置器"
+ wg_space_mine_1_DESC:0 "大量且无法察觉的水雷已经布置在这个星系的每一个角落，每个月水雷布置器就会对过期的水雷进行一次补充。任何试图穿越的飞船都会被摧毁，无论它们是有意还是无意的。"
+ wg_space_mine_0_MEGASTRUCTURE_DETAILS:0 "一个能创造无法逾越的星际长城的设施，一旦完成没有任何飞船可以穿越这个星系。"
+ 
+ requires_only_one_in_system:0 "一个星系只能建造一个巨型轨道站"
+ requires_colonizeable_planet:0 "必须是已经殖民的星球"
+ ############
+ scout_UAV:0 "攻击无人机"
+ scout_UAV_section:0 "轻型侦察无人机"
+ scout_UAV_section1:0 "轻型侦察无人机"
+ scout_UAV_section2:0 "中型战斗无人机"
+ scout_UAV_section3:0 "重型作战无人机"
+ scout_UAV_section4:0 "脊峰超级无人机"
+ 
+ UAV_FISSION_REACTOR:0 "$FISSION_REACTOR$"
+ UAV_FISSION_REACTOR_DESC:0 "$FISSION_REACTOR_DESC$"
+ UAV_FUSION_REACTOR:0 "$FUSION_REACTOR$"
+ UAV_FUSION_REACTOR_DESC:0 "$FUSION_REACTOR_DESC$"
+ UAV_COLD_FUSION_REACTOR:0 "$COLD_FUSION_REACTOR$"
+ UAV_COLD_FUSION_REACTOR_DESC:0 "$COLD_FUSION_REACTOR_DESC$"
+ UAV_ZERO_POINT_REACTOR:0 "$ZERO_POINT_REACTOR$"
+ UAV_ZERO_POINT_REACTOR_DESC:0 "$ZERO_POINT_REACTOR_DESC$"
+ UAV_ANTIMATTER_REACTOR:0 "$ANTIMATTER_REACTOR$"
+ UAV_ANTIMATTER_REACTOR_DESC:0 "$ANTIMATTER_REACTOR_DESC$"
+ UAV_DARK_MATTER_REACTOR:0 "$DARK_MATTER_REACTOR$"
+ UAV_DARK_MATTER_REACTOR_DESC:0 "$DARK_MATTER_REACTOR_DESC$"
+ 
+ UAV_THRUSTER_1:0 "$SHIP_THRUSTER_1$"
+ UAV_THRUSTER_1_DESC:0 "$SHIP_THRUSTER_1_DESC$"
+ UAV_THRUSTER_2:0 "$SHIP_THRUSTER_2$"
+ UAV_THRUSTER_2_DESC:0 "$SHIP_THRUSTER_2_DESC$"
+ UAV_THRUSTER_3:0 "$SHIP_THRUSTER_3$"
+ UAV_THRUSTER_3_DESC:0 "$SHIP_THRUSTER_3_DESC$"
+ UAV_THRUSTER_4:0 "$SHIP_THRUSTER_4$"
+ UAV_THRUSTER_4_DESC:0 "$SHIP_THRUSTER_4_DESC$"
+ UAV_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
+ UAV_THRUSTER_5_DESC:0 "$SHIP_THRUSTER_5_DESC$"
+ 
+ COMBAT_COMPUTER_UAV:0 " 微操计算机"
+ COMBAT_COMPUTER_UAV_DESC:0 " 舰队，向前推进十光秒。"
+ 
+ tech_uav:0 "舰娘攻击无人机"
+ tech_uav_desc:0 "我们将一些无人探测器添加了一些基础的武器，既可以作为一种探路工具也可以作为简单的战斗飞船使用。"
+ tech_uav2:0 "战斗无人机"
+ tech_uav2_desc:0 "减少防护并安装了更大型号的武器。"
+ tech_uav3:0 "重型战斗无人机"
+ tech_uav3_desc:0 "安装了一门对无人机来说夸张尺寸的大型火炮，同时其防护能力下降至最低水平，同样因为尺寸问题无法安装最先进型号的反应堆和推进器。"
+ tech_uav4:0 "脊峰超级无人机"
+ tech_uav4_desc:0 "彻底抛弃了防护才得以为无人机安装上了战列舰级的脊峰武器。部分武器学家认为只需要在它们被击毁前打出一轮攻击便可以极大的扭转战争局势。" 
+ tech_sh_senergy_uav:0 "小型化无人机组件"
+ tech_sh_senergy_uav_desc:0 "在最新的科技帮助下，深海能源核心反应堆小型化已经成为现实，因此更强大的无人机飞船武器也应运而生。" 
+ tech_wsg_alpha_uav:0 "小型化无人机组件"
+ tech_wsg_alpha_uav_desc:0 "在最新的科技帮助下，阿尔法结晶反应堆小型化已经成为现实，因此更强大的无人机飞船武器也应运而生。"
+ 
+ TECH_UNLOCK_UAV_CONSTRUCTION_TITLE:0 "§H解锁飞船§!：舰娘攻击无人机§!"
+ TECH_UNLOCK_UAV_CONSTRUCTION_DESC:0 "武装无人机"
+ TECH_UNLOCK_UAV2_CONSTRUCTION_TITLE:0 "§H解锁飞船区划§!：中型战斗无人机§!"
+ TECH_UNLOCK_UAV2_CONSTRUCTION_DESC:0 "武装无人机"
+ TECH_UNLOCK_UAV3_CONSTRUCTION_TITLE:0 "§H解锁飞船区划§!：重型作战无人机§!"
+ TECH_UNLOCK_UAV3_CONSTRUCTION_DESC:0 "武装无人机"
+ TECH_UNLOCK_UAV4_CONSTRUCTION_TITLE:0 "§H解锁飞船区划§!：脊峰超级无人机§!"
+ TECH_UNLOCK_UAV4_CONSTRUCTION_DESC:0 "武装无人机"
+ £energy£ §Y0.5§!与£consumer_goods£ §Y0.25§!§!
+ wsg_dreadnought:"无畏舰"
+ uf_Juggernaut:"联合主宰" 
+ wsg_dreadnought_dark:"无畏舰"
+ 
+ sh_modifier_lack_food:0 "缺少食物，组装减缓"
+ wsg_modifier_lack_food:0 "舰娘很饿，赏口饭吃" 
+
+ r_united_fleet_active:0 "探索联合舰队的秘密"
+ sh_base:0 "胖次协议"
+ ###################
+ sm_srse_industory:0 "深海能源核心生产模块"
+ sm_srse_industory_desc:0 "为减少深海能源核心生产过程中产生的巨量辐射对星球伤害，选择将其搬运到恒星基地上是个 不错的选择。"
+ sm_neo_industory:0 "NEO生产模块"
+ sm_neo_industory_desc:0 "在恒星基地中生产NEO是提高其产量的不错选择。"
+ sm_wsg_bungee_jumping:0 "恒星蹦极模块"
+ sm_wsg_bungee_jumping_desc:0 "在恒星基地上开设一些窗口为游客提供十分刺激的恒星蹦极运动。虽然这会造成恒星基地结构强度不足，但在利润面前总是能稍微让步的。"
+
+ #################################
+ ## primitive age
+ #################################
+ information_age:0 "信息时代"
+ information_age_desc:0 "这颗星球的原住民已经能熟练地运用除核聚变以外的各种能源来烧开水，并且发展出全球性的信息产业科技，各地区的居民的出行和沟通的便利性得以大幅提升。"
+ #######
+ policy_wsg_war_doctrine:0 "WG战争学说"
+ policy_wsg_war_doctrine_desc:0 "我们是一个善战的民族，你可以称呼我们是战斗民族，但我更愿意被称为战争民族。\n"
+ ############下面的都不用翻译
+ tech_wg_trade_policy:0 "新型贸易政策" 
+ tech_wg_trade_policy_desc:0 "在过去贸易航线仅由低级的民用商船完成一些简单的资源运输。随着帝国资源需求的升级，我们必须开启新时代的贸易。"  
+ wg_trade_edicts:0 "§H解锁政策：§!新型贸易政策"
+ wg_trade_edicts_desc:0 "在过去贸易航线仅由低级的民用商船完成一些简单的资源运输。随着帝国资源需求的升级，我们必须开启新时代的贸易。"
+
+ policy_wsg_war_doctrine:0 "WG战争学说"
+ policy_wsg_war_doctrine_desc:0 "我们是一个善战的民族，你可以称呼我们是战斗民族，但我更愿意被称为战争民族。\n"
+ 
+ policy_wg_trade_policy:0 "WG新型贸易政策"
+ policy_wg_trade_policy_desc:0 "在过去贸易航线仅由低级的民用商船完成一些简单的资源运输。随着帝国资源需求的升级，我们必须开启新时代的贸易。\n"
+
+ trade_policy_more_energy:0 "财富贸易"
+ trade_conversion_more_energy_name:0 "$trade_policy_more_energy$"
+ trade_policy_more_energy_desc:0 "新型的贸易政策将带来更多的贸易机会。\n\n§E所获得的每个£trade_value£ §Y贸易值§!会贡献£energy£ §Y0.5§!§!\n§H该政策可以和原版贸易政策叠加§!" 
+ trade_policy_pantsu:0 "胖次贸易"
+ trade_conversion_pantsu_name:0 "$trade_policy_pantsu$"
+ trade_policy_pantsu_desc:0 "如果我们不能确保每一位成员都有胖次穿，那么我们还有什么存在的必要呢？\n\n§E所获得的每个£trade_value£ §Y贸易值§!会贡献£sr_pantsu£ §Y0.02§!§!\n§H该政策可以和原版贸易政策叠加§!"
+ trade_policy_alloys:0 "合金贸易"
+ trade_conversion_alloys_name:0 "$trade_policy_alloys$"
+ trade_policy_alloys_desc:0 "总有一些合金被因为各种原因遗忘在仓库之中，现在新的贸易航线将会将它们送到需要的地方。\n\n§E所获得的每个£trade_value£ §Y贸易值§!会贡献£alloys£ §Y0.05§!§!\n§H该政策可以和原版贸易政策叠加§!"
+ trade_policy_scarce_resource:0 "稀有资源贸易"
+ trade_conversion_scarce_resource_name:0 "$trade_policy_scarce_resource$"
+ trade_policy_scarce_resource_desc:0 "稀有资源往往不易储存和远距离运输，但随着科技的进步，即使是最低级的运输船也可以安全的运载这些稀有的资源。\n\n§E所获得的每个£trade_value£ §Y贸易值§!会贡献£exotic_gases£ §Y0.02§! £volatile_motes£ §Y0.02§! £rare_crystals£ §Y0.02§!\n§H该政策可以和原版贸易政策叠加§!" 
+ 
+ 
+ 

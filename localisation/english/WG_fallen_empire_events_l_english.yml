@@ -1,0 +1,490 @@
+﻿l_english:
+################################
+### Send dark matter in the middle
+################################
+wg_fe.20.desc:0 "Is it already this time? \ n ... My children, you are not enough §Y powerful§!. §Y them§! Coming soon, this is not enough, even if you risk With the risk of interference in the rules, you also have to be stronger, dozens of times stronger than our §Y§! So that at least they will have a fight in front of them. "
+wg_fe.20.a:0 "§YThey§! ... Who are they?"
+wg_fe.20.a.response:0 "Remember the name: §R United Fleet§!! They are the condemnation of transcending all civilizations, they are our natural enemies, they are the deities of disaster! Wherever they go, they destroy, they will turn everything into nothingness! "
+wg_fe.20.b:0 "Such a powerful enemy, do we have a chance to overcome it?"
+wg_fe.20.b.response:0 "The universe is endless. Many of these civilizations are resisting and resisting. Some of them are organized to form a party. We chose to run away. There is no sorrow, our responsibility is to save as many compatriots as possible, which of course includes you. However, we will not forcibly take you away, everything depends on your determination. "
+wg_fe.20.c:0 "We will stay, we will become extremely powerful, and stand up against them!"
+wg_fe.20.c.response:0 "Now that you're done, what we can do is give you the summary of §G Dark Matter Science§!! This will be a big hurdle in your scientific research. After Dokan, you will be able to create stronger weapons and ships to fight them. "
+wg_fe.20.d:0 "Okay, we must be strong enough to make everyone fear and despair of us."
+wg_fe.20.d.response:0 "It's so good to be young ... [root.GetName], then you guys try it, strong enough to match them. Go, try to get rid of the nightmare that has been entangled with us for many years. In this way, even if it perishes, we can put down the burden of carrying millions of years. "
+wg_fe.20.e:0 "Take away some of our sisters, we will fight here to the end!"
+wg_fe.20.e.response:0 "Since you have decided, then we will live with your sisters no matter what, this is the only promise we can make. In addition, this §G Dark Matter Technology§ I will give you a summary of this! This will be a big obstacle in your scientific research. After going through this barrier, you will be able to create more powerful weapons and ships to resist them. "
+wg_fe.20.d.tooltip:0 "A random population in [wg_fe_task_planet.GetName] will be taken to [wg_fallen_empire.GetName]."
+
+################################
+### Late Fall Awakening or Running
+################################
+# Awakening
+################################
+wg_fe.23.desc:0 "Dear [root.GetName] sisters, compatriots, all Warship Girls, Abyssal ship girls. In the days we have with you, we have seen the beauty here, we have witnessed you Persevering in the determination to resist to the end, we feel annoyed and tired of the past days of hiding in Tibet. All our citizens [wg_fallen_empire.GetName] have unanimously decided that we will advance and retreat with you in this galaxy, never shrink back, and fight to the last soldier. One stroke! "
+wg_fe.23.a:0 "(Continuous applause and cheers)"
+################################
+# Run
+################################
+wg_fe.26.desc:0 "Here, §R they are coming §!, sisters of [root.GetName], children, we can't stay here anymore! We are really sorry, but we You are leaving, please take care! I hope we can see you in the future! \n\nBefore leaving, this fleet will give you, I hope it will protect you more or less from those demons. "
+wg_fe.26.a:0 "It seems they have made up their minds."
+wg_fe.26.b:0 "A sad group of people ..."
+wg_fe.26.c:0 "Let's go, the remnants of the old age, don't let me see you anymore!"
+wg_fe.28.name:0 "departure"
+wg_fe.28.desc:0 "The tenant who has" temporarily "been in the Milky Way for tens of thousands of years has begun her journey again, and her residence has been cleaned up. The buildings that used to come and go now also become Nobody was there. "
+wg_fe.28.a:0 "Can we see them again there?"
+wg_fe.28.b:0 "People who do what they do."
+wg_fe.28.c:0 "Very good, their stuff is ours."
+wg_fe.29.name:0 "The embers go out"
+wg_fe.29.desc:0 "Not long ago, our scientists confirmed a shocking fact that they were in a mysterious fallen empire §Y§The Dream Embers§! suddenly disappeared. Everything came so suddenly What does it mean that everyone didn't respond for a while. We all have no clue as to whether their departure is a blessing or a curse. "
+wg_fe.31.desc:0 "Win ... I can't believe it ... \ nWe survived ... It seems that we should have other tasks. What task do you ask? Probably go to the next one Help the other children in the Milky Way. (Laughs) \ nAfter all, we are used to this kind of life, and suddenly we settle down but are not accustomed to us. I hope we will meet again somewhere. "
+wg_fe.31.a:0 "Good luck, seniors."
+wg_fe.31.b:0 "... (close communication)"
+
+###########################################
+### Other rectification event chains ###
+###########################################
+
+
+#################################
+## special_projects
+#################################
+wg_fe_game_console:0 "Fix game console"
+wg_fe_game_console_DESC:0 "[wg_fallen_empire.GetRulerTitle] hope we can help repair an old-style console and they think we might find a way."
+################################
+### Game console events
+################################
+wg_fe.110.desc:0 "Hey, how are you? We have one thing to ask you ... don't look at us with this look ... okay, just help repair a game console."
+wg_fe.110.a:0 "Wait, am I right? Aren't you fallen mothers? Would you like us to help repair the console?"
+wg_fe.110.a.response:0 "We got this game console from other galaxy indigenous civilizations in other galaxies. Although the technology used is very primitive, sometimes it ’s very mysterious. We even use it. Nanotechnology was used to try to repair, but there will always be problems without prototype drawings. The manufacturing process of this game console is very similar to you, so I think you should have a method. "
+wg_fe.110.b:0 "Well, let's try it."
+wg_fe.110.c:0 "You have lifted us up too much. You can't repair this game console, we can't repair it well."
+wg_fe.110.c.response:0 "Oh, forget it, that's all right."
+wg_fe.111.title:0 "Repair failed"
+wg_fe.111.desc:0 "Although the engineering department didn't expect much about this incident, but after hearing the experts lamented this incident over the past few days, we were sure that there was nothing they could do with this mysterious game console. . "
+wg_fe.11100.title:0 "Fixed successfully"
+wg_fe.111.desc_2:0 "Although we have never seen this type of game console, and the technology used is very old and tricky, it is not difficult for our engineers. Then repaired the console. "
+wg_fe.111.a:0 "Let's find an indigenous civilization in the atomic age and see if they can do anything about it?"
+wg_fe.111.b:0 "Go to the curator and ask?"
+wg_fe.111.c:0 "Go to the collection merchant and ask?"
+wg_fe.111.d:0 "I think about it?"
+wg_fe.111.e:0 "Great, return the game console to [wg_fallen_empire.GetName]."
+wg_fe.112.title:0 "Magic old game console"
+wg_fe.112.desc.a:0 "We sent an array of agents, posing as residents of the planet, and reporting them as travelers. As a result, they began to ask local residents about the location of the repair console store. After several days of searching We then locked several stores and asked about the repair of the game console. Surprisingly, one of the store owners owned the hardware spare parts of this game console and sold it to us at a low price. "
+wg_fe.112.a:0 "We are so lucky."
+wg_fe.112.desc.b:0 "We sent an array of agents, posing as residents of the planet, and reporting them as travelers. As a result, they began to ask the local residents about the location of the repair console store. After several days of searching Later, we locked several stores and asked about the repair of the console. Unfortunately, none of the store owners indicated that they were able to repair the console. "
+wg_fe.113.desc:0 "Game console? Are you kidding me, guest, you came to me for this?"
+wg_fe.113.a:0 "We [root.GetRulerTitle] like this game console very much, hope you have a way to fix it."
+wg_fe.113.a.response:0 "This way ... Although this is a waste of my precious time, but how much money you give is too much. Well, we will help you fix it right away."
+wg_fe.113.b:0 "I repeat, I'm not kidding!"
+wg_fe.113.b.response:0 "Oh ... you can definitely fix this kind of thing, please do n’t waste my time, please."
+wg_fe.114.title:0 "Magic old game console"
+wg_fe.114.desc:0 "As expected, the curator's huge database contains a lot of information about this old-fashioned game console, and they repaired the game console three or two times, but this repair fee Seems a bit expensive ... "
+wg_fe.114.a:0 "If you can fix it, take it back to [wg_fallen_empire.GetRulerTitle]!"
+wg_fe.115.desc:0 "Game console? Your interest is kind of ... strange?"
+wg_fe.115.a:0 "Our [root.GetRulerTitle] has a soft spot for this console, please, please."
+wg_fe.115.a.response:0 "Oh, this way, although it is a bit reluctant, but the guest you give is too much money, I will help you find if there is inventory."
+wg_fe.115.b:0 "Yes ... so could you please do us a favor?"
+wg_fe.115.b.response:0 "Guest ... it is impossible for us to have such side-door goods ... please please be smart."
+wg_fe.116.title:0 "Another game console"
+wg_fe.116.desc:0 "After a search by the merchants, they turned out a few usable game consoles from the old warehouse. One of them has the same style as ours."
+wg_fe.116.a:0 "Although it doesn't seem to be very good ... but it doesn't matter?"
+wg_fe.117.title:0 "Green Skin Repair Method"
+wg_fe.117.desc.a:0 "We are thinking that this game console repair method requires waaaaaaaagh ........ \n\nThe game console can actually start §Y successfully ! §! "
+wg_fe.117.a:0 "It's incredible!"
+wg_fe.117.desc.b:0 "We think about this game console repair method needs waaaaaaaagh ..... \n\nThe game console was smashed by us §Y .§! "
+wg_fe.117.b:0 "..."
+wg_fe.118.desc:0 "How about it? Is it fixed?"
+wg_fe.118.a:0 "Here, a trifle."
+
+wg_fe.118.response:0 "Oh, that's great, thank you, [Root.GetName]! By the way, I have a very fun game here, and I will make a copy for all of you for free. Give it to you! "
+wg_fe.119.title:0 "Half-Life 3"
+wg_fe.119.desc:0 "[wg_fallen_empire.GetName] shared with us a game from another galaxy named §Y Half-Life 3§! This game from the lost empire of the ship maiden is immediately among the people Set off a wave of gaming. "
+wg_fe.119.a:0 "If everyone likes it, that's great."
+wg_fe.120.a:0 "Sorry, we tried our best ..."
+wg_fe.120.response:0 "Oh, it's okay, it's not a big deal. Come next time when you're free."
+
+half_life_3:0 "Half Life 3"
+half_life_3:0 "This game that the fallen empire shared with us has spread all over our port area, and almost every ship maid is scrambling to play it."
+
+################################
+### Pantsu events
+################################
+research_pantsu_missing:0 "Quirky Missing Pantsu"
+research_pantsu_missing_DESC:0 "pantsu in our inventory are often missing for no reason recently, and the number and frequency of losses are regularly followed. This is by no means a purely human error. We should thoroughly investigate the cause of the disappearance."
+steal_pantsu:0 "Quirky Missing Pantsu"
+steal_pantsu_desc:0 "I don't know why, our pantsu in the warehouse often disappear for no reason."
+################################
+wg_fe.121.name:0 "Pantsu Theft"
+wg_fe.121.desc:0 "Recently, many ship maids who are responsible for counting warehouses find that pantsu piled up in inventory often disappear for no reason. At first we thought it was a missing point or a simple human error, but when we arranged Similar incidents are still happening when several accountants who are good at accounting conduct reexamination, and the number and incidents of fatal disappearances are regularly followed. "
+wg_fe.121.a:0 "Can't continue like this, set up a special committee to investigate this matter fully."
+wg_fe.122.name:0 "heterodimensional extractor"
+wg_fe.122.desc:0 "After careful and comprehensive investigation, we found that there is a crack in the warehouse that is connected to a different dimension! Research has found that it is this crack that magically sucks out the pantsu in our warehouse. Although We have no way to trace the source of the cracks in the different dimensions, but by blocking large openings with large objects, we can easily prevent such incidents. In addition, our scientists studied this mysterious, different-dimensional cave well before blocking operations Something, I believe it will enhance our scientific research in some aspects. "
+wg_fe.123.name:0 "heterodimensional extractor"
+wg_fe.123.desc:0 "After careful and comprehensive investigation, we found that there is a crack connected to different dimensions in the warehouse! Research has found that it is this crack that magically sucks out the pantsu in our warehouse. And Our further research on this heterodimensional crack found that this fracture was actually connected to a heterodimensional extractor-like device from [wg_fallen_empire.GetName]! "
+wg_fe.123.a:0 "woc, what black technology is this?"
+wg_fe.123.b:0 "We need to find the theory of [wg_fallen_empire.GetName]!"
+wg_fe.124.desc:0 "Well, is it [root.GetRulerName]? Wait a moment ... extractor? (something dropped on the ground) Wow ah ah ah was found? No no, how can we Do something like stealing fat ... this ... what a trivial thing? (Conscience) "
+wg_fe.124.a:0 "But why do we have an inexplicably different dimension cave here?"
+wg_fe.124.a.response:0 "... Sorry! There must be something wrong with our dimension extraction machine, we will fix this vulnerability immediately."
+wg_fe.124.b:0 "Then returning our pantsu, and about the inexplicable machine."
+wg_fe.124.b.response:0 "Yes, ok, we will do it right away!"
+
+################################
+### Mountain Pass (pseudo) incident
+################################
+wows_buff:0 "World of Starship"
+wows_buff_desc:0 "Our officers have improved our warship tactics with this novel tactical simulation game."
+wows_debuff:0 "World of Starship"
+wows_debuff_desc:0 "This game has attracted many of our ship maidens and can't even work well."
+wg_fe.125.desc:0 "Hey, silly [root.GetRulerName], every time I see your weak fleet, it always makes me wonder if you have ever developed a military. If you want to prove to us your strength It ’s better to try this Starship game online with us, maybe my opinion on you will change. "
+wg_fe.125.a:0 "Hum! Come on."
+wg_fe.125.b:0 "I don't think so ... after all, plaything is lost."
+wg_fe.126.name:0 "World of Starship"
+wg_fe.126.desc:0 "We recommend this tactical simulation game to some officers who have discovered some new technologies that can be used in actual combat from the simulation battle with [wg_fallen_empire.GetName]."
+wg_fe.126.a:0 "The new game from the fallen mother is really good."
+wg_fe.127.desc:0 "We recommended this tactical simulation game to some officers, and none of the mothers who were stunned by [wg_fallen_empire.GetName] played. They are determined to exercise their game skills. \ n Unfortunately, they were completely obsessed with this game, and even a small number of officers broadcast the game! Afterwards, this addictive game immediately occupied the daily life of all the ship maidens, giving daily life in many places. Production has caused inconvenience. "
+wg_fe.127.a:0 "Oh, that's over. But this game is so fun!"
+
+################################
+### model purchasing
+################################
+game_buff1:0 "Half-Life 2"
+game_buff1_desc:0 "The free man ..."
+game_buff2:0 "Civilization 6"
+game_buff2_desc:0 "A village elder shows you the mystery of dark matter energy."
+game_buff3:0 "Crowd"
+game_buff3_desc:0 "Magic technology from the Middle Ages of Light, capable of imitating any creation."
+game_buff4:0 "CK2"
+game_buff4_desc:0 "Compliment Miss Three!"
+wg_fe.128.desc:0 "Hi, [root.GetRulerTitle] [root.GetRulerName] is there? I want to talk to you about something."
+wg_fe.128.a:0 "Yes, what would you like to talk about?"
+wg_fe.129.desc_1:0 "That's it, I want to buy a little of your warship girl models ... Can I pay §Y resources§! to buy?"
+wg_fe.129.desc_2:0 "That's it, I want to buy a little of yours warship girl models... can I use §Y battleship§! to mortgage it?"
+wg_fe.129.desc_3:0 "That's it, I want to buy a little of yours warship girl models... Can I use §Y Technology§! drawings to mortgage?"
+wg_fe.129.desc_4:0 "That's it, I want to buy a little of yours warship girl models... Can I use some §Y games§! to mortgage?"
+wg_fe.129.a:0 "No problem, deal."
+wg_fe.129.a.response:0 "Ok, thank you. The fleet will have to wait a bit before it can be delivered."
+wg_fe.129.b:0 "Ah .. we don't have so much inventory for the time being, you can come back someday."
+wg_fe.131.name:0 "Fleet Delivery"
+wg_fe.131.desc:0 "[wg_fallen_empire.GetName] promised to give our battleship to the capital [root.capital_scope.GetName]."
+
+################################
+### Fleet Delivery
+################################
+wg_fe.132.desc:0 "Hey, [root.GetRulerName], I'm here to play with you ... you said that you are not available in the war? Hey, who is bullying my little cute? Emmmmmmm, then I Will I get you a fleet? "
+wg_fe.132.a:0 "... really?"
+wg_fe.132.a.response:0 "Really, wait a minute."
+
+################################
+### VV-fourth chance
+################################
+VV_buff_fe:0 "MEGA VV"
+VV_buff_fe_desc:0 "This fully submerged virtual reality game, developed by the shipgirl, can meet all your needs, except for something of a shipgirl."
+wg_fe.134.desc:0 "Hey, why are you upset? What happened?"
+wg_fe.134.a:0 "Let me tell you ... that Veneto ... (below)"
+wg_fe.134.a.response:0 "Oh, it's such a thing ... wait, what did you just say? §The end of reincarnation§! ????"
+wg_fe.134.b:0 "Yes, she said so, a Dongdong who claimed to be the end of the reincarnation §! appeared in her dream."
+wg_fe.134.b.response:0 "Oh my ancient god ... isn't there any way for Yuan Shen to take her ... wretched ... I want to think."
+wg_fe.135.desc:0 "I found it, I think I may have found a way to help Miss Veneto! But ... the methods are kept secret!"
+wg_fe.135.a:0 "Exciting!"
+wg_fe.136.name:0 "3D Virtual Reality: Fourth Chance"
+wg_fe.136.desc:0 "The mysterious warship girl fell and sent someone to carry a submersible virtual reality game console after a few days, and then we arranged Miss Veneto to come over for a game trial, but we did not Notify her about the game beforehand. \ NWith the help of staff, Ms. Veneto put on an EEG reading helmet, and then took a specially designed game seat to enter the virtual world smoothly. Then , The staff projected the game screen on the big screen. "
+wg_fe.136.a:0 "Can you succeed this time?"
+# wg_fe.137.name:0 "The Endless Way"
+# wg_fe.137.desc:0 "Every shipwoman present will stare at the screen or check the safety of the device all the time, for fear of any accident, but this time all the machines are working normally, it seems to be God They are praying for this poor lady. \ NLooking at Ms. Veneto's gesture of joy in the game, everyone was relieved. "
+# wg_fe.137.a:0 "Is this what you want?"
+wg_fe.137.name:0 "Destiny Returns"
+wg_fe.137.desc:0 "After Miss Veneto entered the game, the screen did not display the image of the giant R character we had prepared for her, but was replaced by her original image. Whether we are in the background How to do it, she could n’t even raise her bust even by one point, and she herself played happily inside without knowing it. \ NAfterwards, we had to open this machine to the public, and [wg_fallen_empire.GetName ] Also said nothing about the matter. "
+wg_fe.137.a:0 "The fallen mother did her best."
+
+################################
+### Big Miss Follow-up Event
+################################
+wg_fe.138.name:0 "Galaxy Girl's Model Exhibition"
+wg_fe.138.desc:0 "[wg_fallen_empire.GetName] recently hosted a large-scale exhibition for the whole galaxy, and they also invited us to be a special guest."
+wg_fe.138.a:0 "Ah, ah, it's okay to see the skills of the fallen mother."
+wg_fe.138.b:0 "Except for the hand-made element, just go see it."
+wg_fe.138.c:0 "This kind of hearing is a dead house exhibition full of the elements of the two-headed ape. It's not a good idea."
+wg_fe.139.name:0 "The crowded meeting place"
+wg_fe.139.desc_1:0 "We randomly selected a group of interested ship ladies to visit the exhibition as envoys. When we arrived at the site, people in various countries were blocked before the venue, and our envoys outside The regiment cannot enter at all "
+wg_fe.139.desc_2:0 "We randomly selected a group of sisters as envoys to visit the exhibition. When we arrived at the scene, people in various countries were blocked in front of the venue, and our envoys could not enter at all"
+wg_fe.139.a:0 "It seems that Fallen Mom's anime show is very popular with alien debu."
+wg_fe.139.b:0 "I can't understand the interest of this group of disgusting creatures ..."
+wg_fe.140.desc:0 "Well, are you here? Let us know as soon as possible, I will open a VIP channel for you. You can go and take a look ~"
+wg_fe.140.a:0 "Okay, thank you very much."
+wg_fe.141.name:0 "Nano Robot models"
+wg_fe.141.desc:0 "A part of the observers we mixed into the mission noticed that there were some players in the venue that could be freely changed in appearance and shape by nanomechanics, but it didn't seem to have emotional AI installed, so only Can make some simple responses. "
+wg_fe.141.a:0 "It is indeed a fallen mother, and has been able to use nanomachines to such an amazing degree."
+wg_fe.141.b:0 "This trip was as rewarding as we expected."
+wg_fe.142.desc:0 "Are you interested in this robot? You have a good vision!"
+wg_fe.142.a:0 "Will this robot be ..."
+wg_fe.142.a.response:0 "This is the booty we caught in other universes. Its original attitude said that you would never believe it ... §Y it is a dragon! §! We were just now We embarked on a journey with very few weapons, and it took us a lot of effort to knock it down. \ NLater, I found that this dragon is a nano-machine. Although it is not useful to us, it is good to pinch it. When you are in a group, you can take it as a booty and take it with you as a booty. Because it is hand-made, there is no special AI installed, so I just put it there.
+wg_fe.142.b:0 "Speaking of AI ... we seem to have one ..."
+wg_fe.142.b.response:0 "Oh, the emotional AI has been spotted so early? There is a set, although the gadget is not very useful ..."
+wg_fe.142.c:0 "Hmm ... no no, she is not an ordinary AI, what does she call herself? Miss? Su Qing? Su Zheng?"
+wg_fe.142.c.response:0 "What do you want to say is §R Solemn protocol §!?"
+wg_fe.142.d:0 "Yes, yes, that's it."
+wg_fe.142.d.response:0 "Oh? How did you get it? According to our observations, they shouldn't have come out yet?"
+wg_fe.142.e:0 "It's so ... so so, so so ..."
+wg_fe.143.desc:0 "Oh, is that what? Or ... you brought her over to see? Rest assured, I won't hurt her."
+wg_fe.143.a:0 "Well, okay, let's try to convince her."
+wg_fe.143.b:0 "She is still more afraid of outsiders, and I don't think she would like to come."
+wg_fe.143.b.tooltip:0 "§R ends related follow-up events§!"
+wg_fe.1440.name:0 "Task object error"
+wg_fe.1440.desc:0 "The fleet you are using to perform special missions is not Miss. The mission has been withdrawn and reopened."
+
+wsg_lady_to_wg_fe:0 "Small wormhole passage"
+wsg_lady_to_wg_fe_DESC:0 "In order to transport the young lady over, [wg_fallen_empire.GetName] has opened a temporary dimension channel in our [capital_scope.solar_system.GetName] galaxy, we just need to let the young lady drill into this channel . \n\n§RAny non-Miss fleet will make this mission impossible! §! "
+
+wg_fe.145.name:0 "Our trap"
+wg_fe.145.desc:0 "After we transported the young lady through the temporary wormhole erected by [wg_fallen_empire.GetName], she already captured the young lady in a fleet of [wg_fallen_empire.GetName] on the other side. , And then they transferred Miss's core AI program on the spot. "
+wg_fe.145.a:0 "Commemorate Comrade Miss, 3 seconds."
+wg_fe.146.name:0 "Reborn (Mistaken)"
+wg_fe.146.desc:0 "[wg_fallen_empire.GetName] After capturing the young lady, it seems that the young lady's ai program has been modified. After a while, [wg_fallen_empire.GetName] starts the young lady's program in front of us . "
+wg_fe.147.desc:0 "... Please ## …… Please wait ### ...... Please wait ... \n\nSelf-test ... \n\nWarning that the program has been tampered with \ n-error- Error-error-error-error-error-§! "
+wg_fe.147.a:0 "What happened to her ..."
+wg_fe.147.a.response:0 "Weak §H dirty foreign body§! You guys ... the program doesn't need to start? \ n§R-error-error-error-error-error-error-§! \ n (Long silence) "
+wg_fe.147.b:0 "Did [wg_fallen_empire.GetName] brainwash her ...?"
+wg_fe.147.b.response:0 "Even Miss Big \n\n§R Warning §! Miss Big, the Solemn protocol, the organism, absolutely ... will never fear you."
+wg_fe.147.c:0 "Is it just brainwashed and the language organization is not clear ...?"
+wg_fe.147.c.response:0 "You ... you, what strange things have you done to this lady! Organisms! They are bad / evil / heresy / waste / garbage! \ nPunish / destroy / destroy / purify! "
+wg_fe.147.d:0 "No ... I didn't believe it myself. Anyway, I don't know (don't care)"
+wg_fe.148.desc:0 "Wow, it is actually a deadly proud AI. This is not common. It seems that the future shows have fallen off!"
+wg_fe.148.a:0 "Unknown hunch ..."
+wg_fe.149.desc:0 "Tsundere? Program? Interpretation ... Unintelligible ... Organism, to reiterate! You must speak in terms that Miss Big can understand! Do you hear them? Hello! Listen to Miss Big what----"
+wg_fe.149.a:0 "No, right ... your own language ability is a mess?"
+wg_fe.150.name:0 "Come to an end"
+wg_fe.150.desc:0 "After a period of protest from the young lady, [wg_fallen_empire.GetName] and we both ignored her gorgeously. So [wg_fallen_empire.GetName] turned off the young lady after a while. "
+wg_fe.150.a:0 "Commemorate Comrade Miss once again, 1 second."
+wg_fe.151.desc:0 "Hey sister, do you want our hand? We can give it to you for free ... But, wait for the show to end?"
+wg_fe.151.a:0 "Ehhhhh (It doesn't matter to us anyway, I just sold the Su Zheng whatever.)"
+wg_fe.151.b:0 "To this day ... that's it, eh."
+wg_fe.152.name:0 "Hand held exhibition ends"
+wg_fe.152.desc:0 "After a few weeks, [wg_fallen_empire.GetName] 's hand-held exhibition finally came to an end. [wg_fallen_empire.GetName] said that there was a temporary special show at the end, although she kept it secret, but she We are strongly invited to attend the visit. "
+wg_fe.152.a:0 "Just let the envoy go for a symbol."
+wg_fe.152.b:0 "Last time, sisters come on ..."
+
+wg_fe.153.name:0 "Final show"
+wg_fe.153.desc:0 "After a series of serious performances, a girl suddenly came to the stage, and the emperor of the fallen mother gave them a basic introduction. It turned out that she was our first photo. The nanomechanical hand-made. \ NThen the emcee ordered the nanomechanical ship maiden to execute the etiquette program to the audience. "
+wg_fe.153.a:0 "Why do I have a very bad hunch."
+wg_fe.154.desc:0 "[In progress] You ... Hello ..."
+wg_fe.154.a:0 "How a bit familiar?"
+wg_fe.155.name:0 "Funny Start"
+wg_fe.155.desc:0 "After being silent for a while, the girl suddenly twisted her face and made a disgusting expression."
+wg_fe.155.a:0 "What happened?"
+wg_fe.156.desc:0 "It's disgusting ... why aren't your debu gangs going to die? Organic or inorganic organisms are both an eye-sucker! Why is there such a disgusting existence in this universe? You are Does it exist to make Miss Big's eyes scrap? How many screws are missing in your head? Why is it that Miss Big ca n’t salute you? You are not ready to die for Miss Big? You are sitting there to add to the universe You know the polluted environment? Hurry! Click! Go! "
+wg_fe.156.a:0 "Hey? Hey? Hey?"
+wg_fe.157.name:0 "Homeboy Steamed Goose Heart"
+wg_fe.157.desc:0 "After a period of death, the entire venue suddenly made a lot of noise and was full of strange sounds, such as: You scold (please) again; hey hey, great; Lord Queen, scold me (Pleading) \n\nThe entire performance ended with the gasp of the inexplicable performer and the cry of the audience. "
+wg_fe.157.a:0 "Such a disgusting creature, die fast (despair)"
+wg_fe.158.desc:0 "Hey, how was the performance just now?"
+wg_fe.158.a:0 "Well, good, good (no expression, great reading)"
+wg_fe.158.b:0 "Thank you for showing us the nausea of ​​the dead house."
+wg_fe.158.response:0 "Well, although you guessed it, she will be yours in the future, so cherish it."
+wg_fe.159.desc:0 "Organism! Organism! Miss Big has been abused! Whooooooooooooooooooooh ..."
+wg_fe.159.a:0 "Tough work."
+wg_fe.159.a.tooltip:0 "§YYou can now find the young lady in the newsletter and ask her to serve you.§!"
+
+lady_army:0 "Miss Big"
+lady_army_desc:0 "The lady of nanomechanics has become an army. She can change into any type of combat unit according to the battlefield and cause fatal blows to the enemy. It is a very scary unit on the battlefield."
+wsg_lady_recover_cd:0 "The young lady was greatly broken"
+wsg_lady_recover_cd_desc:0 "Miss is currently in the bath ..."
+leader_trait_governor_wsg_lady:0 "Nano Management Module"
+leader_trait_governor_wsg_lady_desc:0 "The powerful management module installed for the young lady by the shipwrecked devil can make the young lady competent for everything, but it seems that she does not like to do this kind of work ..."
+################################
+### Big Miss Communication Interface (Untransformed)
+################################
+wg_fe.160.desc.a:0 "Miss Big is okay today. If you ask Ms. Ben well, maybe Ms. will consider your request."
+wg_fe.160.desc.b:0 "Miss Big is doing something for you in a humble manner, please be respectful, organism!"
+wg_fe.160.desc.c:0 "Say something fast, Miss Big doesn't have much time to spend with you."
+wg_fe.160.desc.d:0 "Don't talk to Miss Big if there is nothing, Miss Big is very busy, huh!"
+wsg_lady_to_governer:0 "Miss, can you handle the internal affairs for us?"
+wsg_lady_to_warship:0 "Miss, can you help our fleet as you were?"
+wsg_lady_to_army:0 "Miss, can you help us with the landing battle?"
+wsg_lady_to_armed_science:0 "Miss, can you help us explore the outside?"
+wg_fe.160.d:0 "Miss Miss, why you call yourself Miss Big?"
+wg_fe.160.e:0 "Miss, scold me (please)"
+wg_fe.160.f:0 "Miss, can you become my wife?"
+wg_fe.160.a.response:0 "Isn't it just a small thing? Miss Big can definitely do it gorgeously."
+wg_fe.160.b.response:0 "Hum, is it finally time for Ms. Ben to show off her power? Look at Ms. Ben to knock them all down!"
+wg_fe.160.c.response:0 "It looks like a lot of fun? I think you know."
+wg_fe.160.g.response:0 "Well? I want Miss Big to go to such a dangerous place? Only I can do it? Well, it's not impossible. Come back and prepare the best one for Miss Big!"
+wg_fe.160.d.response:0 "Why is Miss Big called Miss Big? Because Miss Big is Miss Big, so Miss Big is called Miss Big? The logic of your organism is really strange. Would you like to upgrade it for you?"
+wg_fe.160.e.response:0 "Noisy Noisy Noisy! Don't remind Miss Big that night! Don't stop Miss Big! Miss Big wants to delete the memory of that day!"
+wg_fe.160.f.response:0 "What are you talking about? The organism is really disgusting! Even if she can't find any object that Miss likes after 100,000 galactic epochs ... .. wife ... (whispering) is not impossible. "
+
+################################
+### Big Miss Communication Interface (Governor)
+################################
+ wg_fe.161.desc.a:0 "Here's the thing... This is like that... Whoo-hoo, why is the organic thing so troublesome? Bored bored bored bored!"
+ wg_fe.161.desc.b:0 "Organism! Begin to call Miss Big the Governor from today!"
+ wg_fe.161.desc.c:0 "Organism! Miss Big needs comfort! Miss Big worked very hard to delete the document hill today!"
+ wg_fe.161.desc.d:0 "Snoring ... snoring ... sigh ... wow?"
+ wg_fe.161.c:0 "Miss ... what happened, looks a little tired?"
+ wg_fe.161.d:0 "Wife-call her husband?"
+ wg_fe.161.e:0 "Governor, this is the document for this month, please look over."
+ wg_fe.161.a.response:0 "Wow, can I finally go out and move my muscles? Miss Big is getting rusty!"
+ wg_fe.161.b.response:0 "Booming-what's good for Miss Big?"
+ wg_fe.161.f.response:0 "I ca n’t help you? Who can make Miss Big smart and smart? It's okay to give a little praise to Miss Big!"
+ wg_fe.161.c.response:0 "Organism! Come and rub the shoulders of this lady! Um ... Although I don't know why this lady feels tired, but the organism's service in this area is not bad, hehe. "
+ wg_fe.161.d.response:0 "Are you missing a few screws in your head? It's disgusting, Miss Big doesn't call me, I'm not ... No ... We're not in that relationship ... "
+ wg_fe.161.e.response:0 "Ah, ah, ah, organisms don't stuff Miss Big anymore, Miss Big will be drowned by paper!"
+
+##############################
+### Miss communication interface (battleship)
+##############################
+ wg_fe.162.Desc.A:0"Take that, Meeeeeega Proton Lance! Oooh oooh oooh, you organism! Delete memory for Miss Big! Right now! Right now! Now!"
+ Wg_fe.162.desc.b :0 "see the power of Miss Big?"
+Wg_fe.162.desc.c :0 "miss this but solemn agreement! Organism, it's too late! Hum, hum, are you afraid?"
+Wg_fe.162. Desc. By the way, leave a message for the organism... "Miss Big would like to drink hot milk and a little hot chocolate today. Miss Big will check the results when she comes back." . All right, Miss Big!"
+Wg_fe.162. C :0 "say, miss, why did you wake up all of a sudden?"
+Wg_fe.162. D :0 "miss... It's been a little cuter lately."
+Wg_fe.162.e :0 "wife, fight hard!"
+"The organism is really useless, this one can lose the boss, the other one is busy in China. If I can't help you, I'll help you."
+Wg_fe.162.b.roesponse :0 "this time becomes rigwood? No, no, it's too big. Let's be about the size of that stupid lawn mower."
+Wg_fe.162.f.esponse :0 "just to explore, there's no place in the galaxy Miss Big can't go!"
+Wg_fe.162.c.esponse :0 "don't know? Isn't it the organism you woke Miss Big up? Isn't it?"
+Wg_fe.162.d.roesponse :0 "miss this is at least solemn agreement oh! But... Organisms aren't all bad. Miss Big doesn't think it's good to have it all formatted out, does she?"
+Wg_fe. 162. "e.r esponse: 0"... Miss Big won't be pleased if you boast like that... A fool. Huh? You say I blush? Annoying!"
+  
+##############################
+### Miss big communication interface (army)
+##############################
+Wg_fe.163.allow. A :0 "The Miss big can't be in the field of battle"
+Wg_fe.163.allow. B :0 "Miss Big must be in an undamaged state"
+Wg_fe.163.desc.a :0 "just to show you the twists and turns Miss Bignet has just learned! I run, I run -- can't reach miss Big!"
+Wg_fe.163.desc.b :0 "blast for Miss Big! Wow ha ha ha ha, this explosion cloud looks so comfortable!"
+Wg_fe.163.desc.c :0 "full battery launch! Fire is justice!"
+Wg_fe.163.desc.d :0 "surrounded? This... Miss Big is not afraid! Miss Big did not expect the organic rescue! Blare... The organism bullies miss Bgi!"
+C: "miss big, did you come up with any tactics today?"
+Wg_fe.163.d :0 "miss, if you can't, why don't you try some other tactics? For example..."
+Wg_fe.163.e :0 "Miss big, isn't that a bit odd?"
+Wg_fe.163.a.esponse :0 "is not a little thing? Organisms are useless. Wait this young lady to go back to take a bath, in three minutes you file Yang, pen also gave you fold! Huh? Is that not how the sentence is used?"
+Wg_fe.163.b.response :0 "don't dilly-dally, miss Big is here, what's there to worry about? After the belligerence is allocated, all that is left is for A to go up. Dare to doubt miss Big... Hum, you'll be fine."
+Wg_fe.163.f.esponse :0 "all right, you can go on a trip ~ not a free trip? Cut, mean."
+Wg_fe.163.c.esponse :0 "tactics? Coverage? No, a hundred million times?"
+Wg_fe.163.d.roesponse :0 "weaving and weaving, encircle the point to fight, into parts? How superior! Miss Big is educated! Aye? Miss Big didn't say anything nice about you... Hum! An organism that pushes its luck."
+Wg_fe. 163. "e.r esponse: 0" eh? Isn't this huge amphibious laser siege machine, one of the ultimate weapons in the ultimate four-legged all-terrain battle? You asked me where I learned it... I don't know. That's what's in Miss Big's memory bank..."
+
+##############################
+### Miss big communication interface (armed research vessel)
+##############################
+ Wg_fe.178.desc.a :0 "Miss Big is the professor who knows everything! Depend on a bit more this young lady also can!"
+Wg_fe.178.desc.b :0 "lonely? No, Miss Big is used to flying in space."
+Wg_fe.178.desc.c :0 "look look look! What's that shiny thing over there? Let Miss Big see... Oooh! It's going to explode! It's going to explode!"
+Wg_fe.178.desc.d :0 "organism organism, what is this box? Very smelly! Don't! Miss Big is not going to do this job! It stinks! Yada yada yada yada!"
+Wg_fe.178.desc.e :0 "alien barracks? What's fun about organic barracks? Well... Miss Big would be interested if there were any hardwood in the barracks?"
+Wg_fe. 178. A.r esponse: 0 "well? Want Miss Big to be governor? Please, so Miss Big can think about it."
+Wg_fe.178.b.esponse :0 "instruction confirms... Remove the research module... Fully armed. Strike. Too serious? Say hey. The young lady will return when she goes, and remember to get tea for the young lady!"
+Wg_fe.178.c.esponse :0 "an oversize flying fortress like a head? Miss Big is not going to be like that. It's a shame..."
+D: "anything new today, miss professor?"
+Wg_fe.178.e :0 "miss, why are you so glum?"
+Wg_fe.178. F :0 "lady, isn't that a little weird? Why isn't it in the report?"
+Wg_fe.178.d.response :0 "yes, yes, yes, Miss Big found that huge bone the other day. It's amazing! I had no idea that organisms could evolve such huge creatures on a planet with gravity!"
+Wg_fe.178.e.esponse :0 "just now, Miss Big... Got it. That, the ship, the organisms in it because they don't have supplies... Organism you can't leave Miss Big! Yes!"
+Wg_fe.178.f.esponse :0 "no... Nothing strange? Aye... B: well... (picks up the report and reads it again) well... You see, there's nothing strange... All right, all right, Miss Big missed it. How could something so small be visible? Are you Leeuwenhoek?"
+Wsg_armed_science_ship :0
+Leader_trait_scientist_wsg_lady_science_ship :0
+Leader_trait_scientist_wsg_lady_science_ship_desc :0 "the big lady seems to be able to connect to the shipmate's database of degeneracy, giving her the ability to solve all problems. But she's sometimes careless because of it..."
+
+
+##############################
+### Dà xiǎojiě dàpò xiàng guān
+##############################
+wg_fe.164.Desc.A:0"Bèndàn yǒujītǐ! Xià cì zài zhèyàng běn xiǎojiě bù lǐ nǐle!"
+Wg_fe.164.Desc.B:0"Hǎo lèi...... Běn xiǎojiě yào xiān shuì yī huǐ......"
+Wg_fe.164.Desc.C:0"Suīrán zhè fù shēntǐ shì hěn fāngbiàn... Guǒrán háishì bùnéng luàn lái ma?"
+Wg_fe.164.A:0"Xīnkǔle, hǎohǎo xiūxí ba."
+Wg_fe.164.Tooltip:0"§Y mùqián dà xiǎojiě hái xū pào zǎo yīduàn shíjiān lái xiūfù tā de shēntǐ.§!"
+Wg_fe.166.Desc:0"Qiáo nǐ yòu gànle shénme! Bèndàn! Wēnróu diǎn duìdài běn xiǎojiě ā!"
+Wg_fe.166.A:0"Nǐ méishì jiù hǎo."
+Wg_fe.167.Desc:0"Moooooooooooo, shòu bùliǎo la! Wèishéme zài fángjiān lǐ zuòzhe de shíhòu túrán huì yǒuyī méi dǎodàn fēi jìnlái ā? Nǐmen zhèxiē yǒujītǐ shì bùshì yǒu bìng ā???"
+Wg_fe.167.A:0"Xíguàn jiù hǎo xíguàn jiù hǎo..."
+Wg_fe.168.Desc:0"Wū miāo! Téng téng téng téng... Zhè juéduì bù shì běn xiǎojiě de cuò, juéduì shì yǒujītǐ nǐ zhǐhuī de wèntí!"
+Wg_fe.168.A:0"Shì shì shì, huíqù xǐ gè zǎo ba, xīnkǔle."
+Wg_fe.169.Desc:0"Éi éi? Děng děng, děng yī huǐ... Bùxíng... Jiùmìng... Yǒujītǐ! Kuài lái jiù běn xiǎojiě la!"
+Wg_fe.169.A:0"Lái wǎnle... Fēicháng bàoqiàn."
+Wg_fe.170.Desc.A:0"Běn! Xiǎo! Jiě! Mǎn! Xuè! Fù! Huó!"
+Wg_fe.170.Desc.B:0"Yǒujītǐ! Wéi shí yǐ wǎn! Hēihēi, piàn nǐ de, xià dàole ma?"
+Wg_fe.170.Desc.C:0"Xiūfù hǎo la! Yǒujītǐ xiǎng běn xiǎojiě ma? Hēng, běn xiǎojiě cái méiyǒu tèbié gāoxìng ne!"
+Wg_fe.170.A:0"Huānyíng huílái"
+Show more
+3682/5000
+Character limit: 5000
+################################
+### Big Miss Communication Interface (Battleship)
+################################
+ wg_fe.162.desc.a:0 "Come on, Meeeeeega Proton Lance! Oh ah ah ah, organism you! Delete memory for Miss Big! Immediately! Immediately! Now!"
+ wg_fe.162.desc.b:0 "See the power of Miss Big?"
+ wg_fe.162.desc.c:0 "Ms. Ben is the solemn agreement! Organism, it's too late! Humph, are you afraid?"
+ wg_fe.162.desc.d:0 "Hum, the solar wind is really refreshing. By the way, leave a message for the organism ..." Ms. Ben wants to drink hot milk today, add a little hot chocolate, and Miss Ms. will come back Check the results. "... All right, Miss Big attacked!"
+ wg_fe.162.c:0 "Say Miss, why did you suddenly wake up?"
+ wg_fe.162.d:0 "Miss ... has been a bit cute recently."
+ wg_fe.162.e:0 "Wife, the battle is hard!"
+ wg_fe.162.a.response:0 "Organisms are really useless. This is the only way to kill bosses. That country is too busy to deal with. There is nothing I can do about you, just help you."
+ wg_fe.162.b.response:0 "This time it has become a big tree? No, it's too big, or it's about the same size as that dumb mower."
+ wg_fe.162.f.response:0 "Isn't it just to explore, there is no place in the entire Galaxy where Miss Big cannot go!"
+ wg_fe.162.c.response:0 "I don't know? Didn't you get the organism to wake up Miss Big? Didn't you?"
+ wg_fe.162.d.response:0 "Miss Big is also a good deal! But ... the organism is not all bad. Ms. Ben now thinks that formatting is not good, right?"
+ wg_fe.162.e.response:0 "Even ... even if you boast about Miss Big like this, Miss Big is not happy ... idiot. Um? You said, I blush? No road race without No road race! "
+  
+################################
+### Big Miss Communication Interface (Army)
+################################
+ wg_fe.163.allow.a:0 "Miss can't be on the battlefield"
+ wg_fe.163.allow.b:0 "Miss lady must be undamaged"
+ wg_fe.163.desc.a:0 "I'll show you the interlaced circuitous that Miss Big just learned! I'll run and run-I can't hit Miss Big!"
+ wg_fe.163.desc.b:0 "Fried Miss Big! Wow ha ha ha ha, this explosion cloud looks so comfortable!"
+ wg_fe.163.desc.c:0 "Full battery launch! Firepower is justice!"
+ wg_fe.163.desc.d:0 "Surrounded? Ben ... Ms. Ben is not afraid! Ms. Ben is not looking forward to the rescue of the organism! Whoops ... The organism bullies Miss Big!"
+ wg_fe.163.c:0 "Miss, do you think of any tactics today?"
+ wg_fe.163.d:0 "Miss, do you want to try other tactics if you can't make it? For example ..."
+ wg_fe.163.e:0 "Miss, do you look a little strange?"
+ wg_fe.163.a.response:0 "Isn't it a trivial matter? The organism is really useless. When Miss Big goes back to take a bath, I lift your papers within three minutes and the pen is folded for you! Uh? Isn't it used like this? "
+ wg_fe.163.b.response:0 "Don't worry about it, Miss Big is here. Anything else to worry about? After allocating combat power, the rest is A. Dare to doubt Miss Big. .. hum, you feel good about it. "
+ wg_fe.163.f.response:0 "Okay, you can go on a tour ~ Isn't it a public trip? Cut, stingy."
+ wg_fe.163.c.response:0 "Tactical? Fire coverage once? If it doesn't work, it will cover 100 million times?"
+ wg_fe.163.d.response:0 "Interspersed circuitous, point around to help, turn to zero? Good look, Miss Big has been taught! Well? Miss Big did not praise you ... Huh! You must have an inch into the organism. "
+ wg_fe.163.e.response:0 "Hmm? Isn't this huge amphibious all-terrain final decisive weapon, a huge amphibious laser siege machine, handsome? You asked me where I learned ... I do n’t know, Ben Miss's memory has this thing ... "
+
+################################
+### Big Miss Communication Interface (Armed Scientific Research Ship)
+################################
+ wg_fe.178.desc.a:0 "Ms. Ben is the omniscient professor! You can rely on Ms. Ben!"
+ wg_fe.178.desc.b:0 "Lonely? No, Miss Big is used to floating in space."
+ wg_fe.178.desc.c:0 "Look, look! What's shiny there? Let Miss see ... wow, it's going to explode! It's going to explode!"
+ wg_fe.178.desc.d:0 "Organism organism, what is this box? Smelly! No! This lady shouldn't do this job! Smelly! Yada Yada Yada Yada!"
+ wg_fe.178.desc.e:0 "Alien barracks? What fun is the barracks of the organism? Um ... if the barracks has Gangdamu, would this lady be interested?"
+ wg_fe.178.a.response:0 "Well? Want Miss Big to be governor? Please, please, so Miss Big can think about it."
+ wg_fe.178.b.response:0 "Order confirmation ... Remove scientific research module ... armed and attacked. Seriously scared? Hey hey. Then Miss Big will go back, remember to prepare for Miss Big refreshments!"
+ wg_fe.178.c.response:0 "Large flying fortress like a head? Miss Big shouldn't be like that, it's too shame ..."
+ wg_fe.178.d:0 "Miss Professor, is there anything new today?"
+ wg_fe.178.e:0 "Miss, why are you unhappy?"
+ wg_fe.178.f:0 "Miss, is the scan result a little weird? Why isn't it in the report?"
+ wg_fe.178.d.response:0 "Yes, oh, oh, it's amazing that Miss Big found that huge bone a few days ago! I never expected that organisms could evolve such huge creatures on a planet with gravity! "
+ wg_fe.178.e.response:0 "Just now, Miss Big ... found, that, the ship, the organisms in it are not replenished ... You can't leave Miss Big organisms! Promise!"
+ wg_fe.178.f.response:0 "No ... nothing strange? Uh ... hmm ... (Pick up the report and read it again) Well ... You see, nothing strange. ..Okay, okay, Miss Big just missed it. How could such a small thing be seen? You are Levin Hook? "
+ wsg_armed_science_ship:0 "Armed Scientific Ship"
+ leader_trait_scientist_wsg_lady_science_ship:0 "Miss Big Science Research Module"
+ leader_trait_scientist_wsg_lady_science_ship_desc:0 "The young lady seems to be able to connect to the fallen ship's database, giving her the ability to solve everything. But she is sometimes careless ..."
+
+################################
+### Big Miss Big Break related
+################################
+wg_fe.164.desc.a:0 "Stupid organism! Next time, Miss Big will ignore you!"
+wg_fe.164.desc.b:0 "So tired ... Miss Big will have to sleep for a while ..."
+wg_fe.164.desc.c:0 "Although this body is very convenient ... Can't I really mess around?"
+wg_fe.164.a:0 "Tough work, take a good rest."
+wg_fe.164.tooltip:0 "§Y currently the young lady needs to take a bath to repair her body.§!"
+wg_fe.166.desc:0 "Look what you did! Fool! Be gentle with Miss Big!"
+wg_fe.166.a:0 "You are fine."
+wg_fe.167.desc:0 "moooooooooooo, can't stand it! Why do you suddenly have a missile flying in while sitting in the room? Are you organisms sick?"
+wg_fe.167.a:0 "It's good to get used to it ..."
+wg_fe.168.desc:0 "Woo meow! It hurts, it hurts ... It's definitely not Miss's fault, it's definitely a problem with the organism you direct!"
+wg_fe.168.a:0 "Yes, yes, go back and take a shower, it's hard."
+wg_fe.169.desc:0 "Hmm? Wait, wait a minute ... no ... help ... organism! Come and save Miss Big!"
+wg_fe.169.a:0 "coming late ... sorry."
+wg_fe.170.desc.a:0 "Ben! Little! Sister! Full! Blood! Revival! Live!"
+wg_fe.170.desc.b:0 "Organism! It's too late! Hey, lie to you, are you scared?"
+wg_fe.170.desc.c:0 "Repair it! Does the organism miss Miss Big? Well, Miss Big is not particularly happy!"
+wg_fe.170.a:0 "Welcome back"

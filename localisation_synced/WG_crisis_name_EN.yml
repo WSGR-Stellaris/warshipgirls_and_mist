@@ -1,0 +1,33 @@
+﻿l_english:
+ NAME_WG_crisis_species: "United Fleet Fleet"
+ NAME_WG_crisis_species_sh: "United Fleet Deep Sea"
+ NAME_WG_crisis_country: "United Fleet"
+ NAME_Dimensional_Portal: "United Fleet Portal"
+ NAME_Dimensional_Portal_small: "United Fleet Small Portal"
+ NAME_WG_Portal: "United Fleet Portal"
+ NAME_WG_Portal_small: "United Fleet Small Portal"
+ Drone_Squadron: "Sunflower Drone Group"
+ Drone_Squadron_WEAKEN: "Dark Sunflower Drone Group"
+ NAME_Portal_Guard_Fleet: "United Guard Fleet"
+ NAME_Exterminate_Fleet: "United Destroy Fleet"
+ NAME_Raider_Fleet: "United Assault Fleet"
+ NAME_Main_Fleet: "United Force Fleet"
+ NAME_flagship_Fleet: "United Flagship Fleet"
+ NAME_WG_CARRIER: "Aircraft Carrier X"
+ NAME_WG_EG_TITAN: "Titan Y"
+ NAME_WG_EG_BB: "Battle of the B"
+ NAME_WG_EG_DD: "Eviction T"
+ NAME_WG_EG_CA: "Cruise C"
+ NAME_WG_Starbase: "Master Control Base"
+ NAME_Combat_Drone3: "Pyrenian Beast"
+ NAME_uf_Juggernaut: "Judge"
+
+
+ ################################################### #########
+ NAME_Resistance_Fleet: "Rebel Fleet"
+ NAME_Resistance_Flagfleet: "Rebel Flagship Fleet"
+ NAME_WG_resistant_army_country: "Fire Phoenix Resistance"
+ 
+ NAME_WG_RA_TITAN: "Undead Bird"
+ NAME_WG_RA_BB: "Large Whale"
+ NAME_WG_RA_DD: "Ocean"

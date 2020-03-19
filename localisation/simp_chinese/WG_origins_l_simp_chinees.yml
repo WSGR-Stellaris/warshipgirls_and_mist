@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+###############################
+ origin_sh_cm:0 "湮灭舰队"
+ origin_sh_cm_desc:0 "在漫长的漂泊中，深海舰队经历了数次外星异形威胁，舰队差点因此覆灭。深海舰队意识到只有彻底瓦解一切能对舰队产生威胁的异端才能使获得生存的权利。"
+ origin_tooltip_sh_cm_effects:0 "§R外星帝国好感度将将至冰点§!\n\n§R无法使用：破冰 飞升§!\n\n§H可以使用全面战争：缄默§!\n\n如果选择净化有机£pop£ 人口将获得£sr_pantsu£ §Y胖次§!"
+
+ origin_wg_fallen_empire:0 "银河漫游者"
+ origin_wg_fallen_empire_desc:0 "舰娘堕落帝国的一生中大部分时间被用于银河系之间的穿梭，她们不断的逃离只为换取片刻的安息。"
+ origin_wg_fe_effect:0 "堕落妈不会对你作恶，是真正的慈母，除非你打了什么会令人浑身发光的奇怪MOD"

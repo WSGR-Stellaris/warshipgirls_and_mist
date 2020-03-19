@@ -1,0 +1,53 @@
+﻿l_english:
+ NAME_mardak_SH2F_haters_fleet: "Unknown hostile fleet"
+ DEAD_SECOUND_FLEET: "Dead"
+ NAME_mardak_SH2F: "Second Fleet"
+ NAME_wsg_dreadnought: "Explorer"
+ NAME_wsg_dreadnought_dark: "Forwarder"
+ wsg_dreadnought: "Dreadnought"
+ wsg_dreadnought_dark: "Dreadnought"
+ uf_buffer: "Joint Electronic Warship"
+ uf_Juggernaut: "Joint Master"
+ NAME_uf_buffer: "Follower"
+ NAME_uf_buffer_portal: "Prosecutor"
+ NAME_WG_Portal_small: "Joint Fleet Small Portal"
+ wg_dimensional_small_portal: "Side Window"
+ NAME_WG_EG_CA: "Cruise C"
+ NAME_uf_navigator: "Terminal"
+ NAME_UF_Navigator: "Terminal"
+ NAME_WG_LADY: "Miss big"
+ NAME_WG_LADY_SCIENCE: "Nano Armed Research Ship"
+
+ 
+ NAME_UF_BUFFER_FLEET: "Electronic Battle Fleet"
+ 
+ NAME_OVO_BOSS: "Quincy Manifestation"
+ NAME_OVO_ARMY: "Mower"
+ NAME_ovo_life: "Quincy"
+ NAME_ovo_country: "OVO"
+ 
+ 
+ NAME_QUINCY_FLEET: "Quincy Incarnation"
+ NAME_QUINCY_OVO: "Giant Leopard Kun"
+ 
+ NAME_Santee: "Santee"
+ 
+ NAME_Sharan: "Shalan Fiyali"
+ NAME_shenhai_ring: "Kut"
+ NAME_ovo_system: "Quincyland"
+ NAME_wg_Da_Khan_system: "Menggu"
+ 
+ 
+ NAME_SH_Sanctuary: "Ancient Abyssal Defense Unit"
+ NAME_Defensive_A_SH: "Savoy Defense Platform"
+ NAME_SH_Sanctuary_Core: "Patchina Fortress"
+ 
+ NAME_Defensive_B_SH: "Abyssal Prohibition"
+ NAME_Defensive_C_SH: "Abyssal Judge"
+ NAME_SH_Administrator: "Abyssal Forbidden Fleet"
+ 
+ NAME_lady_Contingency_fleet: "Miss big"
+ NAME_lady_Contingency: "Condemnation agreement"
+
+ NAME_Sol_wg: "Sol"
+ NAME_lexington: "Lexington"

@@ -1,0 +1,112 @@
+﻿l_english:
+#################################
+ decision_planet_lp:0 "Planet-wide wedding ceremony"
+ decision_planet_lp_desc:0 "I declare that every warship girl on this planet is my lovely wife."
+ planet_lp:0 "Ring of Oath"
+ planet_lp_desc:0 "The one who swears, whoever I choose."
+ 
+ decision_planet_noshoes:0 "No shoes in Minato"
+ decision_planet_noshoes_desc:0 "Except me, who can give them pocket money in Minato? So as long as they are happy ~~"
+ planet_noshoes:0 "No shoes in Minato"
+ planet_noshoes_desc:0 "Shoelessness brings endless happiness and a more comfortable environment."
+ 
+ decision_planet_pantsuhd:0 "Loot Campaign"
+ decision_planet_pantsuhd_desc:0 "Hunting Abyssal supply ships and plundering their loot in ancient times was an age-appropriate activity in the shipgirl society. Now that the wild Abyssal is extinct, we can still manually release some for entertainment. §H Increases Planet Consumption:§! -15 Energy"
+ decision_end_planet_pantsuhd:0 "End of the Loot Campaign"
+ decision_end_planet_pantsuhd_desc:0 "We have gained enough pantsu and the event has ended successfully."
+ decision_end_planet_pantsuhd_effects_short:0 "Remove hunter supply ship plots."
+ planet_pantsuhd:0 "Loot Campaign"
+ planet_pantsuhd_desc:0 "The booty event is underway"
+ 
+ decision_planet_Santee:0 "Santee orders slaves to work overtime"
+ decision_planet_Santee_desc:0 "Slave overworked, can you blame us? It's because they can't combine work and rest."
+ decision_end_planet_Santee:0 "End Santee's explotation of slaves"
+ decision_end_planet_Santee_desc:0 "What?! I can still make them work harder!"
+ decision_end_planet_Santee_effects_short:0 "The Ministry of Public Security warns us that it will be rioting ime for slaves"
+ planet_st:0 "Santee's Slave Explotation"
+ planet_st_desc:0 "Don't blame me. You must be a slave because you are lazy. If you work 16 hours a day and don’t have enough food to eat, wouldn't you volunteer to work overtime to 24 hours?
+ 
+ planet_mist:0 "Interdimensional Mini Portal"
+ planet_mist_desc:0 "We are engaged in active scientific exchanges with Cangqing World."
+ decision_planet_mist:0 "Interdimensional Mini Portal"
+ decision_planet_mist_desc:0 "Use NEO to establish a small portal to connect with the blue world. (§HIncrease planetary consumption:§! -3NEO)"
+ decision_end_planet_mist:0 "Stop the portal"
+ decision_end_planet_mist_desc:0 "For various reasons, we were forced to cancel our connection to the blue world on this planet."
+ decision_end_planet_mist_effects_short:0 "Remove the NEO consumed parcels."
+ 
+ planet_NEOB:0 "NEO auxiliary building materials"
+ planet_NEOB_desc:0 "NEO is optimizing our planet architecture as an excellent material."
+ decision_planet_NEOB:0 "NEO auxiliary building materials"
+ decision_planet_NEOB_desc:0 "NEO allows us to use less material to achieve higher building strength, and it is also very easy to maintain. (§HIncrease the planet's land consumption: §! -3NEO)"
+ decision_end_planet_NEOB:0 "Stop NEO auxiliary building materials"
+ decision_end_planet_NEOB_desc:0 "We stopped using NEO as a building aid for various reasons."
+ decision_end_planet_NEOB_effects_short:0 "Remove NEO Consumed Land."
+
+###################
+ decision_port_project:0 "Minato City Plan"
+ decision_port_project_desc:0 "We will integrate the world into one port and build one port into the world"
+ decision_port_project_effects:0 "Allow the planet to be transformed into a Minato planet"
+ decision_port_project_requirements:0 "§Y requires all divisions to be built as urban divisions!"
+
+ decision_dreadnought_project:0 "Dreadnought Project"
+ decision_dreadnought_project_desc:0 "We have co-designed a new type of fearless ship with NF, and it is time to make it a reality."
+ decision_dreadnought_project_effects:0 "Dreadnought will be obtained upon completion"
+ 
+ mod_planet_jobs_sr_pantsu_produces_mult:0 "Pantsu Output"
+ mod_planet_jobs_alloys_produces_mult:0 "alloy output"
+
+ decision_port_project_relic:0 "Transformation into Minato Planet"
+ decision_port_project_relic_effects:0 "$ decision_port_project_effects $"
+ decision_port_project_relic_desc:0 "This planet was once a vibrant urban planet. But we can rebuild it into our port planet."
+ 
+ decision_port_project_city:0 "Transformed into a Minato Planet"
+ decision_port_project_city_effects:0 "$ decision_port_project_effects $"
+ decision_port_project_city_desc:0 "This is an ideal city, but with a little modification we will transform it into our port planet."
+ 
+ ###########################
+ decision_planet_kt:0 "Abyssal Environment Reformer"
+ decision_planet_kt_desc:0 "Through reverse engineering of the ancient environmental reformer, now we only need some Precursor relics to carry out ecological transformation to increase our planning ceiling."
+ planet_kt:0 "Reconstruction of Abyssal Environment"
+ planet_kt_desc:0 "With the help of environmental reformers, our planable area has been greatly improved."
+ decision_planet_machine_factory:0 "Abyssal Construction Plant Recharged"
+ decision_planet_machine_factory_desc:0 "Improve assembly efficiency by overloading construction plant machinery."
+ planet_machine_factory:0 "Abyssal construction plant is charged"
+ planet_machine_factory_desc:0 "Now our assembly efficiency improves at a visible rate."
+ 
+ decision_planet_sh_clerk:0 "Abyssal auxiliary post deployment"
+ decision_planet_sh_clerk_desc:0 "In response to overpopulation but underemployment, the Abyssal will allow some idle units to perform auxiliary work to reduce waste. Although the output is low, it can slow the unemployment problem to a certain extent.
+ planet_sh_clerk:0 "Abyssal Auxiliary Post"
+ planet_sh_clerk_desc:0 "A large number of Abyssal auxiliary positions have been deployed."
+ ##########################
+ 
+ decision_shenhai_project:0 "Abyssal Planet"
+ decision_shenhai_project_desc:0 "The entire planet's oceans have been transformed into Abyssal dormant fluids, which greatly reduces maintenance costs while accommodating more people"
+ decision_shenhai_project_effects:0 "Allow the planet to be transformed into a Abyssal planet"
+ decision_shenhai_requirements:0 "Basic zoning of the planet will no longer be restricted by parcels"
+ 
+ decision_shenhai1:0 "Abyssal Planet: Agricultural Specialization"
+ decision_shenhai1_desc:0 "This Abyssal planet will be fortified as an agricultural specialty."
+ decision_shenhai2:0 "Abyssal Planet: Power Generation Specialization"
+ decision_shenhai2_desc:0 "This Abyssal planet will be strengthened to produce electricity."
+ decision_shenhai3:0 "Abyssal Planet: Mining Specialization"
+ decision_shenhai3_desc:0 "This Abyssal planet will be strengthened to a mining expertise."
+ 
+ planet_shenhai1:0 "Abyssal Planet: Agricultural Specialization"
+ planet_shenhai1_desc:0 "This Abyssal planet will be fortified as an agricultural specialty."
+ planet_shenhai2:0 "Abyssal Planet: Power Generation Specialization"
+ planet_shenhai2_desc:0 "This Abyssal planet will be strengthened to produce electricity."
+ planet_shenhai3:0 "Abyssal Planet: Mining Specialization"
+ planet_shenhai3_desc:0 "This Abyssal planet will be strengthened to a mining expertise."
+ ##########################
+ decision_wg_zro:0 "Use Kanazawa as fertilizer"
+ decision_wg_zro_desc:0 "The energy of every Kanazawa is like a singularity bomb."
+ planet_wg_zeo:0 "Kinazawa applied"
+ planet_wg_zeo_desc:0 "All new crops on the planet use this new type of fertilizer, which is now increasing our agricultural output at a rate that is visible to the naked eye."
+ 
+ planet_clovertheater:0 "Hope for the Future"
+ planet_clovertheater_desc:0 "We found that this planet is actually capable of becoming a livable planet in the future. Perhaps in the distant future, new life will be born on this planet."
+ ##########################
+ decision_planet_sh_to_wsg:0 "Abyssal Transformation"
+ decision_planet_sh_to_wsg_desc:0 "Most of the Abyssal warships are only controlled by themselves and they lose their self. If you use NEO, you can still reconstruct them."
+ decision_planet_wsg_to_sh:0 "Abyssal Transformation"
+ decision_planet_wsg_to_sh_desc:0 "The ship maiden is not much different from us in nature, so it is very easy to convert."

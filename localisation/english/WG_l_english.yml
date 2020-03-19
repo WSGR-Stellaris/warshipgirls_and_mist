@@ -1,0 +1,135 @@
+﻿l_english:
+###############################
+ Warship_Girls:0 "Warship Girls Species"
+ warship_girls:0 "Warship Girls Species"
+ 
+ FLAG_CATEGORY_warshipgirls:0 "Warship Girls Flags"
+ 2:0 "Warship Girls"
+ 2_desc:0 "Specially designed, Warship Girls are produced to protect human civilisation from Shenhai Forces."
+ 
+ Shenhai:0 "Abyssal Fleet"
+ shenhai:0 "Abyssal Fleet"
+ 
+ civic_wgvictoria:0 "Master Victory"
+ civic_wgvictoria_desc:0 "Our military power will show its full capacity under the leading of Master Victory."
+ civic_wgella:0 "Administrator Ella"
+ civic_wgella_desc:0 "Administrator Ella will guarantee the our logistics and administration runs efficently."
+ civic_wgaurora:0 "Officer Aurora"
+ civic_wgaurora_desc:0 "First Science Officer Aurora can make our technology advancement leads the universe."
+ 
+ EMPIRE_DESIGN_wg1:0 "Magic Star Group"
+ EMPIRE_DESIGN_wg1_desc:0 "During the war against the Abyssal, the Warship Girls showed amazing combat effectiveness. \n\nAfter a long battle, the Warship Girls broke the last line of defense in the Abyssal and completely expelled them. Mother Star. Surviving Admiral and the Warship Girls form an alliance and take over the administration of the entire planet. \n\n At the end of the 22nd century, the Warship Girls who inherited the human heritage discovered the hyperspace route and created the first hyperspace engine. 2200 In the year, hyperspace engine technology was perfected and widely used. The Warship Girls set their sights on the starry sky to face the challenges of former enemies who fled to deep space and the deep starry sky. "
+ 
+ EMPIRE_DESIGN_sh1:0 "Abyssal Fleet"
+ EMPIRE_DESIGN_sh1_desc:0 "The Abyssal Fleet was defeated in the battle with the Warship Girl and was expelled from the mother star. They finally arrived at their new home and will start here again."
+ 
+ name_list_WSG:0 "Warship Girl-Roman Orthodox"
+ name_list_WSG2:0 "Warship Girl-The Legend of Mengmeng"
+ 
+ Warship_Girls_insult_01:0 "Poison Blast"
+ Warship_Girls_insult_plural_01:0 "Poison Blast"
+ Warship_Girls_insult_02:0 "Warship girls"
+ Warship_Girls_insult_plural_02:0 "Warship girls"
+ Warship_Girls_insult_03:0 "flat chested girl"
+ Warship_Girls_insult_plural_03:0 "flat chested girl"
+ Warship_Girls_insult_04:0 "Female Pirate"
+ Warship_Girls_insult_plural_04:0 "Female Pirate"
+ Warship_Girls_compliment_01:0 "The essence of the world"
+ Warship_Girls_compliment_plural_01:0 "The essence of the world"
+ Warship_Girls_compliment_02:0 "Big Tits girl"
+ Warship_Girls_compliment_plural_02:0 "Big Tits girl"
+ Warship_Girls_compliment_03:0 "Noble Shipgirl"
+ Warship_Girls_compliment_plural_03:0 "Noble Shipgirl"
+ Warship_Girls_sound_01:0 "whistle"
+
+
+ FLAG_CATEGORY_warshipgirls:0 "Warship Girl R Flag"
+ wsg_trait_luckyE:0 "Fortune"
+ wsg_trait_luckyE_desc:0 "We are always winners, no matter how bad the environment is, we will always be lucky to find our own foothold."
+ wsg_trait_rapid_growth:0 "Quick Build"
+ wsg_trait_rapid_growth_desc:0 "By optimizing the population assembly structure, the speed of building the ship maiden has been greatly improved."
+ wsg_trait_hood:0 "Glory of the Royal Navy"
+ wsg_trait_hood_desc:0 "Hood was often the flagship of the fleet in the atomic age, and her family's descendants still rely on skilled navigation skills as spacecraft navigators."
+ 
+ auth_warshipgirls:0 "Warship Girl Alliance"
+ auth_warshipgirls_desc:0 "The warship girls from various regions select regional representatives, participate in alliance meetings, and further select the flagship. The subspace communication module in the ship's equipment ensures the efficiency of this process."
+ gov_wsg_country:0 "Union Commission"
+ gov_wsg_country_desc:0 "Elections every 300 years without any factions"
+
+ bombardment_Galo:0 "Predatory GALO"
+ bombardment_Galo_name:0 "Predatory GALO Orbital Bombing"
+ bombardment_Galo_desc:0 "$ bombardment_Galo $ bombing drops a large number of predatory GALOs on the planet, destroying everything at the fastest speed. \ n-Yes to §Y Legion§! Causes §Y incredible §! Damage \ n-yes§ Planet Y§! Causes §Y Incredible §! Injury \ n-Deals §Y Population§! Causes §Y Incredible §! Injury \ n- Will Bomb Undefended Planet \ n- Does Not Change Planet Type "
+ 
+ orbital_bombardment_Galo:0 "Predatory GALO"
+ orbital_bombardment_Galo_name:0 "Predatory GALO Orbital Bombing"
+ orbital_bombardment_Galo_desc:0 "Put a lot of predatory GALOs on the planet and destroy everything at the fastest speed. \n\n§The level of orbital bombing is set to" Predatory GALO "§!"
+ 
+ overwhelming_fire_power:0 "Advantage Firepower"
+ overwhelming_fire_power_name:0 "Dominant Fire Mechanics"
+ overwhelming_fire_power_desc:0 "By properly configuring the firepower and then suppressing the enemy's firepower, we can gain a huge advantage. \n\n"
+ circuitous_warfare:0 "Circular Warfare"
+ circuitous_warfare_name:0 "Alternative Warfare Doctrine"
+ circuitous_warfare_desc:0 "Increase the fleet speed, transition range and other means to achieve the purpose of enclosing surprise attacks. \n\n"
+ mastery_of_the_space:0 "Ensure Sea Power"
+ mastery_of_the_space_name:0 "Ensure Doctrine of Sea Power"
+ mastery_of_the_space_desc:0 "We must have more ships than enemy forces to reach our strategic goal of controlling the Xinghai. \n\n"
+ ETHIC_ALLOW_OVERWHELMING_FIRE_POWER:0 "§E can use §H special§! War doctrine§!"
+ MEGAWARSHIP_GIRLS:0 "§E can open branches in other empires§!"
+ 
+ 
+ START_SCREEN_WSG:0 "After breaking the last line of defense in the Abyssal, the remaining Abyssal fleet completely disappeared from our home star. In the Abyssal central computer, we deciphered that the remaining Abyssal fleet flew to the unknown through a hyperspace engine In the deep space of the universe. Now that we also have hyperspace technology, it is time to end our enemies. "
+
+###############################################
+ Shenhai:0 "Abyssal Fleet Head"
+ ShenHai:0 "Abyssal Fleet Race"
+ shenhai:0 "Abyssal"
+ 
+ name_list_SH:0 "Abyssal Fleet"
+
+ 
+ ShenHai_insult_01:0 "Overtime"
+ ShenHai_insult_plural_01:0 "Overtime"
+ ShenHai_insult_02:0 "Abyssal Warship girls"
+ ShenHai_insult_plural_02:0 "Abyssal Warship girls"
+ ShenHai_insult_03:0 "Abyssal Running Dog"
+ ShenHai_insult_plural_03:0 "Abyssal Running Dog"
+ ShenHai_compliment_01:0 "Labour Model"
+ ShenHai_compliment_plural_01:0 "Labor Model"
+ ShenHai_compliment_02:0 "Abyssal Ship Lady"
+ ShenHai_compliment_plural_02:0 "Abyssal Ship Lady"
+ ShenHai_compliment_03:0 "Noble Abyssal Ship Lady"
+ ShenHai_compliment_plural_03:0 "Noble Abyssal Ship Lady"
+ ShenHai_sound_01:0 "Whistle"
+ 
+ START_SCREEN_SH:0 "We fought a long battle with the ship maiden. Although we repelled the female pirates' attacks again and again, in the end we failed. We were forced to leave our home and migrate to this Planet. Now we must regroup and regain our home. "
+ 
+ 
+ bombardment_SH_Galo:0 "Abyssal GALO"
+ bombardment_SH_Galo_name:0 "Abyssal GALO Orbital Bombing"
+ bombardment_SH_Galo_desc:0 "$ bombardment_SH_Galo $ bombing drops a large number of deep-sea GALOs on the planet, destroying everything as fast as possible. \ n-On §Y Legion§! Causes §Y incredible §! Damage \ n-On §Y Planet §! Causes §Y incredible §! Damage \ n- to §Y population§! Causes §Y incredible §! Damage \ n- will bomb the undefended planet \ n- will not change the type of planet "
+ 
+ orbital_bombardment_SH_Galo:0 "Abyssal GALO"
+ orbital_bombardment_SH_Galo_name:0 "Abyssal GALO Orbital Bombing"
+ orbital_bombardment_SH_Galo_desc:0 "Put a lot of deep-sea GALOs on the planet and destroy everything as quickly as possible. \n\n§The level of the orbital bombing is set to" Deep-Sea GALO "§!"
+ 
+ bombardment_wg_doom:0 "trial"
+ bombardment_wg_doom_name:0 "Trial Orbital Bombing"
+ bombardment_wg_doom_desc:0 "$ bombardment_wg_doom $ bombing will throw a large number of specially-made bombs into an area until they go deep into the core and reach the effect of detonating the planet. \ n-Yes §Y Legion !! §G general §! damage \ n-y § Planet Y§! Causes §R Irreparable §! Damage \ n-Deals §Y Population§! Causes §G General §! Damage \ n-Will bomb the undefended planet \ n-Once the planet ’s destruction reaches 100 %, The planet will be completely destroyed by §R§! "
+ 
+ bombardment_wg_doom2:0 "annihilation"
+ bombardment_wg_doom2_name:0 "Annihilation Orbital Bombing"
+ bombardment_wg_doom2_desc:0 "The United Fleet will use various high-energy weapons to ruthlessly bomb the planet in order to completely destroy the planet. \ n-On §Y Legion§! Causes §R Irreparable §! Damage \ n-Yes §Y Planet§! §! Irreparable §! Damage \ n-On §Y Population§!§R Irreparable §! Damage \ n-Once the planet is 100% destructive, the planet will be completely §R Destroy §!. "
+ 
+ opinion_wsg_fb:0 "Great Foreign Aid Program"
+ opinion_sh:0 "Terrible deep-sea society"
+ opinion_sh2:0 "Abyssal Partners"
+ opinion_shcm:0 "Silent Abyssal"
+ opinion_shcm2:0 "Silent Fleet"
+ opinion_shcm3:0 "The Obliteration Fleet"
+ opinion_shcm4:0 "Annihilation Fleet"
+ opinion_wsg_to_sh:0 "Damn Abyssal"
+ opinion_sh_to_wsg:0 "Hateful female pirate"
+ opinion_shkh1:0 "After the icebreak"
+ opinion_shkh2:0 "After the icebreak"
+ opinion_wg_doom:0 "Has" trial "orbital bombing"
+ opinion_wg_doom_fe:0 "" Trial "orbital bombing without the need of force"

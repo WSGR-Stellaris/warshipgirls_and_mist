@@ -1,0 +1,49 @@
+﻿l_english:
+#################################
+ civic_wgvictoria:0 "Instructor Victory"
+ civic_wgvictoria_desc:0 "Under the teaching of Victory, our military strength has been greatly improved. \n\nUnlock special buildings §H Victory Barracks§!"
+ civic_wgella:0 "Executive Ella"
+ civic_wgella_desc:0 "Under the participation of Ella in the management of the group, our administrative, production and logistical support levels have been greatly improved \n\nUnlock special buildings §H Ella Governor's Mansion§! \ nIf it is a start Civil Administration §H Aila will become Governor §! "
+ civic_wgaurora:0 "Chief Scientist Afflell"
+ civic_wgaurora_desc:0 "Under the leadership of Ms. Avrore, the efficiency of our scientific research team has been greatly improved. \n\nUnlock special buildings §H Avoror University City§!"
+ civic_wgelves:0 "Minato City Construction Fairy"
+ civic_wgelves_desc:0 "Building a goblin can greatly increase the speed of our building. \n\nUnlock the special building §HBuild a goblin dorm§!"
+ auth_warshipgirls:0 "Warship Girl Alliance"
+ auth_warshipgirls_desc:0 "The warship girls from various regions select regional representatives, participate in alliance meetings, and further select the flagship. The subspace communication module in the ship's equipment ensures the efficiency of this process."
+ 
+ gov_wsg_country:0 "Union Commission"
+ gov_wsg_country_desc:0 "Elections every 300 years without any factions"
+ #################################################### ##########
+ auth_shenhai:0 "Abyssal Fleet System"
+ auth_shenhai_desc:0 "Choose from senior members of the Abyssal to ensure that the fleet is always under the leadership of the most powerful Abyssal shipwoman."
+ 
+ gov_sh_country:0 "Abyssal Lords"
+ gov_sh_country_desc:0 "Elections every 5000 years without any factions"
+
+ 
+ gov_sh2_country:0 "Oblique Fleet System"
+ gov_sh2_country_desc:0 "To eliminate all alien threats. Elections every 5000 years without any factions"
+ 
+ civic_yamato:0 "Fleet flagship Yamato"
+ civic_yamato_desc:0 "Daiwa, as the most powerful battleship of the Abyssal fleet, has very rich fleet command capabilities. At the same time, she is also willing to work hard and work overtime. All the Abyssal shipgirls are proud of Yamato."
+ civic_yaosai:0 "Fortress maiden"
+ civic_yaosai_desc:0 "Fortress Ji has a wealth of experience in building Interstellar Fortress. She strengthened our stellar base while optimizing our fleet scheduling. (§H Gain Technology: Super Light Suppressor§!)"
+ civic_eat_and_drink:0 "Akagi and Kaga"
+ civic_eat_and_drink_desc:0 "Akagi and Kaga were knocked down several times in the final battle with the ship maiden, but they still stubbornly chose to continue fighting, and we will never forget their spirit."
+ civic_BOSSAP:0 "Big Boss Supply Ship"
+ civic_BOSSAP_desc:0 "In a society advocating force, such as the Abyssal Fleet, there are very few non-combat ships like the boss who can get all the Abyssal respect."
+ 
+ civic_CM:0 "The Obliteration Fleet"
+ civic_CM_desc:0 "During the long drift, the Abyssal Fleet experienced several alien alien threats, and the fleet was almost destroyed. The Abyssal Fleet realized that only by completely eradicating all heretics that could threaten the Fleet, the right to survive in the Abyssal could be obtained. \n\n§R The popularity of the alien empire is approaching freezing point §! \n\n§R is unavailable: Icebreaking Ascension§! \n\n§Hcan use Total War: Silent§! \n\nIf you choose to purify Organic £ pop £ population will get £ sr_pantsu £ §Y pantsu§! "
+ 
+ origin_sh_cm:0 "The Obliteration Fleet"
+ origin_sh_cm_desc:0 "During the long drift, the Abyssal Fleet experienced several alien alien threats, and the fleet was almost destroyed. The Abyssal Fleet realized that only by completely eradicating all heretics that could threaten the Fleet, the right to survive in the Abyssal could be obtained."
+ origin_tooltip_sh_cm_effects:0 "§R The popularity of the alien empire is approaching freezing point §! \n\n§R is unavailable: Icebreaking Ascension§! \n\n§Hcan use Total War: Silent§! \n\nIf you choose to purify Organic £pop£ population will get £ sr_pantsu £ §Y pantsu§!"
+
+ origin_wsg_ice_breaking:0 "Ice breaking"
+ origin_wsg_ice_breaking_desc:0 "Not all of the abyssal warship girls have been expelled from their home port. There are still a small number of them who remain under our influence and integrate into our society"
+ origin_tooltip_wsg_ice_breaking_effects:0 "Gain 6 additional abyssal warship girl §Y Abyssal Warship girl §!£pop£ population"
+ 
+ origin_wg_fallen_empire:0 "Galaxy Rover"
+ origin_wg_fallen_empire_desc:0 "Warship girl fallen empire spent most of thier time shuttle back and forth between galaxies, constantly fleeing in exchange for a moment's rest."
+ origin_wg_fe_effect:0 "This fallen empire will never do anything bad to you, she is a real loving mom, unless you installed some weird MOD that turns people into frog."

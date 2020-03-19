@@ -1,0 +1,112 @@
+﻿l_simp_chinese:
+###############################
+ decision_planet_lp:0 "星球级誓约仪式" 
+ decision_planet_lp_desc:0 "我宣布，这颗星球上的每一位舰娘都是我可爱的老婆。"
+ planet_lp:0 "誓约之戒" 
+ planet_lp_desc:0 "誓约之人，舍我其谁。"
+ 
+ decision_planet_noshoes:0 "港区无鞋化" 
+ decision_planet_noshoes_desc:0 "除了我，港区又有谁能给她们发零花钱呢？所以只要她们开心就好啦~~"
+ planet_noshoes:0 "港区无鞋化" 
+ planet_noshoes_desc:0 "无鞋化带来的是无尽的快乐和更舒适的环境。"
+ 
+ decision_planet_pantsuhd:0 "战利品活动" 
+ decision_planet_pantsuhd_desc:0 "在远古时期猎杀深海补给舰并掠夺其战利品便是舰娘社会中一项老少皆宜的活动。如今野生的深海已经绝迹，但我们依然可以人工放出一些供人娱乐。（（§H增加星球消耗地块：§!-15能量币）"
+ decision_end_planet_pantsuhd:0 "战利品活动结束" 
+ decision_end_planet_pantsuhd_desc:0 "我们已经获得足够多的胖次，活动圆满结束。"
+ decision_end_planet_pantsuhd_effects_short:0 "移除猎杀补给舰地块。"
+ planet_pantsuhd:0 "战利品活动" 
+ planet_pantsuhd_desc:0 "战利品活动正在举行"
+ 
+ decision_planet_Santee:0 "在？看看剩余价值" 
+ decision_planet_Santee_desc:0 "奴隶过劳死，能赖我们舰娘吗？是他自己不会劳逸结合。"
+ decision_end_planet_Santee:0 "星球治安部警告我们说再给奴隶加班就要暴动了" 
+ decision_end_planet_Santee_desc:0 "什么？！还能再给奴隶加班！"
+ decision_end_planet_Santee_effects_short:0 "暂停剥削"
+ planet_st:0 "得想个法子让这些奴隶给我007" 
+ planet_st_desc:0 "别指责我，你当奴隶肯定是因为你懒，每天工作16小时不够吃饭的话你不会主动加班到24小时么。"
+ 
+ planet_mist:0 "苍青世界小型传送门" 
+ planet_mist_desc:0 "我们正在与苍青世界展开积极的科学交流。"
+ decision_planet_mist:0 "苍青世界小型传送门" 
+ decision_planet_mist_desc:0 "通过使用NEO来建立一个小型的传送门与苍青世界取得联系。（§H增加星球消耗地块：§!-3NEO）"
+ decision_end_planet_mist:0 "切断传送门" 
+ decision_end_planet_mist_desc:0 "由于各种原因，我们被迫取消了在这个星球上与苍青世界的联系。"
+ decision_end_planet_mist_effects_short:0 "移除NEO消耗地块。" 
+ 
+ planet_NEOB:0 "NEO辅助建材" 
+ planet_NEOB_desc:0 "NEO正作为一种优秀的材料对我们星球建筑进行优化。"
+ decision_planet_NEOB:0 "NEO辅助建材" 
+ decision_planet_NEOB_desc:0 "NEO能让我们使用更少的材料来达到更高的建筑强度，维护起来也十分方便。（§H增加星球消耗地块：§!-3NEO）"
+ decision_end_planet_NEOB:0 "停止NEO辅助建材" 
+ decision_end_planet_NEOB_desc:0 "由于各种原因，我们停止将NEO作为建筑辅助材料的决定。"
+ decision_end_planet_NEOB_effects_short:0 "移除NEO消耗地块。"
+
+#################
+ decision_port_project:0 "港区星球企划" 
+ decision_port_project_desc:0 "我们将融世界于一港，筑一港为世界"
+ decision_port_project_effects:0 "允许将星球改造为港区星球" 
+ decision_port_project_requirements:0 "§Y需要将所有区划建造为城市区划!" 
+
+ decision_dreadnought_project:0 "无畏舰企划"
+ decision_dreadnought_project_desc:0 "我们已经与NF共同设计了一款新型的无畏舰，现在是时候让它成为现实了。"  
+ decision_dreadnought_project_effects:0 "完成后将获得无畏舰"
+ 
+ mod_planet_jobs_sr_pantsu_produces_mult:0 "胖次产出"  
+ mod_planet_jobs_alloys_produces_mult:0 "合金产出" 
+
+ decision_port_project_relic:0 "改造为港区星球"
+ decision_port_project_relic_effects:0 "$decision_port_project_effects$"
+ decision_port_project_relic_desc:0 "这颗行星曾经是一个充满生机的都市星球。但我们可以将它重建为我们的港区星球。" 
+ 
+ decision_port_project_city:0 "改造为港区星球"
+ decision_port_project_city_effects:0 "$decision_port_project_effects$"
+ decision_port_project_city_desc:0 "这是一颗理想城，但稍加改造我们便将它改造为我们的港区星球。" 
+ 
+ ########################
+ decision_planet_kt:0 "深海环境改造仪" 
+ decision_planet_kt_desc:0 "通过对远古环境改造仪的逆向工程，现在我们只需要一些先驱遗物就能进行生态改造来提高我们的规划上限。"
+ planet_kt:0 "深海环境改造" 
+ planet_kt_desc:0 "在环境改造仪的帮助下，我们的可规划区域大大提高了。" 
+ decision_planet_machine_factory:0 "深海建造厂充能" 
+ decision_planet_machine_factory_desc:0 "通过将建造厂机械充能过载来提高组装效率。" 
+ planet_machine_factory:0 "深海建造厂已充能" 
+ planet_machine_factory_desc:0 "现在我们的组装效率以可见的速度提高。" 
+ 
+ decision_planet_sh_clerk:0 "深海辅助岗位部署" 
+ decision_planet_sh_clerk_desc:0 "为应对人口过剩但职位不足的情况，深海会让部分空闲的单位从事辅助工作以减少浪费。虽然产出较低但能在一定程度上减缓失业问题。"
+ planet_sh_clerk:0 "深海辅助岗位" 
+ planet_sh_clerk_desc:0 "已部署大量深海辅助岗位。"
+ #######################
+ 
+ decision_shenhai_project:0 "深海星球" 
+ decision_shenhai_project_desc:0 "整个星球的海洋都被转化成了深海休眠液，在容纳更多的人口的同时大幅度降低了维护费用"
+ decision_shenhai_project_effects:0 "允许将星球改造为深海星球" 
+ decision_shenhai_requirements:0 "星球的基础区划将不再受到地块限制" 
+ 
+ decision_shenhai1:0 "深海星球：农业专精" 
+ decision_shenhai1_desc:0 "这颗深海星球将被强化为农业专精。"
+ decision_shenhai2:0 "深海星球：产电专精" 
+ decision_shenhai2_desc:0 "这颗深海星球将被强化为产电专精。"
+ decision_shenhai3:0 "深海星球：采矿专精" 
+ decision_shenhai3_desc:0 "这颗深海星球将被强化为采矿专精。"
+ 
+ planet_shenhai1:0 "深海星球：农业专精" 
+ planet_shenhai1_desc:0 "这颗深海星球将被强化为农业专精。"
+ planet_shenhai2:0 "深海星球：产电专精" 
+ planet_shenhai2_desc:0 "这颗深海星球将被强化为产电专精。"
+ planet_shenhai3:0 "深海星球：采矿专精" 
+ planet_shenhai3_desc:0 "这颗深海星球将被强化为采矿专精。"
+ #######################
+ decision_wg_zro:0 "使用金泽垃" 
+ decision_wg_zro_desc:0 "每一粒金泽垃的能量就像奇点炸弹。"
+ planet_wg_zeo:0 "金泽垃已使用" 
+ planet_wg_zeo_desc:0 "星球所有的农田都使用了这种新型肥料，现在以肉眼可见的速度提高着我们的农业产出。"
+ 
+ planet_clovertheater:0 "未来的希望"
+ planet_clovertheater_desc:0 "我们发现这颗星球其实是有能力在未来成为宜居星球的。也许在遥远的未来，这颗星球上也会诞生新的生命。" 
+ #######################
+ decision_planet_sh_to_wsg:0 "深海转化" 
+ decision_planet_sh_to_wsg_desc:0 "大部分深海舰娘只是被人为的控制才导致失去了自我，如果使用NEO依然能重构她们。" 
+ decision_planet_wsg_to_sh:0 "舰娘深海化" 
+ decision_planet_wsg_to_sh_desc:0 "舰娘与我们本质上并没有多少区别，因此转化起来非常容易。"  

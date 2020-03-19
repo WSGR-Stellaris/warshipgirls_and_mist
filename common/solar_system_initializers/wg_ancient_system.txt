@@ -93,7 +93,7 @@ shenhai_ring_system = {
 						create_ship = {
 							name = "NAME_Administrator"
 							design = "NAME_SH_Sanctuary_Core"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						set_location = {
 							target = PREVPREV
@@ -115,7 +115,7 @@ shenhai_ring_system = {
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_A_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						set_location = {
 							target = event_target:sh_sanctuary_core
@@ -135,7 +135,7 @@ shenhai_ring_system = {
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_A_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						set_location = {
 							target = event_target:sh_sanctuary_core
@@ -155,7 +155,7 @@ shenhai_ring_system = {
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_A_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						set_location = {
 							target = event_target:sh_sanctuary_core
@@ -175,7 +175,7 @@ shenhai_ring_system = {
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_A_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						set_location = {
 							target = event_target:sh_sanctuary_core
@@ -212,107 +212,107 @@ shenhai_ring_system = {
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_C_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_C_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}	
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_C_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}						
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_C_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}						
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}	
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}	
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}	
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}
 						create_ship = {
 							name = random
 							design = "NAME_Defensive_B_SH"
-							graphical_culture = "wsg_02"
+							graphical_culture = "fallen_empire_03"
 						}						
 						set_location = {
 							target = PREVPREV

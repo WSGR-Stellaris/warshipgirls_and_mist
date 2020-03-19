@@ -1,0 +1,56 @@
+﻿l_simp_chinese:
+###############################
+ Parit_age:0 "帕里特舰娘文明"
+ Parit_age_desc:0 "这个舰娘文明的拥有难以置信的高科技，一些建筑几乎可以匹敌堕落帝国。先进的民用设施满足着星球上居民的一切需求，但她们似乎都沉迷于虚拟娱乐之中，对于上天这种事情并不放在心上。"
+ 
+ Parit_army:0 "帕里特自动化部队"
+ Parit_army_desc:0 "帕里特星上存在的自动化军事力量，任何试图大气层突入的入侵者都会遭到它们的反击。
+ 
+ building_primitive_capital_Parit:0 "帕里特中枢"
+ building_primitive_capital_Parit_desc:0 "帕里特星上的中枢建筑，不过全部的行政已经被自动机械取代。"
+ building_game_centre_Parit:0 "帕里特娱乐中心"
+ building_game_centre_Parit_desc:0 "帕里特上巨大的虚拟娱乐中心，一些死宅舰娘甚至直接选择住在了里面。"
+ building_energy_Parit:0 "帕里特电厂"
+ building_energy_Parit_desc:0 "虽然并非完全自动化，但也被设计成只要不是弱智且看得懂文字就能操作。"
+ building_data_base_Parit:0 "帕里特数据库"
+ building_data_base_Parit_desc:0 "§!§H“如果这座数据库被启动，那么说明我们的文明遭到了毁灭性打击。请记住，这座数据库记录的信息能帮助你们恢复我们帝国的荣耀！”§!\n这是数据库中放在最显眼位置的一段文字并被高亮显示，但很显然并没有人在意，反而里面用于娱乐的数据被提取了不少。"
+ building_food_Parit:0 "帕里特奇迹食堂"
+ building_food_Parit_desc:0 "一座富丽堂皇的自主餐馆，自动化设施每天都能产出无数菜肴，同时每一道菜都会附送一个豪华手办。"
+ building_minerlas_Parit:0 "帕里特自动矿场"
+ building_minerlas_Parit_desc:0 "众所周知，任何采矿工具的重量都足以压垮一个死宅，所以自动化矿场的意义就是让这种危险情况不会发生。"
+ 
+ job_primitive_gamer_Parit:0 "虚拟游戏沉迷者"
+ mod_job_primitive_gamer_Parit_add:0 "虚拟游戏沉迷者"
+ job_primitive_gamer_Parit_plural:0 "虚拟游戏沉迷者"
+ job_primitive_gamer_Parit_desc:0 "得益于先进的自动化设施，这些沉迷虚拟游戏的舰娘可以不用担心任何生存问题，唯一会造成困扰的是需要考虑明天应该玩什么游戏。"
+ primitive_gamer_Parit_desc:0 "虚拟游戏沉迷者"
+ 
+ job_energy_Parit:0 "帕里特电厂操作者"
+ mod_job_energy_Parit_add:0 "帕里特电厂操作者"
+ job_energy_Parit_plural:0 "帕里特电厂操作者"
+ job_energy_Parit_desc:0 "这份工作非常具有挑战性，每三天就需要推动一下杠杆，具体要推到什么位置需要看说明书。"
+ energy_Parit_desc:0 "帕里特电厂操作者"
+ 
+ job_eater_Parit:0 "帕里特享乐主义者"
+ mod_job_eater_Parit_add:0 "帕里特享乐主义者"
+ job_eater_Parit_plural:0 "帕里特享乐主义者"
+ job_eater_Parit_desc:0 "几乎全部的帕里特舰娘都成为了享乐主义者，每天除了吃喝玩乐不会干别的事情。"
+ eater_Parit_desc:0 "帕里特享乐主义者"
+ 
+ planet_Parit:0 "帕里特护盾"
+ planet_Parit_desc:0 "强大的帕里特自动防御部队会攻击任何进入试图进入大气层的目标。"
+ d_Parit:0 "帕里特奇迹"
+ d_Parit_desc:0 "这颗星球显然受到过很大程度的改造，让原本不可能出现的自然地貌在这颗星球上出现。巧妙的人工干预让这个区域能在自然环境下产出非常容易收集的稀有资源。"
+ d_Parit2:0 "帕里特合金仓库"
+ d_Parit2_desc:0 "这些仓库被存放了大量的合金。但由于帕里特的居民并没有从事太空活动，仅有少量的合金被用于维护机械。"
+ d_Parit3:0 "帕里特向日葵花海"
+ d_Parit3_desc:0 "一望无际的向日葵花海，十分美丽，必要的时候可以通过焚烧向日葵来发电。\n§!§H曾经有一位绝地武士在这里为他美丽的妻子准备好了鲜切的向日葵。§!"
+ ###########
+ wg_parit.4.name:0 "帕里特自动防御舰队"
+ wg_parit.4.desc:0 "§!§R注意！§!由于您违反<帕里特安全条例>第14553194条，即\n\n§!§H禁止任何非帕里特所属的舰队靠近星球轨道§!\n\n防御部队将采取行动，对入侵者实行歼灭处理，绝不留情！" 
+ wg_parit.4.a:0 "等等，我们只是路过!"
+ 
+ wg_parit.5.name:0 "帕里特自动防御舰队"
+ wg_parit.5.desc:0 "§!§R注意！§!欢迎您来到帕里特，请阅读并同意签署<帕里特安全条例>，其中第14553194条最为重要，即\n\n§!§H禁止任何非帕里特所属的舰队靠近星球轨道§!\n\n如果您违反，安全部队将对入侵者实行歼灭处理，绝不留情！" 
+ wg_parit.5.a:0 "哦哦好的！我已经全部阅读了！"
+ 

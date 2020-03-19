@@ -1,0 +1,49 @@
+﻿l_simp_chinese:
+###############################
+ civic_wgvictoria:0 "教官胜利号"
+ civic_wgvictoria_desc:0 "在胜利号的教导下，我们的军事力量得到极大的提升。\n\n解锁特殊建筑§H胜利军营§!"
+ civic_wgella:0 "执行官艾拉"
+ civic_wgella_desc:0 "在艾拉参与对集团的管理下，我们的行政，生产以及后勤支援的水平得到了极大的提升\n\n解锁特殊建筑§H艾拉总督府§!\n如果作为开局民政§H艾拉将成为总督§!"
+ civic_wgaurora:0 "首席科学家阿芙乐尔"
+ civic_wgaurora_desc:0 "在阿芙乐尔小姐领导下，我们的科研团队效率得到了非常大的提升。\n\n解锁特殊建筑§H阿芙乐尔大学城§!"
+ civic_wgelves:0 "港区建设妖精"
+ civic_wgelves_desc:0 "建设妖精能大幅度提高我们建筑的建造速度。\n\n解锁特殊建筑§H建造妖精宿舍§!"
+ auth_warshipgirls:0 "战舰少女联盟制"
+ auth_warshipgirls_desc:0 "由各个地区的战舰少女们选出地区代表，参与到联盟会议中，再进一步选出旗舰。舰装中的亚空间通信模块确保了这一流程的高效性。"
+ 
+ gov_wsg_country:0 "联盟委员制"
+ gov_wsg_country_desc:0 "每300年选举一次，不产生任何派系"
+ ###########################################################
+ auth_shenhai:0 "深海舰队制度"
+ auth_shenhai_desc:0 "从深海高级成员中选拔，确保舰队始终处于最强大的深海舰娘的领导。"
+ 
+ gov_sh_country:0 "深海领主制"
+ gov_sh_country_desc:0 "每5000年选举一次，不产生任何派系"
+
+ 
+ gov_sh2_country:0 "湮灭舰队制"
+ gov_sh2_country_desc:0 "以消灭一切外星威胁为目的。每5000年选举一次，不产生任何派系"
+ 
+ civic_yamato:0 "舰队旗舰大和"
+ civic_yamato_desc:0 "大和作为深海舰队最强大的战列舰有着十分丰富的舰队作战指挥能力，同时她还乐于工作勤于加班，所有深海舰娘都以大和化为荣。"
+ civic_yaosai:0 "要塞姬"
+ civic_yaosai_desc:0 "要塞姬对于建造星际堡垒有十分丰富的经验，她在强化我们恒星基地的同时也优化了我们的舰队调度。（§H获得科技：超光速抑制器§!）"
+ civic_eat_and_drink:0 "赤城与加贺"
+ civic_eat_and_drink_desc:0 "赤城与加贺在与舰娘的最后战役中被击倒数次，但依然顽强的选择继续作战，她们的精神我们永不忘记。"
+ civic_BOSSAP:0 "大头目补给舰"
+ civic_BOSSAP_desc:0 "在深海舰队这样崇尚武力的社会中，像大头目这样能获得所有深海尊重的非战斗船只实属少数。" 
+ 
+ civic_CM:0 "湮灭舰队"
+ civic_CM_desc:0 "在漫长的漂泊中，深海舰队经历了数次外星异形威胁，舰队差点因此覆灭。深海舰队意识到只有彻底铲除一切能对舰队产生威胁的异端才能使获得深海生存的权利。\n\n§R外星帝国好感度将将至冰点§!\n\n§R无法使用：破冰 飞升§!\n\n§H可以使用全面战争：缄默§!\n\n如果选择净化有机£pop£ 人口将获得£sr_pantsu£ §Y胖次§!" 
+
+ origin_sh_cm:0 "湮灭舰队"
+ origin_sh_cm_desc:0 "在漫长的漂泊中，深海舰队经历了数次外星异形威胁，舰队差点因此覆灭。深海舰队意识到只有彻底瓦解一切能对舰队产生威胁的异端才能使获得深海生存的权利。"
+ origin_tooltip_sh_cm_effects:0 "§R外星帝国好感度将将至冰点§!\n\n§R无法使用：破冰 飞升§!\n§H可以使用全面战争：缄默§!\n如果选择净化有机£pop£ 人口将获得£sr_pantsu£ §Y胖次§!"
+ 
+ origin_wsg_ice_breaking:0 "坚冰融化"
+ origin_wsg_ice_breaking_desc:0 "并不是所有的深海舰娘都被驱逐出了母港，依然有少部分深海舰娘在我们的感化之下留了下来并融入了我们的社会"
+ origin_tooltip_wsg_ice_breaking_effects:0 "开局将获得额外的6个§Y深海舰娘§!£pop£人口"
+ 
+ origin_wg_fallen_empire:0 "银河漫游者"
+ origin_wg_fallen_empire_desc:0 "舰娘堕落帝国的一生中大部分时间被用于银河系之间的穿梭，她们不断的逃离只为换取片刻的安息。"
+ origin_wg_fe_effect:0 "堕落妈不会对你作恶，是真正的慈母，除非你打了什么会令人浑身发光的奇怪MOD"

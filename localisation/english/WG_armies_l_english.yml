@@ -1,0 +1,24 @@
+﻿l_english:
+###############################
+ WGS_army:0 "Land Warship Regiment"
+ WGS_army_desc:0 "With the development of technology, the shipgirls are no longer limited to the sea. Equipped with ship armor, they can now fight in any environment"
+ 381_cannon_army:0 "381mm Self-Propelled Hover Artillery"
+ 381_cannon_army_desc:0 "This self-propelled floating turret can accurately execute instructions and is low in cost. The only disadvantage is that it tends to deal excessive damage to the target."
+ WGS_kodiak:0 "Kodiak"
+ WGS_kodiak_desc:0 "A large vertical take-off and landing vehicle capable of near-orbit flight. It's colossal size and powerful firepower will be a nightmare for the enemy." 
+
+ WGS_galodam:0 "GaloDam"
+ WGS_galodam_desc:0 "With the novel genetic technology, GaloDam has become a war monster up to thousands of meters high."
+ 
+ SH_army:0 "Abyssal Army"
+ SH_army_desc:0 "Abyssal units are fearless. Ships with powerful guns are more powerful than words."
+ SH_BOSS:0 "Abyssal Boss"
+ SH_BOSS_desc:0 "The most powerful of the Abyssals will come to the battlefield and spread death to every corner of the battlefield."
+ YAMATO_executioner:0 "Yamato Executioner"
+ YAMATO_executioner_desc:0 "A massive battlemech with the size of an alp that seems unstoppable."
+ 
+ ovo_boss_army:0 "Quincy manifestation"
+ ovo_boss_army_desc:0 "Quincy manifestation" 
+ ovo_army:0 "Mower"
+ ovo_army_desc:0 "Mower" 
+ 
