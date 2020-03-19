@@ -1,0 +1,124 @@
+leader_trait_scientist_warshipgirls = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		all_technology_research_speed = 0.10
+		ship_anomaly_research_speed_mult = 0.25
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_scientist_mist = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/mist.dds"
+	modifier = {
+		all_technology_research_speed = 0.15
+		ship_anomaly_research_speed_mult = 0.35
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+###########
+leader_trait_scientist_shenhai = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai1.dds"
+	modifier = {
+		all_technology_research_speed = 0.10
+		ship_anomaly_research_speed_mult = 0.25
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_scientist_shenhai1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai2.dds"
+	modifier = {
+		all_technology_research_speed = 0.15
+		ship_anomaly_research_speed_mult = 0.35
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_scientist_shenhai2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai3.dds"
+	modifier = {
+		all_technology_research_speed = 0.25
+		ship_anomaly_research_speed_mult = 0.50
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}

@@ -1,0 +1,4362 @@
+namespace = wg_crisis
+
+country_event = {
+	id = wg_crisis.1
+	hide_window = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { has_global_flag = wg_crisis_disabled }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+			remove_global_flag = wg_crisis_normal
+			remove_global_flag = wg_crisis_hard
+			remove_global_flag = wg_crisis_insane
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_insane }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+			remove_global_flag = wg_crisis_normal
+			remove_global_flag = wg_crisis_hard
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_hard }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+			remove_global_flag = wg_crisis_normal
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_normal }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_easy }
+			remove_global_flag = wg_crisis_very_easy
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.2
+	title = wg_crisis.2.name
+	desc = wg_crisis.2.desc
+	is_triggered_only = yes
+	picture = GFX_evt_star_chart
+	show_sound = event_alien_signal
+
+	option = {
+		name = wg_crisis.2.a
+		hidden_effect = {
+			country_event = { id = wg_crisis.23332 days = 5 }
+		}		
+	}
+}
+country_event = {
+	id = wg_crisis.23332
+	title = wg_crisis.23332.name
+	desc = wg_crisis.23332.desc
+	picture = GFX_evt_wsg_ppt
+	show_sound = event_construction
+	location = event_target:executor_capital
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			save_event_target_as = wsg_executor_owner
+		}
+		capital_scope = { save_event_target_as = executor_capital }
+	}
+	trigger = {
+		has_country_flag = executorbuilding
+		has_authority = auth_warshipgirls
+	}	
+	option = {
+		name = wg_crisis.23332.a
+		hidden_effect = {
+			country_event = { id = wg_crisis.23333 days = 60 }
+		}		
+	}
+	option = {
+		name = "wg_crisis.23332.b"
+	}	
+}
+
+country_event = {
+	id = wg_crisis.23333
+	title = wg_crisis.23333.name
+	desc = wg_crisis.23333.desc
+	picture = GFX_evt_wsg_executor
+	show_sound = event_construction
+	location = event_target:executor_capital
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "wg_crisis.23333.a"
+		create_fleet = {
+			name = "Name_EXECUTOR"
+			effect = {
+				set_owner = event_target:wsg_executor_owner
+				create_ship = {
+					name = random
+					design = "Name_EXECUTOR"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:executor_capital
+					distance = 0
+					angle = random
+				}
+				add_modifier = {
+					modifier = ppt_bank_statement
+					days = -1
+				}				
+			}
+		}
+	}	
+}
+country_event = {
+	id = wg_crisis.3
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_crisis_disabled }
+	}
+
+	immediate = {
+		set_global_flag = wg_invasion_happened
+		initialize_crisis_system_select = yes
+		random_system = {
+			limit = {
+				NOT = { has_star_flag = forbit_spawn_system }
+			}
+			set_star_flag = first_portal_system
+			save_global_event_target_as = first_portal_system
+			random_system_planet = {
+				create_species = {
+					name = "NAME_WG_crisis_species"
+					class = "Warship_Girls"
+					portrait = "Warship_girls"
+					traits = random
+					immortal = yes
+					effect = { save_global_event_target_as = wg_crisis_species }
+				}
+                create_species = {
+					name = "NAME_WG_crisis_species_sh"
+					class = "ShenHai"
+					portrait = "shenhai"
+					traits = random
+					immortal = yes
+					effect = { save_global_event_target_as = wg_crisis_species_sh }
+				}
+				create_country = {
+					name = "NAME_WG_crisis_country"
+					type = "wg_crisis_country"
+					species = event_target:wg_crisis_species
+					name_list = "WSG"
+					effect = { set_country_flag = wg_crisis_country }
+					flag = {
+                        icon= {
+                            category="warshipgirls"
+                            file="wg_flags_06.dds"
+                        }
+                        background= {
+                            category = "backgrounds"
+                            file = "v.dds"
+                        }
+                        colors={
+							"yellow"
+							"black"
+                            "null"
+                            "null"
+                        }
+                    }
+					effect = {
+						save_global_event_target_as = wg_crisis_country
+						set_graphical_culture = wsg_01
+                        create_ship_design = { design = "NAME_WG_Starbase" }
+                        add_ship_design = last_created_design
+						if = {
+							limit = { has_global_flag = wg_crisis_very_easy }
+							add_modifier = { modifier = uf_very_easy_debuff days = -1 }
+						}
+						if = {
+							limit = { 
+								OR = {
+									has_global_flag = wg_crisis_easy
+									has_global_flag = wg_crisis_very_easy
+								}
+							}
+							add_modifier = { modifier = uf_easy_debuff days = -1 }
+						}
+						else_if = {
+							limit = { 
+								OR = {
+									has_global_flag = wg_crisis_hard
+									has_global_flag = wg_crisis_insane
+								}
+							}
+							add_modifier = { modifier = uf_hard_buff days = -1 }
+						}
+						country_event = { id = wg_crisis.200 }
+						country_event = { id = wg_crisis.300 days = 30 }
+						country_event = { id = wg_crisis.90 days = 720 random = 720 } # for test, should be 1080 days
+						country_event = { id = wg_crisis.99 days = 30 }
+						set_country_flag = creating_small_portal
+						set_country_flag = checked_all_fleet_once
+					}
+				}
+				event_target:wg_crisis_country = {
+					create_fleet = {
+						name = "NAME_Dimensional_Portal"
+						effect = {
+							set_owner = PREV
+							create_portal = yes
+							set_location = {
+								target = PREVPREV
+								distance = 40
+								angle = random
+							}
+							save_event_target_as = first_dimensional_portal
+							set_fleet_flag = first_dimensional_portal
+							set_event_locked = yes
+
+							# 简单难度开门后再刷4队弱的
+							# 困难难度开门后再刷4队正常的
+							fleet_event = { id = wg_crisis.4 days = 180 } 
+							fleet_event = { id = wg_crisis.4 days = 360 } 
+							fleet_event = { id = wg_crisis.4 days = 540 } 
+							fleet_event = { id = wg_crisis.4 days = 720 } 
+							
+							if = {
+								# 普通难度开门后再刷8队弱的
+								# 海豹难度开门后再刷8队正常的
+								limit = {
+									OR = {
+										has_global_flag = wg_crisis_easy
+										has_global_flag = wg_crisis_hard
+										has_global_flag = wg_crisis_insane
+									}
+								}
+								fleet_event = { id = wg_crisis.4 days = 200 } 
+								fleet_event = { id = wg_crisis.4 days = 380 } 
+								fleet_event = { id = wg_crisis.4 days = 560 } 
+								fleet_event = { id = wg_crisis.4 days = 740 }
+							}
+							
+							if = {
+								# 天灾难度开门后再刷8+4+3队
+								limit = {
+									has_global_flag = wg_crisis_insane
+								}
+								fleet_event = { id = wg_crisis.4 days = 280 } 
+								fleet_event = { id = wg_crisis.4 days = 460 }
+								fleet_event = { id = wg_crisis.4 days = 620 }
+							}
+							fleet_event = { id = wg_crisis.102 } #循环刷辅助守家舰队
+							# 简单难度的舰队增援在5年后
+							# 同时也是其他难度的循环刷舰队代码
+							event_target:wg_crisis_country = { country_event = { id = wg_crisis.14 days = 900 } } # Spawn Cycle starts
+						}
+					}
+				}
+
+				if = {
+					# 简单难度开局刷4队弱的进攻舰队,1队弱的守家舰队
+					limit = {
+						OR = {
+							has_global_flag = wg_crisis_very_easy
+							has_global_flag = wg_crisis_easy
+						}
+					}
+					create_wg_crisis_greater_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_wg_crisis_weaker_guard_fleet = yes
+					}}
+					while = {
+						count = 4
+						create_wg_crisis_weaker_fleet_and_admiral = yes
+					}
+				}
+				if = {
+					# 普通难度开局刷8队弱的进攻舰队,2队弱的守家舰队
+					limit = { has_global_flag = wg_crisis_easy }
+					create_wg_crisis_greater_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_wg_crisis_weaker_guard_fleet = yes
+					}}
+					while = {
+						count = 4
+						create_wg_crisis_weaker_fleet_and_admiral = yes
+					}
+				}
+				
+				if = {
+					# 困难难度开局刷8队进攻舰队,2队守家舰队
+					limit = {
+						or = {
+							has_global_flag = wg_crisis_normal
+							has_global_flag = wg_crisis_hard
+							has_global_flag = wg_crisis_insane
+						}
+					}
+					while = {
+						count = 2
+						create_wg_crisis_greater_admiral = yes
+						PREV = { random_system_planet = {
+							limit = { is_primary_star = yes }
+							create_wg_crisis_guard_fleet = yes 
+						}}
+					}
+					while = {
+						count = 8
+						create_wg_crisis_fleet_and_admiral = yes
+					}
+				}
+				if = {
+					# 海豹难度开局刷12队进攻舰队,3队守家舰队
+					limit = {
+						OR = {
+							has_global_flag = wg_crisis_hard
+							has_global_flag = wg_crisis_insane
+						}
+					}
+					create_wg_crisis_greater_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_wg_crisis_guard_fleet = yes	
+					}}			
+					while = {
+						count = 4
+						create_wg_crisis_fleet_and_admiral = yes
+					}
+				}
+				if = {
+					# 天灾难度开局刷15队进攻舰队，不刷额外的守家舰队
+					limit = {
+						has_global_flag = wg_crisis_insane
+					}					
+					while = {
+						count = 3
+						create_wg_crisis_fleet_and_admiral = yes
+					}
+				}
+			}
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
+			}
+			if = {
+				limit = { NOT = { has_global_flag = wg_crisis_very_easy }}
+				create_starbase = {
+					size = wg_crisis_starbase
+					owner = event_target:wg_crisis_country
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				intel_level = {
+					level = high
+					system = event_target:first_portal_system
+				}
+			}
+			country_event = { id = wg_crisis.5 }
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				NOT = {
+					intel_level = {
+						level = high
+						system = event_target:first_portal_system
+					}
+				}
+			}
+			country_event = { id = wg_crisis.6 }
+		}
+	}
+}
+
+# Fleet Reinforcements
+fleet_event = {
+	id = wg_crisis.4
+	hide_window = yes
+	is_triggered_only = yes
+
+    trigger = {
+        event_target:wg_crisis_country = {
+            count_owned_ships = {
+                limit = { is_ship_size = wg_dimensional_portal }
+                count > 0
+            }
+        }
+		exists = this
+    }
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = wg_crisis_very_easy
+					has_global_flag = wg_crisis_easy
+				}
+			}
+			create_wg_crisis_weaker_fleet_and_admiral = yes
+		}
+		else = {
+			create_wg_crisis_fleet_and_admiral = yes
+		}
+	}
+}
+
+# Fleet Reinforcements
+fleet_event = {
+	id = wg_crisis.400
+	hide_window = yes
+	is_triggered_only = yes
+
+    trigger = {
+        event_target:wg_crisis_country = {
+            count_owned_ships = {
+                limit = { is_ship_size = wg_dimensional_portal }
+                count > 0
+            }
+        }
+		exists = this
+    }
+
+	immediate = {
+		create_wg_crisis_greater_admiral = yes
+		create_wg_crisis_greater_fleet = yes
+		last_created_fleet = {
+			set_name = "联合辅助守卫舰队"
+			set_timed_fleet_flag = { flag = defence_fleet days = 4500 }
+			fleet_event = { id = wg_crisis.401 days = 4501 }
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_crisis.401
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_name = "联合主力舰队"
+		remove_fleet_flag = defence_fleet
+		set_fleet_flag = attack_fleet
+		owner = { change_variable = { which = "fleet_id" value = 1 }}
+		if = {
+			limit = { is_scope_type = fleet }
+			set_variable = { which = "fleet_id" value = owner }
+		}
+		fleet_event = { id = wg_crisis.42 days = 60 }
+		fleet_event = { id = wg_crisis.40 }
+	}
+}
+
+# Notification (High Intel)
+country_event = {
+	id = wg_crisis.5
+	title = "wg_crisis.5.name"
+	desc = "wg_crisis.5.desc"
+	picture = GFX_evt_uf_portal
+	show_sound = event_ex_started
+	location = event_target:first_portal_system
+
+	is_triggered_only = yes
+
+	after = {
+		begin_event_chain = {
+			event_chain = "wg_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = wg_invasion_poi.1
+			name = "wg_invasion_1_poi"
+			desc = "wg_invasion_1_poi_desc"
+			event_chain = "wg_invasion_chain"
+			location = event_target:first_portal_system
+		}
+		hidden_effect = {
+			country_event = { id = wg_crisis.8 }
+		}
+	}
+
+	option = {
+		name = wg_crisis.5.a
+	}
+	option = {
+		name = wg_crisis.5.b
+	}
+}
+
+# Notification
+country_event = {
+	id = wg_crisis.6
+	title = "wg_crisis.6.name"
+	desc = "wg_crisis.6.desc"
+	picture = GFX_evt_physics_research
+	show_sound = event_alien_signal
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_crisis.6.a
+		hidden_effect = {
+			country_event = { id = wg_crisis.7 days = 30 }
+		}
+	}
+}
+
+# Threat Identified
+country_event = {
+	id = wg_crisis.7
+	title = "wg_crisis.5.name"
+	desc = "wg_crisis.7.desc"
+	picture = GFX_evt_uf_portal
+	show_sound = event_ex_started
+	location = event_target:first_portal_system
+
+	is_triggered_only = yes
+
+	after = {
+		begin_event_chain = {
+			event_chain = "wg_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = wg_invasion_poi.1
+			name = "wg_invasion_1_poi"
+			desc = "wg_invasion_1_poi_desc"
+			event_chain = "wg_invasion_chain"
+			location = event_target:first_portal_system
+		}
+		hidden_effect = {
+			country_event = { id = wg_crisis.8 }
+		}
+	}
+
+	option = {
+		name = wg_crisis.5.a
+	}
+	option = {
+		name = wg_crisis.5.b
+	}
+}
+
+# Intercepted Transmission
+country_event = {
+	id = wg_crisis.8
+	title = "wg_crisis.8.name"
+	desc = "wg_crisis.8.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "UF_room"
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		establish_communications_no_message = event_target:wg_crisis_country
+	}
+
+	option = {
+		name = wg_crisis.8.c
+	}
+}
+
+# Colony Bombarded
+planet_event = {
+	id = wg_crisis.10
+	title = "wg_crisis.10.name"
+	desc = "wg_crisis.10.desc"
+	picture = GFX_evt_exploding_planet
+	show_sound = event_ghost_town
+
+	is_triggered_only = yes
+
+	trigger = {
+        planet_devastation >= 100
+		FROM = {
+			OR = {
+				is_country_type = wg_crisis_country
+				is_country_type = wg_crisis_sub_gate_country
+			}
+		}
+	}
+
+	immediate = {
+		# 相位星球
+		if = {
+			limit = { has_planet_flag = phaseshifting_active }
+			remove_planet_flag = phaseshifting_active
+			remove_modifier = phaseshifted
+		}
+		event_target:wg_crisis_country = { every_owned_fleet = {
+			if = {
+				limit = { is_scope_type = fleet }
+				set_variable = { which = "planet_id" value = root }
+			}
+			if = {
+				limit = { check_variable = { which = "fleet_id" value = "planet_id" }}
+				remove_fleet_flag = orders_cooldown
+				remove_fleet_flag = bombarding_planet
+				clear_fleet_actions = this
+				fleet_event = { id = wg_crisis.40 }
+				log = "finish bombardment, fleet_id: [this.fleet_id]"
+			}
+			if = {
+				limit = { is_scope_type = fleet }
+				set_variable = { which = "planet_id" value = 0 }
+			}
+		}}
+		remove_planet_flag = colonized_planet
+        remove_planet_flag = target_planet
+		remove_planet_flag = uf_target
+		if = {
+			limit = { is_scope_type = planet }
+			set_variable = { which = "planet_id" value = 0 }
+			set_variable = { which = "fleet_id" value = 0 }
+		}
+		event_target:wg_crisis_country = {
+			change_variable = { which = planet_count value = -1}
+			log = "planet destoryed! planet_count: [this.planet_count]"
+		}
+		add_threat = { who = from amount = 2 }
+		destroy_colony = yes
+		if = {
+			limit = { is_ringworld = yes }
+			change_pc = pc_ringworld_habitable_damaged
+            reset_planet = yes
+        }
+        else_if = {
+            limit = { is_habitat = yes }
+			remove_planet = yes
+        }
+        else = {
+			random_list = {
+                50 = { change_pc = pc_shattered }
+                50 = { change_pc = pc_shattered }
+            }
+        }
+		if = {
+			limit = { FROM = { is_country_type = wg_crisis_country } }
+			every_country = {
+				limit = { has_event_chain = "wg_invasion_chain" }
+				add_event_chain_counter = {
+					event_chain = "wg_invasion_chain"
+					counter = "wg_invastor_planets"
+					amount = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wg_crisis.10.a
+	}
+}
+
+# Unlock portal
+country_event = {
+	id = wg_crisis.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_crisis_disabled }
+		is_country_type = wg_crisis_country
+	}
+ 
+	immediate = {
+		# 非天灾难度
+		if = {
+			limit = {
+				NOT = { has_global_flag = wg_crisis_insane }
+			}
+			if = {
+				limit = {
+					count_owned_starbase = {
+						count < 1
+					}
+					count_owned_ships = {
+						limit = {
+							fleet = { has_fleet_flag = defence_fleet }
+						}
+						count < 1
+					}
+				}
+				random_owned_fleet = {
+					limit = { has_fleet_flag = first_dimensional_portal }
+					set_event_locked = no
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					# 检查第一传送门守家舰队
+					NOT = { has_global_flag = first_portal_destroyed }
+					event_target:first_portal_system = {
+						count_system_ships = {
+							limit = {
+								OR = {
+									is_ship_size = wg_crisis_starbase
+									FLEET = {
+										has_fleet_flag = defence_fleet
+									}
+								}
+							}
+							count < 1
+						}
+					}
+				}
+				event_target:first_portal_system = {
+					random_fleet_in_system = {
+						limit = { has_fleet_flag = first_dimensional_portal }
+						set_event_locked = no
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					# 检查第二传送门守家舰队
+					NOT = { has_global_flag = second_portal_destroyed }
+					event_target:second_portal_system = {
+						count_system_ships = {
+							limit = {
+								OR = {
+									is_ship_size = wg_crisis_starbase
+									FLEET = {
+										has_fleet_flag = defence_fleet
+									}
+								}
+							}
+							count < 1
+						}
+					}
+				}
+				event_target:second_portal_system = {
+					random_fleet_in_system = {
+						limit = { has_fleet_flag = second_dimensional_portal }
+						set_event_locked = no
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					# 检查第三传送门守家舰队
+					NOT = { has_global_flag = third_portal_destroyed }
+					event_target:third_portal_system = {
+						count_system_ships = {
+							limit = {
+								OR = {
+									is_ship_size = wg_crisis_starbase
+									FLEET = { has_fleet_flag = defence_fleet }
+								}
+							}
+							count < 1
+						}
+					}
+				}
+				event_target:third_portal_system = {
+					random_fleet_in_system = {
+						limit = { has_fleet_flag = third_dimensional_portal }
+						set_event_locked = no
+					}
+				}
+			}
+		}
+	}
+}
+
+# Portal Destroyed (HIDDEN)
+country_event = {
+	id = wg_crisis.11
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_crisis_disabled}
+		is_country_type = wg_crisis_country
+		FROMFROM = { is_ship_size = wg_dimensional_portal }
+	}
+
+	immediate = {
+		if = {
+			# 非天灾难度
+			limit = {
+				NOT = { has_global_flag = wg_crisis_insane }
+			}
+			set_global_flag = first_portal_destroyed
+			FROM = { 
+				save_event_target_as = portal_killer
+				country_event = { id = wg_crisis.101 }
+			}
+		}
+        else = {
+			FROM = {
+				save_event_target_as = portal_killer
+			}
+			FROMFROM.FLEET = {
+				if = {
+					# 第一传送门被破坏
+					limit = {
+						has_fleet_flag = first_dimensional_portal
+					}
+					set_global_flag = first_portal_destroyed
+					every_country = {
+						limit = { has_point_of_interest = { poi = wg_invasion_poi.1 }}
+						remove_point_of_interest = wg_invasion_poi.1
+					}
+					if = {
+						# 第二传送门未出现则马上刷出
+						limit = {
+							NOT = { has_global_flag = second_portal_opened }
+						}
+						ROOT = { country_event = { id = wg_crisis.15 }}
+					}
+					if = {
+						# 所有传送门被破坏
+						limit = {
+							has_global_flag = second_portal_destroyed
+							has_global_flag = third_portal_destroyed
+						}
+						event_target:first_portal_system = {
+							save_event_target_as = last_portal_system
+						}
+						event_target:portal_killer = {
+							country_event = { id = wg_crisis.101 }
+						}
+					}
+					else = {
+						# 尚有其他传送门
+						event_target:first_portal_system = {
+							save_event_target_as = destroyed_portal_system
+						}
+						every_playable_country = {
+							country_event = { id = wg_crisis.53 }
+						}
+					}
+				}
+				else_if = {
+					# 第二传送门被破坏
+					limit = {
+						has_fleet_flag = second_dimensional_portal
+					}
+					set_global_flag = second_portal_destroyed
+					every_country = {
+						limit = { has_point_of_interest = { poi = wg_invasion_poi.2 }}
+						remove_point_of_interest = wg_invasion_poi.2
+					}
+					if = {
+						# 若第一传送门被破坏，第三传送门未出现，则马上刷出第三传送门
+						limit = {
+							has_global_flag = first_portal_destroyed
+							NOT = { has_global_flag = third_portal_opened }
+						}
+						ROOT = { country_event = { id = wg_crisis.16 }}
+					}
+					if = {
+						# 所有传送门被破坏
+						limit = {
+							has_global_flag = first_portal_destroyed
+							has_global_flag = third_portal_destroyed
+						}
+						event_target:second_portal_system = {
+							save_event_target_as = last_portal_system
+						}
+						event_target:portal_killer = { 
+							country_event = { id = wg_crisis.101 }
+						}
+					}
+					else = {
+						# 尚有其他传送门
+						event_target:second_portal_system = {
+							save_event_target_as = destroyed_portal_system
+						}
+						every_playable_country = {
+							country_event = { id = wg_crisis.53 }
+						}
+					}
+				}
+				else_if = {
+					# 第三传送门被破坏
+					limit = {
+						has_fleet_flag = third_dimensional_portal
+					}
+					set_global_flag = third_portal_destroyed
+					every_country = {
+						limit = { has_point_of_interest = { poi = wg_invasion_poi.3 }}
+						remove_point_of_interest = wg_invasion_poi.3
+					}
+					if = {
+						# 所有传送门被破坏
+						limit = {
+							has_global_flag = first_portal_destroyed
+							has_global_flag = second_portal_destroyed
+						}
+						event_target:third_portal_system = {
+							save_event_target_as = last_portal_system
+						}
+						event_target:portal_killer = { 
+							save_event_target_as = portal_killer
+							country_event = { id = wg_crisis.101 }
+						}
+					}
+					else = {
+						# 尚有其他传送门
+						event_target:first_portal_system = {
+							save_event_target_as = destroyed_portal_system
+						}
+						every_playable_country = {
+							country_event = { id = wg_crisis.53 }
+						}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = wg_crisis.101
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = all_portal_destroyed
+		event_target:wg_crisis_country = {
+			add_modifier = { modifier = uf_buff_after_portal_destoryed days = -1 }
+		}
+		every_playable_country = {
+			if = {
+				limit = { has_communications = ROOT }
+				add_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_destroyed_portal
+				}
+			}
+			add_modifier = {
+				modifier = "extradimensionals_defeated"
+				days = 360
+			}
+			country_event = { id = wg_crisis.12 }
+		}
+	}
+}
+
+# 循环刷辅助守卫舰队
+fleet_event = {
+	id = wg_crisis.102
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		exists = this
+		OR = {
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+	}
+
+	immediate = {
+		fleet_event = { id = wg_crisis.400 days = 90 }
+		fleet_event = { id = wg_crisis.400 days = 270 }
+		if = {
+			limit = { has_global_flag = wg_crisis_hard }
+			fleet_event = { id = wg_crisis.102 days = 10800 } # 30年后再刷
+			break = yes
+		}
+		if = {
+			limit = { has_global_flag = wg_crisis_insane }
+			fleet_event = { id = wg_crisis.400 days = 630 } 
+			fleet_event = { id = wg_crisis.400 days = 450 }
+			fleet_event = { id = wg_crisis.102 days = 9000 } # 25年后再刷
+		}
+		 
+	}
+}
+
+# Portal Destroyed
+country_event = {
+	id = wg_crisis.12
+	title = "wg_crisis.12.name"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+
+	is_triggered_only = yes
+
+    desc = {
+        trigger = {
+			NAND = {
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+				has_global_flag = wg_crisis_insane
+			}
+        }
+        text = wg_crisis.12.desc.a
+    }
+
+    desc = {
+        trigger = {
+            OR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+			NOT = { has_global_flag = wg_crisis_insane }
+        }
+        text = wg_crisis.12.desc.b
+    }
+
+	desc = {
+        trigger = {
+            NOR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+			has_global_flag = wg_crisis_insane
+        }
+        text = wg_crisis.12.desc.c
+    }
+
+    desc = {
+        trigger = {
+            OR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+			has_global_flag = wg_crisis_insane
+        }
+        text = wg_crisis.12.desc.d
+    }
+
+	option = {
+		name = wg_crisis.12.a
+        trigger = { 
+            NOR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+        }
+	}
+
+    option = {
+		name = wg_crisis.12.b
+        trigger = { 
+            OR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+        }
+	}
+}
+
+# Destroy EXDs if no portals and only 5 or less ships remain
+# On yearly pulse
+event = {
+	id = wg_crisis.13
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_crisis_disabled }
+		exists = event_target:wg_crisis_country
+		has_global_flag = wg_invasion_happened
+		OR = {
+			AND = {
+				has_global_flag = wg_crisis_insane
+				has_global_flag = first_portal_destroyed
+				has_global_flag = second_portal_destroyed
+				has_global_flag = third_portal_destroyed
+			}
+			AND = {
+				NOT = { has_global_flag = wg_crisis_insane }
+				has_global_flag = first_portal_destroyed
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					is_country_type = wg_crisis_country
+					num_ships < 6
+				}
+			}
+
+			random_country = {
+				limit = {
+					is_country_type = wg_crisis_country
+				}
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+# Military Reinforcements Spawn Cycle (HIDDEN)
+country_event = {
+	id = wg_crisis.14
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		NOT = { has_global_flag = first_portal_destroyed }
+	}
+
+    immediate = {
+        if = {
+			limit = {
+				OR = {
+					AND = {
+						num_ships > 800
+						OR = {
+							has_global_flag = wg_crisis_very_easy
+							has_global_flag = wg_crisis_easy
+						}
+					}
+					AND = {
+						num_ships > 1300
+						has_global_flag = wg_crisis_normal
+					}
+					AND = {
+						num_ships > 2000
+						has_global_flag = wg_crisis_hard
+					}
+					AND = {
+						num_ships > 3500
+						has_global_flag = wg_crisis_insane
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = wg_crisis_very_easy
+						has_global_flag = wg_crisis_easy
+					}
+				}
+				country_event = { id = wg_crisis.14 days = 500 random = 100 } # Check again later
+			}
+			else_if = {
+				limit = { has_global_flag = wg_crisis_normal }
+				country_event = { id = wg_crisis.14 days = 300 random = 50 } # Check again later
+			}
+			else = {
+				country_event = { id = wg_crisis.14 days = 200 } # Check again later
+			}
+		}
+        else = {
+			event_target:first_dimensional_portal = {
+				if = {
+					limit = {
+						OR = {
+							has_global_flag = wg_crisis_very_easy
+							has_global_flag = wg_crisis_easy
+						}	
+					}
+					create_wg_crisis_weaker_fleet_and_admiral = yes
+				}
+				else = {
+					create_wg_crisis_fleet_and_admiral = yes
+				}
+			}
+            
+            if = {
+                limit = {
+					any_system = {
+						is_same_value = event_target:first_portal_system 
+						any_ship_in_system = {
+							is_ship_size = wg_crisis_starbase
+						}
+					}
+                }
+				if = {
+					limit = {
+						OR = {
+							has_global_flag = wg_crisis_very_easy
+							has_global_flag = wg_crisis_easy
+						}
+					}
+					country_event = { id = wg_crisis.14 days = 1080 random = 100 } # Check again later
+				}
+				else_if = {
+					limit = { has_global_flag = wg_crisis_normal }
+					country_event = { id = wg_crisis.14 days = 720 random = 50 } # Check again later
+				}
+				else = {
+					country_event = { id = wg_crisis.14 days = 200 } # Check again later
+				}
+            }
+            else = {
+                if = {
+					limit = {
+						OR = {
+							has_global_flag = wg_crisis_very_easy
+							has_global_flag = wg_crisis_easy
+						}
+					}
+					country_event = { id = wg_crisis.14 days = 500 random = 100 } # Check again later
+				}
+				else_if = {
+					limit = { has_global_flag = wg_crisis_normal }
+					country_event = { id = wg_crisis.14 days = 300 random = 50 } # Check again later
+				}
+				else = {
+					country_event = { id = wg_crisis.14 days = 200 } # Check again later
+				}
+            }
+        }
+    }
+}
+
+# 第二传送门（只有天灾难度有）
+country_event = {
+	id = wg_crisis.15
+	hide_window = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		OR = {
+			has_global_flag = wg_resistant_army_arrived
+			has_global_flag = first_portal_destroyed
+		}
+		has_global_flag = wg_crisis_insane
+	}
+
+	mean_time_to_happen = {
+		# for test, should be 6 months
+		months = 6
+	}
+	fire_only_once = yes
+
+	immediate = { 
+		country_event = { id = wg_crisis.16 days = 30 random = 30 }
+		every_playable_country = {
+			country_event = { id = wg_crisis.56 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.16
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = second_portal_opened
+		set_crisis_sound = extradimensional_crisis_ambient_stage_3
+		set_crisis_stage_3 = yes
+		initialize_crisis_system_select = yes
+		initialize_second_portal_system_select = yes
+		random_system = {
+			limit = {
+				NOT = { has_star_flag = forbit_spawn_system }
+			}
+			set_star_flag = second_portal_system
+			save_global_event_target_as = second_portal_system
+			random_system_planet = {
+				ROOT = {
+					create_fleet = {
+						name = "NAME_Dimensional_Portal"
+						effect = {
+							set_owner = PREV
+							create_portal = yes
+							set_location = {
+								target = PREVPREV
+								distance = 40
+								angle = random
+							}
+							save_event_target_as = second_dimensional_portal
+							set_fleet_flag = second_dimensional_portal
+                            set_event_locked = yes
+							spawn_fleets_insane = yes
+						}
+					}
+					country_event = { id = wg_crisis.18 days = 1200 } # Spawn Cycle starts
+				}
+				while = {
+					count = 3
+					create_wg_crisis_greater_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_wg_crisis_guard_fleet = yes
+					}}
+				}
+				while = {
+					count = 10
+					create_wg_crisis_fleet_and_admiral = yes
+				}
+			}
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
+			}
+            create_starbase = {
+                size = wg_crisis_starbase
+                owner = event_target:wg_crisis_country	
+            }
+		}
+		every_playable_country = {
+			country_event = { id = wg_crisis.54 }
+		}
+	}
+}
+
+# 第三传送门（只有天灾难度有）
+country_event = {
+	id = wg_crisis.17
+	hide_window = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		has_global_flag = second_portal_opened
+		OR = {
+			has_global_flag = wg_resistant_army_arrived
+			AND = {
+				has_global_flag = first_portal_destroyed
+				has_global_flag = second_portal_destroyed
+			}
+		}
+		has_global_flag = wg_crisis_insane
+	}
+
+	mean_time_to_happen = {
+		# for test, should be 12 months
+		months = 12
+	}
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = third_portal_opened
+		set_crisis_sound = extradimensional_crisis_ambient_stage_4
+		set_crisis_stage_4 = yes
+		initialize_crisis_system_select = yes
+		initialize_second_portal_system_select = yes
+		initialize_third_portal_system_select = yes
+		random_system = {
+			limit = {
+				NOT = { has_star_flag = forbit_spawn_system }
+			}
+			set_star_flag = third_portal_system
+			save_global_event_target_as = third_portal_system
+			random_system_planet = {
+				ROOT = {
+					create_fleet = {
+						name = "NAME_Dimensional_Portal"
+						effect = {
+							set_owner = PREV
+							create_portal = yes
+							set_location = {
+								target = PREVPREV
+								distance = 40
+								angle = random
+							}
+							save_event_target_as = third_dimensional_portal
+                            set_fleet_flag = third_dimensional_portal
+							set_event_locked = yes
+							spawn_fleets_insane = yes
+						}
+					}
+					country_event = { id = wg_crisis.19 days = 1200 } # Spawn Cycle starts
+				}
+				while = {
+					count = 3
+					create_wg_crisis_greater_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_wg_crisis_guard_fleet = yes
+					}}
+				}
+				while = {
+					count = 10
+					create_wg_crisis_fleet_and_admiral = yes
+				}
+			}
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
+			}
+            create_starbase = {
+                size = wg_crisis_starbase
+                owner = event_target:wg_crisis_country		
+            }
+		}
+		every_playable_country = {
+			country_event = { id = wg_crisis.55 }
+		}
+	}
+}
+
+# 第二传送门援军
+country_event = {
+	id = wg_crisis.18
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+        NOT = { has_global_flag = second_portal_destroyed }
+	}
+
+    immediate = {
+        if = {
+			limit = {
+				num_ships > 3500
+			}
+			country_event = { id = wg_crisis.18 days = 200 } # Check again later
+		}
+        else = {
+			event_target:second_dimensional_portal = {
+				create_wg_crisis_fleet_and_admiral = yes
+			}
+            country_event = { id = wg_crisis.18 days = 200 } # Check again later
+        }
+    }
+}
+
+# 第三传送门援军
+country_event = {
+	id = wg_crisis.19
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+        NOT = { has_global_flag = third_portal_destroyed }
+	}
+
+    immediate = {
+        if = {
+			limit = {
+				num_ships > 3500
+			}
+			country_event = { id = wg_crisis.19 days = 200 } # Check again later
+		}
+        else = {
+			event_target:third_dimensional_portal = {
+				create_wg_crisis_fleet_and_admiral = yes
+			}
+            country_event = { id = wg_crisis.19 days = 200 } # Check again later
+        }
+    }
+}
+
+country_event = {
+	id = wg_crisis.20
+	title = "TRANSMISSION"
+
+    desc = {
+        # 普通帝国
+        text = wg_crisis.20.desc_01
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+    desc = {
+        # 舰娘政体 / 深海政体
+        text = wg_crisis.20.desc_02
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "UF_room"
+	}
+
+	is_triggered_only = yes
+
+    trigger = {
+		FROM = {
+			is_country_type = wg_crisis_country
+		}
+	}
+
+    option = {
+        # 普通帝国
+        name = wg_crisis.20.a
+        response_text = wg_crisis.20.a.response
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        # 舰娘 / 深海政体 1
+        name = wg_crisis.20.b.a
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.a.response
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        # 舰娘 / 深海政体 2
+        name = wg_crisis.20.b.b
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.b.response
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        name = wg_crisis.20.b.c
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.c.response
+        # 舰娘 / 深海政体 3
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        # 舰娘 / 深海政体 4
+        name = wg_crisis.20.b.d
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.d.response
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        # 舰娘 / 深海政体 5
+        name = wg_crisis.20.b.e
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.e.response
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+    option = {
+        # 舰娘 / 深海政体 6
+        name = wg_crisis.20.b.f
+        response_text = wg_crisis.20.b.f.response
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+}
+
+fleet_event = {
+	id = wg_crisis.40
+	hide_window = yes
+
+    trigger = {
+        has_global_flag = wg_invasion_happened
+        has_fleet_flag = attack_fleet
+        NOT = { has_fleet_flag = orders_cooldown }
+		NOT = { has_global_flag = recheck_planet }
+        owner = { is_country_type = wg_crisis_country }
+        is_fleet_idle = yes
+        
+        any_system = {
+			any_system_planet = {
+				OR = {
+					OR = {
+						is_colonizable = yes
+						# 相位星球
+						has_planet_flag = phaseshifting_active
+					}
+					has_owner = yes
+				}
+                NOT = { has_planet_flag = target_planet }
+			}		
+		}
+    }
+    mean_time_to_happen = {
+		days = 5
+	}	
+
+    immediate = {
+		set_timed_fleet_flag = { flag = orders_cooldown days = 30 }
+		if = {
+			limit = { 
+				OR = {
+					has_global_flag = all_portal_destroyed
+					has_global_flag = wg_crisis_insane
+				}
+			}
+			closest_system = {
+				limit = {
+					any_system_planet = {
+						has_owner = yes
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { 
+						has_owner = yes
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+					if = {
+						limit = { has_owner = yes }
+						set_planet_flag = colonized_planet
+					}
+					set_timed_planet_flag = { flag = target_planet days = 360 }
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = root }
+						set_variable = { which = "planet_id" value = "fleet_id" }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					save_event_target_as = move_to_planet
+				}
+			}
+		}
+		else = {
+			closest_system = {
+				limit = {
+					any_system_planet = {
+						OR = {
+							OR = {
+								is_colonizable = yes
+								# 相位星球
+								has_planet_flag = phaseshifting_active
+							}
+							has_owner = yes
+						}
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { 
+						OR = {
+							OR = {
+								is_colonizable = yes
+								# 相位星球
+								has_planet_flag = phaseshifting_active
+							}
+							has_owner = yes
+						}
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+					if = {
+						limit = { has_owner = yes }
+						set_planet_flag = colonized_planet
+					}
+					set_timed_planet_flag = { flag = target_planet days = 360 }
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = root }
+						set_variable = { which = "planet_id" value = "fleet_id" }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					save_event_target_as = move_to_planet
+				}
+			}
+		}
+		if = {
+			limit = { 
+				NOR = {
+					exists = event_target:move_to_planet 
+					event_target:move_to_planet.solar_system = {
+						has_access_fleet = event_target:wg_crisis_country
+					}
+				}
+				event_target:wg_crisis_country = {
+					check_variable = { which = planet_count value > 0}
+				}
+			}
+			random_system = {
+				limit = { 
+					any_system_planet = {
+						OR = {
+							has_owner = yes
+							AND = {
+								NOT = { has_global_flag = recheck_planet }
+								has_planet_flag = uf_target
+							}
+						}
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+				}
+				random_system_planet = {
+					limit = {
+						OR = {
+							has_owner = yes
+							AND = {
+								NOT = { has_global_flag = recheck_planet }
+								has_planet_flag = uf_target
+							}
+						}
+						NOR = {
+							has_planet_flag = target_planet 
+							check_variable = { which = "planet_id" value > 0}
+						}
+					}
+					save_event_target_as = move_to_planet
+					set_timed_planet_flag = { flag = target_planet days = 360 }
+					if = { 
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = root }
+						set_variable = { which = "planet_id" value = "fleet_id" }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+				}
+				random_system_planet = {
+					limit = { NOT = { has_planet_flag = uf_target }}
+					ROOT = {
+						set_location = {
+							target = PREV
+							distance = 5
+							angle = random
+						}
+						queue_actions = {
+							wait = { duration = 120 }
+						}
+						set_timed_fleet_flag = { flag = orders_cooldown days = 120 }
+					}
+				}
+			}
+		}
+		set_fleet_flag = moving_to_planet
+		queue_actions = {
+            find_closest_system = {
+                trigger = {
+                    id = wg_crisis.40.t1
+                    any_system_planet = {
+                        is_same_value = event_target:move_to_planet
+						OR = {
+							has_owner = yes
+							AND = {
+								NOT = { has_global_flag = recheck_planet }
+								has_planet_flag = uf_target
+							}
+						}
+                    }
+                }
+                found_system = {
+					move_to = this
+				}
+				failed = {
+					effect = {
+						id = wg_crisis.40.e2
+						log = "Find planet fail, executing backup plan. fleet_id: [root.fleet_id]"
+						save_event_target_as = this_fleet
+						closest_system = {
+							limit = {
+								starbase = { has_starbase_size >= starbase_starport }
+								NOT = { has_star_flag = target_system }
+							}
+							set_timed_star_flag = { flag = target_system days = 180 }
+							save_event_target_as = target_system
+						}
+						queue_actions = {
+							find_closest_system = {
+								trigger = {
+									id = wg_crisis.40.t21
+									is_same_value = event_target:target_system
+								}
+								found_system = {
+									move_to = this
+									effect = {
+										id = wg_crisis.40.e21
+										root = {
+											remove_fleet_flag = moving_to_planet
+											fleet_event = { id = wg_crisis.40 }
+											fleet_event = { id = wg_crisis.42 days = 60 }
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			find_closest_planet = {
+				trigger = {
+					id = wg_crisis.40.t2
+					is_same_value = event_target:move_to_planet
+				}
+				found_planet = {
+					orbit_planet = this
+					effect = {
+						id = wg_crisis.40.t2e1
+						log = "fleet locked on planet. planet_id: [this.planet_id] fleet_id: [root.fleet_id]"
+						ROOT = { 
+							remove_fleet_flag = moving_to_planet 
+							if = {
+								limit = { OR = {
+									has_global_flag = wg_crisis_hard
+									has_global_flag = wg_crisis_insane
+								}}
+								if = { 
+									limit = { event_target:move_to_planet = { has_owner = no }}
+									set_timed_fleet_flag = { flag = orders_cooldown days = 35 }
+									fleet_event = { id = wg_crisis.40 days = 36 }
+									set_timed_fleet_flag = { flag = blowing_up_planet days = 35}
+								}
+							}
+							else = {
+								if = {
+									limit = { event_target:move_to_planet = { has_owner = no }}
+									set_timed_fleet_flag = { flag = orders_cooldown days = 50 }
+									fleet_event = { id = wg_crisis.40 days = 51 }
+									set_timed_fleet_flag = { flag = blowing_up_planet days = 50 }
+								}
+							}
+						}
+						if = {
+							limit = { 
+								is_scope_type = planet
+								has_owner = no
+							}
+							planet_event = { id = wg_crisis.41 }
+							if = {
+								#始源球直接炸掉
+								limit = { is_acot_planet = yes }
+								reset_planet = yes
+								planet_event = { id = wg_crisis.41 }
+							}
+						}
+						else = {
+							ROOT = {
+								set_fleet_flag = orders_cooldown
+								set_fleet_flag = bombarding_planet
+							}
+						}
+					}
+					wait = {
+						duration = 50
+						random = 25
+					}
+				}
+			}
+		}
+	}
+}
+
+# 检查舰队是否正在移动至星球及异常事项
+fleet_event = {
+	id = wg_crisis.42
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = this
+		has_global_flag = wg_invasion_happened
+        has_fleet_flag = attack_fleet
+		NOT = { has_global_flag = recheck_planet }
+        owner = { is_country_type = wg_crisis_country }
+
+		any_system = {
+			any_system_planet = {
+				OR = {
+					OR = {
+						is_colonizable = yes
+						# 相位星球
+						has_planet_flag = phaseshifting_active
+					}
+					has_owner = yes
+				}
+                NOT = { has_planet_flag = target_planet }
+			}		
+		}
+	}
+
+	immediate = {
+		# 检查舰队是否意外闲置
+		fleet_event = { id = wg_crisis.42 days = 60 }
+		if = {
+			limit = { 
+				OR = {
+					orbit = { 
+						NOR = {
+							has_planet_flag = uf_target
+							has_planet_flag = target_planet
+							UF_target_planet = yes
+							check_variable = { which = "planet_id" value > 0 }
+						}
+					}
+					AND = {
+						is_fleet_idle = yes
+						NOT = { has_fleet_flag = blowing_up_planet }
+					}
+				}
+			}
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						OR = { 
+							has_owner = yes
+							AND = {
+								NOT = { has_global_flag = recheck_planet }
+								has_planet_flag = uf_target
+							}
+							has_planet_flag = target_planet
+						}
+					}
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = root }
+					}
+					if = {
+						limit = { check_variable = { which = "planet_id" value > 0 }}
+						if = {
+							limit = { check_variable = { which = "planet_id" value = "fleet_id" }}
+							log = "fleet stays unexpectly, moving to planet. fleet_id: [root.fleet_id] planet_id: [this.planet_id]"
+							save_event_target_as = move_to_planet
+							# 重新将舰队拉到太阳系内随机目标
+							if = {
+								limit = { is_scope_type = planet }
+								set_variable = { which = "fleet_id" value = 0 }
+							}
+						}
+						
+					}
+					else = {
+						if = {
+							limit = { is_scope_type = planet }
+							set_variable = { which = "planet_id" value = "fleet_id" }
+						}
+						save_event_target_as = move_to_planet
+						set_timed_planet_flag = { flag = target_planet days = 180 } 
+					}
+					ROOT = {
+						clear_fleet_actions = this
+						queue_actions = {
+							find_closest_planet = {
+								trigger = {
+									id = wg_crisis.42.t1
+									is_same_value = event_target:move_to_planet
+								}
+								found_planet = {
+									orbit_planet = this
+									effect = {
+										id = wg_crisis.42.t1e1
+										log = "fleet locked on planet. planet_id: [this.planet_id] fleet_id: [root.fleet_id]"
+										ROOT = { 
+											remove_fleet_flag = moving_to_planet 
+											if = {
+												limit = { OR = {
+													has_global_flag = wg_crisis_hard
+													has_global_flag = wg_crisis_insane
+												}}
+												event_target:move_to_planet = { if = {
+													limit = { has_owner = no }
+													set_timed_fleet_flag = { flag = orders_cooldown days = 35 }
+													fleet_event = { id = wg_crisis.40 days = 36 }
+													set_timed_fleet_flag = { flag = blowing_up_planet days = 35}
+												}}
+											}
+											else = {
+												event_target:move_to_planet = { if = {
+													limit = { has_owner = no }
+													set_timed_fleet_flag = { flag = orders_cooldown days = 50 }
+													fleet_event = { id = wg_crisis.40 days = 51 }
+													set_timed_fleet_flag = { flag = blowing_up_planet days = 50 }
+												}}
+											}
+										}
+										if = {
+											limit = { 
+												is_scope_type = planet
+												has_owner = no
+											}
+											planet_event = { id = wg_crisis.41 }
+											if = {
+												#始源球直接炸掉
+												limit = { is_acot_planet = yes }
+												reset_planet = yes
+												planet_event = { id = wg_crisis.41 }
+											}
+										}
+										else = {
+											ROOT = {
+												set_fleet_flag = orders_cooldown
+												set_fleet_flag = bombarding_planet
+											}
+										}
+									}
+									wait = {
+										duration = 50
+										random = 25
+									}
+								}
+							}
+						}
+					}
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					break = yes
+				}
+			}
+		}
+		# 在问题行星上停留轰炸
+		if = {
+			limit = {
+				has_fleet_flag = blowing_up_planet
+				orbit = {
+					UF_target_planet = yes
+					NOR = {
+						has_planet_flag = target_planet
+						has_planet_flag = uf_target
+						check_variable = { which = "planet_id" value > 0 }
+					}
+				}
+			}
+			orbit = { planet_event = { id = wg_crisis.41 days = 30 }}
+			queue_actions = {
+				wait = {
+					duration = 30
+				}
+				effect = {
+					id = wg_crisis.42.e2
+					clear_fleet_actions = this
+					remove_fleet_flag = orders_cooldown
+					remove_fleet_flag = blowing_up_planet
+				}
+			}
+			fleet_event = { id = wg_crisis.40 days = 31 }
+			break = yes
+		}
+		every_planet = {
+			limit = { check_variable = { which = "planet_id" value > 0 }}
+			if = {
+				limit = { is_scope_type = planet }
+				set_variable = { which = "fleet_id" value = root }
+			}
+			if = {
+				limit = {
+					check_variable = { which = "planet_id" value = "fleet_id" }
+				}
+				# 目标星球被不明原因摧毁
+				if = {
+					limit = {
+						NOR = {
+							OR = {
+								is_colonizable = yes
+								# 相位星球
+								has_planet_flag = phaseshifting_active
+							}
+							has_owner = yes
+							has_planet_flag = uf_target
+						}
+						ROOT = { has_fleet_flag = moving_to_planet }
+					}
+					log = "target planet has been destroyed, replanning route. planet_id: [this.planet_id] fleet_id: [root.fleet_id]"
+					ROOT = {
+						remove_fleet_flag = moving_to_planet
+						remove_fleet_flag = orders_cooldown
+						clear_fleet_actions = this
+						fleet_event = { id = wg_crisis.40 }
+					}
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					break = yes
+				}
+				# 舰队无故停止
+				if = {
+					limit = { 
+						NOT = { has_planet_flag = target_planet }
+						ROOT = { 
+							is_fleet_idle = yes
+							OR = {
+								has_fleet_flag = moving_to_planet
+								AND = {
+									PREV = { has_owner = yes }
+									has_fleet_flag = bombarding_planet
+								}
+							}
+						}
+					}
+					save_event_target_as = move_to_planet
+					set_timed_planet_flag = { flag = target_planet days = 360 }
+					log = "fleet stops unexpectedly, replanning fleet actions. fleet_id: [root.fleet_id]"
+					ROOT = {
+						clear_fleet_actions = this
+						remove_fleet_flag = bombarding_planet
+						remove_fleet_flag = blowing_up_planet
+						set_fleet_flag = moving_to_planet
+						queue_actions = {
+							find_closest_system = {
+								trigger = {
+									id = wg_crisis.42.t2
+									any_system_planet = {
+										is_same_value = event_target:move_to_planet
+									}
+								}
+								found_system = {
+									move_to = this
+									find_closest_planet = {
+										trigger = {
+											id = wg_crisis.42.t2t1
+											is_same_value = event_target:move_to_planet
+										}
+										found_planet = {
+											orbit_planet = this
+											effect = {
+												id = wg_crisis.42.t2t1e2
+												log = "fleet locked on planet. planet_id: [this.planet_id] fleet_id: [root.fleet_id]"
+												ROOT = { 
+													remove_fleet_flag = moving_to_planet 
+													if = {
+														limit = { OR = {
+															has_global_flag = wg_crisis_hard
+															has_global_flag = wg_crisis_insane
+														}}
+														event_target:move_to_planet = { if = {
+															limit = { has_owner = no }
+															set_timed_fleet_flag = { flag = orders_cooldown days = 35 }
+															fleet_event = { id = wg_crisis.40 days = 36 }
+															set_timed_fleet_flag = { flag = blowing_up_planet days = 35}
+														}}
+													}
+													else = {
+														event_target:move_to_planet = { if = {
+															limit = { has_owner = no }
+															set_timed_fleet_flag = { flag = orders_cooldown days = 50 }
+															fleet_event = { id = wg_crisis.40 days = 51 }
+															set_timed_fleet_flag = { flag = blowing_up_planet days = 50 }
+														}}
+													}
+												}
+												if = {
+													limit = { 
+														is_scope_type = planet
+														has_owner = no
+													}
+													planet_event = { id = wg_crisis.41 }
+													if = {
+														#始源球直接炸掉
+														limit = { is_acot_planet = yes }
+														reset_planet = yes
+														planet_event = { id = wg_crisis.41 }
+													}
+												}
+												else = {
+													ROOT = {
+														set_fleet_flag = orders_cooldown
+														set_fleet_flag = bombarding_planet
+													}
+												}
+											}
+											wait = {
+												duration = 50
+												random = 25
+											}
+										}
+									}
+								}
+								failed = {
+									effect = {
+										id = wg_crisis.42.t2e2
+										log = "Find planet fail, executing backup plan. fleet_id: [root.fleet_id]"
+										save_event_target_as = this_fleet
+										closest_system = {
+											limit = {
+												starbase = { has_starbase_size >= starbase_starport }
+												NOT = { has_star_flag = target_system }
+											}
+											set_timed_star_flag = { flag = target_system days = 180 }
+											save_event_target_as = target_system
+										}
+										queue_actions = {
+											find_closest_system = {
+												trigger = {
+													id = wg_crisis.42.t2e2t1
+													is_same_value = event_target:target_system
+												}
+												found_system = {
+													move_to = this
+													effect = {
+														id = wg_crisis.42.t2e2t1e1
+														root = {
+															remove_fleet_flag = moving_to_planet
+															fleet_event = { id = wg_crisis.40 }
+															fleet_event = { id = wg_crisis.42 days = 60 }
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					break = yes
+				}
+				# 殖民地在星球被轨道轰炸炸毁前摧毁（星球毁伤未达100%而殖民地GG）
+				if = {
+					limit = {
+						has_planet_flag = colonized_planet
+						has_owner = no
+						planet_devastation > 10
+						planet_devastation < 100
+						ROOT = { 
+							orbit = { is_same_value = PREVPREV }
+							NOR = {
+								has_fleet_flag = moving_to_planet
+								has_fleet_flag = blowing_up_planet
+							}
+							has_fleet_flag = bombarding_planet
+						}
+						solar_system = {
+							any_ship_in_system = {
+								FLEET = {
+									is_same_value = ROOT
+								}
+							}
+						}
+					}
+					ROOT = {
+						log = "colony destroyed by orbital bombardment but planet devastation not yet reach 100%, blowing up the planet. planet_id: [PREV.planet_id] fleet_id: [this.fleet_id]"
+						remove_fleet_flag = orders_cooldown
+						remove_fleet_flag = bombarding_planet
+						clear_fleet_actions = this
+						fleet_event = { id = wg_crisis.40 }
+						PREV = {
+							planet_event = { id = wg_crisis.43 }
+							remove_planet_flag = colonized_planet
+						}
+					}
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "fleet_id" value = 0 }
+					}
+					break = yes
+				}
+			}
+		}
+	}
+}
+
+# 攻击舰队被击破，移除对应星球标记
+country_event = {
+    id = wg_crisis.46
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		FROMFROM = {
+			has_fleet_flag = attack_fleet
+			check_variable = { which = "fleet_id" value > 0 }
+		}
+	}
+
+	immediate = {
+		FROMFROM = { save_event_target_as = destroyed_fleet }
+		every_planet = {
+			limit = { 
+				has_planet_flag = uf_target
+				check_variable = { which = "planet_id" value > 0 }
+			}
+			if = { 
+				limit = { is_scope_type = planet }
+				set_variable = { which = "fleet_id" value = event_target:destroyed_fleet }
+			}
+			if = {
+				limit = { check_variable = { which = "planet_id" value = "fleet_id" }}
+				remove_planet_flag = target_planet
+				set_variable = { which = "planet_id" value = 0 }
+			}
+			if = { 
+				limit = { is_scope_type = planet }
+				set_variable = { which = "fleet_id" value = 0 }
+			}
+		}
+	}
+}
+
+planet_event = {
+    id = wg_crisis.41
+    hide_window = yes
+	is_triggered_only = yes
+	
+	pre_triggers = {
+        has_owner = no
+	}
+
+    trigger = {
+        is_colonizable = yes
+        has_planet_flag = target_planet
+    }
+
+    immediate = {
+		if = {
+			#始源球直接炸掉
+			limit = { is_acot_planet = yes }
+			reset_planet = yes
+		}
+		else = {
+			if = {
+				limit = { OR = {
+					has_global_flag = wg_crisis_hard
+					has_global_flag = wg_crisis_insane
+				}}
+				set_timed_planet_flag = { flag = destruction_cooldown days = 15 }
+				planet_event = { id = wg_crisis.43 days = 16 }
+			}
+			else = {
+				set_timed_planet_flag = { flag = destruction_cooldown days = 30 }
+				planet_event = { id = wg_crisis.43 days = 31 }
+			}
+		}
+    }
+}
+
+planet_event = {
+    id = wg_crisis.43
+    hide_window = yes
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = no
+	}
+
+    trigger = {
+		OR = {
+			is_colonizable = yes
+			# 相位星球
+			has_planet_flag = phaseshifting_active
+		}
+        NOT = { has_planet_flag = destruction_cooldown }
+        solar_system = {
+            any_ship_in_system = {
+                Fleet = {
+					owner = { is_country_type = wg_crisis_country }
+					has_fleet_flag = attack_fleet
+				}
+            }
+        }
+    }
+
+    immediate = {
+		log = "planet without owner blowed up"
+		# 相位星球
+		if = {
+			limit = { has_planet_flag = phaseshifting_active }
+			remove_planet_flag = phaseshifting_active
+			remove_modifier = phaseshifted
+		}
+		event_target:wg_crisis_country = {
+			change_variable = { which = planet_count value = -1}
+			log = "planet destoryed! planet_count: [this.planet_count]"
+			every_owned_fleet = {
+				if = { 
+					limit = { is_scope_type = fleet }
+					set_variable = { which = "planet_id" value = root }
+				}
+				if = {
+					limit = { check_variable = { which = "fleet_id" value = "planet_id" }}
+					remove_fleet_flag = blowing_up_planet
+					remove_fleet_flag = moving_to_planet
+					fleet_event = { id = wg_crisis.40 days = 20 }
+				}
+				if = { 
+					limit = { is_scope_type = fleet }
+					set_variable = { which = "planet_id" value = 0 }
+				}
+			}
+		}
+		remove_planet_flag = target_planet
+		remove_planet_flag = uf_target
+		if = {
+			limit = { is_scope_type = planet }
+			set_variable = { which = "planet_id" value = 0 }
+			set_variable = { which = "fleet_id" value = 0 }
+		}
+		
+        if = {
+			limit = { is_ringworld = yes }
+			change_pc = pc_ringworld_habitable_damaged
+            reset_planet = yes
+        }
+        else_if = {
+            limit = { is_habitat = yes }
+			remove_planet = yes
+        }
+        else = {
+			random_list = {
+                50 = { change_pc = pc_shattered }
+                50 = { change_pc = pc_shattered }
+            }
+        }
+        every_country = {
+            limit = { has_event_chain = "wg_invasion_chain" }
+            add_event_chain_counter = {
+                event_chain = "wg_invasion_chain"
+                counter = "wg_invastor_planets"
+                amount = 1
+            }
+        }
+    }
+}
+
+# Kill Count (HIDDEN)
+country_event = {
+	id = wg_crisis.44
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+        is_country_type = wg_crisis_country
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                FROM = { has_event_chain = "wg_invasion_chain" }
+            }
+            FROM = {
+                add_event_chain_counter = {
+                    event_chain = "wg_invasion_chain"
+                    counter = "wg_invastor_kills_us"
+                    amount = 1
+                }
+            }
+        }
+        else = {
+            every_country = {
+				limit = {
+					has_event_chain = "wg_invasion_chain"
+					NOT = { is_same_value = FROM }
+				}
+				add_event_chain_counter = {
+					event_chain = "wg_invasion_chain"
+					counter = "wg_invastor_kills_others"
+					amount = 1
+				}
+			}
+        }
+    }
+}
+
+# crisis Victims (HIDDEN)
+country_event = {
+	id = wg_crisis.45
+	hide_window = yes
+
+	is_triggered_only = yes
+
+    trigger = {
+        is_country_type = wg_crisis_country
+    }
+
+    immediate = {
+        every_country = {
+            limit = { has_event_chain = "wg_invasion_chain" }
+            add_event_chain_counter = {
+                event_chain = "wg_invasion_chain"
+                counter = "wg_invastor_victims"
+                amount = 1
+            }
+        }
+    }
+}
+
+# crisis defeated
+country_event = {
+	id = wg_crisis.50
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+    trigger = {
+        is_country_type = wg_crisis_country
+    }
+
+    immediate = {
+        every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+				}
+			}
+			country_event = { id = wg_crisis.51 }
+			country_event = { id = wg_crisis.52 days = 5 }
+		}
+		random_country = {
+			limit = {
+				is_country_type = wg_resistant_army
+			}
+			destroy_country = yes
+		}
+		random_country = {
+			limit = {
+				is_wg_fallen_empire = yes
+			}
+			country_event = { id = wg_fe.30 }
+		}
+	}
+}
+
+# 最后一个传送门被摧毁
+country_event = {
+	id = wg_crisis.51
+    title = wg_crisis.51.name
+    is_triggered_only = yes
+    picture = GFX_evt_metropolis
+	show_sound = event_celebration
+	fire_only_once = yes
+
+    desc = {
+        text = "wg_crisis.51.desc.a"
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+        }
+    }
+    desc = {
+        text = "wg_crisis.51.desc.b"
+        trigger = {
+            OR = {
+                has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+            }
+        }
+    }
+
+	immediate = {
+		stop_crisis_sound = yes
+		country_event = { id = wg_crisis.998 days = 10 }
+	}
+
+    option = { # Spiritualist Response
+		name = crisis.1271.a
+		trigger = {
+			has_spiritualist_government = yes
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Militarist Response
+		name = crisis.1271.b
+		trigger = {
+			has_militarist_government = yes
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Materialist Response
+		name = crisis.1271.c
+		trigger = {
+			has_materialist_government = yes
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Pacifist Response
+		name = crisis.1271.d
+		trigger = {
+			has_pacifist_government = yes
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Corporate Response
+		name = crisis.1271.e
+		trigger = {
+			has_government = gov_megacorporation
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Default Response
+		name = crisis.211.f
+		trigger = {
+			OR = {
+				has_generic_government = yes
+				has_government = gov_enlightened_monarchy
+				has_government = gov_elective_monarchy
+				has_government = gov_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+			NOR = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Xenophobe Response
+		name = crisis.1271.g
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+	option = { # Xenophile Response
+		name = crisis.1271.h
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophile"
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+		}
+	}
+    option = { # 舰娘
+		name = wg_crisis.51.a
+		trigger = {
+			has_authority = auth_warshipgirls
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 50
+		}
+	}
+    option = { # 深海破冰飞升
+		name = wg_crisis.51.b
+		trigger = {
+			has_authority = auth_shenhai
+            has_ascension_perk = ap_shenhai_icebreaking
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 50
+		}
+	}
+    option = { # 深海没有破冰飞升
+		name = wg_crisis.51.c
+		trigger = {
+			has_authority = auth_shenhai
+            NOT = { has_ascension_perk = ap_shenhai_icebreaking }
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 50
+		}
+	}
+}
+
+# 天灾难度下传送门被摧毁
+country_event = {
+	id = wg_crisis.53
+	title = wg_crisis.53.name
+	desc = wg_crisis.53.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = wg_crisis.54
+	title = "wg_crisis.54.name"
+	desc = "wg_crisis.54.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	location = event_target:second_portal_system
+
+	is_triggered_only = yes
+
+	after = {
+		create_point_of_interest = {
+			id = wg_invasion_poi.2
+			name = "wg_invasion_2_poi"
+			desc = "wg_invasion_2_poi_desc"
+			event_chain = "wg_invasion_chain"
+			location = event_target:second_portal_system
+		}
+		country_event = { id = wg_crisis.57 days = 3 }
+	}
+
+	option = {
+		name = wg_crisis.54.a
+		custom_tooltip = wg_crisis.54.a.tooltip
+	}
+}
+
+country_event = {
+	id = wg_crisis.55
+	title = "wg_crisis.55.name"
+	desc = "wg_crisis.55.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	location = event_target:third_portal_system
+
+	is_triggered_only = yes
+
+	after = {
+		create_point_of_interest = {
+			id = wg_invasion_poi.3
+			name = "wg_invasion_3_poi"
+			desc = "wg_invasion_3_poi_desc"
+			event_chain = "wg_invasion_chain"
+			location = event_target:third_portal_system
+		}
+		country_event = { id = wg_crisis.58 days = 3}
+	}
+
+	option = {
+		name = wg_crisis.55.a
+		custom_tooltip = wg_crisis.55.a.tooltip
+	}
+}
+
+country_event = {
+	id = wg_crisis.56
+	title = "TRANSMISSION"
+    desc = "wg_crisis.56.desc"
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = wg_resistant_army_arrived
+		NOT = { has_global_flag = all_portal_destroyed }
+	}
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "resistant_army_room"
+	}
+
+	option = {
+		name = wg_crisis.56.a
+	}
+}
+
+country_event = {
+	id = wg_crisis.57
+	title = "TRANSMISSION"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "UF_room"
+	}
+
+	is_triggered_only = yes
+
+	desc = {
+        # 普通帝国
+        text = wg_crisis.57.desc.a
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+    desc = {
+        # 舰娘政体 / 深海政体
+        text = wg_crisis.57.desc.b
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+	option = {
+		trigger = {
+			NOR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+		name = wg_crisis.57.a
+	}
+
+    option = {
+        trigger = {
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+        name = wg_crisis.57.b
+    }
+}
+
+country_event = {
+	id = wg_crisis.58
+	title = "TRANSMISSION"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "UF_room"
+	}
+
+	is_triggered_only = yes
+
+	desc = {
+        # 普通帝国
+        text = wg_crisis.58.desc.a
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+    desc = {
+        # 舰娘政体 / 深海政体
+        text = wg_crisis.58.desc.b
+        trigger = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+
+	option = {
+		trigger = {
+			NOR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+		name = wg_crisis.58.a
+		response_text = wg_crisis.58.a.response
+	}
+
+    option = {
+        trigger = {
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+        name = wg_crisis.58.b
+		response_text = wg_crisis.58.b.response
+    }
+}
+
+country_event = { 
+	id = wg_crisis.80
+	hide_window = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		OR = {
+			has_global_flag = wg_crisis_easy
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		NOT = { has_global_flag = all_portal_destroyed }
+		always = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+			}
+			ROOT = { random_owned_ship = {
+				limit = { is_ship_size = wg_dimensional_portal }
+				Fleet = {
+					while = { count = 3
+						create_wg_crisis_greater_admiral = yes
+						create_wg_crisis_greater_fleet = yes
+					}
+				}
+			}}
+		}
+	}
+}
+
+# test
+# find the way to player's system that is closest to the portal
+country_event = { 
+	id = wg_crisis.800
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = wg_dimensional_portal }
+			solar_system = { 
+				save_event_target_as = starting_system
+				every_playable_country = {
+					limit = {
+						#is_ai = no
+						OR = {
+							has_authority = auth_shenhai
+							has_authority = auth_warshipgirls
+						}
+					}
+					save_event_target_as = target_country
+					event_target:wg_crisis_country = {
+						change_variable = { which = "target_country_count" value = 1 }
+					}
+					event_target:starting_system = {
+						every_neighbor_system = {
+							ignore_hyperlanes = no
+							set_star_flag = neighbour_system_of_starting_system@event_target:target_country
+						}
+						closest_system = {
+							limit = { 
+								is_inside_border = event_target:target_country
+								any_system_planet = { has_planet_flag = uf_target }
+							}
+							set_star_flag = passing_system
+							#PREVPREV = {
+							#	create_point_of_interest = {
+							#		id = passing_system.1
+							#		name = test_passing_system_name
+							#		desc = test_passing_system_desc
+							#		event_chain = "wg_invasion_chain"
+							#		category = passing_system
+							#		location = PREV
+							#	}
+							#}
+							set_star_flag = event_targeting_system@event_target:target_country
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = wg_crisis.801 }
+	}
+}
+
+country_event = { 
+	id = wg_crisis.801
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_playable_country = {
+			limit = {
+				# is_ai = no
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+				NOT = { has_country_flag = finish_searching }
+			}
+			save_event_target_as = target_country
+			random_system_within_border = {
+				limit = { has_star_flag = event_targeting_system@event_target:target_country }
+				if = {
+					limit = { has_star_flag = neighbour_system_of_starting_system@event_target:target_country }
+					# 寻路结束
+					remove_star_flag = event_targeting_system@event_target:target_country
+					event_target:target_country = {
+						set_country_flag = finish_searching
+					}
+					event_target:wg_crisis_country = {
+						change_variable = { which = "target_country_count" value = -1 }
+					}
+				}
+				else = {
+					closest_system = {
+						limit = { has_star_flag = neighbour_system_of_starting_system@event_target:target_country }
+						set_star_flag = passing_system
+						random_system_planet = {
+							create_fleet = {
+								effect = {
+									set_owner = event_target:wg_crisis_country 
+									create_ship = {
+										name = "NAME_missile_damage_aura"
+										design = "NAME_opening_missile_damage_01"
+									}
+									set_location = {
+										target = PREV
+										distance = 1
+										angle = random
+									}
+								}
+							}
+						}
+						every_system = {
+							limit = { has_star_flag = neighbour_system_of_starting_system@event_target:target_country }
+							remove_star_flag = neighbour_system_of_starting_system@event_target:target_country
+						}
+						every_neighbor_system = {
+							ignore_hyperlanes = no
+							set_star_flag = neighbour_system_of_starting_system@event_target:target_country
+						}
+					}
+				}
+			}
+		}
+		event_target:wg_crisis_country = {
+			if = {
+				limit = { check_variable = { which = "target_country_count" value > 0 }}
+				country_event = { id = wg_crisis.801 }
+				log = "find route finish"
+			}
+			else = {
+				
+			}
+		}
+	}
+}
+
+# 创建小型传送门
+country_event = { 
+	id = wg_crisis.90
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		NOT = { has_global_flag = all_portal_destroyed }
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { any_country = { is_country_type = wg_crisis_sub_gate_country }}}
+			create_country = {
+				name = "NAME_WG_crisis_country"
+				type = "wg_crisis_sub_gate_country"
+				species = event_target:wg_crisis_species
+				name_list = "WSG"
+				flag = {
+					icon= {
+						category="warshipgirls"
+						file="wg_flags_06.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "v.dds"
+					}
+					colors={
+						"yellow"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					set_country_flag = wg_crisis_sub_gate_country
+					save_global_event_target_as = wg_crisis_sub_gate_country
+					set_faction_hostility = {
+						target = event_target:wg_crisis_country
+						set_hostile = no
+						set_neutral = no
+						set_friendly = yes
+					}
+					event_target:wg_crisis_country = { country_event = { id = wg_crisis.91 }}  
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_global_flag = wg_crisis_normal }
+			country_event = { id = wg_crisis.90 days = 900 random = 720 }
+			break = yes
+		}
+		if = {
+			limit = { has_global_flag = wg_crisis_hard }
+			country_event = { id = wg_crisis.90 days = 1080 random = 360 }
+			break = yes
+		}
+		if = {
+			limit = { has_global_flag = wg_crisis_insane }
+			country_event = { id = wg_crisis.90 days = 1440 random = 270 }
+			break = yes
+		}
+	}
+}
+
+# 创建小型传送门
+country_event = { 
+	id = wg_crisis.91
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		NOT = { has_global_flag = all_portal_destroyed }
+	}
+
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = wg_dimensional_portal }
+			solar_system = {
+				closest_system = {
+					min_steps = 5
+					limit = { NOT = { has_star_flag = small_portal_system }}
+					save_event_target_as = small_portal_system
+					set_star_flag = small_portal_system
+					random_system_planet = {
+						create_fleet = {
+							name = "NAME_Dimensional_Portal_small"
+							effect = {
+								set_owner = ROOT
+								create_ship = {
+									name = random
+									design = "NAME_WG_Portal_small"
+									graphical_culture = "extra_dimensional_01"
+									effect = { 
+										set_ship_flag = wg_portal_small
+									}
+								}
+								set_location = {
+									target = PREV
+									distance = 40
+									angle = random
+								}
+								set_fleet_flag = wg_portal_small
+								fleet_event = { id = wg_crisis.92 days = 360 } # 刷突袭舰队
+							}
+						}
+						last_created_fleet = {
+							while = { count = 3
+								create_wg_crisis_raider_admiral = yes
+								create_wg_crisis_raider_fleet = yes
+							}
+							# 天灾难度刷6队
+							if = {
+								limit = { has_global_flag = wg_crisis_insane }
+								while = { count = 3
+									create_wg_crisis_raider_admiral = yes
+									create_wg_crisis_raider_fleet = yes
+								}
+							}
+						}
+						# 刷辅助守家舰队
+						last_created_fleet = {
+							fleet_event = { id = wg_crisis.400 }
+							if = { # 天灾难度刷2队
+								limit = { has_global_flag = wg_crisis_insane }
+								fleet_event = { id = wg_crisis.400 }
+							}
+						}
+					}
+					
+					if = {
+						limit = { exists = starbase }
+						starbase = { fleet = { destroy_fleet = this } }
+					}
+					create_starbase = {
+						size = wg_crisis_starbase
+						owner = event_target:wg_crisis_country
+					}
+				}
+			}
+		}
+
+		every_playable_country = {
+			country_event = { id = wg_crisis.95 }
+		}
+	}
+}
+
+# 循环刷突袭舰队
+fleet_event = {
+	id = wg_crisis.92
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		exists = this
+	}
+
+	immediate = {
+		create_wg_crisis_raider_admiral = yes
+		create_wg_crisis_raider_fleet = yes
+		if = {
+			limit = { has_global_flag = wg_crisis_normal }
+			fleet_event = { id = wg_crisis.92 days = 540 }
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_hard }
+			fleet_event = { id = wg_crisis.92 days = 270 }
+		}
+		else_if = {
+			limit = { has_global_flag = wg_crisis_insane }
+			fleet_event = { id = wg_crisis.92 days = 180 }
+		}
+	}
+}
+
+# 传送门被破坏
+country_event = {
+	id = wg_crisis.93
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_crisis_disabled }
+		is_country_type = wg_crisis_country
+		FROMFROM = { is_ship_size = wg_dimensional_small_portal }
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = small_portal_destroyer }
+		FROMFROM.solar_system = {
+			remove_star_flag = small_portal_system
+			save_event_target_as = small_portal_system
+		}
+		every_playable_country = {
+			limit = { has_point_of_interest = { poi = wg_invasion_poi.5 }}
+			remove_point_of_interest = wg_invasion_poi.5
+			country_event = { id = wg_crisis.94 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.94
+	title = wg_crisis.94.name
+	desc = wg_crisis.94.desc
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	location = event_target:small_portal_system
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# 反抗军消息——刷出小型传送门
+country_event = {
+	id = wg_crisis.95
+	title = "TRANSMISSION"
+	desc = wg_crisis.95.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "resistant_army_room"
+	}
+
+	after = {
+		create_point_of_interest = {
+			id = wg_invasion_poi.5
+			name = "wg_invasion_5_poi"
+			desc = "wg_invasion_5_poi_desc"
+			event_chain = "wg_invasion_chain"
+			location = event_target:small_portal_system
+		}
+	}
+
+	option = {
+		name = WORRYING
+	}
+
+}
+
+fleet_event = {
+	id = wg_crisis.96
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = wg_invasion_happened
+        has_fleet_flag = raider_fleet
+        owner = { is_country_type = wg_crisis_country }
+        
+        any_system = {
+			exists = space_owner		
+		}
+	}
+
+	immediate = {
+		queue_actions = {
+			repeat = {
+				find_closest_system = {
+					trigger = {
+						id = wg_crisis.96.t1
+						starbase = { has_starbase_size >= starbase_outpost }
+						has_access_fleet = event_target:wg_crisis_country
+						NOT = { has_star_flag = target_system }
+					}
+					found_system = {
+						effect = {
+							id = wg_crisis.96.e1
+							set_timed_star_flag = { flag = target_system days = 180 }
+							root = {
+								set_timed_fleet_flag = { flag = orders_cooldown days = 15}
+							}
+						}
+						move_to = this
+					}
+				}
+				wait = 15	
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.960
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	trigger = {
+		has_global_flag = wg_invasion_happened
+		is_country_type = wg_crisis_country 
+		any_owned_fleet = {
+			has_fleet_flag = raider_fleet
+			is_fleet_idle = yes
+			NOT = { has_fleet_flag = orders_cooldown }
+		}
+	}
+
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = raider_fleet
+				is_fleet_idle = yes
+				NOT = { has_fleet_flag = orders_cooldown }
+			}
+			fleet_event = { id = wg_crisis.96 }
+		}
+	}
+}
+
+# 使wg_crisis.99在月中触发
+event = {
+	id = wg_crisis.98
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = wg_invasion_happened
+		NOT = { 
+			has_global_flag = all_portal_destroyed
+		}
+		exists = event_target:wg_crisis_country
+	}
+
+	immediate = {
+		event_target:wg_crisis_country = {
+			country_event = { id = wg_crisis.99 days = 15 }
+		}
+	}
+}
+
+# 检查传送门是否无故消失，并补传送门
+country_event = {
+	id = wg_crisis.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = { 
+			NOR = {
+				has_global_flag = first_portal_destroyed
+				event_target:first_portal_system = {
+					any_ship_in_system = {
+						is_ship_size = wg_dimensional_portal
+					}
+				}
+			}
+			AND = {
+				has_global_flag = wg_crisis_insane
+				has_global_flag = second_portal_opened
+				NOR = {
+					has_global_flag = second_portal_destroyed
+					event_target:second_portal_system = {
+						any_ship_in_system = {
+							is_ship_size = wg_dimensional_portal
+						}
+					}
+				}
+			}
+			AND = {
+				has_global_flag = wg_crisis_insane
+				has_global_flag = third_portal_opened
+				NOR = {
+					has_global_flag = third_portal_destroyed
+					event_target:third_portal_system = {
+						any_ship_in_system = {
+							is_ship_size = wg_dimensional_portal
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = { 
+					has_global_flag = first_portal_destroyed
+					event_target:first_portal_system = {
+						any_ship_in_system = {
+							is_ship_size = wg_dimensional_portal
+						}
+					}
+				}
+			}
+			event_target:first_portal_system = {
+				random_system_planet = {
+					save_event_target_as = spawn_portal_planet
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dimensional_Portal"
+				effect = {
+					set_owner = PREV
+					create_portal = yes
+					set_location = {
+						target = event_target:spawn_portal_planet
+						distance = 40
+						angle = random
+					}
+					save_event_target_as = first_dimensional_portal
+					set_fleet_flag = first_dimensional_portal
+					set_event_locked = yes
+					if = {
+						limit = { any_owned_ship = { has_hp < 1 }}
+						add_modifier = { modifier = decrease_hp_80_per days = -1 }
+					}
+					# 简单难度开门后再刷4队弱的
+					# 困难难度开门后再刷4队正常的
+					fleet_event = { id = wg_crisis.4 days = 180 } # Second Fleet Arrives
+					fleet_event = { id = wg_crisis.4 days = 360 } # Fourth Fleet Arrives
+					fleet_event = { id = wg_crisis.4 days = 540 } # Sixth Fleet Arrives
+					fleet_event = { id = wg_crisis.4 days = 720 } # Eight Fleet Arrives
+					
+					if = {
+						# 普通难度开门后再刷8队弱的
+						# 海豹难度开门后再刷8队正常的
+						limit = {
+							OR = {
+								has_global_flag = wg_crisis_easy
+								has_global_flag = wg_crisis_hard
+								has_global_flag = wg_crisis_insane
+							}
+						}
+						fleet_event = { id = wg_crisis.4 days = 200 } # Third Fleet Arrives
+						fleet_event = { id = wg_crisis.4 days = 380 } # Fifth Fleet Arrives
+						fleet_event = { id = wg_crisis.4 days = 560 } # Seventh Fleet Arrives
+						fleet_event = { id = wg_crisis.4 days = 740 } # Ninth Fleet Arrives
+					}
+					if = {
+						# 海豹难度开门后再刷8+4队
+						limit = {
+							OR = {
+								has_global_flag = wg_crisis_hard
+								has_global_flag = wg_crisis_insane
+							}
+						}
+						fleet_event = { id = wg_crisis.400 days = 90 } # Third Fleet Arrives
+						fleet_event = { id = wg_crisis.400 days = 270 } # Fifth Fleet Arrives
+						fleet_event = { id = wg_crisis.400 days = 450 } # Seventh Fleet Arrives
+						fleet_event = { id = wg_crisis.400 days = 630 } # Ninth Fleet Arrives
+					}
+					if = {
+						# 天灾难度开门后再刷8+4+3队
+						limit = {
+							has_global_flag = wg_crisis_insane
+						}
+						fleet_event = { id = wg_crisis.4 days = 280 } # Third Fleet Arrives
+						fleet_event = { id = wg_crisis.4 days = 460 } # Third Fleet Arrives
+						fleet_event = { id = wg_crisis.4 days = 620 } # Fifth Fleet Arrives
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = wg_crisis_insane
+				has_global_flag = second_portal_opened
+				NOR = {
+					has_global_flag = second_portal_destroyed
+					event_target:second_portal_system = {
+						any_ship_in_system = {
+							is_ship_size = wg_dimensional_portal
+						}
+					}
+				}
+			}
+			event_target:second_portal_system = {
+				random_system_planet = {
+					save_event_target_as = spawn_portal_planet
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dimensional_Portal"
+				effect = {
+					set_owner = PREV
+					create_portal = yes
+					set_location = {
+						target = event_target:spawn_portal_planet
+						distance = 40
+						angle = random
+					}
+					save_event_target_as = second_dimensional_portal
+					set_fleet_flag = second_dimensional_portal
+					set_event_locked = yes
+					spawn_fleets_insane = yes
+					if = {
+						limit = { any_owned_ship = { has_hp < 1 }}
+						add_modifier = { modifier = decrease_hp_80_per days = -1 }
+					}
+				}
+			}
+		}
+		# 补第三传送门
+		if = {
+			limit = {
+				has_global_flag = wg_crisis_insane
+				has_global_flag = third_portal_opened
+				NOR = {
+					has_global_flag = third_portal_destroyed
+					event_target:third_portal_system = {
+						any_ship_in_system = {
+							is_ship_size = wg_dimensional_portal
+						}
+					}
+				}
+			}
+			event_target:third_portal_system = {
+				random_system_planet = {
+					save_event_target_as = spawn_portal_planet
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dimensional_Portal"
+				effect = {
+					set_owner = PREV
+					create_portal = yes
+					set_location = {
+						target = PREVPREV
+						distance = 40
+						angle = random
+					}
+					save_event_target_as = third_dimensional_portal
+					set_fleet_flag = third_dimensional_portal
+					set_event_locked = yes
+					spawn_fleets_insane = yes
+					if = {
+						limit = { any_owned_ship = { has_hp < 1 }}
+						add_modifier = { modifier = decrease_hp_80_per days = -1 }
+					}
+				}
+			}
+		}
+	}
+
+}
+
+#fleet_event = { 
+#	id = wg_crisis.110
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		any_owned_ship = {
+#			is_ship_size = wg_dimensional_portal
+#			has_hp < 1
+#		}
+#	}
+#
+#	immediate = {
+#		random_owned_ship = {
+#			limit = { is_ship_size = wg_dimensional_portal }
+#			add_modifier = { modifier = decrease_hp_50_per days = -1 }
+#		}
+#		fleet_event = { id = wg_crisis.110 }
+#	}
+#
+#}
+
+
+country_event = {
+	id = wg_crisis.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { 
+		is_country_type = wg_crisis_country
+	}
+
+	immediate = {
+		log = "initializing variable"
+		set_timed_global_flag = { flag = recheck_planet days = 1 }
+		set_variable = { which = planet_count value = 0 }
+		every_planet = {
+			limit = { has_planet_flag = uf_target }
+			remove_planet_flag = uf_target
+		}
+		every_planet = {
+			limit = { 
+				OR = {
+					has_owner = yes
+					is_colonizable = yes
+					# 相位星球
+					has_planet_flag = phaseshifting_active
+					UF_target_planet = yes
+				}
+			}
+			set_planet_flag = uf_target
+			ROOT = { change_variable = { which = planet_count value = 1 }}
+		}
+		log = "new planet_count: [this.planet_count]"
+		country_event = { id = wg_crisis.200 days = 400 }
+	}
+}
+
+# planet_event = {
+#	id = wg_crisis.201
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_planet_flag = target_planet }
+#		has_planet_flag = uf_target
+#	}
+#
+#	immediate = {
+#		remove_planet_flag = target_planet
+#		remove_planet_flag = uf_target
+#		event_target:wg_crisis_country = {
+#			change_variable = { which = planet_count value = -1}
+#		}
+#	}
+#}
+
+#深海超级武器
+#planet_event = {
+#	id = wg_crisis.202
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		solar_system = {
+#			every_system_planet = {
+#				limit = { has_planet_flag = uf_target}
+#				remove_planet_flag = target_planet
+#				remove_planet_flag = uf_target
+#				event_target:wg_crisis_country = {
+#					change_variable = { which = planet_count value = -1}
+#				}
+#			}
+#		}
+#	}
+#}
+
+# 检查是否有舰队没有标记
+country_event = {
+	id = wg_crisis.300
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { is_country_type = wg_crisis_country }
+
+	immediate = {
+		every_owned_fleet = {
+			limit = { 
+				has_fleet_flag = attack_fleet
+				NOT = { check_variable = { which = "fleet_id" value > 0 }}
+			}
+			ROOT = { change_variable = { which = "fleet_id" value = 1 }}
+			if = {
+				limit = { is_scope_type = fleet }
+				set_variable = { which = "fleet_id" value = ROOT }
+			}
+			log = "found one fleet with no marking. Remaking fleet with fleet_id: [this.fleet_id]"
+			clear_fleet_actions = this
+			remove_fleet_flag = orders_cooldown
+			fleet_event = { id = wg_crisis.40 }
+            fleet_event = { id = wg_crisis.42 days = 60 }
+		}
+		country_event = { id = wg_crisis.300 days = 1800 }
+	}
+
+}
+
+# 适配旧存档
+country_event = {
+	id = wg_crisis.301
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = { 
+		has_global_flag = wg_invasion_happened
+		is_country_type = wg_crisis_country
+		NOT = { has_country_flag = checked_all_fleet_once }
+	}
+
+	immediate = {
+		log = "savings from before versions, initialising fleet variables"
+		set_country_flag = checked_all_fleet_once
+		every_planet = {
+			limit = { has_planet_flag = target_planet }
+			remove_planet_flag = target_planet
+		}
+		every_planet = {
+			limit = { check_variable = { which = "planet_id" value > 0}}
+			if = { 
+				limit = { is_scope_type = planet }
+				set_variable = { which = "planet_id" value = 0 }
+			}
+		}
+		country_event = { id = wg_crisis.300 }
+	}
+
+}
+
+event = { 
+	id = wg_crisis.302
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = wg_invasion_happened
+	}
+
+	immediate = {
+		every_planet = {
+			limit = {
+				has_owner = no
+				UF_target_planet = no
+				OR = {
+					has_planet_flag = uf_target
+					has_planet_flag = target_planet
+					check_variable = { which = "planet_id" value > 0 }
+				}
+			}
+			log = "find one planet with invaild marking, removing markings"
+			remove_planet_flag = target_planet
+			remove_planet_flag = uf_target
+			if = { 
+				limit = { is_scope_type = planet }
+				set_variable = { which = "planet_id" value = 0 }
+			}
+		}
+		event_target:wg_crisis_country = { every_owned_fleet = {
+			limit = {
+				has_fleet_flag = attack_fleet
+				check_variable = { which = "fleet_id" value > 0}
+			}
+			orbit = {
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_shattered
+							is_planet_class = pc_ringworld_habitable_damaged
+						}
+					}
+					log = "fleet stops unexpectively, trying to re-activate fleet action. fleet_id: [prev.fleet_id]"
+					PREV = {
+						remove_fleet_flag = orders_cooldown
+						remove_fleet_flag = bombarding_planet
+						remove_fleet_flag = blowing_up_planet
+						set_fleet_flag = moving_to_planet
+						set_fleet_flag = orders_cooldown
+						clear_fleet_actions = this
+						save_event_target_as = this_fleet
+						closest_system = {
+							limit = {
+								starbase = { has_starbase_size >= starbase_starport }
+								NOT = { has_star_flag = target_system }
+							}
+							set_timed_star_flag = { flag = target_system days = 180 }
+							save_event_target_as = target_system
+						}
+						queue_actions = {
+							find_closest_system = {
+								trigger = {
+									id = wg_crisis.302.t1
+									is_same_value = event_target:target_system
+								}
+								found_system = {
+									move_to = this
+									effect = {
+										id = wg_crisis.302.t1e1
+										event_target:this_fleet = {
+											remove_fleet_flag = orders_cooldown
+											remove_fleet_flag = moving_to_planet
+											fleet_event = { id = wg_crisis.40 }
+											fleet_event = { id = wg_crisis.42 days = 60 }
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						PREV = { has_fleet_flag = bombarding_planet }
+						has_owner = no
+						UF_target_planet = yes
+					}
+					log = "not bombarding planet which has owner, blowing-up the planet and trying to re-activate fleet action. fleet_id: [prev.fleet_id]"
+					planet_event = { id = wg_crisis.43 }
+					remove_planet_flag = colonized_planet
+					PREV = {
+						remove_fleet_flag = orders_cooldown
+						remove_fleet_flag = bombarding_planet
+						set_fleet_flag = moving_to_planet
+						clear_fleet_actions = this
+						fleet_event = { id = wg_crisis.40 }
+					}
+				}
+			}
+		}}
+		every_planet = {
+			limit = { check_variable = { which = "planet_id" value > 0 }}
+			if = {
+				limit = { is_scope_type = planet }
+				set_variable = { which = "planet_id2" value = "planet_id" }
+			}
+			every_planet = {
+				limit = {
+					NOT = { is_same_value = PREV }
+					check_variable = { which = "planet_id" value > 0 }
+				}
+				if = {
+					limit = { is_scope_type = planet }
+					set_variable = { which = "planet_id2" value = PREV }
+				}
+				if = { 
+					limit = { check_variable = { which = "planet_id" value = "planet_id2" }}
+					log = "repeat marking detected, removing markings"
+					if = {
+						limit = { is_scope_type = planet }
+						set_variable = { which = "planet_id" value = 0 }
+					}
+				}
+				if = {
+					solar_system = { every_fleet_in_system = {
+						limit = {
+							has_fleet_flag = attack_fleet
+							NOR = {
+								has_fleet_flag = moving_to_planet
+								has_fleet_flag = bombarding_planet
+							}
+							owner = { is_country_type = wg_crisis_country }
+						}
+						log = "detect fleet in repeat marking planet system, replanning routes"
+						clear_fleet_actions = this
+						remove_fleet_flag = orders_cooldown
+						fleet_event = { id = wg_crisis.40 days = 5 }
+					}}
+				}
+				if = {
+					limit = { is_scope_type = planet }
+					set_variable = { which = "planet_id2" value = 0 }
+				}
+			}
+			if = {
+				limit = { is_scope_type = planet }
+				set_variable = { which = "planet_id2" value = 0 }
+			}
+		}
+	}
+}
+
+
+
+#####END
+country_event = {
+	id = wg_crisis.998
+	title = "wg_crisis.998.name"
+	desc = "wg_crisis.998.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_ship_bridge
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}	
+	}
+	option = {
+		name = "wg_crisis.998.a"
+		owner = {
+		add_relic = "r_united_fleet" 
+		add_resource = { influence = 200 }
+		}
+	}
+}
+country_event = {
+	id = wg_crisis.999
+	hide_window = yes
+	location = from
+
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = {
+			planet_event = { id = wg_crisis.1000 }
+		}	
+	}	
+}
+planet_event = {
+	id = wg_crisis.1000
+	title = wg_crisis.1000.name
+	desc = wg_crisis.1000.desc
+	picture = GFX_evt_space_debris
+	show_sound = event_ship_bridge
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_crisis.1000.a
+		enable_special_project = {
+			name = "join_uf_study_normal"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_crisis.1003 days = 5 }
+			}
+		}		
+		
+	}
+	option = {
+		name = wg_crisis.1000.b
+		enable_special_project = {
+			name = "resistance_uf_study_normal"
+			location = this
+			owner = root
+		}
+		
+	}
+	option = {
+		name = "wg_crisis.1000.c"
+	}
+}
+
+planet_event = {
+	id = wg_crisis.1001
+	title = "wg_crisis.1001.name"
+	desc = "wg_crisis.1001.desc"
+	picture = GFX_evt_federation_fleet
+	is_triggered_only = yes
+	
+	immediate = {
+		every_system = {
+			every_system_planet = {
+				if = {
+					limit = { is_star = yes }
+					change_pc = "pc_black_hole"
+					random_list = {
+						20 = { change_planet_size = +1 }
+						20 = { change_planet_size = +2 }
+						20 = { change_planet_size = +3 }
+						20 = { change_planet_size = +4 }
+						20 = { change_planet_size = +5 }
+					}
+				}
+				else = { 
+					remove_planet = yes 
+				}
+			}	
+			set_asteroid_belt = { radius = 0 }		
+		}
+		every_country = {
+			limit = {
+				always = yes
+			}
+			destroy_country = yes
+		}
+	}
+	option = {
+		name = wg_crisis.1001.a
+	}
+}
+
+country_event = {
+	id = wg_crisis.1003
+	title = wg_crisis.1003.name
+	desc = wg_crisis.1003.desc
+	picture = GFX_evt_wg_crisis
+	show_sound = event_construction
+	location = event_target:wg_capital
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			save_event_target_as = uf_navigator_owner
+		}
+		capital_scope = { save_event_target_as = wg_capital }
+	}
+	
+	option = {
+		name = "wg_crisis.1003.a"
+		create_fleet = {
+			name = "NAME_UF_Navigator"
+			effect = {
+				set_owner = event_target:uf_navigator_owner
+				create_ship = {
+					name = random
+					design = "NAME_uf_navigator"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:wg_capital
+					distance = 0
+					angle = random
+				}				
+			}
+			settings = { 
+				can_upgrade = no 
+				can_disband = no
+				can_change_composition = no 
+				can_change_leader = no 
+			}			
+		}
+	}	
+}
+#第二结局
+planet_event = {
+	id = wg_crisis.1002
+	title = "wg_crisis.1002.name"
+	desc = "wg_crisis.1002.desc"
+	picture = GFX_evt_federation_fleet
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			every_owned_pop = {
+				kill_pop = yes
+			}
+			every_owned_fleet = {
+				delete_fleet = this
+			}
+			destroy_country = yes
+		}
+	}
+	option = {
+		name = wg_crisis.1002.a
+	}
+}
+
+# 难度设定
+country_event = {
+	id = wg_crisis.10000
+	title = wg_crisis.10000.name
+	desc = wg_crisis.10000.desc
+	picture = GFX_evt_wg_crisis
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = wg_crisis_very_easy
+			has_global_flag = wg_crisis_easy
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+			has_global_flag = wg_crisis_disabled
+		}
+		is_ai = no
+	}
+
+	after = {
+		hidden_effect = {
+			country_event = { id = wg_crisis.1 days = 3 }
+			country_event = { id = wg_crisis.10001 }
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.a
+		custom_tooltip =  wg_crisis.10000.a.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_very_easy
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.b
+		custom_tooltip = wg_crisis.10000.b.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_easy
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.c
+		custom_tooltip = wg_crisis.10000.c.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_normal
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.d
+		custom_tooltip = wg_crisis.10000.d.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_hard
+		}
+	}
+	
+	option = {
+		name = wg_crisis.10000.e
+		custom_tooltip = wg_crisis.10000.e.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_insane
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.f
+		custom_tooltip = wg_crisis.10000.f.tooltip
+		hidden_effect = {
+			set_global_flag = wg_crisis_disabled
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.10001
+	title = wg_crisis.10001.name
+	desc = wg_crisis.10001.desc
+	picture = GFX_evt_wg_crisis
+
+	trigger = {
+		is_ai = no
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = wg_crisis.10001.a
+		hidden_effect = {
+			set_global_flag = galactic_crisis_happened
+		}
+	}
+
+	option = {
+		name = wg_crisis.10001.b
+	}
+}
+
+
+# 额外天灾触发事件
+event = {
+	id = wg_crisis.10002
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		end_game_years_passed >= 5
+		NOT = { 
+			has_global_flag = wg_crisis_disabled
+			has_global_flag = wg_invasion_happened
+		}
+		any_country = {
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = wg_crisis_triggered
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = wg_crisis_very_easy
+					has_global_flag = wg_crisis_easy
+					has_global_flag = wg_crisis_normal
+					has_global_flag = wg_crisis_hard
+					has_global_flag = wg_crisis_insane
+				}
+			}
+			random_country = {
+				limit = { is_country_type = global_event }
+				country_event = { id = wg_crisis.3 days = 3600 random = 3600 }
+			}
+			every_playable_country = {
+				country_event = { id = wg_crisis.2 }
+			}
+			if = {
+				limit = { exists = event_target:wg_fallen_empire }
+				event_target:wg_fallen_empire = {
+					country_event = { id = wg_fe.21 }
+				}
+			}
+		}
+		else = {
+			random_country = {
+				limit = { is_ai = no }
+				country_event = { id = wg_crisis.10000 }
+			}
+		}
+	}
+}
+
+# 法令调整天灾难度
+country_event = {
+	id = wg_crisis.10003
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		remove_global_flag = wg_crisis_very_easy
+		remove_global_flag = wg_crisis_easy
+		remove_global_flag = wg_crisis_normal
+		remove_global_flag = wg_crisis_hard
+		remove_global_flag = wg_crisis_insane
+		remove_global_flag = wg_crisis_disabled
+		remove_global_flag = galactic_crisis_happened
+		country_event = { id = wg_crisis.10000 }
+	}
+}
+

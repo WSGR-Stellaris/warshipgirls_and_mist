@@ -1,0 +1,321 @@
+greetings = {
+	01_SH_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls
+			}			
+		}
+	}
+	02_SH_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls							
+			}				
+		}
+	}
+	03_SH_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	04_SH_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls	
+			}									
+		}
+	}	
+	01_SH_NEUTRAL_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	02_SH_NEUTRAL_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	01_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	02_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls					
+			}				
+		}
+	}
+	03_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}	
+	04_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}	
+	05_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	06_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	07_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	08_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	09_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	10_SH_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	01_SH_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			is_at_war_with = FROM 	
+			from = {
+				has_authority = auth_warshipgirls
+				}					
+		}
+	}
+	02_SH_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls
+				}	
+		}
+	}
+	03_SH_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls		
+				}					
+		}
+	}
+	04_SH_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls		
+				}					
+		}
+	}
+		
+}

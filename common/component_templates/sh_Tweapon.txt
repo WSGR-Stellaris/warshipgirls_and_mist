@@ -1,0 +1,109 @@
+weapon_component_template = {
+	key = "sh_weapen_T"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_sh_weapen_T"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 12000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 170
+	range = 300.0
+	accuracy = 0.50
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.5
+	tracking = 0.0
+	power = -1000
+	upgrades_to = "sh_weapen_T2"	
+	prerequisites = { "tech_sh_Tweapon" }
+	component_set = "sh_weapen_T"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 25
+			alloys = 450
+		}		
+		upkeep = {
+			energy = 15
+			sr_se = 1.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "sh_weapen_T2"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_sh_weapen_T2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 12000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 170
+	range = 300.0
+	accuracy = 0.65
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	shield_damage = 1.35
+	armor_damage = 1.35
+	hull_damage = 1.25	
+	tracking = 0.0
+	power = -1100
+	
+	prerequisites = { "tech_sh_Tweapon2" }
+	component_set = "sh_weapen_T2"
+	projectile_gfx = "uf_lance_406"
+	tags = { weapon_type_kinetic }
+	tags = { weapon_type_energy }		
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 25
+			alloys = 500
+			sr_dark_matter = 10
+		}		
+		upkeep = {
+			energy = 18
+			sr_se = 2.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+

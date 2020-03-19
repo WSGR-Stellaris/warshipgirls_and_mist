@@ -1,0 +1,43 @@
+special_project = {
+	key = "ovo_watching_study_normal"
+	event_chain = ovo_chain
+	days_to_research = 480
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wsg.3038 }
+	}
+}
+
+special_project = {
+	key = "join_uf_study_normal"
+	days_to_research = 720
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wg_crisis.1001 }
+	}
+}
+
+
+special_project = {
+	key = "resistance_uf_study_normal"
+	days_to_research = 720
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wg_crisis.1002 }
+	}
+}

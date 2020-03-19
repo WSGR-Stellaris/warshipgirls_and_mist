@@ -1,0 +1,104 @@
+building_sh_residence = {
+	base_buildtime = 240
+	base_cap_amount = 1
+
+	category = amenity
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_shenhai	
+			NOT = { has_policy_flag = robots_outlawed }
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		buildings_simple_allow = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			AND = {
+				free_building_slots = 0
+				free_jobs = 0
+				free_housing > 10
+				owner = {
+					is_ai = yes
+				}
+			}
+			owner = { is_regular_empire = no }
+			owner = { has_valid_civic = civic_shared_burden }
+			has_modifier = slave_colony
+		}
+	}
+	
+	convert_to = {
+		building_drone_storage
+		building_hive_warren
+		building_communal_housing
+	}
+		
+	planet_modifier = {
+		planet_housing_add = 20
+		planet_amenities_mult = 0.20
+		planet_pops_consumer_goods_upkeep_mult = -0.10
+		planet_pops_food_upkeep_mult = -0.10
+		pop_housing_usage_mult = -0.10
+		job_sh_clerk_per_pop = 0.10
+	}	
+	triggered_desc = {
+		text = job_sh_clerk_effect_desc
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_non_swapped_tradition = tr_domination_imperious_architecture
+			}					
+		}
+		modifier = {
+			planet_housing_add = 0
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 6
+		}
+	}	
+	
+
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 7000 #High weight to gurantee that if the below is true then the AI should build it
+			free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+			OR = {
+				free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+				AND = {
+					free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
+					not = { any_owned_pop = { is_unemployed = yes } }
+				}
+			}
+			free_district_slots = 0 #Do not build when city districts can still be built
+			NOT = { is_planet_class = pc_habitat }
+		}
+		modifier = {
+			factor = 0
+			has_building = building_luxury_residence
+			owner = { has_technology = tech_paradise_dome }
+		}
+	}
+}

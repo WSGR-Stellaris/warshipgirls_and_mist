@@ -1,0 +1,249 @@
+building_sh_sex = {
+	base_buildtime = 360
+
+	category = government
+	
+	base_cap_amount = 1
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_shenhai	
+			NOT = { has_policy_flag = robots_outlawed }
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			AND = {
+				free_building_slots = 0
+				free_jobs = 0
+				free_housing > 10
+				owner = {
+					is_ai = yes
+				}
+			}
+			owner = { is_regular_empire = no }
+			owner = { has_valid_civic = civic_shared_burden }
+			has_modifier = slave_colony
+		}
+	}
+
+	planet_modifier = {
+		pop_growth_speed = 0.50
+		planet_stability_add = 10
+	}
+	prerequisites = {
+		"tech_sh_sex"
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}	
+		upkeep = {
+			energy = 8
+			sr_pantsu = 1
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			OR = {
+				free_district_slots = 0
+				num_buildings = { type = any value >= 14 }
+				is_planet_class = pc_habitat
+			}
+		}
+	}
+}
+
+building_sh_computer = {
+	base_buildtime = 1500
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = yes
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		OR = {
+			free_building_slots > 0
+			owner = { is_ai = no }
+		}
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_shenhai	
+				has_ascension_perk = ap_shenhai_upgrade
+				NOT = {
+					has_country_flag = built_one_computer
+					has_country_flag = built_one_computer_queuing
+					has_policy_flag = robots_outlawed
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes	
+		num_pops >= 35
+	}
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.20
+		planet_jobs_engineering_research_produces_mult = 0.20
+		planet_jobs_physics_research_produces_mult = 0.20
+	}
+	country_modifier = {
+		all_technology_research_speed = 0.1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 50
+			alloys = 1500
+		}
+		upkeep = {
+			energy = 20
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_computer }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_computer }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_computer_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_computer_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+
+building_sh_computer2 = {
+	base_buildtime = 1500
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = yes
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		OR = {
+			free_building_slots > 0
+			owner = { is_ai = no }
+		}
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_shenhai	
+				has_ascension_perk = ap_shenhai_upgrade
+				NOT = {
+					has_country_flag = built_one_computer2
+					has_country_flag = built_one_computer2_queuing
+					has_policy_flag = robots_outlawed
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes	
+		num_pops >= 35
+	}
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.20
+		job_sh_clerk_add = 10
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 50
+			alloys = 1500
+		}
+		upkeep = {
+			energy = 20
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_computer2 }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_computer2 }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_computer2_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_computer2_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+

@@ -1,0 +1,351 @@
+building_wsg_alpha_center = {
+	base_buildtime = 1800
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	category = research
+
+	
+	potential = {
+		exists = planet
+		planet = { is_capital = yes }
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_warshipgirls	
+				NOT = {
+					has_country_flag = built_one_alpha
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_major_upgraded_capital = yes	
+	}
+	planet_modifier = {
+		job_wsg_administrator_add = 4
+		job_wsg_researcher_add = 10
+		planet_stability_add = 100
+	}
+	country_modifier = {
+		all_technology_research_speed = 0.2	
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 100
+			sr_alpha = 100
+			sr_neo = 300
+		}
+		upkeep = {
+			energy = 50
+			sr_alpha = 20
+			sr_neo = 10
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_alpha }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_alpha }
+	}
+	prerequisites = {
+		"tech_building_wsg_alpha_center"
+	}
+	
+	triggered_desc = {
+		text = job_wsg_administrator_effect_desc
+	}	
+	triggered_desc = {		
+		text = job_wsg_research_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+
+building_wsg_norston_tower = {
+	base_buildtime = 1800
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = yes
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		is_planet_class = pc_wsg_port
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_ascension_perk = ap_port_project
+				has_authority = auth_warshipgirls	
+				NOT = {
+					has_country_flag = built_one_tower
+					has_country_flag = built_one_tower_queuing
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_major_upgraded_capital = yes	
+		num_pops >= 80
+	}
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_jobs_produces_mult = 0.15
+	}
+	country_modifier = {
+		country_influence_produces_mult = 0.2
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_neo = 50
+			alloys = 2000
+		}
+		upkeep = {
+			energy = 20
+			sr_neo = 20
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_tower }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_tower }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_tower_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_tower_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+
+building_wsg_bison = {
+	base_buildtime = 1000
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = yes
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_warshipgirls	
+				NOT = {
+					has_country_flag = built_one_bison
+					has_country_flag = built_one_bison_queuing
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes	
+		num_pops >= 20
+	}
+	planet_modifier = {
+		planet_stability_add = 5
+	}
+	country_modifier = {
+		country_energy_produces_mult = 0.10
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 50
+			minerals = 3000
+		}
+		upkeep = {
+			food = 10
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_bison }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_bison }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_bison_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_bison_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+
+building_wsg_cloud_city = {
+	base_buildtime = 1500
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = yes
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_warshipgirls	
+				has_ascension_perk = ap_wsg_universal_transactions
+				NOT = {
+					has_country_flag = built_one_cloud
+					has_country_flag = built_one_cloud_queuing
+					has_modifier = slave_colony
+				}
+			}
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes	
+		num_pops >= 35
+	}
+	planet_modifier = {
+		planet_amenities_mult = 0.50
+		trade_value_mult = 0.50
+	}
+	country_modifier = {
+		country_trade_fee = -0.05
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 50
+			minerals = 5000
+		}
+		upkeep = {
+			energy = 20
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_cloud }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_cloud }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_cloud_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_cloud_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}
+

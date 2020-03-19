@@ -1,0 +1,217 @@
+weapon_component_template = {
+	key = "wsg_weapen_T_460"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_T_460"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 10.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 8000 max = 12000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 155
+	range = 270.0
+	accuracy = 0.7
+	shield_penetration = 0.3
+	armor_damage = 2.5
+	hull_damage = 2.0
+	tracking = 0.1
+	power = -800
+	
+	prerequisites = { "tech_wsg_460" }
+	component_set = "wsg_weapen_T_460"
+	projectile_gfx = "titan_laser"
+	upgrades_to = "wsg_weapen_T_533"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 50
+			sr_alpha = 25
+			alloys = 350
+		}		
+		upkeep = {
+			energy = 10
+			sr_neo = 0.5
+			sr_alpha = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "wsg_weapen_T_533"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_T_533"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 40.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 12000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 285.0
+	accuracy = 0.80
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.1
+	power = -1200
+	
+	prerequisites = { "tech_wsg_533" }
+	component_set = "wsg_weapen_T_533"
+	projectile_gfx = "wsg_lance_533"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 80
+			sr_alpha = 40
+			sr_dark_matter = 15
+			alloys = 600
+		}		
+		upkeep = {
+			energy = 25
+			sr_neo = 1
+			sr_alpha = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "wsg_weapon_T_S460"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_T_S460"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 40.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 10000 max = 18000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 170
+	range = 280.0
+	accuracy = 0.80
+	shield_penetration = 0.6
+	armor_penetration = 0.6
+	shield_damage = 1.8
+	armor_damage = 1.8
+	hull_damage = 1.35	
+	tracking = 0.1
+	power = -1200
+	
+	prerequisites = { "tech_wsg_s_460" }
+	component_set = "wsg_weapon_T_S460"
+	projectile_gfx = "wsg_lance_533"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 75
+			sr_alpha = 40
+			sr_dark_matter = 15
+			alloys = 600
+		}		
+		upkeep = {
+			energy = 23
+			sr_neo = 0.8
+			sr_alpha = 0.8
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_T_BFG"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_T_BFG"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 35.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 50000 max = 80000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 280
+	range = 350.0
+	accuracy = 0.75
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.1
+	power = -1500
+
+	hidden = yes
+	
+	component_set = "wsg_weapen_T_BFG"
+	projectile_gfx = "gatebuilder_titan_weapon"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 180
+			sr_alpha = 90
+			alloys = 2000
+		}		
+		upkeep = {
+			energy = 35
+			sr_neo = 6
+			sr_alpha = 3
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}

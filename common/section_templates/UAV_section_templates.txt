@@ -1,0 +1,157 @@
+ship_section_template = {
+	key = "scout_UAV_section"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	entity = "gatebuilder_wsg_strikecraft_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	small_utility_slots = 3
+	aux_utility_slots = 1
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}		
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 5
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scout_UAV_section1"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wsg_strikecraft_entity"
+		
+	small_utility_slots = 2
+	medium_utility_slots = 1
+	aux_utility_slots = 1
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}		
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 5
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scout_UAV_section2"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wsg_strikecraft_entity"
+		
+	small_utility_slots = 2
+	aux_utility_slots = 1
+	prerequisites = { "tech_uav2" }
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 10
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scout_UAV_section3"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wsg_strikecraft_entity"
+		
+	small_utility_slots = 1
+	aux_utility_slots = 1
+	prerequisites = { "tech_uav3" }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 15
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scout_UAV_section5"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wsg_strikecraft_entity"
+		
+	small_utility_slots = 1
+	aux_utility_slots = 1
+	prerequisites = { "tech_UNITEDFLEET" }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 15
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scout_UAV_section4"
+	ship_size = scout_UAV
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wsg_strikecraft_entity"
+		
+	prerequisites = { "tech_uav4" }
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}
+	ship_modifier = {
+		ship_weapon_range_mult = -0.30
+	}
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 70
+		}
+	}
+}

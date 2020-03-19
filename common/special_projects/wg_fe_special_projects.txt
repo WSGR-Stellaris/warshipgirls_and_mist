@@ -1,0 +1,194 @@
+# 修复舰娘堕落的游戏机
+special_project = {
+	key = wg_fe_game_console
+	timelimit = 1080
+	cost = 2000
+	tech_department = engineering_technology
+	picture = GFX_evt_engineering_research
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	on_success = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_fe.111 }}
+				1 = { country_event = { id = wg_fe.11100 } }
+			}
+		}
+	}
+
+	on_fail = {
+		owner = {
+			country_event = { id = wg_fe.120 days = 10 }
+		}
+	}
+}
+
+# 胖次失踪事件
+special_project = {
+	key = research_pantsu_missing
+	event_scope = planet_event
+	cost = 0
+	days_to_research = 720
+	picture = GFX_evt_pantsu_wormhole
+	on_success = { 
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_fe.122 }}
+				1 = { country_event = { id = wg_fe.123 }}
+			}
+		}
+	}
+}
+
+# 将大小姐送给堕落妈
+special_project = {
+	key = wsg_lady_to_wg_fe
+	cost = 0
+	picture = GFX_evt_wormhole
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_military = 1
+	}
+
+	on_success = {
+		ship_event = { id = wg_fe.144 }
+	}
+
+	on_fail = {
+	}
+}
+
+# 大小姐改造
+special_project = {
+	key = "WSG_LADY_MODIFICATION"
+	event_scope = planet_event
+	cost = 0
+	days_to_research = 2
+	picture = GFX_evt_planet_beam
+	on_success = { 
+		owner = {
+			country_event = { id = wg_fe.181 }
+		}
+	}
+}
+
+special_project = {
+	key = "WSG_LADY_MODIFICATION1"
+	cost = 100000 # should be 100000
+	#days_to_research = 1080 # should be 1080
+	tech_department = engineering_technology
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_planet_beam
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_military = 1
+	}
+
+	on_start = {
+		from.owner = {
+			country_event = { id = wg_fe.188 }
+		}
+	}
+	on_cancel = {
+		from.owner = {
+			country_event = { id = wg_fe.189 }
+		}
+	}
+
+	on_progress_50 = {
+		owner = {
+			country_event = { id = wg_fe.182 }
+		}
+	}
+	on_progress_75 = {
+		owner = {
+			country_event = { id = wg_fe.182 }
+		}
+	}
+	
+	on_success = {
+        fleet = {
+            set_event_locked = no
+        }
+		owner = {
+			country_event = { id = wg_fe.186 }
+		}
+	}
+	
+}
+
+special_project = {
+	key = "WSG_LADY_MODIFICATION2"
+	cost = 65000 # should be 65000
+	#days_to_research = 1080 # should be 1080
+	tech_department = engineering_technology
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_planet_beam
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_military = 1
+	}
+
+	on_start = {
+		from.owner = {
+			country_event = { id = wg_fe.188 }
+		}
+	}
+	on_cancel = {
+		from.owner = {
+			country_event = { id = wg_fe.190 }
+		}
+	}
+
+	on_success = {
+        fleet = {
+            set_event_locked = no
+        }
+		owner = {
+			country_event = { id = wg_fe.192 }
+		}
+	}
+}
+special_project = {
+	key = "WSG_LADY_MODIFICATION3"
+	cost = 65000 # should be 65000
+	#days_to_research = 1080 # should be 1080
+	tech_department = engineering_technology
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_planet_beam
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_military = 1
+	}
+
+	on_start = {
+		from.owner = {
+			country_event = { id = wg_fe.188 }
+		}
+	}
+	on_cancel = {
+		from.owner = {
+			country_event = { id = wg_fe.191 }
+		}
+	}
+
+	on_success = {
+        fleet = {
+            set_event_locked = no
+        }
+		owner = {
+			country_event = { id = wg_fe.193 }
+		}
+	}
+}

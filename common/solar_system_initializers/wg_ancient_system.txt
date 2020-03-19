@@ -1,0 +1,384 @@
+wg_relic_system = {
+	name = "NAME_Sharan"
+	class = rl_standard_stars
+	usage = misc_system_init
+	
+	usage_odds = 0
+	
+	flags = { wg_relic_system }
+
+	prevent_anomalies = yes
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 2 max = 4 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		class = pc_relic
+		orbit_distance = 30
+		size = { min = 12 max = 25 }		
+		init_effect = {
+			set_planet_flag = thire_precursors_planet
+			create_archaeological_site = site_third_precursors
+			relic_world_deposits = yes
+		}
+	}
+	planet = {
+		count = { min = 2 max = 4 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = wg_relic_system
+	}
+}
+
+shenhai_ring_system = {
+	name = "NAME_shenhai_ring"
+	class = "sc_g"
+	flags = { shenhai_precursor_system }
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+		init_effect = {
+			create_country = {
+				name = "NAME_SH_Sanctuary"
+				type = faction
+			effect = {
+				establish_communications_no_message = root.owner
+				}
+			}
+			last_created_country = {
+				save_global_event_target_as = sh_sanctuary
+				create_fleet = {
+					name = "NAME_SH_Sanctuary_Core"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = "NAME_Administrator"
+							design = "NAME_SH_Sanctuary_Core"
+							graphical_culture = "wsg_02"
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 25
+							angle = random 
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power
+							days = -1
+						}						
+						save_event_target_as = sh_sanctuary_core
+						set_fleet_flag = sh_sanctuary_core
+					}
+				}
+				create_fleet = {
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_A_SH"
+							graphical_culture = "wsg_02"
+						}
+						set_location = {
+							target = event_target:sh_sanctuary_core
+							distance = 8
+							angle = 90
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power2
+							days = -1
+						}						
+					}
+				}
+				create_fleet = {
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_A_SH"
+							graphical_culture = "wsg_02"
+						}
+						set_location = {
+							target = event_target:sh_sanctuary_core
+							distance = 8
+							angle = 180
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power2
+							days = -1
+						}						
+					}
+				}
+				create_fleet = {
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_A_SH"
+							graphical_culture = "wsg_02"
+						}
+						set_location = {
+							target = event_target:sh_sanctuary_core
+							distance = 8
+							angle = 270
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power2
+							days = -1
+						}					
+					}
+				}
+				create_fleet = {
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_A_SH"
+							graphical_culture = "wsg_02"
+						}
+						set_location = {
+							target = event_target:sh_sanctuary_core
+							distance = 8
+							angle = 0
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power2
+							days = -1
+						}						
+					}
+				}
+			}
+		}		
+	}
+	
+	planet = {
+		class = pc_ringworld_habitable_sh
+		orbit_angle = 0
+		orbit_distance = 45
+		size = 5
+		modifiers = none		
+		
+		init_effect = {
+			set_planet_flag = shenhai_rimworld_planet
+			create_archaeological_site = site_fifth_precursors
+
+			last_created_country = {
+				create_fleet = {
+					name = "NAME_SH_Administrator"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = event_target:sh_sanctuary
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_C_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_C_SH"
+							graphical_culture = "wsg_02"
+						}	
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_C_SH"
+							graphical_culture = "wsg_02"
+						}						
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_C_SH"
+							graphical_culture = "wsg_02"
+						}						
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}	
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}	
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}	
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}
+						create_ship = {
+							name = random
+							design = "NAME_Defensive_B_SH"
+							graphical_culture = "wsg_02"
+						}						
+						set_location = {
+							target = PREVPREV
+							distance = 50
+							angle = random 
+						}
+						add_modifier = {
+							modifier = sh_sanctuary_power3
+							days = -1
+						}						
+						save_event_target_as = sh_sanctuary_core
+						set_fleet_flag = sh_sanctuary_core
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 120
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 210
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 300
+			orbit_distance = 45
+			location = planet
+		}
+	}
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		distance = { min = 10 max = @distance }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		distance = { min = 10 max = @distance }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+

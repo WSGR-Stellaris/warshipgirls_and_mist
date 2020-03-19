@@ -1,0 +1,212 @@
+namespace = wg_traits
+
+### Empire init
+event = {
+  id = wg_traits.1
+  hide_window = yes
+  is_triggered_only = yes
+  immediate = {
+	every_country = {
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_Nelson"
+					NOT = { has_modifier = wg_modifier_Nelson }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_Nelson
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wg_modifier_Vodkae"
+					NOT = { has_modifier = wg_modifier_Vodkae }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_Vodkae
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_Epolicy"
+					NOT = { has_modifier = wg_modifier_Epolicy }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_Epolicy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_Dbed"
+					NOT = { has_modifier = wg_modifier_Dbed }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_Dbed
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_125"
+					NOT = { has_modifier = wg_modifier_125 }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_125
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_615"
+					NOT = { has_modifier = wg_modifier_615 }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_615
+				days = -1
+			}
+		}	
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_surrender"
+					NOT = { has_modifier = wg_modifier_surrender }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_surrender
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_knowledgeable"
+					NOT = { has_modifier = wg_modifier_knowledgeable }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_knowledgeable
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_trait = "wsg_trait_Epolicy"
+					NOT = { has_modifier = wg_modifier_Epolicy }
+				}
+			}
+			add_modifier = {
+				modifier = wg_modifier_Epolicy
+				days = -1
+			}
+		}		
+	}
+  }
+}
+
+#  Remove trait bonuses if no trait
+event = {
+  id = wg_traits.2
+  hide_window = yes
+  is_triggered_only = yes
+  immediate = {
+	every_country = {
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_Nelson
+					NOT = { has_trait = "wsg_trait_Nelson" }
+				}
+			}
+			remove_modifier = wg_modifier_Nelson
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_Vodkae
+					NOT = { has_trait = "wsg_trait_Vodkae" }
+				}
+			}
+			remove_modifier =  wg_modifier_Vodkae
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_Epolicy
+					NOT = { has_trait = "wsg_trait_Epolicy" }
+				}
+			}
+			remove_modifier =  wg_modifier_Epolicy
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_Dbed
+					NOT = { has_trait = "wsg_trait_Dbed" }
+				}
+			}
+			remove_modifier = wg_modifier_Dbed
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_125
+					NOT = { has_trait = "wsg_trait_125" }
+				}
+			}
+			remove_modifier = wg_modifier_125
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_615
+					NOT = { has_trait = "wsg_trait_615" }
+				}
+			}
+			remove_modifier =  wg_modifier_615
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_surrender
+					NOT = { has_trait = "wsg_trait_surrender" }
+				}
+			}
+			remove_modifier =  wg_modifier_surrender
+		}
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_knowledgeable
+					NOT = { has_trait = "wsg_trait_knowledgeable" }
+				}
+			}
+			remove_modifier =  wg_modifier_knowledgeable
+		}	
+		if = {
+			limit = {
+				AND = {
+					has_modifier = wg_modifier_Epolicy
+					NOT = { has_trait = "wsg_trait_Epolicy" }
+				}
+			}
+			remove_modifier =  wg_modifier_Epolicy
+		}		
+	}
+  }
+}

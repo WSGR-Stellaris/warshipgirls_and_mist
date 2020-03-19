@@ -1,0 +1,8 @@
+gov_wsg_country = {
+	possible = {
+		has_authority = auth_warshipgirls
+	}
+	weight = {
+		base = 800
+	}
+}

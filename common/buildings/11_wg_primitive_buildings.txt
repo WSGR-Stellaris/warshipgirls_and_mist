@@ -1,0 +1,271 @@
+building_primitive_capital_lex = {
+	icon = building_primitive_capital
+	capital = yes
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = information_age
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	convert_to = {
+		building_machine_capital
+		building_capital
+		building_hive_capital
+	}
+
+	planet_modifier = {
+		job_primitive_priest_lex_add = 8
+		planet_housing_add = 10
+		planet_amenities_add = 25
+		planet_crime_add = -20
+	}
+
+	upgrades = {
+	}
+}
+
+building_lex_monument = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	icon = building_lex_monument
+
+	potential = {
+		exists = owner
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = information_age
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 4
+		job_primitive_priest_lex_add = 4
+		pop_happiness = 0.25
+	}
+
+	upgrades = {
+	}
+}
+building_primitive_capital_Parit = {
+	icon = building_wg_fe_ancient_palace
+	capital = yes
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = Parit_age
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	convert_to = {
+		building_machine_capital
+		building_capital
+		building_hive_capital
+	}
+
+	planet_modifier = {
+		planet_housing_add = 50
+		planet_amenities_add = 50
+		planet_crime_add = -50
+		job_eater_Parit_add = 30
+	}
+
+	upgrades = {
+	}
+}
+building_game_centre_Parit = {
+	base_buildtime = 360
+    icon = building_wg_fe_war_factory
+
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = Parit_age
+			}
+		}
+	}
+	destroy_trigger = {
+		owner = {
+			is_primitive = no
+		}
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.3
+		planet_housing_add = 15
+		job_primitive_gamer_Parit_add = 8
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = primitive_gamer_Parit_desc
+	}	
+
+	ai_weight = {
+		weight = 1
+
+		modifier = {
+			factor = 5
+			free_amenities < 2
+		}
+	}
+}
+
+building_energy_Parit = {
+	base_buildtime = 480
+	can_build = no
+	can_demolish = yes
+	icon = building_bio_reactor
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_country_flag = Parit_age
+				is_regular_empire = yes
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	planet_modifier = {
+		job_energy_Parit_add = 3
+	}	
+	triggered_desc = {
+		text = energy_Parit_desc
+	}		
+	upgrades = {
+	}
+}
+building_minerlas_Parit = {
+	base_buildtime = 480
+	can_build = no
+	can_demolish = yes
+	icon = building_private_mining_consortium
+	
+	resources = {
+		category = planet_buildings
+		produces = {
+			minerals = 100
+		}
+		upkeep = {
+			energy = 10
+		}
+	}	
+		
+	upgrades = {
+	}
+}
+
+building_data_base_Parit = {
+	base_buildtime = 480
+	can_build = no
+	can_demolish = yes
+	icon = building_wg_memory_data_base
+	
+	potential = {
+		owner = { is_wg_fallen_empire = yes }
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			physics_research = 150
+			society_research = 150
+			engineering_research = 150
+		}
+		upkeep = {
+			energy = 20
+		}
+	}
+		
+	upgrades = {
+	}
+}
+
+building_food_Parit = {
+	base_buildtime = 480
+	can_build = no
+	can_demolish = yes
+	icon = building_executive_retreat
+	
+	potential = {
+		owner = { is_wg_fallen_empire = yes }
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			food = 50
+			consumer_goods = 50
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+		
+	upgrades = {
+	}
+}

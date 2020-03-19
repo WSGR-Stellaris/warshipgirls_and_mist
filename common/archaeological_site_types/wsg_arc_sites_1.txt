@@ -1,0 +1,305 @@
+#翔鹤镰刀
+site_shenhaiBoss = {
+	desc = "site_shenhaiBoss_intro"
+	picture = GFX_evt_wsg_war
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.5
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.10
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#HMMOD遗物
+site_ck2 = {
+	desc = "site_ck2_intro"
+	picture = GFX_evt_asteroid_field
+	stages = 3
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.22
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.23
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.24
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#深海舰队残骸
+site_shenhai_fleet = {
+	desc = "site_shenhai_fleet_intro"
+	picture = GFX_evt_crashed_station
+	stages = 4
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.32
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.33
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.34
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.35
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#第一先驱者
+site_first_precursors = {
+	desc = "site_first_precursors_intro"
+	picture = GFX_evt_ai_planet
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.102
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.103
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#第二先驱者
+site_second_precursors = {
+	desc = "site_second_precursors_intro"
+	picture = GFX_evt_ancient_alien_temple
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.105
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.106
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+#第三先驱者
+site_third_precursors = {
+	desc = "site_third_precursors_intro"
+	picture = GFX_evt_relic_world_street
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.108
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.109
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.110
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+#第四先驱者
+site_fourth_precursors = {
+	desc = "site_fourth_precursors_intro"
+	picture = GFX_evt_frozen
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.112
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.113
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.114
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+#第五先驱者
+site_fifth_precursors = {
+	desc = "site_fifth_precursors_intro"
+	picture = GFX_evt_ringworld
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.116
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.117
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.118
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+#四叶草
+site_clovertheater = {
+	desc = "site_clovertheater_intro"
+	picture = GFX_evt_cold_barren
+	stages = 4
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D1
+		event = wsgancrel.122
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D2
+		event = wsgancrel.123
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_D3
+		event = wsgancrel.124
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_D4
+		event = wsgancrel.125
+	}	
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

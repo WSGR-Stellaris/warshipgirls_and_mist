@@ -1,0 +1,477 @@
+decision_planet_lp = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_lp_resources
+	
+	resources = {
+		category = decisions
+		cost = {
+			consumer_goods = 648
+		}
+	}	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_authority="auth_warshipgirls"
+			is_ai = no
+		}
+		NOR = {
+			has_modifier = planet_lp
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_lp }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_lp" }
+		hidden_effect = {
+			planet_event = { id = wsg.3077 }
+		}		
+	}
+}
+
+decision_planet_noshoes = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_noshoes
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 1000
+		}
+	}	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_authority="auth_warshipgirls"
+			is_ai = no
+		}
+		NOR = {
+			has_modifier = planet_noshoes
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_noshoes }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_noshoes" }
+	}
+}
+##############################
+decision_planet_pantsuhd = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_pantsuhd_resources
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+		}
+	}	
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_technology = tech_wsg_pantsu
+			has_authority="auth_warshipgirls"
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_pantsuhd }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_pantsuhd" }
+			hidden_effect = {
+				add_deposit = d_pantsuhd
+				planet_event = { id = wsg.3049 }
+		}
+	}
+}
+
+decision_end_planet_pantsuhd = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = PS_pantsuhd_resources
+
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		has_deposit = d_pantsuhd
+	}
+	
+	effect = {
+		custom_tooltip = decision_end_planet_pantsuhd_effects_short
+		remove_modifier = planet_pantsuhd
+		hidden_effect = {
+			remove_deposit = d_pantsuhd
+		}
+	}
+}
+##############################
+decision_planet_Santee = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_Santee
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}	
+	allow = {
+		NOT = { has_modifier = planet_st }
+	}	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_authority="auth_warshipgirls"
+		}
+		from = { 
+			OR = {
+				is_xenophobe = yes 
+				is_authoritarian = yes 
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_st" }
+	}
+}
+
+decision_end_planet_Santee = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = PS_Santee
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		has_modifier = planet_st
+	}
+	
+	effect = {
+		custom_tooltip = decision_end_planet_Santee_effects_short
+		remove_modifier = planet_st
+	}
+}
+##############################
+decision_planet_mist = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_mist_resources
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+		}
+	}	
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_technology = tech_building_wsg_neo
+			has_authority="auth_warshipgirls"
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_mist }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_mist" }
+			hidden_effect = {
+				add_deposit = d_neo
+			}
+	}
+}
+
+decision_end_planet_mist = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = PS_mist_resources
+
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		has_deposit = d_neo
+		has_modifier = planet_mist
+	}
+	
+	effect = {
+		custom_tooltip = decision_end_planet_mist_effects_short
+		remove_modifier = planet_mist
+		hidden_effect = {
+			remove_deposit = d_neo
+		}
+	}
+}
+##############################
+decision_planet_NEOB = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_NEOB_resources
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+		}
+	}	
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_technology = tech_building_wsg_neo
+			has_authority="auth_warshipgirls"
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_NEOB }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "planet_NEOB" }
+			hidden_effect = {
+				add_deposit = d_neo
+			}
+	}
+}
+
+decision_end_planet_NEOB = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = PS_NEOB_resources
+
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		has_deposit = d_neo
+		has_modifier = planet_NEOB
+	}
+	
+	effect = {
+		custom_tooltip = decision_end_planet_NEOB_effects_short
+		remove_modifier = planet_NEOB
+		hidden_effect = {
+			remove_deposit = d_neo
+		}
+	}
+}
+
+####################################
+decision_port_project = {
+	owned_planets_only = yes
+	icon = decision_port_project
+
+	enactment_time = 2400
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			minerals = 20000
+		}
+	}
+	
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_wsg_port
+			is_planet_class = pc_ringworld_habitable_sh
+			is_planet_class = pc_relic
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
+		habitable_structure = no
+		exists = owner
+		owner = { has_ascension_perk = ap_port_project }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_arcology_project_requirements
+			free_district_slots < 1
+			num_districts = { type = district_farming value < 1 }
+			num_districts = { type = district_mining value < 1 }
+			num_districts = { type = district_generator value < 1 }
+		}
+		num_uncleared_blockers < 1
+	}
+	
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_port_project_effects
+		hidden_effect = {		
+			clear_deposits = yes
+			change_pc = pc_wsg_port
+			set_planet_entity = {
+				entity = "wsg_port_planet"
+			}
+			owner = {
+				country_event = { id = distar.201 } # port for living planet distar.197, triggers in event
+			}
+			planet_event = { id = wsg.3020 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_port_project_relic = {
+	owned_planets_only = yes
+	icon = decision_port_project
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			minerals = 25000
+		}
+	}
+
+	potential = {
+		is_planet_class = pc_relic
+		habitable_structure = no
+		exists = owner
+		owner = { is_regular_empire = yes }
+		owner = { has_ascension_perk = ap_port_project }
+	}
+
+	allow = {
+		num_uncleared_blockers < 1
+	}
+
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_port_project_effects
+		hidden_effect = {
+			clear_deposits = yes
+			change_pc = pc_wsg_port
+			set_planet_entity = {
+				entity = "wsg_port_planet"
+			}
+			add_deposit = d_former_relic_world
+			planet_event = { id =  wsg.3020 }
+			while = {
+				count = 4
+				solar_system = {
+					random_system_ambient_object = {
+						limit = { has_ambient_object_flag = relic_world_debris }
+						destroy_ambient_object = this
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+####################################
+decision_dreadnought_project = {
+	owned_planets_only = yes
+	icon = decision_dreadnough_project
+
+	enactment_time = 1200
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			alloys = 8000
+			sr_neo = 500
+			sr_alpha = 200
+		}
+	}
+	
+	potential = {
+		exists = owner
+		is_capital = yes
+		from = { has_country_flag = dreadnought_allowed }
+	}
+	
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_dreadnought_project_effects
+		hidden_effect = {		
+			owner = {
+				country_event = { id = wsg.3035 } 
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+###########
+decision_wg_zro = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_wg_zro
+
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 100
+		}
+	}
+
+	potential = {
+		owner = {
+			is_regular_empire = yes
+			has_technology = tech_wg_zro
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = planet_wg_zeo }
+	}
+
+	effect = {
+		add_modifier = { modifier = "planet_wg_zeo" days = 4800 }
+	}
+
+	ai_weight = {
+		weight = 5
+
+		# don't encourage growth if there is no free housing
+		modifier = {
+			factor = 0
+			free_housing < 1
+		}
+	}
+}
+

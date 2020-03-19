@@ -1,0 +1,25 @@
+namespace = shgancrel
+
+country_event = {
+	id = shgancrel.1
+	title = "shgancrel.1.name"
+	desc = "shgancrel.1.desc"
+	picture = GFX_evt_SH2
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+	trigger = {
+		has_authority = auth_shenhai
+		is_ai = no
+	}
+	option = {
+		name = "shgancrel.1.a"
+		owner = {
+		add_relic = "r_sh_book" 
+		add_resource = { influence = 50 }
+		}
+	}
+}

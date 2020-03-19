@@ -1,0 +1,339 @@
+opinion_sh = {
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = -20
+			NOT = { has_authority = auth_shenhai }
+			NOT = { is_country_type = fallen_empire }
+		}	
+	}
+}
+opinion_sh2 = {
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 200
+			has_authority = auth_shenhai
+		}	
+	}
+}
+
+opinion_shcm = {	
+	trigger = {
+		is_country_type = default
+		has_ascension_perk = ap_shenhai_silent
+		FROM = {
+			NOR = {
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	opinion = {
+		base = -1000
+	}
+}
+opinion_shcm2 = {	
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+			has_ascension_perk = ap_shenhai_silent
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = -1000
+			NOT = { has_authority = auth_shenhai }
+			NOT = { is_country_type = fallen_empire }
+		}	
+	}
+}
+opinion_shcm3 = {	
+	trigger = {
+		is_country_type = default
+		has_civic = civic_CM
+		FROM = {
+			NOR = {
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	opinion = {
+		base = -1000
+	}
+}
+opinion_shcm4 = {
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+			has_civic = civic_CM
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = -1000
+			NOT = { has_authority = auth_shenhai }
+			NOT = { is_country_type = fallen_empire }
+		}	
+	}
+}
+opinion_shkh1 = {
+	trigger = {
+		FROM = {
+			has_ascension_perk = ap_shenhai_icebreaking
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 500
+			has_authority = auth_warshipgirls
+		}			
+	}
+}
+
+opinion_shkh2 = {
+	trigger = {
+		FROM = {
+			has_authority = auth_warshipgirls
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 500
+			has_ascension_perk = ap_shenhai_icebreaking
+		}			
+	}
+}
+
+opinion_sh_to_wsg = {
+	trigger = {
+		has_authority = auth_shenhai
+		NOT = { has_ascension_perk = ap_shenhai_icebreaking }			
+			}				
+	opinion = {
+		modifier = {
+			add = -100	
+			from = { has_authority = "auth_warshipgirls" }		
+		}		
+	}
+}
+
+opinion_wsg_to_sh = {
+	trigger = {
+		has_authority = auth_warshipgirls		
+	}				
+	opinion = {
+		modifier = {
+			add = -100	
+			FROM = { 
+				has_authority = auth_shenhai	
+				NOT = { has_ascension_perk = ap_shenhai_icebreaking }	
+			}			
+		}		
+	}
+}
+
+opinion_wsg_fb = {
+	trigger = {
+		FROM = {
+			has_ascension_perk = ap_wsg_universal_transactions
+		}
+	}
+
+	opinion = {
+		base = 20
+	}
+}
+
+opinion_ovo_my_world = {
+	opinion = -100
+
+	accumulative = yes
+	
+	min = -2000
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_cm_a_world = {
+	opinion = {
+		base = -60
+	}
+
+	accumulative = yes
+	
+	min = -300
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_cm_my_world = {
+	opinion = {
+		base = -600
+	}
+
+	accumulative = yes
+	
+	min = -3000
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_cm_a_primitive_world = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = yes
+	
+	min = -200
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_destroyed_a_system = {
+	opinion = {
+		base = -200
+	}
+
+	accumulative = yes
+	
+	min = -300
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_destroyed_my_system = {
+	opinion = {
+		base = -2000
+	}
+
+	accumulative = yes
+	
+	min = -3000
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_wsg_to_wgfe = {
+	trigger = {
+		FROM = {
+			is_wg_fallen_empire = yes
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 200
+			has_authority = auth_warshipgirls
+		}	
+	}
+}
+
+opinion_sh_to_wgfe = {
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+			NOR = { 
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
+			}
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 200
+			has_authority = auth_shenhai
+		}	
+	}
+}
+
+opinion_wgfe_to_wsg = {
+	trigger = {
+		FROM = {
+			has_authority = auth_warshipgirls
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 200
+			is_wg_fallen_empire = yes
+		}	
+	}
+}
+
+opinion_wgfe_to_sh = {
+	trigger = {
+		FROM = {
+			has_authority = auth_shenhai
+			NOR = { 
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
+			}
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 200
+			is_wg_fallen_empire = yes
+		}	
+	}
+}
+
+opinion_wg_doom = {
+	trigger = {
+		FROM = {
+			has_technology = tech_wg_doom
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = -10
+			NOT = { has_authority = auth_shenhai }
+			NOT = { is_country_type = fallen_empire }
+		}	
+	}
+}
+
+opinion_wg_doom_fe = {
+	trigger = {
+		FROM = {
+			has_technology = tech_wg_doom
+		}
+	}				
+	opinion = {
+		modifier = {
+			add = -20	
+			is_wg_fallen_empire = yes			
+		}		
+	}
+}

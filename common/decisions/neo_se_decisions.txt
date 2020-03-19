@@ -1,0 +1,97 @@
+decision_planet_sh_to_wsg = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_sh_to_wsg
+	
+	resources = {
+		category = decisions
+		cost = {
+			sr_neo = 10
+		}
+	}	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_technology = tech_building_wsg_neo
+			OR = {
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+	allow = {
+		any_owned_pop = {
+			OR = {
+				has_trait = sh_trait_shenhai
+				has_trait = sh_trait_shenhai1
+				has_trait = sh_trait_shenhai2	
+			}		
+		}
+	}	
+	effect = {
+		hidden_effect = {	
+			random_owned_pop = {
+				limit = {
+					OR = {
+					has_trait = sh_trait_shenhai
+					has_trait = sh_trait_shenhai1
+					has_trait = sh_trait_shenhai2	
+					}					
+				}
+				kill_pop = yes
+			}
+		}
+		create_pop = {
+			species = owner
+		}		
+	}
+}
+
+decision_planet_wsg_to_sh = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_wsg_to_sh
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 100
+		}
+	}	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			OR = {
+				has_authority = auth_shenhai
+			}
+			NOT = {
+				has_ascension_perk = ap_shenhai_icebreaking
+			}			
+		}
+	}
+	allow = {
+		any_owned_pop = {
+			OR = {
+				has_trait = wsg_trait_warshipgirls
+				has_trait = wsg_trait_warshipgirls1		
+			has_trait = wsg_trait_mist
+			}					
+		}
+	}	
+	effect = {
+		hidden_effect = {	
+			random_owned_pop = {
+				limit = {
+					OR = {
+						has_trait = wsg_trait_warshipgirls
+						has_trait = wsg_trait_warshipgirls1		
+						has_trait = wsg_trait_mist		
+					}						
+				}
+				kill_pop = yes
+			}
+		}
+		create_pop = {
+			species = owner
+		}		
+	}
+}

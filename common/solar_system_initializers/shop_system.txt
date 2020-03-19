@@ -1,0 +1,169 @@
+shop_system = {
+	class = "rl_standard_stars"
+	usage = shop_system_init
+	name = "NAME_shop_system"
+	
+	max_instances = 1
+	spawn_chance = 9999
+	
+	flags = { shop_system_home }
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 100
+	}
+
+	
+	planet = {
+		class = "pc_g_star"
+		orbit_distance = 0
+		
+		init_effect = {
+
+			create_ambient_object = {
+				type = caravaneer_billboard_1
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 100
+					angle = 45
+				}
+			}
+
+			create_ambient_object = {
+				type = caravaneer_billboard_2
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 100
+					angle = 135
+				}
+			}
+
+			create_ambient_object = {
+				type = caravaneer_billboard_1
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 100
+					angle = 225
+				}
+			}
+
+			create_ambient_object = {
+				type = caravaneer_billboard_3
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 100
+					angle = 315
+				}
+			}
+			
+			create_ambient_object = {
+				type = caravaneer_billboard_2
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 100
+					angle = 80
+				}
+			}			
+			create_ambient_object = {
+				type = caravaneer_billboard_3
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 95
+					angle = 215
+				}
+			}
+			create_ambient_object = {
+				type = caravaneer_billboard_1
+				scale = 4
+				location = this
+				entity_offset_height = { min = -9 max = -11 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 90
+					angle = 55
+				}
+			}
+
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}			
+		}
+	}
+	
+	change_orbit = 48
+
+	planet = {
+		count = 1
+		orbit_angle = { min = 250 max = 5 }
+		size = { min = 10 max = 25 }
+		class = "pc_shrouded"
+		orbit_distance = 15
+		change_orbit = @base_moon_distance
+		
+		moon = {	
+			class = pc_habitat
+			name = "NAME_shop_habitat"
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+			size = { min = 10 max = 10 }
+		}		
+	}
+
+	planet = {
+		count = 1
+		orbit_angle = { min = 175 max = 185 }
+		size = { min = 10 max = 25 }
+		class = "rl_unhabitable_planets"
+		orbit_distance = 12
+	}
+
+	planet = {
+		count = 1
+		orbit_angle = { min = 85 max = 95 }
+		size = { min = 10 max = 25 }
+		class = "rl_unhabitable_planets"
+		orbit_distance = 12
+	}
+
+}

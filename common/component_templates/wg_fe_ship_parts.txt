@@ -1,0 +1,93 @@
+utility_component_template = {
+	key = "wg_fe_ark_factory"
+	size = titanic
+	icon = "GFX_ship_part_wg_fe_ark_factory"
+	icon_frame = 1
+	power = -200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	hidden = yes
+	component_set = "wg_fe_ark_factory"
+
+	resources = {
+	category = ship_components
+		cost = {
+			alloys = 5000
+		}
+		produces = {
+			energy = 250
+			minerals = 200
+			food = 200
+			alloys = 100
+			consumer_goods = 100
+			sr_pantsu = 50
+			sr_se = 20
+			
+		}
+	}
+	
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			OR = {
+				is_preferred_weapons = weapon_type_energy
+				is_preferred_weapons = weapon_type_kinetic
+			}		
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_AURA_FE"
+	size = medium
+	icon = "GFX_ship_part_aura_axe"
+	icon_frame = 1
+	power = 0
+	prerequisites = {
+		"tech_sh_aura2"
+	}
+	size_restriction = {
+		titan
+	}
+	component_set = "ship_aura_components"
+	hostile_aura = {
+		name = "aura_shield_dampener"
+		radius = @shipAuraRange
+		apply_on = ships
+		stack_info = {
+			id = WG_FE_AURA
+			priority = 200
+		}
+		damage_per_day = {
+			accuracy = 1.00
+			damage = { min = 10 max = 20 }
+			
+			shield_penetration = 1.0
+			armor_penetration = 1.0
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}

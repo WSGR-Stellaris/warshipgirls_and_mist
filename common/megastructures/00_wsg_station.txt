@@ -1,0 +1,406 @@
+wsg_station = {
+	entity = "wsg_gateway_entity"
+	construction_entity = "wsg_gateway_entity"
+	portrait = "GFX_wsg_station_background"
+	place_entity_on_planet_plane = yes
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1200
+	resources = {
+		category = megastructures
+		cost = { alloys = 15000 influence = 120 }
+		upkeep = { energy = 60 minerals = 60 }
+	}
+	country_modifier = { 
+		country_naval_cap_add = 150 
+		country_resource_max_add = 8000
+	}
+	ship_modifier = {
+		ship_starting_experience_add = 100
+	}
+	station_modifier = {
+		starbase_shipyard_capacity_add = 12
+		starbase_shipyard_build_cost_mult = -0.05
+		starbase_shipyard_build_speed_mult = 0.80		
+	}
+	
+	potential = { 
+		OR = {
+			has_ascension_perk = ap_wsg_station
+		}
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_maximum_eight"
+			from = {
+				OR = { has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+					}
+				check_variable = { 
+					which = num_wsg_station
+					value < 8
+				}
+			}	
+		}
+		custom_tooltip = { 
+			fail_text = "requires_colonizeable_planet" 
+			AND = { 
+				any_system_planet = {
+					colonizeable_planet = yes
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_only_one_in_system"
+			NOT = {
+				has_star_flag = wsg_station_built
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+	}		
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				#can_build_megastructure_on_planet = yes
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_ringworld_habitable_sh
+					is_planet_class = pc_ringworld_tech
+					is_planet_class = pc_ringworld_seam
+					is_planet_class = pc_ringworld_habitable_damaged
+					is_planet_class = pc_ringworld_tech_damaged
+					is_planet_class = pc_ringworld_seam_damaged
+					solar_system = {
+						has_star_flag = ring_world_built
+					}
+					
+					#all of these checks ensure that you don't double up on megastructures, and you don't get the weird situation
+					#of being able to build it around a proper ring world
+				}
+			}	
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = {
+				AND = {
+					exists = owner
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+		modifier = { factor = 0.75 from = { has_any_megastructure_in_empire = yes }	}
+		modifier = { factor = 0.0 from = { any_system_within_border = { has_megastructure = wsg_station } } }
+	}
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		set_star_flag = wsg_station_built_flag
+		from = { 
+			set_country_flag = built_wsg_station
+			country_event = { id = wsg.3025 }
+			change_variable = {
+				which = num_wsg_station
+				value = 1
+			}
+			if = {
+				limit = { is_country_type = default_ev }
+				change_variable = {
+				which = ev_maintenance_value
+				value = 5
+				}
+			}		
+		}		
+		fromfrom.planet = {
+			set_planet_flag = planet_wsg_station
+			set_planet_flag = megastructure
+			add_modifier = { modifier = planet_wsg_station_modifier days = -1 }
+		}
+	}
+}
+
+ 
+dyson_yamato = {
+	entity = "star_shield_alt_ambient_effect_entity"
+	construction_entity = "star_shield_alt_ambient_effect_entity"
+	portrait = "GFX_wsg_yamato_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1260
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 5000
+			influence = 50
+		}
+		produces = {
+			energy = 300
+		}
+	}
+
+	potential = { 
+		OR = {
+			has_ascension_perk = ap_wsg_station
+		}
+	}
+	
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_only_one_yamato_in_system"
+			NOT = {
+				has_star_flag = dyson_yamato_built
+			}
+		}		
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_black_hole_neutron_star_pulsar"
+			NOT = {
+				is_star_class = sc_black_hole
+				is_star_class = sc_neutron_star
+				is_star_class = sc_pulsar
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_binary_trinary"
+			NOR = {
+				is_star_class = sc_binary_1
+				is_star_class = sc_binary_2
+				is_star_class = sc_binary_3
+				is_star_class = sc_binary_4
+				is_star_class = sc_binary_5
+				is_star_class = sc_binary_6
+				is_star_class = sc_binary_7
+				is_star_class = sc_binary_8
+				is_star_class = sc_binary_9
+				is_star_class = sc_binary_10
+				is_star_class = sc_trinary_1
+				is_star_class = sc_trinary_2
+				is_star_class = sc_trinary_3
+				is_star_class = sc_trinary_4
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			#NOT = { has_any_megastructure = yes }
+			has_no_non_gate_megastructure = yes
+		}
+	}
+	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_orbital_station"
+				has_orbital_station = no
+			}
+		}
+	}
+	
+	# root = system
+	# from = country	
+	ai_weight = {
+		factor = 15
+		
+		modifier = {
+			factor = 0.1
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		}	
+		
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = { 
+					owner = { is_same_value = from } 
+				}
+			}
+		}
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		set_star_flag = dyson_yamato_built
+		from = { 
+			set_country_flag = built_dyson_yamato
+			country_event = { id = wsg.3028 }
+		}
+	}
+}
+
+wsg_mining_station = {
+	entity = "wsg_01_construction_platform_entity"
+	construction_entity = "wsg_01_construction_platform_entity"
+	portrait = "GFX_wsg_mining_station_background"
+	place_entity_on_planet_plane = no
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 720
+	resources = {
+		category = megastructures
+		cost = { alloys = 2000 influence = 30 }
+		upkeep = { energy = 30 }
+		produces = { minerals = 250 }
+	}
+	potential = { 
+		OR = {
+			has_ascension_perk = ap_wsg_station
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_only_one_wsg_mining_station_in_system"
+			NOT = {
+				has_star_flag = wsg_mining_station_built
+			}
+		}
+	}	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					solar_system = { has_star_flag = ring_world_built }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_asteroid"
+				is_asteroid = yes
+			}			
+		}
+	}	
+	ai_weight = { factor = 8 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		set_star_flag = wsg_mining_station_built
+		from = { 
+			set_country_flag = built_wsg_mining_station
+		}
+	}
+}
+
+wsg_hidden_capital = {
+	entity = ""
+	construction_entity = ""
+	portrait = "GFX_wsg_hidden_capital_background"
+	place_entity_on_planet_plane = yes
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 360
+	
+	country_modifier = { 
+		country_admin_cap_add = 50 
+		edict_length_mult = 0.50
+	}	
+	resources = {
+		category = megastructures
+		cost = { alloys = 12000 influence = 120 }
+		upkeep = { 
+			energy = 50 
+			consumer_goods = 50
+		}
+		produces = { 
+			influence = 1
+		}
+	}
+	prerequisites = { "tech_wsg_hc" }
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_only_one_wsg_hidden_capital"
+			from = { NOT = { has_country_flag = built_wsg_hidden_capital } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_habitable_planets"
+			NOT = {
+				any_system_planet = {
+					AND = {
+						colonizeable_planet = yes
+					}
+				}
+			}
+		}
+	}	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					solar_system = { has_star_flag = ring_world_built }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_asteroid"
+				is_asteroid = yes
+			}			
+		}
+	}	
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		set_star_flag = wsg_hidden_capital_built
+		from = { 
+			set_country_flag = built_wsg_hidden_capital
+			set_country_flag = has_built_or_repaired_megastructure	
+			country_event = { id = wsg.3032 }			
+		}
+	}
+}

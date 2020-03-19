@@ -1,0 +1,147 @@
+#victoria
+civic_wgvictoria={
+	icon="gfx/interface/icons/governments/civics/wgvic.dds"
+	potential={authority={value=auth_warshipgirls}}
+	possible={
+	}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		starbase_shipyard_build_cost_mult = -0.05
+		starbase_shipyard_build_speed_mult = 0.10
+		ship_weapon_damage = 0.1
+		army_damage_mult = 0.1
+		country_war_exhaustion_mult = -0.2
+		country_claim_influence_cost_mult = -0.2
+	}
+}
+
+#ella
+civic_wgella = {
+	icon="gfx/interface/icons/governments/civics/wgella.dds"
+	potential={authority={value=auth_warshipgirls}}
+	possible={}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		planet_jobs_produces_mult = 0.05
+		pop_citizen_happiness = 0.05
+		ships_upkeep_mult = -0.10
+		armies_upkeep_mult = -0.2
+	}
+}
+
+#aurora
+civic_wgaurora={
+	icon="gfx/interface/icons/governments/civics/wgaurora.dds"
+	potential={authority={value=auth_warshipgirls}}
+	possible={}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		num_tech_alternatives_add = 1
+		all_technology_research_speed = 0.15
+	}
+}
+
+#Elves
+civic_wgelves={
+	icon="gfx/interface/icons/governments/civics/elves.dds"
+	potential={authority={value=auth_warshipgirls}}
+	possible={}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		planet_building_build_speed_mult = 0.50
+		megastructure_build_speed_mult = 0.50
+		country_megastructure_build_cap_add = 2
+	}
+}
+
+
+###################
+#fallen empire
+
+civic_wg_fe={
+	icon="gfx/interface/icons/governments/civics/wg_fe.dds"
+	potential={
+		country_type = { value = fallen_empire }
+		authority = { value = auth_wg_fe}
+	}
+	possible={}
+	
+	modifier={
+		ships_upkeep_mult = -0.15
+		armies_upkeep_mult= -0.2
+		country_war_exhaustion_mult = 0.2
+		pop_growth_speed_reduction = 0.5
+	}
+	random_weight = {
+		base = 999999
+	}
+}
+
+civic_wg_awakened_fe = {
+	icon="gfx/interface/icons/governments/civics/wg_fe2.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		authority = { value = auth_wg_fe}
+	}
+
+	modifier = {
+		ships_upkeep_mult = -0.4
+		ship_disengage_chance_mult = 0.5
+		starbase_shipyard_capacity_add = 30
+		country_command_limit_add = 200
+		country_naval_cap_add = 9999
+		country_resource_max_add = 1000000
+	}
+
+	random_weight = {
+		base = 99999
+	}
+}
+
+civic_wg_awakened_fe_advance = {
+	icon="gfx/interface/icons/governments/civics/wg_fe2.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		authority = { value = auth_wg_fe}
+	}
+
+	modifier = {
+		ships_upkeep_mult = -0.4
+		ship_hull_mult = 0.1
+		ship_hull_regen_add_static = 10
+		ship_shield_mult = 0.1
+		ship_shield_regen_add_static = 50
+		ship_shield_damage_mult = 0.1
+		ship_shield_penetration_mult = 0.1
+		ship_armor_mult = 0.1
+		ship_armor_regen_add_static = 50
+		ship_armor_damage_mult = 0.1
+		ship_armor_penetration_mult = 0.1
+		ship_disengage_chance_mult = 0.5
+		starbase_shipyard_capacity_add = 30
+		country_command_limit_add = 200
+		ship_starting_experience_add = 10000
+		country_naval_cap_add = 9999
+		country_resource_max_add = 1000000
+	}
+
+	random_weight = {
+		base = 99999
+	}
+}

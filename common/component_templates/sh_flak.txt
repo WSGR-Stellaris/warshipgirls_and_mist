@@ -1,0 +1,76 @@
+weapon_component_template = {
+	type = point_defence
+	
+	key = "sh_weapen_flak1"
+	size = point_defence
+	entity = "turret_point_defence_entity"
+	
+	damage = { min = 3 max = 8 }
+	windup = { min = 2 max = 6 }
+	total_fire_time = 6
+	range = 35.0
+	shield_damage = 1.10
+	armor_damage = 0.70
+	accuracy = 0.8
+	tracking = 0.7
+	power = -10
+	
+	icon = "GFX_sh_weapen_flak1"
+	icon_frame = 1
+	
+	prerequisites = { "tech_sh_weapon2" }
+	component_set = "sh_weapen_flak1"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+	upgrades_to = "sh_weapen_flak2"
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 8
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.02
+		}
+	}
+}
+
+weapon_component_template = {
+	type = point_defence
+	
+	key = "sh_weapen_flak2"
+	size = point_defence
+	entity = "turret_point_defence_entity"
+	
+	damage = { min = 6 max = 16 }
+	windup = { min = 2 max = 6 }
+	total_fire_time = 6
+	range = 55.0
+	shield_damage = 1.10
+	armor_damage = 0.70
+	accuracy = 0.8
+	tracking = 0.7
+	power = -25
+	
+	icon = "GFX_sh_weapen_flak2"
+	icon_frame = 1
+	
+	prerequisites = { "tech_sh_flak2" }
+	component_set = "sh_weapen_flak2"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+		upkeep = {
+			energy = 0.3
+			alloys = 0.05
+		}
+	}
+}

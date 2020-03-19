@@ -1,0 +1,41 @@
+sh_rivalry = {
+	show_in_diplomacy = no
+	show_notification = yes
+	potential = {
+		is_country_type = default
+	}
+	is_valid = {
+		has_total_war_cb = no
+		OR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}		
+	}
+} 
+
+sh_rivalry2 = {
+	show_in_diplomacy = no
+	show_notification = yes
+	potential = {
+		is_country_type = default
+	}
+	is_valid = {
+		has_total_war_cb = no
+		from = { is_country_type = default }
+		NOT = { is_overlord_to = FROM }
+		from = { is_country_type = default }
+		from = { 
+		OR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+			}
+		}	
+		NOT = { has_ascension_perk = ap_shenhai_silent }
+		NOT = { has_civic = civic_CM }
+		NOT = { is_overlord_to = FROM }
+		OR = {
+			is_subject = no
+			overlord = { NOT = { is_same_value = from } }
+		}		
+	}
+}

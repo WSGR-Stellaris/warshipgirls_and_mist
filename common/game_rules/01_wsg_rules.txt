@@ -1,0 +1,166 @@
+can_species_be_assembled = {
+	is_sapient = yes
+	OR = {
+		AND = {
+			#禁止制作机器人
+			OR = {
+				has_trait = trait_machine_unit
+				has_trait = trait_mechanical
+			}
+			ROOT = { owner = { NOT = { has_authority = auth_warshipgirls } } }
+			ROOT = { owner = { NOT = { has_authority = auth_shenhai } } }
+		}
+		#战舰少女制造
+		AND = {
+			OR={
+				has_trait = wsg_trait_warshipgirls
+				has_trait = wsg_trait_warshipgirls1
+			}
+			
+			ROOT = { owner = { has_authority = auth_warshipgirls } }
+		}
+		#深海制造
+		AND = {
+			OR={
+				has_trait = sh_trait_shenhai
+				has_trait = sh_trait_shenhai1
+				has_trait = sh_trait_shenhai2
+				has_trait = sh_trait_shenhai3
+			}
+			ROOT = { owner = { has_authority = auth_shenhai } }
+		}
+	}
+}
+
+pop_generates_crime = {
+	is_sapient = yes
+	is_non_sapient_robot = no
+	NOT = { 
+		has_trait = wsg_trait_warshipgirls
+		has_trait = wsg_trait_warshipgirls1
+		has_trait = sh_trait_shenhai
+		has_trait = sh_trait_shenhai1
+		has_trait = sh_trait_shenhai2
+		has_trait = sh_trait_shenhai3
+		has_trait = sh_trait_silent
+		has_trait = trait_intelligent_galo
+	}
+}
+
+# This = country
+can_build_branch_offices = {
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_MEGACORP
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_corporate
+		}
+	}
+}
+
+# This = country
+can_support_branch_offices = {
+	is_country_type = default
+	is_regular_empire = yes
+	OR = {
+		NOT = { has_authority = auth_corporate }	
+		NOT = { has_authority = auth_warshipgirls }	
+	}
+	
+}
+can_build_branch_office_on_planet = {
+	custom_tooltip = {
+		fail_text = requires_recipient_not_fanatic_purifiers
+		exists = owner
+		owner = {
+			OR = {
+				is_same_species = root
+				NOT = { has_civic = civic_fanatic_purifiers }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = requires_recipient_not_warshipgirls
+		exists = owner
+		owner = {
+			OR = {
+				NOT = { has_authority = auth_warshipgirls }
+			}
+		}
+	}	
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_COMMERCIAL_PACT
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = yes }
+			owner = { has_commercial_pact = root }
+			owner = { is_in_federation_with = root }
+
+			# allow branch offices in subsidiaries and vice versa
+			root = {
+				is_subject = yes
+				is_subject_type = subsidiary
+				overlord = { is_same_value = owner }
+			}
+			owner = {
+				is_subject = yes
+				is_subject_type = subsidiary
+				overlord = { is_same_value = root }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_CRIMINAL_HERITAGE_HAS_TRUCE
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = no }
+			owner = {
+				NOR = {
+					has_truce = root
+					is_at_war_with = root
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_CRIMINAL_COOLDOWN
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = no }
+			AND = {
+				root = { is_criminal_syndicate = yes }
+				NOT = { has_planet_flag = criminal_branch_closed_cooldown_planet@root }
+			}
+		}
+	}
+}
+species_has_happiness = {
+	NOR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_hive_mind
+		has_trait = trait_nerve_stapled
+		has_trait = sh_trait_shenhai
+		has_trait = sh_trait_shenhai1
+		has_trait = sh_trait_shenhai2
+		has_trait = sh_trait_silent
+		has_trait = sh_trait_silent1
+		
+		AND = {
+			has_trait = trait_mechanical
+			OR = {
+				NOT = { exists = from }
+				from = { has_authority = auth_machine_intelligence }
+				from = { NOT = { has_technology = tech_synthetic_workers } }
+				from = { has_policy_flag = ai_outlawed }
+			}
+		}
+		AND = {
+			has_trait = trait_cybernetic
+			exists = from
+			from = {
+				has_authority = auth_machine_intelligence
+				has_civic = civic_machine_assimilator # Assimilator empire
+			}
+		}
+	}
+}

@@ -1,0 +1,185 @@
+wg_ring_world_system = {
+	name = "NAME_wg_ring_world"
+	class = "sc_g"
+	usage = custom_empire
+	flags = { wg_ring_world_system }
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {		
+		}	
+	}
+
+	change_orbit = 45
+	
+	planet = {
+		class = ideal_planet_class
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		home_planet = yes
+		modifiers = none
+		size = 5
+			
+		init_effect = {	
+			change_pc = pc_ringworld_habitable_sh
+			set_planet_flag = wg_ring_world_start_planet
+			set_size = 5
+			prevent_anomaly = yes
+			add_building = building_wg_fe_senergy
+			add_building = building_wg_fe_food
+			add_building = building_wg_fe_energy
+			add_building = building_wg_fe_dimensional_fabricator
+			add_building = building_wg_fe_foundry
+
+			while = {
+				count = 2
+				add_district = district_rw_sh_city
+			}			
+		}			
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_wg_ring_world1"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_habitable_sh"
+		orbit_angle = 30
+		orbit_distance = 0
+		size = 5
+		modifiers = none
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+			prevent_anomaly = yes
+			add_building = building_wg_fe_senergy
+			add_building = building_wg_fe_food
+			add_building = building_wg_fe_energy
+			add_building = building_wg_fe_dimensional_fabricator
+			add_building = building_wg_fe_foundry
+			while = {
+				count = 1
+				add_district = district_rw_sh_city
+			}
+		}				
+	}				
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+			prevent_anomaly = yes
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_habitable_sh"
+		orbit_angle = 30
+		orbit_distance = 0
+		size = 5
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+			prevent_anomaly = yes
+			add_building = building_wg_fe_senergy
+			add_building = building_wg_fe_food
+			add_building = building_wg_fe_energy
+			add_building = building_wg_fe_dimensional_fabricator
+			add_building = building_wg_fe_foundry
+			while = {
+				count = 1
+				add_district = district_rw_sh_city
+			}
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_habitable_sh"
+		orbit_angle = 30
+		orbit_distance = 0
+		size = 5
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+			prevent_anomaly = yes
+			add_building = building_wg_fe_senergy
+			add_building = building_wg_fe_food
+			add_building = building_wg_fe_energy
+			add_building = building_wg_fe_dimensional_fabricator
+			add_building = building_wg_fe_foundry
+			while = {
+				count = 1
+				add_district = district_rw_sh_city
+			}
+		}	
+	}				
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+		init_effect = {
+
+			trigger_megastructure_icon = yes
+			set_planet_flag = megastructure
+		}	
+	}
+
+}

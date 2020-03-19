@@ -1,0 +1,161 @@
+weapon_component_template = {
+	type = instant
+	
+	key = "sh_weapen_UX"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	
+	icon = "GFX_sh_weapen_UX"
+	icon_frame = 1
+	
+	firing_arc = 50.0
+	min_range = 5.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1000 max = 3000 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 110
+	range = 160.0
+	accuracy = 0.70
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.05
+	power = -280
+	
+	prerequisites = { "tech_sh_senergy_uav" }
+	size_restriction = { scout_UAV }
+	component_set = "sh_weapen_UX"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_se = 4
+		}		
+		upkeep = {
+			energy = 1
+			alloys = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+}
+weapon_component_template = {
+	type = instant
+	
+	key = "sh_weapen_X"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	
+	icon = "GFX_sh_weapen_X"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 15.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 3000 max = 6000 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 100
+	range = 185.0
+	accuracy = 0.75
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.05
+	power = -450
+	
+	prerequisites = { "tech_sh_Xweapon" }
+	component_set = "sh_weapen_X"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	upgrades_to = "sh_weapen_X2"	
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 200
+			sr_se = 8
+		}		
+		upkeep = {
+			energy = 2
+			alloys = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+}
+weapon_component_template = {
+	type = instant
+	
+	key = "sh_weapen_X2"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	
+	icon = "GFX_sh_weapen_X2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 15.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 3000 max = 6000 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 100
+	range = 185.0
+	accuracy = 0.75
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	shield_damage = 1.35
+	armor_damage = 1.35
+	hull_damage = 1.25	
+	tracking = 0.05
+	power = -550
+	
+	prerequisites = { "tech_sh_Xweapon2" }
+	component_set = "sh_weapen_X2"
+	projectile_gfx = "sh_lance_x"
+	
+	tags = { weapon_type_kinetic }
+	tags = { weapon_type_energy }	
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 250
+			sr_se = 10
+			sr_dark_matter = 6.5
+		}		
+		upkeep = {
+			energy = 2.2
+			alloys = 1.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+}

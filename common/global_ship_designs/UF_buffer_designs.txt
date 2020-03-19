@@ -1,0 +1,148 @@
+ship_design = {
+	name = "NAME_uf_buffer"
+	ship_size = uf_buffer
+	is_event_design = yes
+
+	section = {
+		template = "uf_buffer_key"
+		slot = "mid"
+	
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "UF_weapen_IA"
+		}
+
+	}
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_2"
+	required_component = "UF_AURA_1"
+	required_component = "UF_AURA_2"
+	required_component = "UF_AURA_3"
+	required_component = "UF_AURA_4"
+}
+
+ship_design = {
+	name = "NAME_uf_buffer_portal"
+	ship_size = uf_buffer
+	is_event_design = yes
+
+	section = {
+		template = "uf_buffer_key"
+		slot = "mid"
+	
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "UF_weapen_IA"
+		}
+
+	}
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_2"
+	required_component = "UF_AURA_5"
+	required_component = "UF_AURA_2"
+	required_component = "UF_AURA_3"
+	required_component = "UF_AURA_4"
+	required_component = "UF_AURA_6"
+}
+
+ship_design = {
+	name = "NAME_uf_navigator"
+	ship_size = uf_navigator
+	is_event_design = yes
+
+	section = {
+		template = "uf_navigator_key"
+		slot = "mid"
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_SK_UF"
+		}		
+	}
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_2"
+	required_component = "UF_AURA_7"
+	required_component = "UF_AURA_8"
+}

@@ -1,0 +1,67 @@
+initialize_crisis_system_select = {
+	every_system = {
+		limit = { 
+			OR = {
+				any_country = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+					any_system_within_border = {
+						is_same_value = PREVPREV
+					}
+				}
+				any_country = {
+					is_country_type = default
+					capital_scope = {
+						solar_system = {
+							is_same_value = PREVPREVPREV
+						}
+					}
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			closest_system = {
+				max_steps = 3
+				limit = {
+					has_star_flag = forbit_spawn_system
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+}
+
+initialize_second_portal_system_select = {
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			closest_system = {
+				max_steps = 10
+				has_star_flag = first_portal_system
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+}
+
+initialize_third_portal_system_select = {
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			closest_system = {
+				max_steps = 10
+				OR = {
+					has_star_flag = first_portal_system
+					has_star_flag = second_portal_system
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+}

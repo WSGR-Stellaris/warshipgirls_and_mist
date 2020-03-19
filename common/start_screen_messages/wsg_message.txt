@@ -1,0 +1,17 @@
+part={
+	location=0
+	localization="START_SCREEN_WSG"
+	
+	trigger={
+		has_country_flag=wsg_1
+	}
+}
+
+part={
+	location=0
+	localization="START_SCREEN_SH"
+	
+	trigger={
+		has_country_flag=sh_1
+	}
+}

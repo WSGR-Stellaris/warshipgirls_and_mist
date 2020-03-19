@@ -1,0 +1,32 @@
+on_destroy_planet_with_PLANET_KILLER_OVO = {
+	events = {
+		wsg.3029
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_PSH = {
+	events = {
+		sh.3012
+		wg_crisis.201
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_CM = {
+	events = {
+		sh.3014
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_SK = {
+	events = {
+		sh.3026
+		wg_crisis.202
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_SK_UF = {
+	events = {
+		sh.3026
+		wg_crisis.202
+	}
+}

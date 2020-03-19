@@ -1,0 +1,2055 @@
+namespace = sh
+
+#深海地块
+country_event = {
+	id = sh.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+	}
+	immediate = {
+		random_owned_planet = {
+				limit = {
+					is_capital = yes
+			}
+			add_deposit = r_sh_freezer
+			add_deposit = d_sh_db
+		}
+		add_modifier = {
+			modifier = sh_base
+			days = -1
+		}		
+	}
+}
+
+#要塞姬
+country_event = {
+	id = sh.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_civic = civic_yaosai
+	}
+	immediate = {
+		give_technology = { tech = tech_ftl_inhibitor message = no }	
+	}
+}
+#AI深海组装
+country_event = {
+	id = sh.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		is_ai = yes
+	}
+	immediate = {
+		add_modifier = {
+			modifier = sh_modifier_shenhai2
+			days = -1
+		}
+		add_modifier = {
+			modifier = wg_ai_base
+			days = -1
+		}
+	}
+}
+#大和之嫁
+country_event = {
+	id = sh.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_ascension_perk = ap_shenhai_icebreaking
+	}
+	immediate = {
+		country_event = { id = sh.5 days = 60  }
+	}
+}
+country_event = {
+	id = sh.5
+	title = "sh.5.name"
+	desc = "sh.5.desc"
+	picture = GFX_evt_yamato
+	is_triggered_only = yes
+	
+	option = {
+		name = "sh.5.a"
+		custom_tooltip = sh.5.a.response
+		owner = {
+			add_resource = { unity = 2000 }
+		}
+		hidden_effect = {
+			create_species = {
+				name = OVERTIMEMAN
+				plural = OVERTIMEMAN
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = yamato_species
+				}
+			}		
+			create_leader = {
+				class = governor
+				species = event_target:yamato_species
+				name = "Yamato XXIII"
+				skill = 10
+				traits = {
+					trait = leader_trait_governor_yamatoman
+					trait = leader_trait_governor_neversleep
+					trait = leader_trait_governor_shenhai2
+				}
+				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = overtime_yamato
+				}				
+			}
+			last_created_leader = {
+				set_age = 114
+				change_leader_portrait = sh65_1
+				set_is_female = yes
+			}
+			country_event = { id = sh.520 days = 1  }
+		}		
+	}
+	option = {
+		name = "sh.5.b"
+		custom_tooltip = sh.5.a.response
+		owner = {
+			add_resource = { influence = 150 }
+		}
+		hidden_effect = {
+			create_species = {
+				name = OVERTIMEMAN
+				plural = OVERTIMEMAN
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = yamato_species
+				}
+			}		
+			create_leader = {
+				class = governor
+				species = event_target:yamato_species
+				name = "Yamato XXIII"
+				skill = 10
+				traits = {
+					trait = leader_trait_governor_yamatoman
+					trait = leader_trait_governor_neversleep
+					trait = leader_trait_governor_shenhai2
+				}
+				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = overtime_yamato
+				}	
+			}
+			last_created_leader = {
+				set_age = 114
+				change_leader_portrait = sh65_1
+				set_is_female = yes
+			}
+			country_event = { id = sh.520 }
+		}
+	}
+}
+country_event = {
+	id = sh.520
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			if = {
+				limit = {
+					has_leader_flag = overtime_yamato
+				}
+				change_leader_portrait = sh65_1
+			}	
+		}
+	}
+}
+#深海异常战舰
+country_event = {
+	id = sh.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		last_increased_tech = "tech_sh_social"
+		NOT = {
+			has_civic = civic_CM
+		}		
+	}
+	immediate = {
+		country_event = { id = sh.7 days = 30  }
+	}
+}
+
+country_event ={
+	id = sh.7
+	title = "sh.7.name"
+	desc = "sh.7.desc"
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	show_sound = event_criminal_activity
+	
+	option = {
+		name = "sh.7.a"
+		hidden_effect = {
+			country_event = { id = sh.8 days = 15 }
+		}
+	}
+}
+
+country_event = {
+	id = sh.8
+	title = "sh.8.name"
+	desc = "sh.8.desc"
+	picture = GFX_evt_SH3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sh.8.a"
+		custom_tooltip = sh.8.a.tooltip
+		owner = {
+			add_resource = { influence = 50 }
+		}
+	}
+	option = {
+		name = "sh.8.b"
+		custom_tooltip = sh.8.b.tooltip
+		owner = {
+			add_resource = { society_research = 500 }
+		}
+	}
+}
+
+planet_event = {
+	id = sh.9
+	title = sh.9.name
+	desc = sh.9.desc
+	picture = GFX_evt_Pshenhai
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_shenhai
+	}
+
+	option = {
+		name = sh.9.a
+	}
+}
+planet_event = {
+	id = sh.10
+	title = sh.10.name
+	desc = sh.10.desc
+	picture = GFX_evt_sh_rw
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_ringworld_habitable_sh
+	}
+
+	option = {
+		name = sh.10.a
+	}
+}
+#深海飞升
+country_event = {
+	id = sh.1000
+	title = "sh.1000.name"
+	desc = "sh.1000.desc"
+	picture = GFX_evt_SH1
+	show_sound = event_the_great_awakening
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				is_same_species = root
+				has_trait = sh_trait_shenhai
+			}
+			modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai
+				add_trait = sh_trait_shenhai1
+			}
+			#owner_species = { save_event_target_as = psionic_species }
+		}
+		change_dominant_species = { species = last_created change_all = yes }
+	}
+	
+	option = {
+		name = "sh.1000.a"
+		custom_tooltip = sh.1000.a.tooltip
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait =	leader_trait_admiral_shenhai
+							has_trait =	leader_trait_general_shenhai
+							has_trait =	leader_trait_governor_shenhai
+							has_trait =	leader_trait_scientist_shenhai
+							has_trait =	leader_trait_ruler_shenhai
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+				every_pool_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait = leader_trait_admiral_shenhai
+							has_trait = leader_trait_general_shenhai
+							has_trait = leader_trait_governor_shenhai
+							has_trait = leader_trait_scientist_shenhai
+							has_trait = leader_trait_ruler_shenhai
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai
+						add_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+			}
+			country_event = { id = sh.1001 }
+		}			
+	}
+}
+country_event = {
+	id = sh.1001
+	title = sh.1001.name
+	desc = sh.1001.desc
+	picture = GFX_evt_wsg_attention
+	show_sound = event_cityscape
+	force_open = yes
+	location = root
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = sh.1001.a
+		hidden_effect = {
+			country_event = { id = sh.1002 days = 7200 }
+			country_event = { id = sh.1003 days = 9000 }
+		}		
+	}
+}
+country_event = {
+	id = sh.1002
+	title = "sh.1002.name"
+	desc = "sh.1002.desc"
+	picture = GFX_evt_robot_assembly_plant
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_technology = tech_synthetic_workers }
+		has_civic = civic_CM		
+	}	
+	
+	option = {
+		name = "sh.1002.a"
+		owner={
+			add_research_option = "tech_synthetic_workers"
+			add_tech_progress = {
+				tech = tech_synthetic_workers
+				progress = 0.20
+			}
+		}		
+	}
+}
+country_event = {
+	id = sh.1003
+	title = "sh.1002.name"
+	desc = "sh.1002.desc"
+	picture = GFX_evt_robot_assembly_plant
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_technology = tech_synthetic_workers }
+		NOT = { has_civic = civic_CM }		
+	}	
+	
+	option = {
+		name = "sh.1002.a"
+		owner={
+			add_research_option = "tech_synthetic_workers"
+			add_tech_progress = {
+				tech = tech_synthetic_workers
+				progress = 0.10
+			}
+		}		
+	}
+}
+country_event = {
+	id = sh.1010
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species ={ has_trait = sh_trait_shenhai1}
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+		}
+	}
+}
+country_event = {
+	id = sh.1011
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		AND = {
+			has_country_flag = sh_shenhai_flag_upgrade
+			from = { has_ruler_trait = leader_trait_ruler_shenhai }
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai
+				add_ruler_trait = leader_trait_ruler_shenhai
+			} 
+		}
+	}
+}
+country_event = {
+	id = sh.2000
+	title = "sh.2000.name"
+	desc = "sh.2000.desc"
+	picture = GFX_evt_SHCM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				is_same_species = root
+				has_trait = sh_trait_shenhai1
+			}
+			modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai1
+				add_trait = sh_trait_shenhai2
+			}
+			#owner_species = { save_event_target_as = psionic_species }
+		}
+		change_dominant_species = { species = last_created change_all = yes }
+	}
+	
+	option = {
+		name = "sh.2000.a"
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait =	leader_trait_admiral_shenhai1
+							has_trait =	leader_trait_general_shenhai1
+							has_trait =	leader_trait_governor_shenhai1
+							has_trait =	leader_trait_scientist_shenhai1
+							has_trait =	leader_trait_ruler_shenhai1
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_admiral_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_general_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_governor_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+				every_pool_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait = leader_trait_admiral_shenhai1
+							has_trait = leader_trait_general_shenhai1
+							has_trait = leader_trait_governor_shenhai1
+							has_trait = leader_trait_scientist_shenhai1
+							has_trait = leader_trait_ruler_shenhai1
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_admiral_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_general_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_governor_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai1
+						add_ruler_trait = leader_trait_ruler_shenhai1
+						remove_trait = leader_trait_ruler_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh.2010
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species ={ has_trait = sh_trait_shenhai2 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_admiral_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_general_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_governor_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_scientist_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_ruler_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+		}
+	}
+}
+country_event = {
+	id = sh.2011
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		AND = {
+			has_country_flag = sh_shenhai_flag_silent
+			from = { has_ruler_trait = leader_trait_ruler_shenhai1 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_admiral_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_general_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_governor_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_scientist_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai1
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_trait = leader_trait_ruler_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			} 
+		}
+	}
+}
+
+
+###########
+country_event = {
+	id = sh.3000
+	title = "sh.3000.name"
+	desc = "sh.3000.desc"
+	picture = GFX_evt_SHKH
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				is_same_species = root
+				has_trait = sh_trait_shenhai1
+			}
+			modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai1
+				add_trait = sh_trait_shenhai3
+			}
+			#owner_species = { save_event_target_as = psionic_species }
+		}
+		change_dominant_species = { species = last_created change_all = yes }
+	}
+	
+	option = {
+		name = "sh.3000.a"
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait =	leader_trait_admiral_shenhai2
+							has_trait =	leader_trait_general_shenhai2
+							has_trait =	leader_trait_governor_shenhai2
+							has_trait =	leader_trait_scientist_shenhai2
+							has_trait =	leader_trait_ruler_shenhai2
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_admiral_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_general_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_governor_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+				every_pool_leader = {
+					limit = {
+						is_same_species = root
+						#species = { 
+						#	has_trait = trait_psionic
+						#	is_same_value = event_target:psionic_species
+						#}
+						NOR = {
+							has_trait = leader_trait_admiral_shenhai2
+							has_trait = leader_trait_general_shenhai2
+							has_trait = leader_trait_governor_shenhai2
+							has_trait = leader_trait_scientist_shenhai2
+							has_trait = leader_trait_ruler_shenhai2
+						}
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_admiral_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_general_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_governor_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_scientist_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+					if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_shenhai2
+						add_ruler_trait = leader_trait_ruler_shenhai2
+						remove_trait = leader_trait_ruler_shenhai
+						remove_ruler_trait = leader_trait_ruler_shenhai
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh.3010
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species ={ has_trait = sh_trait_shenhai3 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_admiral_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_general_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_governor_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_scientist_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_ruler_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+		}
+	}
+}
+country_event = {
+	id = sh.3011
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		AND = {
+			has_country_flag = sh_shenhai_flag_icebreaking
+			from = { has_ruler_trait = leader_trait_ruler_shenhai2 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_admiral_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_general_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_governor_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_scientist_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_shenhai2
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_trait = leader_trait_ruler_shenhai
+				remove_ruler_trait = leader_trait_ruler_shenhai
+			} 
+		}
+	}
+}
+
+planet_event = {
+	id = sh.3012
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_planet_class = pc_frozen
+			}
+			from.owner = { country_event = { id = sh.3013 } }
+		}
+		else_if = {
+			limit = {
+				NOT = { is_planet_class = pc_ai }
+			}
+			from.owner = { country_event = { id = sh.3013 } }
+		}
+
+		# Contingency Machine World
+		if = {
+			limit = { 
+				is_planet_class = pc_ai 
+				NOT = { has_planet_flag = machine_lair }
+			}
+			set_planet_flag = destroyed_by_colossus
+			set_planet_flag = planet_cracked
+			planet_event = { id = crisis.2040 }
+		}
+
+		# Contingency Final Machine World
+		if = {
+			limit = { 
+				is_planet_class = pc_ai 
+				has_planet_flag = machine_lair
+			}
+			set_planet_flag = destroyed_by_colossus
+			set_planet_flag = planet_cracked
+			from.owner = { save_event_target_as = final_machine_world_destroyer }
+			planet_event = { id = crisis.2043 }
+		}
+
+		# Swarm Situation Log counter
+		if = {
+			limit = {
+				owner = { is_country_type = swarm }
+			}
+			every_country = {
+				limit = { has_event_chain = "prethoryn_scourge_chain" }
+				add_event_chain_counter = {
+					event_chain = "prethoryn_scourge_chain"
+					counter = "infested_worlds"
+					amount = -1 
+				}
+				add_event_chain_counter = {
+					event_chain = "prethoryn_scourge_chain"
+					counter = "infested_worlds_cleansed"
+					amount = 1 
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			# Generate threat
+			if = {
+				limit = {
+					is_colony = yes
+				}
+				add_threat = { who = from.owner amount = 3 }
+				# modifier for allies + those upset by genocide
+				every_country = {
+					limit = {
+						NOR = {
+							is_same_value = from.owner
+							is_same_value = root.owner
+							AND = {
+								has_federation = yes
+								is_in_federation_with = from.owner
+							}
+						}
+						OR = {
+							has_communications = from.owner
+							has_communications = root.owner
+						}
+						OR = {
+							AND = {
+								has_federation = yes
+								is_in_federation_with = root.owner
+							}
+							has_ai_personality = awakened_fallen_empire_xenophile
+							AND = {
+								is_country_type = default
+								OR = {
+									is_egalitarian = yes
+									is_xenophile = yes
+								}
+							}
+						}
+					}
+					if = {
+						limit = { root = { is_colony = no } }
+						add_opinion_modifier = {
+							modifier = opinion_cracked_an_uninhabited_world
+							who = from.owner
+						}
+					}
+					else = {
+						add_opinion_modifier = {
+							modifier = opinion_cracked_a_world
+							who = from.owner
+						}
+					}
+				}
+			}
+			else = {
+				add_threat = { who = from.owner amount = 1 }
+			}
+			# modifiers for victim
+			owner = {
+				if = {
+					limit = { root = { is_colony = no } }
+					add_opinion_modifier = {
+						modifier = opinion_cracked_my_uninhabited_world
+						who = from.owner
+					}
+				}
+				else = {
+					add_opinion_modifier = {
+						modifier = opinion_cracked_my_world
+						who = from.owner
+					}
+				}
+				if = {
+					limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_modifier = {
+						modifier = colossus_victim
+						days = 10800 # 30 years
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { habitable_planet = yes }
+			change_pc = pc_shenhai
+			clear_deposits = yes
+		}
+		else = {
+			change_pc = pc_shenhai
+			clear_deposits = yes
+		}
+		add_modifier = {
+			modifier = planet_PSH
+			days = 360
+		}
+	}
+}
+
+country_event = {
+	id = sh.3013
+	title = sh.3013.name
+	desc = sh.3013.desc
+	picture = GFX_evt_Pshenhai
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = fired_shenhai }
+	}
+
+	immediate = {
+		set_country_flag = fired_shenhai
+	}
+
+	option = {
+		name = sh.3013.a
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		from = {
+			custom_tooltip = sh.3013.tooltip
+		}
+	}
+}
+
+planet_event = {
+	id = sh.3014
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { # remove hive mind?
+		from.owner = { country_event = { id = sh.3015 } }
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			# Generate threat
+			add_threat = { who = from.owner amount = 3 }
+			# modifier for allies + those upset by robots
+			every_country = {
+				limit = {
+					NOR = {
+						is_same_value = from.owner
+						is_same_value = root.owner
+						AND = {
+							has_federation = yes
+							is_in_federation_with = from.owner
+						}
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						AND = {
+							has_federation = yes
+							is_in_federation_with = root.owner
+						}
+						has_ai_personality = awakened_fallen_empire_spiritualist
+						AND = {
+							is_country_type = default
+							OR = {
+								is_egalitarian = yes
+								is_spiritualist = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cm_a_world
+					who = from.owner
+				}
+			}
+			# modifiers for victim
+			owner = {
+				add_opinion_modifier = {
+					modifier = opinion_cm_my_world
+					who = from.owner
+				}
+				if = {
+					limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_modifier = {
+						modifier = colossus_victim
+						days = 10800 # 30 years
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { is_country_type = primitive }
+			}
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOR = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					is_country_type = default
+					NOR = {
+						is_xenophobe = yes
+						is_homicidal = yes
+						is_xenophile = yes
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_a_primitive_world
+					who = from.owner
+				}
+			}
+			every_country = {
+				limit = {
+					NOR = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							is_xenophile = yes
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cm_a_primitive_world_phile
+					who = from.owner
+				}
+			}
+		}
+		# Add war exhaustion to planet owner 
+		owner = {
+			add_static_war_exhaustion = {
+				attacker = from.fleet.owner
+				location = root
+				value_for_planet_destruction = 1.0
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = from.owner }
+			}
+			# already owned
+		}
+		else = {
+			set_owner = from.owner
+		}
+		every_owned_pop = {
+			limit = {
+				is_valid_pop_for_PLANET_KILLER_CM = yes
+			}
+			modify_species = {
+				species = this
+				add_trait = sh_trait_silent1
+				add_traits_at_start_of_list = yes
+				change_scoped_species = yes
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				OR = {
+					has_trait = trait_hive_mind
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+				}
+			}
+			kill_pop = yes
+		}
+		every_owned_pop = {
+			limit = {
+				has_modifier = pop_recently_conquered
+			}
+			remove_modifier = pop_recently_conquered
+		}
+		every_owned_pop = {
+			set_citizenship_type = {
+				type = citizenship_full_machine
+				cooldown = yes
+			}
+		}
+		# Special graphics for Habitats and Ring Worlds
+		if = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+			spawn_habitat_nanobot_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			spawn_ringworld_nanobot_effect = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			# nothing
+		}
+		else = {
+			switch = {
+				trigger = is_planet_class
+				pc_desert = { change_pc = pc_desert }
+				pc_arid = { change_pc = pc_arid }
+				pc_savannah = { change_pc = pc_savannah }
+				pc_ocean = { change_pc = pc_ocean }
+				pc_continental = { change_pc = pc_continental }
+				pc_tropical = { change_pc = pc_tropical }
+				pc_tundra = { change_pc = pc_tundra }
+				pc_arctic = { change_pc = pc_arctic }
+				pc_alpine = { change_pc = pc_alpine }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh.3015
+	title = sh.3015.name
+	desc = sh.3015.desc
+	picture = GFX_evt_Pshenhai2
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = fired_shenhai2 }
+	}
+
+	immediate = {
+		set_country_flag = fired_shenhai2
+	}
+
+	option = {
+		name = sh.3015.a
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		from = {
+			custom_tooltip = sh.3015.tooltip
+		}
+	}
+}
+#########AI舰娘深海加成
+country_event = {
+	id = sh.3016
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		mid_game_years_passed >= 0
+		any_country = {
+			is_ai = yes
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+			}
+		}
+	}
+	immediate = {
+		add_modifier = {
+			modifier = wg_modifier_buff
+			days = -1
+		}
+	}
+}
+#########深海第二舰队
+country_event = {
+	id = sh.3017
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_authority = auth_shenhai
+		is_ai = no
+	}
+	immediate = {
+		country_event = { id = sh.3018 days = 720  }
+	}
+}
+
+country_event = {
+	id = sh.3018
+	title = "sh.3018.name"
+	desc = "sh.3018.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "sh.3018.a"
+		hidden_effect = {
+			country_event = { id = sh.3019 days = 360 }
+		}
+	}
+}
+
+country_event = {
+	id = sh.3019
+	title = "sh.3019.name"
+	desc = "sh.3019.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_radio_chatter
+	location = event_target:utopian_planet
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_authority = auth_shenhai
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = sh.3019.a
+		hidden_effect = {
+			country_event = { id = sh.3020 days = 10 }
+		create_country = {
+			name = "NAME_SH2F_country"
+			type = sh2f
+			effect = {
+				establish_communications_no_message = root.owner
+				save_global_event_target_as = SH2F_country
+				set_country_flag = SH2F_country_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh.3020
+	title = "sh.3020.name"
+	desc = "sh.3020.desc"
+	picture = GFX_evt_fleet_evil
+	show_sound = event_red_alert
+	location = event_target:shenhai_second_fleet
+
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+	}
+
+	immediate = {
+		random_owned_planet = {
+				limit = {
+					is_capital = yes
+			}
+			save_event_target_as = shenhai_capital
+		}	
+		create_fleet = {
+			name = "NAME_mardak_SH2F_haters_fleet"
+			settings = {
+				spawn_debris = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				add_modifier = {
+					modifier = sh_sf
+						days = -1
+				}			
+				set_fleet_flag = second_fleet
+				set_owner = event_target:cloud_country
+				set_fleet_bombardment_stance = armageddon
+				create_ship = {
+					name = "DEAD_SECOUND_FLEET"
+					design = "NAME_Cloud_Entity"
+					graphical_culture = "mammalian_01"
+				}
+				set_location = {
+					target = event_target:shenhai_capital
+					distance = 200
+					angle = 150
+				}
+				set_fleet_formation = {
+					position = { x = -10.0	y = 8.5		} #11
+					position = { x = -1.6	y = 15.0	} #10
+					position = { x = 14.0	y = -3.0	} #9
+					position = { x = 1.3	y = -11.0	} #8
+					position = { x = -10.5	y = 1.0		} #7
+					position = { x = 3.0	y = 8.0		} #6
+					position = { x = -4.3	y = -7.0	} #5
+					position = { x = 8.0	y = 9.0		} #4
+					position = { x = -4.0	y = 7.3		} #3 
+					position = { x = 7.5	y = -10.5	} #2
+					position = { x = 0.0	y = 0.0		} #1
+				}
+				set_fleet_stance = passive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 1
+				save_global_event_target_as = shenhai_second_fleet
+				auto_move_to_planet = {
+					target = event_target:shenhai_capital
+					clear_auto_move_on_arrival = no
+				}
+				add_modifier = {
+					modifier = sh_sf
+					days = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = sh.3020.a
+	}
+}
+
+country_event = {
+	id = sh.3021
+	title = "sh.3021.name"
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = second_fleet
+		}
+	}
+	immediate = {	
+		From = {
+			country_event = { id = sh.3022 days = 15 }
+		}
+	}	
+}
+
+
+country_event = {
+	id = sh.3022
+	title = "sh.3022.name"
+	desc = "sh.3022.desc"
+	picture = GFX_evt_large_explosion
+	is_triggered_only = yes
+	
+	option = {
+		name = "sh.3022.a"
+		hidden_effect = {
+			country_event = { id = sh.3023 days = 3600 }
+		}
+	}
+}
+
+country_event = {
+	id = sh.3023
+	title = "sh.3023.name"
+	desc = "sh.3023.desc"
+	picture = GFX_evt_wormhole
+	is_triggered_only = yes
+	
+	option = {
+		name = "sh.3023.a"
+		add_modifier = {
+			modifier = sh_modifier_sf
+			days = -1
+		}		
+	}
+}
+#########
+country_event = {
+	id = sh.3024
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		resource_stockpile_compare = { 
+			resource = food value < 50 
+		}
+		NOT = { has_country_flag = lack_food_sh }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = sh_modifier_lack_food
+			days = -1
+		}
+		set_country_flag = lack_food_sh
+	}
+}
+
+country_event = {
+	id = sh.3025
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = lack_food_sh
+		resource_stockpile_compare = { 
+			resource = food value >= 50 
+		}
+	}
+	immediate = {
+		remove_country_flag = lack_food_sh
+		if = {
+			limit = {
+				has_modifier = sh_modifier_lack_food
+			}
+		remove_modifier = sh_modifier_lack_food
+		}	
+	}
+}
+
+###########深海超级武器
+planet_event = {
+	id = sh.3026
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from.owner = { country_event = { id = sh.3027 } }
+		if = {
+			limit = {
+				exists = space_owner
+				space_owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			# Generate threat
+			add_threat = { who = from.owner amount = 3 }
+			# modifier for allies + those upset by robots
+			every_country = {
+				limit = {
+					NOR = {
+						is_same_value = from.owner
+						is_same_value = root.owner
+						AND = {
+							has_federation = yes
+							is_in_federation_with = from.owner
+						}
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						AND = {
+							has_federation = yes
+							is_in_federation_with = root.owner
+						}
+						has_ai_personality = awakened_fallen_empire_spiritualist
+						AND = {
+							is_country_type = default
+							OR = {
+								is_egalitarian = yes
+								is_spiritualist = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_destroyed_a_system
+					who = from.owner
+				}
+			}
+			# modifiers for victim
+			space_owner = {
+				add_opinion_modifier = {
+					modifier = opinion_destroyed_my_system
+					who = from.owner
+				}
+				if = {
+					limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_modifier = {
+						modifier = colossus_victim
+						days = 10800 # 30 years
+					}
+				}
+			}
+		}	
+		set_asteroid_belt = { radius = 0 }
+		solar_system = {
+			every_system_planet = {
+				if = {
+					limit = { is_star = yes }
+					change_pc = "pc_black_hole"
+					clear_deposits = yes
+					random_list = {
+						20 = { change_planet_size = +1 }
+						20 = { change_planet_size = +2 }
+						20 = { change_planet_size = +3 }
+						20 = { change_planet_size = +4 }
+						20 = { change_planet_size = +5 }
+					}
+					random_list = {
+						10 = { add_deposit = d_dark_matter_deposit_1 }
+						45 = { add_deposit = d_engineering_3  }
+						45 = { add_deposit = d_physics_3  }
+					}					
+				}
+				else = { 
+					remove_planet = yes 
+				}
+				set_asteroid_belt = { radius = 0 }
+			}
+			every_megastructure = {
+				remove_megastructure= yes
+			}			
+		}
+	}
+}
+
+country_event = {
+	id = sh.3027
+	title = sh.3027.name
+	desc = sh.3027.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = sun_killer_flag }
+	}
+
+	immediate = {
+		set_country_flag = sun_killer_flag
+	}
+
+	option = {
+		name = sh.3027.a
+		owner = {
+			add_resource = { influence = 500 }
+		}
+	}
+}
+country_event = {
+	id = sh.30280
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		last_increased_tech = "tech_battleships"
+	}
+	immediate = {
+		country_event = { id = sh.3028 days = 720  }
+	}
+}
+
+country_event = {
+	id = sh.3028
+	title = sh.3028.name
+	desc = sh.3028.desc
+	picture = GFX_evt_UF_buffer
+	show_sound = event_construction
+	location = event_target:sh_capital2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			save_event_target_as = sh_buffer_owner
+		}
+	}
+		
+	option = {
+		name = "sh.3028.a"
+		random_owned_planet = {
+				limit = {
+					is_capital = yes
+			}
+			save_event_target_as = sh_capital2
+		}
+		create_fleet = {
+			name = "NAME_UF_BUFFER_FLEET"
+			effect = {
+				set_owner = event_target:sh_buffer_owner
+				create_ship = {
+					name = random
+					design = "NAME_uf_buffer"
+					graphical_culture = "npf_01"
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "NAME_uf_buffer"
+					graphical_culture = "npf_02"
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "NAME_uf_buffer"
+					graphical_culture = "npf_03"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:sh_capital2
+					distance = 0
+					angle = random
+				}
+			}
+			break = yes
+		}
+	}
+	option = {
+		name = "sh.3028.b"
+		owner = {
+			add_resource = { alloys = 5000 }
+		}
+	}
+}
+#####
+country_event = {
+	id = sh.3029
+	title = sh.3029.name
+	desc = sh.3029.desc
+	picture = GFX_evt_sh_executioner
+	location = from
+	
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		last_increased_tech = "tech_sh_executioner"		
+	}
+	option = {
+		name = "sh.3029.a"
+		owner = {
+			add_resource = { unity = 1000 }
+		}
+	}
+}
+#######
+country_event = {
+	id = sh.3030
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = wg_ring_world_start_planet
+			}
+			remove_district = district_farming
+			remove_district = district_generator
+			remove_district = district_mining
+			remove_district = district_city
+			remove_district = district_farming
+			remove_district = district_generator
+			remove_district = district_mining
+			remove_district = district_city
+			remove_district = district_city
+			remove_district = district_city
+			add_building = building_research_lab_1
+			add_building = building_research_lab_1				
+			remove_building = building_foundry_1
+			remove_building = building_factory_1
+			while = {
+				count = 24
+				create_pop = {
+					species = owner_main_species
+				}
+			}		
+		}		
+	}
+}
+######
+planet_event = {
+	id = sh.3031
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+        planet_devastation >= 100
+		OR = {
+			has_orbital_bombardment_stance = wg_doom
+			has_orbital_bombardment_stance = wg_doom
+		}		
+		FROM = {
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+		habitable_planet = yes
+	}	
+	
+	immediate = {
+		owner = { 
+			add_static_war_exhaustion = {
+				attacker = from
+				location = root
+				value_for_planet_destruction = 1.0
+			}
+			country_event = { id = sh.3032 } 
+		}
+		from = { country_event = { id = sh.3033 } }
+		change_pc = pc_broken
+		remove_all_buildings = yes
+		reroll_deposits = yes
+		remove_modifier = "natural_beauty"
+		remove_modifier = "atmospheric_aphrodisiac"
+		remove_modifier = "atmospheric_hallucinogen"
+		remove_modifier = "lush_planet"		
+		remove_modifier = "dangerous_wildlife"
+		set_planet_flag = wg_doom_flag
+	}
+}
+
+country_event = {
+	id = sh.3032
+	title = "sh.3032.name"
+	picture = GFX_evt_wsg_bombardment
+	desc = action.83.desc
+	show_sound = event_super_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sh.3032.a
+		custom_tooltip = bombed_to_broken_world
+	}
+}
+
+country_event = {
+	id = sh.3033
+	title = "sh.3032.name"
+	picture = GFX_evt_wsg_bombardment
+	desc = sh.3033.desc
+	show_sound = event_super_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		custom_tooltip = bombed_to_broken_world
+	}
+}

@@ -1,0 +1,1344 @@
+###翔鹤镰刀遗物事件
+
+namespace = wsgancrel
+
+country_event = {
+	id = wsgancrel.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+	}
+	immediate = {
+
+			capital_scope = {
+				planet_event = { id =wsgancrel.4 days = 360 }
+			}
+
+	}
+}
+
+planet_event ={
+	id = wsgancrel.4
+	hide_window = no
+	title = "wsgancrel.4.name"
+	desc = "wsgancrel.4.desc"
+	picture = GFX_evt_wsg_war
+	is_triggered_only = yes
+	trigger = {
+			has_planet_flag = port_home
+	}
+	option = {
+		name = "wsgancrel.4.a"
+		create_archaeological_site = site_shenhaiBoss
+	}	
+}
+
+# Stage 1 - 海底异常参数
+fleet_event = {
+	id = wsgancrel.5
+	title = "wsgancrel.5.name"
+	desc = "wsgancrel.5.desc"
+	picture = GFX_evt_wsg_boss
+	show_sound = event_wind_ruins
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.5.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 镰刀get
+fleet_event = {
+	id = wsgancrel.10
+	title = "wsgancrel.10.name"
+	desc = "wsgancrel.10.desc"
+	picture = GFX_evt_wsg_boss2
+	show_sound = event_finding_loot
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.10.a
+		large_artifact_reward = yes
+		owner = { add_relic = "r_xh_boss" }
+	}
+}
+######################################################HMMOD圣遗物
+country_event = {
+	id = wsgancrel.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+		last_increased_tech = "tech_wsg_reform"
+		is_ai = no
+	}
+	immediate = {
+		country_event = { id = wsgancrel.21 days = 180  }
+	}
+}
+
+country_event ={
+	id = wsgancrel.21
+	hide_window = no
+	title = "wsgancrel.21.name"
+	desc = "wsgancrel.21.desc"
+	picture = GFX_evt_asteroid_field
+	is_triggered_only = yes
+	option = {
+		name = "wsgancrel.21.a"
+		random_planet = { 
+			limit = { has_planet_flag = port_ck2 } 
+			create_archaeological_site = site_ck2
+		}
+	}	
+}
+
+# Stage 1 - 钢丝遗物
+fleet_event = {
+	id = wsgancrel.22
+	title = "wsgancrel.22.name"
+	desc = "wsgancrel.22.desc"
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.22.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - EU4遗物
+fleet_event = {
+	id = wsgancrel.23
+	title = "wsgancrel.23.name"
+	desc = "wsgancrel.23.desc"
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.23.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 3 - ck2遗物
+fleet_event = {
+	id = wsgancrel.24
+	title = "wsgancrel.24.name"
+	desc = "wsgancrel.24.desc"
+	picture = GFX_evt_ck2
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.24.a
+		large_artifact_reward = yes
+		owner = { add_relic = "r_ck2" }
+	}
+}
+####
+country_event = {
+	id = wsgancrel.30
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+		is_ai = no
+	}
+	immediate = {
+		country_event = { id = wsgancrel.31 days = 3600  }
+	}
+}
+
+country_event = {
+	id = wsgancrel.31
+	title = "wsgancrel.31.name"
+	desc = "wsgancrel.31.desc"
+	picture = GFX_evt_cargoship_caravan
+	show_sound = event_power_down
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				OR = {
+					is_planet_class = pc_molten
+					is_planet_class = pc_barren
+					is_planet_class = pc_barren_cold
+					is_planet_class = pc_frozen
+				}
+				NOT = { exists = archaeological_site }
+			}
+			save_event_target_as = fleet_planet
+		}
+	}
+
+	option = {
+		name = wsgancrel.31.a
+		event_target:fleet_planet = {
+			create_archaeological_site = site_shenhai_fleet
+		}
+	}
+}
+
+
+
+# Stage 1 - 深海舰队残骸
+fleet_event = {
+	id = wsgancrel.32
+	title = "wsgancrel.32.name"
+	desc = "wsgancrel.32.desc"
+	picture = GFX_evt_crashed_station
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.32.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 破损的货仓
+fleet_event = {
+	id = wsgancrel.33
+	title = "wsgancrel.33.name"
+	desc = "wsgancrel.33.desc"
+	picture = GFX_evt_crusher_droid
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.33.a
+		medium_artifact_reward = yes
+		owner = {
+			add_resource = { minerals = 2000 }
+		}
+	}
+}
+# Stage 3 - 破损冷冻仓
+fleet_event = {
+	id = wsgancrel.34
+	title = "wsgancrel.34.name"
+	desc = "wsgancrel.34.desc"
+	picture = GFX_evt_clones
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.34.a
+		medium_artifact_reward = yes
+	}
+}
+# Stage 4 - 导航舱
+fleet_event = {
+	id = wsgancrel.35
+	title = "wsgancrel.35.name"
+	desc = "wsgancrel.35.desc"
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_bad_omen
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.35.a
+		large_artifact_reward = yes
+    	owner = {
+    		country_event = { id = wsgancrel.36 days = 1 }
+    	}
+	}
+}
+
+country_event = {
+	id = wsgancrel.36
+	title = "wsgancrel.36.name"
+	desc = "wsgancrel.36.desc"
+	show_sound = event_administrative_work
+	location = from.from.from
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.36.a
+		response_text = wsgancrel.36.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.b
+		response_text = wsgancrel.36.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.c
+		response_text = wsgancrel.36.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.d
+		response_text = wsgancrel.36.d.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.e
+		response_text = wsgancrel.36.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.f
+		response_text = wsgancrel.36.f.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wsgancrel.36.g
+		hidden_effect = {
+			country_event = { id = wsgancrel.37 }
+		}
+	}
+}
+
+country_event = {
+	id = wsgancrel.37
+	title = "wsgancrel.37.name"
+	desc = "wsgancrel.37.desc"
+	picture = GFX_evt_galactic_senate
+
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "wsgancrel.37.a"
+		owner = {
+			add_resource = { unity = 1000 }
+		}	
+	}
+}
+#####先驱者
+event = {
+	id = wsgancrel.100
+	hide_window = yes
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		mid_game_years_passed >= 2
+		any_country = {
+			is_ai = no
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+			}
+		}
+	}
+
+	immediate = {
+		every_country = {
+			limit = {		
+				is_ai = no
+					OR = {
+						has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+				}		
+			}
+			country_event = { id = wsgancrel.101 random = 360  }	
+		}	
+	}
+}
+
+country_event = {
+	id = wsgancrel.101
+	title = "wsgancrel.101.name"
+	desc = "wsgancrel.101.desc"
+	picture = GFX_evt_galactic_senate
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				OR = {
+					is_planet_class = pc_molten
+					is_planet_class = pc_barren
+					is_planet_class = pc_barren_cold
+					is_planet_class = pc_frozen
+				}
+				NOT = { exists = archaeological_site }
+			}
+			save_event_target_as = first_precursors_planet
+		}
+	}
+	
+	option = {
+		name = "wsgancrel.101.a"
+		begin_event_chain = {
+			event_chain = "wg_precursors"
+			target = this.owner
+		}
+		event_target:first_precursors_planet = {
+			create_archaeological_site = site_first_precursors
+		}		
+	}
+}
+# Stage 1 - 军事联盟
+fleet_event = {
+	id = wsgancrel.102
+	title = "wsgancrel.102.name"
+	desc = "wsgancrel.102.desc"
+	picture = GFX_evt_board_meeting
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.102.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 死于赛博
+fleet_event = {
+	id = wsgancrel.103
+	title = "wsgancrel.103.name"
+	desc = "wsgancrel.103.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.103.a
+		small_artifact_reward = yes
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.104 }
+			}	
+		}		
+	}
+}
+
+country_event = {
+	id = wsgancrel.104
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				OR = {
+					is_planet_class = pc_molten
+					is_planet_class = pc_barren
+					is_planet_class = pc_barren_cold
+				}
+				NOT = { exists = archaeological_site }
+			}
+			save_event_target_as = second_precursors_planet
+		}
+		event_target:second_precursors_planet = {
+			create_archaeological_site = site_second_precursors
+		}	
+	}
+}
+
+# Stage 1 - 联盟
+fleet_event = {
+	id = wsgancrel.105
+	title = "wsgancrel.105.name"
+	desc = "wsgancrel.105.desc"
+	picture = GFX_evt_arguing_senate
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.105.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 被攻陷
+fleet_event = {
+	id = wsgancrel.106
+	title = "wsgancrel.106.name"
+	desc = "wsgancrel.106.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.106.a
+		small_artifact_reward = yes
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.107 days = 5 }
+			}	
+		}		
+	}
+}
+
+
+country_event = {
+	id = wsgancrel.107
+	title = wsgancrel.107.name
+	desc = wsgancrel.107.desc
+	picture = GFX_evt_space_debris
+	show_sound = event_ship_bridge
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.107.a
+
+		hidden_effect = {
+			capital_scope = {
+				closest_system = {
+					min_steps = 1
+					limit = {
+						has_access_fleet = root.owner
+						has_owner = no
+						
+						NOT = {
+							any_ship_in_system = {
+								owner = { 
+									is_hostile = root.owner
+								}	
+							}
+						}
+					}
+				}
+				spawn_system = {
+					min_distance = 10
+					max_distance = 30
+					min_jumps = 2
+					max_jumps = 4
+					initializer = wg_relic_system
+				}
+			}
+		}
+		
+	}
+}
+
+# Stage 1 - 唯心主义舰娘
+fleet_event = {
+	id = wsgancrel.108
+	title = "wsgancrel.108.name"
+	desc = "wsgancrel.108.desc"
+	picture = GFX_evt_psionics
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.108.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 全部停止
+fleet_event = {
+	id = wsgancrel.109
+	title = "wsgancrel.109.name"
+	desc = "wsgancrel.109.desc"
+	picture = GFX_evt_clocks
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.109.a
+		small_artifact_reward = yes		
+	}
+}
+# Stage 3 - CPU0爆炸
+fleet_event = {
+	id = wsgancrel.110
+	title = "wsgancrel.110.name"
+	desc = "wsgancrel.110.desc"
+	picture = GFX_evt_clocks
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.110.a
+		small_artifact_reward = yes
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.111 }
+			}	
+		}		
+	}
+}
+country_event = {
+	id = wsgancrel.111
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				OR = {
+					is_planet_class = pc_frozen
+				}
+				NOT = { exists = archaeological_site }
+				
+			}
+			save_event_target_as = fourth_precursors_planet
+		}
+		event_target:fourth_precursors_planet = {
+			create_archaeological_site = site_fourth_precursors
+		}	
+	}
+}
+# Stage 1 - 深海仓库
+fleet_event = {
+	id = wsgancrel.112
+	title = "wsgancrel.112.name"
+	desc = "wsgancrel.112.desc"
+	picture = GFX_evt_frozen
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.112.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 资源发现
+fleet_event = {
+	id = wsgancrel.113
+	title = "wsgancrel.113.name"
+	desc = "wsgancrel.113.desc"
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.113.a
+		medium_artifact_reward = yes	
+		owner = {
+			add_resource = { alloys = 5000 }
+     		add_resource = { rare_crystals = 150 }
+			add_resource = { exotic_gases = 150 }
+			add_resource = { volatile_motes = 150 }			
+		}		
+	}
+}
+# Stage 3 - 为我所用
+fleet_event = {
+	id = wsgancrel.114
+	title = "wsgancrel.114.name"
+	desc = "wsgancrel.114.desc"
+	picture = GFX_evt_galactic_market
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.114.a
+		medium_artifact_reward = yes
+		owner = {
+			add_modifier = {
+				modifier = wg_storehouse
+				days = -1
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.115 days = 5 }
+			}	
+		}		
+	}
+}
+
+country_event = {
+	id = wsgancrel.115
+	title = wsgancrel.115.name
+	desc = wsgancrel.115.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ship_bridge
+	location = from
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = wsgancrel.115.a
+
+		hidden_effect = {
+			country_event = { id = wsgancrel.1151 days = 2  }
+			capital_scope = {
+				closest_system = {
+					min_steps = 1
+					limit = {
+						has_access_fleet = root.owner
+						
+						has_owner = no
+						NOT = {
+							any_ship_in_system = {
+								owner = { 
+									is_hostile = root.owner
+								}	
+							}
+						}
+					}
+				}
+				spawn_system = {
+					min_distance = 10
+					max_distance = 30
+					min_jumps = 3
+					max_jumps = 6
+					initializer = shenhai_ring_system
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = wsgancrel.1151
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = shenhai_rimworld_planet
+			}
+			add_deposit = d_sr_se2
+			add_deposit = d_shenhai_ringworld
+			add_deposit = d_shenhai_ringworld
+			add_deposit = d_shenhai_ringworld
+			add_deposit = d_shenhai_ringworld
+			add_deposit = d_shenhai_ringworld
+			add_deposit = d_shenhai_ringworld
+		}
+	}
+}
+# Stage 1 - 深海环世界
+fleet_event = {
+	id = wsgancrel.116
+	title = "wsgancrel.116.name"
+	desc = "wsgancrel.116.desc"
+	picture = GFX_evt_ringworld
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.116.a
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - 远古战争
+fleet_event = {
+	id = wsgancrel.117
+	title = "wsgancrel.117.name"
+	desc = "wsgancrel.117.desc"
+	picture = GFX_evt_small_space_battle
+	show_sound = event_ship_thrusters
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.117.a
+		medium_artifact_reward = yes			
+	}
+}
+# Stage 3 - 灭日者
+fleet_event = {
+	id = wsgancrel.118
+	title = "wsgancrel.118.name"
+	desc = "wsgancrel.118.desc"
+	picture = GFX_evt_black_hole
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.118.a
+		large_artifact_reward = yes
+		owner = {
+			give_technology = { tech = tech_sh_sunkiller }
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.119 days = 5 }
+			}	
+		}		
+	}
+}
+country_event = {
+	id = wsgancrel.119
+	title = "wsgancrel.119.name"
+	desc = "wsgancrel.119.desc"
+	picture = GFX_evt_wsg_war
+	is_triggered_only = yes
+	
+	option = {
+		name = "wsgancrel.119.a"
+		owner={
+			end_event_chain = "wg_precursors"
+		}
+		owner = {
+			add_resource = { unity = 10000 }
+		}		
+	}
+	option = {
+		name = "wsgancrel.119.b"
+		owner={
+			end_event_chain = "wg_precursors"
+		}
+		owner = {
+			add_resource = { unity = 10000 }
+		}		
+	}
+}
+######
+country_event = {
+	id = wsgancrel.1191
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		capital_scope = {
+			has_planet_flag = port_home
+			NOT = { has_planet_flag = cts_home }
+		}
+	}
+
+	immediate = {
+		set_country_flag = clovertheater_planet_flag
+	}
+}
+country_event = {
+	id = wsgancrel.120
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+		last_increased_tech = "tech_terrestrial_sculpting"
+		has_country_flag = clovertheater_planet_flag
+	}
+	immediate = {	
+		country_event = { id = wsgancrel.121 days = 10 }		
+	}
+}
+
+country_event = {
+	id = wsgancrel.121
+	title = "wsgancrel.121.name"
+	desc = "wsgancrel.121.desc"
+	picture = GFX_evt_cold_barren
+	
+	is_triggered_only = yes
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = clovertheater_future_flag
+			}
+			save_event_target_as = clovertheater_planet
+		}			
+	}	
+	option = {
+		name = "wsgancrel.121.a"
+		event_target:clovertheater_planet = {
+			create_archaeological_site = site_clovertheater
+		}		
+	}
+
+	option = {
+		name = "wsgancrel.121.b"
+		add_resource = {
+			influence = 50
+		}		
+	}
+}
+#远古地质改造仪
+fleet_event = {
+	id = wsgancrel.122
+	title = "wsgancrel.122.name"
+	desc = "wsgancrel.122.desc"
+	picture = GFX_evt_cold_barren
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.122.a
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	id = wsgancrel.123
+	title = "wsgancrel.123.name"
+	desc = "wsgancrel.123.desc"
+	picture = GFX_evt_arctic
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.123.a
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	id = wsgancrel.124
+	title = "wsgancrel.124.name"
+	desc = "wsgancrel.124.desc"
+	picture = GFX_evt_resource_cache
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.124.a
+		small_artifact_reward = yes
+	}
+}
+
+#是否启动
+fleet_event = {
+	id = wsgancrel.125
+	title = "wsgancrel.125.name"
+	desc = "wsgancrel.125.desc"
+	picture = GFX_evt_baol_devolved
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		owner = {
+			give_technology = {
+    			tech = tech_massive_glacier
+    			message = yes
+			}
+		}
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.125.a
+		medium_artifact_reward = yes	
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.126 days = 5 }
+			}	
+		}		
+	}
+	option = {
+		name = wsgancrel.125.b
+		medium_artifact_reward = yes	
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier5researchreward
+				min = @tier5researchmin
+				max = @tier5researchmax
+			}	
+		}		
+	}	
+}
+
+country_event = {
+	id = wsgancrel.126
+	title = "wsgancrel.126.name"
+	desc = "wsgancrel.126.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_baol_devolved
+	
+	option = {
+		name = wsgancrel.126.a
+		hidden_effect = {
+			country_event = { id = wsgancrel.131 }	
+			random_list = { 
+				20 = {
+					country_event = { id = wsgancrel.127 days = 45 }
+				}
+				45 = {
+					country_event = { id = wsgancrel.128 days = 30 }	
+				}
+				25 = {
+					country_event = { id = wsgancrel.129 days = 10 }
+				}
+				10 = {
+					country_event = { id = wsgancrel.130 days = 5 }	
+				}	
+			}	
+		}
+	}
+}
+
+country_event = {
+	id = wsgancrel.127
+	title = "wsgancrel.127.name"
+	desc = "wsgancrel.127.desc"
+	picture = GFX_evt_wsg_world_tree
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.127.a
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = clovertheater_future_flag
+			}
+			change_pc = pc_gaia
+			reset_planet = yes	
+			add_deposit = r_clovertheater_world_tree
+		}		
+	}
+}
+
+country_event = {
+	id = wsgancrel.128
+	title = wsgancrel.128.name
+	desc = wsgancrel.128.desc
+	picture = GFX_evt_ocean
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.128.a
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = clovertheater_future_flag
+			}
+			change_pc = pc_ocean
+			reset_planet = yes						
+		}		
+	}
+}
+
+country_event = {
+	id = wsgancrel.129
+	title = "wsgancrel.129.name"
+	desc = "wsgancrel.129.desc"
+	picture = GFX_evt_tomb_world
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.129.a
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = clovertheater_future_flag
+			}
+			change_pc = pc_nuked
+			reset_planet = yes						
+		}		
+	}
+}
+
+country_event = {
+	id = wsgancrel.130
+	title = "wsgancrel.130.name"
+	desc = "wsgancrel.130.desc"
+	picture = GFX_evt_toxic
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.130.a
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = clovertheater_future_flag
+			}
+			change_pc = pc_toxic
+			reset_planet = yes						
+		}		
+	}
+}
+country_event = {
+	id = wsgancrel.131
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {	
+		every_planet = {
+			limit = {
+				has_modifier = planet_clovertheater
+			}
+			remove_modifier = "planet_clovertheater"
+		}	
+	}
+}

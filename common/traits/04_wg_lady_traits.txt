@@ -1,0 +1,167 @@
+leader_trait_scientist_wsg_lady_science_ship = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		ship_archeaological_site_clues_add = 2
+		science_ship_survey_speed = 0.25
+		ship_anomaly_research_speed_mult = 0.4
+		ship_anomaly_generation_chance_mult = -0.10
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_scientist_lady_affection_science_ship_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		ship_disengage_chance_mult = 0.3
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+}
+
+leader_trait_scientist_lady_affection_science_ship_lv2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		ship_disengage_chance_mult = 0.3
+		ship_shield_mult = 0.25
+		ship_armor_mult = 0.25
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+
+}
+
+leader_trait_scientist_lady_affection_science_ship_lv3 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		ship_disengage_chance_mult = 0.3
+		ship_shield_mult = 0.25
+		ship_armor_mult = 0.25
+		ship_speed_mult = 0.3
+		ship_anomaly_generation_chance_mult = 0.10
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_scientist_lady_affection_science_ship_lv4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		ship_disengage_chance_mult = 0.3
+		ship_shield_mult = 0.25
+		ship_armor_mult = 0.25
+		ship_hull_mult = 0.2
+		ship_speed_mult = 0.3
+		ship_anomaly_generation_chance_mult = 0.10
+		ship_ftl_jumpdrive_range_mult = 0.2
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+
+}
+
+leader_trait_governor_wsg_lady = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.20
+		planet_buildings_upkeep_mult = -0.20		
+		planet_buildings_cost_mult = -0.15
+		planet_districts_cost_mult = -0.15
+		deposit_blockers_cost_mult = -0.25
+		planet_clear_blocker_time_mult = -0.5
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_lady_affection_lv1 = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.1
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_lady_affection_lv2 = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.1
+		planet_crime_add = -20
+		planet_stability_add = 20
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_lady_affection_lv3 = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.2
+		planet_crime_add = -20
+		planet_stability_add = 20
+		planet_districts_cost_mult = -0.1
+		planet_jobs_produces_mult = 0.07
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_lady_affection_lv4 = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.2
+		planet_crime_add = -20
+		planet_stability_add = 20
+		planet_districts_cost_mult = -0.1
+		planet_jobs_produces_mult = 0.12
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}

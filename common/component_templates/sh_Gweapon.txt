@@ -1,0 +1,54 @@
+weapon_component_template = {
+	key = "sh_weapen_G"
+	size = torpedo
+	entity = "turret_torpedo_entity"
+	
+	icon = "GFX_sh_weapen_G"
+	icon_frame = 1
+	type = missile
+	
+	component_set = "sh_weapen_G"
+	projectile_gfx = "large_torpedo_03"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = { min = 800 max = 1250 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 130
+	range = 150.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -100
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 3
+			alloys = 30
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+
+	missile_speed = 35
+	missile_evasion = 0.5
+	missile_shield = 60
+	missile_armor = 30
+	missile_health = 50
+	missile_retarget_range = 50
+	
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+
+	prerequisites = { "tech_sh_Gweapon" }
+}

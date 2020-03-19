@@ -1,0 +1,323 @@
+#wsg admiral
+leader_trait_admiral_wsg_cannoneer = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_wsg_cannoneer.dds"
+	modifier = {
+		ship_weapon_range_mult = 0.25
+		ship_accuracy_add = -10
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}	
+	initial = no
+	randomized = yes
+	opposites = { "leader_trait_aggressive" "leader_trait_cautious" "leader_trait_admiral_wsg_sniper" }
+}
+
+leader_trait_admiral_wsg_sniper = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_wsg_sniper.dds"
+	modifier = {
+		ship_accuracy_add = 10
+		ship_weapon_range_mult = 0.15
+		ship_fire_rate_mult = -0.10
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}	
+	initial = no
+	randomized = yes
+	opposites = { "leader_trait_aggressive" "leader_trait_cautious" "leader_trait_admiral_wsg_cannoneer" }
+}
+
+leader_trait_admiral_wsg_overspeed = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_wsg_overspeed.dds"
+	modifier = {
+		ship_evasion_mult = -0.1
+		ship_speed_mult = 0.30
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}	
+	initial = no
+	randomized = yes
+	opposites = { "leader_trait_lethargic" "leader_trait_gale_speed" }
+}
+
+leader_trait_admiral_wsg_careful = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_wsg_careful.dds"
+	modifier = {
+		ship_disengage_chance_mult = 0.5
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 1
+		ship_speed_mult = -0.15
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_nervous" "leader_trait_trickster" "leader_trait_careful" }
+
+}
+#wsg scientist
+leader_trait_scientist_wsg_curiosity = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_wsg_curiosity.dds"
+	modifier = {
+		ship_anomaly_research_speed_mult = 0.10
+		ship_anomaly_generation_chance_mult = 0.25
+		science_ship_survey_speed = -0.10
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_carefree" "leader_trait_meticulous" }		
+}
+
+leader_trait_scientist_wsg_ovo = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_wsg_ovo.dds"
+	modifier = {
+		all_technology_research_speed = 0.15
+		species_leader_exp_gain = -0.35
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_spark_of_genius" }		
+}
+#wsg governor
+leader_trait_scientist_wsg_intelligent = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_wsg_intelligent.dds"
+	modifier = {
+		planet_jobs_physics_research_produces_mult = 0.20
+		planet_jobs_society_research_produces_mult = 0.20
+		planet_jobs_engineering_research_produces_mult = 0.20		
+		planet_pops_consumer_goods_upkeep_mult = 0.10
+		planet_buildings_upkeep_mult = 0.15
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "trait_intelligent" }	
+}
+
+
+leader_trait_scientist_wsg_shipyard = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_wsg_shipyard.dds"
+	modifier = {
+		starbase_shipyard_capacity_add = 1
+		starbase_shipyard_build_cost_mult = 0.05
+	}	
+	leader_trait = { governor }
+	leader_class = { governor }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_retired_fleet_officer" }		
+}
+#wsg governor
+leader_trait_scientist_wsg_experienced = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_wsg_experienced.dds"
+	modifier = {
+		army_damage_mult = 0.10
+		army_disengage_chance_mult = 0.10
+		army_morale = 0.10
+		armies_upkeep_mult = -0.2
+	}	
+	leader_trait = { general }
+	leader_class = { general }
+	leader_potential_add = {
+		from = { has_authority = "auth_warshipgirls" } 
+	}
+	initial = no
+	randomized = yes			
+}
+########################
+#sh admiral
+leader_trait_admiral_sh_weapon_master = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_sh_weapon_master.dds"
+	modifier = {
+		ship_shield_penetration_mult = 0.1
+		ship_armor_penetration_mult = 0.1
+		ships_upkeep_mult = 0.05
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" } 
+	}	
+	initial = no
+	randomized = yes
+}
+
+leader_trait_admiral_sh_sniper = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_sh_sniper.dds"
+	modifier = {
+		ship_accuracy_add = 10
+		ship_weapon_range_mult = 0.2
+		ship_fire_rate_mult = -0.10
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" } 
+	}	
+	initial = no
+	randomized = yes
+	opposites = { "leader_trait_aggressive" "leader_trait_cautious" }
+}
+
+leader_trait_admiral_sh_armor = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_sh_armor.dds"
+	modifier = {
+		ship_hull_mult = 0.1
+		ship_armor_mult = 0.15
+		ship_shield_mult = -0.25
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" } 
+	}	
+	initial = no
+	randomized = yes
+}
+
+#sh scientist
+leader_trait_scientist_sh_ignore = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_sh_ignore.dds"
+	modifier = {
+		science_ship_survey_speed = 0.30
+		ship_anomaly_generation_chance_mult = -0.05
+		ship_anomaly_research_speed_mult = -0.10
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" }  
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_carefree" "leader_trait_meticulous" }		
+}
+
+leader_trait_scientist_sh_selfless = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_sh_selfless.dds"
+	modifier = {
+		all_technology_research_speed = 0.10
+	}
+	self_modifier = {
+		leaders_upkeep_mult = -1.00
+	}	
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" } 
+	}
+	initial = no
+	randomized = yes	
+	opposites = { "leader_trait_spark_of_genius" }		
+}
+#sh governor
+leader_trait_scientist_sh_defender = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_sh_defender.dds"
+	modifier = {
+		shipclass_starbase_damage_mult = 0.10
+		shipclass_starbase_hull_mult = 0.10
+		shipclass_military_station_damage_mult = 0.10
+		starbase_defense_platform_capacity_add = 5
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" }
+	}
+	initial = no
+	randomized = yes	
+}
+
+leader_trait_scientist_sh_nursing = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_sh_nursing.dds"
+	modifier = {
+		pop_amenities_usage_mult = -0.15
+		planet_pops_upkeep_mult = 0.05
+	}	
+	leader_trait = { governor }
+	leader_class = { governor }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" }
+	}
+	initial = no
+	randomized = yes			
+}
+#wsg governor
+leader_trait_scientist_sh_experienced = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_scientist_sh_experienced.dds"
+	modifier = {
+		army_damage_mult = 0.10
+		army_disengage_chance_mult = 0.10
+		army_morale = 0.10
+		armies_upkeep_mult = -0.2
+	}	
+	leader_trait = { general }
+	leader_class = { general }
+	leader_potential_add = {
+		from = { has_authority = "auth_shenhai" }
+	}
+	initial = no
+	randomized = yes			
+}

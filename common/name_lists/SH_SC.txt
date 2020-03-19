@@ -1,0 +1,223 @@
+﻿SH = {
+	ship_names = {
+		generic = {
+			深海飞船Α 深海飞船Β 深海飞船Г 深海飞船Δ 深海飞船Ε 深海飞船Ζ
+		}
+		
+		corvette = {
+			护卫Α 护卫Β 护卫Г 护卫Δ 护卫Ε 护卫Ζ 护卫Η 护卫Θ 护卫Ι 护卫Κ 护卫Λ 护卫Μ 护卫Ν 护卫Ξ 护卫Ο 护卫Π 护卫Υ 护卫Φ 护卫Υ 护卫Χ 护卫ψ 护卫Ω
+		}
+		
+		destroyer = {
+			驱逐Α 驱逐Β 驱逐Г 驱逐Δ 驱逐Ε 驱逐Ζ 驱逐Η 驱逐Θ 驱逐Ι 驱逐Κ 驱逐Λ 驱逐Μ 驱逐Ν 驱逐Ξ 驱逐Ο 驱逐Π 驱逐Υ 驱逐Φ 驱逐Υ 驱逐Χ 驱逐ψ 驱逐Ω
+		}
+		
+		cruiser = {
+			巡洋Α 巡洋Β 巡洋Г 巡洋Δ 巡洋Ε 巡洋Ζ 巡洋Η 巡洋Θ 巡洋Ι 巡洋Κ 巡洋Λ 巡洋Μ 巡洋Ν 巡洋Ξ 巡洋Ο 巡洋Π 巡洋Υ 巡洋Φ 巡洋Υ 巡洋Χ 巡洋ψ 巡洋Ω
+		}
+
+		battleship = {
+			战列Α 战列Β 战列Г 战列Δ 战列Ε 战列Ζ 战列Η 战列Θ 战列Ι 战列Κ 战列Λ 战列Μ 战列Ν 战列Ξ 战列Ο 战列Π 战列Υ 战列Φ 战列Υ 战列Χ 战列ψ 战列Ω
+		}
+
+		titan = {
+			"大和" "武藏" 俾斯麦 提尔比茨 腓特烈大帝 十三号型
+		}
+
+		colossus = {
+			"深海舰队" "妄想舰队" "钢铁堡垒" "九段坂"
+		}
+		
+		science = {
+			科研Α 科研Β 科研Г 科研Δ 科研Ε 科研Ζ 科研Η 科研Θ 科研Ι 科研Κ 科研Λ 科研Μ 科研Ν 科研Ξ 科研Ο 科研Π 科研Υ 科研Φ 科研Υ 科研Χ 科研ψ 科研Ω
+		}
+		
+		colonizer = {
+			殖民Α 殖民Β 殖民Г 殖民Δ 殖民Ε 殖民Ζ 殖民Η 殖民Θ 殖民Ι 殖民Κ 殖民Λ 殖民Μ 殖民Ν 殖民Ξ 殖民Ο 殖民Π 殖民Υ 殖民Φ 殖民Υ 殖民Χ 殖民ψ 殖民Ω
+		}
+
+		sponsored_colonizer = {
+			殖民Α 殖民Β 殖民Г 殖民Δ 殖民Ε 殖民Ζ 殖民Η 殖民Θ 殖民Ι 殖民Κ 殖民Λ 殖民Μ 殖民Ν 殖民Ξ 殖民Ο 殖民Π 殖民Υ 殖民Φ 殖民Υ 殖民Χ 殖民ψ 殖民Ω
+		}
+		
+		constructor = {
+			工程Α 工程Β 工程Г 工程Δ 工程Ε 工程Ζ 工程Η 工程Θ 工程Ι 工程Κ 工程Λ 工程Μ 工程Ν 工程Ξ 工程Ο 工程Π 工程Υ 工程Φ 工程Υ 工程Χ 工程ψ 工程Ω
+		}
+		
+		transport = {
+			深海突击队 深海陆战队 深海突袭部队
+		}
+		
+		military_station_small = { 
+			防御炮塔Α 防御炮塔Β 防御炮塔Г 防御炮塔Δ 防御炮塔Ε 防御炮塔Ζ 防御炮塔Η 防御炮塔Θ 防御炮塔Ι 防御炮塔Κ 防御炮塔Λ 防御炮塔Μ 防御炮塔Ν 防御炮塔Ξ 防御炮塔Ο 防御炮塔Π 防御炮塔Υ 防御炮塔Φ 防御炮塔Υ 防御炮塔Χ 防御炮塔ψ 防御炮塔Ω
+		}
+
+		ion_cannon = {
+			帕基罗角 利奥波德 萨沃尼亚
+		}
+		
+	}
+
+	fleet_names = {
+		random_names = {
+			"深海强袭舰队" "深海护卫舰队" "深海主力舰队" "深海防卫舰队" "深海支援舰队" "深海后备舰队" "深海快反舰队" "深海决战舰队" "深海联合舰队" "深海突袭舰队" "深海决胜舰队" "深海后勤舰队" "深海哨戒舰队" "深海奇袭舰队" "深海警戒舰队" "深海机动舰队" "深海近卫舰队" "深海星环舰队" "深海游击舰队" "深海星守舰队" "深海禁军舰队"
+		}
+		sequential_name = "深海舰队 %C%"
+	}
+	
+	army_names = {
+		generic = { 
+			sequential_name = "军团 %R%"
+		}
+
+		assault_army = {
+			sequential_name = "军团 %R%"
+		}
+		
+		slave_army = {
+			sequential_name = "支援军 %R%"
+		}
+		
+		clone_army = {
+			sequential_name = "复制军 %R%"
+		}
+		
+		robotic_army = {
+			sequential_name = "机械军 %R%"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "机械边防军 %R%"
+		}
+		
+		psionic_army = { 
+			sequential_name = "灵能军团 %R%"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "猛兽支援军 %R%"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "禁卫军团 %R%"
+		}
+
+		occupation_army = {
+			sequential_name = "步兵警卫团 %R%"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "机械警卫团 %R%"
+		}
+
+		primitive_army = {
+			sequential_name = "原始军队 %C%"
+		}
+		industrial_army = {
+			sequential_name = "工业军队 %C%"
+		}
+		postatomic_army = {
+			sequential_name = "后原子军 %C%"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"圣盾作战" "妄想舰队" "地狱群岛" "中途岛" 帕斯塔 女武神 轰隆轰隆 无畏之海 最长一役 急速东方快车 所罗门之晓 熔炉 西西里岛 钨 萨马岛 神的右眼 暗夜礼花 盖世无双 凤鸟惊涛 深海仁川基地 深海前哨 泪之扉 深海扶桑基地 深海直布罗陀要塞 深海百慕大 星洲海峡基地 马尔代夫基地 马耳他基地 萨沃尼亚要塞 帕基罗角要塞 StarMarshal
+			}
+		}
+		
+		pc_desert = {
+			names = {
+				
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+				
+			}
+		}
+		
+		pc_arid = {
+			names = {
+				
+			}
+		}
+		
+		pc_continental = {
+			names = {
+				
+			}
+		}
+		
+		pc_gaia = {
+			names = {
+				
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+				
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+				
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+				
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+
+		names1 = {
+			weight = 40
+			first_names_male = {
+				帕基罗角 利奥波德 萨沃尼亚 大和 武藏 大凤 加贺 赤城 奥丁 大头目 苏赫巴托尔 腓特烈大帝 提尔比茨 俾斯麦 施特拉塞 龙骧 克拉肯 朱姆沃尔特 莫尼特 荷尔斯泰因 雪风
+			}
+			first_names_female = {
+				帕基罗角 利奥波德 萨沃尼亚 大和 武藏 大凤 加贺 赤城 奥丁 大头目 苏赫巴托尔 腓特烈大帝 提尔比茨 俾斯麦 施特拉塞 龙骧 克拉肯 朱姆沃尔特 莫尼特 荷尔斯泰因 雪风
+			}
+			second_names = {
+				Α Β Г Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Υ Φ Υ Χ ψ Ω
+				
+			}
+			regnal_first_names_male = {
+				帕基罗角 利奥波德 萨沃尼亚 大和 武藏 大凤 加贺 赤城 奥丁 大头目 苏赫巴托尔 腓特烈大帝 提尔比茨 俾斯麦 施特拉塞 龙骧 克拉肯 朱姆沃尔特 莫尼特 荷尔斯泰因 雪风
+			}
+			regnal_first_names_female = {
+				帕基罗角 利奥波德 萨沃尼亚 大和 武藏 大凤 加贺 赤城 奥丁 大头目 苏赫巴托尔 腓特烈大帝 提尔比茨 俾斯麦 施特拉塞 龙骧 克拉肯 朱姆沃尔特 莫尼特 荷尔斯泰因 雪风
+				
+			}
+			regnal_second_names = {
+				Α Β Г Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Υ Φ Υ Χ ψ Ω
+			}
+		}
+		
+	}
+}

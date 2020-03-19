@@ -1,0 +1,110 @@
+neo_industory = {
+	icon = "GFX_spaceport_neo_industory"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 360
+	initial = yes
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_building_wsg_neo }
+	}
+	show_in_tech = "tech_building_wsg_neo"
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 200
+		}
+
+		produces = {
+			sr_neo = 2
+		}
+
+		upkeep = {
+			energy = 5
+			minerals = 12
+		}
+	}
+
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	#	modifier = {
+	#		factor = 100
+	#		NOT = { has_starbase_module = shipyard }
+	#	}
+	}
+}
+
+wsg_bungee_jumping = {
+	icon = "GFX_spaceport_wsg_bungee_jumping"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 180
+	base_cap_amount = 3
+	initial = yes
+	potential = {
+		exists = owner
+		owner = { has_authority = auth_warshipgirls }
+	}
+	
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			energy = 7
+		}
+	}
+	station_modifier = {
+		ship_hull_mult = -0.10
+		trade_value_add = 7
+	}
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	#	modifier = {
+	#		factor = 100
+	#		NOT = { has_starbase_module = shipyard }
+	#	}
+	}
+}
+srse_industory = {
+	icon = "GFX_spaceport_srse_industory"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 360
+	initial = yes
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_sh_senergy }
+	}
+	show_in_tech = "tech_sh_senergy"
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 200
+		}
+
+		produces = {
+			sr_se = 2
+		}
+
+		upkeep = {
+			energy = 16
+			sr_pantsu = 2
+		}
+	}
+
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	#	modifier = {
+	#		factor = 100
+	#		NOT = { has_starbase_module = shipyard }
+	#	}
+	}
+}

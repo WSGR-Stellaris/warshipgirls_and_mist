@@ -1,0 +1,6 @@
+﻿#scope:country
+wsg_init_tech = {
+	give_technology = { tech = tech_powered_exoskeletons message = no } #外骨骼动力
+	#give_technology = { tech = tech_robotic_workers message = no } #机器人
+}
+

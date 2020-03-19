@@ -1,0 +1,170 @@
+leader_trait_governor_warshipgirls = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.10
+		planet_jobs_minerals_produces_mult = 0.10
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_mist = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/mist.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.20
+		planet_jobs_minerals_produces_mult = 0.20
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_Ella = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/ella.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.10
+		planet_jobs_minerals_produces_mult = 0.10
+		planet_building_build_speed_mult = 0.30
+		planet_buildings_cost_mult = -0.10
+		planet_districts_cost_mult = -0.10
+		planet_stability_add = 5
+		pop_citizen_happiness=0.1		
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+leader_trait_governor_santee = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/santee.dds"
+	modifier = {
+		trade_value_mult = 0.30
+		planet_jobs_slave_produces_mult = 0.30
+		planet_jobs_worker_produces_mult = 0.05
+		pop_cat_worker_happiness = -0.10
+		pop_cat_slave_happiness = -0.10
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+leader_trait_governor_badseals = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/badseals.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.01
+	}
+	self_modifier = {
+		leaders_upkeep_mult = 5.00
+	}	
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+leader_trait_governor_badseals_righteous = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_corrupt.dds"
+	modifier = {
+		planet_crime_add = 200
+		planet_stability_add = -100
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+########
+leader_trait_governor_shenhai = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai1.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.15
+		planet_jobs_minerals_produces_mult = 0.15
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_shenhai1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai2.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.25
+		planet_jobs_minerals_produces_mult = 0.25
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_shenhai2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai3.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.25
+		planet_jobs_minerals_produces_mult = 0.25
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_yamatoman = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/yamatoman.dds"
+	modifier = {
+		planet_buildings_cost_mult = -0.15
+		planet_districts_cost_mult = -0.15
+		planet_building_build_speed_mult = 0.50
+	}
+	self_modifier = {
+		leaders_upkeep_mult = -1.00
+	}	
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_neversleep = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/neversleep.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		planet_stability_add = 5
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+

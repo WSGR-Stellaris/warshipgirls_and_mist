@@ -1,0 +1,340 @@
+sh_pantsu_maker = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_sh_pantsu
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			sr_pantsu = 1
+		}
+		upkeep = {
+			minerals = 3
+			food = 1
+		}
+	}
+	
+	weight = {
+		weight = 15
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}		
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}
+		modifier = {
+			factor = 5
+			has_job = sh_pantsu_maker
+		}
+		modifier = {
+			factor = 15
+			has_job = sh_pantsu_maker
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed > 15
+			jobs_work_minerals = yes
+		}		
+	}
+}
+
+
+sh_foundry = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_sh_foundry
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 4
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_technology = tech_sh_toy }
+			}
+			consumer_goods = 1
+			alloys = 0.5
+		}
+		upkeep = {
+			minerals = 4
+		}
+	}
+	
+	weight = {
+		weight = 15
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}		
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}
+		modifier = {
+			factor = 5
+			has_job = foundry
+		}
+		modifier = {
+			factor = 15
+			has_job = foundry
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed > 15
+			jobs_work_minerals = yes
+		}		
+	}
+}
+
+sh_foundry_shpc = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_sh_foundry
+	clothes_texture_index = 3
+	icon = foundry
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 3
+			consumer_goods = 1
+		}
+		upkeep = {
+			minerals = 6
+		}
+	}
+	
+	weight = {
+		weight = 15
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}		
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}
+		modifier = {
+			factor = 5
+			has_job = foundry
+		}
+		modifier = {
+			factor = 15
+			has_job = foundry
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed > 15
+			jobs_work_minerals = yes
+		}		
+	}
+}
+
+sh_senergy = {
+category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_sh_senergy
+	clothes_texture_index = 3
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_se = 1
+		}
+		upkeep = {
+			energy = 8
+			sr_pantsu = 1
+		}
+	}	
+	
+	weight = {
+		weight = 15
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}	
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}
+		modifier = {
+			factor = 7
+			has_job = sh_senergy
+		}
+		modifier = {
+			factor = 15
+			has_job = sh_senergy
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}		
+	}
+}
+
+sh_soldier = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_stronghold
+	clothes_texture_index = 4
+	
+	country_modifier = {
+		country_naval_cap_add = 3
+		country_admin_cap_add = 8
+	}
+
+	
+	triggered_country_modifier = {
+		potential = {
+			planet = {
+				exists = owner 
+				owner = { has_technology = "tech_ground_defense_planning" }
+			}
+		}
+		modifier = {
+			country_naval_cap_add = 2
+		}
+	}	
+	
+	pop_modifier = {
+		pop_defense_armies_add = 1
+	}	
+	
+	resources = {
+		category = planet_soldiers
+		upkeep = {
+			energy = 2
+			consumer_goods = 1
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_modifier = martial_law
+			}
+		}
+		modifier = {
+			planet_stability_add = 5
+		}
+	}
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_enslaved = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		worker_job_check_trigger = yes
+		owner = { is_gestalt = no }
+	}
+	
+
+		modifier = {
+			factor = 1.05
+			has_trait = trait_nerve_stapled
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+		}
+		modifier = {
+			factor = 0.9
+			has_trait = trait_quarrelsome
+		}
+		modifier = {
+			factor = 0
+			can_be_soldier = no
+	}
+}

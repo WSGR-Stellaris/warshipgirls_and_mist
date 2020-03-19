@@ -1,0 +1,170 @@
+#yamato
+civic_yamato={
+	icon="gfx/interface/icons/governments/civics/laomo.dds"
+	potential={authority={value=auth_shenhai}}
+	possible={
+	}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		planet_jobs_produces_mult = 0.15
+		ship_weapon_range_mult = 0.05
+		ship_fire_rate_mult = 0.10
+		ship_weapon_damage= 0.2
+	}
+}
+
+#要塞姬
+civic_yaosai={
+	icon="gfx/interface/icons/governments/civics/yaosai.dds"
+	potential = {
+		authority = {
+			OR = {
+				value = auth_shenhai
+				value = auth_wg_fe
+			}
+		}		
+	}
+	possible={
+	}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier = {
+		country_naval_cap_mult = 0.15
+		shipclass_starbase_damage_mult = 0.20
+		shipclass_starbase_hull_mult = 0.20
+		shipclass_military_station_damage_mult = 0.20
+		starbase_defense_platform_capacity_add = 5
+		starbase_defensive_war_ship_build_speed_mult = 0.25
+		ship_home_territory_fire_rate_mult = 0.25		
+	}
+}
+
+#吃喝
+civic_eat_and_drink = {
+	icon="gfx/interface/icons/governments/civics/eatanddrink.dds"
+	potential={authority={value=auth_shenhai}}
+	possible={
+	}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		country_unity_produces_mult = 0.15
+		country_war_exhaustion_mult = -0.25	
+		planet_jobs_specialist_produces_mult = 0.05		
+		planet_stability_add = 5
+	}
+}
+
+#大头目
+civic_BOSSAP = {
+	icon="gfx/interface/icons/governments/civics/bossap.dds"
+	potential={authority={value=auth_shenhai}}
+	possible={
+	}
+	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		planet_pops_consumer_goods_upkeep_mult = -0.20
+		planet_buildings_upkeep_mult = -0.10
+		planet_districts_upkeep_mult = -0.10
+		ships_upkeep_mult = -0.15
+		armies_upkeep_mult= -0.2
+	}
+}
+
+#CM深海
+civic_CM ={
+	modification = no
+	icon="gfx/interface/icons/governments/civics/CM.dds"
+	potential = {
+		authority={value=auth_shenhai}
+	}	
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_barbaric_despoilers
+				value = civic_fanatic_purifiers
+			}
+		}
+	}
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		planet_pop_assembly_add = 1
+		ship_weapon_range_mult = 0.10
+		ship_fire_rate_mult = 0.10
+		ship_weapon_damage=0.20
+		starbase_shipyard_build_cost_mult = -0.10
+		country_naval_cap_mult = 0.30
+		planet_jobs_engineering_research_produces_mult = 0.20
+		planet_jobs_physics_research_produces_mult = -0.05
+		planet_jobs_society_research_produces_mult = -0.05	
+	}
+}
+
+
+civic_fanatic_purifiers = {
+	modification = no
+	playable = { host_has_dlc = "Utopia" }
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		ethics = {
+			value = ethic_fanatic_xenophobe
+			OR = {
+				value = ethic_militarist
+				value = ethic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_barbaric_despoilers
+			}
+		}
+		origin = {
+			NOR = {
+				value = origin_syncretic_evolution
+				value = origin_common_ground
+				value = origin_hegemon
+				value = civic_CM
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+		modifier = {
+			factor = 0
+			NOT = { host_has_dlc = "Utopia" }
+		}
+	}
+
+	description = "civic_tooltip_fanatic_purifiers_effects"
+	modifier = {
+		ship_fire_rate_mult = 0.33
+		army_damage_mult = 0.33
+		starbase_shipyard_build_cost_mult = -0.15
+		country_naval_cap_mult = 0.33
+	}
+}

@@ -1,0 +1,321 @@
+ap_project_r = {
+	on_enabled = {
+		custom_tooltip = "project_r_tooltip"
+		hidden_effect = {
+			country_event = { id = wsg.1000 }
+			country_event = { id = wsg.3026 }
+			set_country_flag = wsg_project_r
+		}	
+    	add_research_option = tech_wsg_reform
+	}
+	modifier = {
+		all_technology_research_speed=0.15
+		WARSHIPGIRL_species_trait_points_add = 5
+		modify_species_cost_mult = -0.50
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_gene_tailoring"
+			has_technology = tech_gene_tailoring
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_tech_wsg_pantsu"
+			has_technology = tech_wsg_pantsu
+		}		
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_droid_workers"
+			has_technology = tech_droid_workers
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_warshipgirls"
+		NOT = {
+			has_ascension_perk = ap_project_r
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+ap_yamato = {
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_tech_yamato_education"
+			has_technology = tech_yamato_education
+		}		
+	}
+		
+	potential = {
+        has_authority="auth_warshipgirls"
+		has_ascension_perk = ap_yamato
+		NOT = {
+			has_authority = "auth_machine_intelligence"
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+ap_dumplings = {
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+	}
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.1
+		starbase_shipyard_build_speed_mult = 0.50
+		country_naval_cap_add = 120
+		country_command_limit_add = 50
+	}
+	
+	potential = {
+	    has_authority="auth_warshipgirls"
+		NOT = {
+			has_ascension_perk = ap_dumplings
+			has_authority = "auth_machine_intelligence"
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+ap_port_project = {
+	potential = {
+		has_authority="auth_warshipgirls"
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_agrarian_idyll }
+		NOT = {
+			has_ascension_perk = ap_port_project
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_tech_building_wsg_neo"
+			has_technology = tech_building_wsg_neo
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}		
+	}
+	
+	on_enabled = {
+		custom_tooltip = "decision_port_project_effects"
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}
+
+ap_mist = {
+	on_enabled = {
+		custom_tooltip = "mist_tooltip"
+		hidden_effect = {
+			country_event = { id = wsg.2000 }
+			set_country_flag = wsg_mist
+		}	
+    	add_research_option = tech_building_wsg_alpha
+		add_research_option = tech_building_wsg_alpha_center
+		add_research_option = tech_wsg_genetic_resequencing
+	}
+	modifier = {
+		WARSHIPGIRL_species_trait_points_add = 10
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_gene_tailoring"
+			has_technology = tech_gene_tailoring
+		}	
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}		
+		custom_tooltip = {
+			fail_text = "requires_ascension_ap_project_r"
+			has_ascension_perk = ap_project_r 
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_zero_point_power"
+			has_technology = tech_zero_point_power
+		}
+		custom_tooltip = {
+			fail_text = "requires_tech_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}		
+		custom_tooltip = {
+			fail_text = "requires_tech_building_wsg_neo"
+			has_technology = tech_building_wsg_neo
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_warshipgirls"
+		NOT = {
+			has_ascension_perk = ap_mist
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+ap_wsg_universal_transactions = {
+	on_enabled = {
+		custom_tooltip = "wsg_branch_edicts"
+		hidden_effect = {
+			country_event = { id = wsg.3048 }
+		}	
+	}
+	potential = {
+		has_authority="auth_warshipgirls"
+		NOT = {
+			has_ascension_perk = ap_wsg_universal_transactions
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+	modifier = {
+		planet_branch_offices_cost_mult = -0.50
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+ap_dark_alpha = {
+	on_enabled = {
+		custom_tooltip = "dark_alpha"
+		hidden_effect = {
+			country_event = { id = wsg.3015 }
+		}	
+	}
+	potential = {
+		has_authority="auth_warshipgirls"
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_agrarian_idyll }
+		NOT = {
+			has_ascension_perk = ap_dark_alpha
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_tech_building_wsg_alpha"
+			has_technology = tech_building_wsg_alpha
+		}
+		custom_tooltip = {
+			fail_text = "requires_tech_dark_matter_power_core"
+			has_technology = tech_dark_matter_power_core
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}		
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}
+
+ap_wsg_station = {
+	on_enabled = {
+		custom_tooltip = "wsg_station"
+		custom_tooltip = "dyson_yamato"
+		custom_tooltip = "wsg_mining_station"
+	}
+	potential = {
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}	
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_agrarian_idyll }
+		NOT = {
+			has_ascension_perk = ap_wsg_station
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}		
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}

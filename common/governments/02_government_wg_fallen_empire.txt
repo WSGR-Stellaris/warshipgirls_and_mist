@@ -1,0 +1,10 @@
+gov_wg_fe = {
+	ruler_title = PRESCRIPTED_ruler_title_wg_fe
+	ruler_title_female = PRESCRIPTED_ruler_title_wg_fe
+	possible = {
+		has_authority = auth_wg_fe
+	}
+	weight = {
+		base = 9999
+	}
+}

@@ -1,0 +1,6 @@
+ambient_object = {
+	name = "wg_effect_explosion_object"
+	entity = "wg_effect_explosion_entity"
+	selectable = no
+	show_name = no	
+}

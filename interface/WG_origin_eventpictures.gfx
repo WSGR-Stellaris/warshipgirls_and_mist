@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_origin_sh_cm"
+		texturefile = "gfx/event_pictures/origins/origins_sh_cm.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_wsg_ice_breaking"
+		texturefile = "gfx/event_pictures/origins/origin_wsg_ice_breaking.dds"
+		alwaystransparent = yes
+	}
+}

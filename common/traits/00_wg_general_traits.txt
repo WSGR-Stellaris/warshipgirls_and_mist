@@ -1,0 +1,83 @@
+leader_trait_general_warshipgirls = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits2.dds"
+	modifier = {
+		army_damage_mult = 0.15
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_mist = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/mist.dds"
+	modifier = {
+		army_damage_mult = 0.30
+		army_morale = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_washington_axe = {
+	cost = 0
+	modification = no
+	immortal_leaders = yes
+	icon = "gfx/interface/icons/traits/washington_axe.dds"
+	modifier = {
+		army_morale = 0.3
+		army_health = 0.2
+		army_damage_mult = 0.20
+		army_disengage_chance_mult = 0.20
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+#############
+leader_trait_general_shenhai = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai1.dds"
+	modifier = {
+		army_damage_mult = 0.20
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+leader_trait_general_shenhai1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai2.dds"
+	modifier = {
+		army_damage_mult = 0.50
+		army_health = 0.2
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_shenhai2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai3.dds"
+	modifier = {
+		army_damage_mult = 0.40
+		army_health = 0.15
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}

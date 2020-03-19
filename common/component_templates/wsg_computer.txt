@@ -1,0 +1,149 @@
+#集群
+utility_component_template = {
+	key = "COMBAT_COMPUTER_SWARM_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_swarm_wsg"
+	icon_frame = 1
+	power = -15
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 1
+		}
+	}
+	class_restriction = { shipclass_military wsg_lady_warship }
+	size_restriction = { corvette }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { "tech_wsg_ovo" }
+	
+	modifier = {
+		ship_evasion_mult = 0.20
+		ship_speed_mult = 0.25
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+	}
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+#哨戒
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PICKET_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_picket_wsg"
+	icon_frame = 1
+	power = -15
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 1
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { corvette destroyer cruiser wsg_lady_warship }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { "tech_wsg_ovo" }
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_tracking_add = 40
+	}
+	
+	ai_weight = {
+		weight = 4
+	}	
+}
+
+#战列
+utility_component_template = {
+	key = "COMBAT_COMPUTER_LINE_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_line_wsg"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 1
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { destroyer cruiser battleship wsg_lady_warship }
+	component_set = "combat_computers"
+	ship_behavior = "WSGline"
+	prerequisites = { "tech_wsg_ovo" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
+	}
+	
+	ai_weight = {
+		weight = 4
+	}	
+}
+
+#火炮
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_artillery_wsg"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 1
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { destroyer cruiser battleship titan wsg_lady_warship }
+	component_set = "combat_computers"
+	ship_behavior = "WSGartillery"
+	prerequisites = { "tech_wsg_ovo" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+		ship_speed_reduction = 0.1
+	}
+	
+	ai_weight = {
+		weight = 4
+	}	
+}
+
+#平台
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PLATFORM_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_platform_wsg"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 1
+		}
+	}
+	class_restriction = { shipclass_military_station }
+	component_set = "combat_computers"
+	ship_behavior = "platform"
+	prerequisites = { "tech_wsg_ovo" }
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_tracking_add = 25
+	}
+	
+	ai_weight = {
+		weight = 4
+	}
+}

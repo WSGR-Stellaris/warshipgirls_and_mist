@@ -1,0 +1,36 @@
+on_destroy_planet_with_PLANET_KILLER_CRACKER = {
+	events = {
+		wg_crisis.201
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_SHIELDER = {
+	events = {
+		wg_crisis.201
+	}
+}
+
+#acot
+on_destroy_planet_with_ACOT_PLANET_KILLER_CRACKER = {
+	events = {
+		wg_crisis.201
+	}
+}
+
+on_destroy_planet_with_ACOT_PLANET_KILLER_SHIELDER = {
+	events = {
+		wg_crisis.201
+	}
+}
+
+on_destroy_planet_with_ACOT_SE_PLANET_KILLER_CRACKER = {
+	events = {
+		wg_crisis.201
+	}
+}
+
+on_destroy_planet_with_ACOT_SE_PLANET_KILLER_SHIELDER = {
+	events = {
+		wg_crisis.201
+	}
+}

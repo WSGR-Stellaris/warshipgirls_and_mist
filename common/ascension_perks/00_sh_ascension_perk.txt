@@ -1,0 +1,266 @@
+ap_shenhai_space = {
+	modifier = {
+		starbase_outpost_cost_mult = -0.50
+		empire_size_penalty_mult = -0.50
+	}
+	
+	potential = {
+        has_authority="auth_shenhai"
+		NOT = {
+			has_ascension_perk = ap_shenhai_space
+			has_authority = "auth_machine_intelligence"
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+ap_shenhai_project = {
+	potential = {
+		has_authority="auth_shenhai"
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_agrarian_idyll }
+		NOT = {
+			has_ascension_perk = ap_shenhai_project
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}		
+	}
+	
+	on_enabled = {
+		custom_tooltip = "decision_shenhai_project_effects"
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}
+
+ap_shenhai_mega_fleet = {
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+	}
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.1
+		starbase_shipyard_build_speed_mult = 0.50
+		ships_upkeep_mult = -0.20
+		country_naval_cap_add = 150
+		country_command_limit_add = 50
+	}
+	
+	potential = {
+	    has_authority="auth_shenhai"
+		NOT = {
+			has_ascension_perk = ap_shenhai_mega_fleet
+			has_authority = "auth_machine_intelligence"
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+ap_shenhai_upgrade = {
+	on_enabled = {
+		custom_tooltip = "shenhai_upgrade_tooltip"
+		hidden_effect = {
+			country_event = { id = sh.1000 }
+			set_country_flag = sh_shenhai_flag_upgrade
+		}	
+    	add_research_option = tech_sh_experiment
+	}
+	modifier = {
+		SHENHAI_species_trait_points_add = 5
+		modify_species_cost_mult = -0.80
+		planet_pop_assembly_add = 1
+		
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}	
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_sh_social"
+			has_technology = tech_sh_social
+		}	
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_droid_workers"
+			has_technology = tech_droid_workers
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_shenhai"
+		NOT = {
+			has_ascension_perk = ap_shenhai_upgrade
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+ap_shenhai_silent = {
+	on_enabled = {
+		custom_tooltip = "shenhai_silent_tooltip"
+		hidden_effect = {
+			country_event = { id = sh.2000 }
+			set_country_flag = sh_shenhai_flag_silent
+		}
+		add_research_option = tech_sh_genetic_resequencing	
+	}
+	modifier = {
+		SHENHAI_species_trait_points_add = 8
+		planet_pop_assembly_add = 2
+		country_naval_cap_add = 150
+		country_command_limit_add = 50
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_tech_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}	
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}		
+		custom_tooltip = {
+			fail_text = "requires_ascension_ap_shenhai_upgrade"
+			has_ascension_perk = ap_shenhai_upgrade 
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_sh_senergy"
+			has_technology = tech_sh_senergy
+		}	
+		custom_tooltip = {
+			fail_text = "requires_technology_sh_experiment1"
+			has_technology = tech_sh_experiment1
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_shenhai"
+		NOT = {
+			has_ascension_perk = ap_shenhai_silent
+			has_authority = "auth_machine_intelligence"
+			has_ascension_perk = ap_shenhai_icebreaking
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+
+ap_shenhai_icebreaking = {
+	on_enabled = {
+		custom_tooltip = "shenhai_icebreaking_tooltip"
+		hidden_effect = {
+			country_event = { id = sh.3000 }
+			country_event = { id = sh.4 }
+			set_country_flag = sh_shenhai_flag_icebreaking
+		}
+		add_research_option = tech_sh_genetic_resequencing2	
+	}
+	modifier = {
+		SHENHAI_species_trait_points_add = 8
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_tech_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}	
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}		
+		custom_tooltip = {
+			fail_text = "requires_ascension_ap_shenhai_upgrade"
+			has_ascension_perk = ap_shenhai_upgrade 
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_sh_senergy"
+			has_technology = tech_sh_senergy
+		}	
+		custom_tooltip = {
+			fail_text = "requires_technology_sh_experiment2"
+			has_technology = tech_sh_experiment2
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_shenhai"
+		NOT = {
+			has_ascension_perk = ap_shenhai_silent
+			has_authority = "auth_machine_intelligence"
+			has_ascension_perk = ap_shenhai_icebreaking
+			has_civic = civic_CM
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}

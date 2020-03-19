@@ -1,0 +1,98 @@
+leader_trait_ruler_warshipgirls = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_mist = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/mist.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+##########
+leader_trait_ruler_shenhai = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai1.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+		planet_stability_add = 5
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_shenhai1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai2.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+		planet_stability_add = 10
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_shenhai2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/sh_shenhai3.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		pop_happiness = 0.10
+		planet_stability_add = 5
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+##
+leader_trait_ruler_lexington = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/ruler_lex.dds"
+	modifier = {
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_lexington2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/ruler_lex2.dds"
+	modifier = {
+		country_base_influence_produces_add = 1
+		leader_skill_levels = 1
+		edicts_cost_mult = -0.10
+		edict_length_mult = 0.20
+		pop_happiness = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}

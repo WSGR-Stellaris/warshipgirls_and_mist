@@ -1,0 +1,382 @@
+wg_modifier_Nelson = {
+    ship_archeaological_site_clues_add = 2
+	science_ship_survey_speed = 0.15
+	ship_anomaly_generation_chance_mult = 0.10
+	ship_anomaly_research_speed_mult = 0.10
+}
+
+wg_modifier_Vodka = {
+    country_war_exhaustion_mult = -0.1
+}
+
+wg_modifier_Epolicy = {
+    planet_decision_enact_speed_mult = 0.05
+}
+wg_modifier_knowledgeable = {
+    num_tech_alternatives_add = 1
+}
+wg_modifier_Dbed = {
+    ships_upkeep_mult = -0.1
+	country_naval_cap_mult = 0.20
+}
+
+wg_modifier_Epolicy = {
+    planet_decision_enact_speed_mult = 0.05
+}
+
+wg_modifier_125 = {
+    starbase_shipyard_build_cost_mult = 0.05
+	starbase_shipyard_build_speed_mult = 0.25
+}
+
+wg_modifier_615 = {
+    starbase_shipyard_build_cost_mult = -0.05
+	starbase_shipyard_build_speed_mult = -0.25
+}
+
+wsg_modifier_xh = {
+	country_unity_produces_mult = 0.20
+	country_base_influence_produces_add = 1
+}
+
+wg_modifier_surrender = {
+    country_war_exhaustion_mult = 0.15
+}
+
+wsg_modifier_ck2 = {
+    planet_jobs_produces_mult = 0.2
+}
+
+wsg_vv_destory = {
+	ship_destroyer_cost_mult = -0.10
+	ship_battleship_cost_mult = 0.05
+}
+
+wsg_vv_battleship = {
+	ship_battleship_cost_mult = -0.15
+}
+
+wsg_vv_battleship2 = {
+	ship_battleship_cost_mult = -0.05
+	ship_destroyer_cost_mult = -0.05
+}
+
+wsg_vv_battleship3 = {
+	ship_battleship_cost_mult = -0.05
+	ship_weapon_damage = 0.05
+	ship_evasion_mult = -0.05
+}
+wsg_vv_psi = {
+	ship_evasion_mult = 0.1
+}
+wsg_modifier_warshipgirls = {
+	planet_pop_assembly_add = 3
+}
+######################################
+planet_lp = {
+	icon = "gfx/interface/icons/planet_modifiers/lp_resources.dds"
+	icon_frame = 1
+	pop_happiness = 0.15
+	planet_stability_add = 2
+}
+planet_lp2 = {
+	icon = "gfx/interface/icons/planet_modifiers/lp_resources.dds"
+	icon_frame = 1
+	pop_happiness = 0.30
+}
+
+planet_noshoes = {
+	icon = "gfx/interface/icons/planet_modifiers/no_shoes.dds"
+	icon_frame = 1
+	planet_amenities_mult = 0.05
+}
+
+planet_pantsuhd = {
+	icon = "gfx/interface/icons/planet_modifiers/pantsuhd_resources.dds"
+	icon_frame = 1
+	planet_jobs_sr_pantsu_produces_mult = 0.30
+}
+
+planet_mist = {
+	icon = "gfx/interface/icons/planet_modifiers/mist_resources.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.10
+	planet_jobs_engineering_research_produces_mult = 0.10
+	planet_jobs_physics_research_produces_mult = 0.10
+}
+
+planet_NEOB = {
+	icon = "gfx/interface/icons/planet_modifiers/NEOB_resources.dds"
+	icon_frame = 1
+	planet_buildings_cost_mult = -0.10
+	planet_districts_cost_mult = -0.10
+	planet_buildings_upkeep_mult = -0.05
+	planet_districts_upkeep_mult = -0.05
+}
+
+planet_OVO = {
+	icon = "gfx/interface/icons/planet_modifiers/OVO.dds"
+	icon_frame = 1
+	pop_happiness = 1.00
+	planet_stability_add = 50
+	planet_pops_upkeep_mult = 5
+	planet_jobs_produces_mult = -10.00
+}
+
+planet_OVO2 = {
+	icon = "gfx/interface/icons/planet_modifiers/OVO.dds"
+	icon_frame = 1
+	pop_happiness = 0.20
+	pop_resettlement_cost_mult = 1000
+	planet_pops_upkeep_mult = 0.5
+	planet_jobs_produces_mult = -0.25
+}
+
+planet_OVO_occupied = {
+	icon = "gfx/interface/icons/planet_modifiers/OVO.dds"
+	icon_frame = 1
+	planet_pops_upkeep_mult = 1.0
+	planet_jobs_produces_mult = -0.5
+}
+
+planet_PSH = {
+	icon = "gfx/interface/icons/planet_modifiers/PSH.dds"
+	icon_frame = 1
+	planet_jobs_produces_mult = -0.20
+}
+planet_st = {
+	icon = "gfx/interface/icons/planet_modifiers/st_backtowork.dds"
+	icon_frame = 1
+	pop_cat_slave_happiness = -0.15
+	planet_jobs_slave_produces_mult = 0.25
+}
+planet_wg_zeo = {
+	icon = "gfx/interface/icons/planet_modifiers/wg_zro.dds"
+	icon_frame = 1
+	planet_jobs_food_produces_mult = 0.50
+}
+##############
+planet_kt = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_drilling_for_gas.dds"
+	icon_frame = 1
+	planet_max_districts_add = 3
+	district_generator_max = 1
+	district_mining_max = 1
+	district_farming_max = 1
+}
+
+planet_machine_factory = {
+	icon = "gfx/interface/icons/planet_modifiers/machine_factory_resources.dds"
+	icon_frame = 1
+	planet_pop_assembly_mult = 0.10
+}
+planet_shenhai1 = {
+	icon = "gfx/interface/icons/planet_modifiers/shenhai1.dds"
+	icon_frame = 1
+	job_farmer_per_pop = 0.15
+}
+
+planet_shenhai2 = {
+	icon = "gfx/interface/icons/planet_modifiers/shenhai2.dds"
+	icon_frame = 1
+	job_technician_per_pop = 0.15
+}
+
+planet_shenhai3 = {
+	icon = "gfx/interface/icons/planet_modifiers/shenhai3.dds"
+	icon_frame = 1
+	job_miner_per_pop = 0.15
+}
+
+planet_sh_clerk = {
+	icon = "gfx/interface/icons/planet_modifiers/shenhai_clerk.dds"
+	icon_frame = 1
+	job_sh_clerk_add = 25
+	job_sh_clerk_per_pop = 0.06
+}
+#################################################################################
+sh_modifier_shenhai = {
+	planet_pop_assembly_add = 2
+}
+sh_modifier_shenhai1 = {
+	planet_pop_assembly_add = 3
+}
+sh_modifier_shenhai2 = {
+	planet_pop_assembly_add = 4
+}
+sh_modifier_building = {
+	starbase_shipyard_build_speed_mult = 0.1
+	planet_building_build_speed_mult = 0.10
+}
+
+sh_modifier_repair = {
+	ship_hull_regen_add_static = 0.5
+	ship_armor_regen_add_static = 0.5
+}
+
+sh_modifier_eye = {
+	ship_sensor_range_add = 1
+	ship_hyperlane_range_add = 2
+}
+sh_modifier_untrusted = {
+	country_trust_growth = -0.20
+}
+sh_modifier_unattractive = {
+	country_trade_attractiveness = -0.20
+}
+
+sh_modifier_fleet = {
+    country_naval_cap_mult = 0.30
+	ships_upkeep_mult = -0.10
+}
+
+sh_modifier_engm = {
+    starbase_shipyard_build_speed_mult = 0.50
+	planet_building_build_speed_mult = 0.50
+	megastructure_build_speed_mult = 0.50
+	country_megastructure_build_cap_add = 2
+}
+sh_modifier_engm2 = {
+    starbase_shipyard_build_speed_mult = 0.50
+	planet_building_build_speed_mult = 0.50
+	megastructure_build_speed_mult = 0.50
+	country_megastructure_build_cap_add = 2
+}
+sh_modifier_book = {
+	planet_pop_assembly_mult = 0.3
+}
+sh_modifier_sf = {
+	country_unity_produces_mult = 0.10
+}
+
+sh_sf = {
+	ship_weapon_damage = -2.50
+}
+sh_sanctuary_power = {
+	ship_hull_mult = 1.50
+	ship_armor_mult = 1.50
+	ship_shield_mult = 1.50
+	ship_weapon_damage = 1.50
+	ship_fire_rate_mult = 0.50
+	ship_weapon_range_mult = 0.50
+}
+sh_sanctuary_power2 = {
+	ship_hull_mult = 0.50
+	ship_armor_mult = 0.50
+	ship_shield_mult = 0.50
+	ship_weapon_damage = 2.50
+	ship_fire_rate_mult = 0.80
+	ship_weapon_range_mult = 1.00
+}
+sh_sanctuary_power3 = {
+	ship_hull_mult = 0.30
+	ship_armor_mult = 0.30
+	ship_shield_mult = 0.30
+	ship_weapon_damage = 1.00
+	ship_fire_rate_mult = 0.50
+	ship_weapon_range_mult = 0.50
+}
+wg_lady = {
+	ship_hull_mult = 3.50
+	ship_armor_mult = 3.50
+	ship_shield_mult = 3.50
+	ship_weapon_damage = 3.50
+	ship_fire_rate_mult = 1.00
+	ship_weapon_range_mult = 1.00
+	ship_speed_mult = 1.0
+}
+wg_lady2 = {
+	ship_hull_mult = 1.00
+	ship_armor_mult = 1.00
+	ship_shield_mult = 1.00
+	ship_weapon_damage = 1.00
+	ship_fire_rate_mult = 1.00
+	ship_weapon_range_mult = 2.00
+	ship_speed_mult = 1.0
+}
+##########
+planet_wsg_station_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_station.dds"
+	icon_frame = 1
+	planet_orbital_bombardment_damage = -0.80
+	planet_stability_add = 5
+	planet_max_districts_add = 5
+	planet_jobs_alloys_produces_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+}
+wg_modifier_buff = {
+    planet_jobs_produces_mult = 0.5
+	ship_weapon_damage = 0.30
+}
+
+wg_very_hard = {
+    planet_jobs_produces_mult = -0.3
+}
+wg_hard = {
+    planet_jobs_produces_mult = -0.1
+}
+
+wg_easy = {
+    planet_jobs_produces_mult = 0.1
+}
+wg_very_easy = {
+    planet_jobs_produces_mult = 0.3
+}
+wg_storehouse = {
+    country_resource_max_add = 10000
+}
+
+planet_decomposing = {
+	icon = "gfx/interface/icons/planet_modifiers/planet_decomposing.dds"
+	icon_frame = 1
+}
+
+sh_modifier_lack_food = {
+	planet_pop_assembly_mult = -0.3
+}
+wsg_modifier_lack_food = {
+	planet_pop_assembly_mult = -0.15
+	planet_jobs_produces_mult = -0.10
+}
+
+wg_ai_base = {
+	country_base_sr_pantsu_produces_add = 300
+	country_base_sr_se_produces_add = 100
+	country_base_sr_neo_produces_add = 100
+	country_base_sr_alpha_produces_add = 100
+}
+sh_base = {
+	country_base_sr_pantsu_produces_add = 2
+}
+planet_clovertheater = {
+	icon = "gfx/interface/icons/planet_modifiers/P_clovertheater.dds"
+	icon_frame = 1
+}
+
+ovo_power = {
+	ship_weapon_damage = 2.00
+	ship_hull_mult = 0.50
+	ship_shield_mult = 0.50	
+}
+
+lexington_ruler_buff = {
+	country_unity_produces_mult = 0.1
+}
+
+sol_III_society_10 = {
+	country_society_research_produces_mult = 0.1
+}
+
+ppt_bank_statement = {
+	ships_upkeep_mult = -0.50
+}
+
+neck_gg = {
+	country_admin_cap_add = -1
+}
+
+planet_Parit = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds"
+	icon_frame = 1
+	planet_orbital_bombardment_damage = -1.0
+}

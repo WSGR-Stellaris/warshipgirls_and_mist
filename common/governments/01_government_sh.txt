@@ -1,0 +1,18 @@
+gov_sh_country = {
+	possible = {
+		has_authority = auth_shenhai
+	}
+	weight = {
+		base = 800
+	}
+}
+
+gov_sh2_country = {
+	possible = {
+		has_authority = auth_shenhai
+		has_valid_civic = civic_CM
+	}
+	weight = {
+		base = 1000
+	}
+}

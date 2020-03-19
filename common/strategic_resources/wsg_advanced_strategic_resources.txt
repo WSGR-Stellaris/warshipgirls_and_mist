@@ -1,0 +1,61 @@
+###########################
+### WSG Advanced Resources  ###
+###########################
+
+sr_pantsu = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+
+	deficit_modifier = sr_pantsu_deficit
+	
+	ai_weight = {
+		weight = 100
+	}	
+}
+
+	
+sr_neo = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+	
+	deficit_modifier = sr_neo_deficit
+		
+	ai_weight = {
+		weight = 100
+	}
+}
+
+
+sr_alpha = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+	
+	deficit_modifier = sr_alpha_deficit
+		
+	ai_weight = {
+		weight = 100
+	}
+}
+
+sr_se = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+	
+	deficit_modifier = sr_se_deficit
+		
+	ai_weight = {
+		weight = 100
+	}
+}

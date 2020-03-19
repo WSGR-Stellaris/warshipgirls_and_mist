@@ -1,0 +1,186 @@
+create_wg_crisis_legendary_admiral = {
+    event_target:wg_crisis_country = {
+        create_leader = {
+            class = admiral
+            species = event_target:wg_crisis_species
+            name = random
+            skill = 10
+            traits = {
+                trait = leader_trait_admiral_united_fleet3
+            }
+            effect = {
+                change_leader_portrait = wsg9
+                set_leader_flag = has_gained_level_trait
+            }
+        }
+    }
+}
+
+create_wg_crisis_greater_admiral = {
+    event_target:wg_crisis_country = {
+        random_list = {
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 5
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet2
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species_sh
+                    name = random
+                    skill = 5
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet2
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+        }
+    }
+}
+
+create_wg_crisis_admiral = {
+    event_target:wg_crisis_country = {
+        random_list = {
+            35 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            15 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 6
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet2
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            35 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species_sh
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            15 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species_sh
+                    name = random
+                    skill = 6
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet2
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            5 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 10
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet3
+                    }
+                    effect = {
+                        change_leader_portrait = wsg9
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+        }
+    }
+}
+
+create_wg_crisis_weaker_admiral = {
+    event_target:wg_crisis_country = {
+        random_list = {
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species_sh
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+        }
+    }
+}
+
+create_wg_crisis_raider_admiral = {
+    event_target:wg_crisis_sub_gate_country = {
+        random_list = {
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+
+            50 = {
+                create_leader = {
+                    class = admiral
+                    species = event_target:wg_crisis_species_sh
+                    name = random
+                    skill = 3
+                    traits = {
+                        trait = leader_trait_admiral_united_fleet
+                    }
+                    effect = { set_leader_flag = has_gained_level_trait }
+                }
+            }
+        }
+    }
+}

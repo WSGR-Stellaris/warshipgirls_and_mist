@@ -1,0 +1,93 @@
+wsg_war_doctrine = {
+	potential = {
+		is_country_type = default
+		has_tradition = tr_supremacy_finish
+	}
+		
+	option = {
+		name = "overwhelming_fire_power"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = {}
+		modifier = {
+			ship_weapon_range_mult = 0.05
+			ship_weapon_damage = 0.05
+			ship_fire_rate_mult = 0.15
+		}	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}
+		
+	option = {
+		name = "circuitous_warfare"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = {}
+		modifier = {
+			ship_speed_mult = 0.15
+			ship_windup_mult = -0.5
+			ship_ftl_jumpdrive_range_mult = 0.25
+		}	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}
+		
+	option = {
+		name = "mastery_of_the_space"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = {}
+		modifier = {
+			country_naval_cap_mult = 0.20
+			country_command_limit_add = 50
+			ships_upkeep_mult = -0.05
+		}	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}	
+}

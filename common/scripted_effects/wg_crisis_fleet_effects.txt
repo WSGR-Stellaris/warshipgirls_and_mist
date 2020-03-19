@@ -1,0 +1,770 @@
+create_wg_crisis_fleet_and_admiral = {
+    random_list = {
+        65 = {
+            modifier = {
+                add = -15
+                OR = {
+                    has_global_flag = wg_crisis_hard
+                    has_global_flag = wg_crisis_insane
+                }
+            }
+            modifier = {
+                add = -10
+                has_global_flag = wg_crisis_insane
+            }
+            create_wg_crisis_weaker_admiral = yes
+            create_wg_crisis_exterminate_fleet = yes
+        }
+        30 = {
+            modifier = {
+                add = 15
+                OR = {
+                    has_global_flag = wg_crisis_hard
+                    has_global_flag = wg_crisis_insane
+                }
+            }
+            modifier = {
+                add = 5
+                has_global_flag = wg_crisis_insane
+            }
+            create_wg_crisis_greater_admiral = yes
+            create_wg_crisis_main_fleet = yes
+        }
+        5 = {
+            modifier = {
+                add = -4
+                has_global_flag = wg_crisis_normal
+            }
+            modifier = {
+                add = 5
+                has_global_flag = wg_crisis_insane
+            }
+            modifier = {
+                add = -1
+                event_target:wg_crisis_country = {
+                    check_variable = { which = "flagship_count" value > 0 }
+                }
+            }
+            modifier = {
+                add = -4
+                event_target:wg_crisis_country = {
+                    check_variable = { which = "flagship_count" value > 1 }
+                }
+            }
+            modifier = {
+                add = -4
+                event_target:wg_crisis_country = {
+                    check_variable = { which = "flagship_count" value > 2 }
+                }
+            }
+            modifier = {
+                add = -1
+                event_target:wg_crisis_country = {
+                    check_variable = { which = "flagship_count" value > 3 }
+                }
+            }
+            create_wg_crisis_legendary_admiral = yes
+            create_wg_crisis_flagship_fleet = yes
+        }
+    }
+}
+
+create_wg_crisis_exterminate_fleet = {
+    create_fleet = {
+        name = "NAME_Exterminate_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 5
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_CARRIER"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }					
+            while = {
+                count = 35
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"
+                    upgradable = no
+                }
+            }
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = attack_fleet
+            fleet_event = { id = wg_crisis.40 }
+            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
+            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
+            fleet_event = { id = wg_crisis.42 days = 60}
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_main_fleet = {
+    create_fleet = {
+        name = "NAME_Main_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_CARRIER"
+                    graphical_culture = "wsg_01"
+                }
+            }
+            while = {
+                count = 5
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 35
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"
+                }
+            }
+            while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_Juggernaut"
+                    graphical_culture = "wsg_01"
+                }
+            }					
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = attack_fleet
+            fleet_event = { id = wg_crisis.40 }
+            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
+            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
+            fleet_event = { id = wg_crisis.42 days = 60}
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_flagship_fleet = {
+    create_fleet = {
+        name = "NAME_flagship_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_Juggernaut"
+                    graphical_culture = "wsg_01"
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_CARRIER"
+                    graphical_culture = "wsg_01"
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 40
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 20
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }			
+            while = {
+                count = 30
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer_portal"  
+                }
+            }								
+            set_location = {
+                target = PREV
+                distance = 25
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = attack_fleet
+            fleet_event = { id = wg_crisis.40 }
+            event_target:wg_crisis_country = { 
+                change_variable = { which = "fleet_id" value = 1 }
+                change_variable = { which = "flagship_count" value = 1 }
+            }
+            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
+            fleet_event = { id = wg_crisis.42 days = 60}
+        }
+        settings = { 
+            is_boss = yes
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_guard_fleet = {
+    create_fleet = {
+        name = "NAME_Portal_Guard_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 3
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_Juggernaut"
+                    graphical_culture = "wsg_01"
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 40
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 20
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }			
+            while = {
+                count = 50
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer_portal"  
+                }
+            }								
+            set_location = {
+                target = PREV
+                distance = 25
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = defence_fleet
+        }
+        settings = { 
+            is_boss = yes
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_greater_fleet = {
+    create_fleet = {
+        name = "NAME_Main_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 5
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_CARRIER"
+                    graphical_culture = "wsg_01"
+                }
+            }
+            while = {
+                count = 8
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 35
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"
+                }
+            }
+            while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_Juggernaut"
+                    graphical_culture = "wsg_01"
+                }
+            }			
+            set_location = {
+                target = PREV
+                distance = 60
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_weaker_exterminate_fleet = {
+    create_fleet = {
+        name = "NAME_Exterminate_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"  
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }					
+            while = {
+                count = 35
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = attack_fleet
+            fleet_event = { id = wg_crisis.40 }
+            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
+            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
+            fleet_event = { id = wg_crisis.42 days = 60}
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_weaker_main_fleet = {
+    create_fleet = {
+        name = "NAME_Main_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 20
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }					
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = attack_fleet
+            fleet_event = { id = wg_crisis.40 }
+            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
+            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
+            fleet_event = { id = wg_crisis.42 days = 60}
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_weaker_fleet_and_admiral = {
+    random_list = {
+        65 = {
+            modifier = {
+                add = -15
+                has_global_flag = wg_crisis_normal
+            }
+            create_wg_crisis_weaker_admiral = yes
+            create_wg_crisis_weaker_exterminate_fleet = yes
+        }
+        35 = {
+            modifier = {
+                add = 15
+                has_global_flag = wg_crisis_normal
+            }
+            create_wg_crisis_weaker_admiral = yes
+            create_wg_crisis_weaker_main_fleet = yes
+        }
+    }
+}
+
+create_wg_crisis_weaker_guard_fleet = {
+    create_fleet = {
+        name = "NAME_Portal_Guard_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            while = {
+                count = 3
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 25
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }						
+            while = {
+                count = 50
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }
+            while = {
+                count = 2
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer_portal"  
+                }
+            }								
+            set_location = {
+                target = PREV
+                distance = 25
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = defence_fleet
+        }
+        settings = { 
+            is_boss = yes
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+create_wg_crisis_raider_fleet = {
+    create_fleet = {
+        name = "NAME_Raider_Fleet"
+        effect = {
+            set_owner = event_target:wg_crisis_sub_gate_country
+            while = {
+                count = 5
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_CA"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }						
+            while = {
+                count = 25
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+            }			
+            set_location = {
+                target = PREV
+                distance = 60
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+            set_fleet_flag = raider_fleet
+            #fleet_event = { id = wg_crisis.96 } #交由新ai随便玩耍
+            if = {
+                limit = { has_global_flag = wg_crisis_normal }
+                add_modifier = {
+                    modifier = uf_easy_debuff days = -1
+                }
+                add_modifier = {
+                    modifier = uf_very_easy_debuff days = -1
+                }
+            }
+            if = {
+                limit = { has_global_flag = wg_crisis_hard }
+                add_modifier = {
+                    modifier = uf_very_easy_debuff days = -1
+                }
+            }
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+    }
+}
+
+# scope = fleet
+# use inside create_fleet effect when creating portal
+create_portal = {
+    create_ship = {
+        name = random
+        design = "NAME_WG_Portal"
+        effect = { 
+            set_ship_flag = wg_portal
+        }
+    }
+}
+
+# scope = fleet (portal)
+spawn_fleets_insane = {
+    fleet_event = { id = wg_crisis.4 days = 360 } 
+    fleet_event = { id = wg_crisis.4 days = 420 } 
+    fleet_event = { id = wg_crisis.4 days = 480 } 
+    fleet_event = { id = wg_crisis.4 days = 540 }
+    fleet_event = { id = wg_crisis.4 days = 600 }
+    fleet_event = { id = wg_crisis.4 days = 660 }
+    fleet_event = { id = wg_crisis.4 days = 720 }
+    fleet_event = { id = wg_crisis.4 days = 780 }
+    fleet_event = { id = wg_crisis.4 days = 840 }
+    fleet_event = { id = wg_crisis.4 days = 900 } 
+
+    fleet_event = { id = wg_crisis.102 } #循环刷辅助守家舰队
+}

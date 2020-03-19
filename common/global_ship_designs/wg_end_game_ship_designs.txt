@@ -1,0 +1,797 @@
+#TITAN
+ship_design = {
+	name = "NAME_WG_EG_TITAN"
+	ship_size = wg_titan
+	is_event_design = yes
+	
+	section = {
+		template = "WG_EG_TITAN_BOW"
+		slot = "bow"
+
+		component = {
+			slot = "TITANIC_01"
+			template = "UF_weapen_T"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+	}
+
+	section = {
+		template = "WG_EG_TITAN_MID"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+	}
+
+	section = {
+		template = "WG_EG_TITAN_STERN"
+		slot = "stern"
+		
+
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+	}
+	
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_1"
+	required_component = "SHIP_AURA_TARGETING_GRID"
+}	
+# BB
+ship_design = {
+	name = "NAME_WG_EG_BB"
+	ship_size = wg_battleship
+	is_event_design = yes
+	
+	section = {
+		template = "WG_EG_BB_BOW"
+		slot = "bow"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "UF_weapen_X2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+	}
+
+	section = {
+		template = "WG_EG_BB_MID"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "UF_weapen_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "UF_weapen_M"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+	}
+
+	section = {
+		template = "WG_EG_BB_STERN"
+		slot = "stern"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S2"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S2"
+		}	
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "UF_weapen_P"
+		}		
+
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+	}
+	
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_1"
+}	
+
+#DD
+
+ship_design = {
+	name = "NAME_WG_EG_DD"
+	ship_size = wg_destroyer
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_DD_BOW"
+		slot = "bow"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S2"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "UF_weapen_G"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "UF_weapen_IA_M"
+		}
+	}
+
+	section = {
+		template = "WG_EG_DD_STERN"
+		slot = "stern"
+
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "UF_weapen_P"
+		}
+
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+	}
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_3"
+}
+
+#CV
+ship_design = {
+	name = "NAME_WG_CARRIER"
+	ship_size = wg_carrier
+	is_event_design = yes
+
+	section = {
+		template = "WG_CARRIER_mid"
+		slot = "mid"
+
+		component = {
+			slot = "PD_01"
+			template = "WG_CARRIER_RADAR"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "UF_hangar"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "UF_hangar"
+		}
+	}
+	section = {
+		template = "WG_CARRIER_bow"
+		slot = "bow"
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}		
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "UF_weapen_IA_M"
+		}		
+	}
+	section = {
+		template = "WG_CARRIER_stern"
+		slot = "stern"
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "UF_weapen_H"
+		}		
+	}
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_4"
+}
+
+# Dimensional Portal
+ship_design = {
+	name = "NAME_WG_Portal"
+	ship_size = wg_dimensional_portal
+	is_event_design = yes
+	
+	section = {
+		template = "wg_dimensional_portal"
+		slot = "mid"
+	}
+}
+ship_design = {
+	name = "NAME_WG_Portal_small"
+	ship_size = wg_dimensional_small_portal
+	is_event_design = yes
+	
+	section = {
+		template = "wg_dimensional_small_portal"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "UF_weapen_T2"
+		}			
+	}
+}
+# Starbase
+ship_design = {
+	name = "NAME_WG_Starbase"
+	ship_size = wg_crisis_starbase
+	country_type = wg_crisis_country
+	is_event_design = yes
+	
+	section = {
+		template = "wg_crisis_starbase_core"
+		slot = "core"
+		component = {
+			slot = "TITANIC_01"
+			template = "UF_weapen_T2"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "UF_weapen_T2"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_07"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_08"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_09"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_10"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_11"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_12"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "UF_weapen_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "UF_weapen_H"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "UF_hangar"
+		}
+	}
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_COMPUTER_1"	
+	required_component = "UF_REACTOR"
+	required_component = "UF_AURA_5"
+}
+
+#CA
+ship_design = {
+	name = "NAME_WG_EG_CA"
+	ship_size = wg_cruiser
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_CA_BOW"
+		slot = "bow"
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}		
+	}
+	section = {
+		template = "WG_EG_CA_MID"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "UF_weapen_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "UF_weapen_M"
+		}		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "UF_weapen_S2"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+	}	
+	section = {
+		template = "WG_EG_CA_STERN"
+		slot = "stern"
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S2"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S2"
+		}
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "UF_weapen_P"
+		}	
+		component = {
+			slot = "PD_03"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_04"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_05"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_06"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}		
+	}
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_1"
+}

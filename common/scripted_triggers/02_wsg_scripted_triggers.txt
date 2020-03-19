@@ -1,0 +1,106 @@
+colonizeable_planet = {
+	OR = {
+		is_planet_class = pc_city
+		is_planet_class = pc_wsg_port
+		is_planet_class = pc_shenhai
+		is_planet_class = pc_relic
+		is_planet_class = pc_nuked
+		is_planet_class = pc_hive
+		is_planet_class = pc_machine
+		habitable_structure = yes
+		habitable_planet = yes
+	}
+}
+
+habitable_planet = {
+	OR = {
+		is_planet_class = pc_desert
+		is_planet_class = pc_tropical
+		is_planet_class = pc_arid
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tundra
+		is_planet_class = pc_arctic
+		is_planet_class = pc_alpine
+		is_planet_class = pc_savannah
+		is_planet_class = pc_gaia
+		is_planet_class = pc_city
+		is_planet_class = pc_wsg_port
+		is_planet_class = pc_shenhai
+		is_planet_class = pc_relic
+	}
+}
+
+has_UR_admiral = {
+	OR = {
+		has_country_flag = ra_admiral_101
+		has_country_flag = ra_admiral_102
+		has_country_flag = ra_admiral_103
+		has_country_flag = ra_admiral_104
+		has_country_flag = ra_admiral_105
+		has_country_flag = ra_admiral_106
+		has_country_flag = ra_admiral_107
+		has_country_flag = ra_admiral_108
+		has_country_flag = ra_admiral_109
+		has_country_flag = ra_admiral_110
+		has_country_flag = ra_admiral_201
+		has_country_flag = ra_admiral_202
+		has_country_flag = ra_admiral_203
+		has_country_flag = ra_admiral_204
+		has_country_flag = ra_admiral_205
+		has_country_flag = ra_admiral_1001
+		has_country_flag = ra_admiral_1002
+		has_country_flag = ra_admiral_1003
+		has_country_flag = ra_admiral_1004
+	}
+}
+
+is_wg_fallen_empire = {
+	OR = {
+		is_fallen_empire = yes
+		is_country_type = awakened_fallen_empire
+	}
+	has_authority = auth_wg_fe
+}
+
+wsg_lady_available = {
+	has_country_flag = gain_wsg_lady
+	NOR = {
+		has_modifier = wsg_lady_recover_cd
+		has_country_flag = modifing_wsg_lady
+		has_country_flag = ban_commu_with_wsg_lady
+	}
+}
+
+has_wsg_lady_active_diplo = {
+	has_active_event = {
+		wg_fe.160 # 初始界面
+		wg_fe.161 # 总督
+		wg_fe.162 # 战舰
+		wg_fe.163 # 陆军
+		wg_fe.178 # 武装科研船
+	}
+}
+
+has_enough_consumer_goods = {
+	OR = {
+		AND = {
+			years_passed <= 40
+			resource_stockpile_compare = { resource = consumer_goods value > 500 }
+		}
+		AND = {
+			years_passed > 40
+			years_passed <= 80
+			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+		}
+		AND = {
+			years_passed > 80
+			years_passed <= 120
+			resource_stockpile_compare = { resource = consumer_goods value > 3500 }
+		}
+		AND = {
+			years_passed > 120
+			resource_stockpile_compare = { resource = consumer_goods value > 6000 }
+		}
+	}
+}

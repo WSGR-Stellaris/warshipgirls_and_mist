@@ -1,0 +1,87 @@
+weapon_component_template = {
+	key = "sh_weapen_L"
+	size = large
+	entity = "large_kinetic_gun_entity"
+	type = instant
+	
+	icon = "GFX_sh_weapen_L"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 500 max = 1300 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 70
+	range = 135.0
+	accuracy = 0.60
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.30
+	power = -120
+	upgrades_to = "sh_weapen_L2"	
+	prerequisites = { "tech_sh_Lweapon" }
+	component_set = "sh_weapen_L"
+	projectile_gfx = "sh_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+			sr_se = 4
+		}		
+		upkeep = {
+			energy = 1.5
+			alloys = 0.4
+		}
+	}
+}
+weapon_component_template = {
+	key = "sh_weapen_L2"
+	size = large
+	entity = "large_kinetic_gun_entity"
+	type = instant
+	
+	icon = "GFX_sh_weapen_L2"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 500 max = 1350 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 70
+	range = 135.0
+	accuracy = 0.75
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	shield_damage = 1.35
+	armor_damage = 1.35
+	hull_damage = 1.25		
+	tracking = 0.35
+	power = -160
+	
+	prerequisites = { "tech_sh_Lweapon2" }
+	component_set = "sh_weapen_L2"
+	projectile_gfx = "wsg_medium_turbolaser_l_y"
+	tags = { weapon_type_kinetic }
+	tags = { weapon_type_energy }	
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+			sr_se = 4
+			sr_dark_matter = 2
+		}		
+		upkeep = {
+			energy = 2
+			alloys = 0.5
+		}
+	}
+}

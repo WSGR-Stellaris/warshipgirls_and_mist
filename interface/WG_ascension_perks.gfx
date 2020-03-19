@@ -1,0 +1,76 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_project_r"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_project_r.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_yamato"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_yamato.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_dumplings"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_dumplings.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_port_project"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_port_project.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_mist"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_mist.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_wsg_universal_transactions"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_wsg_universal_transactions.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_ap_shenhai_upgrade"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_upgrade.dds"
+		alwaystransparent = yes
+	}		
+	spriteType = {
+		name = "GFX_ap_shenhai_silent"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_silent.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_shenhai_mega_fleet"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_mega_fleet.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_shenhai_icebreaking"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_icebreaking.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_shenhai_project"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_project.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_dark_alpha"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_dark_alpha.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_wsg_station"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_wsg_station.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_shenhai_space"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_space.dds"
+		alwaystransparent = yes
+	}
+}
+
+
+
+

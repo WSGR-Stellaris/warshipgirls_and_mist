@@ -1,0 +1,345 @@
+sh_trait_shenhai = {
+	cost= 0
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	modification=no
+	randomized=no
+	advanced_trait=no
+	forced_happiness = yes
+	immortal_leaders = yes
+	icon="gfx/interface/icons/traits/sh_shenhai.dds"
+	modifier={
+		pop_environment_tolerance = 0.6
+		pop_growth_speed = -5.0
+		pop_demotion_time_mult = -1
+		planet_jobs_engineering_research_produces_mult = 0.10
+		planet_pop_assembly_add = 2
+	}
+	opposites = {}
+}
+
+sh_trait_shenhai1 = {
+	cost= 0
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	modification=no
+	initial = no
+	randomized=no
+	advanced_trait=no
+	forced_happiness = yes
+	immortal_leaders = yes
+	icon="gfx/interface/icons/traits/sh_shenhai1.dds"
+	modifier={
+		pop_environment_tolerance = 1
+		pop_growth_speed = -5.0
+		pop_demotion_time_mult = -1
+		planet_jobs_engineering_research_produces_mult = 0.25
+		planet_pop_assembly_add = 3
+	}
+	opposites = {}
+}
+
+sh_trait_shenhai2 = {
+	cost= 0
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	modification=no
+	initial = no
+	randomized=no
+	advanced_trait=no
+	forced_happiness = yes
+	immortal_leaders = yes
+	icon="gfx/interface/icons/traits/sh_shenhai2.dds"
+	modifier={
+		pop_environment_tolerance = 1
+		pop_growth_speed = -5.0
+		pop_demotion_time_mult = -1
+		planet_pops_organics_food_upkeep_mult = -0.5
+		pop_amenities_usage_mult = -0.5
+		planet_jobs_engineering_research_produces_mult = 0.30
+		planet_pop_assembly_add = 5
+	}
+	opposites = {}
+}
+
+sh_trait_shenhai3 = {
+	cost= 0
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	modification=no
+	initial = no
+	randomized=no
+	advanced_trait=no
+	immortal_leaders = yes
+	icon="gfx/interface/icons/traits/sh_shenhai3.dds"
+	modifier={
+		pop_environment_tolerance = 1
+		pop_growth_speed = 0.1
+		pop_demotion_time_mult = -1
+		planet_jobs_engineering_research_produces_mult = 0.25
+		planet_jobs_physics_research_produces_mult = 0.25
+		planet_jobs_society_research_produces_mult = 0.25
+		planet_pop_assembly_add = 3
+	}
+	opposites = {}
+}
+
+sh_trait_silent = {
+	cost = 0
+	initial = no
+	randomized = no
+	forced_happiness = yes
+	immortal_leaders = yes
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_silent.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	prerequisites = { tech_sh_genetic_resequencing }
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+		pop_demotion_time_mult = -1
+		planet_pops_organics_food_upkeep_mult = -0.5
+		pop_amenities_usage_mult = -0.5
+	}
+}
+
+sh_trait_silent1 = {
+	cost = 0
+	initial = no
+	randomized = no
+	forced_happiness = yes
+	immortal_leaders = yes
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_silent.dds"
+	allowed_archetypes = { BIOLOGICAL }
+	prerequisites = { tech_sh_genetic_resequencing }
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		pop_demotion_time_mult = -1
+		planet_pops_organics_food_upkeep_mult = -0.5
+		pop_amenities_usage_mult = -0.5
+	}
+}
+
+##cost1
+sh_trait_boxes = {
+	cost= 1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_boxes.dds"
+	modifier={
+		pop_housing_usage_mult = -0.25
+	}
+	opposites = {}
+}
+
+sh_trait_gear = {
+	cost= 1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_gear.dds"
+	modifier={
+		planet_jobs_produces_mult = 0.05
+	}
+	opposites = {}
+}
+
+sh_trait_simple = {
+	cost= 1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_simple.dds"
+	modifier={
+		planet_pops_consumer_goods_upkeep_mult = -0.10
+		planet_pops_food_upkeep_mult = -0.10
+	}
+	opposites = {}
+}
+
+sh_trait_repair = {
+	cost= 1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_repair.dds"
+	modifier={
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		army_health = 0.1
+	}
+	opposites = {}
+}
+
+sh_trait_together = {
+	cost= 1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_together.dds"
+	modifier={
+		planet_jobs_unity_produces_mult = 0.15
+	}
+	opposites = {}
+}
+##cost2
+sh_trait_building={
+	cost = 2
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_building.dds"
+	modifier={
+		pop_assembly_speed = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		planet_building_build_speed_mult = 0.10
+	}
+	opposites = {}
+}
+
+sh_trait_eye = {
+	cost= 2
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_eye.dds"
+	modifier={
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+	opposites = {}
+}
+
+sh_trait_fleet = {
+	cost= 2
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_fleet.dds"
+	modifier={
+		country_naval_cap_mult = 0.30
+		ships_upkeep_mult = -0.10
+	}
+	opposites = {}
+}
+##cost4
+sh_trait_building2 = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_building2.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing }
+	modifier = {
+		pop_assembly_speed = 0.3
+	}
+}
+
+sh_trait_gear2 = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_gear2.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing }
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+	}
+}
+
+sh_trait_engm = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_engm.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing }
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.50
+		planet_building_build_speed_mult = 0.50
+		megastructure_build_speed_mult = 0.50
+		country_megastructure_build_cap_add = 2
+	}
+}
+
+sh_trait_building22 = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_building2.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing2 }
+	modifier = {
+		pop_assembly_speed = 0.3
+	}
+}
+
+sh_trait_gear22 = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_gear2.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing2 }
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+	}
+}
+
+sh_trait_engm2 = {
+	cost = 4
+	initial = no
+	randomized = no
+	opposites = {}
+	icon="gfx/interface/icons/traits/sh_engm.dds"
+	allowed_archetypes = { SHENHAI }
+	prerequisites = { tech_sh_genetic_resequencing2 }
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.50
+		planet_building_build_speed_mult = 0.50
+		megastructure_build_speed_mult = 0.50
+		country_megastructure_build_cap_add = 2
+	}
+}
+##cost-1
+sh_trait_untrusted = {
+	cost= -1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_untrusted.dds"
+	modifier={
+		country_trust_growth = -0.20
+	}
+	opposites = {}
+}
+
+sh_trait_migrate = {
+	cost= -1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_migrate.dds"
+	modifier={
+		pop_resettlement_cost_mult = 0.25
+	}
+	opposites = {}
+}
+
+sh_trait_fool40k ={
+	cost=-1
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_fool40k.dds"
+	modifier={
+		army_health = -0.3
+	}
+	opposites = {}
+}
+##cost-2
+sh_trait_unattractive = {
+	cost= -2
+	allowed_archetypes={SHENHAI}
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/sh_untrusted.dds"
+	modifier={
+		country_trade_attractiveness = -0.20
+	}
+	opposites = {}
+}

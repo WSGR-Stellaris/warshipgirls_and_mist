@@ -1,0 +1,12 @@
+# This file configures pre-scripted designs the game will use. 
+
+# Space UAV
+ship_design = {
+	name = "FTL UAV"
+	ship_size = scout_UAV
+
+	section = {
+		template = "scout_UAV_section"
+		slot = "mid"
+	}
+}
