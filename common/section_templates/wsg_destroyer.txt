@@ -23,13 +23,13 @@ ship_section_template = {
 		name = "TORPEDO_01"
 		template = "medium_missile_turret"
 		
-		locatorname = "xl_gun_01"
+		locatorname = "small_gun_02"
 	}
 	component_slot = {
 		name = "TORPEDO_02"
 		template = "medium_missile_turret"
 		
-		locatorname = "xl_gun_01"
+		locatorname = "small_gun_03"
 	}
 
 	small_utility_slots = 6
@@ -62,13 +62,13 @@ ship_section_template = {
 		name = "TORPEDO_01"
 		template = "medium_missile_turret"
 		
-		locatorname = "xl_gun_01"
+		locatorname = "medium_gun_01"
 	}
 	component_slot = {
 		name = "TORPEDO_02"
 		template = "medium_missile_turret"
 		
-		locatorname = "xl_gun_01"
+		locatorname = "medium_gun_02"
 	}
 
 	small_utility_slots = 6
