@@ -1,0 +1,1018 @@
+entity = {
+	name = "large_turret_entity"
+	pdxmesh = "large_turret_mesh"
+}
+
+
+###################################################################################
+###																				###
+###									WEAPONS										###
+###																				###
+###################################################################################
+
+entity = {
+	name = "wsg_01_missle_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_energy_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_missile_large_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_missile_medium_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "idle" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_missile_small_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "wsg_01_large_kinetic_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_kinetic_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_small_kinetic_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+	
+
+
+entity = {
+	name = "wsg_01_turret_point_defence_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+
+
+
+entity = {
+	name = "wsg_01_large_laser_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_laser_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_small_laser_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+# ##################
+# Elratie Octuple Turbo Laser Weapons
+# ##################
+
+entity = {
+	name = "wsg_01_octuple_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# ##################
+# Critter Weapons
+# ##################
+
+
+# Amoeba Weapons
+
+entity = {
+	name = "wsg_01_small_space_amoeba_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_space_amoeba_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_large_space_amoeba_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Space Cloud Weapons
+
+entity = {
+	name = "wsg_01_small_space_cloud_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_large_space_cloud_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Crystal Weapons
+
+entity = {
+	name = "wsg_01_small_crystal_ship_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_crystal_ship_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_large_crystal_ship_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Mining Drone Weapons
+
+entity = {
+	name = "wsg_01_small_mining_drone_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_mining_drone_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# Space Whale Weapons
+
+entity = {
+	name = "wsg_01_small_space_whale_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_space_whale_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_large_space_whale_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Swarm Weapons
+
+entity = {
+	name = "wsg_01_small_scourge_projectile_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_medium_scourge_projectile_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_01_turret_xl_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 2.0
+	
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+}
+
+
+#2
+
+###################################################################################
+###																				###
+###									WEAPONS										###
+###																				###
+###################################################################################
+
+entity = {
+	name = "wsg_02_missle_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_energy_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_missile_large_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_missile_medium_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "idle" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_missile_small_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "wsg_02_large_kinetic_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_kinetic_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_small_kinetic_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+	
+
+
+entity = {
+	name = "wsg_02_turret_point_defence_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+
+
+
+entity = {
+	name = "wsg_02_large_laser_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_laser_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_small_laser_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+# ##################
+# Elratie Octuple Turbo Laser Weapons
+# ##################
+
+entity = {
+	name = "wsg_02_octuple_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# ##################
+# Critter Weapons
+# ##################
+
+
+# Amoeba Weapons
+
+entity = {
+	name = "wsg_02_small_space_amoeba_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_space_amoeba_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_large_space_amoeba_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Space Cloud Weapons
+
+entity = {
+	name = "wsg_02_small_space_cloud_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_large_space_cloud_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Crystal Weapons
+
+entity = {
+	name = "wsg_02_small_crystal_ship_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_crystal_ship_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_large_crystal_ship_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Mining Drone Weapons
+
+entity = {
+	name = "wsg_02_small_mining_drone_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_mining_drone_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# Space Whale Weapons
+
+entity = {
+	name = "wsg_02_small_space_whale_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_space_whale_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_large_space_whale_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Swarm Weapons
+
+entity = {
+	name = "wsg_02_small_scourge_projectile_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_medium_scourge_projectile_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_02_turret_xl_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 2.0
+	
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+}
+
+
+#3
+###################################################################################
+###																				###
+###									WEAPONS										###
+###																				###
+###################################################################################
+
+entity = {
+	name = "wsg_03_missle_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_energy_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_torpedo_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_missile_large_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_missile_medium_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "idle" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_missile_small_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "wsg_03_large_kinetic_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_kinetic_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_small_kinetic_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+	
+
+
+entity = {
+	name = "wsg_03_turret_point_defence_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+
+
+
+entity = {
+	name = "wsg_03_large_laser_gun_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_laser_gun_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_small_laser_gun_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+# ##################
+# Elratie Octuple Turbo Laser Weapons
+# ##################
+
+entity = {
+	name = "wsg_03_octuple_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# ##################
+# Critter Weapons
+# ##################
+
+
+# Amoeba Weapons
+
+entity = {
+	name = "wsg_03_small_space_amoeba_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_space_amoeba_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_large_space_amoeba_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Space Cloud Weapons
+
+entity = {
+	name = "wsg_03_small_space_cloud_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_large_space_cloud_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Crystal Weapons
+
+entity = {
+	name = "wsg_03_small_crystal_ship_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_crystal_ship_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_large_crystal_ship_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Mining Drone Weapons
+
+entity = {
+	name = "wsg_03_small_mining_drone_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_mining_drone_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+# Space Whale Weapons
+
+entity = {
+	name = "wsg_03_small_space_whale_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_space_whale_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_large_space_whale_weapon_entity"
+	pdxmesh = "large_turret_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Swarm Weapons
+
+entity = {
+	name = "wsg_03_small_scourge_projectile_weapon_entity"
+	pdxmesh = "small_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_medium_scourge_projectile_weapon_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
+	}
+	scale = 1.00
+}
+
+entity = {
+	name = "wsg_03_turret_xl_entity"
+	pdxmesh = "medium_turrets_mesh"
+	
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 2.0
+	
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+}

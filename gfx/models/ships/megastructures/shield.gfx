@@ -1,0 +1,35 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "star_shield_alt_ambient_mesh"
+		# file = "gfx/models/megastructures/shield_alt_ambient.mesh"
+		file = "gfx/models/planets/apocalypse_planet_effects/planet_shield_effect.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			# name = "planet:MeshShape"
+			# index = 0
+			texture_diffuse = "star_shield.dds"
+			texture_normal = "star_shield.dds"
+			texture_specular = "star_shield_m.dds"
+			shader = "PdxMeshTerraAlphaBlend" #solid black PdxMeshAlphaAdditiveAnimateUV	"PdxMeshTerraAlphaBlend" black transparent 	"PdxMeshTerraAlphaBlend" black transparent stay	"PdxMeshAlphaAdditive"	more transparent	"PdxMeshExtraDimensionalShip" sun transparent
+			
+		}
+	}
+	
+		# pdxmesh = {
+		# name = "star_shield_alpha_override_mesh"
+# #		file = "gfx/models/ships/starlifter_planet_shield_alt_ambient.mesh"
+		# file = "gfx/models/planets/apocalypse_planet_effects/planet_shield_effect.mesh"
+		# scale = 1.0
+
+		# meshsettings = {
+# #			name = "star_shield"
+# #			index = 0
+			# texture_diffuse = "star_shield.dds"
+			# texture_normal = "nonormal.dds"
+			# texture_specular = "nospec.dds"
+			# shader = "PdxMeshAlphaAdditiveAnimateUV" #solid black	"PdxMeshTerraAlphaBlend" black transparent 	"PdxMeshTerraAlphaBlend" black transparent stay	"PdxMeshAlphaAdditive"	more transparent	"PdxMeshExtraDimensionalShip" sun transparent
+		# }
+	# }
+}

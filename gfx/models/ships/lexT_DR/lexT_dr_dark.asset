@@ -1,0 +1,5 @@
+entity = {
+	name = "lexT_dr_dark_entity"
+	pdxmesh = "lexT_dr_dark_mesh"
+	scale = 0.7
+}

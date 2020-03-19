@@ -1,0 +1,12 @@
+entity = {
+	name = "sh_kinetic_artillery_entity"
+	pdxmesh = "sh_kinetic_artillery_tracer_round_mesh"
+	
+	default_state = idle
+	state = { name = "idle"
+		#event = { time = 0 particle = "kinetic_artillery_idle_particle" keep_particle = yes }
+	}
+	
+	scale = 2
+}
+

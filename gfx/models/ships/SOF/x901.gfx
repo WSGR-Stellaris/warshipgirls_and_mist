@@ -1,0 +1,18 @@
+objectTypes = {
+	pdxmesh = {
+		name = "x901_mesh"
+		file = "gfx/models/ships/SOF/x901.mesh"
+		scale = 1.3
+
+		meshsettings = {
+			name = "Mesh_0714Shape"
+			index = 0
+			texture_diffuse = "Titan_TechRebel-cl.dds"
+			texture_normal = "Titan_TechRebel-nm.dds"
+			texture_specular = "Titan_TechRebel-DA.dds"
+			shader = "PdxMeshShip"
+		}
+		
+		animation = { id = "moving"		type = "x901_moving_animation" }
+	}
+}

@@ -1,0 +1,14 @@
+objectTypes = {
+
+	pdxmesh = {
+
+		name = "wg_mine_mesh"
+		file = "gfx/models/ships/megastructures/wg_mine/wg_mine.mesh"
+		
+		animation = { id = "idle"			type = "drone_homebase_idle_animation" }
+		animation = { id = "death"			type = "drone_homebase_death_animation" }
+		
+		scale = 0.4
+	}
+
+}

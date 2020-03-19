@@ -1,0 +1,204 @@
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_small_turbolaser_l_g"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "xray_laser_medium_hit_entity"
+	shield_hit_entity = "xray_laser_medium_shield_hit_entity"
+	muzzle_flash_entity = "xray_laser_medium_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "small_turbolaser_green_large_entity"
+	speed = 500.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_medium_turbolaser_l_g"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "xray_laser_medium_hit_entity"
+	shield_hit_entity = "xray_laser_medium_shield_hit_entity"
+	muzzle_flash_entity = "xray_laser_medium_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "medium_turbolaser_green_large_entity"
+	speed = 600.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_heavy_turbo_l_g"
+	color = { 1.0 	1.0 	1.0		1.0 }
+	hit_entity = "tachyon_lance_hit_entity"
+	shield_hit_entity = "tachyon_lance_shield_hit_entity"
+	muzzle_flash_entity = "tachyon_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = large
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "heavy_turbo_green_large_entity"
+	speed = 600.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+
+#############
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_small_turbolaser_l_b"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "blue_laser_medium_hit_entity"
+	shield_hit_entity = "blue_laser_medium_shield_hit_entity"
+	muzzle_flash_entity = "blue_laser_medium_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "small_turbolaser_blue_large_entity"
+	speed = 500.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_medium_turbolaser_l_b"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "blue_laser_medium_hit_entity"
+	shield_hit_entity = "blue_laser_medium_shield_hit_entity"
+	muzzle_flash_entity = "blue_laser_medium_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "medium_turbolaser_blue_large_entity"
+	speed = 600.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_heavy_turbo_l_b"
+	color = { 1.0 	1.0 	1.0		1.0 }
+	hit_entity = "tachyon_lance_hit_entity"
+	shield_hit_entity = "tachyon_lance_shield_hit_entity"
+	muzzle_flash_entity = "tachyon_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = large
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "heavy_turbo_blue_large_entity"
+	speed = 600.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+
+
+################
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_small_turbolaser_l_y"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "particle_lance_hit_entity"
+	shield_hit_entity = "particle_lance_shield_hit_entity"
+	muzzle_flash_entity = "particle_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "small_turbolaser_yellow_large_entity"
+	speed = 500.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_medium_turbolaser_l_y"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "particle_lance_hit_entity"
+	shield_hit_entity = "particle_lance_shield_hit_entity"
+	muzzle_flash_entity = "particle_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "medium_turbolaser_yellow_large_entity"
+	speed = 600.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_heavy_turbo_l_y"
+	color = { 1.0 	1.0 	1.0		1.0 }
+	hit_entity = "particle_lance_hit_entity"
+	shield_hit_entity = "particle_lance_shield_hit_entity"
+	muzzle_flash_entity = "particle_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = large
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "heavy_turbo_yellow_large_entity"
+	speed = 500.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_huge_turbolaser_l_y"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "scavenger_bot_main_weapon_hit_entity"
+	shield_hit_entity = "scavenger_bot_main_weapon_shield_hit_entity"
+	muzzle_flash_entity = "particle_lance_muzzle_entity"
+	windup_entity = "ion_cannon_windup_entity"
+	
+	shield_impact = {
+		size = large
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "huge_turbolaser_yellow_large_entity"
+	speed = 500.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}

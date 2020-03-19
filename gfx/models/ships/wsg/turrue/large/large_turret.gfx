@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "large_turret_mesh"
+		file = "gfx/models/ships/wsg/turrue/large/large_turret.mesh"
+		scale = 1.3
+
+		meshsettings = {
+			name = "ScifiSpaceshipTurretMKVIBaseShape"
+			index = 0
+			texture_diffuse = "ScifiSpaceshipStandardWeaponsAlbedo.dds"
+			texture_normal = "ScifiSpaceshipStandardWeaponsNormal.dds"
+			texture_specular = "ScifiSpaceshipStandardWeaponsAlbedo_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

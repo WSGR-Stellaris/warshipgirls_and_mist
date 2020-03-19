@@ -1,0 +1,5 @@
+entity = {
+	name = "lexT_dr_entity"
+	pdxmesh = "lexT_dr_mesh"
+	scale = 1
+}
