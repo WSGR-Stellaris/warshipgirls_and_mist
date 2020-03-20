@@ -1,5 +1,4 @@
 *.mesh
 *.dds
-descriptor.mod
-descriptor.mod
+*.mod
 *.png
