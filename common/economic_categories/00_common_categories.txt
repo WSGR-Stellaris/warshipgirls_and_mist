@@ -874,3 +874,8 @@ artifact_actions = {
 
 sector = {
 }
+
+resolutions = {
+	parent = country
+	use_for_ai_budget = yes
+}
