@@ -575,7 +575,7 @@ ship_section_template = {
 	key = "wg_crisis_starbase_core"
 	ship_size = wg_crisis_starbase
 	fits_on_slot = "core"
-	entity = "mammalian_01_starbase_citadel_section_entity"
+	entity = "wg_crisis_starbase_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	
