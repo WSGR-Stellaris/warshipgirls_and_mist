@@ -245,7 +245,7 @@ country_event = {
 	
 		last_created_country = {
 			save_global_event_target_as = wg_fallen_empire
-			set_graphical_culture = fallen_empire_03
+			set_graphical_culture = wsg_04
 			if = {
 				limit = { count_system = { count < 250 }}
 				country_event = { id = wg_fe.11 }
@@ -798,7 +798,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				owner_species = {
+				owner_main_species = {
 					NAND = {
 						is_same_species = event_target:fe_species_wsg 
 						has_trait = wsg_trait_warshipgirls1
@@ -1523,7 +1523,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_TITAN"
-							graphical_culture = "fallen_empire_03"
+							graphical_culture = "wsg_04"
 							upgradable = no
 						}
 					}
@@ -1532,7 +1532,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_BATTLE_CRUISE"
-							graphical_culture = "fallen_empire_03"
+							graphical_culture = "wsg_04"
 							upgradable = no
 						}
 					}
@@ -1541,7 +1541,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_ESCORTE"
-							graphical_culture = "fallen_empire_03"
+							graphical_culture = "wsg_04"
 							upgradable = no
 						}
 					}
@@ -2787,7 +2787,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_ESCORTE"
-									graphical_culture = "fallen_empire_03"
+									graphical_culture = "wsg_04"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2811,7 +2811,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_BATTLE_CRUISE"
-									graphical_culture = "fallen_empire_03"
+									graphical_culture = "wsg_04"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2835,7 +2835,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_BATTLE_CRUISE"
-									graphical_culture = "fallen_empire_03"
+									graphical_culture = "wsg_04"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2846,7 +2846,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_ESCORTE"
-									graphical_culture = "fallen_empire_03"
+									graphical_culture = "wsg_04"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2925,7 +2925,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_BATTLE_CRUISE"
-								graphical_culture = "fallen_empire_03"
+								graphical_culture = "wsg_04"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2936,7 +2936,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_ESCORTE"
-								graphical_culture = "fallen_empire_03"
+								graphical_culture = "wsg_04"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2965,7 +2965,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_BATTLE_CRUISE"
-								graphical_culture = "fallen_empire_03"
+								graphical_culture = "wsg_04"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -2976,7 +2976,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_ESCORTE"
-								graphical_culture = "fallen_empire_03"
+								graphical_culture = "wsg_04"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}

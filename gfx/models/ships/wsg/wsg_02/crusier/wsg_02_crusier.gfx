@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "wsg_02_crusier_mesh"
+		file = "gfx/models/ships/wsg/wsg_02/crusier/wsg_02_crusier.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "ScifiHeavyCruiserMaelstromCapShape"
+			index = 0
+			texture_diffuse = "ScifiHeavyCruiserMaelstromBlueAlbedo.dds"
+			texture_normal = "ScifiHeavyCruiserMaelstromNormal.dds"
+			texture_specular = "ScifiHeavyCruiserMaelstromGreyAlbedo_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

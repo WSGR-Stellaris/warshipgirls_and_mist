@@ -383,6 +383,68 @@ entity = {
 	#attach = { part1 = "mammalian_01_juggernaut_core_section_entity" }
 }
 
+entity = {
+	name = "mammalian_01_uf_Juggernaut_core_section_entity"
+	pdxmesh = "mammalian_01_juggernaut_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "engine_large_01" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_medium_01" particle = "juggernaut_mam_exhaust_idle_m" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "juggernaut_mam_exhaust_idle_m" trigger_once = yes keep_particle = yes }
+		
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { trigger_once = yes sound = { soundeffect = juggernaut_mammalian_idle } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = "engine_large_01" particle = "juggernaut_mam_exhaust_moving_2_l" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "juggernaut_mam_exhaust_moving_l" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "juggernaut_mam_exhaust_moving_l" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_medium_01" particle = "juggernaut_mam_exhaust_moving_m" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "juggernaut_mam_exhaust_moving_m" trigger_once = yes keep_particle = yes }
+	
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+		event = { sound = { soundeffect = juggernaut_mammalian_move } }
+	}
+	state = { name = "death" animation = "death" looping = no 
+		event = { time = 1.1 node = "explosion_locator_01" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 1.8 node = "explosion_locator_02" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3.1 node = "explosion_locator_03" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 4.4 node = "explosion_locator_04" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 4.7 node = "explosion_locator_05" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 5.2 node = "explosion_locator_06" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 6.5 node = "explosion_locator_07" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 6.9 node = "explosion_locator_08" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+	
+		event = { time = 6.96 node = "big_explosion_locator" particle = "small_2_player_ship_explosion_particle" keep_particle = yes trigger_once = no }
+		event = { time = 6.96 node = "big_explosion_locator" particle = "juggernaut_burn_effect" keep_particle = yes trigger_once = no }
+	}
+	
+	#game_data = {
+	#	trail_locators = {
+	#		"engine_large_01" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+	#		"engine_large_02" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+	#		"engine_large_03" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+	#	}
+	#}
+}
+
 # Dimensional Portal
 entity = {
 	name = "extra_dimensional_03_wg_dimensional_portal_entity"
@@ -394,4 +456,13 @@ entity = {
 	locator = {
 		name = "part1"
 	}
+}
+
+entity = {	
+	name = "wsg_01_wg_crisis_starbase_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+
+	locator = {	name = "part1" position = { 0   0   0 } }
+	attach = { "slot1" = "mammalian_01_starbase_citadel_section_entity" }
+		
 }

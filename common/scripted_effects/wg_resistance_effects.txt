@@ -450,7 +450,7 @@ create_random_ship_sukhbaatar = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_ESCORTE"
-                        graphical_culture = "wsg_02"
+                        graphical_culture = "wsg_04"
                         upgradable = no
                     }
                 }
@@ -508,7 +508,7 @@ create_random_ship_sukhbaatar = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_BATTLE_CRUISE"
-                        graphical_culture = "wsg_02"
+                        graphical_culture = "wsg_04"
                         upgradable = no
                     }
                 }
@@ -535,7 +535,7 @@ create_random_ship_sukhbaatar = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_TITAN"
-                        graphical_culture = "wsg_02"
+                        graphical_culture = "wsg_04"
                         upgradable = no
                     }
                 }

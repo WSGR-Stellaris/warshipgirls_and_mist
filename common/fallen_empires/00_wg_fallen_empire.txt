@@ -1,5 +1,5 @@
 wg_fallen_empire = {
-	graphical_culture = "fallen_empire_03"
+	graphical_culture = "wsg_04"
 	initializer = "wg_fallen_empire_capital_system"
 
 	weight_modifier = {
