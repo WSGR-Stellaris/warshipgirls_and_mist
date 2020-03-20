@@ -8,5 +8,5 @@ tags={
 picture="thumbnail.png"
 version="2.6.*"
 supported_version="2.6.1"
-path="D:/johnson/documents/Paradox Interactive/Stellaris/mod/warshipgirls_and_mist"
+path="mod/warshipgirls_and_mist"
 remote_file_id="1747099270"
