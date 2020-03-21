@@ -17,7 +17,6 @@ uf_Juggernaut = {
 	is_space_station = no
 	icon_frame = 7
 	class = shipclass_military
-	entity = "wsg_01_juggernaut_entity"
 
 	resources = {
 		category = ships

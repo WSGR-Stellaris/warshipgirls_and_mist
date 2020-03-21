@@ -254,25 +254,25 @@ opinion_wsg_to_wgfe = {
 		}	
 	}
 }
-
 opinion_sh_to_wgfe = {
 	trigger = {
 		FROM = {
-			has_authority = auth_shenhai
-			NOR = { 
-				has_civic = civic_CM
-				has_ascension_perk = ap_shenhai_silent
-			}
+			is_wg_fallen_empire = yes
 		}
 	}
 
 	opinion = {
 		modifier = {
 			add = 200
-			has_authority = auth_shenhai
+			has_authority = auth_shenhai	
+			NOR = { 
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
+			}
 		}	
 	}
 }
+
 
 opinion_wgfe_to_wsg = {
 	trigger = {

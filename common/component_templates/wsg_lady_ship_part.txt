@@ -17,7 +17,6 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_sh_senergy_reactor"
 		"tech_disignable_wsg_lady"
 	}
 	component_set = "power_core"
@@ -51,7 +50,6 @@ utility_component_template = {
 		ship_evasion_add = 30
 	}
 	prerequisites = {
-		"tech_sh_propulsion"
 		"tech_disignable_wsg_lady"
 	}
 	component_set = "thruster_components"
@@ -83,7 +81,7 @@ utility_component_template = {
 		}
 	}
 	
-	prerequisites = { "tech_wsg_alpha_power" "tech_disignable_wsg_lady" }
+	prerequisites = { "tech_disignable_wsg_lady" }
 	component_set = "power_core"
 	size_restriction = { wsg_lady_warship }
 	
@@ -115,7 +113,7 @@ utility_component_template = {
 		ship_evasion_add = 25
 	}
 
-	prerequisites = { "tech_wsg_alpha_propulsion" "tech_disignable_wsg_lady" }
+	prerequisites = { "tech_disignable_wsg_lady" }
 	component_set = "thruster_components"
 	size_restriction = { wsg_lady_warship }
 	

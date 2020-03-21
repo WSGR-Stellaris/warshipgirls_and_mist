@@ -79,6 +79,18 @@ ship_design = {
 			template = "UF_weapen_L"
 		}
 		component = {
+			slot = "LARGE_GUN_07"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "UF_weapen_L"
+		}		
+		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "UF_weapen_IA"
 		}
@@ -215,9 +227,14 @@ ship_design = {
 			template = "UF_weapen_M"
 		}
 		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "UF_weapen_M"
+		}		
+		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "UF_weapen_IA"
 		}
+		
 		component = {
 			slot = "LARGE_UTILITY_2"
 			template = "UF_weapen_IA"
@@ -359,6 +376,14 @@ ship_design = {
 			slot = "PD_01"
 			template = "WG_CARRIER_RADAR"
 		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "UF_weapen_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "UF_weapen_M"
+		}		
 		component = {
 			slot = "SMALL_GUN_01"
 			template = "UF_weapen_S"

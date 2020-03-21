@@ -5,7 +5,7 @@ ship_section_template = {
 	ship_size = wg_titan
 	fits_on_slot = bow
 	should_draw_components = yes
-	entity = "titan_bow_entity"
+	entity = "wg_titan_bow_entity"
 	icon = "GFX_ship_part_core_bow"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -49,7 +49,7 @@ ship_section_template = {
 	ship_size = wg_titan
 	fits_on_slot = mid
 	should_draw_components = yes
-	entity = "titan_mid_entity"
+	entity = "wg_titan_mid_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -91,7 +91,24 @@ ship_section_template = {
 		
 		locatorname = "large_gun_06"
 	}
-	
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		
+		locatorname = "large_gun_07"
+	}
+	component_slot = {
+		name = "LARGE_GUN_08"
+		template = "large_turret"
+		
+		locatorname = "large_gun_08"
+	}
+	component_slot = {
+		name = "LARGE_GUN_09"
+		template = "large_turret"
+		
+		locatorname = "large_gun_09"
+	}	
 	large_utility_slots = 8
 
 
@@ -109,7 +126,7 @@ ship_section_template = {
 	ship_size = wg_titan
 	fits_on_slot = stern
 	should_draw_components = yes
-	entity = "titan_stern_entity"
+	entity = "wg_titan_stern_entity"
 	icon = "GFX_ship_part_core_stern"
 	
 	prerequisites = { "tech_UNITEDFLEET" }	
@@ -150,7 +167,7 @@ ship_section_template = {
 	key = "WG_EG_BB_BOW"
 	ship_size = wg_battleship
 	fits_on_slot = bow
-	entity = "battleship_bow_XL1_entity"
+	entity = "wg_battleship_bow_XL1_entity"
 	icon = "GFX_ship_part_core_bow"
 	
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -181,7 +198,7 @@ ship_section_template = {
 	key = "WG_EG_BB_BOW2"
 	ship_size = wg_battleship
 	fits_on_slot = bow
-	entity = "battleship_bow_XL1_entity"
+	entity = "wg_battleship_bow_XL1_entity"
 	icon = "GFX_ship_part_core_bow"
 	
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -225,7 +242,7 @@ ship_section_template = {
 	key = "WG_EG_BB_MID"
 	ship_size = wg_battleship
 	fits_on_slot = mid
-	entity = "battleship_mid_L3_entity"
+	entity = "wg_battleship_mid_L3_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -254,8 +271,8 @@ ship_section_template = {
 		name = "LARGE_GUN_04"
 		template = "large_turret"
 		
-		locatorname = "large_gun_03"
-	}
+		locatorname = "large_gun_04"
+	}	
 	component_slot = {
 		name = "MEDIUM_GUN_01"
 		template = "medium_turret"
@@ -266,7 +283,13 @@ ship_section_template = {
 		name = "MEDIUM_GUN_02"
 		template = "medium_turret"
 		
-		locatorname = "medium_gun_01"
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
 	}	
 	large_utility_slots = 4
 	
@@ -281,7 +304,7 @@ ship_section_template = {
 	key = "WG_EG_BB_MID2"
 	ship_size = wg_battleship
 	fits_on_slot = mid
-	entity = "battleship_mid_L3_entity"
+	entity = "wg_battleship_mid_L3_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -326,7 +349,7 @@ ship_section_template = {
 	key = "WG_EG_BB_STERN"
 	ship_size = wg_battleship
 	fits_on_slot = stern
-	entity = "battleship_stern_M2_entity"
+	entity = "wg_battleship_stern_M2_entity"
 	icon = "GFX_ship_part_core_stern"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -365,7 +388,7 @@ ship_section_template = {
 	key = "WG_EG_DD_BOW"
 	ship_size = wg_destroyer
 	fits_on_slot = bow
-	entity = "destroyer_bow_M1S2_entity"
+	entity = "wg_destroyer_bow_M1S2_entity"
 	icon = "GFX_ship_part_core_bow"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -402,7 +425,7 @@ ship_section_template = {
 	key = "WG_EG_DD_BOW2"
 	ship_size = wg_destroyer
 	fits_on_slot = bow
-	entity = "destroyer_bow_M1S2_entity"
+	entity = "wg_destroyer_bow_M1S2_entity"
 	icon = "GFX_ship_part_core_bow"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -435,7 +458,7 @@ ship_section_template = {
 	key = "WG_EG_DD_STERN"
 	ship_size = wg_destroyer
 	fits_on_slot = stern
-	entity = "destroyer_stern_M1_entity"
+	entity = "wg_destroyer_stern_M1_entity"
 	icon = "GFX_ship_part_core_stern"
 
 	prerequisites = { "tech_UNITEDFLEET" }
@@ -471,6 +494,18 @@ ship_section_template = {
 		locatorname = "root"
 	}
 	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_07"
+	}	
+	component_slot = {
 		name = "SMALL_GUN_01"
 		template = "small_turret"
 		
@@ -481,7 +516,7 @@ ship_section_template = {
 		name = "SMALL_GUN_02"
 		template = "small_turret"
 		
-		locatorname = "small_gun_01"
+		locatorname = "small_gun_02"
 	}
 	
 	aux_utility_slots = 2
@@ -793,7 +828,7 @@ ship_section_template = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
 		
-		locatorname = "large_gun_99"
+		locatorname = "large_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_01"

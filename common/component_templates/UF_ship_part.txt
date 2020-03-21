@@ -401,7 +401,6 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "UF_weapen_X"
 	size = extra_large
-	entity = "invisible_turret_entity"
 	type = instant
 	hidden = yes
 	color = { 2.0 1.0 1.0 1 }

@@ -237,6 +237,7 @@ utility_component_template = {
 		starbase_starhold
 		starbase_starfortress
 		starbase_citadel
+		juggernaut
 	}
 	ai_weight = {
 		weight = 5
@@ -698,6 +699,7 @@ utility_component_template = {
 	component_set = "thruster_components"
 	size_restriction = {
 		colossus
+		juggernaut
 	}
 	ai_weight = {
 		weight = 5
