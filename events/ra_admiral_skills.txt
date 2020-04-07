@@ -1857,7 +1857,7 @@ fleet_event = {
                     fleet = { is_same_value = PREVPREVPREV }
                     is_drones_or_corvette = no
                 }
-                set_timed_ship_flag = { flag = invincible days = 6 }
+                set_timed_ship_flag = { flag = invincible days = 7 }
                 #临时加生命避免一击秒杀
                 if = {
                     limit = { has_hp < 1000 }
@@ -2125,9 +2125,9 @@ ship_event = {
         else_if = {
             limit = { has_ship_flag = enterprise_damage_control }
             random_list = {
-                # 50%概率氪金损管
-                1 = { repair_ship = yes }
-                1 = {}
+                # 70%概率氪金损管
+                7 = { repair_ship = yes }
+                3 = {}
             }
             set_disable_at_health = -1
             remove_ship_flag = enterprise_damage_control

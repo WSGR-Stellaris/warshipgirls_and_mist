@@ -73,6 +73,7 @@ portraits = {
 	wsg22	 =	{texturefile = "gfx/models/portraits/wsg22.dds"  }
 	wsg22_1	 =	{texturefile = "gfx/models/portraits/wsg22_1.dds"  }
 	wsg22_2	 =	{texturefile = "gfx/models/portraits/wsg22_2.dds"  }
+	wsg22_3	 =	{texturefile = "gfx/models/portraits/wsg22_3.dds"  }
 	wsg23	 =	{texturefile = "gfx/models/portraits/wsg23.dds"  }
 	wsg24	 =	{texturefile = "gfx/models/portraits/wsg24.dds"  }
 	wsg25	 =	{texturefile = "gfx/models/portraits/wsg25.dds"  }
@@ -628,6 +629,7 @@ portraits = {
 	wsg430	=	{texturefile = "gfx/models/portraits/wsg430.dds"  }
 	wsg432	=	{texturefile = "gfx/models/portraits/wsg432.dds"  }
 	wsg433	=	{texturefile = "gfx/models/portraits/wsg433.dds"  }
+	wsg9994	=	{texturefile = "gfx/models/portraits/wsg9994.dds"  }
 	wsg9995	=	{texturefile = "gfx/models/portraits/wsg9995.dds"  }	
 	wsg9996	=	{texturefile = "gfx/models/portraits/wsg9996.dds"  }
 	wsg9997	=	{texturefile = "gfx/models/portraits/wsg9997.dds"  }	
@@ -720,6 +722,7 @@ portrait_groups = {
 					wsg22
 					wsg22_1
 					wsg22_2
+					wsg22_3
 					wsg23
 					wsg24
 					wsg25
@@ -1355,6 +1358,7 @@ portrait_groups = {
 					wsg22
 					wsg22_1
 					wsg22_2
+					wsg22_3
 					wsg23
 					wsg24
 					wsg25
@@ -1991,6 +1995,7 @@ portrait_groups = {
 					wsg22
 					wsg22_1
 					wsg22_2
+					wsg22_3
 					wsg23
 					wsg24
 					wsg25
@@ -2626,6 +2631,7 @@ portrait_groups = {
 					wsg22
 					wsg22_1
 					wsg22_2
+					wsg22_3
 					wsg23
 					wsg24
 					wsg25
@@ -3261,6 +3267,7 @@ portrait_groups = {
 					wsg22
 					wsg22_1
 					wsg22_2
+					wsg22_3
 					wsg23
 					wsg24
 					wsg25

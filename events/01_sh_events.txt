@@ -1956,8 +1956,23 @@ country_event = {
 				has_planet_flag = wg_ring_world_start_planet
 			}
 			remove_district = district_farming
+			remove_district = district_farming
+			remove_district = district_farming
+			remove_district = district_farming
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
 			remove_district = district_generator
 			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_city
+			remove_district = district_city
+			remove_district = district_city
+			remove_district = district_city
 			remove_district = district_city
 			remove_district = district_farming
 			remove_district = district_generator
@@ -2052,4 +2067,142 @@ country_event = {
 		name = EXCELLENT
 		custom_tooltip = bombed_to_broken_world
 	}
+}
+#主宰开局
+country_event = {
+	id = sh.3034
+	hide_window = yes
+	location = event_target:sh_juggernaut
+	
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = origin_sh_juggernaut
+	}	
+	immediate = {
+		owner = {
+			save_event_target_as = sh_juggernaut_owner
+		}
+		random_owned_planet = {
+				limit = {
+					is_capital = yes
+			}
+			save_event_target_as = sh_juggernaut
+		}
+		create_fleet = {
+			name = "NAME_sh_juggernaut"
+			effect = {
+				set_owner = event_target:sh_juggernaut_owner
+				set_fleet_flag = sh_juggernaut_origin_flag
+				create_ship = {
+					name = random
+					design = "NAME_sh_juggernaut"
+					graphical_culture = "mammalian_01"
+					upgradable = no
+				}
+				add_modifier = {
+					modifier = sh_juggernaut
+					days = -1
+				}				
+			}
+			break = yes
+		}
+		country_event = { id = sh.3035 days = 15 } 
+	}
+}
+
+country_event = {
+	id = sh.3035
+	title = "sh.3035.name"
+	picture = GFX_evt_juggernaut
+	desc = sh.3035.desc
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sh.3035.a
+		custom_tooltip = sh.3035.a.tooltip
+		hidden_effect = {
+			country_event = { id = sh.3036 days = 5400 random = 1800 }
+		}		
+	}
+}
+country_event = {
+	id = sh.3036
+	title = "sh.3036.name"
+	picture = GFX_evt_synth_sabotage
+	desc = sh.3036.desc
+	show_sound = event_red_alert
+	location = from
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_fleet = { has_fleet_flag = sh_juggernaut_origin_flag }
+	}
+	
+	option = {
+		name = sh.3036.a
+		custom_tooltip = sh.3036.a.tooltip
+		hidden_effect = {
+			country_event = { id = sh.3037 days = 10 }
+		}		
+	}
+}
+country_event = {
+	id = sh.3037
+	title = "sh.3037.name"
+	picture = GFX_evt_large_explosion
+	show_sound = event_super_explosion
+	desc = sh.3037.desc
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sh.3037.a
+		custom_tooltip = sh.3037.a.tooltip
+		add_modifier = {
+			modifier = "sh_juggernaut2" 
+			days = -1
+		}
+		owner = {
+			add_resource = { alloys = 2500 }
+		}		
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = sh_juggernaut_origin_flag
+			}
+			delete_fleet = this
+		}		
+	}
+}
+
+country_event = {
+	id = sh.3038
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = origin_sh_invaded
+	}
+
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				is_capital = yes
+			}
+			add_district = district_generator
+			add_building = building_urban_dwellings_sh
+			add_deposit = d_bomb_crater
+			add_deposit = d_bomb_crater
+			remove_deposit = d_decrepit_dwellings
+			add_modifier = {
+				modifier = sh_invaded_origin
+					days = -1
+			}			
+		}
+		owner = {
+			add_resource = { sr_pantsu = 300 }
+		}		
+	}		
 }

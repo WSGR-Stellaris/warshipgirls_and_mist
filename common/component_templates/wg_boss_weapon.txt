@@ -1,0 +1,47 @@
+weapon_component_template = {
+	key = "wg_boss_weapen_ion"
+	size = large
+	entity = "large_kinetic_gun_entity"
+	type = instant
+	
+	icon = "GFX_wg_boss_weapen_ion"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 50 max = 90 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 2
+	range = 140.0
+	accuracy = 0.7
+	shield_damage  = 2.0
+	armor_damage = 2.5
+	hull_damage = 1.2
+	tracking = 0.10
+	power = -130
+	
+	hidden = yes
+	component_set = "wg_boss_weapen_ion"
+	projectile_gfx = "wsg_medium_turbolaser_l_b"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 150
+		}		
+		upkeep = {
+			energy = 1.0
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}

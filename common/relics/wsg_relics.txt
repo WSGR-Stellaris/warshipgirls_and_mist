@@ -143,3 +143,49 @@ r_united_fleet = {
 		}
 	}
 }
+
+r_uf = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_uf"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			influence = 10
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_weapon_damage = 0.05
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = r_uf_active
+		hidden_effect = {
+			country_event = { id = wg_parit.2333 }	
+		    set_global_flag = uf_hidden_actived	
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_uf_hidden_actived"
+			NOT = { has_global_flag = uf_hidden_actived }
+		}
+		custom_tooltip = {
+			fail_text = "requires_uf_insane"
+			has_global_flag = wg_crisis_insane
+			has_global_flag = wg_invasion_happened
+		}		
+	}	
+}

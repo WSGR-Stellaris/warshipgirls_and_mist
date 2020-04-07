@@ -48,7 +48,7 @@ building_sh_assembly_plant = {
 	}
 	
 	planet_modifier = {
-		planet_pop_assembly_add = 3
+		planet_pop_assembly_add = 2
 	}
 	
 	resources = {

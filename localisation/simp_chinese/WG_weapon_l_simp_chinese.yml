@@ -319,6 +319,8 @@
  WSG_BATTLESHIP_MID_L4:0 "重炮舰身"
  WSG_TITAN_MID_9L:0 "重炮舰身"
  SH_TITAN_MID_9L:0 "重炮舰身"
+ SH_CORE_JUGGERNAUT_SECTION:0 "巨炮主宰"
+ WSG_CORE_JUGGERNAUT_SECTION:0 "巨炮主宰"
  ##############
  WG_ARTILLERY_BEHAVIOR_DESC:0 "§H炮兵战术：§!飞船会在远距离（§Y180§!）开火，并用远距离武器攻击敌人。"
  WG_LINE_BEHAVIOR_DESC:0 "§H队列战术：§!飞船会保持在远距离（§Y150§!）并保持队形。"

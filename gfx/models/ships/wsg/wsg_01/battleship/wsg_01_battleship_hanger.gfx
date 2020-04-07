@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "wsg_01_battleship_hanger_mesh"
+		file = "gfx/models/ships/wsg/wsg_01/battleship/wsg_01_battleship_hanger.mesh"
+		scale = 1.3
+
+		meshsettings = {
+			name = "pasted__ScifiSpaceshipHangar1xShape"
+			index = 0
+			texture_diffuse = "ScifiSpaceshipStandardWeaponsAlbedo1.dds"
+			texture_normal = "ScifiSpaceshipStandardWeaponsNormal.dds"
+			texture_specular = "ScifiSpaceshipStandardWeaponsAlbedo_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

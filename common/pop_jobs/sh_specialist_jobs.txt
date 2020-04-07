@@ -23,39 +23,7 @@ sh_pantsu_maker = {
 	}
 	
 	weight = {
-		weight = 15
-		modifier = {
-			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
-		modifier = {
-			factor = 0.1
-			can_take_servant_job = yes
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 5
-			has_job = sh_pantsu_maker
-		}
-		modifier = {
-			factor = 15
-			has_job = sh_pantsu_maker
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 0
-			years_passed > 15
-			jobs_work_minerals = yes
-		}		
+		weight = 15		
 	}
 }
 
@@ -96,39 +64,7 @@ sh_foundry = {
 	}
 	
 	weight = {
-		weight = 15
-		modifier = {
-			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
-		modifier = {
-			factor = 0.1
-			can_take_servant_job = yes
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 5
-			has_job = foundry
-		}
-		modifier = {
-			factor = 15
-			has_job = foundry
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 0
-			years_passed > 15
-			jobs_work_minerals = yes
-		}		
+		weight = 15		
 	}
 }
 
@@ -162,39 +98,7 @@ sh_foundry_shpc = {
 	}
 	
 	weight = {
-		weight = 15
-		modifier = {
-			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
-		modifier = {
-			factor = 0.1
-			can_take_servant_job = yes
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 5
-			has_job = foundry
-		}
-		modifier = {
-			factor = 15
-			has_job = foundry
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 0
-			years_passed > 15
-			jobs_work_minerals = yes
-		}		
+		weight = 15		
 	}
 }
 
@@ -227,34 +131,7 @@ category = specialist
 	}	
 	
 	weight = {
-		weight = 15
-		modifier = {
-			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}	
-		modifier = {
-			factor = 0.1
-			can_take_servant_job = yes
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 7
-			has_job = sh_senergy
-		}
-		modifier = {
-			factor = 15
-			has_job = sh_senergy
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}		
+		weight = 15		
 	}
 }
 
@@ -287,7 +164,7 @@ sh_soldier = {
 	}	
 	
 	resources = {
-		category = planet_soldiers
+		category = planet_bureaucrats
 		upkeep = {
 			energy = 2
 			consumer_goods = 1
@@ -317,24 +194,7 @@ sh_soldier = {
 		owner = { is_gestalt = no }
 	}
 	
-
-		modifier = {
-			factor = 1.05
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 1.1
-			OR = {
-				has_trait = trait_robot_propaganda_machines
-				has_trait = trait_traditional
-			}
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_quarrelsome
-		}
-		modifier = {
-			factor = 0
-			can_be_soldier = no
+	weight = {
+		weight = 15
 	}
 }

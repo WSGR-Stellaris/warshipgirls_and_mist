@@ -117,7 +117,7 @@ building_wsg_branch_clover = {
 			minerals = 500
 		}	
 		produces = {
-			unity = 25
+			unity = 40
 		}	
 		upkeep = {
 			energy = 2

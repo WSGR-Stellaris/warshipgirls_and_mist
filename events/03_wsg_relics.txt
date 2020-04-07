@@ -425,12 +425,13 @@ event = {
 	fire_only_once = yes
 
 	trigger = {
+		NOT = { has_global_flag = triggered_wg_precursors }
 		mid_game_years_passed >= 2
 		any_country = {
 			is_ai = no
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
 			}
 		}
 	}
@@ -439,9 +440,9 @@ event = {
 		every_country = {
 			limit = {		
 				is_ai = no
-					OR = {
-						has_authority = auth_warshipgirls
-						has_authority = auth_shenhai
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
 				}		
 			}
 			country_event = { id = wsgancrel.101 random = 360  }	
@@ -459,6 +460,7 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		set_global_flag = triggered_wg_precursors
 		random_planet_within_border = {
 			limit = {
 				OR = {
@@ -673,7 +675,7 @@ fleet_event = {
 	id = wsgancrel.108
 	title = "wsgancrel.108.name"
 	desc = "wsgancrel.108.desc"
-	picture = GFX_evt_psionics
+	picture = GFX_evt_wsg_Sharan
 	show_sound = event_big_door_opening
 	
 	archaeology = yes
@@ -723,7 +725,7 @@ fleet_event = {
 	id = wsgancrel.110
 	title = "wsgancrel.110.name"
 	desc = "wsgancrel.110.desc"
-	picture = GFX_evt_clocks
+	picture = GFX_evt_wsg_Sharan
 	show_sound = event_mystic_reveal
 	
 	archaeology = yes

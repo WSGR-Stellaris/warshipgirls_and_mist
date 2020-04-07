@@ -5,7 +5,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "xray_laser_medium_hit_entity"
 	shield_hit_entity = "xray_laser_medium_shield_hit_entity"
 	muzzle_flash_entity = "xray_laser_medium_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -25,7 +24,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "xray_laser_medium_hit_entity"
 	shield_hit_entity = "xray_laser_medium_shield_hit_entity"
 	muzzle_flash_entity = "xray_laser_medium_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -44,7 +42,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "tachyon_lance_hit_entity"
 	shield_hit_entity = "tachyon_lance_shield_hit_entity"
 	muzzle_flash_entity = "tachyon_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = large
@@ -66,7 +63,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "blue_laser_medium_hit_entity"
 	shield_hit_entity = "blue_laser_medium_shield_hit_entity"
 	muzzle_flash_entity = "blue_laser_medium_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -86,7 +82,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "blue_laser_medium_hit_entity"
 	shield_hit_entity = "blue_laser_medium_shield_hit_entity"
 	muzzle_flash_entity = "blue_laser_medium_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -105,7 +100,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "tachyon_lance_hit_entity"
 	shield_hit_entity = "tachyon_lance_shield_hit_entity"
 	muzzle_flash_entity = "tachyon_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = large
@@ -128,7 +122,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "particle_lance_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -150,7 +143,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "particle_lance_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = medium
@@ -169,7 +161,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "particle_lance_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = large
@@ -190,7 +181,6 @@ projectile_gfx_ballistic = {
 	hit_entity = "scavenger_bot_main_weapon_hit_entity"
 	shield_hit_entity = "scavenger_bot_main_weapon_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
-	windup_entity = "ion_cannon_windup_entity"
 	
 	shield_impact = {
 		size = large

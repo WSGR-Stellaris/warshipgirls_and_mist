@@ -19,7 +19,7 @@ weapon_component_template = {
 	tracking = 1.0
 	power = -1
 	
-	prerequisites = { "tech_wsg_damage_control" }
+	prerequisites = { "tech_wg_badseal" }
 	component_set = "wg_seal_cannon"
 	projectile_gfx = "coilgun_s"
 	tags = { weapon_type_kinetic }

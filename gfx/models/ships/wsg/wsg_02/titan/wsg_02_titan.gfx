@@ -1,11 +1,11 @@
 objectTypes = {
 	pdxmesh = {
 		name = "wsg_02_titan_mesh"
-		file = "gfx/models/ships/wsg/wsg_02/titan/wsg_02_titan.mesh"
+		file = "gfx/models/ships/wsg/wsg_01/titan/wsg_01_titan.mesh"
 		scale = 1.0
 
 		meshsettings = {
-			name = "ScifiBattleshipValkyrieClassCapSingle5Shape"
+			name = "ScifiBattleshipValkyrieClassHullShape"
 			index = 0
 			texture_diffuse = "ScifiBattleshipValkyrieBlueAlbedo.dds"
 			texture_normal = "ScifiBattleshipValkyrieNormal.dds"

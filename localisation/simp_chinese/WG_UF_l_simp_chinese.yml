@@ -59,9 +59,18 @@
  leader_trait_admiral_united_fleet3:0 "联合舰队传奇司令"
  leader_trait_admiral_united_fleet3_desc:0 "联合舰队中最受人尊敬的传奇将领，被她们摧毁的文明已经不计其数。"
  
+ leader_trait_admiral_united_fleet4:0 "联合舰队奇迹"
+ leader_trait_admiral_united_fleet4_desc:0 "她们的出现，至少让我们知道了有些事情并不是不可能，并不是所有的尽头都是死路，只要我们不停下来，前面就一定会有路的。"
+ 
+ r_uf:0 "£sr_huaji£联合舰队炼狱难度£sr_huaji£"
+ r_uf_desc:0 "在天灾难度的联合舰队出现后，按下此遗臻，联合舰队炼狱难度将解锁。" 
+ requires_uf_hidden_actived:0 "§!§R炼狱难度已启动§!" 
+ r_uf_active:0 "启动联合炼狱难度"
+ requires_uf_insane:0 "§!§R联合舰队必须已经出现且难度为天灾§!"
+ 
  RA_weapen_S:0 "啄木鸟S型152火炮" 
  RA_weapen_L:0 "雨燕L型203火炮"
- RA_weapen_X:0 "信天翁381火炮" 
+ RA_weapen_X:0 "信天翁X型381火炮" 
  RA_weapen_X2:0 "信天翁X型381火炮" 
  RA_weapen_T:0 "猎隼T型533火炮" 
  RA_weapen_T2:0 "猎隼T型533火炮（全向）" 

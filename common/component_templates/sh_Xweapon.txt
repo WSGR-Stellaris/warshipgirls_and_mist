@@ -3,7 +3,7 @@ weapon_component_template = {
 	
 	key = "sh_weapen_UX"
 	size = extra_large
-	entity = "invisible_turret_entity"
+	
 	
 	icon = "GFX_sh_weapen_UX"
 	icon_frame = 1
@@ -55,7 +55,7 @@ weapon_component_template = {
 	
 	key = "sh_weapen_X"
 	size = extra_large
-	entity = "invisible_turret_entity"
+	
 	
 	icon = "GFX_sh_weapen_X"
 	icon_frame = 1
@@ -107,7 +107,7 @@ weapon_component_template = {
 	
 	key = "sh_weapen_X2"
 	size = extra_large
-	entity = "invisible_turret_entity"
+	
 	
 	icon = "GFX_sh_weapen_X2"
 	icon_frame = 1

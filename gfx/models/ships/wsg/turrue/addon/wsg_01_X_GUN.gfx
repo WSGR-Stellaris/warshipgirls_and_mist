@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "wsg_01_X_GUN_mesh"
+		file = "gfx/models/ships/wsg/turrue/addon/wsg_01_X_GUN.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "polySurface358Shape"
+			index = 0
+			texture_diffuse = "Type2 Diffuse Atlas UV.dds"
+			texture_normal = "Type 2 Normal Atlas UV.dds"
+			texture_specular = "Type2 Diffuse Atlas UV_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

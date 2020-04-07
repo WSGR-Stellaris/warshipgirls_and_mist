@@ -892,6 +892,10 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	trigger = {
+		NOT = { has_country_flag = dreadnought_allowed }
+	}
+
 
 	option = {
 		name = wsg.3034.a
@@ -1767,7 +1771,7 @@ country_event ={
 	id = wsg.3047
 	title = "wsg.3047.name"
 	desc = "wsg.3047.desc"
-	picture = GFX_evt_wsg_on_star2
+	picture = GFX_evt_wsg_on_star3
 	is_triggered_only = yes
 	fire_only_once = yes
 	force_open = yes
@@ -2160,6 +2164,7 @@ country_event = {
 
 	trigger = {
 		has_global_flag = wg_invasion_happened
+		NOT = { has_country_flag = struggle_edicts }
 	}
     mean_time_to_happen = {
         # for test, should be 12 months
@@ -2753,6 +2758,7 @@ country_event = {
 		fromfrom = { 
 			has_fleet_flag = lady_fleet	
 		}
+		NOT = { has_country_flag = gain_lady_Contingency }
 	}
 	immediate = {	
 		From = {
@@ -3512,4 +3518,160 @@ country_event = {
 			}
 		}
 	}
+}
+#####BADSEAL
+country_event = {
+	id = wsg.3111
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		any_country = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+			is_ai = no
+		}
+		NOT = { has_global_flag = wg_badseal_flag }
+	}
+	
+	immediate = {
+		set_global_flag = wg_badseal_flag
+		random_list = { 
+			10 = {
+				country_event = { id = wsg.3112 days = 720 } # for test, should be 720 days and 10%
+			}
+			90 = {
+			}	
+		}
+	}
+}
+
+country_event = {
+	id = wsg.3112
+	title = "wsg.3112.name"
+	desc = "wsg.3112.desc"
+	picture = GFX_evt_wg_badseal
+	is_triggered_only = yes
+		
+	option = {
+		name = "wsg.3112.a"
+		random_owned_planet = {
+				limit = {
+					is_capital = yes
+			}
+			add_modifier = {
+				modifier = planet_badseal
+				days = 480
+			}	
+		}		
+		hidden_effect = {
+			country_event = { id = wsg.3113 days = 480 }
+			set_country_flag = badseal_cannon_flag
+		}
+	}	
+}
+
+country_event = {
+	id = wsg.3113
+	title = "wsg.3113.name"
+	desc = "wsg.3113.desc"
+	picture = GFX_evt_wg_badseal_cannon
+	is_triggered_only = yes
+		
+	option = {
+		name = "wsg.3113.a"
+		owner={
+			give_technology = { tech = tech_wg_badseal }
+		}		
+		hidden_effect = {
+			country_event = { id = wsg.3114 days = 180 random = 180 }
+		}
+	}	
+}
+
+country_event = {
+	id = wsg.3114
+	title = "wsg.3114.name"
+	desc = "wsg.3114.desc"
+	picture = GFX_evt_ship_under_attack
+	is_triggered_only = yes
+		
+	option = {
+		name = "wsg.3114.a"
+		add_modifier = {
+			modifier = "wg_badseal1" 	
+			days = 480
+		}		
+		hidden_effect = {
+			country_event = { id = wsg.3115 days = 120 }
+		}
+	}	
+}
+
+country_event = {
+	id = wsg.3115
+	title = "wsg.3115.name"
+	desc = "wsg.3115.desc"
+	picture = GFX_evt_ship_under_attack
+	is_triggered_only = yes
+		
+	option = {
+		name = "wsg.3114.a"
+		add_modifier = {
+			modifier = "wg_badseal2" 	
+			days = 480
+		}		
+		hidden_effect = {
+			country_event = { id = wsg.3116 days = 480 }
+		}
+	}	
+}
+
+country_event = {
+	id = wsg.3116
+	title = "wsg.3116.name"
+	desc = "wsg.3116.desc"
+	picture = GFX_evt_wg_badseal
+	is_triggered_only = yes
+	immediate = {
+		random_owned_leader = {
+			set_leader_flag = bad_seal_food
+			save_event_target_as = bad_seal_food_target
+		}	
+	}		
+	option = {
+		name = "wsg.3116.a"		
+		hidden_effect = {
+			country_event = { id = wsg.3052 }
+		}
+	}
+	option = {
+		name = "wsg.3116.b"
+		owner = {
+			add_resource = { food = 1 }		
+		}		
+		hidden_effect = {
+			country_event = { id = wsg.3117 days = 10 }
+		}
+	}	
+}
+
+country_event = {
+	id = wsg.3117
+	title = "wsg.3117.name"
+	desc = "wsg.3117.desc"
+	picture = GFX_evt_emergency_workers
+	is_triggered_only = yes
+		
+	option = {
+		name = "wsg.3117.a"		
+		random_owned_leader = {
+		    limit = {
+				has_leader_flag = bad_seal_food
+			}	
+			add_trait = leader_trait_badseal
+		}		
+	}	
 }

@@ -406,7 +406,7 @@ leader_trait_admiral_Enterprise = {
 		ship_evasion_mult = 0.30
 		ship_fire_rate_mult = 0.15
 		ship_weapon_damage = 0.15
-		ship_weapon_range_mult = 0.5
+		ship_weapon_range_mult = 0.40
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
@@ -431,9 +431,9 @@ leader_trait_admiral_VV = {
 	modification = no
 	icon = "gfx/interface/icons/traits/VV.dds"
 	modifier = {
-		ship_weapon_damage = 0.45
-		ship_accuracy_add = -30
-		ship_accuracy_mult = -0.3
+		ship_weapon_damage = 0.40
+		ship_accuracy_add = -5
+		ship_accuracy_mult = -0.1
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }

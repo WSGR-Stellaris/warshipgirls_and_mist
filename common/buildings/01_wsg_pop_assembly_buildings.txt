@@ -126,7 +126,7 @@ building_warshipgirl_assembly_plantU = {
 	}
 	
 	planet_modifier = {
-		planet_pop_assembly_add = 6
+		planet_pop_assembly_add = 5
 	}
 	
 	resources = {
@@ -204,7 +204,7 @@ building_warshipgirl_assembly_plantF = {
 	}
 	
 	planet_modifier = {
-		planet_pop_assembly_add = 9
+		planet_pop_assembly_add = 7
 	}
 	
 	resources = {

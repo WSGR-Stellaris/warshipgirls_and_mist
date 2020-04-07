@@ -112,5 +112,10 @@ entity = {
 	name = "gatebuilder_wsg_strikecraft_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
 	scale = 1.5
+	locator = { name = "large_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 0 0 } }
 }
 

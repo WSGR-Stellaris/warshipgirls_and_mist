@@ -79,6 +79,18 @@ ship_design = {
 			template = "RA_weapen_L"
 		}
 		component = {
+			slot = "LARGE_GUN_07"
+			template = "RA_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "RA_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "RA_weapen_L"
+		}		
+		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "RA_weapen_IA"
 		}

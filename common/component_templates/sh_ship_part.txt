@@ -36,7 +36,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
 	icon_frame = 1
-	power = 1000
+	power = 1200
 	resources = {
 		category = ship_components
 		cost = {
@@ -64,7 +64,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
 	icon_frame = 1
-	power = 2500
+	power = 3000
 	resources = {
 		category = ship_components
 		cost = {
@@ -81,6 +81,7 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		cruiser
+		StrikeCruiser
 	}
 	ai_weight = {
 		weight = 5
@@ -92,7 +93,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
 	icon_frame = 1
-	power = 4000
+	power = 4500
 	resources = {
 		category = ship_components
 		cost = {
@@ -107,9 +108,7 @@ utility_component_template = {
 		"tech_sh_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = {
-		battleship
-	}
+	size_restriction = { battleship Battlecruiser escortcarrier explorationship }
 	ai_weight = {
 		weight = 5
 	}
@@ -120,7 +119,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
 	icon_frame = 1
-	power = 6400
+	power = 13000
 	resources = {
 		category = ship_components
 		cost = {
@@ -135,9 +134,7 @@ utility_component_template = {
 		"tech_sh_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = {
-		titan
-	}
+	size_restriction = { titan Dreadnought Carrier }
 	ai_weight = {
 		weight = 5
 	}
@@ -148,14 +145,12 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
 	icon_frame = 1
-	power = 20000
+	power = 40000
 	prerequisites = {
 		"tech_sh_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = {
-		colossus
-	}
+	size_restriction = { colossus Flagship }
 	ai_weight = {
 		weight = 5
 	}
@@ -267,14 +262,7 @@ utility_component_template = {
 	ai_weight = {
 		weight = 4
 	}
-	class_restriction = {
-		shipclass_military
-		shipclass_constructor
-		shipclass_colonizer
-		shipclass_science_ship
-		shipclass_transport
-		shipclass_military_special
-	}
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
 	prerequisites = {
 		"tech_sh_jump_drive"
 	}

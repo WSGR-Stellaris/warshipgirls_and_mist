@@ -802,6 +802,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项2（会退出）
 		name = wg_fe.160.e
@@ -813,6 +814,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项3（会退出）
 		name = wg_fe.160.f
@@ -824,6 +826,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking3
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 
 }
@@ -866,7 +869,6 @@ country_event = {
 			1 = { set_country_flag = wsg_lady_talking3 }
 		}
 		set_country_flag = talking_to_wsg_lady
-		set_country_flag = gray_diplomacy_engaged
 		if = {
 			limit = {
 				any_owned_planet = {
@@ -952,6 +954,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项2（会退出）
 		name = wg_fe.161.d
@@ -963,6 +966,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项3（会退出）
 		name = wg_fe.161.e
@@ -974,6 +978,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking3
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 }
 
@@ -1138,6 +1143,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项2（会退出）
 		name = wg_fe.162.d
@@ -1149,6 +1155,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项3（会退出）
 		name = wg_fe.162.e
@@ -1160,8 +1167,8 @@ country_event = {
 			remove_country_flag = wsg_lady_talking3
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
-
 }
 
 # 通讯界面（陆军）
@@ -1418,6 +1425,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项2（会退出）
 		name = wg_fe.163.d
@@ -1429,6 +1437,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项3（会退出）
 		name = wg_fe.163.e
@@ -1440,6 +1449,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking3
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 
 }
@@ -1507,7 +1517,18 @@ country_event = {
 			}
 			AND = {
 				has_country_flag = wsg_lady_army_active
-				NOT = { any_owned_army = { army_type = lady_army }}
+				NOT = { 
+					any_owned_army = { 
+						army_type = lady_army
+						OR = {
+							exists = planet
+							AND = {
+								exists = fleet
+								fleet = { num_ships > 0 }
+							}
+						}
+					}
+				}
 			}
 			AND = {
 				has_country_flag = wsg_lady_armed_science_active
@@ -1521,9 +1542,9 @@ country_event = {
 		remove_country_flag = wsg_lady_warship_active
 		remove_country_flag = wsg_lady_army_active
 		remove_country_flag = wsg_lady_armed_science_active
-		add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
+		add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 		country_event = { id = wg_fe.166 }
-		country_event = { id = wg_fe.170 days = 1800 }
+		country_event = { id = wg_fe.170 days = 180 }
 	}
 }
 
@@ -1583,8 +1604,8 @@ country_event = {
 		name = wg_fe.167.a
 		hidden_effect = {
 			remove_country_flag = wsg_lady_governer_active
-			add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
-			country_event = { id = wg_fe.170 days = 1800 }
+			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
+			country_event = { id = wg_fe.170 days = 180 }
 		}
 	}
 }
@@ -1622,8 +1643,8 @@ country_event = {
 		name = wg_fe.168.a
 		hidden_effect = {
 			remove_country_flag = wsg_lady_warship_active
-			add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
-			country_event = { id = wg_fe.170 days = 1800 }
+			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
+			country_event = { id = wg_fe.170 days = 180 }
 		}
 	}
 }
@@ -1667,8 +1688,8 @@ country_event = {
 		name = wg_fe.169.a
 		hidden_effect = {
 			remove_country_flag = wsg_lady_army_active
-			add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
-			country_event = { id = wg_fe.170 days = 1800 }
+			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
+			country_event = { id = wg_fe.170 days = 180 }
 		}
 	}
 }
@@ -1751,19 +1772,28 @@ country_event = {
 			NOR = { 
 				has_country_flag = talking_to_wsg_lady
 				has_country_flag = wsg_lady_changing
+				has_modifier = wsg_lady_recover_cd
+				any_owned_army = { 
+					army_type = lady_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
 			}
-			NOT = { has_modifier = wsg_lady_recover_cd }
 			has_country_flag = wsg_lady_army_active
-			NOT = { any_owned_army = { army_type = lady_army }}
 		}
 	}
 
 	immediate = {
 		FROM = {
 			remove_country_flag = wsg_lady_army_active
-			add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
+			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 			country_event = { id = wg_fe.174 }
-			country_event = { id = wg_fe.170 days = 1800 }
+			country_event = { id = wg_fe.170 days = 180 }
 		}
 	}
 }
@@ -1780,6 +1810,16 @@ country_event = {
 			has_country_flag = talking_to_wsg_lady
 			has_country_flag = wsg_lady_changing
 			has_modifier = wsg_lady_recover_cd
+			any_owned_army = { 
+				army_type = lady_army
+				OR = {
+					exists = planet
+					AND = {
+						exists = fleet
+						fleet = { num_ships > 0 }
+					}
+				}
+			}
 		}
 		has_country_flag = wsg_lady_army_active
 	}
@@ -1832,9 +1872,9 @@ country_event = {
 
 	immediate = {
 		remove_country_flag = wsg_lady_army_active
-		add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
+		add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 		country_event = { id = wg_fe.174 }
-		country_event = { id = wg_fe.170 days = 1800 }
+		country_event = { id = wg_fe.170 days = 180 }
 	}
 }
 
@@ -2058,6 +2098,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项2（会退出）
 		name = wg_fe.178.e
@@ -2069,6 +2110,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 	option = { # 调戏选项3（会退出）
 		name = wg_fe.178.f
@@ -2080,6 +2122,7 @@ country_event = {
 			remove_country_flag = wsg_lady_talking3
 			remove_country_flag = talking_to_wsg_lady
 		}
+		default_hide_option = yes
 	}
 
 }
@@ -2116,8 +2159,8 @@ country_event = {
 				kill_leader = { show_notification = no }
 			}
 			remove_country_flag = wsg_lady_armed_science_active
-			add_modifier = { modifier = wsg_lady_recover_cd days = 1800 }
-			country_event = { id = wg_fe.170 days = 1800 }
+			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
+			country_event = { id = wg_fe.170 days = 180 }
 		}
 	}
 }

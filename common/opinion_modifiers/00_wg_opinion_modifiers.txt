@@ -249,7 +249,7 @@ opinion_wsg_to_wgfe = {
 
 	opinion = {
 		modifier = {
-			add = 200
+			add = 300
 			has_authority = auth_warshipgirls
 		}	
 	}
@@ -263,7 +263,7 @@ opinion_sh_to_wgfe = {
 
 	opinion = {
 		modifier = {
-			add = 200
+			add = 300
 			has_authority = auth_shenhai	
 			NOR = { 
 				has_civic = civic_CM
@@ -334,6 +334,50 @@ opinion_wg_doom_fe = {
 		modifier = {
 			add = -20	
 			is_wg_fallen_empire = yes			
+		}		
+	}
+}
+
+opinion_wsg_diplomacy = {
+	trigger = {
+		FROM = {
+			has_origin = origin_wsg_diplomacy
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 20
+			NOT = { has_authority = auth_shenhai }
+			NOT = { is_country_type = fallen_empire }
+		}	
+	}
+}
+
+opinion_wsg_diplomacy2 = {
+	trigger = {
+		FROM = {
+			NOT = { has_authority = auth_shenhai }	
+		}
+	}
+
+	opinion = {
+		modifier = {
+			add = 20
+			has_origin = origin_wsg_diplomacy
+		}	
+	}
+}
+
+opinion_sh_to_wsg_diplomacy = {
+	trigger = {
+		has_authority = auth_shenhai
+		NOT = { has_ascension_perk = ap_shenhai_icebreaking }			
+	}				
+	opinion = {
+		modifier = {
+			add = -50	
+			from = { has_origin = origin_wsg_diplomacy }		
 		}		
 	}
 }

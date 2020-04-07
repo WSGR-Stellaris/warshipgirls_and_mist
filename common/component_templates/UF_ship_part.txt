@@ -354,7 +354,7 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "UF_weapen_L"
 	size = large
-	entity = "large_laser_gun_entity"
+	entity = "large_kinetic_gun_entity"
 	type = instant
 	hidden = yes
 	
@@ -408,7 +408,7 @@ weapon_component_template = {
 	icon = "GFX_UF_weapen_X"
 	icon_frame = 1
 	
-	firing_arc = 60.0
+	firing_arc = 90.0
 	static_rotation = yes
 	use_ship_kill_target = no
 	
@@ -449,14 +449,13 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "UF_weapen_X2"
 	size = extra_large
-	entity = "invisible_turret_entity"
 	type = instant
 	hidden = yes
 	
 	icon = "GFX_UF_weapen_X2"
 	icon_frame = 1
 	
-	firing_arc = 90.0
+	firing_arc = 150.0
 	static_rotation = yes
 	use_ship_kill_target = no
 	
@@ -665,6 +664,7 @@ utility_component_template = {
 		ship_weapon_range_mult = 0.25
 		ship_tracking_add = 10
 		ship_speed_reduction = 0.2
+		ship_engagement_range_mult = 1.0
 	}
 	
 	ai_weight = {
@@ -756,6 +756,7 @@ utility_component_template = {
 	}
 	ship_modifier = {
 		ship_fire_rate_mult = 0.30
+		ship_engagement_range_mult = 1.2
 	}
 	
 	ai_weight = {
@@ -993,6 +994,31 @@ utility_component_template = {
 			}
 		}
 	}	
+	friendly_aura = {
+		name = "aura_shield_dampener"
+		radius = 500
+		apply_on = ships
+		
+		stack_info = {			
+			id = UF_AURA_52
+			priority = 200
+		}
+		
+		modifier = {
+			force_disparity_fire_rate_mult = 0.5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}	
 	ai_weight = {
 		weight = 10
 		modifier = {
@@ -1022,10 +1048,10 @@ utility_component_template = {
 		}
 		damage_per_day = {
 			accuracy = 1.0
-			damage = { min = 4 max = 10 }
+			damage = { min = 10 max = 15 }
 			
-			shield_penetration = 1.5
-			armor_penetration = 1.5
+			shield_penetration = 1.0
+			armor_penetration = 1.0
 		}		
 		graphics = {
 			area_effect = {

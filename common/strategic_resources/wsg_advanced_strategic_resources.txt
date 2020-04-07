@@ -59,3 +59,53 @@ sr_se = {
 		weight = 100
 	}
 }
+
+
+sr_ring = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}
+
+sr_wg_up = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}
+
+
+sr_wg_down = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}
+
+sr_huaji = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}

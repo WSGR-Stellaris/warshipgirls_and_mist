@@ -162,6 +162,9 @@ ship_section_template = {
 	}
 }
 
+
+#####################################################################
+
 #BB
 ship_section_template = {
 	key = "WG_EG_BB_BOW"
@@ -383,6 +386,9 @@ ship_section_template = {
 	aux_utility_slots = 2
 }
 
+
+####################################################
+
 #DD
 ship_section_template = {
 	key = "WG_EG_DD_BOW"
@@ -479,6 +485,9 @@ ship_section_template = {
 	aux_utility_slots = 2
 	
 }
+
+
+#################################################################
 
 ship_section_template = {
 	key = "WG_CARRIER_mid"
@@ -582,6 +591,9 @@ ship_section_template = {
 	}	
 }
 
+
+#####################################################
+
 # Dimensional Portal
 ship_section_template = {
 	key = "wg_dimensional_portal"
@@ -604,6 +616,8 @@ ship_section_template = {
 		locatorname = "titan_gun_01"
 	}	
 }
+
+#####################################################
 
 #starbase
 ship_section_template = {
@@ -773,13 +787,16 @@ ship_section_template = {
 	aux_utility_slots = 3
 }
 
+
+##########################################################
+
 #Cruiser
 ship_section_template = {
 	key = "WG_EG_CA_BOW"
 	ship_size = wg_cruiser
 	fits_on_slot = bow
 	should_draw_components = yes
-	entity = "cruiser_bow_M2_entity"
+	entity = "wg_cruiser_bow_M2_entity"
 	icon = "GFX_ship_part_core_bow"
 	
 	component_slot = {
@@ -810,7 +827,7 @@ ship_section_template = {
 	ship_size = wg_cruiser
 	fits_on_slot = mid
 	should_draw_components = yes
-	entity = "cruiser_mid_L1M1_entity"
+	entity = "wg_cruiser_mid_L1M1_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	ai_weight = {
@@ -876,7 +893,7 @@ ship_section_template = {
 	ship_size = wg_cruiser
 	fits_on_slot = stern
 	should_draw_components = yes
-	entity = "cruiser_stern_S2_entity"
+	entity = "wg_cruiser_stern_S2_entity"
 	icon = "GFX_ship_part_core_stern"
 
 	component_slot = {

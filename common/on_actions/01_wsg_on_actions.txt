@@ -4,8 +4,8 @@ on_game_start_country = {
 	events = {
 		wsg.1
 		wsg.3
-		wsg.4
 		wsg.5
+		wsg.6
 		wg_fe.4
 		sh.1
 		sh.2
@@ -20,7 +20,10 @@ on_game_start_country = {
 		wsg.3076
 		wsgancrel.1191
 		sh.3030
-		wg_parit.1
+		sh.3034
+		sh.3038
+		wsg.3111
+		wg_boss.1
 	}
 }
 
@@ -28,7 +31,8 @@ on_game_start = {
   events = {
     wg_traits.1
 	sh_traits.1
-	
+	wsg.4
+	wg_parit.1
   }
 }
 
@@ -62,7 +66,6 @@ on_yearly_pulse = {
 	sh_traits.2
 	sh.3016	
 	wsgancrel.100
-	sh.3016
   }
 }
 on_yearly_pulse_country = {
@@ -154,6 +157,7 @@ on_ship_destroyed_victim = {
 	events = {
 		wg_crisis.11
 		wg_crisis.44
+		wg_boss.3
 		
 	}	
 }
@@ -314,6 +318,7 @@ on_planet_attackers_win = {
 	events = {
 		wsg.3039
 		wg_fe.172
+		wg_parit.6
 	}
 }
 
@@ -336,6 +341,7 @@ on_entering_system = {
 	events = {
 		wsg.3100
 		wg_parit.5
+		wg_boss.5
 	}
 }
 

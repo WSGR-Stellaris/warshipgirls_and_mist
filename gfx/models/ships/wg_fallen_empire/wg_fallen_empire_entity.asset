@@ -261,14 +261,14 @@ entity = {
 
 entity = {
 	name = "wsg_04_missle_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "medium_missle_turret_mesh"
 	
 	scale = 1.00
 }
 
 entity = {
 	name = "wsg_04_turret_energy_torpedo_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "large_missle_turret_mesh"
 	
 	state = { name = "idle"	}
 	state = { name = "attack" looping = no next_state = "idle"
@@ -278,7 +278,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_torpedo_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "large_missle_turret_mesh"
 	
 	state = { name = "idle"	}
 	state = { name = "attack" looping = no next_state = "idle"
@@ -288,7 +288,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_missile_large_entity"
-	pdxmesh = "large_turret_mesh"
+	pdxmesh = "large_missle_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -298,7 +298,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_missile_medium_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_missle_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "idle" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -308,7 +308,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_missile_small_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_missle_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -328,7 +328,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_kinetic_gun_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -338,7 +338,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_kinetic_gun_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -351,7 +351,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_point_defence_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "medium_turrets_pd_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -365,7 +365,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_large_laser_gun_entity"
-	pdxmesh = "large_turret_mesh"
+	pdxmesh = "large_turrets_E_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -375,7 +375,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_laser_gun_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turrets_E_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -385,7 +385,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_laser_gun_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turrets_E_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -400,7 +400,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_octuple_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "medium_turrets_E_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -417,7 +417,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_space_amoeba_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -427,7 +427,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_space_amoeba_weapon_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -449,7 +449,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_space_cloud_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -471,7 +471,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_crystal_ship_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -481,7 +481,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_crystal_ship_weapon_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -503,7 +503,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_mining_drone_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -513,7 +513,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_mining_drone_weapon_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -525,7 +525,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_space_whale_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -535,7 +535,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_space_whale_weapon_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -557,7 +557,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_small_scourge_projectile_weapon_entity"
-	pdxmesh = "small_turrets_mesh"
+	pdxmesh = "small_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -567,7 +567,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_medium_scourge_projectile_weapon_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "medium_turret_mesh"
 	
 	state = { name = "idle"	animation = "idle" animation_blend_time = 0.25 }
 	state = { name = "attack" animation = "attack" animation_blend_time = 0.25 looping = no next_state = "idle"
@@ -577,7 +577,7 @@ entity = {
 
 entity = {
 	name = "wsg_04_turret_xl_entity"
-	pdxmesh = "medium_turrets_mesh"
+	pdxmesh = "large_turrets_E_mesh"
 	
 	state = { name = "idle"	}
 	state = { name = "attack" looping = no next_state = "idle"

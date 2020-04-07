@@ -1,0 +1,44 @@
+objectTypes = {
+	pdxmesh = {
+		name = "large_missle_turret_mesh"
+		file = "gfx/models/ships/wsg/turrue/addon/large_missle_turret.mesh"
+		scale = 1.2
+
+		meshsettings = {
+			name = "pasted__polySurface419Shape"
+			index = 0
+			texture_diffuse = "Type2 Diffuse Atlas UV.dds"
+			texture_normal = "Type 2 Normal Atlas UV.dds"
+			texture_specular = "Type2 Diffuse Atlas UV_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {
+		name = "medium_missle_turret_mesh"
+		file = "gfx/models/ships/wsg/turrue/addon/large_missle_turret.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pasted__polySurface419Shape"
+			index = 0
+			texture_diffuse = "Type2 Diffuse Atlas UV.dds"
+			texture_normal = "Type 2 Normal Atlas UV.dds"
+			texture_specular = "Type2 Diffuse Atlas UV_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {
+		name = "small_missle_turret_mesh"
+		file = "gfx/models/ships/wsg/turrue/addon/large_missle_turret.mesh"
+		scale = 0.7
+
+		meshsettings = {
+			name = "pasted__polySurface419Shape"
+			index = 0
+			texture_diffuse = "Type2 Diffuse Atlas UV.dds"
+			texture_normal = "Type 2 Normal Atlas UV.dds"
+			texture_specular = "Type2 Diffuse Atlas UV_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

@@ -603,6 +603,7 @@ set_ra_admiral_datas = {
     hidden_effect = {
         clear_all_admiral_flags = yes
         remove_country_flag = remain_admiral_list
+        remove_country_flag = ra_diplo_engaged
         set_timed_country_flag = { flag = recruited_resistant_leader days = 360 }
         set_variable = { which = "recruit_leader_cd" value = 360 }
         set_variable = { which = "refresh_days" value = 0 }

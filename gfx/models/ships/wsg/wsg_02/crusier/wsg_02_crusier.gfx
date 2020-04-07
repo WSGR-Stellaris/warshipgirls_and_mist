@@ -1,11 +1,11 @@
 objectTypes = {
 	pdxmesh = {
 		name = "wsg_02_crusier_mesh"
-		file = "gfx/models/ships/wsg/wsg_02/crusier/wsg_02_crusier.mesh"
+		file = "gfx/models/ships/wsg/wsg_01/crusier/wsg_01_crusier.mesh"
 		scale = 1.0
 
 		meshsettings = {
-			name = "ScifiHeavyCruiserMaelstromCapShape"
+			name = "ScifiHeavyCruiserMaelstromHullShape"
 			index = 0
 			texture_diffuse = "ScifiHeavyCruiserMaelstromBlueAlbedo.dds"
 			texture_normal = "ScifiHeavyCruiserMaelstromNormal.dds"

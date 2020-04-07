@@ -141,12 +141,9 @@ ship_section_template = {
 	prerequisites = { "tech_uav4" }
 	component_slot = {
 		name = "EXTRA_LARGE_01"
-		template = "invisible_extra_large_fixed"
+		template = "extra_large_turret"
 		
 		locatorname = "xl_gun_01"
-	}
-	ship_modifier = {
-		ship_weapon_range_mult = -0.30
 	}
 	resources = {
 		category = ship_sections

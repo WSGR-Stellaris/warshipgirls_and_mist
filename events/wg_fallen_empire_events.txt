@@ -126,6 +126,7 @@ country_event = {
 		NOR = { 
 			num_fallen_empires < 1 
 			any_system = { has_star_flag = wg_fallen_empire_capital_system }
+			has_global_flag = created_wg_fallen_empire
 		}
 	}
 
@@ -798,7 +799,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				owner_main_species = {
+				owner_species = {
 					NAND = {
 						is_same_species = event_target:fe_species_wsg 
 						has_trait = wsg_trait_warshipgirls1
@@ -822,7 +823,7 @@ country_event = {
 							has_ascension_perk = ap_shenhai_silent
 						}
 					}
-					owner_main_species = {
+					owner_species = {
 						save_event_target_as = saved_species
 					}
 				}
@@ -876,17 +877,17 @@ country_event = {
 		city_level = event_target:wg_fallen_empire
 		room = event_target:wg_fallen_empire.ruler
 	}
+
 	diplomatic = yes
-	force_open = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = given_dark_matter_tech
 		random_owned_planet = {
 			limit = {
-				num_pops > 5
-				any_owned_pop = {
-					is_same_species = root
+				count_owned_pops = {
+					limit = { species = { is_same_value = root.owner_species }}
+					count >= 5
 				}
 			}
 			save_event_target_as = wg_fe_task_planet
@@ -969,7 +970,7 @@ country_event = {
 			event_target:wg_fe_task_planet = {
 				random_pop = {
 					limit = {
-						is_same_species = root
+						is_same_species = root.owner_species
 					}
 					kill_pop = yes
 				}
@@ -1008,7 +1009,12 @@ country_event = {
 		exists = event_target:wg_fallen_empire
 		is_wg_fallen_empire = yes
 		end_game_years_passed >= 5
-		NOT = { has_global_flag = wg_crisis_disabled }
+		NOR = { 
+			has_global_flag = wg_crisis_disabled
+			has_global_flag = triggered_wgfe_crisis_event
+			has_global_flag = wg_fallen_empire_awakened
+			has_global_flag = triggered_wgfe_crisis_event2
+		}
 		OR = {
 			has_global_flag = wg_crisis_easy
 			has_global_flag = wg_crisis_normal
@@ -1019,6 +1025,7 @@ country_event = {
 	}
 
 	immediate = {
+		set_global_flag = triggered_wgfe_crisis_event
 		random_list = {
 			10 = { # 觉醒
 				modifier = {
@@ -1079,9 +1086,11 @@ country_event = {
 	id = wg_fe.22
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	trigger = {
 		exists = event_target:wg_fallen_empire
+		NOT = { has_global_flag = wg_fallen_empire_awakened }
 	}
 
 	immediate = {
@@ -1261,6 +1270,7 @@ country_event = {
 		exists = event_target:wg_fallen_empire
 		has_global_flag = wg_invasion_happened
 		is_wg_fallen_empire = yes
+		has_global_flag = wg_fallen_empire_awakened
 	}
 
 	immediate = {
@@ -1287,6 +1297,10 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_fallen_empire_awakened }
+	}
 
 	immediate = {
 		every_playable_country = { # 舰娘/深海通知
@@ -1354,7 +1368,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	trigger = {
+		NOT = { has_global_flag = triggered_wgfe_crisis_event2 }
+	}
+
 	immediate = {
+		set_global_flag = triggered_wgfe_crisis_event2
 		every_country = { # 舰娘/深海通知
 			limit = {
 				OR = {
@@ -1618,7 +1637,11 @@ country_event = {
 									has_authority = auth_shenhai
 									NOT = { has_technology = tech_wsg_pantsu }
 								}
-							}
+                            }
+                            modifier = {
+                                factor = 2
+                                mid_game_years_passed > 2
+                            }
 							country_event = { id = wg_fe.121 }
 						}
 						5 = {
@@ -1629,7 +1652,11 @@ country_event = {
 									has_country_flag = start_game_console_event
 									has_country_flag = finish_game_console_event
 								}
-							}
+                            }
+                            modifier = {
+                                factor = 2
+                                mid_game_years_passed > 2
+                            }
 							set_country_flag = start_game_console_event
 							country_event = { id = wg_fe.110 }
 						}
@@ -1637,7 +1664,11 @@ country_event = {
 							modifier = {
 								factor = 0
 								has_country_flag = triggered_wows_event
-							}
+                            }
+                            modifier = {
+                                factor = 2
+                                mid_game_years_passed > 2
+                            }
 							set_country_flag = triggered_wows_event
 							country_event = { id = wg_fe.125 }
 						}
@@ -1657,7 +1688,11 @@ country_event = {
 									is_at_war = no
 									years_passed < 40
 								}
-							}
+                            }
+                            modifier = {
+                                factor = 0.2
+                                mid_game_years_passed > 20
+                            }
 							modifier = {
 								add = -2
 								check_variable = { which = "give_fe_fleet" value > 0 }
@@ -1695,7 +1730,11 @@ country_event = {
 										any_owned_fleet = { has_fleet_flag = lady_fleet }
 									}
 								}
-							}
+                            }
+                            modifier = {
+                                factor = 2
+                                mid_game_years_passed > 20
+                            }
 							country_event = { id = wg_fe.138 }
 						}
 					}

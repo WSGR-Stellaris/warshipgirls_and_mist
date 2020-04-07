@@ -49,10 +49,10 @@ uf_navigator = {
 	collision_radius = 5
 	modifier = {
 		ship_evasion_add = 180
-		ship_shield_add = 300000
-		ship_armor_add = 300000		
+		ship_shield_add = 300000000
+		ship_armor_add = 300000000
 	}
-	max_hitpoints = 300000
+	max_hitpoints = 300000000
 	size_multiplier = 500
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }

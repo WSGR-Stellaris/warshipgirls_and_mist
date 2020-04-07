@@ -75,28 +75,28 @@ country_event = {
                 switch = {
                     trigger = has_global_flag
                     wg_crisis_normal = { #困难难度
-                        set_variable = { which = "ra_leader_limit" value = 7 } # 困难非vip可买8个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 9 } # 困难vip可买10个将领
+                        set_variable = { which = "ra_leader_limit" value = 9 } # 困难非vip可买9个将领
+                        set_variable = { which = "ra_leader_limit_vip" value = 11 } # 困难vip可买11个将领
                         set_variable = { which = "ra_fleet_buy_limit" value = 10 } # 困难非vip可买10队船
                         set_variable = { which = "ra_fleet_buy_limit_vip" value = 12 } # 困难vip可买12队船
                         set_variable = { which = "ra_fleet_own_limit" value = 5 } # 困难非vip最多有5队船
                         set_variable = { which = "ra_fleet_own_limit_vip" value = 7 } # 困难vip最多有7队船
                     }
                     wg_crisis_hard = { #萌新难度
-                        set_variable = { which = "ra_leader_limit" value = 6 } # 萌新非vip可买7个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 8 } # 萌新vip可买9个将领
+                        set_variable = { which = "ra_leader_limit" value = 8 } # 萌新非vip可买8个将领
+                        set_variable = { which = "ra_leader_limit_vip" value = 10 } # 萌新vip可买10个将领
                         set_variable = { which = "ra_fleet_buy_limit" value = 9 } # 萌新非vip可买9队船
                         set_variable = { which = "ra_fleet_buy_limit_vip" value = 11 } # 萌新vip可买11队船
-                        set_variable = { which = "ra_fleet_own_limit" value = 4 } # 萌新非vip最多有4队船
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = 5 } # 萌新vip最多有5队船
+                        set_variable = { which = "ra_fleet_own_limit" value = 5 } # 萌新非vip最多有5队船
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = 6 } # 萌新vip最多有6队船
                     }
                     wg_crisis_insane = { #天灾难度
-                        set_variable = { which = "ra_leader_limit" value = 5 } # 天灾非vip可买5个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 6 } # 天灾vip可买6个将领
-                        set_variable = { which = "ra_fleet_buy_limit" value = 7 } # 天灾非vip可买7队船
-                        set_variable = { which = "ra_fleet_buy_limit_vip" value = 9 } # 天灾vip可买9队船
-                        set_variable = { which = "ra_fleet_own_limit" value = 3 } # 天灾非vip最多有3队船
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = 4 } # 天灾vip最多有4队船
+                        set_variable = { which = "ra_leader_limit" value = 7 } # 天灾非vip可买7个将领
+                        set_variable = { which = "ra_leader_limit_vip" value = 9 } # 天灾vip可买9个将领
+                        set_variable = { which = "ra_fleet_buy_limit" value = 8 } # 天灾非vip可买8队船
+                        set_variable = { which = "ra_fleet_buy_limit_vip" value = 10 } # 天灾vip可买10队船
+                        set_variable = { which = "ra_fleet_own_limit" value = 4 } # 天灾非vip最多有4队船
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = 5 } # 天灾vip最多有5队船
                     }
                 }
             }
@@ -223,12 +223,16 @@ country_event = {
             is_country_type = wg_resistant_army 
             is_same_value = ROOT
         }}
-        #OR = { 
+        OR = { 
             #防止视窗多开
-		#    ra_active_diplo = no 
-		#    from = { is_same_value = root }
-        #}
+            NOT = { has_country_flag = ra_diplo_engaged }
+            ra_active_diplo = no
+		    FROM = { is_same_value = root }
+        }
         is_ai = no
+    }
+    immediate = {
+        set_country_flag = ra_diplo_engaged
     }
 
     # 普通帝国买船
@@ -523,7 +527,9 @@ country_event = {
         hidden_effect = {
             remove_country_flag = ra_vip
             remove_modifier = ra_vip
+            remove_country_flag = ra_diplo_engaged
         }
+        
     }
 
     # 取消成为vip (深海)
@@ -544,12 +550,14 @@ country_event = {
         hidden_effect = {
             remove_country_flag = ra_vip
             remove_modifier = ra_vip
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
     option = {
         name = wg_crisis.23.g
-        response_text = wg_crisis.23.g.response
+        default_hide_option = yes
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
     }
 }
 
@@ -756,8 +764,6 @@ country_event = {
         }
         text = wg_crisis.24.desc.b.others_vip_buy0_own0
     }
-    
-
     # 其他帝国买船
     option = {
         trigger = {
@@ -794,6 +800,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd1" value = 120 }
             set_variable = { which = "ra_fleet_cd1" value = 1200 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -830,6 +837,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd1" value = 120 }
             set_variable = { which = "ra_fleet_cd1" value = 1200 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -867,6 +875,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd2" value = 120 }
             set_variable = { which = "ra_fleet_cd2" value = 1200 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -890,6 +899,8 @@ country_event = {
 
     option = {
         name = wg_crisis.24.c
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
+        default_hide_option = yes
     }
 
     option = {
@@ -971,6 +982,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd1" value = 1080 }
             set_variable = { which = "ra_fleet_cd1" value = 2160 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -1001,6 +1013,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd1" value = 720 }
             set_variable = { which = "ra_fleet_cd1" value = 1800 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -1031,6 +1044,7 @@ country_event = {
             set_variable = { which = "ra_construct_cd1" value = 600 }
             set_variable = { which = "ra_fleet_cd1" value = 1320 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
 
@@ -1062,12 +1076,14 @@ country_event = {
             set_variable = { which = "ra_construct_cd2" value = 600 }
             set_variable = { which = "ra_fleet_cd2" value = 1320 }
             change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
         }
     }
  
     option = {
         name = wg_crisis.25.b
-        response_text = wg_crisis.25.b.response
+        remove_country_flag = ra_diplo_engaged
+        default_hide_option = yes
     }
 
     option = {
@@ -1904,8 +1920,6 @@ country_event = {
 country_event = {
     id = wg_crisis.37
     hide_window = yes
-	fire_only_once = yes
-
     trigger = {
         has_global_flag = wg_resistant_army_arrived
         is_country_type = wg_resistant_army
@@ -1916,7 +1930,7 @@ country_event = {
     }
 
 	mean_time_to_happen = {
-		months = 1
+		months = 6
 	}
 
     immediate = {
@@ -1927,15 +1941,18 @@ country_event = {
             }
         }
         else_if = {
-            limit = { NOT = { has_global_flag = second_portal_destroyed }}
-            event_target:second_portal_system = {
-                save_event_target_as = portal_system
+            limit = { has_global_flag = wg_crisis_insane }
+            if = {
+                limit = { NOT = { has_global_flag = second_portal_destroyed }}
+                event_target:second_portal_system = {
+                    save_event_target_as = portal_system
+                }
             }
-        }
-        else_if = {
-            limit = { NOT = { has_global_flag = third_portal_destroyed }}
-            event_target:third_portal_system = {
-                save_event_target_as = portal_system
+            else_if = {
+                limit = { NOT = { has_global_flag = third_portal_destroyed }}
+                event_target:third_portal_system = {
+                    save_event_target_as = portal_system
+                }
             }
         }
         every_owned_fleet = {
@@ -1981,6 +1998,7 @@ country_event = {
             set_country_flag = ra_vip
             set_timed_country_flag = { flag = cancel_vip_cd days = 1440 }
         }
+        remove_country_flag = ra_diplo_engaged
     }
 
     option = {
@@ -1992,16 +2010,21 @@ country_event = {
             set_country_flag = ra_vip
             set_timed_country_flag = { flag = cancel_vip_cd days = 1440 }
         }
+        remove_country_flag = ra_diplo_engaged
     }
 
     option = {
         trigger = { has_authority = auth_warshipgirls }
         name = wg_crisis.38.b
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
+        default_hide_option = yes
     }
 
     option = {
         trigger = { has_authority = auth_shenhai }
         name = wg_crisis.38.c
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
+        default_hide_option = yes
     }
 
     option = {
@@ -2012,6 +2035,7 @@ country_event = {
     }
 }
 
+# 循环刷反抗军进攻传送门舰队
 country_event = {
     id = wg_crisis.62
     hide_window = yes
@@ -2222,11 +2246,13 @@ country_event = {
         response_text = wg_crisis.59.c.response
         add_modifier = { modifier = buff_vs_uf days = -1 }
         add_resource = { energy = -2000 }
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
     }
 
     option = {
         name = wg_crisis.59.d
-        response_text = wg_crisis.59.d.response
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
+        default_hide_option = yes
     }
 
     option = {
@@ -2869,117 +2895,146 @@ country_event = {
         }
         random_owned_fleet = {
             limit = { has_fleet_flag = second_chosen_fleet }
-            set_variable = { which = "new_titan_count" value = "titan_count" }
-            set_variable = { which = "new_bb_count" value = "bb_count" }
-            set_variable = { which = "new_dd_count" value = "dd_count" }
             save_event_target_as = second_fleet
-            ROOT = { 
-                # 计算各种战舰数量
-                set_variable = { which = "new_titan_count" value = PREV }
-                change_variable = { which = "new_titan_count" value = "titan_count" }
-                set_variable = { which = "new_bb_count" value = PREV }
-                change_variable = { which = "new_bb_count" value = "bb_count" }
-                set_variable = { which = "new_dd_count" value = PREV }
-                change_variable = { which = "new_dd_count" value = "dd_count" }
-                # 计算舰队规模
-                change_variable = { which = "new_fleet_size" value = "new_titan_count" }
-                multiply_variable = { which = "new_fleet_size" value = 16 }
-                change_variable = { which = "new_bb_size" value = "new_bb_count" }
-                multiply_variable = { which = "new_bb_size" value = 8 }
-                change_variable = { which = "new_fleet_size" value = "new_bb_size" }
-                change_variable = { which = "new_dd_size" value = "new_dd_count" }
-                multiply_variable = { which = "new_dd_size" value = 2 }
-                change_variable = { which = "new_fleet_size" value = "new_dd_size" }
-                set_variable = { which = "new_bb_size" value = 0 }
-                set_variable = { which = "new_dd_size" value = 0 }
-            }
         }
         if = {
             limit = {
-                check_variable = { which = "new_titan_count" value <= 8 }
-                check_variable = { which = "new_bb_count" value <= 35 }
-                check_variable = { which = "new_dd_count" value <= 70 }
-                check_variable = { which = "new_fleet_size" value <= 500 }
+                capital_scope = { solar_system = {
+                    has_access_fleet = event_target:first_fleet
+                }}
             }
-            event_target:second_fleet = {
-                set_fleet_flag = removed_fleet
-                delete_fleet = {
-                    target = this
-                    kill_leader = no
-                    destroy_template = yes
-                }
+            event_target:first_fleet = { save_event_target_as = spawn_merge_fleet_location }
+            set_country_flag = start_merge_fleet
+        }
+        else_if = {
+            limit = {
+                capital_scope = { solar_system = {
+                    has_access_fleet = event_target:second_fleet
+                }}
             }
-            create_fleet = {
-                name = "NAME_Resistance_Fleet"
-                effect = {
-                    set_owner = PREV
-                    set_variable = { which = "new_titan_count" value = PREV }
-                    set_variable = { which = "new_bb_count" value = PREV }
-                    set_variable = { which = "new_dd_count" value = PREV }
-                    while = {
-                        count = "new_titan_count"
-                        create_ship = {
-                            name = random
-                            design = "NAME_WG_RA_TITAN"
-                            graphical_culture = "mammalian_01"
-                            upgradable = no
-                        }
-                    }
-                    while = {
-                        count = "new_bb_count"
-                        create_ship = {
-                            name = random
-                            design = "NAME_WG_RA_BB"
-                            graphical_culture = "mammalian_01"
-                            upgradable = no
-                        }
-                    }
-                    while = {
-                        count = "new_dd_count"
-                        create_ship = {
-                            name = random
-                            design = "NAME_WG_RA_DD"  
-                            graphical_culture = "mammalian_01"
-                            upgradable = no
-                        }
-                    }
-                    set_location = {
-                        target = event_target:second_fleet
-                        distance = 5
-                        angle = random
-                    }
-                    set_fleet_stance = aggressive
-                    set_aggro_range_measure_from = self
-                    set_aggro_range = 500
-                    add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
-                    set_fleet_flag = fleet_bought_from_resistance
-                    set_variable = { which = "titan_count" value = "new_titan_count" }
-                    set_variable = { which = "bb_count" value = "new_bb_count" }
-                    set_variable = { which = "dd_count" value = "new_dd_count" }
-                    set_variable = { which = "ra_fleet_id" value = 0 }
-                    set_variable = { which = "new_titan_count" value = 0 }
-                    set_variable = { which = "new_bb_count" value = 0 }
-                    set_variable = { which = "new_dd_count" value = 0 }	
-                }
-                settings = { 
-                    can_upgrade = no 
-                    can_change_composition = no 
-                    uses_naval_capacity = yes
-                }
-            }
-            event_target:first_fleet = {
-                set_fleet_flag = removed_fleet
-                delete_fleet = {
-                    target = this
-                    kill_leader = no
-                    destroy_template = yes
-                }
-            }
-            update_ra_fleet_count = yes
-            country_event = { id = wg_crisis.67 }
+            event_target:second_fleet = { save_event_target_as = spawn_merge_fleet_location }
+            set_country_flag = start_merge_fleet
         }
         else = {
             country_event = { id = wg_crisis.68 }
+        }
+        if = {
+            limit = { has_country_flag = start_merge_fleet }
+            random_owned_fleet = {
+                limit = { has_fleet_flag = second_chosen_fleet }
+                set_variable = { which = "new_titan_count" value = "titan_count" }
+                set_variable = { which = "new_bb_count" value = "bb_count" }
+                set_variable = { which = "new_dd_count" value = "dd_count" }
+                ROOT = { 
+                    # 计算各种战舰数量
+                    set_variable = { which = "new_titan_count" value = PREV }
+                    change_variable = { which = "new_titan_count" value = "titan_count" }
+                    set_variable = { which = "new_bb_count" value = PREV }
+                    change_variable = { which = "new_bb_count" value = "bb_count" }
+                    set_variable = { which = "new_dd_count" value = PREV }
+                    change_variable = { which = "new_dd_count" value = "dd_count" }
+                    # 计算舰队规模
+                    change_variable = { which = "new_fleet_size" value = "new_titan_count" }
+                    multiply_variable = { which = "new_fleet_size" value = 16 }
+                    change_variable = { which = "new_bb_size" value = "new_bb_count" }
+                    multiply_variable = { which = "new_bb_size" value = 8 }
+                    change_variable = { which = "new_fleet_size" value = "new_bb_size" }
+                    change_variable = { which = "new_dd_size" value = "new_dd_count" }
+                    multiply_variable = { which = "new_dd_size" value = 2 }
+                    change_variable = { which = "new_fleet_size" value = "new_dd_size" }
+                    set_variable = { which = "new_bb_size" value = 0 }
+                    set_variable = { which = "new_dd_size" value = 0 }
+                }
+            }
+            if = {
+                limit = {
+                    check_variable = { which = "new_titan_count" value <= 8 }
+                    check_variable = { which = "new_bb_count" value <= 35 }
+                    check_variable = { which = "new_dd_count" value <= 70 }
+                    check_variable = { which = "new_fleet_size" value <= 500 }
+                }
+                event_target:second_fleet = {
+                    set_fleet_flag = removed_fleet
+                    delete_fleet = {
+                        target = this
+                        kill_leader = no
+                        destroy_template = yes
+                    }
+                }
+                
+                create_fleet = {
+                    name = "NAME_Resistance_Fleet"
+                    effect = {
+                        set_owner = PREV
+                        set_variable = { which = "new_titan_count" value = PREV }
+                        set_variable = { which = "new_bb_count" value = PREV }
+                        set_variable = { which = "new_dd_count" value = PREV }
+                        while = {
+                            count = "new_titan_count"
+                            create_ship = {
+                                name = random
+                                design = "NAME_WG_RA_TITAN"
+                                graphical_culture = "mammalian_01"
+                                upgradable = no
+                            }
+                        }
+                        while = {
+                            count = "new_bb_count"
+                            create_ship = {
+                                name = random
+                                design = "NAME_WG_RA_BB"
+                                graphical_culture = "mammalian_01"
+                                upgradable = no
+                            }
+                        }
+                        while = {
+                            count = "new_dd_count"
+                            create_ship = {
+                                name = random
+                                design = "NAME_WG_RA_DD"  
+                                graphical_culture = "mammalian_01"
+                                upgradable = no
+                            }
+                        }
+                        set_location = {
+                            target = event_target:second_fleet
+                            distance = 5
+                            angle = random
+                        }
+                        set_fleet_stance = aggressive
+                        set_aggro_range_measure_from = self
+                        set_aggro_range = 500
+                        add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
+                        set_fleet_flag = fleet_bought_from_resistance
+                        set_variable = { which = "titan_count" value = "new_titan_count" }
+                        set_variable = { which = "bb_count" value = "new_bb_count" }
+                        set_variable = { which = "dd_count" value = "new_dd_count" }
+                        set_variable = { which = "ra_fleet_id" value = 0 }
+                        set_variable = { which = "new_titan_count" value = 0 }
+                        set_variable = { which = "new_bb_count" value = 0 }
+                        set_variable = { which = "new_dd_count" value = 0 }	
+                    }
+                    settings = { 
+                        can_upgrade = no 
+                        can_change_composition = no 
+                        uses_naval_capacity = yes
+                    }
+                }
+                event_target:first_fleet = {
+                    set_fleet_flag = removed_fleet
+                    delete_fleet = {
+                        target = this
+                        kill_leader = no
+                        destroy_template = yes
+                    }
+                }
+                update_ra_fleet_count = yes
+                country_event = { id = wg_crisis.67 }
+            }
+            else = {
+                country_event = { id = wg_crisis.68 }
+            }
+            remove_country_flag = start_merge_fleet
         }
         reset_ra_variables = yes
     }
@@ -3301,6 +3356,13 @@ country_event = {
             }
         }
         text = wg_crisis.61.desc.others_vip_cd0_count0
+    }
+
+    immediate = {
+        if = {
+            limit = { has_country_flag = reflesh_admiral_list }
+            remove_country_flag = reflesh_admiral_list
+        }
     }
 
 # 稀有级别：普通（R）
@@ -3941,7 +4003,7 @@ country_event = {
         add_resource = { energy = -5000 }
         hidden_effect = {
             clear_all_admiral_flags = yes
-            set_timed_country_flag = { flag = reflesh_admiral_list days = 1 }
+            set_country_flag = reflesh_admiral_list
             change_variable = { which = "reflesh_count" value = -1 }
             country_event = { id = wg_crisis.60 }
         }
@@ -3967,6 +4029,7 @@ country_event = {
     option = {
         name = wg_crisis.24.c
         hidden_effect = { 
+            remove_country_flag = ra_diplo_engaged
             if = {
                 limit = {
                     NOT = { has_country_flag = remain_admiral_list }
@@ -3976,6 +4039,7 @@ country_event = {
                 set_variable = { which = "refresh_days" value = 270 }
             }
         }
+        default_hide_option = yes
     }
 
 }

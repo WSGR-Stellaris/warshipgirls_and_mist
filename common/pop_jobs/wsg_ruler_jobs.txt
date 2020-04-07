@@ -53,60 +53,7 @@ wsg_administrator = {
 	}	
 	
 	weight = {
-		weight = 1500
-		modifier = {
-			factor = 0.1
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
-		modifier = {
-			factor = 1.5
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			factor = 1.25
-			OR = {
-				has_trait = trait_robot_propaganda_machines
-				has_trait = trait_traditional
-			}		
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_quarrelsome
-		}
-		modifier = {
-			factor = 5
-			has_job = administrator
-		}		
-		modifier = {
-			factor = 1.25
-			has_trait = trait_brainslug
-		}
-		modifier = {
-			factor = 1.125
-			has_trait = trait_presapient_natural_intellectuals
-		}
-		modifier = {
-			factor = 1.125
-			has_trait = trait_robust
-		}
-		# crisis purge
-		modifier = {
-			factor = 0.01
-			planet.controller = {
-				OR = {
-					is_country_type = swarm
-					is_country_type = ai_empire
-				}
-			}
-		}	
+		weight = 1500	
 	}
 }
 
@@ -189,61 +136,6 @@ wsg_merchant = {
 	
 	weight = {
 		weight = 1500
-		modifier = {
-			factor = 2.0
-			has_trait = trait_thrifty
-		}
-		modifier = {
-			factor = 2.0
-			has_trait = trait_nuumismatic_administration
-		}
-		modifier = {
-			factor = 1.5
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			factor = 5
-			has_job = merchant
-		}
-		modifier = {
-			factor = 1.25
-			owner = { has_civic = civic_merchant_guilds	}
-			has_trait = trait_brainslug
-		}	
-		modifier = {
-			factor = 1.125
-			owner = { has_civic = civic_merchant_guilds	}
-			has_trait = trait_presapient_natural_intellectuals
-		}	
-		modifier = {
-			factor = 1.125
-			owner = { has_civic = civic_merchant_guilds	}
-			has_trait = trait_robust
-		}
-		# crisis purge
-		modifier = {
-			factor = 0.01
-			planet.controller = {
-				OR = {
-					is_country_type = swarm
-					is_country_type = ai_empire
-				}
-			}
-			OR = { # contingency won't purge itself
-				NOT = { exists = event_target:custodian_bot }
-				AND = {
-					exists = event_target:custodian_bot
-					NOT = { species = { is_same_value = event_target:custodian_bot } }
-				}
-			}
-		}
 	}
 }
 

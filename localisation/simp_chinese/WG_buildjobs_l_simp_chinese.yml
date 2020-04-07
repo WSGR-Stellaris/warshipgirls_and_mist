@@ -3,6 +3,8 @@
 ##建筑、职业""
  building_wsg_pantsu:0 "胖次生产机"
  building_wsg_pantsu_desc:0 "胖次生产机能为我们高效的生产胖次，绝对不会产生任何形式的“痛苦”。"
+ building_wsg_pantsu2:0 "高级胖次生产机"
+ building_wsg_pantsu2_desc:0 "升级后的胖次生产机可以同时产出更多的胖次。大部分时间机器的轰鸣声都能掩盖其内部偶尔产生的尖叫声。"
  pantsu_effect_desc:0 "胖次生产机"
  job_wsg_pantsu_maker:0 "胖次生产者"
  mod_job_wsg_pantsu_maker_add:0 "胖次生产者职业"
@@ -192,6 +194,8 @@
  
  building_sh_pantsu:0 "深海胖次生产厂"
  building_sh_pantsu_desc:0 "在深海社会，提交自己穿过的胖次是一种社会义务。"
+ building_sh_pantsu2:0 "深海胖次生产总站"
+ building_sh_pantsu2_desc:0 "升级后的生产厂可以将胖次加工时间精确到微秒并大幅度优化流程，胖次产量显著提高。"
  sh_pantsu_effect_desc:0 "深海胖次生产厂"
  job_sh_pantsu_maker:0 "深海胖次生产者"
  mod_job_sh_pantsu_maker_add:0 "深海胖次生产者职业"

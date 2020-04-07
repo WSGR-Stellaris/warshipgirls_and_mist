@@ -18,67 +18,45 @@ create_wg_fe_fleet = {
 		create_fleet = {
 			name = "NAME_WG_FE_CAPITAL_FLEET"
 			effect = {
-            set_owner = event_target:wg_fallen_empire
-            while = {
-                count = 8
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_FE_TITAN"
-                    graphical_culture = "wsg_04"
-                    upgradable = no
+                set_owner = event_target:wg_fallen_empire
+                while = {
+                    count = 8
+                    create_ship = {
+                        name = random
+                        design = "NAME_WG_FE_TITAN"
+                        graphical_culture = "wsg_04"
+                        upgradable = no
+                    }
                 }
-            }
-            while = {
-                count = 50
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_FE_BATTLE_CRUISE"
-                    graphical_culture = "wsg_04"
-                    upgradable = no
+                while = {
+                    count = 50
+                    create_ship = {
+                        name = random
+                        design = "NAME_WG_FE_BATTLE_CRUISE"
+                        graphical_culture = "wsg_04"
+                        upgradable = no
+                    }
                 }
-            }
-            while = {
-                count = 25
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_FE_ESCORTE"
-                    graphical_culture = "wsg_04"
-                    upgradable = no
+                while = {
+                    count = 25
+                    create_ship = {
+                        name = random
+                        design = "NAME_WG_FE_ESCORTE"
+                        graphical_culture = "wsg_04"
+                        upgradable = no
+                    }
+                }					
+                set_location = {
+                    target = PREV
+                    distance = 5
+                    angle = random
                 }
-            }					
-            set_location = {
-                target = PREV
-                distance = 5
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = Galo
-			assign_leader = last_created_leader
-            #set_aggro_range_measure_from = self
-            #set_aggro_range = 500
-        	}	
-			create_fleet = {
-				effect = {
-					set_owner = prev.owner
-					create_wg_fe_construction_ship = yes
-					set_location = {
-						target = prev
-						distance = 60
-						angle = random 
-					}				
-				}
-			}
-			create_fleet = {
-			effect = {
-				set_owner = prev.owner
-				create_wg_fe_construction_ship = yes
-				set_location = {
-					target = prev
-					distance = 80
-					angle = random 
-					}				
-				}
-			}		
+                set_fleet_stance = aggressive
+                set_fleet_bombardment_stance = Galo
+                assign_leader = last_created_leader
+                #set_aggro_range_measure_from = self
+                #set_aggro_range = 500
+            }	
         	settings = { 
             	can_upgrade = no 
             	uses_naval_capacity = yes
@@ -94,25 +72,25 @@ create_wg_fe_construction_ship = {
 		create_fleet = {
 			name = "NAME_WG_FE_CONSTRUCTION"
 			effect = {
-            set_owner = event_target:wg_fallen_empire
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_FE_CONSTRUCTION"
-					graphical_culture = "wsg_04"
-                    upgradable = no
+                set_owner = event_target:wg_fallen_empire
+                while = {
+                    count = 1
+                    create_ship = {
+                        name = random
+                        design = "NAME_WG_FE_CONSTRUCTION"
+                        graphical_culture = "wsg_04"
+                        upgradable = no
+                    }
+                }					
+                set_location = {
+                    target = PREV
+                    distance = 15
+                    angle = random
                 }
-            }					
-            set_location = {
-                target = PREV
-                distance = 15
-                angle = random
             }
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = yes
+            settings = { 
+                can_upgrade = no 
+                uses_naval_capacity = yes
             }
 		}						
 	}					

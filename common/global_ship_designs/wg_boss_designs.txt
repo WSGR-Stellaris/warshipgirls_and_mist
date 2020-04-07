@@ -1,0 +1,118 @@
+ship_design = {
+	name = "NAME_WG_THINK_TANK"
+	ship_size = wg_think_tank
+	is_event_design = yes
+
+	section = {
+		template = "wg_think_tank_key"
+		slot = "mid"
+	
+		component = {
+			slot = "TITAN_01"
+			template = "TITAN_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "wg_boss_weapen_ion"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "wg_boss_weapen_ion"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "wg_boss_weapen_ion"
+		}		
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "wg_boss_weapen_ion"
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "wg_boss_weapen_ion"
+		}		
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}		
+
+	}
+	required_component="JUMP_DRIVE_1"
+	required_component="SENSOR_4"
+	required_component="COMBAT_COMPUTER_CARRIER_SAPIENT"
+	required_component="BATTLESHIP_ZERO_POINT_REACTOR"
+	required_component="BATTLESHIP_SHIP_THRUSTER_4"
+	required_component = "SHIP_AURA_TARGETING_GRID"
+}

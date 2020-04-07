@@ -1,8 +1,8 @@
 objectTypes = {
 	pdxmesh = {
-		name = "small_turrets_mesh"
+		name = "medium_turrets_pd_mesh"
 		file = "gfx/models/ships/wsg/turrue/small/small_turrets.mesh"
-		scale = 1.0
+		scale = 2.0
 
 		meshsettings = {
 			name = "ScifiSpaceshipTurretMKIVBarrelStaticShape"

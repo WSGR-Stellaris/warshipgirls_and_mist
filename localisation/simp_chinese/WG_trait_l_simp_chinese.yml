@@ -78,6 +78,7 @@
  wg_modifier_125:0 "大量建造"
  wg_modifier_615:0 "精准建造"
  wsg_trait_alloys:0 "合金污垢"
+ wg_modifier_surrender:0 "黎姐快乐旗"
  wsg_trait_alloys_desc:0 "舰娘洗澡洗下来的污垢可以很容易的被提炼成合格的合金。"
  TRAIT_WSG_ALLOYS_EFFECT:0 "每个舰娘人口每月生产0.1 £alloys£ §Y$alloys$§!。"
  wsg_trait_consumer_goods:0 "没收手工艺品"

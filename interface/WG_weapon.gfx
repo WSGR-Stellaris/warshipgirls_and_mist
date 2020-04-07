@@ -6,6 +6,12 @@ spriteTypes{
 }
 spriteTypes{
 	spriteType = {
+		name = "GFX_wg_boss_weapen_ion"
+		texturefile = "gfx/interface/icons/ship_parts/wg_boss_weapen_ion.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
 		name = "GFX_UF_portal_weapon"
 		texturefile = "gfx/interface/icons/ship_parts/UF_portal_weapon.dds"
 	}

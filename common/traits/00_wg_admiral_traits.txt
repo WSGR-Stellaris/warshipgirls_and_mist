@@ -153,7 +153,18 @@ leader_trait_admiral_united_fleet3 = {
 	initial = no
 	randomized = no
 }
-
+leader_trait_admiral_united_fleet4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/uf_leader4.dds"
+	modifier = {
+		ship_weapon_damage = 0.5
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
 leader_trait_admiral_resistant_fleet = {
 	cost = 0
 	modification = no

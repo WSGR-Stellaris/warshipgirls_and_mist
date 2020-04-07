@@ -1,0 +1,139 @@
+namespace = wg_boss
+
+#######################################
+# 利维坦
+#######################################
+event = {
+	id = wg_boss.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		any_country = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+			is_ai = no
+		}
+		NOT = { has_global_flag = wg_boss_created }
+	}	
+	immediate = {
+		random_list = { 
+			40 = {
+				random_country = {
+					limit = {
+						OR = {
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.2 }
+				}
+			}
+			60 = {
+			}
+		}
+	}
+}
+country_event = {
+	id = wg_boss.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_boss_created
+		capital_scope = {
+			spawn_system = {
+				hyperlane = yes
+				min_steps = 10
+				max_steps = 20
+				initializer = wg_boss_think_tank_system
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.3
+	hide_window = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = guardian_wg_think_tank
+		has_country_flag = guardian_wsg_think_tank_country_flag
+		FROMFROM = { is_ship_size = wg_think_tank }
+		FROM = { is_ai = no }
+	}
+	
+	immediate = {
+		FROMFROM = {
+			solar_system = {
+				spawn_megastructure = {
+					name = "NAME_WG_THINK_TANK_RUINED"
+					type = "think_tank_ruined"
+					random_pos = yes
+					orbit_angle = 360	
+				}
+			}
+		}
+		FROM = {
+			country_event = { id = wg_boss.4 days = 5 }
+		}
+		destroy_country = yes
+	}
+}
+
+country_event = {
+	id = wg_boss.4
+	title = wg_boss.4.name
+	desc = wg_boss.4.desc
+	picture = GFX_evt_large_explosion
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.4.a
+		add_modifier = {
+			modifier = "wsg_think_tank_destoryed" 	
+			days = -1
+		}		
+	}
+}
+
+ship_event = {
+	id = wg_boss.5
+	title = "wg_boss.5.name"
+	desc = "wg_boss.5.desc"
+
+	is_triggered_only = yes
+	picture = GFX_evt_think_tank
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_think_tank_system_home
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_think_tank_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_think_tank_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.5.a"
+	}
+}

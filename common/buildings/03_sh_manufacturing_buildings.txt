@@ -70,6 +70,111 @@ building_sh_pantsu = {
 	triggered_desc = {
 		text = sh_pantsu_effect_desc
 	}
+	upgrades = {
+		building_sh_pantsu2
+	}	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_pantsu
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_pantsu
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_sh_pantsu2 = {
+	base_buildtime = 500
+	can_build = no
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_shenhai	
+			NOT = { has_policy_flag = robots_outlawed }
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_pantsu
+				value > 11
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }					
+		}
+		modifier = {
+			job_sh_pantsu_maker_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }					
+		}
+		modifier = {
+			job_sh_pantsu_maker_add = 8
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}	
+		upkeep = {
+			energy = 8
+		}
+	}	
+	
+	prerequisites = {
+		"tech_sh_assembly"
+	}
+	
+	triggered_desc = {
+		text = sh_pantsu_effect_desc
+	}
 	
 	ai_weight = {
 		weight = 0
@@ -374,7 +479,7 @@ building_sh_senergy = {
 		category = planet_buildings
 		cost = {
 			alloys = 400
-		}	
+		}		
 	}	
 	
 	prerequisites = {
@@ -477,7 +582,10 @@ building_sh_senergy2 = {
 		category = planet_buildings
 		cost = {
 			alloys = 400
-		}	
+		}
+		upkeep = {
+			sr_pantsu = 1
+		}		
 	}	
 	
 	triggered_desc = {

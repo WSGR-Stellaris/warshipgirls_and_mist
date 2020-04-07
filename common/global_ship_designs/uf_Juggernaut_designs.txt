@@ -21,8 +21,28 @@ ship_design = {
 		}
 		component = {
 			slot = "EXTRA_LARGE_03"
+			template = "UF_weapen_X"
+		}		
+		component = {
+			slot = "EXTRA_LARGE_04"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_05"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_06"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_07"
 			template = "UF_weapen_X2"
 		}
+		component = {
+			slot = "EXTRA_LARGE_08"
+			template = "UF_weapen_X2"
+		}		
 		component = {
 			slot = "LARGE_GUN_01"
 			template = "UF_weapen_L"
@@ -45,22 +65,6 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_GUN_06"
-			template = "UF_weapen_L"
-		}
-		component = {
-			slot = "LARGE_GUN_07"
-			template = "UF_weapen_L"
-		}
-		component = {
-			slot = "LARGE_GUN_08"
-			template = "UF_weapen_L"
-		}
-		component = {
-			slot = "LARGE_GUN_09"
-			template = "UF_weapen_L"
-		}
-		component = {
-			slot = "LARGE_GUN_10"
 			template = "UF_weapen_L"
 		}		
 		component = {

@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "wsg_01_titan_gunweaponside_bow_mesh"
+		file = "gfx/models/ships/wsg/wsg_01/titan/UnitedWeaponry/wsg_01_titan_gunweaponside_bow.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "polySurface49Shape"
+			index = 0
+			texture_diffuse = "ScifiSpaceshipStandardWeaponsAlbedo1.dds"
+			texture_normal = "ScifiSpaceshipStandardWeaponsNormal.dds"
+			texture_specular = "ScifiSpaceshipStandardWeaponsAlbedo_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

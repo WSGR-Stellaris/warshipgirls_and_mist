@@ -992,13 +992,11 @@ create_gray_warship = {
 					name = "灰风"
 					skill = 10
 					set_age = 0
-					traits = {
-						trait = 
-					}
 					effect = {
 						save_global_event_target_as = huifeng_leader_admiral
 						last_created_leader = {
 							set_leader_flag = "灰风领袖"
+							change_leader_portrait = GrayTempest
 						}
 					}
 				}

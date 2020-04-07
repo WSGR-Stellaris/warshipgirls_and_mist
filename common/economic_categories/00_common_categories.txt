@@ -19,15 +19,36 @@ country_base = {
 	parent = country
 	generate_add_modifiers = {
 		produces
+		upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
 	}
 }
 
 trade = {
+	use_for_ai_budget = yes
 }
 
 trade_routes = {
+	#太虚
 	parent = trade
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
+
+resolutions = {
+	parent = country
+	use_for_ai_budget = yes
+}
+
 
 edicts = {
 	use_for_ai_budget = yes
@@ -38,8 +59,9 @@ edicts = {
 }
 
 rare_edicts = {
-	use_for_ai_budget = yes
+	use_for_ai_budget = yes					
 	parent = edicts
+	
 	generate_mult_modifiers = {
 		cost
 	}
@@ -51,7 +73,7 @@ ship_edicts = {
 }
 
 campaigns = {
-	use_for_ai_budget = yes
+	use_for_ai_budget = yes					
 	parent = edicts
 	generate_mult_modifiers = {
 		cost
@@ -61,6 +83,9 @@ campaigns = {
 decisions = {
 	use_for_ai_budget = yes
 	parent = country
+	generate_mult_modifiers = {
+		cost
+	}
 }
 
 megastructures = {
@@ -70,6 +95,16 @@ megastructures = {
 		consumer_goods
 	}
 	parent = country
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	}
 }
 
 colonies = {
@@ -77,7 +112,6 @@ colonies = {
 	ai_use_parent_for_resources_upkeep = {
 		energy
 	}
-
 	triggered_cost_modifier = {
 		key = ship_colonizer
 		use_parent_icon = yes
@@ -90,28 +124,302 @@ colonies = {
 			is_ship_class = shipclass_colonizer
 		}
 	}
-
+	generate_mult_modifiers = {
+		produces
+	}
+	generate_add_modifiers = {
+		produces
+	}
 	parent = country
 }
 
 ships = {
 	use_for_ai_budget = yes
 	generate_mult_modifiers = {
+		produces
 		upkeep
+		cost
+	}
+	
+	generate_add_modifiers = {
+		produces
+		upkeep
+		cost
 	}
 
 	ai_use_parent_for_resources_upkeep = {
 		energy
+		rlc_machine_part
+		rlc_electronic_component
+		rlc_fuel
 	}
 
 	parent = country
+	
+	#太虚
+	triggered_cost_modifier = {
+		key = ship_research_station
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = research_station
+		}
+	}
 
+
+	triggered_cost_modifier = {
+		key = ship_ev_mining_station
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = ev_mining_station
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_mining_station
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = mining_station
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = ship_mining_station
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = mining_station
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_transport
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = transport
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_megastructures_homeless_ev
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			OR = {
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_homeless_ev
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			OR = {
+				is_ship_size = homeless_ship 
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = mini_homeless_ship
+			}
+		}
+	}
+	
+	
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_mothership
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = mothership
+		}
+	}
+
+
+	triggered_cost_modifier = {
+		key = ship_fathership
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = fathership
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_escort_ev
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = escort_ship
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = ship_transport
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = transport
+		}
+	}
+	
+	
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+	
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	#---太虚结束---#
+	
+	
 	triggered_cost_modifier = {
 		key = starbase_shipyard_build
 		use_parent_icon = yes
 
 		modifier_types = {
 			mult
+            add
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_colonizer
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_class = shipclass_colonizer
+		}
+	}
+
+    triggered_upkeep_modifier = {
+		key = ship_colonizer
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = colonizer
 		}
 	}
 
@@ -120,6 +428,21 @@ ships = {
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = corvette
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_corvette
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -133,6 +456,21 @@ ships = {
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = destroyer
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_destroyer
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -146,6 +484,21 @@ ships = {
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = cruiser
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_cruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -159,6 +512,21 @@ ships = {
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = battleship
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_battleship
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -167,11 +535,55 @@ ships = {
 		}
 	}
 	
+    triggered_cost_modifier = {
+		key = ship_titan
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = titan
+		}
+	}
+	triggered_upkeep_modifier = {
+		key = ship_titan
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = titan
+		}
+	}
+    
+    
+    
 	triggered_cost_modifier = {
 		key = ship_military_station_small
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = military_station_small
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_military_station_small
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -185,6 +597,7 @@ ships = {
 		use_parent_icon = yes
 		modifier_types = {
 			mult
+            add
 		}
 
 		trigger = {
@@ -192,29 +605,651 @@ ships = {
 			is_ship_class = shipclass_science_ship
 		}
 	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_science
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = science
+		}
+	}
+    
+    triggered_cost_modifier = {
+		key = ship_constructor
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_class = shipclass_constructor
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = ship_constructor
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = constructor
+		}
+	}
+    
+    triggered_cost_modifier = {
+		key = starbase_outpost
+		modifier_types = {
+			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = starbase_outpost
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = starbase_outpost
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = starbase_outpost
+		}
+	}
+#NSC	
+	triggered_cost_modifier = {
+		key = ship_StrikeCruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = StrikeCruiser
+		}
+	}	
+	
+	triggered_cost_modifier = {
+		key = ship_Battlecruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = Battlecruiser
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_Carrier
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = Carrier
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_Dreadnought
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = Dreadnought
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_Flagship
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = Flagship
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_supportship
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = supportship
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_military_station_medium
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = military_station_medium
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_military_station_large
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = military_station_large
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_xl_cannon
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = xl_cannon
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_ion_cannon
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = ion_cannon
+		}
+	}
+#RS	
+	triggered_cost_modifier = {
+		key = ship_rs_battlecruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_battlecruiser
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_rs_ea_cruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_ea_cruiser
+		}
+	}
+
+	triggered_cost_modifier = {
+		key = ship_rs_support_cruiser
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_support_cruiser
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_rs_dreadnought
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_dreadnought
+		}
+	}
+	
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_a
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_a
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_b
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_b
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_c
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_c
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_d
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_d
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_e
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_e
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_f
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_f
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_g
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_g
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_rs_heavy_dreadnought_type_h
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = rs_heavy_dreadnought_type_h
+		}
+	}
+	
+#POTE
+	triggered_cost_modifier = {
+		key = ship_z_pote_military_station_medium
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes	#When called from ship designer the design is not valid yet.
+			is_ship_size = z_pote_military_station_medium
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_z_pote_military_station_large
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
+		}
+
+		trigger = {
+			is_scope_valid = yes	#When called from ship designer the design is not valid yet.
+			is_ship_size = z_pote_military_station_large
+		}
+	}
 }
 
 ship_components = {
 	parent = ships
+    generate_mult_modifiers = {
+		cost
+	}
+    generate_add_modifiers = {
+		cost
+	} 
 }
 
+#太虚家园舰
+ship_components_minerals = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_energy = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_food = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_alloys = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_consumer_goods = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_volatile_motes = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_rare_crystals = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_exotic_gases = {
+	parent = ships
+  generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_research = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_modifier_PD = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_food_energy = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_manpower = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_pop_kill = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+ship_components_build_ship = {
+	parent = ships
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	} 
+}
+
+#####太虚结束
 ship_sections = {
 	parent = ships
+    generate_mult_modifiers = {
+		cost
+	}
 }
 
 ship_upgrades = {
 	parent = ships
 	use_for_ai_budget = yes
+    ai_use_parent_for_resources_upkeep = {
+		energy
+		rlc_machine_part
+		rlc_electronic_component
+		rlc_fuel
+	}
+    generate_mult_modifiers = {
+		cost
+	}
 }
 
 stations = {
 	use_for_ai_budget = yes
 	ai_use_parent_for_resources_upkeep = {
 		energy
+		rlc_machine_part
+		rlc_electronic_component
+		rlc_fuel
 	}
 
 	generate_mult_modifiers = {
 		produces
+        upkeep
+	}
+    generate_add_modifiers = {
+		produces
+        upkeep
 	}
 
 	parent = country
@@ -226,6 +1261,12 @@ station_gatherers = {
 	generate_mult_modifiers = {
 		produces
 		cost
+		upkeep
+	}
+    generate_add_modifiers = {
+		produces
+		cost
+		upkeep
 	}
 }
 
@@ -234,15 +1275,36 @@ station_researchers = {
 
 	generate_mult_modifiers = {
 		produces
+        cost
+	}
+    generate_add_modifiers = {
+		produces
+        cost
 	}
 }
 
 station_observers = {
 	parent = stations
+    generate_mult_modifiers = {
+		produces
+        cost
+	}
+    generate_add_modifiers = {
+		produces
+        cost
+	}
 }
 
 station_observer_missions = {
 	parent = station_observers
+    generate_mult_modifiers = {
+		produces
+        cost
+	}
+    generate_add_modifiers = {
+		produces
+        cost
+	}
 }
 
 starbases = {
@@ -250,6 +1312,7 @@ starbases = {
 
 	generate_mult_modifiers = {
 		upkeep
+        cost
 	}
 	ai_use_parent_for_resources_upkeep = {
 		energy
@@ -265,6 +1328,21 @@ starbase_stations = {
 		key = starbase_outpost
 		modifier_types = {
 			mult
+            add
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_size = starbase_outpost
+		}
+	}
+    
+    triggered_upkeep_modifier = {
+		key = starbase_outpost
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+			add
 		}
 
 		trigger = {
@@ -275,18 +1353,42 @@ starbase_stations = {
 }
 
 starbase_buildings = {
+#	use_for_ai_budget = yes
 	parent = starbases
+
+#	ai_use_parent_for_resources_upkeep = {
+#		energy
+#	}
 
 	generate_mult_modifiers = {
 		cost
+		upkeep
+		produces
+	}
+	
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
 	}
 }
 
 starbase_modules = {
+#	use_for_ai_budget = yes
 	parent = starbases
+
+#	ai_use_parent_for_resources_upkeep = {
+#		energy
+#	}
 
 	generate_mult_modifiers = {
 		cost
+		upkeep
+	}
+	
+	generate_add_modifiers = {
+		cost
+		upkeep
 	}
 }
 
@@ -296,16 +1398,28 @@ planets = {
 	ai_use_parent_for_resources_upkeep = {
 		energy
 	}
-
-	hidden = yes
+    generate_mult_modifiers = {
+        produces
+    }
+    generate_add_modifiers = {
+        produces
+    }
+	#hidden = yes
 }
 
 planet_structures = {
 	parent = planets
 	hidden = yes
-	generate_mult_modifiers = {
+	generate_add_modifiers = {
 		cost
 		upkeep
+		produces
+	}
+	
+	generate_mult_modifiers = {
+		cost
+        upkeep
+		produces
 	}
 }
 
@@ -313,6 +1427,10 @@ planet_buildings = {
 	parent = planet_structures
 
 	generate_mult_modifiers = {
+		cost
+		upkeep
+	}
+    generate_add_modifiers = {
 		cost
 		upkeep
 	}
@@ -324,13 +1442,15 @@ planet_buildings_strongholds = {
 	generate_mult_modifiers = {
 		cost
 	}
-}
-
+}								
 planet_branch_offices = {
 	parent = planets
 
 	generate_mult_modifiers = {
 		cost
+		#太虚
+		produces
+		#
 	}
 
 	generate_add_modifiers = {
@@ -338,67 +1458,132 @@ planet_branch_offices = {
 	}
 }
 
+#太虚
 planet_branch_office_buildings = {
 	parent = planets
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+  generate_add_modifiers = {
+  	produces
+		cost
+		upkeep
+	}
 }
 
 planet_districts = {
 	parent = planet_structures
 
-	generate_mult_modifiers = {
+	generate_add_modifiers = {
 		cost
 		upkeep
+		produces
+	}
+	
+	generate_mult_modifiers = {
+		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_cities = {
 	parent = planet_structures
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_hab_energy = {
 	parent = planet_districts
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_hab_research = {
 	parent = planet_districts
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_hab_mining = {
 	parent = planet_districts
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_hab_trade = {
 	parent = planet_districts
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
 }
 
 planet_districts_hab_leisure = {
 	parent = planet_districts
 
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
 	generate_mult_modifiers = {
 		cost
+        upkeep
+		produces
 	}
-}
-
+}						   
 planet_jobs = {
 	parent = planets
 
@@ -407,7 +1592,32 @@ planet_jobs = {
 		upkeep
 	}
 
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+
 	triggered_produces_modifier = {
+		key = planet_jobs_slave
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = slave
+		}
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_slave
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = slave
+		}
+	}
+	
+	triggered_upkeep_modifier = {
 		key = planet_jobs_slave
 		modifier_types = {
 			mult
@@ -431,6 +1641,30 @@ planet_jobs = {
 		}
 	}
 
+    triggered_produces_modifier = {
+		key = planet_jobs_worker
+		modifier_types = {
+			add
+		}
+		trigger = {
+			OR = {
+				is_pop_category = worker
+				is_pop_category = slave # Yes, slave should count towards both worker and slave
+				is_pop_category = simple_drone
+			}
+		}
+	}
+
+	triggered_upkeep_modifier = {
+		key = planet_jobs_worker
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = worker
+		}
+	}
+
 	triggered_produces_modifier = {
 		key = planet_jobs_specialist
 		modifier_types = {
@@ -441,7 +1675,76 @@ planet_jobs = {
 		}
 	}
 
+    triggered_produces_modifier = {
+		key = planet_jobs_specialist
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = specialist
+		}
+	}
+	triggered_upkeep_modifier = {
+		key = planet_jobs_specialist
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = specialist
+		}
+	}						  
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_ruler
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = ruler
+		}
+	}
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_ruler
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = ruler
+		}
+    }
+    
+	triggered_upkeep_modifier = {
+		key = planet_jobs_ruler
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = ruler
+		}
+	}	
+	
 	triggered_produces_modifier = {
+		key = planet_jobs_simple_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = simple_drone
+		}
+	}	
+	
+    triggered_produces_modifier = {
+		key = planet_jobs_simple_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = simple_drone
+		}
+	}	
+    
+	triggered_upkeep_modifier = {
 		key = planet_jobs_simple_drone
 		modifier_types = {
 			mult
@@ -459,7 +1762,47 @@ planet_jobs = {
 		trigger = {
 			is_pop_category = complex_drone
 		}
-	}		
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_complex_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = complex_drone
+		}
+	}	
+
+	triggered_upkeep_modifier = {
+		key = planet_jobs_complex_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = complex_drone
+		}
+	}	
+
+    triggered_produces_modifier = {
+		key = planet_jobs_organic
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_robot_pop = no
+		}
+	}	
+
+    triggered_produces_modifier = {
+		key = planet_jobs_organic
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_robot_pop = no
+		}
+	}	
 
 	triggered_produces_modifier = {
 		key = planet_jobs_robotic
@@ -470,37 +1813,343 @@ planet_jobs = {
 			is_robot_pop = yes
 		}
 	}	
+
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_robot_pop = yes
+		}
+	}
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_slave
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = slave
+			is_robot_pop = no
+		}
+	}
+	
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_slave
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = slave
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_slave
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = slave
+			is_robot_pop = yes
+		}
+	}
+	
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic_slave
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = slave
+			is_robot_pop = yes
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_organic_worker
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			OR = {
+				is_pop_category = worker
+				is_pop_category = slave # Yes, slave should count towards both worker and slave
+				is_pop_category = simple_drone
+			}
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_organic_worker
+		modifier_types = {
+			add
+		}
+		trigger = {
+			OR = {
+				is_pop_category = worker
+				is_pop_category = slave # Yes, slave should count towards both worker and slave
+				is_pop_category = simple_drone
+			}
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_worker
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			OR = {
+				is_pop_category = worker
+				is_pop_category = slave # Yes, slave should count towards both worker and slave
+				is_pop_category = simple_drone
+			}
+			is_robot_pop = yes
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_worker
+		modifier_types = {
+			add
+		}
+		trigger = {
+			OR = {
+				is_pop_category = worker
+				is_pop_category = slave # Yes, slave should count towards both worker and slave
+				is_pop_category = simple_drone
+			}
+			is_robot_pop = yes
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_organic_specialist
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = specialist
+			is_robot_pop = no
+		}
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_specialist
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = specialist
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_specialist
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = specialist
+			is_robot_pop = yes
+		}
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic_specialist
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = specialist
+			is_robot_pop = yes
+		}
+	}
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_ruler
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = ruler
+			is_robot_pop = no
+		}
+	}
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_ruler
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = ruler
+			is_robot_pop = no
+		}
+    }
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_ruler
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = ruler
+			is_robot_pop = yes
+		}
+	}
+    
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic_ruler
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = ruler
+			is_robot_pop = yes
+		}
+    }
+    
+	triggered_produces_modifier = {
+		key = planet_jobs_organic_simple_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = simple_drone
+			is_robot_pop = no
+		}
+	}	
+	
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_simple_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = simple_drone
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_simple_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = simple_drone
+			is_robot_pop = yes
+		}
+	}	
+	
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic_simple_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = simple_drone
+			is_robot_pop = yes
+		}
+	}
+    
+	triggered_produces_modifier = {
+		key = planet_jobs_organic_complex_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = complex_drone
+			is_robot_pop = no
+		}
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_organic_complex_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = complex_drone
+			is_robot_pop = no
+		}
+	}
+	
+	triggered_produces_modifier = {
+		key = planet_jobs_robotic_complex_drone
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_pop_category = complex_drone
+			is_robot_pop = yes
+		}
+	}
+
+    triggered_produces_modifier = {
+		key = planet_jobs_robotic_complex_drone
+		modifier_types = {
+			add
+		}
+		trigger = {
+			is_pop_category = complex_drone
+			is_robot_pop = yes
+		}
+	}
 }
 
 planet_bio_trophies = {
 	parent = planet_jobs
+    generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_pop_assemblers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 }
 
 planet_farmers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_miners = {
 	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-	}
-
 	generate_add_modifiers = {
 		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
 	}
 }
 
@@ -508,37 +2157,69 @@ planet_livestock = {
 	parent = planet_jobs
 	generate_add_modifiers = {
 		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
 	}
 }
 
 planet_technician = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_executives = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_managers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_administrators = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_researchers = {
 	icon = "job_researcher"
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
 		upkeep
@@ -548,6 +2229,10 @@ planet_researchers = {
 planet_metallurgists = {
 	icon = "job_foundry"
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
 		upkeep
@@ -556,60 +2241,144 @@ planet_metallurgists = {
 
 planet_culture_workers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
+		upkeep
 	}
 }
 
 planet_nobles = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_merchants = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_entertainers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_soldiers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_priests = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_enforcers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_telepaths = {
 	parent = planet_enforcers
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_doctors = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_refiners = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 }
 
 planet_translucers = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 }
 
 planet_chemists = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 }
@@ -617,16 +2386,56 @@ planet_chemists = {
 planet_artisans = {
 	icon = "job_artisan"
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
 	generate_mult_modifiers = {
 		produces
 		upkeep
 	}
 }
 
+planet_bureaucrats = {
+	icon = "job_bureaucrat"
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+    upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	
+}
+
+
+#Duelists are entertainers in disguise#
+#
+#planet_duelists = {
+#	icon = "job_duelist"
+#	parent = planet_entertainers
+#	generate_add_modifiers = {
+#		produces
+#       upkeep
+#	}
+#	generate_mult_modifiers = {
+#		produces
+#		upkeep
+#	}
+#}
+
 planet_pops = {
 	parent = planets
+	#太虚
 	generate_mult_modifiers = {
 		upkeep
+		produces
+	}
+	generate_add_modifiers = {
+		upkeep
+		produces
 	}
 
 	triggered_upkeep_modifier = {
@@ -663,72 +2472,158 @@ planet_pops = {
 unemployment_resources = {
 	parent = planet_pops
 	generate_add_modifiers = {
+		#太虚
+		produces
 		upkeep
 	}
 }
 
+#太虚
 pop_category_precursor = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_xeno_ward = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_pre_sapients = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_purge = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_bio_trophy = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_slave = {
 	parent = planet_pops
-	generate_mult_modifiers = {
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
 		upkeep
 	}
 }
 
 pop_category_robot = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces  
+		upkeep
+	}
 }
 
 pop_category_drones = {
 	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
 
 pop_category_workers = {
 	parent = planet_pops
-	generate_add_modifiers = {
+    generate_add_modifiers = {
 		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
 		upkeep
 	}
 }
 
 pop_category_specialists = {
 	parent = planet_pops
-	generate_add_modifiers = {
+    generate_add_modifiers = {
 		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
 		upkeep
 	}
 }
 
 pop_category_rulers = {
 	parent = planet_pops
-	generate_add_modifiers = {
+    generate_add_modifiers = {
 		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
 		upkeep
 	}
 }
 
 pop_category_assimilation = {
 	parent = planet_pops
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
 }
+#--太虚结束--
+
 
 planet_deposits = {
 	parent = planets
@@ -736,10 +2631,30 @@ planet_deposits = {
 
 orbital_mining_deposits = {
 	parent = station_gatherers
+    generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
 }
 
 orbital_research_deposits = {
 	parent = station_researchers
+    generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
 }
 
 deposit_blockers = {
@@ -759,10 +2674,18 @@ armies = {
 	use_for_ai_budget = yes
 
 	generate_mult_modifiers = {
+		#太虚
+		produces
 		cost
 		upkeep
 	}
-
+	#太虚
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	
 	ai_use_parent_for_resources_upkeep = {
 		energy
 	}
@@ -773,6 +2696,12 @@ armies = {
 leaders = {
 	use_for_ai_budget = yes
 	generate_mult_modifiers = {
+ 		produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
 		cost
 		upkeep
 	}
@@ -786,18 +2715,57 @@ leaders = {
 
 leader_admirals = {
 	parent = leaders
+	generate_mult_modifiers = {
+    produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
 }
 
 leader_generals = {
-	parent = leaders
+	generate_mult_modifiers = {
+    produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
 }
 
 leader_scientists = {
 	parent = leaders
+  generate_mult_modifiers = {
+    produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}			   
 }
 
 leader_governors = {
 	parent = leaders
+  generate_mult_modifiers = {
+    produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
 }
 
 diplomacy = {
@@ -805,6 +2773,9 @@ diplomacy = {
 	parent = country
 	generate_mult_modifiers = {
 		upkeep
+	}
+	generate_add_modifiers = {
+		produces
 	}
 }
 
@@ -821,37 +2792,96 @@ pop_factions = {
 
 subjects = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 federation = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 rivalries = {
 	parent = diplomacy
+  generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}                      
 }
 
 non_aggression_pacts = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 research_agreements = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
+	
 }
 
 commercial_pacts = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 defensive_pacts = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 guarantees = {
 	parent = diplomacy
+	generate_mult_modifiers = {
+		produces
+	}
+
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 monthly_trades = {
+	use_for_ai_budget = yes
 }
 
 claims = {
@@ -866,16 +2896,26 @@ subject_tax = {
 subject_integration = {
 }
 
+
+
 relics = {
+	#太虚
+	generate_add_modifiers = {
+		produces
+		upkeep
+		cost
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+		cost
+	}
 }
 
 artifact_actions = {
+
 }
 
 sector = {
-}
 
-resolutions = {
-	parent = country
-	use_for_ai_budget = yes
 }

@@ -42,7 +42,23 @@
  
  origin_wsg_ice_breaking:0 "坚冰融化"
  origin_wsg_ice_breaking_desc:0 "并不是所有的深海舰娘都被驱逐出了母港，依然有少部分深海舰娘在我们的感化之下留了下来并融入了我们的社会"
- origin_tooltip_wsg_ice_breaking_effects:0 "开局将获得额外的6个§Y深海舰娘§!£pop£人口"
+ origin_tooltip_wsg_ice_breaking_effects:0 "开局将获得额外的6个§Y深海舰娘§!£pop£人口\n额外获得三个建设好的基础区划"
+ 
+ origin_wsg_diplomacy:0 "外交姐妹花"
+ origin_wsg_diplomacy_desc:0 "虽然我们起源于战争，但我们依然深知外交的重要性，正是通过不断的合作交流才得以发展到今天的高度。我们的外交机构比任何组织更早的准备好迎接群星的挑战。"
+ origin_tooltip_wsg_diplomacy_effects:0 "会与大部分国家好感度互相增加§G20§!"
+ 
+ origin_sh_juggernaut:0 "守护者"
+ origin_sh_juggernaut_desc:0 "在深海舰队漫无目寻找家园的期间，幸运的发现了这艘古老的自动化主宰级战舰，它帮助深海抵御了各种威胁并成功的将舰队找到了新家园。可是这位强大的守护者并不永恒，飞船上的自毁装置早在数百年前就已经启动，如今这倒计时只剩十几年。我们无法移除自毁装置，因为它与飞船紧密的相连。"
+ origin_tooltip_sh_juggernaut_effects:0 "开局会获得一艘§Y主宰§!级战舰\n强大的守护者会在§R15-20§!年内自毁\n守护者自毁后会获得一定的加成"
+
+ origin_sh_invaded:0 "反客为主"
+ origin_sh_invaded_desc:0 "这颗星球曾经的主人是一个前太空文明，深海舰队发现后对其进行了入侵并成功占领。\n现在深海舰队会利用前主人的遗产东山再起。"
+ origin_tooltip_sh_invaded_effects:0 "开局拥有300个£sr_pantsu£ §Y胖次§!\n添加星球修正§Y前文明的基础设施§!\n添加一个土著住房建筑\n额外获得一个发电区划"
+ sh_invaded_origin:0 "前文明的基础设施"
+ sh_invaded_origin_desc:0 "这颗星球的原居民已经被深海清理干净，大量完好的基础设施被深海舰队接管。这将为我们建立新设施提供帮助。"
+ building_urban_dwellings_sh:0 "市区住宅"
+ building_urban_dwellings_sh_desc:0 "前太空文明的紧凑型房屋，不太舒适但可以将就着住下。"
  
  origin_wg_fallen_empire:0 "银河漫游者"
  origin_wg_fallen_empire_desc:0 "舰娘堕落帝国的一生中大部分时间被用于银河系之间的穿梭，她们不断的逃离只为换取片刻的安息。"

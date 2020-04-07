@@ -18,6 +18,7 @@
  wsg_mining_station_MEGASTRUCTURE_DETAILS:0 "一座用于开采整个小行星带矿物的大型采矿站，能源源不断的为我们提供合格的矿物。"
  
  requires_only_one_wsg_mining_station_in_system:0 "一个星系只能建造一个巨型采矿站"
+ requires_asteroid:0 "必须位于小行星带"
 ###############################
  wsg_station:0 "舰娘巨型轨道站"
  wsg_station_DESC:0 "一座巨大的同步轨道站，是重要的军事和工业基地。"
@@ -103,6 +104,7 @@
  wsg_modifier_lack_food:0 "舰娘很饿，赏口饭吃" 
 
  r_united_fleet_active:0 "探索联合舰队的秘密"
+ wg_ai_base:0 "WG协议"
  sh_base:0 "胖次协议"
  ###################
  sm_srse_industory:0 "深海能源核心生产模块"

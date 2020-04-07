@@ -1,11 +1,11 @@
 objectTypes = {
 	pdxmesh = {
 		name = "wsg_02_battleship_mesh"
-		file = "gfx/models/ships/wsg/wsg_02/battleship/wsg_02_battleship.mesh"
+		file = "gfx/models/ships/wsg/wsg_01/battleship/wsg_01_battleship.mesh"
 		scale = 1.3
 
 		meshsettings = {
-			name = "ScifiBattlecruiserKyushuCapSingle1Shape"
+			name = "ScifiBattlecruiserKyushuHullShape"
 			index = 0
 			texture_diffuse = "ScifiBattlecruiserKyushuBlueAlbedo.dds"
 			texture_normal = "ScifiBattlecruiserKyushuNormal.dds"

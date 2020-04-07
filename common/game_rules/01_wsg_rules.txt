@@ -60,14 +60,20 @@ can_build_branch_offices = {
 
 # This = country
 can_support_branch_offices = {
-	is_country_type = default
-	is_regular_empire = yes
-	OR = {
-		NOT = { has_authority = auth_corporate }	
-		NOT = { has_authority = auth_warshipgirls }	
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_FALLEN_EMPIRES
+		NOR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
 	}
-	
+	is_regular_empire = yes
+	NOR = {
+		has_authority = auth_corporate
+		has_authority = auth_warshipgirls
+	}
 }
+
 can_build_branch_office_on_planet = {
 	custom_tooltip = {
 		fail_text = requires_recipient_not_fanatic_purifiers
@@ -104,8 +110,11 @@ can_build_branch_office_on_planet = {
 			}
 			owner = {
 				is_subject = yes
-				is_subject_type = subsidiary
 				overlord = { is_same_value = root }
+				OR = {
+					is_subject_type = subsidiary
+					overlord = { has_authority = auth_warshipgirls }
+				}
 			}
 		}
 	}

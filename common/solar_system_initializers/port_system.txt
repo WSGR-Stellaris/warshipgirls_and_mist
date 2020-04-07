@@ -61,6 +61,17 @@ d_port_system = {
 		init_effect = {
 			set_planet_flag = port_home
 			prevent_anomaly = yes
+			clear_deposits = yes
+			add_deposit = r_neoforce_remain	
+			add_deposit = r_port_pilan_ruins
+			add_deposit = r_DM
+			add_deposit = r_hp_shipyard
+			add_deposit = r_cherry_tree
+			add_deposit = d_dp_obelisk
+			add_deposit = d_satellite_group
+			add_deposit = d_plant_reaper
+			add_deposit = d_bison_power_station
+			add_deposit = d_dp_mining_station			
 		}
 	}
 	planet = {

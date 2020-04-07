@@ -114,6 +114,7 @@ utility_component_template = {
 		ship_weapon_range_mult = 0.25
 		ship_accuracy_add = 10
 		ship_speed_reduction = 0.1
+		ship_engagement_range_mult = 0.75
 	}
 	
 	ai_weight = {
@@ -143,6 +144,7 @@ utility_component_template = {
 		ship_fire_rate_mult = 0.25
 		ship_tracking_add = 20
 		ship_accuracy_add = 10
+		ship_engagement_range_mult = 0.75
 	}
 	
 	ai_weight = {

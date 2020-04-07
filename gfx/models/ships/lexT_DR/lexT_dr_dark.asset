@@ -1,5 +1,10 @@
 entity = {
 	name = "lexT_dr_dark_entity"
 	pdxmesh = "lexT_dr_dark_mesh"
-	scale = 0.7
+	scale = 0.3
+	locator = { name = "large_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 0 0 } }	
 }

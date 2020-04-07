@@ -1,0 +1,87 @@
+"MACHINE_Warship_Girls" = {
+	archetype = MACHINE
+
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	randomized = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		# The create_species effect can't properly take the possible trigger below into account.
+		# Work around this by disabling this class for species randomization after game start.
+		NOT = { has_global_flag = game_started }
+	}
+	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
+	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+
+	robotic = yes
+	gender = no
+	use_climate_preference = no
+	portrait_modding = yes
+
+	leader_age_min = 114
+	leader_age_max = 514
+
+	portraits = {
+		"Warship_girls"
+		"NeoForce"
+	}
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	resources = {}
+}
+"MACHINE_Shenhai" = {
+	archetype = MACHINE
+
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	randomized = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		# The create_species effect can't properly take the possible trigger below into account.
+		# Work around this by disabling this class for species randomization after game start.
+		NOT = { has_global_flag = game_started }
+	}
+	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
+	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+
+	robotic = yes
+	gender = no
+	use_climate_preference = no
+	portrait_modding = yes
+
+	leader_age_min = 810
+	leader_age_max = 1919
+
+	portraits = {
+		"shenhai"
+	}
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	resources = {}
+}
+
+"Warship_Girl" = {
+	archetype = BIOLOGICAL
+	randomized = yes
+	gender = no
+	portraits = {
+		"Warship_girls"
+		"NeoForce"
+	}
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+"Shenhai" = {
+	archetype = BIOLOGICAL
+	randomized = yes
+	gender = no
+	portraits = {
+		"shenhai"
+	}
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+	

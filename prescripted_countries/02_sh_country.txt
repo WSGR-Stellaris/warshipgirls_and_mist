@@ -59,4 +59,5 @@ SH_country={
 		"civic_yamato"
 		"civic_yaosai"
 	}
+	origin = "origin_sh_invaded"
 }

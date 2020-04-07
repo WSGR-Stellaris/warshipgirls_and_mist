@@ -2,17 +2,8 @@ origin_wsg_ice_breaking = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_wsg_ice_breaking.dds"
 	picture = GFX_origin_wsg_ice_breaking
-	potential = {
-		authority = { value = auth_warshipgirls }
-	}
-
 	possible = {
-		ethics = {
-			OR = {
-				value = ethic_egalitarian
-				value = ethic_fanatic_egalitarian
-			}
-		}		
+		authority = { value = auth_warshipgirls }
 	}
 	flags = { origin_wsg_ice_breaking_flag }
 
@@ -20,6 +11,73 @@ origin_wsg_ice_breaking = {
 
 	advanced_start = yes
 
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_wsg_diplomacy = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_wsg_diplomacy.dds"
+	picture = GFX_origin_wsg_diplomacy
+	possible = {
+		authority = { value = auth_warshipgirls }
+	}
+
+	flags = { origin_wsg_diplomacy }
+
+	description = "origin_tooltip_wsg_diplomacy_effects"
+
+	advanced_start = yes
+	
+	modifier = { 
+		envoys_add = 2 
+		diplo_weight_mult = 0.2
+	}
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_sh_juggernaut = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_sh_juggernaut.dds"
+	picture = GFX_origin_sh_juggernaut
+	possible = {
+		authority = { value = auth_shenhai }
+		civics = {
+			NOT = {
+				value = civic_CM
+			}
+		}		
+	}
+
+	flags = { origin_sh_juggernaut }
+
+	description = "origin_tooltip_sh_juggernaut_effects"
+
+	advanced_start = yes
+		
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_sh_invaded = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_sh_invaded.dds"
+	picture = GFX_origin_sh_invaded
+	possible = {
+		authority = { value = auth_shenhai }		
+	}
+
+	flags = { origin_sh_invaded }
+
+	description = "origin_tooltip_sh_invaded_effects"
+
+	advanced_start = yes
+		
 	random_weight = {
 		base = 0
 	}

@@ -78,6 +78,7 @@ has_wsg_lady_active_diplo = {
 		wg_fe.161 # 总督
 		wg_fe.162 # 战舰
 		wg_fe.163 # 陆军
+		wg_fe.164 # 大破
 		wg_fe.178 # 武装科研船
 	}
 }

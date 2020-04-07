@@ -92,6 +92,36 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wsg.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = { has_country_flag = port_home_deposit }
+	}
+	immediate = {
+		set_country_flag = port_home_deposit
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = port_home
+				NOT = { has_planet_flag = cts_home }				
+			}
+			clear_deposits = yes
+			add_deposit = r_neoforce_remain	
+			add_deposit = r_port_pilan_ruins
+			add_deposit = r_DM
+			add_deposit = r_hp_shipyard
+			add_deposit = r_cherry_tree
+			add_deposit = d_dp_obelisk
+			add_deposit = d_satellite_group
+			add_deposit = d_plant_reaper
+			add_deposit = d_bison_power_station
+			add_deposit = d_dp_mining_station
+		}		
+	}
+}
+
 # Éú³ÉÓã´½µÄsol III
 event = {
 	id = wsg.4

@@ -60,5 +60,6 @@ WG_country={
 		"civic_wgella"
 		"civic_wgaurora"
 	}
+	origin = "origin_wsg_diplomacy"
 }
 

@@ -1142,7 +1142,32 @@ tech_wsg_timetable = {
 		has_authority = auth_warshipgirls
 	}
 }
-
+tech_wsg_diplomacy = {
+    icon = tech_wsg_diplomacy
+	cost = @tier4cost1
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_wsg_reform" }
+	weight = @tier3weight2
+	
+	modifier = {		
+		envoys_add = 1
+	}		
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls
+				has_ascension_perk = ap_project_r
+			}
+		}
+	}
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+}
 tech_wsg_fb = {
     icon = tech_wsg_fb
 	cost = @tier3cost3
@@ -3189,4 +3214,18 @@ tech_disignable_wsg_lady = {
 	potential = {
 		has_country_flag = lady_warship_designable
 	}	
+}
+
+tech_wg_badseal = {
+    icon = tech_wg_badseal
+	cost = @tier1cost1
+	area = society
+	tier = 1
+	category = { biology }
+	prerequisites = { "tech_starbase_2" }
+	weight = 0
+	
+	potential = {
+		has_country_flag = badseal_cannon_flag
+	}
 }

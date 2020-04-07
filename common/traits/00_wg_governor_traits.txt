@@ -52,8 +52,8 @@ leader_trait_governor_santee = {
 	icon = "gfx/interface/icons/traits/santee.dds"
 	modifier = {
 		trade_value_mult = 0.30
-		planet_jobs_slave_produces_mult = 0.30
-		planet_jobs_worker_produces_mult = 0.05
+		planet_jobs_worker_produces_mult = 0.05		
+		planet_jobs_slave_produces_mult = 0.15
 		pop_cat_worker_happiness = -0.10
 		pop_cat_slave_happiness = -0.10
 	}
@@ -168,3 +168,15 @@ leader_trait_governor_neversleep = {
 	randomized = no
 }
 
+leader_trait_badseal = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_badseal.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	leader_class = { admiral scientist general governor ruler }
+	leader_trait = all
+	initial = no
+	randomized = no
+}

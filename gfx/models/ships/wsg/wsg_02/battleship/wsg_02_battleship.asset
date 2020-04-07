@@ -69,7 +69,7 @@ entity = {
 # BOW
 entity = {
 	name = "wsg_02_battleship_bow_L1M1S2_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 	
 	default_state = "idle"
@@ -92,7 +92,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_L1S4_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 
 	
@@ -116,7 +116,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_L2_entity" 
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 
 	
@@ -140,7 +140,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_M1S2SHB_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 
 	
@@ -164,7 +164,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_M2S4_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 
 	
@@ -188,7 +188,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_M3S2_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 
 	
@@ -214,7 +214,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_bow_XL1_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 
 	
 	default_state = idle
@@ -236,7 +236,7 @@ entity = {
 #MID
 entity = {
 	name = "wsg_02_battleship_mid_L2S4_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_egun_mesh"
 	
 
 	
@@ -260,7 +260,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_mid_L1M4_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_egun_mesh"
 	
 
 	
@@ -284,7 +284,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_mid_L2M2_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_gun_mesh"
 	
 
 	
@@ -308,7 +308,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_mid_L3_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_gun_mesh"
 	
 
 	
@@ -332,7 +332,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_mid_M4SHB_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_hanger_mesh"
 	
 	default_state = "idle"
 	state = { name = idle	state_time = 5
@@ -357,7 +357,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_mid_S4LHB_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_01_battleship_hanger_mesh"
 	
 	default_state = "idle"
 	state = { name = idle	state_time = 5
@@ -386,7 +386,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_stern_L1_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 	default_state = idle
 	state = { name = "idle" state_time = 5
@@ -406,7 +406,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_stern_M1S2_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 	default_state = idle
 	state = { name = "idle" state_time = 5
@@ -426,7 +426,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_stern_M2_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 	default_state = idle
 	state = { name = "idle" state_time = 5
@@ -446,7 +446,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_battleship_stern_S4_entity"
-	pdxmesh = "wsg_02_battleship_mesh"
+	pdxmesh = "wsg_battleship_mesh"
 	
 	default_state = idle
 	state = { name = "idle" state_time = 5

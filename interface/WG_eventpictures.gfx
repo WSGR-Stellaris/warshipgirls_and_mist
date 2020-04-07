@@ -6,6 +6,12 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wsg_on_star3"
+		texturefile = "gfx/event_pictures/wsg_on_star3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
 		name = "GFX_evt_wsg_moon"
 		texturefile = "gfx/event_pictures/wsg_moon.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -20,6 +26,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_evt_wsg_world_tree"
 		texturefile = "gfx/event_pictures/wsg_world_tree.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
+		name = "GFX_evt_wsg_Sharan"
+		texturefile = "gfx/event_pictures/wsg_Sharan.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}	
@@ -479,4 +491,16 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}
+	spriteType = {
+		name = "GFX_evt_wg_badseal"
+		texturefile = "gfx/event_pictures/wg_badseal.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_badseal_cannon"
+		texturefile = "gfx/event_pictures/wg_badseal_cannon.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
 }

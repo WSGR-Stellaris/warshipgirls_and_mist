@@ -1,0 +1,6 @@
+component_set = {
+	key = "wg_boss_weapen_ion"
+	
+	icon = "GFX_wg_boss_weapen_ion"
+	icon_frame = 1	
+}

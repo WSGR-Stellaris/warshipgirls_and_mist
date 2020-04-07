@@ -12,41 +12,41 @@ ra_active_diplo = {
 is_reach_ra_leader_limit = {
 	AND = {
 		OR = {
-			# 困难vip可买10个将领
+			# 困难vip可买11个将领
 			AND = {
 				has_global_flag = wg_crisis_normal
+				has_country_flag = ra_vip
+				check_variable = { which = "buy_ra_leader_count" value >= 11 }
+			}
+			# 困难非vip可买9个将领
+			AND = {
+				has_global_flag = wg_crisis_normal
+				NOT = { has_country_flag = ra_vip }
+				check_variable = { which = "buy_ra_leader_count" value >= 9 }
+			}
+			# 萌新vip可买10个将领
+			AND = {
+				has_global_flag = wg_crisis_hard
+				has_country_flag = ra_vip
+				check_variable = { which = "buy_ra_leader_count" value >= 10 }
+			}
+			# 萌新非vip可买8个将领
+			AND = {
+				has_global_flag = wg_crisis_hard
+				NOT = { has_country_flag = ra_vip }
+				check_variable = { which = "buy_ra_leader_count" value >= 8 }
+			}
+			# 天灾vip可买9个将领
+			AND = {
+				has_global_flag = wg_crisis_insane
 				has_country_flag = ra_vip
 				check_variable = { which = "buy_ra_leader_count" value >= 9 }
 			}
-			# 困难非vip可买8个将领
+			# 天灾非vip可买7个将领
 			AND = {
-				has_global_flag = wg_crisis_normal
+				has_global_flag = wg_crisis_insane
 				NOT = { has_country_flag = ra_vip }
 				check_variable = { which = "buy_ra_leader_count" value >= 7 }
-			}
-			# 萌新vip可买9个将领
-			AND = {
-				has_global_flag = wg_crisis_hard
-				has_country_flag = ra_vip
-				check_variable = { which = "buy_ra_leader_count" value >= 8 }
-			}
-			# 萌新非vip可买7个将领
-			AND = {
-				has_global_flag = wg_crisis_hard
-				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "buy_ra_leader_count" value >= 6 }
-			}
-			# 天灾vip可买6个将领
-			AND = {
-				has_global_flag = wg_crisis_insane
-				has_country_flag = ra_vip
-				check_variable = { which = "buy_ra_leader_count" value >= 6 }
-			}
-			# 天灾非vip可买5个将领
-			AND = {
-				has_global_flag = wg_crisis_insane
-				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "buy_ra_leader_count" value >= 5 }
 			}
 		}
 		# 不限制普通难度
@@ -56,38 +56,38 @@ is_reach_ra_leader_limit = {
 
 is_reach_ra_fleet_buy_limit = {
 	AND = {
-		# 困难vip可买12队船
 		OR = {
+			# 困难vip可买12队船
 			AND = {
 				has_global_flag = wg_crisis_normal
 				has_country_flag = ra_vip
-				check_variable = { which = "buy_ra_fleet_count" value >= 15 }
+				check_variable = { which = "buy_ra_fleet_count" value >= 12 }
 			}
 			# 困难非vip可买10队船
 			AND = {
 				has_global_flag = wg_crisis_normal
 				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "buy_ra_fleet_count" value >= 13 }
+				check_variable = { which = "buy_ra_fleet_count" value >= 10 }
 			}
 			# 萌新vip可买11队船
 			AND = {
 				has_global_flag = wg_crisis_hard
 				has_country_flag = ra_vip
-				check_variable = { which = "buy_ra_fleet_count" value >= 14 }
+				check_variable = { which = "buy_ra_fleet_count" value >= 11 }
 			}
 			# 萌新非vip可买9队船
 			AND = {
 				has_global_flag = wg_crisis_hard
 				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "buy_ra_fleet_count" value >= 12 }
+				check_variable = { which = "buy_ra_fleet_count" value >= 9 }
 			}
-			# 天灾vip可买9队船
+			# 天灾vip可买10队船
 			AND = {
 				has_global_flag = wg_crisis_insane
 				has_country_flag = ra_vip
 				check_variable = { which = "buy_ra_fleet_count" value >= 10 }
 			}
-			# 天灾非vip可买7队船
+			# 天灾非vip可买8队船
 			AND = {
 				has_global_flag = wg_crisis_insane
 				NOT = { has_country_flag = ra_vip }
@@ -114,29 +114,29 @@ is_reach_ra_fleet_own_limit = {
 				NOT = { has_country_flag = ra_vip }
 				check_variable = { which = "ra_fleet_count" value >= 5 }
 			}
-			# 萌新vip最多有5队船
+			# 萌新vip最多有6队船
 			AND = {
 				has_global_flag = wg_crisis_hard
+				has_country_flag = ra_vip
+				check_variable = { which = "ra_fleet_count" value >= 6 }
+			}
+			# 萌新非vip最多有5队船
+			AND = {
+				has_global_flag = wg_crisis_hard
+				NOT = { has_country_flag = ra_vip }
+				check_variable = { which = "ra_fleet_count" value >= 5 }
+			}
+			# 天灾vip最多有5队船
+			AND = {
+				has_global_flag = wg_crisis_insane
 				has_country_flag = ra_vip
 				check_variable = { which = "ra_fleet_count" value >= 5 }
 			}
-			# 萌新非vip最多有4队船
-			AND = {
-				has_global_flag = wg_crisis_hard
-				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "ra_fleet_count" value >= 4 }
-			}
-			# 天灾vip最多有4队船
-			AND = {
-				has_global_flag = wg_crisis_insane
-				has_country_flag = ra_vip
-				check_variable = { which = "ra_fleet_count" value >= 4 }
-			}
-			# 天灾非vip最多有3队船
+			# 天灾非vip最多有4队船
 			AND = {
 				has_global_flag = wg_crisis_insane
 				NOT = { has_country_flag = ra_vip }
-				check_variable = { which = "ra_fleet_count" value >= 3 }
+				check_variable = { which = "ra_fleet_count" value >= 4 }
 			}
 		}
 		# 不限制普通难度

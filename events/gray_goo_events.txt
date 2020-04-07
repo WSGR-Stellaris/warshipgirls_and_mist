@@ -2210,7 +2210,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2264,7 +2264,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2287,7 +2287,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2310,7 +2310,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2333,7 +2333,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2360,7 +2360,7 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		portrait = root.species
+		portrait = GrayTempest
 		room = "ethic_spaceship_room"
 	}
 	
@@ -2434,9 +2434,9 @@ country_event = {
 	
 	picture_event_data = {
 		portrait = GrayTempest
-		planet_background = root
+		planet_background = root.capital_scope
 		graphical_culture = root
-		city_level = root
+		city_level = root.capital_scope
 		room = root
 	}
 
@@ -2524,10 +2524,12 @@ country_event = {
 		from = { is_country_type = gray }
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_governor_active
-		NOT = { has_country_flag = gray_reforming }
-		NOT = { has_country_flag = gray_diplomacy_engaged }
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged 
+			has_country_flag = ban_commu_with_gray
+		}
 		exists = event_target:gray_governor
-		NOT = { has_country_flag = ban_commu_with_gray }
 	}
 
 	immediate = {
@@ -2593,9 +2595,9 @@ country_event = {
 	
 	picture_event_data = {
 		portrait = GrayTempest
-		planet_background = root
+		planet_background = root.capital_scope
 		graphical_culture = root
-		city_level = root
+		city_level = root.capital_scope
 		room = root
 	}
 	
@@ -2605,12 +2607,14 @@ country_event = {
 		from = { is_country_type = gray }
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_warship_active
-		NOT = { has_country_flag = gray_reforming }
-		NOT = { has_country_flag = gray_diplomacy_engaged }
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged
+			has_country_flag = ban_commu_with_gray
+		}
 		exists = event_target:gray_warship
 		any_owned_fleet = { is_same_value = event_target:gray_warship }
 		event_target:gray_warship = { num_ships > 0 }
-		NOT = { has_country_flag = ban_commu_with_gray }
 	}
 
 	immediate = {
@@ -2680,9 +2684,9 @@ country_event = {
 	
 	picture_event_data = {
 		portrait = GrayTempest
-		planet_background = root
+		planet_background = root.capital_scope
 		graphical_culture = root
-		city_level = root
+		city_level = root.capital_scope
 		room = root
 	}
 	
@@ -2691,8 +2695,10 @@ country_event = {
 	trigger = {
 		from = { is_country_type = gray }
 		has_country_flag = gray_army_active
-		NOT = { has_country_flag = gray_reforming }
-		NOT = { has_country_flag = gray_diplomacy_engaged }
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged 
+		}
 		is_same_value = event_target:gray_owner
 		any_owned_army = { 
 			army_type = gray_army
@@ -2841,9 +2847,9 @@ country_event = {
 	
 	picture_event_data = {
 		portrait = GrayTempest
-		planet_background = root
+		planet_background = root.capital_scope
 		graphical_culture = root
-		city_level = root
+		city_level = root.capital_scope
 		room = root
 	}
 	
@@ -2861,67 +2867,6 @@ country_event = {
 	}
 }
 
-# Gray destroyed or disbanded
-event = {
-	id = graygoo.510
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	trigger = {
-		any_country = { is_country_type = gray }
-		exists = event_target:gray_owner
-		event_target:gray_owner = {
-			OR = {
-				AND = {
-					has_country_flag = gray_army_active
-					NOT = { 
-						any_owned_army = { army_type = gray_army } 
-					}
-				}
-				AND = {
-					has_country_flag = gray_warship_active
-					NOT = { exists = event_target:gray_warship }
-				}
-				AND = {
-					has_country_flag = gray_governor_active
-					NOT = { exists = event_target:gray_governor }
-				}
-			}
-		}
-	}
-
-	immediate = {
-		event_target:gray_owner = {
-			remove_country_flag = gray_governor_active
-			remove_country_flag = gray_warship_active
-			remove_country_flag = gray_army_active
-			set_country_flag = gray_reforming
-			add_modifier = {
-				modifier = "gray_scattered"
-				days = 3600
-			}
-			country_event = { id = graygoo.511 }
-			country_event = { id = graygoo.512 days = 3600 }
-		}
-	}
-}
-
-# Gray regenerating
-country_event = {
-	id = graygoo.511
-	title = "graygoo.511.name"
-	desc = "graygoo.511.desc"
-	picture = GFX_evt_circuitry_modification
-	show_sound = event_radio_chatter
-
-	is_triggered_only = yes
-
-	option = {
-		name = graygoo.511.a
-	}
-}
-
 # Gray Returns
 country_event = {
 	id = graygoo.512
@@ -2933,7 +2878,8 @@ country_event = {
 	diplomatic = yes
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		portrait = GrayTempest
+		room = "ethic_spaceship_room"
 	}
 	
 	is_triggered_only = yes

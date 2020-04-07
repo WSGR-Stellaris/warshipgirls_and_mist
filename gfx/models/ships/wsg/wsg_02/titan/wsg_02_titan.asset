@@ -31,7 +31,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_titan_bow_entity"
-	pdxmesh = "wsg_02_titan_mesh"
+	pdxmesh = "wsg_01_titan_gunweaponside_bow_mesh"
 	
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
@@ -46,7 +46,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_titan_mid_entity"
-	pdxmesh = "wsg_02_titan_mesh"
+	pdxmesh = "wsg_01_titan_gunweaponside_mid_mesh"
 	
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
@@ -61,7 +61,7 @@ entity = {
 
 entity = {
 	name = "wsg_02_titan_stern_entity"
-	pdxmesh = "wsg_02_titan_mesh"
+	pdxmesh = "wsg_01_titan_gunweaponside_stern_mesh"
 	
 	default_state = "idle"
 	state = { name = "idle" state_time = 5

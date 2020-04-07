@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "wsg_01_crusier_egun_mesh"
+		file = "gfx/models/ships/wsg/wsg_01/crusier/wsg_01_crusier_egun.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pasted__pasted__pasted__ScifiSpaceshipGunBattery5x1Shape"
+			index = 0
+			texture_diffuse = "ScifiSpaceshipStandardWeaponsAlbedo1.dds"
+			texture_normal = "ScifiSpaceshipStandardWeaponsNormal.dds"
+			texture_specular = "ScifiSpaceshipStandardWeaponsAlbedo_SPEC.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

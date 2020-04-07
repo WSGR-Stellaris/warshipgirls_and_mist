@@ -20,9 +20,7 @@ wg_modifier_Dbed = {
 	country_naval_cap_mult = 0.20
 }
 
-wg_modifier_Epolicy = {
-    planet_decision_enact_speed_mult = 0.05
-}
+
 
 wg_modifier_125 = {
     starbase_shipyard_build_cost_mult = 0.05
@@ -252,6 +250,17 @@ sh_modifier_sf = {
 sh_sf = {
 	ship_weapon_damage = -2.50
 }
+
+sh_juggernaut = {
+    ships_upkeep_mult = -0.9
+	ship_weapon_damage = -0.80
+	ship_hull_mult = -0.50
+	ship_armor_mult = -0.2
+	ship_shield_mult = -0.20
+}
+sh_juggernaut2 = {
+    country_engineering_tech_research_speed = 0.10
+}
 sh_sanctuary_power = {
 	ship_hull_mult = 1.50
 	ship_armor_mult = 1.50
@@ -276,6 +285,12 @@ sh_sanctuary_power3 = {
 	ship_fire_rate_mult = 0.50
 	ship_weapon_range_mult = 0.50
 }
+
+sh_invaded_origin = {
+	planet_districts_cost_mult = -0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+}
+#################################
 wg_lady = {
 	ship_hull_mult = 3.50
 	ship_armor_mult = 3.50
@@ -344,6 +359,7 @@ wg_ai_base = {
 	country_base_sr_se_produces_add = 100
 	country_base_sr_neo_produces_add = 100
 	country_base_sr_alpha_produces_add = 100
+	planet_amenities_mult = 0.20
 }
 sh_base = {
 	country_base_sr_pantsu_produces_add = 2
@@ -354,9 +370,9 @@ planet_clovertheater = {
 }
 
 ovo_power = {
-	ship_weapon_damage = 2.00
-	ship_hull_mult = 0.50
-	ship_shield_mult = 0.50	
+	ship_weapon_damage = 1.00
+	ship_hull_mult = -0.30
+	ship_shield_mult = 0.20	
 }
 
 lexington_ruler_buff = {
@@ -368,7 +384,7 @@ sol_III_society_10 = {
 }
 
 ppt_bank_statement = {
-	ships_upkeep_mult = -0.50
+	ships_upkeep_mult = -0.10
 }
 
 neck_gg = {
@@ -379,4 +395,30 @@ planet_Parit = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds"
 	icon_frame = 1
 	planet_orbital_bombardment_damage = -1.0
+}
+
+planet_badseal = {
+	icon = "gfx/interface/icons/planet_modifiers/P_badseal.dds"
+	icon_frame = 3
+	planet_jobs_food_produces_mult = -0.25
+}
+
+wg_badseal1 = {
+    planet_jobs_produces_mult = -0.1
+}
+
+wg_badseal2 = {
+    ship_weapon_damage = -0.10
+}
+
+uf_hidden_buff = {
+	ship_hull_mult = 15.00
+	ship_armor_mult = 15.00
+	ship_shield_mult = 15.00
+	ship_weapon_damage = 25.00
+	ship_fire_rate_mult = 25.00
+	ship_weapon_range_mult = 2.50
+	force_disparity_fire_rate_mult = 10.0
+	ship_speed_mult = 2.0
+	planet_orbital_bombardment_damage = 10.0
 }

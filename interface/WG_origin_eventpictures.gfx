@@ -9,4 +9,24 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/origins/origin_wsg_ice_breaking.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_origin_wsg_diplomacy"
+		texturefile = "gfx/event_pictures/origins/origin_wsg_diplomacy.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_origin_sh_juggernaut"
+		texturefile = "gfx/event_pictures/origins/origin_sh_juggernaut.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_sh_invaded"
+		texturefile = "gfx/event_pictures/origins/origin_sh_invaded.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_origin_wg_fe_child"
+		texturefile = "gfx/event_pictures/origins/origin_wg_fe_child.dds"
+		alwaystransparent = yes
+	}	
 }

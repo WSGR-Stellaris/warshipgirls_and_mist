@@ -61,7 +61,7 @@ sh_researcher = {
 	}	
 	
 	weight = {
-		weight = 1500
+		weight = 2500
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no	
@@ -74,17 +74,13 @@ sh_researcher = {
 		modifier = {
 			factor = 3
 			has_trait = trait_erudite
-		}
+		}		
 		modifier = {
 			factor = 2
 			OR = {
 				has_trait = trait_robot_logic_engines
 				has_trait = trait_intelligent
 			}
-		}
-		modifier = {
-			factor = 2
-			has_trait = trait_brainslug
 		}
 		modifier = {
 			factor = 1.5
@@ -95,8 +91,8 @@ sh_researcher = {
 			}
 		}
 		modifier = {
-			factor = 0.1
-			can_take_servant_job = yes
+			factor = 5
+			has_job = head_researcher
 		}
 		modifier = {
 			factor = 0.65
@@ -104,20 +100,16 @@ sh_researcher = {
 		}
 		modifier = {
 			factor = 1.5
-			has_job = researcher
-		}
-		modifier = {
-			factor = 1.5
 			has_trait = trait_latent_psionic
-		} 
+		}	
 		modifier = {
 			factor = 2
 			has_trait = trait_psionic
-		} 
+		}	
 		modifier = {
 			factor = 0.1
 			has_trait = trait_enigmatic_intelligence_failed
-		} 
+		}	
 		modifier = {
 			factor = 2
 			OR = {
@@ -127,18 +119,35 @@ sh_researcher = {
 		}
 		modifier = {
 			factor = 2
-			has_trait = trait_presapient_natural_intellectuals
+				has_trait = trait_presapient_natural_intellectuals
+		}
+		modifier = {
+			factor = 2
+				has_trait = trait_brainslug
 		}
 		modifier = {
 			factor = 1.5
+			has_trait = trait_robust
+		}
+		modifier = {
+			factor = 1.25
 			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
 			}
 		}
 		modifier = {
-			factor = 0
-			jobs_save_goods = yes	
+			factor = 0.75
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 0.01
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
 		}
 	}
 }
