@@ -1048,6 +1048,7 @@ utility_component_template = {
 		}
 		damage_per_day = {
 			accuracy = 1.0
+			tracking = 1.0
 			damage = { min = 10 max = 15 }
 			
 			shield_penetration = 1.0
