@@ -481,6 +481,9 @@ country_event = {
 					trait = leader_trait_admiral_mist
 				}
 				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = wsg_event_leader
+				}
 			}
 			last_created_leader = {
 				set_age = 7
@@ -727,72 +730,51 @@ country_event = {
 	show_sound = event_wsg_lightning
 	is_triggered_only = yes
 
+	after = {
+		hidden_effect = {		
+			create_species = {
+				name = CHAIRMAN
+				plural = CHAIRMAN
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = Ella_species
+				}
+			}		
+			create_leader = {
+				class = governor
+				species = event_target:Ella_species
+				name = Ella
+				skill = 5
+				traits = {
+					trait = leader_trait_governor_Ella
+				}
+				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = wsg_event_leader
+				}
+			}
+			last_created_leader = {
+				set_is_female = yes
+				set_age = 747
+				change_leader_portrait = wsg9999
+			}
+		}
+	}
+
 	option = {
 		name = "wsg.3031.a"
 		custom_tooltip = wsg.3031.a.response
 		owner = {
 			add_resource = { unity = 100}
 		}
-		hidden_effect = {		
-			create_species = {
-				name = CHAIRMAN
-				plural = CHAIRMAN
-				class = ART
-				portrait = art13
-				namelist = ART1
-				effect = {
-					save_global_event_target_as = Ella_species
-				}
-			}		
-			create_leader = {
-				class = governor
-				species = event_target:Ella_species
-				name = Ella
-				skill = 5
-				traits = {
-					trait = leader_trait_governor_Ella
-				}
-				event_leader = yes	# prevents this leader from leading factions and winning elections
-			}
-			last_created_leader = {
-				set_is_female = yes
-				set_age = 747
-				change_leader_portrait = wsg9999
-			}
-		}	
 	}
 	option = {
 		name = "wsg.3031.b"
 		custom_tooltip = wsg.3031.a.response
 		owner = {
 			add_resource = { influence = 50 }
-		}
-		hidden_effect = {		
-			create_species = {
-				name = CHAIRMAN
-				plural = CHAIRMAN
-				class = ART
-				portrait = art13
-				namelist = ART1
-				effect = {
-					save_global_event_target_as = Ella_species
-				}
-			}		
-			create_leader = {
-				class = governor
-				species = event_target:Ella_species
-				name = Ella
-				skill = 5
-				traits = {
-					trait = leader_trait_governor_Ella
-				}
-				event_leader = yes	# prevents this leader from leading factions and winning elections
-			}
-			last_created_leader = {
-				set_is_female = yes
-				set_age = 747
-				change_leader_portrait = wsg9999
-			}
 		}	
 	}
 	option = {
@@ -800,33 +782,6 @@ country_event = {
 		custom_tooltip = wsg.3031.a.response
 		owner = {
 			add_resource = { energy = 500 }
-		}
-		hidden_effect = {		
-			create_species = {
-				name = CHAIRMAN
-				plural = CHAIRMAN
-				class = ART
-				portrait = art13
-				namelist = ART1
-				effect = {
-					save_global_event_target_as = Ella_species
-				}
-			}		
-			create_leader = {
-				class = governor
-				species = event_target:Ella_species
-				name = Ella
-				skill = 5
-				traits = {
-					trait = leader_trait_governor_Ella
-				}
-				event_leader = yes	# prevents this leader from leading factions and winning elections
-			}
-			last_created_leader = {
-				set_is_female = yes
-				set_age = 747
-				change_leader_portrait = wsg9999
-			}
 		}	
 	}
 }
@@ -1838,19 +1793,20 @@ country_event = {
 			}
 		}
 		create_leader = {
-		class = governor
-		species = event_target:santee_species
-		name = "NAME_Santee"
-		skill = 6
-		event_leader = yes
-		effect = {
-			set_leader_flag = santee_flag
-			save_global_event_target_as = santee_leader
-		}	
-		traits = {
-			trait = leader_trait_governor_santee
-			trait = leader_trait_governor_warshipgirls
-			trait = leader_trait_governor_mist
+			class = governor
+			species = event_target:santee_species
+			name = "NAME_Santee"
+			skill = 6
+			event_leader = yes
+			effect = {
+				set_leader_flag = santee_flag
+				save_global_event_target_as = santee_leader
+				set_leader_flag = wsg_event_leader
+			}	
+			traits = {
+				trait = leader_trait_governor_santee
+				trait = leader_trait_governor_warshipgirls
+				trait = leader_trait_governor_mist
 			}
 		}
 		last_created_leader = {
@@ -2078,6 +2034,9 @@ country_event = {
 					trait = leader_trait_general_mist
 				}
 				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = wsg_event_leader
+				}
 			}
 			last_created_leader = {
 				set_age = 25
@@ -3214,6 +3173,8 @@ country_event = {
 				change_leader_portrait = wsg29_3
 				set_is_female = yes
 				set_leader_flag = set_skills
+				set_leader_flag = wsg_event_leader
+				set_leader_flag = has_gained_level_trait
 				if = {
 					limit = {
 						owner = {

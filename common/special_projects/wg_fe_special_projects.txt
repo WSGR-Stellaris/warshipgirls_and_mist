@@ -192,3 +192,14 @@ special_project = {
 		}
 	}
 }
+
+special_project = {
+	key = "COMFIRM_WG_LADY_NAMING_PROJECT"
+	event_scope = planet_event
+	picture = GFX_evt_wsg_no_video
+	days_to_research = 3
+	
+	on_success = {
+		owner = { country_event = { id = wg_fe.202 }}
+	}
+}

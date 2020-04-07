@@ -105,3 +105,64 @@ has_enough_consumer_goods = {
 		}
 	}
 }
+
+is_wg_leader = {
+	OR = { 
+		species = { 
+			OR = {
+				has_trait = wsg_trait_warshipgirls
+				has_trait = wsg_trait_warshipgirls1
+				has_trait = wsg_trait_mist
+				has_trait = sh_trait_shenhai
+				has_trait = sh_trait_shenhai1
+				has_trait = sh_trait_shenhai3
+			}
+		}
+		has_leader_flag = overtime_yamato #劳模
+		has_trait = leader_trait_admiral_Rodney #老罗
+		has_trait = leader_trait_governor_Ella #艾拉
+		has_trait = leader_trait_governor_santee #桑提
+		has_trait = leader_trait_general_washington_axe #花生
+		has_trait = leader_trait_ruler_lexington #太太
+	}
+}
+
+has_affection_trait = {
+	OR = {
+		# 总督
+		has_trait = leader_trait_governor_affection_lv1
+		has_trait = leader_trait_governor_affection_lv2
+		has_trait = leader_trait_governor_affection_lv3
+		has_trait = leader_trait_governor_affection_lv4
+		has_trait = leader_trait_governor_affection_lv4_max
+		has_trait = leader_trait_governor_affection_lv5
+		# 科学家
+		has_trait = leader_trait_scientist_affection_lv1
+		has_trait = leader_trait_scientist_affection_lv2
+		has_trait = leader_trait_scientist_affection_lv3
+		has_trait = leader_trait_scientist_affection_lv4
+		has_trait = leader_trait_scientist_affection_lv4_max
+		has_trait = leader_trait_scientist_affection_lv5
+		# 海军上将
+		has_trait = leader_trait_admiral_affection_lv1
+		has_trait = leader_trait_admiral_affection_lv2
+		has_trait = leader_trait_admiral_affection_lv3
+		has_trait = leader_trait_admiral_affection_lv4
+		has_trait = leader_trait_admiral_affection_lv4_max
+		has_trait = leader_trait_admiral_affection_lv5
+		# 陆军将领
+		has_trait = leader_trait_general_affection_lv1
+		has_trait = leader_trait_general_affection_lv2
+		has_trait = leader_trait_general_affection_lv3
+		has_trait = leader_trait_general_affection_lv4
+		has_trait = leader_trait_general_affection_lv4_max
+		has_trait = leader_trait_general_affection_lv5
+		# 统治者
+		has_ruler_trait = leader_trait_ruler_affection_lv1
+		has_ruler_trait = leader_trait_ruler_affection_lv2
+		has_ruler_trait = leader_trait_ruler_affection_lv3
+		has_ruler_trait = leader_trait_ruler_affection_lv4
+		has_ruler_trait = leader_trait_ruler_affection_lv4_max
+		has_ruler_trait = leader_trait_ruler_affection_lv5
+	}
+}

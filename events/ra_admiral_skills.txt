@@ -1,7 +1,7 @@
 namespace = raa_skill
 
 # Fleet enters combat
-event = {
+country_event = {
     id = raa_skill.1
     hide_window = yes
     is_triggered_only = yes
@@ -507,7 +507,7 @@ event = {
 }
 
 # Fleet finish combat
-event = {
+country_event = {
     id = raa_skill.2
     hide_window = yes
     is_triggered_only = yes
@@ -920,7 +920,7 @@ fleet_event = {
     }
 }
 
-event = {
+fleet_event = {
     id = raa_skill.4
     hide_window = yes
     is_triggered_only = yes

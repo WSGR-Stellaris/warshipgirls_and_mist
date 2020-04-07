@@ -2,17 +2,184 @@ namespace = sh_traits
 
 ### Empire init
 event = {
-  id = sh_traits.1
-  hide_window = yes
-  is_triggered_only = yes
-  immediate = {
-	every_country = {
-		if = {
-			limit = {
-				AND = {
+	id = sh_traits.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			if = {
+				limit = {
 					has_trait = "sh_trait_shenhai"
 					NOT = { has_modifier = sh_modifier_shenhai }
 				}
+				add_modifier = {
+					modifier = sh_modifier_shenhai
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					has_trait = "sh_trait_building"
+					NOT = { has_modifier = sh_modifier_building }
+				}
+				add_modifier = {
+					modifier = sh_modifier_building
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					has_trait = "sh_trait_eye"
+					NOT = { has_modifier = sh_modifier_eye }
+				}
+				add_modifier = {
+					modifier = sh_modifier_eye
+					days = -1
+				}
+			}	
+			if = {
+				limit = {
+					has_trait = "sh_trait_repair"
+					NOT = { has_modifier = sh_modifier_repair }
+				}
+				add_modifier = {
+					modifier = sh_modifier_repair
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					has_trait = "sh_trait_unattractive"
+					NOT = { has_modifier = sh_modifier_unattractive }
+				}
+				add_modifier = {
+					modifier = sh_modifier_unattractive
+					days = -1
+				}
+			}	
+			if = {
+				limit = {
+					has_trait = "sh_trait_untrusted"
+					NOT = { has_modifier = sh_modifier_untrusted }
+				}
+				add_modifier = {
+					modifier = sh_modifier_untrusted
+					days = -1
+				}
+			}	
+			if = {
+				limit = {
+					has_trait = "sh_trait_fleet"
+					NOT = { has_modifier = sh_modifier_fleet }
+				}
+				add_modifier = {
+					modifier = sh_modifier_fleet
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					has_trait = "sh_trait_engm"
+					NOT = { has_modifier = sh_modifier_engm }
+				}
+				add_modifier = {
+					modifier = sh_modifier_engm
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					has_trait = "sh_trait_engm2"
+					NOT = { has_modifier = sh_modifier_engm2 }
+				}
+				add_modifier = {
+					modifier = sh_modifier_engm2
+					days = -1
+				}
+			}		
+		}
+	}
+}
+
+#  Remove trait bonuses if no trait
+event = {
+	id = sh_traits.2
+	hide_window = yes
+	is_triggered_only = yes
+
+  	immediate = {
+		every_country = {
+			if = {
+				limit = {
+					has_modifier = sh_modifier_building
+					NOT = { has_trait = "sh_trait_building" }
+				}
+				remove_modifier =  sh_modifier_building
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_eye
+					NOT = { has_trait = "sh_trait_eye" }
+				}
+				remove_modifier = sh_modifier_eye
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_repair
+					NOT = { has_trait = "sh_trait_repair" }
+				}
+				remove_modifier =  sh_modifier_repair
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_unattractive
+					NOT = { has_trait = "sh_trait_unattractive" }
+				}
+				remove_modifier = sh_modifier_unattractive
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_untrusted
+					NOT = { has_trait = "sh_trait_untrusted" }
+				}
+				remove_modifier =  sh_modifier_untrusted
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_fleet
+					NOT = { has_trait = "sh_trait_fleet" }
+				}
+				remove_modifier =  sh_modifier_fleet
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_engm
+					NOT = { has_trait = "sh_trait_engm" }
+				}
+				remove_modifier =  sh_modifier_engm
+			}
+			if = {
+				limit = {
+					has_modifier = sh_modifier_engm2
+					NOT = { has_trait = "sh_trait_engm2" }
+				}
+				remove_modifier =  sh_modifier_engm2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh_traits.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_trait = "sh_trait_shenhai"
+				NOT = { has_modifier = sh_modifier_shenhai }
 			}
 			add_modifier = {
 				modifier = sh_modifier_shenhai
@@ -21,10 +188,8 @@ event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_building"
-					NOT = { has_modifier = sh_modifier_building }
-				}
+				has_trait = "sh_trait_building"
+				NOT = { has_modifier = sh_modifier_building }
 			}
 			add_modifier = {
 				modifier = sh_modifier_building
@@ -33,10 +198,8 @@ event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_eye"
-					NOT = { has_modifier = sh_modifier_eye }
-				}
+				has_trait = "sh_trait_eye"
+				NOT = { has_modifier = sh_modifier_eye }
 			}
 			add_modifier = {
 				modifier = sh_modifier_eye
@@ -45,10 +208,8 @@ event = {
 		}	
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_repair"
-					NOT = { has_modifier = sh_modifier_repair }
-				}
+				has_trait = "sh_trait_repair"
+				NOT = { has_modifier = sh_modifier_repair }
 			}
 			add_modifier = {
 				modifier = sh_modifier_repair
@@ -57,10 +218,8 @@ event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_unattractive"
-					NOT = { has_modifier = sh_modifier_unattractive }
-				}
+				has_trait = "sh_trait_unattractive"
+				NOT = { has_modifier = sh_modifier_unattractive }
 			}
 			add_modifier = {
 				modifier = sh_modifier_unattractive
@@ -69,10 +228,8 @@ event = {
 		}	
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_untrusted"
-					NOT = { has_modifier = sh_modifier_untrusted }
-				}
+				has_trait = "sh_trait_untrusted"
+				NOT = { has_modifier = sh_modifier_untrusted }
 			}
 			add_modifier = {
 				modifier = sh_modifier_untrusted
@@ -81,10 +238,8 @@ event = {
 		}	
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_fleet"
-					NOT = { has_modifier = sh_modifier_fleet }
-				}
+				has_trait = "sh_trait_fleet"
+				NOT = { has_modifier = sh_modifier_fleet }
 			}
 			add_modifier = {
 				modifier = sh_modifier_fleet
@@ -93,10 +248,8 @@ event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_engm"
-					NOT = { has_modifier = sh_modifier_engm }
-				}
+				has_trait = "sh_trait_engm"
+				NOT = { has_modifier = sh_modifier_engm }
 			}
 			add_modifier = {
 				modifier = sh_modifier_engm
@@ -105,99 +258,79 @@ event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_trait = "sh_trait_engm2"
-					NOT = { has_modifier = sh_modifier_engm2 }
-				}
+				has_trait = "sh_trait_engm2"
+				NOT = { has_modifier = sh_modifier_engm2 }
 			}
 			add_modifier = {
 				modifier = sh_modifier_engm2
 				days = -1
 			}
-		}		
+		}
 	}
-  }
 }
 
 #  Remove trait bonuses if no trait
-event = {
-  id = sh_traits.2
-  hide_window = yes
-  is_triggered_only = yes
-  immediate = {
-	every_country = {
+country_event = {
+	id = sh_traits.4
+	hide_window = yes
+	is_triggered_only = yes
+
+  	immediate = {
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_building
-					NOT = { has_trait = "sh_trait_building" }
-				}
+				has_modifier = sh_modifier_building
+				NOT = { has_trait = "sh_trait_building" }
 			}
 			remove_modifier =  sh_modifier_building
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_eye
-					NOT = { has_trait = "sh_trait_eye" }
-				}
+				has_modifier = sh_modifier_eye
+				NOT = { has_trait = "sh_trait_eye" }
 			}
 			remove_modifier = sh_modifier_eye
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_repair
-					NOT = { has_trait = "sh_trait_repair" }
-				}
+				has_modifier = sh_modifier_repair
+				NOT = { has_trait = "sh_trait_repair" }
 			}
 			remove_modifier =  sh_modifier_repair
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_unattractive
-					NOT = { has_trait = "sh_trait_unattractive" }
-				}
+				has_modifier = sh_modifier_unattractive
+				NOT = { has_trait = "sh_trait_unattractive" }
 			}
 			remove_modifier = sh_modifier_unattractive
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_untrusted
-					NOT = { has_trait = "sh_trait_untrusted" }
-				}
+				has_modifier = sh_modifier_untrusted
+				NOT = { has_trait = "sh_trait_untrusted" }
 			}
 			remove_modifier =  sh_modifier_untrusted
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_fleet
-					NOT = { has_trait = "sh_trait_fleet" }
-				}
+				has_modifier = sh_modifier_fleet
+				NOT = { has_trait = "sh_trait_fleet" }
 			}
 			remove_modifier =  sh_modifier_fleet
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_engm
-					NOT = { has_trait = "sh_trait_engm" }
-				}
+				has_modifier = sh_modifier_engm
+				NOT = { has_trait = "sh_trait_engm" }
 			}
 			remove_modifier =  sh_modifier_engm
 		}
 		if = {
 			limit = {
-				AND = {
-					has_modifier = sh_modifier_engm2
-					NOT = { has_trait = "sh_trait_engm2" }
-				}
+				has_modifier = sh_modifier_engm2
+				NOT = { has_trait = "sh_trait_engm2" }
 			}
 			remove_modifier =  sh_modifier_engm2
 		}
 	}
-  }
 }

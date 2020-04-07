@@ -11,3 +11,35 @@
 @wg_fe_exchange_sr_zro_base = 75.00
 @wg_fe_exchange_sr_se_base = 200.00
 @wg_fe_exchange_nanites_base = 40.00
+
+#好感度
+#大小姐
+@lady_affection_to_lv2 = 50
+@lady_affection_to_lv3 = 100
+@lady_affection_to_lv4 = 150
+@lady_affection_to_lv5 = 200
+#总督
+@governor_affection_to_lv2 = 30
+@governor_affection_to_lv3 = 60
+@governor_affection_to_lv4 = 90
+@governor_affection_to_lv5 = 120
+#科学家
+@scientist_affection_to_lv2 = 50
+@scientist_affection_to_lv3 = 100
+@scientist_affection_to_lv4 = 150
+@scientist_affection_to_lv5 = 200
+#海军上将
+@admiral_affection_to_lv2 = 40
+@admiral_affection_to_lv3 = 80
+@admiral_affection_to_lv4 = 120
+@admiral_affection_to_lv5 = 160
+#陆军将军
+@general_affection_to_lv2 = 15
+@general_affection_to_lv3 = 30
+@general_affection_to_lv4 = 45
+@general_affection_to_lv5 = 60
+#统治者
+@ruler_affection_to_lv2 = 40
+@ruler_affection_to_lv3 = 80
+@ruler_affection_to_lv4 = 120
+@ruler_affection_to_lv5 = 160

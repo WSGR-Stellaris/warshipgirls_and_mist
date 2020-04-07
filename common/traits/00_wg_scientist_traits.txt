@@ -122,3 +122,91 @@ leader_trait_scientist_shenhai2 = {
 		weight = 100
 	}
 }
+
+##########################################
+# 好感度特性
+##########################################
+leader_trait_scientist_affection_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection1.dds"
+	modifier = {
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_affection_lv2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection2.dds"
+	modifier = {
+		all_technology_research_speed = 0.03
+		science_ship_survey_speed = 0.1
+		ship_anomaly_research_speed_mult = 0.1
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_affection_lv3 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection3.dds"
+	modifier = {
+		all_technology_research_speed = 0.06
+		science_ship_survey_speed = 0.15
+		ship_anomaly_research_speed_mult = 0.15
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_affection_lv4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		all_technology_research_speed = 0.1
+		science_ship_survey_speed = 0.2
+		ship_anomaly_research_speed_mult = 0.2
+		ship_archeaological_site_clues_add = 1
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_affection_lv4_max = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		all_technology_research_speed = 0.1
+		science_ship_survey_speed = 0.2
+		ship_anomaly_research_speed_mult = 0.2
+		ship_archeaological_site_clues_add = 1
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_affection_lv5 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection5.dds"
+	modifier = {
+		all_technology_research_speed = 0.2
+		science_ship_survey_speed = 0.4
+		ship_anomaly_research_speed_mult = 0.4
+		ship_archeaological_site_clues_add = 1
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}

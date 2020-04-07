@@ -20,7 +20,9 @@ wg_modifier_Dbed = {
 	country_naval_cap_mult = 0.20
 }
 
-
+wg_modifier_Epolicy = {
+    planet_decision_enact_speed_mult = 0.05
+}
 
 wg_modifier_125 = {
     starbase_shipyard_build_cost_mult = 0.05
@@ -285,7 +287,6 @@ sh_sanctuary_power3 = {
 	ship_fire_rate_mult = 0.50
 	ship_weapon_range_mult = 0.50
 }
-
 sh_invaded_origin = {
 	planet_districts_cost_mult = -0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
@@ -396,7 +397,6 @@ planet_Parit = {
 	icon_frame = 1
 	planet_orbital_bombardment_damage = -1.0
 }
-
 planet_badseal = {
 	icon = "gfx/interface/icons/planet_modifiers/P_badseal.dds"
 	icon_frame = 3

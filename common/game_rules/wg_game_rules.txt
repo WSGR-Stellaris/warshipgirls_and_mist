@@ -87,3 +87,14 @@ can_spawn_debris = {
 		} 
 	}
 }
+
+# this = system
+# root = country
+system_blocks_sensors = {
+	OR = {
+		is_inside_nebula = yes
+		has_star_flag = lcluster
+		has_star_flag = sealed_system
+		has_star_flag = wg_naming_ship_system
+	}
+}

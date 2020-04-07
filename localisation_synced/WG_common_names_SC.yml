@@ -26,6 +26,11 @@
  NAME_WG_LADY_PSH:"伊甸之翼"
  NAME_WG_LADY_SK:"终焉之翼"
  NAME_WG_LADY_T:"破军之翼"
+
+ WSG_PLAYER_DEFAULT_NICKNAME:"有机体"
+ NAMING_SHIP:"命名用舰船"
+ NAME_wg_naming_ship:"这船是空的"
+ NAME_empty:"你不应该来到这里的"
  
  NAME_UF_BUFFER_FLEET:"电子战舰队"
  
@@ -34,10 +39,9 @@
  NAME_ovo_life:"昆西体"
  NAME_ovo_country:"OVO"
  
- 
+ NAME_Seal:"大海豹"
  NAME_QUINCY_FLEET:"昆西化身"
  NAME_QUINCY_OVO:"巨型豹昆"
- NAME_Seal:"大海豹"
  
  NAME_Santee:"桑提"
  

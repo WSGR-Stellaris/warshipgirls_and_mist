@@ -85,7 +85,6 @@ sr_wg_up = {
 	}
 }
 
-
 sr_wg_down = {
 	is_rare = yes
 	AI_category = strategic_resource

@@ -290,6 +290,7 @@ leader_trait_admiral_Yamato = {
 	modification = no
 	icon = "gfx/interface/icons/traits/yamato.dds"
 	modifier = {
+		force_disparity_fire_rate_mult = 1.5
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
@@ -323,6 +324,7 @@ leader_trait_admiral_Johnston = {
 		weapon_type_explosive_speed_mult = 0.3
 		ship_armor_mult = 0.15
 		ship_accuracy_add = 10
+		force_disparity_fire_rate_mult = 1.0
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
@@ -340,6 +342,7 @@ leader_trait_admiral_Richelieu = {
 		ship_weapon_damage = 0.2
 		ship_shield_penetration_mult = 0.2
 		ship_armor_penetration_mult = 0.2
+		force_disparity_fire_rate_mult = 1.0
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }

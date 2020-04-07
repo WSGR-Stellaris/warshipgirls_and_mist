@@ -41,10 +41,8 @@ wsg_lady_warship = {
 	rotation_speed = 0.15
 	collision_radius = 5
 	modifier = {
-		ship_weapon_damage = 0.5
-		ship_fire_rate_mult = 0.5
-		ship_armor_mult = 0.5
-		ship_shield_mult = 0.5
+		ship_armor_add = 20000
+		ship_shield_add = 20000
 	}
 	max_hitpoints = 40000
 	size_multiplier = 16
@@ -93,4 +91,3 @@ wsg_lady_warship = {
 		alloys = 8
 	}
 }
-

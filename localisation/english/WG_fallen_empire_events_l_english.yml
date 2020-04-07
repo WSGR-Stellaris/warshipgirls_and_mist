@@ -298,7 +298,7 @@ wg_fe.160.desc.a:0 "Miss Big is okay today. If you ask Ms. Ben well, maybe Ms. w
 wg_fe.160.desc.b:0 "Miss Big is doing something for you in a humble manner, please be respectful, organism!"
 wg_fe.160.desc.c:0 "Say something fast, Miss Big doesn't have much time to spend with you."
 wg_fe.160.desc.d:0 "Don't talk to Miss Big if there is nothing, Miss Big is very busy, huh!"
-wsg_lady_to_governer:0 "Miss, can you handle the internal affairs for us?"
+wsg_lady_to_governor:0 "Miss, can you handle the internal affairs for us?"
 wsg_lady_to_warship:0 "Miss, can you help our fleet as you were?"
 wsg_lady_to_army:0 "Miss, can you help us with the landing battle?"
 wsg_lady_to_armed_science:0 "Miss, can you help us explore the outside?"

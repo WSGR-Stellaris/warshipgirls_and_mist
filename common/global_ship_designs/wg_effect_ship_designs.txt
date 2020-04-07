@@ -17,3 +17,9 @@ ship_design = {
 	required_component = "OPENING_TORPEDO_DAMAGE_01"
 }
 
+# 储存大小姐对玩家称呼的命名船
+ship_design = {
+	name = "NAME_wg_naming_ship"
+	ship_size = wg_lady_naming_ship
+
+}

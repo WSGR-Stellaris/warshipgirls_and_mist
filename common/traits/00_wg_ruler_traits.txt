@@ -96,3 +96,87 @@ leader_trait_ruler_lexington2 = {
 	initial = no
 	randomized = no
 }
+
+##########################################
+# 好感度特性
+##########################################
+leader_trait_ruler_affection_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection1.dds"
+	modifier = {
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+leader_trait_ruler_affection_lv2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection2.dds"
+	modifier = {
+		country_base_unity_produces_mult = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+leader_trait_ruler_affection_lv3 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection3.dds"
+	modifier = {
+		country_base_unity_produces_mult = 0.05
+		country_base_influence_produces_mult = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+leader_trait_ruler_affection_lv4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		country_base_unity_produces_mult = 0.1
+		country_base_influence_produces_mult = 0.1
+		envoy_improve_relations_mult = 0.1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+leader_trait_ruler_affection_lv4_max = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		country_base_unity_produces_mult = 0.1
+		country_base_influence_produces_mult = 0.1
+		envoy_improve_relations_mult = 0.1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+leader_trait_ruler_affection_lv5 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection5.dds"
+	modifier = {
+		country_base_unity_produces_mult = 0.2
+		country_base_influence_produces_mult = 0.2
+		envoy_improve_relations_mult = 0.2
+		planet_jobs_produces_mult = 0.1
+		envoys_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}

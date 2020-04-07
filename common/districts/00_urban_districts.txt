@@ -242,7 +242,7 @@ district_hive = {
 		}
 		upkeep = {
 			energy = 2
-		}
+		}		
 	}
 	
 	planet_modifier = {
@@ -258,6 +258,7 @@ district_hive = {
 			job_maintenance_drone_add = 3
 		}
 	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner

@@ -104,6 +104,7 @@ country_event = {
 				event_leader = yes	# prevents this leader from leading factions and winning elections
 				effect = {
 					set_leader_flag = overtime_yamato
+					set_leader_flag = wsg_event_leader
 				}				
 			}
 			last_created_leader = {
@@ -560,6 +561,7 @@ country_event = {
 			#owner_species = { save_event_target_as = psionic_species }
 		}
 		change_dominant_species = { species = last_created change_all = yes }
+		country_event = { id = wg_traits.1002 }
 	}
 	
 	option = {
@@ -2205,4 +2207,26 @@ country_event = {
 			add_resource = { sr_pantsu = 300 }
 		}		
 	}		
+}
+
+country_event = {
+	id = wg_parit.2333
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	    every_country = {
+			limit = {
+				OR = {
+					is_country_type = wg_crisis_country
+					is_country_type = wg_crisis_sub_gate_country
+				}
+			}
+			add_modifier = {
+				modifier = uf_hidden_buff
+				days = -1
+			}			
+		}
+	}	
 }

@@ -646,9 +646,7 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	option = {
-		name = wg_fe.159.a
-		custom_tooltip = wg_fe.159.a.tooltip
+	after = {
 		hidden_effect = {
 			remove_country_flag = start_wsg_lady_events
 			set_country_flag = finish_wsg_lady_events
@@ -685,6 +683,17 @@ country_event = {
 			}
 		}
 	}
+
+	option = {
+		name = wg_fe.159.a
+		custom_tooltip = wg_fe.159.a.tooltip
+	}
+
+	option = {
+		name = wg_fe.159.b
+		custom_tooltip = wg_fe.203.a.tooltip
+		hidden_effect = { country_event = { id = wg_fe.203 }}
+	}
 }
 
 country_event = {
@@ -720,6 +729,7 @@ country_event = {
 	}
 
 	immediate = {
+		get_player_nickname = yes
 		random_list = {
 			1 = { set_country_flag = wsg_lady_talking1 }
 			1 = { set_country_flag = wsg_lady_talking2 }
@@ -740,6 +750,7 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
+				clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
@@ -749,13 +760,13 @@ country_event = {
 	}
 
 	option = { # 总督
-		name = "wsg_lady_to_governer"
+		name = "wsg_lady_to_governor"
 		response_text = wg_fe.160.a.response
 		trigger = {
 			NOT = { has_country_flag = wsg_lady_governer_active }
 		}
 		hidden_effect = {
-			create_wsg_lady_governer = yes
+			create_wsg_lady_governor = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
@@ -863,6 +874,7 @@ country_event = {
 	}
 
 	immediate = {
+		get_player_nickname = yes
 		random_list = {
 			1 = { set_country_flag = wsg_lady_talking1 }
 			1 = { set_country_flag = wsg_lady_talking2 }
@@ -900,6 +912,7 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
+				clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
@@ -1014,6 +1027,7 @@ country_event = {
 	}
 
 	immediate = {
+		get_player_nickname = yes
 		random_list = {
 			1 = { set_country_flag = wsg_lady_talking1 }
 			1 = { set_country_flag = wsg_lady_talking2 }
@@ -1034,6 +1048,7 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
+				clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
@@ -1044,7 +1059,7 @@ country_event = {
 	
 
 	option = { # 总督
-		name = "wsg_lady_to_governer"
+		name = "wsg_lady_to_governor"
 		response_text = wg_fe.162.a.response
 		trigger = {
 			NOT = { has_country_flag = wsg_lady_governer_active }
@@ -1069,7 +1084,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			create_wsg_lady_governer = yes
+			create_wsg_lady_governor = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
@@ -1210,6 +1225,7 @@ country_event = {
 	}
 
 	immediate = {
+		get_player_nickname = yes
 		random_list = {
 			1 = { set_country_flag = wsg_lady_talking1 }
 			1 = { set_country_flag = wsg_lady_talking2 }
@@ -1230,6 +1246,7 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
+				clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
@@ -1239,7 +1256,7 @@ country_event = {
 	}
 
 	option = { # 总督
-		name = "wsg_lady_to_governer"
+		name = "wsg_lady_to_governor"
 		response_text = wg_fe.163.a.response
 		trigger = {
 			NOT = { has_country_flag = wsg_lady_governer_active }
@@ -1293,7 +1310,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			create_wsg_lady_governer = yes
+			create_wsg_lady_governor = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
@@ -1487,12 +1504,14 @@ country_event = {
 
 	immediate = {
 		set_country_flag = talking_to_wsg_lady
+		get_player_nickname = yes
 	}
 
 	option = {
 		name = wg_fe.164.a
 		custom_tooltip = wg_fe.164.tooltip
 		remove_country_flag = talking_to_wsg_lady
+		clear_global_event_target = wsg_player_nickname
 	}
 
 }
@@ -1639,9 +1658,14 @@ country_event = {
 		FROMFROM = { has_fleet_flag = lady_fleet2 }
 	}
 
+	immediate = {
+		get_player_nickname = yes
+	}
+
 	option = {
 		name = wg_fe.168.a
 		hidden_effect = {
+			clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_warship_active
 			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 			country_event = { id = wg_fe.170 days = 180 }
@@ -1684,9 +1708,14 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		get_player_nickname = yes
+	}
+
 	option = {
 		name = wg_fe.169.a
 		hidden_effect = {
+			clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_army_active
 			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 			country_event = { id = wg_fe.170 days = 180 }
@@ -1713,8 +1742,13 @@ country_event = {
 		room = root
 	}
 
+	immediate = {
+		get_player_nickname = yes
+	}
+
 	option = {
 		name = wg_fe.170.a
+		clear_global_event_target = wsg_player_nickname
 	}
 
 }
@@ -1733,6 +1767,7 @@ country_event = {
 			country_event = { id = wg_fe.171 days = 1 }
 		}
 		else = {
+			clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_changing
 			remove_country_flag = talking_to_wsg_lady
 			remove_country_flag = wsg_lady_talking1
@@ -1969,6 +2004,7 @@ country_event = {
 	}
 
 	immediate = {
+		get_player_nickname = yes
 		random_list = {
 			1 = { set_country_flag = wsg_lady_talking1 }
 			1 = { set_country_flag = wsg_lady_talking2 }
@@ -1989,6 +2025,7 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
+				clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
@@ -1999,7 +2036,7 @@ country_event = {
 	
 
 	option = { # 总督
-		name = "wsg_lady_to_governer"
+		name = "wsg_lady_to_governor"
 		response_text = wg_fe.178.a.response
 		trigger = {
 			NOT = { has_country_flag = wsg_lady_governer_active }
@@ -2024,7 +2061,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			create_wsg_lady_governer = yes
+			create_wsg_lady_governor = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
@@ -2835,6 +2872,182 @@ country_event = {
 	}
 }
 
+# 创建命名星系
+country_event = {
+	id = wg_fe.200
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_system = { NOT = { has_star_flag = wg_naming_ship_system }}
+	}
+
+	immediate = {
+		set_spawn_system_batch = begin
+		no_scope = {
+			spawn_system = {
+				min_distance >= 998
+				max_distance <= 999
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				initializer = "wg_naming_ship_system"
+				hyperlane = no
+				is_discovered = no
+			}
+		}
+		set_spawn_system_batch = end
+		event_target:wg_naming_ship_system = {
+			isolate_system = yes
+		}
+	}
+}
+
+# 创建命名船及特殊项目
+country_event = {
+	id = wg_fe.201
+	title = wg_fe.201.name
+	desc = wg_fe.201.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	immediate = {
+		country_event = { id = wg_fe.200 }
+		create_fleet = {
+			name = "WSG_PLAYER_DEFAULT_NICKNAME"
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = "NAMING_SHIP"
+					design = "NAME_wg_naming_ship"
+					upgradable = no
+				}
+				set_fleet_flag = lady_naming_fleet@root
+				set_location = ROOT.capital_scope
+				set_event_locked = yes
+			}
+			settings = {
+				can_upgrade = no 
+				uses_naval_capacity = no
+				spawn_debris = no
+				can_disband = no
+				can_change_leader = no
+				can_change_composition = no
+			}
+		}
+		enable_special_project = {
+			name = "COMFIRM_WG_LADY_NAMING_PROJECT"
+			location = ROOT.capital_scope
+		}
+	}
+
+	option = {
+		name = OK
+	}
+}
+
+# 已命名船并确认
+country_event = {
+	id = wg_fe.202
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:wg_naming_ship_system = {
+			random_system_planet = {
+				save_event_target_as = placing_planet
+			}
+		}
+		random_owned_fleet = {
+			limit = { has_fleet_flag = lady_naming_fleet@root }
+			set_owner = event_target:wsg_lady_country
+			set_location = event_target:placing_planet
+		}
+		set_country_flag = has_nickname
+		country_event = { id = wg_fe.204 }
+	}
+}
+
+# 补充事件：让大小姐改变称呼
+country_event = {
+	id = wg_fe.203
+	title = wg_fe.160.name
+	desc = wg_fe.203.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	option = {
+		name = wg_fe.203.a
+		hidden_effect = { country_event = { id = wg_fe.201 }}
+		custom_tooltip = wg_fe.203.a.tooltip
+	}
+}
+
+# 确认事件：大小姐对您的昵称
+country_event = {
+	id = wg_fe.204
+	title = wg_fe.160.name
+	desc = wg_fe.204.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	immediate = {
+		# 玩家昵称调用代码
+		get_player_nickname = yes
+	}
+
+	after = {
+		hidden_effect = { 
+			abort_special_project = {
+				type = COMFIRM_WG_LADY_NAMING_PROJECT
+			}
+			# 使用完get_player_nickname = yes 一定一定要执行以下代码！！
+			clear_global_event_target = wsg_player_nickname 
+		}
+	}
+
+	option = {
+		name = wg_fe.204.a
+		response_text = wg_fe.204.a.response
+	}
+
+	option = {
+		name = wg_fe.204.b
+		hidden_effect = { 
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet@root }
+					delete_fleet = this
+				}
+			}
+			country_event = { id = wg_fe.201 }
+		}
+		custom_tooltip = wg_fe.203.a.tooltip
+	}
+}
+
+
 # 数通讯次数
 country_event = {
 	id = wg_fe.1000
@@ -3323,3 +3536,46 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wg_fe.10000
+	title = wg_fe.10000.name
+	desc = wg_fe.10000.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	trigger = {
+		from = { is_country_type = gray }
+		is_same_value = event_target:gray_owner
+		has_country_flag = ban_commu_with_gray
+		NOT = { has_country_flag = gray_reforming }
+	}
+
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = wg_fe.10001
+	title = wg_fe.10000.name
+	desc = wg_fe.10001.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	trigger = {
+		from = { is_country_type = wsg_lady }
+		has_country_flag = gain_wsg_lady
+		OR = {
+			has_country_flag = ban_commu_with_wsg_lady
+			has_country_flag = modifing_wsg_lady
+		}
+		has_wsg_lady_active_diplo = no
+		NOT = { has_modifier = wsg_lady_recover_cd }
+	}
+
+	option = {
+		name = OK
+	}
+}

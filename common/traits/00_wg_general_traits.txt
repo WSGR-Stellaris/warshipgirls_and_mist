@@ -81,3 +81,92 @@ leader_trait_general_shenhai2 = {
 	initial = no
 	randomized = no
 }
+
+##########################################
+# 好感度特性
+##########################################
+leader_trait_general_affection_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection1.dds"
+	modifier = {
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_affection_lv2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection2.dds"
+	modifier = {
+		army_health = 0.1
+		army_damage_mult = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_affection_lv3 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection3.dds"
+	modifier = {
+		army_health = 0.15
+		army_damage_mult = 0.15
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_affection_lv4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		army_health = 0.2
+		army_damage_mult = 0.2
+		army_disengage_chance_mult = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_affection_lv4_max = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection4.dds"
+	modifier = {
+		army_health = 0.2
+		army_damage_mult = 0.2
+		army_disengage_chance_mult = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_affection_lv5 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection5.dds"
+	modifier = {
+		army_morale = 0.4
+		army_health = 0.4
+		army_damage_mult = 0.4
+		army_disengage_chance_mult = 0.2
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}

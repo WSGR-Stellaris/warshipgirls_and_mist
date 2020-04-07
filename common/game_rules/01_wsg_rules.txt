@@ -73,7 +73,6 @@ can_support_branch_offices = {
 		has_authority = auth_warshipgirls
 	}
 }
-
 can_build_branch_office_on_planet = {
 	custom_tooltip = {
 		fail_text = requires_recipient_not_fanatic_purifiers

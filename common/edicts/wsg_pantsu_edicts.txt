@@ -679,3 +679,28 @@ wg_struggle_edicts = {
 		set_country_flag = struggle_for_existance
 	}	
 }
+
+wg_wedding = {
+	length = 0
+
+	potential = {
+		any_owned_leader = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = married }
+			check_variable = { which = affection_level value = 4 }
+		}
+		NOT = {
+			has_active_event = {
+				wg_traits.1016
+			}
+		}
+	}
+
+	effect = {
+		country_event = { id = wg_traits.1014 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}

@@ -325,8 +325,6 @@ country_event = {
 	}
 }
 
-
-
 country_event = {
 	id = wg_parit.2333
 	hide_window = yes

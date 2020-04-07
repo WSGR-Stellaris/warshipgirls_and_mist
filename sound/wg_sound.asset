@@ -1,0 +1,6 @@
+sound =
+{
+	name = "event_wg_wedding"
+	file = "event/wg_wedding.wav"
+	volume = 0.5
+}

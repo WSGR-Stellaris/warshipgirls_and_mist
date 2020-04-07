@@ -1718,7 +1718,7 @@ country_event = {
 							}
 							country_event = { id = wg_fe.134 }
 						}
-						10 = { # 大小姐改造事件
+						20 = { # 大小姐改造事件
 							modifier = {
 								factor = 0
 								OR = {

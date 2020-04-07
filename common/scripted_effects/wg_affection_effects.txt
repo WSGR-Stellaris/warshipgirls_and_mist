@@ -1,0 +1,705 @@
+#大小姐
+@lady_affection_to_lv2 = 50
+@lady_affection_to_lv3 = 100
+@lady_affection_to_lv4 = 150
+@lady_affection_to_lv5 = 200
+#总督
+@governor_affection_to_lv2 = 30
+@governor_affection_to_lv3 = 60
+@governor_affection_to_lv4 = 90
+@governor_affection_to_lv5 = 120
+#科学家
+@scientist_affection_to_lv2 = 50
+@scientist_affection_to_lv3 = 100
+@scientist_affection_to_lv4 = 150
+@scientist_affection_to_lv5 = 200
+#海军上将
+@admiral_affection_to_lv2 = 40
+@admiral_affection_to_lv3 = 80
+@admiral_affection_to_lv4 = 120
+@admiral_affection_to_lv5 = 160
+#陆军将军
+@general_affection_to_lv2 = 15
+@general_affection_to_lv3 = 30
+@general_affection_to_lv4 = 45
+@general_affection_to_lv5 = 60
+#统治者
+@ruler_affection_to_lv2 = 40
+@ruler_affection_to_lv3 = 80
+@ruler_affection_to_lv4 = 120
+@ruler_affection_to_lv5 = 160
+
+# scope: leader
+# PREV scope: country
+add_lady_governor_affection_trait = {
+	if = {
+		limit = { PREV = { 
+			has_country_flag = married_wsg_lady
+		}}
+		add_trait = leader_trait_governor_lady_affection_lv5
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv2
+		}}}
+		add_trait = leader_trait_governor_lady_affection_lv1
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv3
+		}}}
+		add_trait = leader_trait_governor_lady_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv4
+		}}}
+		add_trait = leader_trait_governor_lady_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv5
+		}}}
+		add_trait = leader_trait_governor_lady_affection_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = { 
+			check_variable = { which = "lady_affection" value >= 200 }
+			NOT = { has_country_flag = married_wsg_lady }
+		}}
+		add_trait = leader_trait_governor_lady_affection_lv4_max
+		break = yes
+	}
+	
+}
+
+# scope: leader
+# PREV scope: country
+add_lady_science_ship_affection_trait = {
+	if = {
+		limit = { PREV = { 
+			has_country_flag = married_wsg_lady 
+		}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv5
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv2
+		}}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv1
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv3
+		}}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv4
+		}}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv5
+		}}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = {
+			check_variable = { which = "lady_affection" value >= 200 }
+			NOT = { has_country_flag = married_wsg_lady }
+		}}
+		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4_max
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV scope: country
+add_lady_admiral_affection_trait = {
+	if = {
+		limit = { PREV = { 
+			has_country_flag = married_wsg_lady 
+		}}
+		add_trait = leader_trait_admiral_lady_affection_lv5
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv2
+		}}}
+		add_trait = leader_trait_admiral_lady_affection_lv1
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv3
+		}}}
+		add_trait = leader_trait_admiral_lady_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv4
+		}}}
+		add_trait = leader_trait_admiral_lady_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value < @lady_affection_to_lv5
+		}}}
+		add_trait = leader_trait_admiral_lady_affection_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = {
+			check_variable = { which = "lady_affection" value >= 200 }
+			NOT = { has_country_flag = married_wsg_lady }
+		}}
+		add_trait = leader_trait_admiral_lady_affection_lv4_max
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV: country
+check_level_up_lady_governor_affection_trait = {
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
+		remove_lady_governor_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
+		remove_lady_governor_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
+		remove_lady_governor_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}}
+		remove_lady_governor_affection_trait = yes
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_governor_lady_affection_lv5
+		}
+		else = {
+			add_trait = leader_trait_governor_lady_affection_lv4_max
+		}
+		break = yes
+	}
+}
+
+# scope: country
+# PREV: ship
+check_level_up_lady_science_ship_affection_trait = {
+	if = {
+		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}
+		PREV.leader = { 
+			remove_lady_science_ship_affection_trait = yes
+			add_trait = leader_trait_governor_lady_affection_lv2
+		}
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}
+		PREV.leader = { 
+			remove_lady_science_ship_affection_trait = yes
+			add_trait = leader_trait_governor_lady_affection_lv3
+		}
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}
+		PREV.leader = { 
+			remove_lady_science_ship_affection_trait = yes
+			add_trait = leader_trait_governor_lady_affection_lv4
+		}
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}
+		PREV.leader = { remove_lady_science_ship_affection_trait = yes }
+		if = {
+			limit = { has_country_flag = married_wsg_lady }
+			PREV.leader = { add_trait = leader_trait_governor_lady_affection_lv5 }
+		}
+		else = {
+			PREV.leader = { add_trait = leader_trait_governor_lady_affection_lv4_max }
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV: country
+check_level_up_lady_admiral_affection_trait = {
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
+		remove_lady_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_lady_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
+		remove_lady_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_lady_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
+		remove_lady_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_lady_affection_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}}
+		remove_lady_admiral_affection_trait = yes
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_admiral_lady_affection_lv5
+		}
+		else = {
+			add_trait = leader_trait_admiral_lady_affection_lv4_max
+			set_leader_flag = lady_affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+check_level_up_governor_affection_trait = {
+	if = {
+		limit = { check_variable = { which = affection_level value >= 5 }}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @governor_affection_to_lv2 }
+		}
+		remove_governor_affection_trait = yes
+		add_trait = leader_trait_governor_affection_lv2
+		set_variable = { which = affection_level value = 2 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @governor_affection_to_lv3 }
+		}
+		remove_governor_affection_trait = yes
+		add_trait = leader_trait_governor_affection_lv3
+		set_variable = { which = affection_level value = 3 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @governor_affection_to_lv4 }
+		}
+		remove_governor_affection_trait = yes
+		add_trait = leader_trait_governor_affection_lv4
+		set_variable = { which = affection_level value = 4 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @governor_affection_to_lv5 }
+		}
+		remove_governor_affection_trait = yes
+		if = {
+			limit = { has_leader_flag = married }
+			add_trait = leader_trait_governor_affection_lv5
+			set_variable = { which = affection_level value = 5 }
+		}
+		else = {
+			add_trait = leader_trait_governor_affection_lv4_max
+			set_leader_flag = affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+check_level_up_scientist_affection_trait = {
+	if = {
+		limit = { check_variable = { which = affection_level value >= 5 }}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @scientist_affection_to_lv2 }
+		}
+		remove_scientist_affection_trait = yes
+		add_trait = leader_trait_scientist_affection_lv2
+		set_variable = { which = affection_level value = 2 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @scientist_affection_to_lv3 }
+		}
+		remove_scientist_affection_trait = yes
+		add_trait = leader_trait_scientist_affection_lv3
+		set_variable = { which = affection_level value = 3 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @scientist_affection_to_lv4 }
+		}
+		remove_scientist_affection_trait = yes
+		add_trait = leader_trait_scientist_affection_lv4
+		set_variable = { which = affection_level value = 4 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @scientist_affection_to_lv5 }
+		}
+		remove_scientist_affection_trait = yes
+		if = {
+			limit = { has_leader_flag = married }
+			add_trait = leader_trait_scientist_affection_lv5
+			set_variable = { which = affection_level value = 5 }
+		}
+		else = {
+			add_trait = leader_trait_scientist_affection_lv4_max
+			set_leader_flag = affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+check_level_up_admiral_affection_trait = {
+	if = {
+		limit = { check_variable = { which = affection_level value >= 5 }}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @admiral_affection_to_lv2 }
+		}
+		remove_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_affection_lv2
+		set_variable = { which = affection_level value = 2 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @admiral_affection_to_lv3 }
+		}
+		remove_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_affection_lv3
+		set_variable = { which = affection_level value = 3 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @admiral_affection_to_lv4 }
+		}
+		remove_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_affection_lv4
+		set_variable = { which = affection_level value = 4 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @admiral_affection_to_lv5 }
+		}
+		remove_admiral_affection_trait = yes
+		if = {
+			limit = { has_leader_flag = married }
+			add_trait = leader_trait_admiral_affection_lv5
+			set_variable = { which = affection_level value = 5 }
+		}
+		else = {
+			add_trait = leader_trait_admiral_affection_lv4_max
+			set_leader_flag = affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+check_level_up_general_affection_trait = {
+	if = {
+		limit = { check_variable = { which = affection_level value >= 5 }}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @general_affection_to_lv2 }
+		}
+		remove_general_affection_trait = yes
+		add_trait = leader_trait_general_affection_lv2
+		set_variable = { which = affection_level value = 2 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @general_affection_to_lv3 }
+		}
+		remove_general_affection_trait = yes
+		add_trait = leader_trait_general_affection_lv3
+		set_variable = { which = affection_level value = 3 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @general_affection_to_lv4 }
+		}
+		remove_general_affection_trait = yes
+		add_trait = leader_trait_general_affection_lv4
+		set_variable = { which = affection_level value = 4 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @general_affection_to_lv5 }
+		}
+		remove_general_affection_trait = yes
+		if = {
+			limit = { has_leader_flag = married }
+			add_trait = leader_trait_general_affection_lv5
+			set_variable = { which = affection_level value = 5 }
+		}
+		else = {
+			add_trait = leader_trait_general_affection_lv4_max
+			set_leader_flag = affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+check_level_up_ruler_affection_trait = {
+	if = {
+		limit = { check_variable = { which = affection_level value >= 5 }}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @ruler_affection_to_lv2 }
+		}
+		remove_ruler_affection_trait = yes
+		add_trait = leader_trait_ruler_affection_lv2
+		set_variable = { which = affection_level value = 2 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @ruler_affection_to_lv3 }
+		}
+		remove_ruler_affection_trait = yes
+		add_trait = leader_trait_ruler_affection_lv3
+		set_variable = { which = affection_level value = 3 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @ruler_affection_to_lv4 }
+		}
+		remove_ruler_affection_trait = yes
+		add_trait = leader_trait_ruler_affection_lv4
+		set_variable = { which = affection_level value = 4 }
+		break = yes
+	}
+	if = {
+		limit = {
+			check_variable = { which = "affection" value = @ruler_affection_to_lv5 }
+		}
+		remove_ruler_affection_trait = yes
+		if = {
+			limit = { has_leader_flag = married }
+			add_trait = leader_trait_ruler_affection_lv5
+			set_variable = { which = affection_level value = 5 }
+		}
+		else = {
+			add_trait = leader_trait_ruler_affection_lv4_max
+			set_leader_flag = affection_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+remove_lady_governor_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_governor_lady_affection_lv1 = { remove_trait = leader_trait_governor_lady_affection_lv1 }
+		leader_trait_governor_lady_affection_lv2 = { remove_trait = leader_trait_governor_lady_affection_lv2 }
+		leader_trait_governor_lady_affection_lv3 = { remove_trait = leader_trait_governor_lady_affection_lv3 }
+		leader_trait_governor_lady_affection_lv4 = { remove_trait = leader_trait_governor_lady_affection_lv4 }
+		leader_trait_governor_lady_affection_lv4_max = { remove_trait = leader_trait_governor_lady_affection_lv4_max }
+		leader_trait_governor_lady_affection_lv5 = { remove_trait = leader_trait_governor_lady_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_lady_science_ship_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_scientist_lady_affection_science_ship_lv1 = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv1 }
+		leader_trait_scientist_lady_affection_science_ship_lv2 = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv2 }
+		leader_trait_scientist_lady_affection_science_ship_lv3 = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv3 }
+		leader_trait_scientist_lady_affection_science_ship_lv4 = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv4 }
+		leader_trait_scientist_lady_affection_science_ship_lv4_max = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv4_max }
+		leader_trait_scientist_lady_affection_science_ship_lv5 = { remove_trait = leader_trait_scientist_lady_affection_science_ship_lv5 }
+	}
+}
+
+# scope: leader
+remove_lady_admiral_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_admiral_lady_affection_lv1 = { remove_trait = leader_trait_admiral_lady_affection_lv1 }
+		leader_trait_admiral_lady_affection_lv2 = { remove_trait = leader_trait_admiral_lady_affection_lv2 }
+		leader_trait_admiral_lady_affection_lv3 = { remove_trait = leader_trait_admiral_lady_affection_lv3 }
+		leader_trait_admiral_lady_affection_lv4 = { remove_trait = leader_trait_admiral_lady_affection_lv4 }
+		leader_trait_admiral_lady_affection_lv4_max = { remove_trait = leader_trait_admiral_lady_affection_lv4_max }
+		leader_trait_admiral_lady_affection_lv5 = { remove_trait = leader_trait_admiral_lady_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_governor_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_governor_affection_lv1 = { remove_trait = leader_trait_governor_affection_lv1 }
+		leader_trait_governor_affection_lv2 = { remove_trait = leader_trait_governor_affection_lv2 }
+		leader_trait_governor_affection_lv3 = { remove_trait = leader_trait_governor_affection_lv3 }
+		leader_trait_governor_affection_lv4 = { remove_trait = leader_trait_governor_affection_lv4 }
+		leader_trait_governor_affection_lv4_max = { remove_trait = leader_trait_governor_affection_lv4_max }
+		leader_trait_governor_affection_lv5 = { remove_trait = leader_trait_governor_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_scientist_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_scientist_affection_lv1 = { remove_trait = leader_trait_scientist_affection_lv1 }
+		leader_trait_scientist_affection_lv2 = { remove_trait = leader_trait_scientist_affection_lv2 }
+		leader_trait_scientist_affection_lv3 = { remove_trait = leader_trait_scientist_affection_lv3 }
+		leader_trait_scientist_affection_lv4 = { remove_trait = leader_trait_scientist_affection_lv4 }
+		leader_trait_scientist_affection_lv4_max = { remove_trait = leader_trait_scientist_affection_lv4_max }
+		leader_trait_scientist_affection_lv5 = { remove_trait = leader_trait_scientist_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_admiral_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_admiral_affection_lv1 = { remove_trait = leader_trait_admiral_affection_lv1 }
+		leader_trait_admiral_affection_lv2 = { remove_trait = leader_trait_admiral_affection_lv2 }
+		leader_trait_admiral_affection_lv3 = { remove_trait = leader_trait_admiral_affection_lv3 }
+		leader_trait_admiral_affection_lv4 = { remove_trait = leader_trait_admiral_affection_lv4 }
+		leader_trait_admiral_affection_lv4_max = { remove_trait = leader_trait_admiral_affection_lv4_max }
+		leader_trait_admiral_affection_lv5 = { remove_trait = leader_trait_admiral_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_general_affection_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_general_affection_lv1 = { remove_trait = leader_trait_general_affection_lv1 }
+		leader_trait_general_affection_lv2 = { remove_trait = leader_trait_general_affection_lv2 }
+		leader_trait_general_affection_lv3 = { remove_trait = leader_trait_general_affection_lv3 }
+		leader_trait_general_affection_lv4 = { remove_trait = leader_trait_general_affection_lv4 }
+		leader_trait_general_affection_lv4_max = { remove_trait = leader_trait_general_affection_lv4_max }
+		leader_trait_general_affection_lv5 = { remove_trait = leader_trait_general_affection_lv5 }
+	}
+}
+
+# scope: leader
+remove_ruler_affection_trait = {
+	switch = {
+		trigger = has_ruler_trait
+		leader_trait_ruler_affection_lv1 = { remove_ruler_trait = leader_trait_ruler_affection_lv1 }
+		leader_trait_ruler_affection_lv2 = { remove_ruler_trait = leader_trait_ruler_affection_lv2 }
+		leader_trait_ruler_affection_lv3 = { remove_ruler_trait = leader_trait_ruler_affection_lv3 }
+		leader_trait_ruler_affection_lv4 = { remove_ruler_trait = leader_trait_ruler_affection_lv4 }
+		leader_trait_ruler_affection_lv4_max = { remove_ruler_trait = leader_trait_ruler_affection_lv4_max }
+		leader_trait_ruler_affection_lv5 = { remove_ruler_trait = leader_trait_ruler_affection_lv5 }
+	}
+}
+
+###############################
+#  移除负面特性
+###############################
+# scope: leader
+remove_governor_negative_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_corrupt = { remove_trait = leader_trait_corrupt }
+		leader_trait_stubborn = { remove_trait = leader_trait_stubborn }
+		leader_trait_substance_abuser = { remove_trait = leader_trait_substance_abuser }
+		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
+	}
+}
+
+# scope: leader
+remove_scientist_negative_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_paranoid = { remove_trait = leader_trait_paranoid }
+		leader_trait_traumatized = { remove_trait = leader_trait_traumatized }
+		leader_trait_stubborn = { remove_trait = leader_trait_stubborn }
+		leader_trait_substance_abuser = { remove_trait = leader_trait_substance_abuser }
+		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
+	}
+}
+
+# scope: leader
+remove_admiral_negative_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_lethargic = { remove_trait = leader_trait_lethargic }
+		leader_trait_nervous = { remove_trait = leader_trait_nervous }
+		leader_trait_stubborn = { remove_trait = leader_trait_stubborn }
+		leader_trait_substance_abuser = { remove_trait = leader_trait_substance_abuser }
+		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
+	}
+}
+
+# scope: leader
+remove_general_negative_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_armchair_commander = { remove_trait = leader_trait_armchair_commander }
+		leader_trait_stubborn = { remove_trait = leader_trait_stubborn }
+		leader_trait_substance_abuser = { remove_trait = leader_trait_substance_abuser }
+		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
+	}
+}
+
+# scope: leader
+remove_ruler_negative_trait = {
+	switch = {
+		trigger = has_trait
+		leader_trait_stubborn = { remove_trait = leader_trait_stubborn }
+		leader_trait_substance_abuser = { remove_trait = leader_trait_substance_abuser }
+		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
+	}
+}

@@ -1,4 +1,8 @@
-create_wsg_lady_governer = {
+create_wsg_lady_governor = {
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		kill_leader = { show_notification = no }
+	}
 	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
 		every_owned_fleet = {
@@ -12,10 +16,6 @@ create_wsg_lady_governer = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_scientist }
-			kill_leader = { show_notification = no }
-		}
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -29,6 +29,7 @@ create_wsg_lady_governer = {
 		}
 	}
 	set_country_flag = wsg_lady_governer_active
+	reset_lady_affection_variables = yes
 	create_leader = {
 		class = governor
 		species = root.owner_species
@@ -37,28 +38,30 @@ create_wsg_lady_governer = {
 		gender = indeterminable
 		immortal = yes
 		skill = 10
-		set_age = 0
+		set_age = 17
 		traits = {
 			trait = leader_trait_governor_wsg_lady
 		}
-	}
-	last_created_leader = {
-		change_leader_portrait = wsg57
-		set_leader_flag = wsg_lady_governer
-		set_leader_flag = has_gained_level_trait
+		effect = {
+			change_leader_portrait = wsg57
+			set_leader_flag = wsg_lady_leader
+			set_leader_flag = wsg_lady_governer
+			set_leader_flag = has_gained_level_trait
+		}
 	}
 	remove_country_flag = wsg_lady_warship_active
 	remove_country_flag = wsg_lady_army_active
 	remove_country_flag = wsg_lady_armed_science_active
+	random_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_governer }
+		add_lady_governor_affection_trait = yes
+	}
 }
 
 create_wsg_lady_warship = {
-	if = {
-		limit = { has_country_flag = wsg_lady_governer_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_governer }
-			kill_leader = { show_notification = no } 
-		}
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		kill_leader = { show_notification = no }
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
@@ -94,6 +97,7 @@ create_wsg_lady_warship = {
 		}
 	}
 	set_country_flag = wsg_lady_warship_active
+	reset_lady_affection_variables = yes
 	if = {
 		limit = { has_country_flag = lady_warship_designable }
 		create_fleet = {
@@ -192,6 +196,7 @@ create_wsg_lady_warship = {
 								}}
 							}
 						}
+						
 					}
 					else = {
 						PREV = { create_ship = {
@@ -200,13 +205,29 @@ create_wsg_lady_warship = {
 							graphical_culture = "ai_01"
 						}}
 					}
+					create_leader = {
+						class = admiral
+						species = root.owner_species
+						name = "NAME_WG_LADY"
+						event_leader = yes
+						gender = indeterminable
+						immortal = yes
+						skill = 10
+						set_age = 17
+						traits = {
+							trait = leader_trait_admiral_wsg_lady
+						}
+						effect = {
+							change_leader_portrait = wsg57
+							set_leader_flag = wsg_lady_leader
+							set_leader_flag = wsg_lady_admiral
+							set_leader_flag = has_gained_level_trait
+						}
+					}
 				}
 				set_location = event_target:wsg_lady_warship_location
-				add_modifier = {
-					modifier = wg_lady
-					days = -1
-				}
-				set_fleet_flag = lady_fleet2				
+				set_fleet_flag = lady_fleet2
+				assign_leader = last_created_leader
 			}
 			settings = { 
 				can_upgrade = no 
@@ -227,10 +248,6 @@ create_wsg_lady_warship = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_scientist }
-			kill_leader = { show_notification = no }
-		}
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -250,16 +267,23 @@ create_wsg_lady_warship = {
 			}
 		}
 		remove_country_flag = wsg_lady_warship_active
+		every_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			kill_leader = { show_notification = no }
+		}
+	}
+	else = { 
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_admiral }
+			add_lady_admiral_affection_trait = yes
+		}
 	}
 }
 
 create_wsg_lady_army = {
-	if = {
-		limit = { has_country_flag = wsg_lady_governer_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_governer }
-			kill_leader = { show_notification = no } 
-		}
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		kill_leader = { show_notification = no }
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
@@ -281,6 +305,7 @@ create_wsg_lady_army = {
 		}
 	}
 	set_country_flag = wsg_lady_army_active
+	reset_lady_affection_variables = yes
 	create_fleet = {
 		name = "NAME_WG_LADY"
 		effect = {
@@ -307,10 +332,6 @@ create_wsg_lady_army = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_scientist }
-			kill_leader = { show_notification = no }
-		}
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -322,12 +343,9 @@ create_wsg_lady_army = {
 }
 
 create_wsg_lady_armed_science = {
-	if = {
-		limit = { has_country_flag = wsg_lady_governer_active }
-		every_owned_leader = {
-			limit = { has_leader_flag = wsg_lady_governer }
-			kill_leader = { show_notification = no } 
-		}
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		kill_leader = { show_notification = no }
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
@@ -363,7 +381,7 @@ create_wsg_lady_armed_science = {
 		}
 	}
 	set_country_flag = wsg_lady_armed_science_active
-
+	reset_lady_affection_variables = yes
 	create_fleet = {
 		name = "NAME_lady_Contingency_fleet"
 		effect = {
@@ -386,12 +404,13 @@ create_wsg_lady_armed_science = {
 					gender = indeterminable
 					immortal = yes
 					skill = 10
-					set_age = 0
+					set_age = 17
 					traits = {
 						trait = leader_trait_scientist_wsg_lady_science_ship
 					}
 					effect = {
 						change_leader_portrait = wsg57
+						set_leader_flag = wsg_lady_leader
 						set_leader_flag = wsg_lady_scientist
 						set_leader_flag = has_gained_level_trait
 					}
@@ -433,4 +452,45 @@ create_wsg_lady_armed_science = {
 	remove_country_flag = wsg_lady_governer_active
 	remove_country_flag = wsg_lady_warship_active
 	remove_country_flag = wsg_lady_army_active
+	random_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_scientist }
+		add_lady_science_ship_affection_trait = yes
+	}
+}
+
+reset_lady_affection_variables = {
+	set_variable = { which = "planets_no_affection_lady" value = 0 }
+	set_variable = { which = "systems_no_affection_lady" value = 0 }
+	set_variable = { which = "systems_no_affection_lady" value = 0 }
+}
+
+# 使用完成后一定要clear_global_event_target = wsg_player_nickname !!!
+# scope: country
+# output: event_target:wsg_player_nickname
+# 使用方法：在任何处于国家类型的作用域下调用此函数以输出玩家昵称（大小姐对玩家的称呼，不是真的玩家昵称）
+# 调用函数后可在本地化文件中引用wsg_player_nickname的event target
+# 即直接加上[wsg_player_nickname.GetName]
+# 为避免bug，event target使用的是全局变量
+# 使用完成后一定要clear_global_event_target = wsg_player_nickname !!!
+get_player_nickname = {
+	if = {
+		limit = { has_country_flag = has_nickname }
+		event_target:wsg_lady_country = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_naming_fleet@prevprev }
+				save_global_event_target_as = wsg_player_nickname
+			}
+		}
+		if = { #找不到储存命名的船，调用预设名字的船作为昵称
+			limit = { NOT = { exists = event_target:wsg_player_nickname }}
+			event_target:wsg_player_default_nickname = {
+				save_global_event_target_as = wsg_player_nickname
+			}
+		}
+	}
+	else = { #该国家并没有设定大小姐用的昵称，调用预设名字作为昵称
+		event_target:wsg_player_default_nickname = {
+			save_global_event_target_as = wsg_player_nickname
+		}
+	}
 }

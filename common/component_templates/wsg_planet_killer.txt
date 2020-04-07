@@ -1,7 +1,6 @@
 weapon_component_template = {
 	key = "PLANET_KILLER_OVO"
 	size = planet_killer
-	
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
@@ -27,7 +26,6 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "PLANET_KILLER_PSH"
 	size = planet_killer
-	
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
@@ -53,7 +51,6 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "PLANET_KILLER_CM"
 	size = planet_killer
-	
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
@@ -79,7 +76,6 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "PLANET_KILLER_SK"
 	size = planet_killer
-	
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
@@ -105,7 +101,6 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "PLANET_KILLER_SK_UF"
 	size = planet_killer
-	
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no

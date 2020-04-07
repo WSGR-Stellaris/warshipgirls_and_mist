@@ -12,16 +12,19 @@ auth_warshipgirls = {
 	
 	has_agendas = yes
 	
-	random_weight = {
-		factor = 0
-	}
 	possible = {
-		ethics={
-			NOT = {
-				value = ethic_gestalt_consciousness
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
 			}
 		}
 	}
+	random_weight = {
+		base = 0
+	}
+
 	traits = {
 		trait = wsg_trait_warshipgirls
 	}

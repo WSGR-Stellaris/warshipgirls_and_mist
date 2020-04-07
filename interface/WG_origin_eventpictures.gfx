@@ -28,5 +28,5 @@ spriteTypes = {
 		name = "GFX_origin_wg_fe_child"
 		texturefile = "gfx/event_pictures/origins/origin_wg_fe_child.dds"
 		alwaystransparent = yes
-	}	
+	}		
 }
