@@ -293,19 +293,20 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:wg_wormhole
 
-	after = {
-		hidden_effect = {
-			destroy_ambient_object = event_target:wg_wormhole
-			random_owned_fleet = {
-				limit = { has_fleet_flag = lady_fleet }
-				delete_fleet = this
-			}
-			country_event = { id = wg_fe.146 days = 5 }
+	immediate = {
+		random_owned_fleet = {
+			limit = { has_fleet_flag = lady_fleet }
+			save_global_event_target_as = lady_contingency_fleet
+		}
+		destroy_ambient_object = event_target:wg_wormhole
+		event_target:lady_contingency_fleet = {
+			delete_fleet = this
 		}
 	}
 
 	option = {
 		name = wg_fe.145.a
+		hidden_effect = { country_event = { id = wg_fe.146 days = 5 }}
 	}
 }
 country_event = {
@@ -314,15 +315,10 @@ country_event = {
 	desc = wg_fe.146.desc
 	picture = GFX_evt_wsg_no_video
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.147 }
-		}
-	}
 	
 	option = {
 		name = ONSCREEN
+		hidden_effect = { country_event = { id = wg_fe.147 }}
 	}
 }
 country_event = {
@@ -357,6 +353,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = wg_fe.148 }
 		}
+		default_hide_option = yes
 	}
 }
 country_event = {
@@ -376,14 +373,9 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.149 }
-		}
-	}
-
 	option = {
 		name = wg_fe.148.a
+		hidden_effect = { country_event = { id = wg_fe.149 }}
 	}
 }
 country_event = {
@@ -397,14 +389,9 @@ country_event = {
 	picture_event_data = {
 		portrait = ai_crisis_1
 	}
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.150 }
-		}
-	}
-
 	option = {
 		name = wg_fe.149.a
+		hidden_effect = { country_event = { id = wg_fe.150 }}
 	}
 }
 country_event = {
@@ -413,15 +400,10 @@ country_event = {
 	desc = wg_fe.150.desc
 	picture = GFX_evt_wsg_no_video
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.151 days = 3 }
-		}
-	}
 	
 	option = {
 		name = wg_fe.150.a
+		hidden_effect = { country_event = { id = wg_fe.151 days = 3 }}
 	}
 }
 country_event = {
@@ -441,23 +423,19 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.152 days = 15 random = 10}
-		}
-	}
-
 	option = {
 		trigger = {
 			has_authority = auth_warshipgirls
 		}
 		name = wg_fe.151.a
+		hidden_effect = { country_event = { id = wg_fe.152 days = 15 random = 10 }}
 	}
 	option = {
 		trigger = {
 			has_authority = auth_shenhai
 		}
 		name = wg_fe.151.b
+		hidden_effect = { country_event = { id = wg_fe.152 days = 15 random = 10 }}
 	}
 }
 country_event = {
@@ -466,24 +444,20 @@ country_event = {
 	desc = wg_fe.152.desc
 	picture = GFX_evt_double_thorn_ape
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.153 days = 3 }
-		}
-	}
 	
 	option = {
 		trigger = {
 			has_authority = auth_warshipgirls
 		}
 		name = wg_fe.152.a
+		hidden_effect = { country_event = { id = wg_fe.153 days = 3 }}
 	}
 	option = {
 		trigger = {
 			has_authority = auth_shenhai
 		}
 		name = wg_fe.152.b
+		hidden_effect = { country_event = { id = wg_fe.153 days = 3 }}
 	}
 }
 country_event = {
@@ -492,15 +466,10 @@ country_event = {
 	desc = wg_fe.153.desc
 	picture = GFX_evt_galactic_senate
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.154 }
-		}
-	}
 	
 	option = {
 		name = wg_fe.153.a
+		hidden_effect = { country_event = { id = wg_fe.154 }}
 	}
 }
 country_event = {
@@ -520,14 +489,9 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.155 days = 3 }
-		}
-	}
-
 	option = {
 		name = wg_fe.154.a
+		hidden_effect = { country_event = { id = wg_fe.155 days = 3 }}
 	}
 }
 country_event = {
@@ -536,15 +500,10 @@ country_event = {
 	desc = wg_fe.155.desc
 	picture = GFX_evt_galactic_senate
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.156 }
-		}
-	}
 	
 	option = {
 		name = wg_fe.155.a
+		hidden_effect = { country_event = { id = wg_fe.156 }}
 	}
 }
 country_event = {
@@ -564,14 +523,9 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.157 }
-		}
-	}
-
 	option = {
 		name = wg_fe.156.a
+		hidden_effect = { country_event = { id = wg_fe.157 }}
 	}
 }
 country_event = {
@@ -580,15 +534,10 @@ country_event = {
 	desc = wg_fe.157.desc
 	picture = GFX_evt_wsg_lady3
 	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_fe.158 days = 3 }
-		}
-	}
 	
 	option = {
 		name = wg_fe.157.a
+		hidden_effect = { country_event = { id = wg_fe.158 days = 3 }}
 	}
 }
 country_event = {
@@ -2225,7 +2174,7 @@ country_event = {
 		}
 		resource_stockpile_compare = {
 			resource = nanites
-			value >= 100
+			value >= 10
 		}
 		has_technology = tech_nanite_transmutation
 	}
@@ -2728,7 +2677,7 @@ country_event = {
 
 }
 
-# T槽开始改造
+# 开始改造
 country_event = {
 	id = wg_fe.188
 	hide_window = yes
@@ -2923,9 +2872,10 @@ country_event = {
 					design = "NAME_wg_naming_ship"
 					upgradable = no
 				}
-				set_fleet_flag = lady_naming_fleet@root
+				set_fleet_flag = lady_naming_fleet
 				set_location = ROOT.capital_scope
 				set_event_locked = yes
+				save_global_event_target_as = wsg_player_nickname
 			}
 			settings = {
 				can_upgrade = no 
@@ -2959,8 +2909,7 @@ country_event = {
 				save_event_target_as = placing_planet
 			}
 		}
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_naming_fleet@root }
+		event_target:wsg_player_nickname = {
 			set_owner = event_target:wsg_lady_country
 			set_location = event_target:placing_planet
 		}
@@ -3037,7 +2986,7 @@ country_event = {
 		hidden_effect = { 
 			event_target:wsg_lady_country = {
 				every_owned_fleet = {
-					limit = { has_fleet_flag = lady_naming_fleet@root }
+					limit = { has_fleet_flag = lady_naming_fleet }
 					delete_fleet = this
 				}
 			}

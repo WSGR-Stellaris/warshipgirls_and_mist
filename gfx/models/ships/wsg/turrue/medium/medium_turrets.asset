@@ -1,4 +1,0 @@
-entity = {
-	name = "medium_turrets_entity"
-	pdxmesh = "medium_turrets_mesh"
-}

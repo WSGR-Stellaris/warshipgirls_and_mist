@@ -298,7 +298,7 @@ wg_lady = {
 	ship_shield_mult = 3.50
 	ship_weapon_damage = 3.50
 	ship_fire_rate_mult = 1.00
-	ship_weapon_range_mult = 1.00
+	ship_weapon_range_mult = 0.75
 	ship_speed_mult = 1.0
 }
 wg_lady2 = {
@@ -307,8 +307,11 @@ wg_lady2 = {
 	ship_shield_mult = 1.00
 	ship_weapon_damage = 1.00
 	ship_fire_rate_mult = 1.00
-	ship_weapon_range_mult = 2.00
+	ship_weapon_range_mult = 0.75
 	ship_speed_mult = 1.0
+}
+remove_upkeep = {
+	ships_upkeep_mult = -1.0
 }
 ##########
 planet_wsg_station_modifier = {

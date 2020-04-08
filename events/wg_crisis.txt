@@ -688,6 +688,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = wg_invasion_happened
 		NOT = { has_global_flag = wg_crisis_disabled }
 		is_country_type = wg_crisis_country
 	}
@@ -700,95 +701,115 @@ country_event = {
 			}
 			if = {
 				limit = {
-					count_owned_starbase = {
-						count < 1
-					}
-					count_owned_ships = {
-						limit = {
-							fleet = { has_fleet_flag = defence_fleet }
-						}
-						count < 1
+					NOR = { 
+						any_owned_fleet = { has_fleet_flag = defence_fleet }
+						count_owned_starbase = { count > 0 }
 					}
 				}
-				random_owned_fleet = {
+				if = {
+					limit = { exists = event_target:first_dimensional_portal }
+					event_target:first_dimensional_portal = {
+						set_event_locked = no
+					}
+				}
+				else = { random_owned_fleet = {
 					limit = { has_fleet_flag = first_dimensional_portal }
 					set_event_locked = no
-				}
+				}}
 			}
 		}
 		else = {
+			event_target:first_portal_system = {
+				starbase = { fleet = { save_event_target_as = first_wg_crisis_starbase }}
+			}
+			if = {
+				limit = { has_global_flag = second_portal_opened }
+				event_target:second_portal_system = {
+					starbase = { fleet = { save_event_target_as = second_wg_crisis_starbase }}
+				}
+			}
+			if = {
+				limit = { has_global_flag = third_portal_opened }
+				event_target:third_portal_system = {
+					starbase = { fleet = { save_event_target_as = third_wg_crisis_starbase }}
+				}
+			}
 			if = {
 				limit = {
 					# 检查第一传送门守家舰队
-					NOT = { has_global_flag = first_portal_destroyed }
+					NOR = { 
+						has_global_flag = first_portal_destroyed
+						exists = event_target:first_wg_crisis_starbase
+					}
 					event_target:first_portal_system = {
 						count_system_ships = {
-							limit = {
-								OR = {
-									is_ship_size = wg_crisis_starbase
-									FLEET = {
-										has_fleet_flag = defence_fleet
-									}
-								}
-							}
+							limit = { FLEET = { has_fleet_flag = defence_fleet }}
 							count < 1
 						}
 					}
 				}
-				event_target:first_portal_system = {
-					random_fleet_in_system = {
-						limit = { has_fleet_flag = first_dimensional_portal }
+				if = {
+					limit = { exists = event_target:first_dimensional_portal }
+					event_target:first_dimensional_portal = {
 						set_event_locked = no
 					}
 				}
+				else = { random_owned_fleet = {
+					limit = { has_fleet_flag = first_dimensional_portal }
+					set_event_locked = no
+				}}
 			}
 			else_if = {
 				limit = { 
 					# 检查第二传送门守家舰队
-					NOT = { has_global_flag = second_portal_destroyed }
+					has_global_flag = second_portal_opened
+					NOR = { 
+						has_global_flag = second_portal_destroyed
+						exists = event_target:second_wg_crisis_starbase
+					}
 					event_target:second_portal_system = {
 						count_system_ships = {
-							limit = {
-								OR = {
-									is_ship_size = wg_crisis_starbase
-									FLEET = {
-										has_fleet_flag = defence_fleet
-									}
-								}
-							}
+							limit = { FLEET = { has_fleet_flag = defence_fleet }}
 							count < 1
 						}
 					}
 				}
-				event_target:second_portal_system = {
-					random_fleet_in_system = {
-						limit = { has_fleet_flag = second_dimensional_portal }
+				if = {
+					limit = { exists = event_target:second_dimensional_portal }
+					event_target:second_dimensional_portal = {
 						set_event_locked = no
 					}
 				}
+				else = { random_owned_fleet = {
+					limit = { has_fleet_flag = second_dimensional_portal }
+					set_event_locked = no
+				}}
 			}
 			else_if = {
 				limit = { 
 					# 检查第三传送门守家舰队
-					NOT = { has_global_flag = third_portal_destroyed }
+					has_global_flag = third_portal_opened
+					NOR = { 
+						has_global_flag = third_portal_destroyed
+						exists = event_target:third_wg_crisis_starbase
+					}
 					event_target:third_portal_system = {
 						count_system_ships = {
-							limit = {
-								OR = {
-									is_ship_size = wg_crisis_starbase
-									FLEET = { has_fleet_flag = defence_fleet }
-								}
-							}
+							limit = { FLEET = { has_fleet_flag = defence_fleet }}
 							count < 1
 						}
 					}
 				}
-				event_target:third_portal_system = {
-					random_fleet_in_system = {
-						limit = { has_fleet_flag = third_dimensional_portal }
+				if = {
+					limit = { exists = event_target:third_dimensional_portal }
+					event_target:third_dimensional_portal = {
 						set_event_locked = no
 					}
 				}
+				else = { random_owned_fleet = {
+					limit = { has_fleet_flag = third_dimensional_portal }
+					set_event_locked = no
+				}}
 			}
 		}
 	}
@@ -3185,6 +3206,17 @@ country_event = {
 						set_friendly = yes
 					}
 					event_target:wg_crisis_country = { country_event = { id = wg_crisis.91 }}  
+					every_country = {
+						limit = {
+							OR = {
+								is_country_type = fallen_empire
+								is_country_type = awaken_fallen_empire
+								is_country_type = default
+								is_country_type = wg_crisis_country
+							}
+						}
+						establish_communications_no_message = event_target:wg_crisis_sub_gate_country
+					}
 				}
 			}
 		}
@@ -3223,6 +3255,16 @@ country_event = {
 	}
 
 	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awaken_fallen_empire
+					is_country_type = default
+				}
+			}
+			establish_communications_no_message = event_target:wg_crisis_sub_gate_country
+		}
 		random_owned_ship = {
 			limit = { is_ship_size = wg_dimensional_portal }
 			solar_system = {

@@ -2229,7 +2229,15 @@ country_event = {
 					}
 				}
 				if = {
-					limit = { owner = { is_country_type = wg_crisis_country }}
+					limit = { 
+						owner = { 
+							OR = {
+								is_country_type = wg_crisis_country 
+								is_country_type = kuat_fallen_empire
+								is_country_type = kuat_awakened_fallen_empire
+							}
+						}
+					}
 					owner = { every_owned_ship = {
 						limit = {
 							fleet = { is_same_value = PREVPREVPREV }
@@ -2618,6 +2626,7 @@ country_event = {
 	}	
 }
 
+# 刷大小姐（全局唯一）
 country_event = {
 	id = wsg.3075
 	title = wsg.3075.name
@@ -2627,9 +2636,15 @@ country_event = {
 	location = root
 
 	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = lady_Contingency_created }
+	}
 	immediate = {
 		owner = {
-			save_event_target_as = lady_Contingency_owner
+			save_global_event_target_as = lady_contingency_owner
+			set_global_flag = lady_Contingency_created
 			set_country_flag = gain_lady_Contingency
 		}
 	}
@@ -2638,7 +2653,7 @@ country_event = {
 		create_fleet = {
 			name = "NAME_lady_Contingency_fleet"
 			effect = {
-				set_owner = event_target:lady_Contingency_owner
+				set_owner = event_target:lady_contingency_owner
 				create_ship = {
 					name = random
 					design = "NAME_Euthanizer"
@@ -2653,7 +2668,8 @@ country_event = {
 					modifier = wg_lady2
 					days = -1
 				}
-				set_fleet_flag = lady_fleet						
+				set_fleet_flag = lady_fleet	
+				save_global_event_target_as = lady_contingency_fleet			
 			}
 			settings = { 
 				can_upgrade = no 
@@ -2667,19 +2683,23 @@ country_event = {
 	}
 }
 
-country_event = {
+# 开局刷大小姐事件，全局唯一
+event = {
 	id = wsg.3076
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		OR = {
-			has_authority = auth_shenhai
-			has_authority = auth_warshipgirls
-		}
-		is_ai = no
-	}
+	fire_only_once = yes
 	immediate = {
-		country_event = { id = wsg.3066 days = 9000 random = 9000 }
+		random_country = {
+			limit = {
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+				is_ai = no
+			}
+			country_event = { id = wsg.3066 days = 9000 random = 9000 }
+		}
 	}
 }
 #星球级誓约
@@ -2783,9 +2803,13 @@ country_event = {
 		OR = {
 			has_authority = auth_shenhai
 			has_authority = auth_warshipgirls
+			is_same_value = event_target:lady_Contingency_owner
 		}
 		fromfrom = { 
-			has_fleet_flag = lady_fleet	
+			OR = {
+				has_fleet_flag = lady_fleet	
+				is_same_value = event_target:lady_contingency_fleet
+			}
 		}
 	}
 	immediate = {	

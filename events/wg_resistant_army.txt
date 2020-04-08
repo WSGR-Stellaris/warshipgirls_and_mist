@@ -2888,154 +2888,130 @@ country_event = {
             random_owned_fleet = {
                 limit = { has_fleet_flag = first_chosen_fleet }
                 save_event_target_as = first_fleet
+                ROOT = {
+                    set_variable = { which = "titan_count" value = PREV }
+                    set_variable = { which = "bb_count" value = PREV }
+                    set_variable = { which = "dd_count" value = PREV }
+                }
             }
-            set_variable = { which = "titan_count" value = PREV }
-            set_variable = { which = "bb_count" value = PREV }
-            set_variable = { which = "dd_count" value = PREV }
         }
         random_owned_fleet = {
             limit = { has_fleet_flag = second_chosen_fleet }
             save_event_target_as = second_fleet
         }
+        event_target:second_fleet = {
+            set_variable = { which = "new_titan_count" value = "titan_count" }
+            set_variable = { which = "new_bb_count" value = "bb_count" }
+            set_variable = { which = "new_dd_count" value = "dd_count" }
+            ROOT = { 
+                # 计算各种战舰数量
+                set_variable = { which = "new_titan_count" value = PREV }
+                change_variable = { which = "new_titan_count" value = "titan_count" }
+                set_variable = { which = "new_bb_count" value = PREV }
+                change_variable = { which = "new_bb_count" value = "bb_count" }
+                set_variable = { which = "new_dd_count" value = PREV }
+                change_variable = { which = "new_dd_count" value = "dd_count" }
+                # 计算舰队规模
+                change_variable = { which = "new_fleet_size" value = "new_titan_count" }
+                multiply_variable = { which = "new_fleet_size" value = 16 }
+                change_variable = { which = "new_bb_size" value = "new_bb_count" }
+                multiply_variable = { which = "new_bb_size" value = 8 }
+                change_variable = { which = "new_fleet_size" value = "new_bb_size" }
+                change_variable = { which = "new_dd_size" value = "new_dd_count" }
+                multiply_variable = { which = "new_dd_size" value = 2 }
+                change_variable = { which = "new_fleet_size" value = "new_dd_size" }
+                set_variable = { which = "new_bb_size" value = 0 }
+                set_variable = { which = "new_dd_size" value = 0 }
+            }
+        }
         if = {
             limit = {
-                capital_scope = { solar_system = {
-                    has_access_fleet = event_target:first_fleet
-                }}
+                check_variable = { which = "new_titan_count" value <= 8 }
+                check_variable = { which = "new_bb_count" value <= 35 }
+                check_variable = { which = "new_dd_count" value <= 70 }
+                check_variable = { which = "new_fleet_size" value <= 500 }
             }
-            event_target:first_fleet = { save_event_target_as = spawn_merge_fleet_location }
-            set_country_flag = start_merge_fleet
-        }
-        else_if = {
-            limit = {
-                capital_scope = { solar_system = {
-                    has_access_fleet = event_target:second_fleet
-                }}
+            event_target:first_fleet = {
+                set_fleet_flag = removed_fleet
+                delete_fleet = {
+                    target = this
+                    kill_leader = no
+                    destroy_template = yes
+                }
             }
-            event_target:second_fleet = { save_event_target_as = spawn_merge_fleet_location }
-            set_country_flag = start_merge_fleet
+            event_target:second_fleet = {
+                set_fleet_flag = removed_fleet
+                delete_fleet = {
+                    target = this
+                    kill_leader = no
+                    destroy_template = yes
+                }
+            }
+            create_fleet = {
+                name = "NAME_Resistance_Fleet"
+                effect = {
+                    set_owner = PREV
+                    set_variable = { which = "new_titan_count" value = PREV }
+                    set_variable = { which = "new_bb_count" value = PREV }
+                    set_variable = { which = "new_dd_count" value = PREV }
+                    while = {
+                        count = "new_titan_count"
+                        create_ship = {
+                            name = random
+                            design = "NAME_WG_RA_TITAN"
+                            graphical_culture = "mammalian_01"
+                            upgradable = no
+                        }
+                    }
+                    while = {
+                        count = "new_bb_count"
+                        create_ship = {
+                            name = random
+                            design = "NAME_WG_RA_BB"
+                            graphical_culture = "mammalian_01"
+                            upgradable = no
+                        }
+                    }
+                    while = {
+                        count = "new_dd_count"
+                        create_ship = {
+                            name = random
+                            design = "NAME_WG_RA_DD"  
+                            graphical_culture = "mammalian_01"
+                            upgradable = no
+                        }
+                    }
+                    set_location = {
+                        target = event_target:second_fleet
+                        distance = 5
+                        angle = random
+                    }
+                    set_fleet_stance = aggressive
+                    set_aggro_range_measure_from = self
+                    set_aggro_range = 500
+                    add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
+                    set_fleet_flag = fleet_bought_from_resistance
+                    set_variable = { which = "titan_count" value = "new_titan_count" }
+                    set_variable = { which = "bb_count" value = "new_bb_count" }
+                    set_variable = { which = "dd_count" value = "new_dd_count" }
+                    set_variable = { which = "ra_fleet_id" value = 0 }
+                    set_variable = { which = "new_titan_count" value = 0 }
+                    set_variable = { which = "new_bb_count" value = 0 }
+                    set_variable = { which = "new_dd_count" value = 0 }	
+                }
+                settings = { 
+                    can_upgrade = no 
+                    can_change_composition = no 
+                    uses_naval_capacity = yes
+                }
+            }
+            update_ra_fleet_count = yes
+            country_event = { id = wg_crisis.67 }
         }
         else = {
             country_event = { id = wg_crisis.68 }
         }
-        if = {
-            limit = { has_country_flag = start_merge_fleet }
-            random_owned_fleet = {
-                limit = { has_fleet_flag = second_chosen_fleet }
-                set_variable = { which = "new_titan_count" value = "titan_count" }
-                set_variable = { which = "new_bb_count" value = "bb_count" }
-                set_variable = { which = "new_dd_count" value = "dd_count" }
-                ROOT = { 
-                    # 计算各种战舰数量
-                    set_variable = { which = "new_titan_count" value = PREV }
-                    change_variable = { which = "new_titan_count" value = "titan_count" }
-                    set_variable = { which = "new_bb_count" value = PREV }
-                    change_variable = { which = "new_bb_count" value = "bb_count" }
-                    set_variable = { which = "new_dd_count" value = PREV }
-                    change_variable = { which = "new_dd_count" value = "dd_count" }
-                    # 计算舰队规模
-                    change_variable = { which = "new_fleet_size" value = "new_titan_count" }
-                    multiply_variable = { which = "new_fleet_size" value = 16 }
-                    change_variable = { which = "new_bb_size" value = "new_bb_count" }
-                    multiply_variable = { which = "new_bb_size" value = 8 }
-                    change_variable = { which = "new_fleet_size" value = "new_bb_size" }
-                    change_variable = { which = "new_dd_size" value = "new_dd_count" }
-                    multiply_variable = { which = "new_dd_size" value = 2 }
-                    change_variable = { which = "new_fleet_size" value = "new_dd_size" }
-                    set_variable = { which = "new_bb_size" value = 0 }
-                    set_variable = { which = "new_dd_size" value = 0 }
-                }
-            }
-            if = {
-                limit = {
-                    check_variable = { which = "new_titan_count" value <= 8 }
-                    check_variable = { which = "new_bb_count" value <= 35 }
-                    check_variable = { which = "new_dd_count" value <= 70 }
-                    check_variable = { which = "new_fleet_size" value <= 500 }
-                }
-                event_target:second_fleet = {
-                    set_fleet_flag = removed_fleet
-                    delete_fleet = {
-                        target = this
-                        kill_leader = no
-                        destroy_template = yes
-                    }
-                }
-                
-                create_fleet = {
-                    name = "NAME_Resistance_Fleet"
-                    effect = {
-                        set_owner = PREV
-                        set_variable = { which = "new_titan_count" value = PREV }
-                        set_variable = { which = "new_bb_count" value = PREV }
-                        set_variable = { which = "new_dd_count" value = PREV }
-                        while = {
-                            count = "new_titan_count"
-                            create_ship = {
-                                name = random
-                                design = "NAME_WG_RA_TITAN"
-                                graphical_culture = "mammalian_01"
-                                upgradable = no
-                            }
-                        }
-                        while = {
-                            count = "new_bb_count"
-                            create_ship = {
-                                name = random
-                                design = "NAME_WG_RA_BB"
-                                graphical_culture = "mammalian_01"
-                                upgradable = no
-                            }
-                        }
-                        while = {
-                            count = "new_dd_count"
-                            create_ship = {
-                                name = random
-                                design = "NAME_WG_RA_DD"  
-                                graphical_culture = "mammalian_01"
-                                upgradable = no
-                            }
-                        }
-                        set_location = {
-                            target = event_target:second_fleet
-                            distance = 5
-                            angle = random
-                        }
-                        set_fleet_stance = aggressive
-                        set_aggro_range_measure_from = self
-                        set_aggro_range = 500
-                        add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
-                        set_fleet_flag = fleet_bought_from_resistance
-                        set_variable = { which = "titan_count" value = "new_titan_count" }
-                        set_variable = { which = "bb_count" value = "new_bb_count" }
-                        set_variable = { which = "dd_count" value = "new_dd_count" }
-                        set_variable = { which = "ra_fleet_id" value = 0 }
-                        set_variable = { which = "new_titan_count" value = 0 }
-                        set_variable = { which = "new_bb_count" value = 0 }
-                        set_variable = { which = "new_dd_count" value = 0 }	
-                    }
-                    settings = { 
-                        can_upgrade = no 
-                        can_change_composition = no 
-                        uses_naval_capacity = yes
-                    }
-                }
-                event_target:first_fleet = {
-                    set_fleet_flag = removed_fleet
-                    delete_fleet = {
-                        target = this
-                        kill_leader = no
-                        destroy_template = yes
-                    }
-                }
-                update_ra_fleet_count = yes
-                country_event = { id = wg_crisis.67 }
-            }
-            else = {
-                country_event = { id = wg_crisis.68 }
-            }
-            remove_country_flag = start_merge_fleet
-        }
+        remove_country_flag = merge_disband_fleet
         reset_ra_variables = yes
     }
 }
@@ -3134,7 +3110,7 @@ country_event = {
         name = wg_crisis.71.b
         hidden_effect = {
             set_country_flag = first_fleet_chosen
-            set_timed_country_flag = { flag = merge_disband_fleet days = 1 }
+            set_country_flag = merge_disband_fleet
             country_event = { id = wg_crisis.64 }
         }
     }

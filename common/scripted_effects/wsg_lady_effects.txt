@@ -25,6 +25,10 @@ create_wsg_lady_governor = {
 		limit = { has_country_flag = wsg_lady_army_active }
 		every_owned_army = {
 			limit = { army_type = lady_army }
+			if = {
+				limit = { exists = leader }
+				unassign_leader = leader
+			}
 			remove_army = yes
 		}
 	}
@@ -98,151 +102,138 @@ create_wsg_lady_warship = {
 	}
 	set_country_flag = wsg_lady_warship_active
 	reset_lady_affection_variables = yes
-	if = {
-		limit = { has_country_flag = lady_warship_designable }
-		create_fleet = {
-			name = "NAME_lady_Contingency_fleet"
-			effect = {
-				set_owner = root
-				create_ship = {
-					name = "NAME_lady_Contingency_fleet"
-					random_existing_design = wsg_lady_warship
-					graphical_culture = "ai_01"
+	
+	create_fleet = {
+		name = "NAME_lady_Contingency_fleet"
+		effect = {
+			set_owner = root
+			owner = {
+				create_leader = {
+					class = admiral
+					species = root.owner_species
+					name = "NAME_WG_LADY"
+					event_leader = yes
+					gender = indeterminable
+					immortal = yes
+					skill = 10
+					set_age = 17
+					traits = {
+						trait = leader_trait_admiral_wsg_lady
+					}
+					effect = {
+						change_leader_portrait = wsg57
+						set_leader_flag = wsg_lady_leader
+						set_leader_flag = wsg_lady_admiral
+						set_leader_flag = has_gained_level_trait
+					}
 				}
-				set_location = event_target:wsg_lady_warship_location
-				set_fleet_flag = lady_fleet2
+				if = {
+					limit = { has_country_flag = modified_wsg_lady }
+					switch = {
+						trigger = has_country_flag
+						lady_warship_designable = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								random_existing_design = wsg_lady_warship
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_cracker = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_CRACKER"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_shielder = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_SHIELDER"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_neutron = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_NEUTRON"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_godray = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_GODRAY"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_nanobots = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_NANOBOTS"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_ovo = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_OVO"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_psh = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_PSH"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_sun_killer = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_SK"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_T_slot = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "wsg_lady_juggernaut"
+								graphical_culture = "ai_01"
+							}}
+						}
+					}
+					
+				}
+				else = {
+					PREV = { create_ship = {
+						name = "NAME_lady_Contingency_fleet"
+						design = "NAME_WG_LADY"
+						graphical_culture = "ai_01"
+					}}
+				}
+				
 			}
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = no 
-				uses_naval_capacity = no
-				spawn_debris = no 
-			}
+			assign_leader = last_created_leader
+			set_location = event_target:wsg_lady_warship_location
+			set_fleet_flag = lady_fleet2
 		}
-	}
-	else = {
-		create_fleet = {
-			name = "NAME_lady_Contingency_fleet"
-			effect = {
-				set_owner = root
-				owner = {
-					if = {
-						limit = { has_country_flag = modified_wsg_lady }
-						switch = {
-							trigger = has_country_flag
-							lady_warship_cracker = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_CRACKER"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_shielder = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_SHIELDER"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_neutron = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_NEUTRON"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_godray = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_GODRAY"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_nanobots = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_NANOBOTS"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_ovo = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_OVO"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_psh = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_PSH"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_sun_killer = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_SK"
-									graphical_culture = "ai_01"
-								}}
-							}
-							lady_warship_T_slot = {
-								PREV = { create_ship = {
-									name = "NAME_lady_Contingency_fleet"
-									design = "NAME_WG_LADY_T"
-									graphical_culture = "ai_01"
-								}}
-							}
-						}
-						
-					}
-					else = {
-						PREV = { create_ship = {
-							name = "NAME_lady_Contingency_fleet"
-							design = "NAME_WG_LADY"
-							graphical_culture = "ai_01"
-						}}
-					}
-					create_leader = {
-						class = admiral
-						species = root.owner_species
-						name = "NAME_WG_LADY"
-						event_leader = yes
-						gender = indeterminable
-						immortal = yes
-						skill = 10
-						set_age = 17
-						traits = {
-							trait = leader_trait_admiral_wsg_lady
-						}
-						effect = {
-							change_leader_portrait = wsg57
-							set_leader_flag = wsg_lady_leader
-							set_leader_flag = wsg_lady_admiral
-							set_leader_flag = has_gained_level_trait
-						}
-					}
-				}
-				set_location = event_target:wsg_lady_warship_location
-				set_fleet_flag = lady_fleet2
-				assign_leader = last_created_leader
-			}
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = no 
-				uses_naval_capacity = no
-				spawn_debris = no 
-			}
+		settings = { 
+			can_upgrade = no 
+			can_disband = no
+			can_change_composition = no 
+			can_change_leader = no 
+			uses_naval_capacity = no
+			spawn_debris = no 
 		}
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_army_active }
 		every_owned_army = {
 			limit = { army_type = lady_army }
+			if = {
+				limit = { exists = leader }
+				unassign_leader = leader
+			}
 			remove_army = yes
 		}
 	}
@@ -421,6 +412,7 @@ create_wsg_lady_armed_science = {
 				modifier = wg_lady
 				days = -1
 			}
+			add_modifier = { modifier = remove_upkeep days = -1 }
 		}
 		settings = { 
 			can_upgrade = no 
@@ -446,6 +438,10 @@ create_wsg_lady_armed_science = {
 		limit = { has_country_flag = wsg_lady_army_active }
 		every_owned_army = {
 			limit = { army_type = lady_army }
+			if = {
+				limit = { exists = leader }
+				unassign_leader = leader
+			}
 			remove_army = yes
 		}
 	}
@@ -477,7 +473,7 @@ get_player_nickname = {
 		limit = { has_country_flag = has_nickname }
 		event_target:wsg_lady_country = {
 			random_owned_fleet = {
-				limit = { has_fleet_flag = lady_naming_fleet@prevprev }
+				limit = { has_fleet_flag = lady_naming_fleet }
 				save_global_event_target_as = wsg_player_nickname
 			}
 		}

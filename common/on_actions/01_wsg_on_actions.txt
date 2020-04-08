@@ -17,7 +17,6 @@ on_game_start_country = {
 		wsg.3046
 		wsg.3047
 		wsg.3053
-		wsg.3076
 		wsgancrel.1191
 		sh.3030
 		sh.3034
@@ -34,6 +33,7 @@ on_game_start = {
 		wsg.4
 		wg_parit.1
 		wg_traits.1003
+		wsg.3076
 	}
 }
 
@@ -61,6 +61,7 @@ on_monthly_pulse_country = {
 		wg_fe.165
 		wg_fe.180
 		wg_fe.183
+		wg_crisis.100
 	}
 }
 
