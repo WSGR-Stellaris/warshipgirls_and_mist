@@ -74,6 +74,7 @@ country_event = {
 	}
 	
 	immediate = {
+		set_global_flag = no_guardian_wg_think_tank
 		FROMFROM = {
 			solar_system = {
 				spawn_megastructure = {
@@ -135,5 +136,385 @@ ship_event = {
 
 	option = {
 		name = "wg_boss.5.a"
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = { 
+						OR = { 
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.15 days = 180 random = 180 }
+				}
+			}			
+		}		
+	}
+}
+
+country_event = {
+	id = wg_boss.6
+	title = "wg_boss.6.name"
+	desc = "wg_boss.6.desc"
+	picture = GFX_evt_think_tank
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = { is_country_type = guardian_wg_think_tank }
+			random_owned_fleet = {
+				limit = { has_fleet_flag = wsg_think_tank_fleet }
+				save_event_target_as = wg_think_tank_location
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.6.a"
+		enable_special_project = {
+			name = "THINK_TANK_FTL_PROJECT"
+			location = event_target:wg_think_tank_location
+		}
+		hidden_effect = {
+			set_country_flag = astesia_helper			
+		}		
+	}
+}
+
+country_event = {
+	id = wg_boss.7
+	title = "wg_boss.7.name"
+	desc = "wg_boss.7.desc"
+	picture = GFX_evt_think_tank
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = { is_country_type = guardian_wg_think_tank }
+			random_owned_fleet = {
+				limit = { has_fleet_flag = wsg_think_tank_fleet }
+				save_event_target_as = wg_think_tank_location
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.7.a"
+			enable_special_project = {
+				name = "THINK_TANK_FTL_PROJECT2"
+				location = event_target:wg_think_tank_location
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.8
+	title = wg_boss.8.name
+	desc = wg_boss.8.desc
+	picture = GFX_evt_large_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = wg_boss.8.a
+		custom_tooltip = wg_boss.8.tooltip
+		add_modifier = {
+			modifier = "wsg_think_tank_destoryed" 	
+			days = -1
+		}
+		owner = {
+			add_resource = { alloys = 5000 }
+		}
+		hidden_effect = {
+			random_country = {
+				limit = { is_country_type = guardian_wg_think_tank }
+				random_owned_fleet = {
+					limit = { has_fleet_flag = wsg_think_tank_fleet }
+					delete_fleet = this
+				}
+				destroy_country = yes
+			}
+		}				
+	}
+}
+
+country_event = {
+	id = wg_boss.9
+	title = wg_boss.9.name
+	desc = wg_boss.9.desc
+	picture = GFX_evt_think_tank
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = wg_boss.9.a
+		custom_tooltip = wg_boss.9.tooltip
+		hidden_effect = {
+			random_country = {
+				limit = { is_country_type = guardian_wg_think_tank }
+				random_owned_fleet = {
+					limit = { has_fleet_flag = wsg_think_tank_fleet }
+					delete_fleet = this
+				}
+				destroy_country = yes
+			}
+			every_country = {
+				limit = {
+					has_country_flag = astesia_helper
+					has_modifier = wsg_Astesia
+				}
+				remove_modifier = "wsg_Astesia"	
+			}			
+			random_list = {
+				60 = { country_event = { id = wg_boss.11 days = 10 random = 10 } }
+				40 = { country_event = { id = wg_boss.10 days = 10 random = 90 } }
+			}			
+		}				
+	}
+}
+
+country_event = {
+	id = wg_boss.10
+	title = wg_boss.10.name
+	desc = wg_boss.10.desc
+	picture = GFX_evt_space_debris
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = wg_boss.10.a
+		add_modifier = {
+			modifier = "wsg_think_tank_destoryed2" 	
+			days = -1
+		}				
+	}
+}
+
+country_event = {
+	id = wg_boss.11
+	title = wg_boss.11.name
+	desc = wg_boss.11.desc
+	picture = GFX_evt_think_tank
+	show_sound = event_construction
+	location = event_target:wg_capital
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			save_event_target_as = wg_project_owner
+		}
+		capital_scope = { save_event_target_as = wg_capital }
+	}
+	
+	option = {
+		name = "wg_boss.11.a"
+		add_modifier = {
+			modifier = "wsg_Astesia2" 	
+			days = -1
+		}		
+		create_fleet = {
+			name = "NAME_Astesia"
+			effect = {
+				set_owner = event_target:wg_project_owner
+				create_ship = {
+					name = random
+					design = "NAME_WG_THINK_TANK"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:wg_capital
+					distance = 0
+					angle = random
+				}
+				add_modifier = {
+					modifier = wsg_think_tank_power2
+					days = -1
+				}				
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_boss.12 days = 1800 random = 1800 }
+			}			
+		}
+	}	
+}
+country_event = {
+	id = wg_boss.12
+	title = "wg_boss.12.name"
+	desc = "wg_boss.12.desc"
+	picture = GFX_evt_engineering_research
+	is_triggered_only = yes
+
+	trigger = {
+	    any_country = {
+			has_country_flag = astesia_chosen_one
+			any_owned_ship = { is_ship_size = wg_think_tank }
+		}
+	}	
+		
+	option = {
+		name = "wg_boss.12.a"
+		owner={
+			give_technology = { tech = tech_boss_weapen_ion }
+		}		
+	}	
+}
+country_event = {
+	id = wg_boss.13
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = astesia_helper
+				NOT = { has_modifier = wsg_Astesia }
+		}
+		add_modifier = {
+			modifier = wsg_Astesia
+				days = -1
+			}	
+		}		
+	}			
+}
+
+country_event = {
+	id = wg_boss.14
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = astesia_helper
+				has_modifier = wsg_Astesia
+			}
+			remove_modifier = "wsg_Astesia"	
+		}		
+	}			
+}
+#极光看中的人，仅此一个
+country_event = {
+	id = wg_boss.15
+	title = "wg_boss.15.name"
+	desc = "wg_boss.15.desc"
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = no_guardian_wg_think_tank }
+	}		
+	option = {
+		name = "wg_boss.15.a"
+		hidden_effect = {
+			set_country_flag = astesia_chosen_one
+			owner = {
+				country_event = { id = wg_boss.16 }
+			}			
+		}		
+	}	
+}
+
+country_event = {
+	id = wg_boss.16
+	title = "wg_boss.16.name"
+	desc = "wg_boss.16.desc"
+	show_sound = event_administrative_work
+	location = from.from.from
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.16.a
+		response_text = wg_boss.16.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.16.b
+		response_text = wg_boss.16.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.16.c
+		hidden_effect = {
+			country_event = { id = wg_boss.17 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.17
+	title = "wg_boss.17.name"
+	desc = "wg_boss.17.desc"
+	show_sound = event_administrative_work
+	location = from.from.from
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.17.a
+		response_text = wg_boss.17.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.17.b
+		hidden_effect = {
+			country_event = { id = wg_boss.6 }
+		}
+	}
+	option = {
+		name = wg_boss.17.c
+		hidden_effect = {
+			country_event = { id = wg_boss.7 }
+		}
+	}
+	option = {
+		name = wg_boss.17.d
+		hidden_effect = {
+			country_event = { id = wg_boss.18 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.18
+	title = "wg_boss.18.name"
+	desc = "wg_boss.18.desc"
+	show_sound = event_administrative_work
+	location = from.from.from
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.18.a
 	}
 }

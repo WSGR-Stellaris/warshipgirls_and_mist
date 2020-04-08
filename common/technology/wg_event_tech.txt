@@ -1,0 +1,13 @@
+tech_boss_weapen_ion = {
+    area = physics
+    icon = tech_boss_weapen_ion
+	cost = @tier5cost1
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+}

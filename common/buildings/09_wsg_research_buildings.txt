@@ -13,7 +13,7 @@ building_wsg_research = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -106,7 +106,7 @@ building_wsg_research2 = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -211,7 +211,7 @@ building_wsg_research3 = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}

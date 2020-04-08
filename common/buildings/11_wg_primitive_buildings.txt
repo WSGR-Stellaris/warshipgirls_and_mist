@@ -284,7 +284,7 @@ building_urban_dwellings_sh = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_shenhai	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}

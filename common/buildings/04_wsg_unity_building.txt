@@ -14,7 +14,7 @@ building_wsg_yamato_monument = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -89,7 +89,7 @@ building_wsg_autochthon_monument = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}

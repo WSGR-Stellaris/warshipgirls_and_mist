@@ -41,3 +41,51 @@ special_project = {
 		planet_event = { id = wg_crisis.1002 }
 	}
 }
+
+special_project = {
+	key = "THINK_TANK_FTL_PROJECT"
+	cost = 0
+	days_to_research = 720
+	tech_department = engineering_technology
+	picture = GFX_evt_think_tank
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_constructor = 1
+	}
+	on_start = {
+		from.owner = {
+			country_event = { id = wg_boss.13 }
+		}
+	}
+	on_cancel = {
+		from.owner = {
+			country_event = { id = wg_boss.14 }
+		}
+	}	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.9 }
+		}
+	}
+}
+
+special_project = {
+	key = "THINK_TANK_FTL_PROJECT2"
+	cost = 0
+	days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_think_tank
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_constructor = 1
+	}	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.8 }
+		}
+	}
+}

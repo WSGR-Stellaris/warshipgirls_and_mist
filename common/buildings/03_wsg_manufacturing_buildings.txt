@@ -12,7 +12,6 @@ building_wsg_pantsu = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -118,7 +117,7 @@ building_wsg_pantsu2 = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -222,7 +221,7 @@ building_wsg_neo = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -328,7 +327,7 @@ building_wsg_neo2 = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -431,7 +430,7 @@ building_wsg_refinery = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -548,7 +547,7 @@ building_wsg_chemical_plant = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}	
@@ -656,7 +655,7 @@ building_wsg_crystal_plant = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -763,7 +762,7 @@ building_wsg_foundry = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -865,7 +864,7 @@ building_wsg_alpha = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -970,7 +969,7 @@ building_wsg_alpha2 = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -1071,7 +1070,7 @@ building_wsg_military = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
-			NOT = { has_policy_flag = robots_outlawed }
+			
 		}
 		NOT = { has_modifier = slave_colony }
 	}
