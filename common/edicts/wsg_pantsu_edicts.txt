@@ -639,12 +639,12 @@ wsg_lady_modification_project = {
 			has_special_project = WSG_LADY_MODIFICATION
 			has_country_flag = give_up_modify_wsg_lady
 			has_modifier = retry_modify_wsg_lady_cd
-			has_active_event = { wg_fe.187 }
+			has_active_event = { wg_lady.52 }
 		}
 	}
 
 	effect = {
-		country_event = { id = wg_fe.187 }
+		country_event = { id = wg_lady.52 }
 	}
 	
 	ai_weight = {

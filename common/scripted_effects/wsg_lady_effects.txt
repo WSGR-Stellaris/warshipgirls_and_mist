@@ -32,7 +32,7 @@ create_wsg_lady_governor = {
 			remove_army = yes
 		}
 	}
-	set_country_flag = wsg_lady_governer_active
+	set_country_flag = wsg_lady_governor_active
 	reset_lady_affection_variables = yes
 	create_leader = {
 		class = governor
@@ -49,7 +49,7 @@ create_wsg_lady_governor = {
 		effect = {
 			change_leader_portrait = wsg57
 			set_leader_flag = wsg_lady_leader
-			set_leader_flag = wsg_lady_governer
+			set_leader_flag = wsg_lady_governor
 			set_leader_flag = has_gained_level_trait
 		}
 	}
@@ -57,7 +57,7 @@ create_wsg_lady_governor = {
 	remove_country_flag = wsg_lady_army_active
 	remove_country_flag = wsg_lady_armed_science_active
 	random_owned_leader = {
-		limit = { has_leader_flag = wsg_lady_governer }
+		limit = { has_leader_flag = wsg_lady_governor }
 		add_lady_governor_affection_trait = yes
 	}
 }
@@ -244,7 +244,7 @@ create_wsg_lady_warship = {
 			delete_fleet = this
 		}
 	}
-	remove_country_flag = wsg_lady_governer_active
+	remove_country_flag = wsg_lady_governor_active
 	remove_country_flag = wsg_lady_army_active
 	remove_country_flag = wsg_lady_armed_science_active
 	if = {
@@ -328,7 +328,7 @@ create_wsg_lady_army = {
 			delete_fleet = this
 		}
 	}
-	remove_country_flag = wsg_lady_governer_active
+	remove_country_flag = wsg_lady_governor_active
 	remove_country_flag = wsg_lady_warship_active
 	remove_country_flag = wsg_lady_armed_science_active
 }
@@ -445,7 +445,7 @@ create_wsg_lady_armed_science = {
 			remove_army = yes
 		}
 	}
-	remove_country_flag = wsg_lady_governer_active
+	remove_country_flag = wsg_lady_governor_active
 	remove_country_flag = wsg_lady_warship_active
 	remove_country_flag = wsg_lady_army_active
 	random_owned_leader = {

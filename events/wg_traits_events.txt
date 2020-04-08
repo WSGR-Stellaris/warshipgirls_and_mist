@@ -653,11 +653,11 @@ event = {
 					set_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }
 					if = {
 						limit = {
-							has_country_flag = wsg_lady_governer_active
-							any_owned_leader = { has_leader_flag = wsg_lady_governer }
+							has_country_flag = wsg_lady_governor_active
+							any_owned_leader = { has_leader_flag = wsg_lady_governor }
 						}
 						random_owned_leader = {
-							limit = { has_leader_flag = wsg_lady_governer }
+							limit = { has_leader_flag = wsg_lady_governor }
 							add_lady_governor_affection_trait = yes
 						}
 					}
@@ -1218,9 +1218,9 @@ country_event = {
 					change_variable = { which = "lady_affection" value = 1 }
 					switch = {
 						trigger = has_country_flag
-						wsg_lady_governer_active = {
+						wsg_lady_governor_active = {
 							random_owned_leader = {
-								limit = { has_leader_flag = wsg_lady_governer }
+								limit = { has_leader_flag = wsg_lady_governor }
 								check_level_up_lady_governor_affection_trait = yes
 							} 
 						}
@@ -1718,16 +1718,16 @@ country_event = {
 
 	trigger = {
 		has_country_flag = gain_wsg_lady
-		has_country_flag = wsg_lady_governer_active
+		has_country_flag = wsg_lady_governor_active
 		any_owned_leader = {
-			has_leader_flag = wsg_lady_governer
+			has_leader_flag = wsg_lady_governor
 		}
 	}
 
 	immediate = {
 		random_owned_leader = {
 			limit = { 
-				has_leader_flag = wsg_lady_governer
+				has_leader_flag = wsg_lady_governor
 				ROOT = { any_owned_planet = { leader = { is_same_value = PREVPREVPREV }}}
 			}
 			random_list = {

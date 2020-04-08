@@ -1735,7 +1735,7 @@ country_event = {
                                 factor = 2
                                 mid_game_years_passed > 20
                             }
-							country_event = { id = wg_fe.138 }
+							country_event = { id = wg_lady.1 }
 						}
 					}
 				#}
@@ -3174,4 +3174,4 @@ country_event = {
 			}
 		}
 	}
-}s
+}

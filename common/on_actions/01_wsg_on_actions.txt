@@ -58,9 +58,9 @@ on_monthly_pulse_country = {
 		wg_crisis.35
 		wsg.3058
 		wsg.3059
-		wg_fe.165
-		wg_fe.180
-		wg_fe.183
+		wg_lady.30
+		wg_lady.44
+		wg_lady.48
 		wg_crisis.100
 	}
 }
@@ -195,9 +195,9 @@ on_fleet_destroyed_victim = {
 		wg_crisis.93
 		wsg.3078
 		wsg.3081
-		wg_fe.168
-		wg_fe.169
-		wg_fe.179
+		wg_lady.33
+		wg_lady.34
+		wg_lady.43
 	}
 }
 
@@ -238,14 +238,14 @@ on_custom_diplomacy = {
 	events = {
 		wg_crisis.20
 		wg_crisis.23
-		wg_fe.160
-		wg_fe.161
-		wg_fe.162
-		wg_fe.163
-		wg_fe.164
-		wg_fe.178
-		wg_fe.1000
-		wg_fe.1001
+		wg_lady.24
+		wg_lady.25
+		wg_lady.26
+		wg_lady.27
+		wg_lady.29
+		wg_lady.28
+		wg_lady.1000
+		wg_lady.1001
 	}
 }
 
@@ -300,7 +300,7 @@ on_bi_yearly_pulse_country = {
 on_fleet_disbanded = {
 	events = {
 		wg_crisis.71
-		wg_fe.176
+		wg_lady.41
 	}
 }
 
@@ -326,7 +326,7 @@ on_space_battle_won = {
 on_planet_attackers_win = {
 	events = {
 		wsg.3039
-		wg_fe.172
+		wg_lady.37
 		wg_parit.6
 		wg_traits.1011
 	}
@@ -339,7 +339,7 @@ on_planet_attackers_win = {
 on_planet_attackers_lose = {
 	events = {
 		wsg.30390
-		wg_fe.173
+		wg_lady.38
 	}
 }
 
@@ -369,7 +369,7 @@ on_building_observation_station = {
 # From = Leader
 on_leader_death = {
 	events = {
-		wg_fe.167
+		wg_lady.32
 	}
 }
 

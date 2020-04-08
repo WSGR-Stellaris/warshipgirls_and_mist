@@ -74,12 +74,12 @@ wsg_lady_available = {
 
 has_wsg_lady_active_diplo = {
 	has_active_event = {
-		wg_fe.160 # 初始界面
-		wg_fe.161 # 总督
-		wg_fe.162 # 战舰
-		wg_fe.163 # 陆军
-		wg_fe.164 # 大破
-		wg_fe.178 # 武装科研船
+		wg_lady.24 # 初始界面
+		wg_lady.25 # 总督
+		wg_lady.26 # 战舰
+		wg_lady.27 # 陆军
+		wg_lady.29 # 大破
+		wg_lady.28 # 武装科研船
 	}
 }
 
