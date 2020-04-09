@@ -561,7 +561,7 @@ country_event = {
 			#owner_species = { save_event_target_as = psionic_species }
 		}
 		change_dominant_species = { species = last_created change_all = yes }
-		country_event = { id = wg_traits.1002 }
+		country_event = { id = wg_aft.4 }
 	}
 	
 	option = {

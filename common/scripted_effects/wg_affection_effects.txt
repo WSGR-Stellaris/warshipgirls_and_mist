@@ -1,8 +1,8 @@
 #大小姐
-@lady_affection_to_lv2 = 50
-@lady_affection_to_lv3 = 100
-@lady_affection_to_lv4 = 150
-@lady_affection_to_lv5 = 200
+@lady_affection_to_lv2 = 75
+@lady_affection_to_lv3 = 150
+@lady_affection_to_lv4 = 225
+@lady_affection_to_lv5 = 300
 #总督
 @governor_affection_to_lv2 = 30
 @governor_affection_to_lv3 = 60
@@ -181,18 +181,21 @@ check_level_up_lady_governor_affection_trait = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
 		remove_lady_governor_affection_trait = yes
 		add_trait = leader_trait_governor_lady_affection_lv2
+		PREV = { set_variable = { which = lady_affection_level value = 2 }}
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
 		remove_lady_governor_affection_trait = yes
 		add_trait = leader_trait_governor_lady_affection_lv3
+		PREV = { set_variable = { which = lady_affection_level value = 3 }}
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
 		remove_lady_governor_affection_trait = yes
 		add_trait = leader_trait_governor_lady_affection_lv4
+		PREV = { set_variable = { which = lady_affection_level value = 4 }}
 		break = yes
 	}
 	if = {
@@ -201,6 +204,7 @@ check_level_up_lady_governor_affection_trait = {
 		if = {
 			limit = { PREV = { has_country_flag = married_wsg_lady }}
 			add_trait = leader_trait_governor_lady_affection_lv5
+			PREV = { set_variable = { which = lady_affection_level value = 5 }}
 		}
 		else = {
 			add_trait = leader_trait_governor_lady_affection_lv4_max
@@ -214,6 +218,7 @@ check_level_up_lady_governor_affection_trait = {
 check_level_up_lady_science_ship_affection_trait = {
 	if = {
 		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}
+		set_variable = { which = lady_affection_level value = 2 }
 		PREV.leader = { 
 			remove_lady_science_ship_affection_trait = yes
 			add_trait = leader_trait_governor_lady_affection_lv2
@@ -222,6 +227,7 @@ check_level_up_lady_science_ship_affection_trait = {
 	}
 	if = {
 		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}
+		set_variable = { which = lady_affection_level value = 3 }
 		PREV.leader = { 
 			remove_lady_science_ship_affection_trait = yes
 			add_trait = leader_trait_governor_lady_affection_lv3
@@ -230,6 +236,7 @@ check_level_up_lady_science_ship_affection_trait = {
 	}
 	if = {
 		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}
+		set_variable = { which = lady_affection_level value = 4 }
 		PREV.leader = { 
 			remove_lady_science_ship_affection_trait = yes
 			add_trait = leader_trait_governor_lady_affection_lv4
@@ -239,9 +246,11 @@ check_level_up_lady_science_ship_affection_trait = {
 	if = {
 		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}
 		PREV.leader = { remove_lady_science_ship_affection_trait = yes }
+		set_country_flag = lady_affection_max
 		if = {
 			limit = { has_country_flag = married_wsg_lady }
 			PREV.leader = { add_trait = leader_trait_governor_lady_affection_lv5 }
+			set_variable = { which = lady_affection_level value = 5 }
 		}
 		else = {
 			PREV.leader = { add_trait = leader_trait_governor_lady_affection_lv4_max }
@@ -257,30 +266,34 @@ check_level_up_lady_admiral_affection_trait = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv2
+		set_variable = { which = lady_affection_level value = 2 }
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv3
+		set_variable = { which = lady_affection_level value = 3 }
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv4
+		set_variable = { which = lady_affection_level value = 4 }
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}}
 		remove_lady_admiral_affection_trait = yes
+		PREV = { set_country_flag = lady_affection_max }
 		if = {
 			limit = { PREV = { has_country_flag = married_wsg_lady }}
 			add_trait = leader_trait_admiral_lady_affection_lv5
+			set_variable = { which = lady_affection_level value = 5 }
 		}
 		else = {
 			add_trait = leader_trait_admiral_lady_affection_lv4_max
-			set_leader_flag = lady_affection_max
 		}
 		break = yes
 	}
@@ -324,6 +337,7 @@ check_level_up_governor_affection_trait = {
 			check_variable = { which = "affection" value = @governor_affection_to_lv5 }
 		}
 		remove_governor_affection_trait = yes
+		set_leader_flag = affection_max
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_governor_affection_lv5
@@ -331,7 +345,6 @@ check_level_up_governor_affection_trait = {
 		}
 		else = {
 			add_trait = leader_trait_governor_affection_lv4_max
-			set_leader_flag = affection_max
 		}
 		break = yes
 	}
@@ -375,6 +388,7 @@ check_level_up_scientist_affection_trait = {
 			check_variable = { which = "affection" value = @scientist_affection_to_lv5 }
 		}
 		remove_scientist_affection_trait = yes
+		set_leader_flag = affection_max
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_scientist_affection_lv5
@@ -382,7 +396,6 @@ check_level_up_scientist_affection_trait = {
 		}
 		else = {
 			add_trait = leader_trait_scientist_affection_lv4_max
-			set_leader_flag = affection_max
 		}
 		break = yes
 	}
@@ -426,6 +439,7 @@ check_level_up_admiral_affection_trait = {
 			check_variable = { which = "affection" value = @admiral_affection_to_lv5 }
 		}
 		remove_admiral_affection_trait = yes
+		set_leader_flag = affection_max
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_admiral_affection_lv5
@@ -433,7 +447,6 @@ check_level_up_admiral_affection_trait = {
 		}
 		else = {
 			add_trait = leader_trait_admiral_affection_lv4_max
-			set_leader_flag = affection_max
 		}
 		break = yes
 	}
@@ -477,6 +490,7 @@ check_level_up_general_affection_trait = {
 			check_variable = { which = "affection" value = @general_affection_to_lv5 }
 		}
 		remove_general_affection_trait = yes
+		set_leader_flag = affection_max
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_general_affection_lv5
@@ -484,7 +498,6 @@ check_level_up_general_affection_trait = {
 		}
 		else = {
 			add_trait = leader_trait_general_affection_lv4_max
-			set_leader_flag = affection_max
 		}
 		break = yes
 	}
@@ -528,6 +541,7 @@ check_level_up_ruler_affection_trait = {
 			check_variable = { which = "affection" value = @ruler_affection_to_lv5 }
 		}
 		remove_ruler_affection_trait = yes
+		set_leader_flag = affection_max
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_ruler_affection_lv5
@@ -535,7 +549,6 @@ check_level_up_ruler_affection_trait = {
 		}
 		else = {
 			add_trait = leader_trait_ruler_affection_lv4_max
-			set_leader_flag = affection_max
 		}
 		break = yes
 	}

@@ -64,7 +64,10 @@ is_wg_fallen_empire = {
 }
 
 wsg_lady_available = {
-	has_country_flag = gain_wsg_lady
+	OR = {
+		has_country_flag = gain_wsg_lady
+		is_same_value = event_target:wsg_lady_own_country
+	}
 	NOR = {
 		has_modifier = wsg_lady_recover_cd
 		has_country_flag = modifing_wsg_lady

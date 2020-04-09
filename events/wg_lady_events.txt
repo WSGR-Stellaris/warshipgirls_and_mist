@@ -595,41 +595,46 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
-	after = {
-		hidden_effect = {
-			remove_country_flag = start_wsg_lady_events
-			set_country_flag = finish_wsg_lady_events
-			set_country_flag = gain_wsg_lady
-			if = {
-				limit = { NOT = { any_country = { has_country_flag = wsg_lady_country }}}
-				create_country = {
-					name = "NAME_lady_Contingency_fleet"
-					type = wsg_lady
-					flag = {
-						icon= {
-							category = "special"
-							file = "ai_01.dds"
-						}
-						background= {
-							category = "backgrounds"
-							file = "circle.dds"
-						}
-						colors={
-							"black"
-							"red"
-							"null"
-							"null"
-						}
+	immediate = {
+		remove_country_flag = start_wsg_lady_events
+		if = {
+			limit = { NOT = { any_country = { has_country_flag = wsg_lady_country }}}
+			create_country = {
+				name = "NAME_lady_Contingency_fleet"
+				type = wsg_lady
+				flag = {
+					icon= {
+						category = "special"
+						file = "ai_01.dds"
 					}
-					effect = {
-						save_global_event_target_as = wsg_lady_country
-						set_country_flag = wsg_lady_country
+					background= {
+						category = "backgrounds"
+						file = "circle.dds"
+					}
+					colors={
+						"black"
+						"red"
+						"null"
+						"null"
 					}
 				}
+				effect = {
+					save_global_event_target_as = wsg_lady_country
+					set_country_flag = wsg_lady_country
+				}
 			}
-			event_target:wsg_lady_country = {
-				establish_communications_no_message = root
-			}
+		}
+		event_target:wsg_lady_country = {
+			establish_communications_no_message = root
+		}
+		save_global_event_target_as = wsg_lady_own_country
+		country_event = { id = wg_lady.59 }
+	}
+
+	after = {
+		hidden_effect = {
+			set_country_flag = finish_wsg_lady_events
+			set_country_flag = gain_wsg_lady
 		}
 	}
 
@@ -703,6 +708,7 @@ country_event = {
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
+				clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -751,6 +757,19 @@ country_event = {
 			create_wsg_lady_armed_science = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
+	}
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.24.d
@@ -865,6 +884,7 @@ country_event = {
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
+				clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -905,6 +925,19 @@ country_event = {
 			create_wsg_lady_armed_science = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
+	}
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.25.c
@@ -1001,6 +1034,7 @@ country_event = {
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
+				clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1096,6 +1130,19 @@ country_event = {
 			create_wsg_lady_armed_science = yes
 			remove_country_flag = talking_to_wsg_lady
 		}
+	}
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.26.c
@@ -1199,6 +1246,7 @@ country_event = {
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
+				clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1381,6 +1429,19 @@ country_event = {
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
+	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.27.c
 		response_text = wg_lady.27.c.response
@@ -1488,6 +1549,7 @@ country_event = {
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
+				clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1584,6 +1646,19 @@ country_event = {
 			remove_country_flag = talking_to_wsg_lady
 		}
 	}
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
+	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.28.d
 		response_text = wg_lady.28.d.response
@@ -1659,13 +1734,31 @@ country_event = {
 		get_player_nickname = yes
 	}
 
+	after = {
+		hidden_effect = {
+			remove_country_flag = talking_to_wsg_lady
+			clear_global_event_target = wsg_player_nickname
+		}
+	}
+
 	option = {
 		name = wg_lady.29.a
 		custom_tooltip = wg_lady.29.tooltip
-		remove_country_flag = talking_to_wsg_lady
-		clear_global_event_target = wsg_player_nickname
 	}
 
+	option = { # 改名
+		name = change_player_nickname
+		hidden_effect = {
+			country_event = { id = wg_lady.62 }
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+		}
+		custom_tooltip = wg_lady.62.a.tooltip
+	}
 }
 
 # 每个月检测大小姐是否大破
@@ -2829,7 +2922,10 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		any_system = { NOT = { has_star_flag = wg_naming_ship_system }}
+		NOR = {
+			has_global_flag = spawn_naming_system
+			any_system = { has_star_flag = wg_naming_ship_system }
+		}
 	}
 
 	immediate = {
@@ -2849,6 +2945,7 @@ country_event = {
 		event_target:wg_naming_ship_system = {
 			isolate_system = yes
 		}
+		set_global_flag = spawn_naming_system
 	}
 }
 

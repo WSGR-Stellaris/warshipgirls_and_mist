@@ -56,7 +56,7 @@ special_project = {
 	}
 
 	on_success = {
-		ship_event = { id = wg_fe.144 }
+		ship_event = { id = wg_lady.7 }
 	}
 
 	on_fail = {
@@ -72,7 +72,7 @@ special_project = {
 	picture = GFX_evt_planet_beam
 	on_success = { 
 		owner = {
-			country_event = { id = wg_fe.181 }
+			country_event = { id = wg_lady.45 }
 		}
 	}
 }
@@ -93,23 +93,23 @@ special_project = {
 
 	on_start = {
 		from.owner = {
-			country_event = { id = wg_fe.188 }
+			country_event = { id = wg_lady.53 }
 		}
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_fe.189 }
+			country_event = { id = wg_lady.50 }
 		}
 	}
 
 	on_progress_50 = {
 		owner = {
-			country_event = { id = wg_fe.182 }
+			country_event = { id = wg_lady.47 }
 		}
 	}
 	on_progress_75 = {
 		owner = {
-			country_event = { id = wg_fe.182 }
+			country_event = { id = wg_lady.47 }
 		}
 	}
 	
@@ -118,7 +118,7 @@ special_project = {
             set_event_locked = no
         }
 		owner = {
-			country_event = { id = wg_fe.186 }
+			country_event = { id = wg_lady.49 }
 		}
 	}
 	
@@ -140,12 +140,12 @@ special_project = {
 
 	on_start = {
 		from.owner = {
-			country_event = { id = wg_fe.188 }
+			country_event = { id = wg_lady.53 }
 		}
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_fe.190 }
+			country_event = { id = wg_lady.50 }
 		}
 	}
 
@@ -154,7 +154,7 @@ special_project = {
             set_event_locked = no
         }
 		owner = {
-			country_event = { id = wg_fe.192 }
+			country_event = { id = wg_lady.57 }
 		}
 	}
 }
@@ -174,12 +174,12 @@ special_project = {
 
 	on_start = {
 		from.owner = {
-			country_event = { id = wg_fe.188 }
+			country_event = { id = wg_lady.53 }
 		}
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_fe.191 }
+			country_event = { id = wg_lady.50 }
 		}
 	}
 
@@ -188,7 +188,7 @@ special_project = {
             set_event_locked = no
         }
 		owner = {
-			country_event = { id = wg_fe.193 }
+			country_event = { id = wg_lady.58 }
 		}
 	}
 }
@@ -197,9 +197,9 @@ special_project = {
 	key = "COMFIRM_WG_LADY_NAMING_PROJECT"
 	event_scope = planet_event
 	picture = GFX_evt_wsg_no_video
-	days_to_research = 3
+	days_to_research = 1
 	
 	on_success = {
-		owner = { country_event = { id = wg_fe.202 }}
+		owner = { country_event = { id = wg_lady.61 }}
 	}
 }

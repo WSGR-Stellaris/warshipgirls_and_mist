@@ -75,28 +75,28 @@ country_event = {
                 switch = {
                     trigger = has_global_flag
                     wg_crisis_normal = { #困难难度
-                        set_variable = { which = "ra_leader_limit" value = 9 } # 困难非vip可买9个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 11 } # 困难vip可买11个将领
-                        set_variable = { which = "ra_fleet_buy_limit" value = 10 } # 困难非vip可买10队船
-                        set_variable = { which = "ra_fleet_buy_limit_vip" value = 12 } # 困难vip可买12队船
-                        set_variable = { which = "ra_fleet_own_limit" value = 5 } # 困难非vip最多有5队船
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = 7 } # 困难vip最多有7队船
+                        set_variable = { which = "ra_leader_limit" value = @ra_leader_limit_normal } 
+                        set_variable = { which = "ra_leader_limit_vip" value = @ra_leader_limit_normal_vip } 
+                        set_variable = { which = "ra_fleet_buy_limit" value = @ra_fleet_buy_limit_normal } 
+                        set_variable = { which = "ra_fleet_buy_limit_vip" value = @ra_fleet_buy_limit_normal_vip }
+                        set_variable = { which = "ra_fleet_own_limit" value = @ra_fleet_own_limit_normal } 
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = @ra_fleet_own_limit_normal_vip } 
                     }
                     wg_crisis_hard = { #萌新难度
-                        set_variable = { which = "ra_leader_limit" value = 8 } # 萌新非vip可买8个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 10 } # 萌新vip可买10个将领
-                        set_variable = { which = "ra_fleet_buy_limit" value = 9 } # 萌新非vip可买9队船
-                        set_variable = { which = "ra_fleet_buy_limit_vip" value = 11 } # 萌新vip可买11队船
-                        set_variable = { which = "ra_fleet_own_limit" value = 5 } # 萌新非vip最多有5队船
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = 6 } # 萌新vip最多有6队船
+                        set_variable = { which = "ra_leader_limit" value = @ra_leader_limit_hard } 
+                        set_variable = { which = "ra_leader_limit_vip" value = @ra_leader_limit_hard_vip } 
+                        set_variable = { which = "ra_fleet_buy_limit" value = @ra_fleet_buy_limit_hard }
+                        set_variable = { which = "ra_fleet_buy_limit_vip" value = @ra_fleet_buy_limit_hard_vip }
+                        set_variable = { which = "ra_fleet_own_limit" value = @ra_fleet_own_limit_hard }
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = @ra_fleet_own_limit_hard_vip }
                     }
                     wg_crisis_insane = { #天灾难度
-                        set_variable = { which = "ra_leader_limit" value = 7 } # 天灾非vip可买7个将领
-                        set_variable = { which = "ra_leader_limit_vip" value = 9 } # 天灾vip可买9个将领
-                        set_variable = { which = "ra_fleet_buy_limit" value = 8 } # 天灾非vip可买8队船
-                        set_variable = { which = "ra_fleet_buy_limit_vip" value = 10 } # 天灾vip可买10队船
-                        set_variable = { which = "ra_fleet_own_limit" value = 4 } # 天灾非vip最多有4队船
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = 5 } # 天灾vip最多有5队船
+                        set_variable = { which = "ra_leader_limit" value = @ra_leader_limit_insane }
+                        set_variable = { which = "ra_leader_limit_vip" value = @ra_leader_limit_insane_vip }
+                        set_variable = { which = "ra_fleet_buy_limit" value = @ra_fleet_buy_limit_insane }
+                        set_variable = { which = "ra_fleet_buy_limit_vip" value = @ra_fleet_buy_limit_insane_vip }
+                        set_variable = { which = "ra_fleet_own_limit" value = @ra_fleet_own_limit_insane }
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = @ra_fleet_own_limit_insane_vip }
                     }
                 }
             }

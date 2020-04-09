@@ -691,13 +691,13 @@ wg_wedding = {
 		}
 		NOT = {
 			has_active_event = {
-				wg_traits.1016
+				wg_aft.18
 			}
 		}
 	}
 
 	effect = {
-		country_event = { id = wg_traits.1014 }
+		country_event = { id = wg_aft.16 }
 	}
 	
 	ai_weight = {
