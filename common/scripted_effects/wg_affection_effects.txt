@@ -178,6 +178,15 @@ add_lady_admiral_affection_trait = {
 # PREV: country
 check_level_up_lady_governor_affection_trait = {
 	if = {
+		limit = { 
+			PREV = { OR = { 
+				has_country_flag = lady_affection_max
+				check_variable = { which = lady_affection_level value >= 5 }
+			}}
+		}
+		break = yes #已爆满不需要再测
+	}
+	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
 		remove_lady_governor_affection_trait = yes
 		add_trait = leader_trait_governor_lady_affection_lv2
@@ -216,6 +225,15 @@ check_level_up_lady_governor_affection_trait = {
 # scope: country
 # PREV: ship
 check_level_up_lady_science_ship_affection_trait = {
+	if = {
+		limit = { 
+			OR = { 
+				has_country_flag = lady_affection_max
+				check_variable = { which = lady_affection_level value >= 5 }
+			}
+		}
+		break = yes #已爆满不需要再测
+	}
 	if = {
 		limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}
 		set_variable = { which = lady_affection_level value = 2 }
@@ -262,6 +280,15 @@ check_level_up_lady_science_ship_affection_trait = {
 # scope: leader
 # PREV: country
 check_level_up_lady_admiral_affection_trait = {
+	if = {
+		limit = { 
+			PREV = { OR = { 
+				has_country_flag = lady_affection_max
+				check_variable = { which = lady_affection_level value >= 5 }
+			}}
+		}
+		break = yes #已爆满不需要再测
+	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
 		remove_lady_admiral_affection_trait = yes
