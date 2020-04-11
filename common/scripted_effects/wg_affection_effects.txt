@@ -267,6 +267,55 @@ check_level_up_lady_science_ship_affection_trait = {
 
 # scope: leader
 # PREV: country
+check_level_up_lady_survey_scientist_affection_trait = {
+	if = {
+		limit = { 
+			PREV = { OR = { 
+				has_country_flag = lady_affection_max
+				check_variable = { which = lady_affection_level value >= 5 }
+			}}
+		}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
+		PREV = { set_variable = { which = lady_affection_level value = 2 }}
+		remove_lady_science_ship_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
+		PREV = { set_variable = { which = lady_affection_level value = 3 }}
+		remove_lady_science_ship_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
+		PREV = { set_variable = { which = lady_affection_level value = 4 }}
+		remove_lady_science_ship_affection_trait = yes
+		add_trait = leader_trait_governor_lady_affection_lv4
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}}
+		remove_lady_science_ship_affection_trait = yes
+		PREV = { set_country_flag = lady_affection_max }
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_governor_lady_affection_lv5 
+			PREV = { set_variable = { which = lady_affection_level value = 5 }}
+		}
+		else = {
+			add_trait = leader_trait_governor_lady_affection_lv4_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV: country
 check_level_up_lady_admiral_affection_trait = {
 	if = {
 		limit = { 
@@ -566,6 +615,28 @@ check_level_up_ruler_affection_trait = {
 			add_trait = leader_trait_ruler_affection_lv4_max
 		}
 		break = yes
+	}
+}
+
+check_level_up_lady_leader_affection_trait = {
+	switch = {
+		trigger = has_country_flag
+		lady_governor_active = { 
+			event_target:lady_governor = {
+				check_level_up_lady_governor_affection_trait = yes
+			}
+		}
+		lady_warship_active = {
+			random_owned_leader = {
+				limit = { has_leader_flag = wsg_lady_admiral }
+				check_level_up_lady_admiral_affection_trait = yes
+			}
+		}
+		wsg_lady_armed_science_active = {
+			event_target:lady_survey_scientist = {
+				check_level_up_lady_survey_scientist_affection_trait = yes
+			}
+		}
 	}
 }
 

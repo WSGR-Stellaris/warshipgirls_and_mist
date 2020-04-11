@@ -5,6 +5,7 @@ create_wsg_lady_governor = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
+		clear_global_event_target = lady_warship_fleet
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_fleet2 }
 			delete_fleet = {
@@ -16,6 +17,8 @@ create_wsg_lady_governor = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
+		clear_global_event_target = lady_survey_scientist
+		clear_global_event_target = lady_science_ship
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -51,6 +54,7 @@ create_wsg_lady_governor = {
 			set_leader_flag = wsg_lady_leader
 			set_leader_flag = wsg_lady_governor
 			set_leader_flag = has_gained_level_trait
+			save_global_event_target_as = lady_governor
 		}
 	}
 	remove_country_flag = wsg_lady_warship_active
@@ -69,8 +73,7 @@ create_wsg_lady_warship = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_armed_science }
+		event_target:lady_science_ship = {
 			save_event_target_as = wsg_lady_warship_location
 		}
 	}
@@ -216,6 +219,7 @@ create_wsg_lady_warship = {
 			assign_leader = last_created_leader
 			set_location = event_target:wsg_lady_warship_location
 			set_fleet_flag = lady_fleet2
+			save_global_event_target_as = lady_warship_fleet
 		}
 		settings = { 
 			can_upgrade = no 
@@ -225,6 +229,10 @@ create_wsg_lady_warship = {
 			uses_naval_capacity = no
 			spawn_debris = no 
 		}
+	}
+	if = {
+		limit = { has_country_flag = wsg_lady_governor_active }
+		clear_global_event_target = lady_governor
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_army_active }
@@ -239,6 +247,8 @@ create_wsg_lady_warship = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
+		clear_global_event_target = lady_survey_scientist
+		clear_global_event_target = lady_science_ship
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -278,15 +288,13 @@ create_wsg_lady_army = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_armed_science }
+		event_target:lady_science_ship = {
 			save_event_target_as = wsg_lady_transport_location
 		}
 	}
 	else_if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_fleet2 }
+		event_target:lady_warship_fleet = {
 			save_event_target_as = wsg_lady_transport_location
 		}
 	}
@@ -311,7 +319,12 @@ create_wsg_lady_army = {
 		}
 	}
 	if = {
+		limit = { has_country_flag = wsg_lady_governor_active }
+		clear_global_event_target = lady_governor
+	}
+	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
+		clear_global_event_target = lady_warship_fleet
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_fleet2 }
 			delete_fleet = {
@@ -323,6 +336,8 @@ create_wsg_lady_army = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
+		clear_global_event_target = lady_survey_scientist
+		clear_global_event_target = lady_science_ship
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_armed_science }
 			delete_fleet = this
@@ -340,8 +355,7 @@ create_wsg_lady_armed_science = {
 	}
 	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_fleet2 }
+		event_target:lady_warship_fleet = {
 			save_event_target_as = wsg_lady_armed_science_location
 		}
 	}
@@ -385,6 +399,7 @@ create_wsg_lady_armed_science = {
 			set_fleet_stance = evasive
 			set_location = event_target:wsg_lady_armed_science_location
 			set_fleet_flag = lady_armed_science
+			save_global_event_target_as = lady_science_ship
 			owner = {
 				create_leader = {
 					name = "NAME_WG_LADY"
@@ -404,6 +419,7 @@ create_wsg_lady_armed_science = {
 						set_leader_flag = wsg_lady_leader
 						set_leader_flag = wsg_lady_scientist
 						set_leader_flag = has_gained_level_trait
+						save_global_event_target_as = lady_survey_scientist
 					}
 				}
 			}
@@ -424,7 +440,12 @@ create_wsg_lady_armed_science = {
 		}
 	}
 	if = {
+		limit = { has_country_flag = wsg_lady_governor_active }
+		clear_global_event_target = lady_governor
+	}
+	if = {
 		limit = { has_country_flag = wsg_lady_warship_active }
+		clear_global_event_target = lady_warship_fleet
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_fleet2 }
 			delete_fleet = {
