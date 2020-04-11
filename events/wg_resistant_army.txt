@@ -3146,6 +3146,46 @@ country_event = {
             }
         }
     }
+}   
+
+# 反抗军领袖阵亡，降低持有领袖变数
+country_event = {
+    id = wg_crisis.73
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        FROM = { has_leader_flag = ra_admiral }
+    }
+
+    immediate = {
+        divide_variable = { which = "buy_ra_leader_count" value = 1 }
+        if = {
+            limit = { 
+                FROM = { OR = {
+                    has_leader_flag = enterprise 
+                    has_leader_flag = VV
+                    has_leader_flag = hood
+                    has_leader_flag = rodney
+                    has_leader_flag = yukikaze
+                }}
+            }
+            divide_variable = { which = "SR_num" value = 1 }
+            break = yes
+        }
+        if = {
+            limit = { 
+                FROM = { OR = {
+                    has_leader_flag = lexington
+                    has_leader_flag = missouri
+                    has_leader_flag = taiho_sh
+                    has_leader_flag = cobot
+                }}
+            }
+            divide_variable = { which = "SSR_num" value = 1 }
+            break = yes
+        }
+    }
 }
 
 country_event = {

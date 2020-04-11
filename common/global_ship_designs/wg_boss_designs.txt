@@ -116,3 +116,155 @@ ship_design = {
 	required_component="BATTLESHIP_SHIP_THRUSTER_4"
 	required_component = "SHIP_AURA_TARGETING_GRID"
 }
+#弗莱彻无人机之主
+ship_design = {
+	name = "NAME_WG_FLETCHER"
+	ship_size = wg_fletcher
+	is_event_design = yes
+
+	section = {
+		template = "scout_UAV_section_BOSS"
+		slot = "mid"
+	
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "sh_weapen_UX"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_UX"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHELL_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}		
+
+	}
+	required_component="SH_JUMP_DRIVE"
+	required_component="SENSOR_SH"
+	required_component= "COMBAT_COMPUTER_PICKET_SH"
+	required_component="TITAN_sh_senergy_REACTOR"
+	required_component="SHIP_THRUSTER_SH"
+	required_component = "SHIP_AURA_FOG"
+	required_component = "SHIP_AURA_FIRECONTROL"
+}
+#L型小弟
+ship_design = {
+	name = "NAME_WG_LARGE_UAV"
+	ship_size = scout_UAV
+
+	section = {
+		template = "scout_UAV_section3"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "ENERGY_TORPEDO_2"
+		}
+        component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+	}
+
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "UAV_THRUSTER_4"
+}
+#M型小弟
+ship_design = {
+	name = "NAME_WG_MEDIUM_UAV"
+	ship_size = scout_UAV
+
+	section = {
+		template = "scout_UAV_section2"
+		slot = "mid"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+        component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "UAV_THRUSTER_4"
+}
+#S型小弟
+ship_design = {
+	name = "NAME_WG_SMALL_UAV"
+	ship_size = scout_UAV
+
+	section = {
+		template = "scout_UAV_section"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "AUTOCANNON_3"
+		}
+        component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}		
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "UAV_THRUSTER_4"
+}

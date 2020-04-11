@@ -1594,13 +1594,12 @@ country_event = {
 			has_communications = root
 			OR = {
 				has_authority = auth_warshipgirls
-				AND = {
-					has_authority = auth_shenhai
-					NOR = { 
-						has_civic = civic_CM
-						has_ascension_perk = ap_shenhai_silent
-					}
-				}
+				has_authority = auth_shenhai
+			}
+			NOR = { 
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
+				has_civic = civic_fanatic_purifiers
 			}
 		}
 	}
@@ -1616,13 +1615,12 @@ country_event = {
 				has_communications = root
 				OR = {
 					has_authority = auth_warshipgirls
-					AND = {
-						has_authority = auth_shenhai
-						NOR = { 
-							has_civic = civic_CM
-							has_ascension_perk = ap_shenhai_silent
-						}
-					}
+					has_authority = auth_shenhai
+				}
+				NOR = { 
+					has_civic = civic_CM
+					has_ascension_perk = ap_shenhai_silent
+					has_civic = civic_fanatic_purifiers
 				}
 			}
 			#random_list = {

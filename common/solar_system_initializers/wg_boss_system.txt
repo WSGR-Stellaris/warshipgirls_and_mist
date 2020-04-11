@@ -183,3 +183,122 @@ wg_boss_think_tank_system = {
 		}
 	}	
 }
+
+
+wg_boss_uav_system = {
+	class = "rl_standard_stars"
+	usage = wg_boss_uav_system_system_init
+	name = "NAME_wg_boss_uav_system_system"
+	
+	max_instances = 1
+	spawn_chance = 9999
+	
+	flags = { wg_boss_uav_system_home }
+
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 160
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 80
+	}	
+	planet = {
+		class = "pc_b_star"
+		orbit_distance = 0
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "derelict_ship_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = hidden_uav_boss
+				save_event_target_as = hidden_uav_boss_location	
+				set_location = {
+					target = prev
+					distance = 80
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "derelict_ship_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = hidden_uav_1
+				save_event_target_as = hidden_uav_1_location			
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}			
+			create_ambient_object = {
+				type = "derelict_ship_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = hidden_uav_2
+				save_event_target_as = hidden_uav_2_location
+				set_location = {
+					target = prev
+					distance = 100
+					angle = random
+				}
+			}			
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 120
+					angle = random
+				}
+			}			
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}			
+		}
+
+	}	
+	change_orbit = 60
+		
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 130
+		size = { min = 15 max = 20 }
+		change_orbit = @base_moon_distance
+		
+		moon = {	
+			class = pc_barren_cold		
+			count = { min = 1 max = 2 }
+			orbit_distance = 5
+		}
+	}	
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 170
+		size = { min = 15 max = 20 }
+		change_orbit = @base_moon_distance
+		
+		moon = {	
+			class = pc_barren_cold		
+			count = { min = 0 max = 2 }
+			orbit_distance = 5
+		}
+	}	
+}

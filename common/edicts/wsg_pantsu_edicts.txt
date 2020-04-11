@@ -651,6 +651,27 @@ wsg_lady_modification_project = {
 		weight = 0
 	}	
 }
+
+recall_wsg_lady_modification_project = {
+	length = 0
+	potential = {
+		has_special_project = WSG_LADY_MODIFICATION
+		NOR = {
+			is_researching_special_project = WSG_LADY_MODIFICATION1
+			is_researching_special_project = WSG_LADY_MODIFICATION2
+			is_researching_special_project = WSG_LADY_MODIFICATION3
+			has_active_event = { wg_fe.187 }
+		}
+	}
+
+	effect = {
+		country_event = { id = wg_fe.185 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
 #############
 wg_struggle_edicts = {
 	length = 7200

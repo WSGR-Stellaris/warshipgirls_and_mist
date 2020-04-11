@@ -2658,16 +2658,17 @@ tech_uav3 = {
 }
 
 tech_uav4 = {
-	cost = @tier5cost2
+	cost = @tier5cost1
 	area = engineering
-	tier = 4
+	tier = 5
 	icon = wg_uav
 	ai_update_type = military
 	category = { voidcraft }	
 	prerequisites = { "tech_uav3" "tech_energy_lance_1" }
-	weight = @tier4weight2
+	weight = 10
 	is_reverse_engineerable = no
 	is_rare = yes
+	is_dangerous = yes
 		
 	prereqfor_desc = {
 		ship = {
@@ -2675,25 +2676,7 @@ tech_uav4 = {
 			desc = "TECH_UNLOCK_UAV4_CONSTRUCTION_DESC"
 		}
 	}	
-	weight_modifier = {
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
-	}
-	
-	ai_weight = {
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
-	}
+
 	potential = {
 		OR = {
 			has_authority = auth_warshipgirls	

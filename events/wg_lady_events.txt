@@ -1905,6 +1905,10 @@ country_event = {
 
 	immediate = {
 		get_player_nickname = yes
+		every_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			kill_leader = { show_notification = no }
+		}
 	}
 
 	option = {
@@ -2348,9 +2352,9 @@ country_event = {
 					exists = this
 				}
 			}
-			capital_scope = {
+			capital_scope = { solar_system = { starbase = {
 				save_event_target_as = mod_location
-			}
+			}}}
 			set_country_flag = modifing_wsg_lady
 			switch = {
 				trigger = has_country_flag
@@ -2576,6 +2580,10 @@ country_event = {
 		}
 		add_modifier = { modifier = retry_modify_wsg_lady_cd days = 5400 }
 		remove_country_flag = modifing_wsg_lady
+	}
+
+	option = {
+		name = OK
 		switch = {
 			trigger = has_modifier
 			wsg_lady_modify_consume = { remove_modifier = wsg_lady_modify_consume }
@@ -2583,7 +2591,6 @@ country_event = {
 			wsg_lady_modify_consume3 = { remove_modifier = wsg_lady_modify_consume3 }
 		}
 	}
-
 }
 
 country_event = {
@@ -2620,24 +2627,11 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_fleet = {
-			limit = { has_fleet_flag = lady_fleet2 }
-			set_event_locked = no
-		}
-		remove_country_flag = modifing_wsg_lady
-		remove_modifier = wsg_lady_modify_consume
-		switch = {
-			trigger = has_country_flag
-			lady_warship_cracker = { remove_country_flag = lady_warship_cracker }
-			lady_warship_shielder = { remove_country_flag = lady_warship_shielder }
-			lady_warship_neutron = { remove_country_flag = lady_warship_neutron }
-			lady_warship_godray = { remove_country_flag = lady_warship_godray }
-			lady_warship_nanobots = { remove_country_flag = lady_warship_nanobots }
-			lady_warship_ovo = { remove_country_flag = lady_warship_ovo }
-			lady_warship_psh = { remove_country_flag = lady_warship_psh }
-			lady_warship_sun_killer = { remove_country_flag = lady_warship_sun_killer }
-			default = {}
-		}
+		abort_special_project = { type = WSG_LADY_MODIFICATION }
+		set_country_flag = delay_wsg_lady_modification_project
+		remove_country_flag = modify_project1
+		remove_country_flag = modify_project2
+		remove_country_flag = modify_project3
 	}
 }
 

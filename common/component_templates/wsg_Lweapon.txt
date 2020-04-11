@@ -61,7 +61,7 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 	
-	damage = { min = 700 max = 1400 }
+	damage = { min = 800 max = 1600 }
 	windup = { min = 15 max = 25 }
 	total_fire_time = 80
 	range = 140.0

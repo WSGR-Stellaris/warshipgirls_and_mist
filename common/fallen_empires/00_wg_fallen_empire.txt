@@ -3,16 +3,16 @@ wg_fallen_empire = {
 	initializer = "wg_fallen_empire_capital_system"
 
 	weight_modifier = {
-		base = 100
-		modifier = {
-			factor = 999999
-			any_country = {
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
-			}
-		}
+		base = 0
+#		modifier = {
+#			factor = 999999
+#			any_country = {
+#				OR = {
+#					has_authority = auth_shenhai
+#					has_authority = auth_warshipgirls
+#				}
+#			}
+#		}
 	}
 
 	possible = {

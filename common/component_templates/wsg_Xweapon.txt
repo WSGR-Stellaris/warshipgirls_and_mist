@@ -115,7 +115,7 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 	
-	damage = { min = 1800 max = 3810 }
+	damage = { min = 2000 max = 3810 }
 	windup = { min = 30 max = 45 }
 	total_fire_time = 100
 	range = 175.0
@@ -167,7 +167,7 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 	
-	damage = { min = 4000 max = 6500 }
+	damage = { min = 5000 max = 7500 }
 	windup = { min = 30 max = 45 }
 	total_fire_time = 120
 	range = 185.0
@@ -219,7 +219,7 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 	
-	damage = { min = 3000 max = 5500 }
+	damage = { min = 3500 max = 6000 }
 	windup = { min = 30 max = 45 }
 	total_fire_time = 115
 	range = 180.0

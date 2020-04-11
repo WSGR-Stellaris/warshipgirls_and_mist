@@ -67,11 +67,7 @@ add_lady_governor_affection_trait = {
 		add_trait = leader_trait_governor_lady_affection_lv4
 		break = yes
 	}
-	if = {
-		limit = { PREV = { 
-			check_variable = { which = "lady_affection" value >= 200 }
-			NOT = { has_country_flag = married_wsg_lady }
-		}}
+	else = {
 		add_trait = leader_trait_governor_lady_affection_lv4_max
 		break = yes
 	}
@@ -116,11 +112,7 @@ add_lady_science_ship_affection_trait = {
 		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4
 		break = yes
 	}
-	if = {
-		limit = { PREV = {
-			check_variable = { which = "lady_affection" value >= 200 }
-			NOT = { has_country_flag = married_wsg_lady }
-		}}
+	else = {
 		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4_max
 		break = yes
 	}
@@ -164,11 +156,7 @@ add_lady_admiral_affection_trait = {
 		add_trait = leader_trait_admiral_lady_affection_lv4
 		break = yes
 	}
-	if = {
-		limit = { PREV = {
-			check_variable = { which = "lady_affection" value >= 200 }
-			NOT = { has_country_flag = married_wsg_lady }
-		}}
+	else = {
 		add_trait = leader_trait_admiral_lady_affection_lv4_max
 		break = yes
 	}

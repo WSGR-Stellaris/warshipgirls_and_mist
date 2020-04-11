@@ -98,4 +98,44 @@ ship_section_template = {
 	large_utility_slots = 6
 	aux_utility_slots = 2
 }
-
+#弗莱彻无人机之主
+ship_section_template = {
+	key = "scout_UAV_section_BOSS"
+	ship_size = wg_fletcher
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "gatebuilder_wg_boss_strikecraft_entity"
+		
+	large_utility_slots = 4
+	aux_utility_slots = 2
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "extra_large_turret"
+		
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "extra_large_turret"
+		
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 15
+		}
+	}
+}

@@ -94,6 +94,9 @@ country_event = {
 		has_authority = auth_warshipgirls
 		last_increased_tech = "tech_wsg_reform"
 		is_ai = no
+		capital_scope = {
+			has_planet_flag = port_home
+		}
 	}
 	immediate = {
 		country_event = { id = wsgancrel.21 days = 180  }

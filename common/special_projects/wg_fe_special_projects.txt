@@ -98,7 +98,7 @@ special_project = {
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_lady.50 }
+			country_event = { id = wg_lady.54 }
 		}
 	}
 
@@ -145,7 +145,7 @@ special_project = {
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_lady.50 }
+			country_event = { id = wg_lady.55 }
 		}
 	}
 
@@ -179,7 +179,7 @@ special_project = {
 	}
 	on_cancel = {
 		from.owner = {
-			country_event = { id = wg_lady.50 }
+			country_event = { id = wg_lady.56 }
 		}
 	}
 

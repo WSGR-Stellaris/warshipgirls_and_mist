@@ -9,7 +9,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_1
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = junyo
                         }
@@ -22,7 +22,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_2
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = chongqing
                         }
@@ -35,7 +35,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_3
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = DM
                         }
@@ -48,7 +48,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_4
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = fantasque
                         }
@@ -61,7 +61,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_5
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = essex
                         }
@@ -74,7 +74,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_6
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = nevada
                         }
@@ -87,7 +87,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_7
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = AD
                         }
@@ -100,7 +100,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_8
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = ranger
                         }
@@ -113,7 +113,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_9
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = sirius
                         }
@@ -126,7 +126,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_10
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = gearing
                         }
@@ -139,7 +139,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_11
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = vanguard
                         }
@@ -152,7 +152,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_12
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = ninghai
                         }
@@ -165,7 +165,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_13
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = tashkent
                         }
@@ -178,7 +178,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_14
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = kitayama
                         }
@@ -191,7 +191,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_15
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = sukhbaatar
                         }
@@ -209,7 +209,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_101
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = eugen
                         }
@@ -222,7 +222,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_102
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = helena
                         }
@@ -235,7 +235,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_103
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = renown
                         }
@@ -248,7 +248,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_104
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = yamato
                         }
@@ -261,7 +261,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_105
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = changchun
                         }
@@ -274,7 +274,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_106
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = johnston
                         }
@@ -287,7 +287,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_107
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = richelieu
                         }
@@ -300,7 +300,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_108
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = royal_ark
                         }
@@ -313,7 +313,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_109
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = U47
                         }
@@ -326,7 +326,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_110
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = hutton
                         }
@@ -336,6 +336,10 @@ generate_random_ra_admiral_list = {
             }
         }
         90 = {
+            modifier = {
+                factor = 0
+                check_variable = { which = SSR_num value >= 5 }
+            }
             modifier = { 
                 add = -15
                 any_owned_leader = { has_leader_flag = enterprise }
@@ -364,7 +368,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_201
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = enterprise
                         }
@@ -377,7 +381,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_202
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = VV
                         }
@@ -390,7 +394,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_203
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = hood
                         }
@@ -403,7 +407,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_204
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = rodney
                         }
@@ -416,7 +420,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_205
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = yukikaze
                         }
@@ -431,6 +435,7 @@ generate_random_ra_admiral_list = {
                 OR = { 
                     has_global_flag = wg_crisis_very_easy
                     has_global_flag = wg_crisis_easy
+                    check_variable = { which = SSR_num value >= 4 }
                 }
             }
             modifier = { 
@@ -458,7 +463,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_1001 
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = lexington
                         }
@@ -471,7 +476,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_1002
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = missouri
                         }
@@ -484,7 +489,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_1003
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = taiho_sh
                         }
@@ -497,7 +502,7 @@ generate_random_ra_admiral_list = {
                         has_country_flag = ra_admiral_1004
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = cobot
                         }
@@ -521,7 +526,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_101
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = eugen
                         }
@@ -534,7 +539,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_102
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = helena
                         }
@@ -547,7 +552,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_103
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = renown
                         }
@@ -560,7 +565,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_104
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = yamato
                         }
@@ -573,7 +578,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_105
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = changchun
                         }
@@ -586,7 +591,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_106
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = johnston
                         }
@@ -599,7 +604,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_107
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = richelieu
                         }
@@ -612,7 +617,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_108
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = royal_ark
                         }
@@ -625,7 +630,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_109
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = U47
                         }
@@ -638,7 +643,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_110
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = hutton
                         }
@@ -648,6 +653,10 @@ generate_random_greater_ra_admiral_list = {
             }
         }
         60 = {
+            modifier = {
+                factor = 0
+                check_variable = { which = SR_num value >= 5 }
+            }
             modifier = { 
                 add = -10
                 any_owned_leader = { has_leader_flag = enterprise }
@@ -676,7 +685,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_201
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = enterprise
                         }
@@ -689,7 +698,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_202
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = VV
                         }
@@ -702,7 +711,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_203
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = hood
                         }
@@ -715,7 +724,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_204
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = rodney
                         }
@@ -728,7 +737,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_205
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = yukikaze
                         }
@@ -743,6 +752,7 @@ generate_random_greater_ra_admiral_list = {
                 OR = { 
                     has_global_flag = wg_crisis_very_easy
                     has_global_flag = wg_crisis_easy
+                    check_variable = { which = SSR_num value >= 4 }
                 }
             }
             modifier = { 
@@ -770,7 +780,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_1001 
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = lexington
                         }
@@ -783,7 +793,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_1002
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = missouri
                         }
@@ -796,7 +806,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_1003
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = taiho_sh
                         }
@@ -809,7 +819,7 @@ generate_random_greater_ra_admiral_list = {
                         has_country_flag = ra_admiral_1004
                     }
                     modifier = {
-                        add = -4
+                        factor = 0 
                         any_owned_leader = {
                             has_leader_flag = cobot
                         }
@@ -838,6 +848,7 @@ create_ra_admiral_1 = {
         effect = {
             change_leader_portrait = wsg228
             set_leader_flag = junyo
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -856,6 +867,7 @@ create_ra_admiral_2 = {
         effect = {
             change_leader_portrait = wsg54
             set_leader_flag = chongqing
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -874,6 +886,7 @@ create_ra_admiral_3 = {
         effect = {
             change_leader_portrait = wsg243
             set_leader_flag = DM
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -892,6 +905,7 @@ create_ra_admiral_4 = {
         effect = {
             change_leader_portrait = wsg99
             set_leader_flag = fantasque
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -910,6 +924,7 @@ create_ra_admiral_5 = {
         effect = {
             change_leader_portrait = wsg226
             set_leader_flag = essex
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -928,6 +943,7 @@ create_ra_admiral_6 = {
         effect = {
             change_leader_portrait = wsg11
             set_leader_flag = nevada
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -946,6 +962,7 @@ create_ra_admiral_7 = {
         effect = {
             change_leader_portrait = wsg13
             set_leader_flag = AD
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -964,6 +981,7 @@ create_ra_admiral_8 = {
         effect = {
             change_leader_portrait = wsg28
             set_leader_flag = ranger
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -982,6 +1000,7 @@ create_ra_admiral_9 = {
         effect = {
             change_leader_portrait = wsg50
             set_leader_flag = sirius
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1000,6 +1019,7 @@ create_ra_admiral_10 = {
         effect = {
             change_leader_portrait = wsg93
             set_leader_flag = gearing
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1018,6 +1038,7 @@ create_ra_admiral_11 = {
         effect = {
             change_leader_portrait = wsg105
             set_leader_flag = vanguard
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1036,6 +1057,7 @@ create_ra_admiral_12 = {
         effect = {
             change_leader_portrait = wsg60
             set_leader_flag = ninghai
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1054,6 +1076,7 @@ create_ra_admiral_13 = {
         effect = {
             change_leader_portrait = wsg192
             set_leader_flag = tashkent
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1072,6 +1095,7 @@ create_ra_admiral_14 = {
         effect = {
             change_leader_portrait = wsg43
             set_leader_flag = kitayama
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1090,6 +1114,7 @@ create_ra_admiral_15 = {
         effect = {
             change_leader_portrait = wsg298
             set_leader_flag = sukhbaatar
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1113,6 +1138,7 @@ create_ra_admiral_101 = {
         effect = {
             change_leader_portrait = wsg38
             set_leader_flag = eugen
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1131,6 +1157,7 @@ create_ra_admiral_102 = {
         effect = {
             change_leader_portrait = wsg59
             set_leader_flag = helena
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1150,6 +1177,7 @@ create_ra_admiral_103 = {
         effect = {
             change_leader_portrait = wsg18
             set_leader_flag = renown
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1168,6 +1196,7 @@ create_ra_admiral_104 = {
         effect = {
             change_leader_portrait = sh64
             set_leader_flag = yamato
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1186,6 +1215,7 @@ create_ra_admiral_105 = {
         effect = {
             change_leader_portrait = wsg97
             set_leader_flag = changchun
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1204,6 +1234,7 @@ create_ra_admiral_106 = {
         effect = {
             change_leader_portrait = wsg280
             set_leader_flag = johnston
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1222,6 +1253,7 @@ create_ra_admiral_107 = {
         effect = {
             change_leader_portrait = wsg113
             set_leader_flag = richelieu
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1240,6 +1272,7 @@ create_ra_admiral_108 = {
         effect = {
             change_leader_portrait = wsg119
             set_leader_flag = royal_ark
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1258,6 +1291,7 @@ create_ra_admiral_109 = {
         effect = {
             change_leader_portrait = wsg197
             set_leader_flag = U47
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1276,6 +1310,7 @@ create_ra_admiral_110 = {
         effect = {
             change_leader_portrait = wsg367
             set_leader_flag = hutton
+            set_leader_flag = ra_admiral
         }
     }
 }
@@ -1300,8 +1335,10 @@ create_ra_admiral_201 = {
         effect = {
             change_leader_portrait = wsg121_3
             set_leader_flag = enterprise
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SR_num value = 1 }
 }
 create_ra_admiral_202 = {
     create_leader = {
@@ -1318,8 +1355,10 @@ create_ra_admiral_202 = {
         effect = {
             change_leader_portrait = wsg112
             set_leader_flag = VV
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SR_num value = 1 }
 }
 create_ra_admiral_203 = {
     create_leader = {
@@ -1336,8 +1375,10 @@ create_ra_admiral_203 = {
         effect = {
             change_leader_portrait = wsg1
             set_leader_flag = hood
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SR_num value = 1 }
 }
 create_ra_admiral_204 = {
     create_leader = {
@@ -1354,8 +1395,10 @@ create_ra_admiral_204 = {
         effect = {
             change_leader_portrait = wsg9
             set_leader_flag = rodney
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SR_num value = 1 }
 }
 create_ra_admiral_205 = {
     create_leader = {
@@ -1372,8 +1415,10 @@ create_ra_admiral_205 = {
         effect = {
             change_leader_portrait = wsg169
             set_leader_flag = yukikaze
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SR_num value = 1 }
 }
 
 ##################################################################
@@ -1396,8 +1441,10 @@ create_ra_admiral_1001 = {
         effect = {
             change_leader_portrait = wsg29
             set_leader_flag = lexington
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SSR_num value = 1 }
 }
 
 create_ra_admiral_1002 = {
@@ -1415,8 +1462,10 @@ create_ra_admiral_1002 = {
         effect = {
             change_leader_portrait = wsg209
             set_leader_flag = missouri
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SSR_num value = 1 }
 }
 
 create_ra_admiral_1003 = {
@@ -1434,8 +1483,10 @@ create_ra_admiral_1003 = {
         effect = {
             change_leader_portrait = sh46
             set_leader_flag = taiho_sh
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SSR_num value = 1 }
 }
 
 create_ra_admiral_1004 = {
@@ -1453,8 +1504,10 @@ create_ra_admiral_1004 = {
         effect = {
             change_leader_portrait = wsg325
             set_leader_flag = cobot
+            set_leader_flag = ra_admiral
         }
     }
+    change_variable = { which = SSR_num value = 1 }
 }
 
 clear_all_admiral_flags = {
