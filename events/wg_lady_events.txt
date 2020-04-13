@@ -640,6 +640,7 @@ country_event = {
 		save_global_event_target_as = wsg_lady_own_country
 		set_timed_country_flag = { flag = wsg_lady_weaken days = 14400 }
 		country_event = { id = wg_lady.59 }
+		country_event = { id = wg_lady.10023 days = 14401 }
 	}
 
 	after = {
@@ -658,6 +659,37 @@ country_event = {
 		name = wg_lady.23.b
 		custom_tooltip = wg_lady.62.a.tooltip
 		hidden_effect = { country_event = { id = wg_lady.62 }}
+	}
+}
+
+country_event = {
+	id = wg_lady.10023
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		switch = {
+			trigger = has_country_flag
+			wsg_lady_governor_active = {
+				event_target:lady_governor = {
+					remove_trait = leader_trait_governor_wsg_lady_weaken
+					add_trait = leader_trait_governor_wsg_lady
+				}
+			}
+			wsg_lady_warship_active = {
+				random_owned_leader = {
+					limit = { has_leader_flag = wsg_lady_admiral }
+					remove_trait = leader_trait_admiral_wsg_lady_weaken
+					add_trait = leader_trait_admiral_wsg_lady
+				}
+			}
+			wsg_lady_armed_science_active = {
+				event_target:lady_survey_scientist = {
+					remove_trait = leader_trait_scientist_wsg_lady_science_ship_weaken
+					add_trait = leader_trait_scientist_wsg_lady_science_ship
+				}
+			}
+		}
 	}
 }
 

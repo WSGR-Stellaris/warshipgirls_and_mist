@@ -80,7 +80,7 @@ country_event = {
                         set_variable = { which = "ra_fleet_buy_limit" value = @ra_fleet_buy_limit_normal } 
                         set_variable = { which = "ra_fleet_buy_limit_vip" value = @ra_fleet_buy_limit_normal_vip }
                         set_variable = { which = "ra_fleet_own_limit" value = @ra_fleet_own_limit_normal } 
-                        set_variable = { which = "ra_fleet_own_limit_vip" value = @ra_fleet_own_limit_normal_vip } 
+                        set_variable = { which = "ra_fleet_own_limit_vip" value = @ra_fleet_own_limit_normal_vip }
                     }
                     wg_crisis_hard = { #萌新难度
                         set_variable = { which = "ra_leader_limit" value = @ra_leader_limit_hard } 
@@ -1302,7 +1302,10 @@ country_event = {
             limit = {
                 count_country = {
                     limit = {
-                        is_country_type = default
+						OR = {
+							is_country_type = default
+							is_country_type = default_ev
+						}
                         NOR = {
                             has_authority = auth_shenhai
                             has_authority = auth_warshipgirls
@@ -1317,7 +1320,10 @@ country_event = {
             limit = {
                 count_country = {
                     limit = {
-                        is_country_type = default
+                        OR = {
+							is_country_type = default
+							is_country_type = default_ev
+						}
                         NOR = {
                             has_authority = auth_shenhai
                             has_authority = auth_warshipgirls
@@ -1334,7 +1340,10 @@ country_event = {
         while = { count = "loop_i"
             random_country = {
                 limit = {
-                    is_country_type = default
+                    OR = {
+						is_country_type = default
+						is_country_type = default_ev
+					}
                     NOT = { has_country_flag = has_ra_fleet_spawn }
                     NOR = {
                         has_authority = auth_shenhai
@@ -3146,7 +3155,7 @@ country_event = {
             }
         }
     }
-}   
+}
 
 # 反抗军领袖阵亡，降低持有领袖变数
 country_event = {
