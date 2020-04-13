@@ -54,8 +54,6 @@ country_event = {
 				limit = { 
 					is_wg_leader = yes
 					NOR = {
-						leader_class = admiral
-						leader_class = general
 						has_leader_flag = wsg_lady_leader
 						has_leader_flag = affection_max
 					}
@@ -78,32 +76,32 @@ country_event = {
 					trigger = leader_class
 					governor = {
 						if = {
-							limit = { ROOT = { any_owned_planet = { leader = { is_same_value = PREVPREVPREV }}}}
+							limit = { ROOT = { any_owned_sector = { leader = { is_same_value = PREVPREVPREV }}}}
 							random_list = {
 								1 = {
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 1 }
+										check_variable = { which = "months_no_affection" value >= 2 }
 										add = 1
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 2 }
+										check_variable = { which = "months_no_affection" value >= 4 }
 										add = 2
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 3 }
+										check_variable = { which = "months_no_affection" value >= 6 }
 										add = 4
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 4 }
+										check_variable = { which = "months_no_affection" value >= 8 }
 										add = 8
 									}
 									change_variable = { which = "affection" value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
 									check_level_up_governor_affection_trait = yes
 								}
-								4 = {
+								14 = {
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 5 }
+										check_variable = { which = "months_no_affection" value >= 10 }
 										factor = 0
 									}
 									change_variable = { which = "months_no_affection" value = 1 }
@@ -143,7 +141,7 @@ country_event = {
 									set_variable = { which = "months_no_affection" value = 0 }
 									check_level_up_scientist_affection_trait = yes
 								}
-								4 = {
+								14 = {
 									modifier = {
 										check_variable = { which = "months_no_affection" value >= 5 }
 										factor = 0
@@ -998,19 +996,19 @@ country_event = {
 	}
 
 	option = {
+		name = test_only_ring+1
+		change_variable = { which = wsg_rings value = 1 }
+	}
+	option = {
 		allow = {
-			resource_stockpile_compare = { resource = influence value >= 128 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			check_variable = { which = wsg_rings value >= 1 }
 		}
 		trigger = {
 			exists = event_target:leader_tobe_view_1
 			check_variable = { which = reminder value <= 4 }
 		}
 		name = wg_aft.18.leader1
-		add_resource = {
-			influence = -128
-			sr_alpha = -648
-		}
+		change_variable = { which = wsg_rings value = -1 }
 		hidden_effect = {
 			event_target:leader_tobe_view_1 = {
 				save_event_target_as = married_leader
@@ -1020,18 +1018,14 @@ country_event = {
 	}
 	option = {
 		allow = {
-			resource_stockpile_compare = { resource = influence value >= 128 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			check_variable = { which = wsg_rings value >= 1 }
 		}
 		trigger = {
 			exists = event_target:leader_tobe_view_2
 			check_variable = { which = reminder value <= 3 }
 		}
 		name = wg_aft.18.leader2
-		add_resource = {
-			influence = -128
-			sr_alpha = -648
-		}
+		change_variable = { which = wsg_rings value = -1 }
 		hidden_effect = {
 			event_target:leader_tobe_view_2 = {
 				save_event_target_as = married_leader
@@ -1041,18 +1035,14 @@ country_event = {
 	}
 	option = {
 		allow = {
-			resource_stockpile_compare = { resource = influence value >= 128 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			check_variable = { which = wsg_rings value >= 1 }
 		}
 		trigger = {
 			exists = event_target:leader_tobe_view_3
 			check_variable = { which = reminder value <= 2 }
 		}
 		name = wg_aft.18.leader3
-		add_resource = {
-			influence = -128
-			sr_alpha = -648
-		}
+		change_variable = { which = wsg_rings value = -1 }
 		hidden_effect = {
 			event_target:leader_tobe_view_3 = {
 				save_event_target_as = married_leader
@@ -1062,18 +1052,14 @@ country_event = {
 	}
 	option = {
 		allow = {
-			resource_stockpile_compare = { resource = influence value >= 128 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			check_variable = { which = wsg_rings value >= 1 }
 		}
 		trigger = {
 			exists = event_target:leader_tobe_view_4
 			check_variable = { which = reminder value <= 1 }
 		}
 		name = wg_aft.18.leader4
-		add_resource = {
-			influence = -128
-			sr_alpha = -648
-		}
+		change_variable = { which = wsg_rings value = -1 }
 		hidden_effect = {
 			event_target:leader_tobe_view_4 = {
 				save_event_target_as = married_leader
@@ -1083,18 +1069,14 @@ country_event = {
 	}
 	option = {
 		allow = {
-			resource_stockpile_compare = { resource = influence value >= 128 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			check_variable = { which = wsg_rings value >= 1 }
 		}
 		trigger = {
 			exists = event_target:leader_tobe_view_5
 			NOT = { check_variable = { which = reminder value > 0 }}
 		}
 		name = wg_aft.18.leader5
-		add_resource = {
-			influence = -128
-			sr_alpha = -648
-		}
+		change_variable = { which = wsg_rings value = -1 }
 		hidden_effect = {
 			event_target:leader_tobe_view_5 = {
 				save_event_target_as = married_leader

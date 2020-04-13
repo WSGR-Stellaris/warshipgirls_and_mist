@@ -13,6 +13,19 @@ leader_trait_scientist_wsg_lady_science_ship = {
 	initial = no
 	randomized = no
 }
+leader_trait_scientist_wsg_lady_science_ship_weaken = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		science_ship_survey_speed = 0.1
+		ship_anomaly_research_speed_mult = 0.2
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
 
 leader_trait_scientist_lady_affection_science_ship_lv1 = {
 	cost = 0
@@ -128,6 +141,20 @@ leader_trait_governor_wsg_lady = {
 	initial = no
 	randomized = no
 }
+leader_trait_governor_wsg_lady_weaken = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		planet_building_build_speed_mult = 0.1
+		planet_buildings_cost_mult = -0.1
+		planet_districts_cost_mult = -0.1
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
 
 leader_trait_governor_lady_affection_lv1 = {
 	cost = 0
@@ -231,14 +258,28 @@ leader_trait_admiral_wsg_lady = {
 	modification = no
 	icon = "gfx/interface/icons/traits/lady_trait.dds"
 	modifier = {
-		ship_hull_mult = 3.50
-		ship_armor_mult = 3.50
-		ship_shield_mult = 3.50
+		ship_hull_mult = 2.50
+		ship_armor_mult = 2.50
+		ship_shield_mult = 2.50
 		ship_weapon_damage = 2.50
-		ship_fire_rate_mult = 1.00
 		ship_weapon_range_mult = 0.75
-		ship_speed_mult = 1.0
-		ships_upkeep_mult = -0.5
+		ships_sr_se_upkeep_mult = -1.0
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_wsg_lady_weaken = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/lady_trait.dds"
+	modifier = {
+		ship_hull_mult = 1.0
+		ship_armor_mult = 1.0
+		ship_shield_mult = 1.0
+		ship_weapon_damage = 1.0
+		ship_fire_rate_mult = 1.0
 		ships_sr_se_upkeep_mult = -1.0
 	}
 	leader_trait = { admiral }

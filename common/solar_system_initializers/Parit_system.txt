@@ -16,7 +16,19 @@ Parit_system = {
 		orbit_angle = 1
 		size = { min = 20 max = 30 }
 		has_ring = no
-	
+		init_effect = {
+			create_ambient_object = {
+				type = "executor_ship_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 20
+					angle = random
+				}
+			}
+		}			
 	}
 	
 	change_orbit = 45
@@ -50,6 +62,8 @@ Parit_system = {
 			add_deposit = d_Parit
 			add_deposit = d_Parit2
 			add_deposit = d_Parit3
+			add_deposit = d_Parit4
+			add_deposit = d_Parit5
 			add_deposit = d_rich_mountain
 			add_deposit = d_rich_mountain
 			add_deposit = d_rich_mountain

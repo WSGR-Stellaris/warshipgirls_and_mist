@@ -1,0 +1,7 @@
+ambient_object = {
+	name = "executor_ship_object"
+	entity = "WG_knigjt_hammer_executor_ruins_entity"
+	selectable = yes
+	show_name = yes
+	description = "executor_ship_object_desc"
+}

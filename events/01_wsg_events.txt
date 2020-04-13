@@ -174,17 +174,13 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop = {
-			limit = {
-				is_same_species = root
-				has_trait = wsg_trait_warshipgirls
-			}
-			modify_species = {
-				species = this
+		random_owned_species = {
+			limit = { has_trait = wsg_trait_warshipgirls }
+			PREV = { modify_species = {
+				species = prev
 				remove_trait = wsg_trait_warshipgirls
 				add_trait = wsg_trait_warshipgirls1
-			}
-			#owner_species = { save_event_target_as = psionic_species }
+			}}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 	}
@@ -192,101 +188,68 @@ country_event = {
 	option = {
 		name = "wsg.1000.a"
 		custom_tooltip = wsg.1000.a.tooltip
-		hidden_effect = {
-			every_country = {
+		hidden_effect = { 
+			every_owned_leader = {
 				limit = {
 					OR = {
-						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_same_species = root.owner_species
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait =	leader_trait_admiral_warshipgirls
+						has_trait =	leader_trait_governor_Ella
+						has_trait =	leader_trait_general_warshipgirls
+						has_trait =	leader_trait_governor_warshipgirls
+						has_trait =	leader_trait_scientist_warshipgirls
+						has_trait =	leader_trait_ruler_warshipgirls
 					}
 				}
-				every_owned_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait =	leader_trait_admiral_warshipgirls
-							has_trait =	leader_trait_governor_Ella
-							has_trait =	leader_trait_general_warshipgirls
-							has_trait =	leader_trait_governor_warshipgirls
-							has_trait =	leader_trait_scientist_warshipgirls
-							has_trait =	leader_trait_ruler_warshipgirls
-						}
-					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-				}
-				every_pool_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait = leader_trait_admiral_warshipgirls
-							has_trait = leader_trait_general_warshipgirls
-							has_trait = leader_trait_governor_warshipgirls
-							has_trait = leader_trait_scientist_warshipgirls
-							has_trait = leader_trait_ruler_warshipgirls
-						}
-					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}
-					if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_warshipgirls
-						add_ruler_trait = leader_trait_ruler_warshipgirls
-					}				
+				add_ruler_trait = leader_trait_ruler_warshipgirls
+				switch = {
+					trigger = leader_class
+					admiral = { add_trait = leader_trait_admiral_warshipgirls }
+					general = { add_trait = leader_trait_general_warshipgirls }
+					governor = { add_trait = leader_trait_governor_warshipgirls }
+					scientist = { add_trait = leader_trait_scientist_warshipgirls }
+					ruler = { add_trait = leader_trait_ruler_warshipgirls }				
 				}
 			}
-			country_event = { id = wsg.1001 }
-		}			
+			if = {
+				limit = { has_country_flag = set_lex_as_ruler }
+				ruler = {
+					add_trait = leader_trait_ruler_warshipgirls
+					add_ruler_trait = leader_trait_ruler_warshipgirls
+					set_age = 17
+					change_leader_portrait = wsg29_3
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
+						is_same_species = root
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait = leader_trait_admiral_warshipgirls
+						has_trait = leader_trait_general_warshipgirls
+						has_trait = leader_trait_governor_warshipgirls
+						has_trait = leader_trait_scientist_warshipgirls
+						has_trait = leader_trait_ruler_warshipgirls
+					}
+				}
+				add_ruler_trait = leader_trait_ruler_warshipgirls
+				switch = {
+					trigger = leader_class
+					admiral = { add_trait = leader_trait_admiral_warshipgirls }
+					general = { add_trait = leader_trait_general_warshipgirls }
+					governor = { add_trait = leader_trait_governor_warshipgirls }
+					scientist = { add_trait = leader_trait_scientist_warshipgirls }
+					ruler = { add_trait = leader_trait_ruler_warshipgirls }				
+				}
+			}
+	
+			country_event = { id = wsg.1001 }		
+		}
 	}
 }
 country_event = {
@@ -299,17 +262,6 @@ country_event = {
 	location = root
 
 	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = { has_country_flag = set_lex_as_ruler }
-			random_owned_leader = {
-				limit = { leader_class = ruler }
-				set_age = 17
-				change_leader_portrait = wsg29_3
-			}
-		}
-	}
 
 	option = {
 		name = wsg.1001.a
@@ -328,30 +280,14 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
+			add_ruler_trait = leader_trait_ruler_warshipgirls
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_warshipgirls }
+				general = { add_trait = leader_trait_general_warshipgirls }
+				governor = { add_trait = leader_trait_governor_warshipgirls }
+				scientist = { add_trait = leader_trait_scientist_warshipgirls }
+				ruler = { add_trait = leader_trait_ruler_warshipgirls }				
 			}
 		}
 	}
@@ -371,31 +307,15 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
+			add_ruler_trait = leader_trait_ruler_warshipgirls
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_warshipgirls }
+				general = { add_trait = leader_trait_general_warshipgirls }
+				governor = { add_trait = leader_trait_governor_warshipgirls }
+				scientist = { add_trait = leader_trait_scientist_warshipgirls }
+				ruler = { add_trait = leader_trait_ruler_warshipgirls }				
 			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_warshipgirls
-				add_ruler_trait = leader_trait_ruler_warshipgirls
-			} 
 		}
 	}
 }
@@ -487,77 +407,6 @@ country_event = {
 }
 
 
-
-#机器人点数+2科技获取特质点数
-country_event ={
-	id = wsg.1150
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_robomodding"
-	}
-	
-	immediate = {
-		owner={
-			WARSHIPGIRL_species_trait_points_add = 2
-		}
-		
-	}
-}
-#机器人点数+1科技获取特质点数
-country_event ={
-	id = wsg.1151
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_robomodding_points_1"
-	}
-	
-	immediate = {
-		owner={
-			WARSHIPGIRL_species_trait_points_add = 2
-		}
-	}
-}
-#智能人科技获取特质点数
-country_event ={
-	id = wsg.1152
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_droid_workers"
-	}
-	
-	immediate = {
-		owner={
-			WARSHIPGIRL_species_trait_points_add = 2
-		}
-	}
-}
-#合成人科技获取特质点数
-country_event ={
-	id = wsg.1153
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_synthetic_workers"
-	}
-	
-	immediate = {
-		owner={
-			WARSHIPGIRL_species_trait_points_add = 2
-		}
-	}
-}
-
 #苍青幻影飞升事件链
 country_event = {
 	id = wsg.2000
@@ -567,11 +416,25 @@ country_event = {
 	show_sound = event_the_great_awakening
 	
 	is_triggered_only = yes
+
+	immediate = {
+		random_owned_pop_species = {
+			limit = { has_trait = wsg_trait_warshipgirls }
+			ROOT = {
+				modify_species = {
+					species = prev
+					remove_trait = wsg_trait_warshipgirls
+					add_trait = wsg_trait_warshipgirls1
+				}
+				change_dominant_species = { species = last_created change_all = yes }
+			}
+		}
+	}
 	
 	option = {
 		name = "wsg.2000.a"
 		hidden_effect = {
-			country_event = { id = wsg.2001}
+			country_event = { id = wsg.2001 }
 		}
 	}
 }
@@ -586,112 +449,134 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop = {
-			limit = {
-				is_same_species = root
-				OR = {
-					has_trait = wsg_trait_warshipgirls1
-					has_trait = wsg_trait_warshipgirls
+		random_owned_pop_species = {
+			limit = { has_trait = wsg_trait_warshipgirls1 }
+			ROOT = {
+				modify_species = {
+					species = prev
+					add_trait = wsg_trait_mist
 				}
+				change_dominant_species = { species = last_created change_all = yes }
 			}
-			modify_species = {
-				species = this
-				add_trait = wsg_trait_mist
-			}
-			#owner_species = { save_event_target_as = psionic_species }
 		}
-		change_dominant_species = { species = last_created change_all = yes }
 	}
 	
 	option = {
 		name = "wsg.2001.a"
 		hidden_effect = {
-			country_event = { id = wsg.3049 }
-			every_country = {
+			capital_scope = { planet_event = { id = wsg.3049 }}
+			every_owned_leader = {
 				limit = {
-					has_country_flag = wsg_project_r
-				}
-				every_owned_leader = {
-					limit = {
+					OR = {
 						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait =	leader_trait_admiral_mist
-							has_trait =	leader_trait_governor_Ella
-							has_trait =	leader_trait_general_mist
-							has_trait =	leader_trait_governor_mist
-							has_trait =	leader_trait_scientist_mist
-							has_trait =	leader_trait_ruler_mist
-						}
+						has_leader_flag = wsg_event_leader
 					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_mist
-						add_ruler_trait = leader_trait_ruler_mist
-					}
-					if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_mist
-						add_ruler_trait = leader_trait_ruler_mist
-					}
-					if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_mist
-						add_ruler_trait = leader_trait_ruler_mist
-					}
-					if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_mist
-						add_ruler_trait = leader_trait_ruler_mist
-					}
-					if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_mist
-						add_ruler_trait = leader_trait_ruler_mist
+					NOR = {
+						has_trait =	leader_trait_admiral_mist
+						has_trait =	leader_trait_governor_Ella
+						has_trait =	leader_trait_general_mist
+						has_trait =	leader_trait_governor_mist
+						has_trait =	leader_trait_scientist_mist
+						has_trait =	leader_trait_ruler_mist
 					}
 				}
-				every_pool_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait = leader_trait_admiral_mist
-							has_trait = leader_trait_general_mist
-							has_trait = leader_trait_governor_mist
-							has_trait = leader_trait_scientist_mist
-							has_trait = leader_trait_ruler_mist
+				add_ruler_trait = leader_trait_ruler_mist
+				switch = {
+					trigger = leader_class
+					admiral = {
+						add_trait = leader_trait_admiral_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_admiral_warshipgirls }}
+							add_trait = leader_trait_admiral_warshipgirls
 						}
 					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_mist
-						add_ruler_trait = leader_trait_ruler_mist
-					}
-					if = {
-						limit = { leader_class = general }
+					general = {
 						add_trait = leader_trait_general_mist
-						add_ruler_trait = leader_trait_ruler_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_general_warshipgirls }}
+							add_trait = leader_trait_general_warshipgirls
+						}
 					}
-					if = {
-						limit = { leader_class = governor }
+					governor = {
 						add_trait = leader_trait_governor_mist
-						add_ruler_trait = leader_trait_ruler_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_governor_warshipgirls }}
+							add_trait = leader_trait_governor_warshipgirls
+						}
 					}
-					if = {
-						limit = { leader_class = scientist }
+					scientist = {
 						add_trait = leader_trait_scientist_mist
-						add_ruler_trait = leader_trait_ruler_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_scientist_warshipgirls }}
+							add_trait = leader_trait_scientist_warshipgirls
+						}
 					}
-					if = {
-						limit = { leader_class = ruler }
+					ruler = {
 						add_trait = leader_trait_ruler_mist
-						add_ruler_trait = leader_trait_ruler_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_ruler_warshipgirls }}
+							add_trait = leader_trait_ruler_warshipgirls
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = set_lex_as_ruler }
+				ruler = {
+					if = {
+						limit = { NOT = { has_trait = leader_trait_ruler_warshipgirls }}
+						add_trait = leader_trait_ruler_warshipgirls
+					}
+					add_trait = leader_trait_ruler_mist
+					add_ruler_trait = leader_trait_ruler_mist
+					set_age = 17
+					change_leader_portrait = wsg29_3
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
+						is_same_species = root
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait = leader_trait_admiral_mist
+						has_trait = leader_trait_general_mist
+						has_trait = leader_trait_governor_mist
+						has_trait = leader_trait_scientist_mist
+						has_trait = leader_trait_ruler_mist
+					}
+				}
+				add_ruler_trait = leader_trait_ruler_mist
+				switch = {
+					trigger = leader_class
+					admiral = {
+						add_trait = leader_trait_admiral_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_admiral_warshipgirls }}
+							add_trait = leader_trait_admiral_warshipgirls
+						}
+					}
+					general = {
+						add_trait = leader_trait_general_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_general_warshipgirls }}
+							add_trait = leader_trait_general_warshipgirls
+						}
+					}
+					governor = {
+						add_trait = leader_trait_governor_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_governor_warshipgirls }}
+							add_trait = leader_trait_governor_warshipgirls
+						}
+					}
+					scientist = {
+						add_trait = leader_trait_scientist_mist
+						if = {
+							limit = { NOT = { has_trait = leader_trait_scientist_warshipgirls }}
+							add_trait = leader_trait_scientist_warshipgirls
+						}
 					}
 				}
 			}
@@ -708,17 +593,6 @@ country_event = {
 	show_sound = event_the_great_awakening
 	
 	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = { has_country_flag = set_lex_as_ruler }
-			random_owned_leader = {
-				limit = { leader_class = ruler }
-				set_age = 17
-				change_leader_portrait = wsg29_3
-			}
-		}
-	}
 	
 	option = {
 		name = "wsg.2002.a"
@@ -732,36 +606,19 @@ country_event = {
 
 	trigger = {
 		from = {
-			species ={ has_trait = wsg_trait_mist}
+			species = { has_trait = wsg_trait_mist }
 		}
 	}
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_mist
-				add_ruler_trait = leader_trait_ruler_mist
+			add_ruler_trait = leader_trait_ruler_mist
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_mist }
+				general = { add_trait = leader_trait_general_mist }
+				governor = { add_trait = leader_trait_governor_mist }
+				scientist = { add_trait = leader_trait_scientist_mist }
 			}
 		}
 	}
@@ -781,31 +638,15 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_mist
-				add_ruler_trait = leader_trait_ruler_mist
+			add_ruler_trait = leader_trait_ruler_mist
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_mist }
+				general = { add_trait = leader_trait_general_mist }
+				governor = { add_trait = leader_trait_governor_mist }
+				scientist = { add_trait = leader_trait_scientist_mist }
+				ruler = { add_trait = leader_trait_ruler_mist }
 			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_mist
-				add_ruler_trait = leader_trait_ruler_mist
-			} 
 		}
 	}
 }

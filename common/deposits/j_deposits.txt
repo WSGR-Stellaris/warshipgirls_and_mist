@@ -351,7 +351,7 @@ d_grassy_building = {
 
 	use_weights_for_blocker_swap_types = yes	
 }
-
+####
 d_Parit = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
@@ -399,6 +399,61 @@ d_Parit3 = {
 		planet_jobs_energy_produces_mult = 0.15
 	}
 	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_Parit4 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers	
+	time = 720
+	
+	icon = d_Parit4
+	planet_modifier = { 
+		planet_max_districts_add = -2
+	}	
+	on_cleared = {
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_parit.8 }
+			}
+		}		
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_Parit5 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers	
+	time = 360
+	
+	icon = d_Parit5
+	planet_modifier = { 
+		planet_max_districts_add = -2
+		planet_amenities_add = -10
+	}	
+	on_cleared = {
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_parit.9 }
+			}
+		}		
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}		
 	drop_weight = {
 		weight = 0
 	}

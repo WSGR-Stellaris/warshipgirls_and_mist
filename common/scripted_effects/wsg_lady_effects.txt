@@ -37,9 +37,32 @@ create_wsg_lady_governor = {
 	}
 	set_country_flag = wsg_lady_governor_active
 	reset_lady_affection_variables = yes
-	create_leader = {
+	if = {
+		limit = { has_country_flag = wsg_lady_weaken }
+		create_leader = {
+			class = governor
+			species = event_target:wsg_lady_species
+			name = "NAME_WG_LADY"
+			event_leader = yes
+			gender = indeterminable
+			immortal = yes
+			skill = 10
+			set_age = 17
+			traits = {
+				trait = leader_trait_governor_wsg_lady_weaken
+			}
+			effect = {
+				change_leader_portrait = wsg57
+				set_leader_flag = wsg_lady_leader
+				set_leader_flag = wsg_lady_governor
+				set_leader_flag = has_gained_level_trait
+				save_global_event_target_as = lady_governor
+			}
+		}
+	}
+	else = { create_leader = {
 		class = governor
-		species = root.owner_species
+		species = event_target:wsg_lady_species
 		name = "NAME_WG_LADY"
 		event_leader = yes
 		gender = indeterminable
@@ -56,7 +79,7 @@ create_wsg_lady_governor = {
 			set_leader_flag = has_gained_level_trait
 			save_global_event_target_as = lady_governor
 		}
-	}
+	}}
 	remove_country_flag = wsg_lady_warship_active
 	remove_country_flag = wsg_lady_army_active
 	remove_country_flag = wsg_lady_armed_science_active
@@ -109,11 +132,33 @@ create_wsg_lady_warship = {
 	create_fleet = {
 		name = "NAME_lady_Contingency_fleet"
 		effect = {
-			set_owner = root
+			set_owner = prev
 			owner = {
-				create_leader = {
+				if = {
+					limit = { has_country_flag = wsg_lady_weaken }
+					create_leader = {
+						class = admiral
+						species = event_target:wsg_lady_species
+						name = "NAME_WG_LADY"
+						event_leader = yes
+						gender = indeterminable
+						immortal = yes
+						skill = 10
+						set_age = 17
+						traits = {
+							trait = leader_trait_admiral_wsg_lady_weaken
+						}
+						effect = {
+							change_leader_portrait = wsg57
+							set_leader_flag = wsg_lady_leader
+							set_leader_flag = wsg_lady_admiral
+							set_leader_flag = has_gained_level_trait
+						}
+					}
+				}
+				else = { create_leader = {
 					class = admiral
-					species = root.owner_species
+					species = event_target:wsg_lady_species
 					name = "NAME_WG_LADY"
 					event_leader = yes
 					gender = indeterminable
@@ -129,7 +174,9 @@ create_wsg_lady_warship = {
 						set_leader_flag = wsg_lady_admiral
 						set_leader_flag = has_gained_level_trait
 					}
-				}
+				}}
+			}
+			owner = {
 				if = {
 					limit = { has_country_flag = modified_wsg_lady }
 					switch = {
@@ -200,12 +247,11 @@ create_wsg_lady_warship = {
 						lady_warship_T_slot = {
 							PREV = { create_ship = {
 								name = "NAME_lady_Contingency_fleet"
-								design = "wsg_lady_juggernaut"
+								design = "NAME_WG_LADY_T"
 								graphical_culture = "ai_01"
 							}}
 						}
 					}
-					
 				}
 				else = {
 					PREV = { create_ship = {
@@ -214,7 +260,6 @@ create_wsg_lady_warship = {
 						graphical_culture = "ai_01"
 					}}
 				}
-				
 			}
 			assign_leader = last_created_leader
 			set_location = event_target:wsg_lady_warship_location
@@ -401,11 +446,35 @@ create_wsg_lady_armed_science = {
 			set_fleet_flag = lady_armed_science
 			save_global_event_target_as = lady_science_ship
 			owner = {
-				create_leader = {
+				if = {
+					limit = { has_country_flag = wsg_lady_weaken }
+					create_leader = {
+						name = "NAME_WG_LADY"
+						class = scientist
+						sub_type = survey
+						species = event_target:wsg_lady_species
+						event_leader = yes
+						gender = indeterminable
+						immortal = yes
+						skill = 10
+						set_age = 17
+						traits = {
+							trait = leader_trait_scientist_wsg_lady_science_ship_weaken
+						}
+						effect = {
+							change_leader_portrait = wsg57
+							set_leader_flag = wsg_lady_leader
+							set_leader_flag = wsg_lady_scientist
+							set_leader_flag = has_gained_level_trait
+							save_global_event_target_as = lady_survey_scientist
+						}
+					}
+				}
+				else = { create_leader = {
 					name = "NAME_WG_LADY"
 					class = scientist
 					sub_type = survey
-					species = root.owner_species
+					species = event_target:wsg_lady_species
 					event_leader = yes
 					gender = indeterminable
 					immortal = yes
@@ -421,7 +490,7 @@ create_wsg_lady_armed_science = {
 						set_leader_flag = has_gained_level_trait
 						save_global_event_target_as = lady_survey_scientist
 					}
-				}
+				}}
 			}
 			set_leader = last_created_leader
 			add_modifier = {

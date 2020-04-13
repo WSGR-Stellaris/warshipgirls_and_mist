@@ -67,21 +67,21 @@ on_monthly_pulse_country = {
 }
 
 on_yearly_pulse = {
-  events = {
-  	wg_traits.1        
-	wg_traits.2
-	sh_traits.1        
-	sh_traits.2
-	sh.3016	
-	wsgancrel.100
-  }
+	events = {
+		wg_traits.1        
+		wg_traits.2
+		sh_traits.1        
+		sh_traits.2
+		sh.3016	
+		wsgancrel.100
+		wg_lady.122
+	}
 }
 on_yearly_pulse_country = {
 	events = {
 		wsg.30100
 		wg_fe.5
 		wsg.3106
-		wg_fe.20
 		wsg.3110
 		wg_crisis.10005
 		wg_crisis.301
@@ -355,6 +355,16 @@ on_entering_system = {
 		wg_parit.5
 		wg_boss.5
 		wg_boss.20
+		wg_parit.12
+	}
+}
+
+# A fleet has entered a system
+# Scope = Fleet
+# From = System
+on_entering_system_fleet = {
+	events = {
+		wg_parit.16
 	}
 }
 
@@ -445,5 +455,11 @@ on_war_won = {
 on_post_communications_established = {
 	events = {
 		wg_aft.14
+	}
+}
+
+on_mid_game_pulse = {
+	events = {
+		wg_fe.20000
 	}
 }

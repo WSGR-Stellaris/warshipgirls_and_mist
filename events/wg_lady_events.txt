@@ -623,11 +623,22 @@ country_event = {
 					set_country_flag = wsg_lady_country
 				}
 			}
+			create_species = {
+				name = LADY_SPECIES
+				plural = LADY_SPECIES
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = wsg_lady_species
+				}
+			}
 		}
 		event_target:wsg_lady_country = {
 			establish_communications_no_message = root
 		}
 		save_global_event_target_as = wsg_lady_own_country
+		set_timed_country_flag = { flag = wsg_lady_weaken days = 14400 }
 		country_event = { id = wg_lady.59 }
 	}
 
@@ -770,6 +781,23 @@ country_event = {
 			}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+	option = { # 求婚
+		name = marry_wsg_lady
+		trigger = {
+			has_country_flag = can_marry_wsg_lady
+			NOT = { has_country_flag = married_wsg_lady }
+		}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+		hidden_effect = {
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.24.d
@@ -938,6 +966,23 @@ country_event = {
 			}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+	option = { # 求婚
+		name = marry_wsg_lady
+		trigger = {
+			has_country_flag = can_marry_wsg_lady
+			NOT = { has_country_flag = married_wsg_lady }
+		}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+		hidden_effect = {
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.25.c
@@ -1143,6 +1188,23 @@ country_event = {
 			}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+	option = { # 求婚
+		name = marry_wsg_lady
+		trigger = {
+			has_country_flag = can_marry_wsg_lady
+			NOT = { has_country_flag = married_wsg_lady }
+		}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+		hidden_effect = {
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.26.c
@@ -1442,6 +1504,23 @@ country_event = {
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
 	}
+	option = { # 求婚
+		name = marry_wsg_lady
+		trigger = {
+			has_country_flag = can_marry_wsg_lady
+			NOT = { has_country_flag = married_wsg_lady }
+		}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+		hidden_effect = {
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
+	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.27.c
 		response_text = wg_lady.27.c.response
@@ -1658,6 +1737,23 @@ country_event = {
 			}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+	option = { # 求婚
+		name = marry_wsg_lady
+		trigger = {
+			has_country_flag = can_marry_wsg_lady
+			NOT = { has_country_flag = married_wsg_lady }
+		}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+		hidden_effect = {
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
 	}
 	option = { # 调戏选项1（会退出）
 		name = wg_lady.28.d
@@ -2404,14 +2500,7 @@ country_event = {
 			}
 		}
 		else = {
-			owner = {
-				abort_special_project = { type = WSG_LADY_MODIFICATION }
-				enable_special_project = {
-					name = WSG_LADY_MODIFICATION
-					location = capital_scope
-				}
-				country_event = { id = wg_lady.46 }
-			}
+			country_event = { id = wg_lady.46 }
 		}
 	}
 }
@@ -2424,6 +2513,13 @@ country_event = {
 
 	option = {
 		name = OK
+		hidden_effect = {
+			abort_special_project = { type = WSG_LADY_MODIFICATION }
+			enable_special_project = {
+				name = WSG_LADY_MODIFICATION
+				location = capital_scope
+			}
+		}
 	}
 }
 
@@ -2854,7 +2950,7 @@ country_event = {
 country_event = {
 	id = wg_lady.57
 	title = wg_lady.49.title
-	desc = wg_lady.49.desc
+	desc = wg_lady.57.desc
 	picture = GFX_evt_wsg_lady
 	is_triggered_only = yes
 
@@ -3065,7 +3161,7 @@ country_event = {
 				type = COMFIRM_WG_LADY_NAMING_PROJECT
 			}
 			# 使用完get_player_nickname = yes 一定一定要执行以下代码！！
-			clear_global_event_target = wsg_player_nickname 
+			#clear_global_event_target = wsg_player_nickname 
 		}
 	}
 
@@ -3105,9 +3201,9 @@ country_event = {
 			has_civic = civic_CM
 			has_ascension_perk = ap_shenhai_silent
 			has_civic = civic_fanatic_purifiers
+			has_country_flag = triggered_lady_affection_event_3_1
 		}
 		check_variable = { which = lady_affection_level value >= 3 }
-		NOT = { has_country_flag = triggered_lady_affection_event_3_1 }
 	}
 
 	mean_time_to_happen = {
@@ -3256,6 +3352,7 @@ country_event = {
 			change_variable = { which = lady_affection value = 1 }
 			check_level_up_lady_leader_affection_trait = yes
 		}
+		custom_tooltip = wg_lady_affection_up_less
 	}
 }
 #3-1-1.4
@@ -3382,6 +3479,7 @@ country_event = {
 			check_level_up_lady_leader_affection_trait = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
+		custom_tooltip = wg_lady_affection_up_less
 	}
 }
 #3-1-1.9
@@ -3467,6 +3565,7 @@ country_event = {
 				check_level_up_lady_leader_affection_trait = yes
 			}
 		}
+		custom_tooltip = wg_lady_affection_up
 	}
 }
 #3-1-2
@@ -3581,6 +3680,7 @@ country_event = {
 			change_variable = { which = lady_affection value = 1 }
 			check_level_up_lady_leader_affection_trait = yes
 		}
+		custom_tooltip = wg_lady_affection_up_less
 	}
 }
 #3-1-2.4
@@ -3653,9 +3753,1020 @@ country_event = {
 			check_level_up_lady_leader_affection_trait = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
+		custom_tooltip = wg_lady_affection_up_less
+	}
+}
+# 触发3-2情人节事件
+event = {
+	id = wg_lady.122
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = event_target:wsg_lady_own_country
+		event_target:wsg_lady_own_country = {
+			has_country_flag = gain_wsg_lady
+			has_country_flag = unlock_lady_affection_event_3_2
+		}
+	}
+
+	immediate = {
+		event_target:wsg_lady_own_country = {
+			country_event = { id = wg_lady.123 days = 60 }
+			remove_country_flag = unlock_lady_affection_event_3_2
+		}
+	}
+}
+#3-2
+country_event = {
+	id = wg_lady.123
+	title = wg_lady.123.name
+	desc = wg_lady.123.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.123.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.124 }
+			set_country_flag = present_choco
+		}
+	}
+	option = {
+		name = wg_lady.123.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.125 days = 14 }
+			set_country_flag = present_bear
+		}
+	}
+}
+#3-2-1
+country_event = {
+	id = wg_lady.124
+	title = wg_lady.124.name
+	desc = wg_lady.124.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.124.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.125 days = 14 }
+		}
+	}
+	option = {
+		name = wg_lady.124.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.125 days = 14 }
+		}
+	}
+}
+#3-2-2
+country_event = {
+	id = wg_lady.125
+	title = wg_lady.125.name
+	desc = wg_lady.125.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.125.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.126 }
+		}
+	}
+}
+#3-2-2.1
+country_event = {
+	id = wg_lady.126
+	title = wsg_lady_name
+	desc = wg_lady.126.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.126.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.127 }
+		}
+	}
+}
+#3-2-2.2
+country_event = {
+	id = wg_lady.127
+	title = wg_lady.127.name
+	desc = wg_lady.127.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.127.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.128 }
+		}
+	}
+	option = {
+		name = wg_lady.127.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.137 }
+		}
+	}
+}
+#3-2-2.3
+country_event = {
+	id = wg_lady.128
+	title = wsg_lady_name
+	desc = wg_lady.128.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.128.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.129 }
+		}
+	}
+	option = {
+		name = wg_lady.128.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.134 }
+		}
+	}
+}
+#3-2-2.4
+country_event = {
+	id = wg_lady.129
+	title = wsg_lady_name
+	desc = wg_lady.129.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.129.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.130 }
+		}
+	}
+}
+#3-2-2.5
+country_event = {
+	id = wg_lady.130
+	title = wsg_lady_name
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	desc = {
+		trigger = { has_country_flag = present_choco }
+		text = wg_lady.130.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = present_bear }
+		text = wg_lady.130.desc.b
+	}
+
+	option = {
+		name = wg_lady.130.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.131 }
+		}
+	}
+	option = {
+		name = wg_lady.130.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.132 }
+		}
+	}
+}
+#3-2-2.6
+country_event = {
+	id = wg_lady.131
+	title = wsg_lady_name
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	desc = {
+		trigger = { has_country_flag = present_choco }
+		text = wg_lady.131.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = present_bear }
+		text = wg_lady.131.desc.b
+	}
+
+	option = {
+		name = wg_lady.131.a
+		hidden_effect = { 
+			while = { count = 5
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+			remove_country_flag = present_choco
+			remove_country_flag = present_bear
+		}
+		custom_tooltip = wg_lady_affection_up
+		response_text = wg_lady.131.a.response
+	}
+}
+#3-2-2.7
+country_event = {
+	id = wg_lady.132
+	title = wsg_lady_name
+	desc = wg_lady.132.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.132.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.133 }
+		}
+	}
+}
+#3-2-2.8
+country_event = {
+	id = wg_lady.133
+	title = wsg_lady_name
+	desc = wg_lady.133.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.133.a
+		hidden_effect = { 
+			while = { count = 5
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+			remove_country_flag = present_choco
+			remove_country_flag = present_bear
+		}
+		custom_tooltip = wg_lady_affection_up_less
+	}
+}
+#3-2-2.9
+country_event = {
+	id = wg_lady.134
+	title = wsg_lady_name
+	desc = wg_lady.134.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.134.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.135 }
+			remove_country_flag = present_choco
+			remove_country_flag = present_bear
+		}
+	}
+}
+#3-2-2.10
+country_event = {
+	id = wg_lady.135
+	title = wg_lady.135.name
+	desc = wg_lady.135.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.135.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.136 }
+		}
+	}
+}
+#3-2-2.11
+country_event = {
+	id = wg_lady.136
+	title = wg_lady.136.name
+	desc = wg_lady.136.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.136.a
+		hidden_effect = { 
+			set_country_flag = can_marry_wsg_lady
+			while = { count = 20
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+		}
+		custom_tooltip = can_marry_and_affection_up_greatly
+	}
+}
+#3-2-2.12
+country_event = {
+	id = wg_lady.137
+	title = wsg_lady_name
+	desc = wg_lady.137.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	immediate = {
+		get_player_nickname = yes
+	}
+	after = {
+		clear_global_event_target = wsg_player_nickname
+	}
+
+	option = {
+		name = wg_lady.137.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.138 }
+			set_country_flag = option_3_2_2_12a
+		}
+	}
+	option = {
+		name = wg_lady.137.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.138 }
+			set_country_flag = option_3_2_2_12b
+		}
+	}
+}
+#3-2-2.6
+country_event = {
+	id = wg_lady.138
+	title = wsg_lady_name
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	desc = {
+		trigger = { has_country_flag = option_3_2_2_12a }
+		text = wg_lady.138.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = option_3_2_2_12b }
+		text = wg_lady.138.desc.b
+	}
+	after = {
+		remove_country_flag = option_3_2_2_12a
+		remove_country_flag = option_3_2_2_12b
+	}
+
+	option = {
+		name = wg_lady.138.a
+		response_text = wg_lady.138.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_lady.138.b
+		hidden_effect = {
+			while = { count = 5
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+		}
+		custom_tooltip = wg_lady_affection_up
+		response_text = wg_lady.131.a.response
+		default_hide_option = yes #防止按esc关掉的bug
+	}
+	option = {
+		name = wg_lady.138.c
+		hidden_effect = {
+			country_event = { id = wg_lady.134 }
+		}
 	}
 }
 
+#触发4-1事件
+country_event = {
+	id = wg_lady.139
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = gain_wsg_lady
+		is_at_war = no
+		check_variable = { which = lady_affection_level value >= 4 }
+		mid_game_years_passed >= 0
+		NOR = { 
+			has_civic = civic_CM
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_fanatic_purifiers
+			has_country_flag = triggered_lady_affection_event_4_1
+			has_country_flag = married_wsg_lady
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			mid_game_years_passed >= 10
+			factor = 0.2
+		}
+		modifier = {
+			has_country_flag = given_dark_matter_tech
+			factor = 0.5
+		}
+		modifier = {
+			check_variable = { which = lady_affection_level value >= 4 }
+			factor = 0.25	
+		}
+		modifier = {
+			has_country_flag = married_wsg_lady
+			factor = 999999
+		}
+	}
+
+	immediate = {
+		set_country_flag = triggered_lady_affection_event_4_1
+		country_event = { id = wg_lady.140 }
+	}
+}
+#4-1
+country_event = {
+	id = wg_lady.140
+	title = wg_lady.140.name
+	desc = wg_lady.140.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.140.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.141 }
+		}
+	}
+	option = {
+		name = wg_lady.140.b
+		hidden_effect = { 
+			country_event = { id = wg_lady. }
+		}
+	}
+}
+#4-1-1.1
+country_event = {
+	id = wg_lady.141
+	title = wsg_lady_name
+	desc = wg_lady.141.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+	immediate = {
+		get_player_nickname = yes
+	}
+	after = {
+		clear_global_event_target = wsg_player_nickname
+	}
+
+	option = {
+		name = wg_lady.141.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.142 }
+		}
+	}
+	option = {
+		name = wg_lady.141.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.142 }
+		}
+	}
+}
+#4-1-1.2
+country_event = {
+	id = wg_lady.142
+	title = wsg_lady_name
+	desc = wg_lady.142.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.142.a
+		trigger = {
+			has_country_flag = given_dark_matter_tech
+		}
+		hidden_effect = { 
+			country_event = { id = wg_lady.143 }
+		}
+	}
+	option = {
+		name = wg_lady.142.b
+		trigger = {
+			NOT = { has_country_flag = given_dark_matter_tech }
+		}
+		hidden_effect = { 
+			country_event = { id = wg_lady.143 }
+		}
+	}
+}
+#4-1-1.3
+country_event = {
+	id = wg_lady.143
+	title = wsg_lady_name
+	desc = wg_lady.143.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.143.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.144 }
+		}
+	}
+	option = {
+		name = wg_lady.143.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.144 }
+		}
+	}
+}
+#4-1-1.4
+country_event = {
+	id = wg_lady.144
+	title = wsg_lady_name
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	desc = {
+		trigger = {
+			has_country_flag = given_dark_matter_tech
+		}
+		text = wg_lady.144.desc.a
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = given_dark_matter_tech }
+		}
+		text = wg_lady.144.desc.b
+	}
+
+	option = {
+		name = wg_lady.144.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.145 }
+		}
+	}
+	option = {
+		name = wg_lady.144.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.145 }
+		}
+	}
+}
+#4-1-1.5
+country_event = {
+	id = wg_lady.145
+	title = wsg_lady_name
+	desc = wg_lady.145.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.145.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.146 }
+		}
+	}
+}
+#4-1-1.6
+country_event = {
+	id = wg_lady.146
+	title = wg_lady.146.name
+	desc = wg_lady.146.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.146.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.147 }
+		}
+	}
+	option = {
+		name = wg_lady.146.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.147 }
+		}
+	}
+	option = {
+		name = wg_lady.146.c
+		trigger = {
+			check_variable = { which = wsg_rings value >= 1 }
+		}
+		hidden_effect = { 
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.148 }
+		}
+	}
+}
+#4-1-1.7
+country_event = {
+	id = wg_lady.147
+	title = wg_lady.147.name
+	desc = wg_lady.147.desc
+	is_triggered_only = yes
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	immediate = {
+		get_player_nickname = yes
+	}
+
+	option = {
+		name = wg_lady.147.a
+		hidden_effect = { 
+			set_country_flag = can_marry_wsg_lady
+			while = { count = 20
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+			clear_global_event_target = wsg_player_nickname
+		}
+		custom_tooltip = can_marry_and_affection_up_greatly
+		response_text = wg_lady.147.a.response
+	}
+}
+#4-1-1.8
+country_event = {
+	id = wg_lady.148
+	title = wg_lady.148.name
+	desc = wg_lady.148.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	immediate = {
+		get_player_nickname = yes
+	}
+
+	option = {
+		name = wg_lady.148.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.156 }
+			clear_global_event_target = wsg_player_nickname
+		}
+	}
+}
+#4-1-1.9
+country_event = {
+	id = wg_lady.149
+	title = wg_lady.149.name
+	desc = wg_lady.149.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.149.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.150 }
+		}
+	}
+}
+#4-1-1.10
+country_event = {
+	id = wg_lady.150
+	title = wsg_lady_name
+	desc = wg_lady.150.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	immediate = {
+		get_player_nickname = yes
+	}
+
+	option = {
+		name = wg_lady.150.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.151 }
+			clear_global_event_target = wsg_player_nickname
+		}
+	}
+}
+#4-1-1.11
+country_event = {
+	id = wg_lady.151
+	title = wsg_lady_name
+	desc = wg_lady.151.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	immediate = {
+		get_player_nickname = yes
+	}
+	after = {
+		clear_global_event_target = wsg_player_nickname
+	}
+
+	option = {
+		name = wg_lady.151.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.152 }
+		}
+	}
+	option = {
+		name = wg_lady.151.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.152 }
+		}
+	}
+}
+#4-1-1.12
+country_event = {
+	id = wg_lady.152
+	title = wsg_lady_name
+	desc = wg_lady.152.desc
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsg57
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root
+	}
+
+	option = {
+		name = wg_lady.152.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.153 }
+		}
+	}
+	option = {
+		name = wg_lady.152.b
+		hidden_effect = { 
+			country_event = { id = wg_lady.153 }
+		}
+	}
+}
+#4-1-1.13
+country_event = {
+	id = wg_lady.153
+	title = wg_lady.153.name
+	desc = wg_lady.153.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.153.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.154 }
+		}
+	}
+	option = {
+		name = wg_lady.153.b
+		trigger = {
+			check_variable = { which = wsg_rings value >= 1 }
+		}
+		hidden_effect = { 
+			change_variable = { which = wsg_rings value = -1 }
+			country_event = { id = wg_lady.155 }
+		}
+	}
+}
+#4-1-1.13
+country_event = {
+	id = wg_lady.154
+	title = wg_lady.154.name
+	desc = wg_lady.154.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = wg_lady.154.a
+		hidden_effect = { 
+			set_country_flag = can_marry_wsg_lady
+			while = { count = 20
+				change_variable = { which = lady_affection value = 1 }
+				check_level_up_lady_leader_affection_trait = yes
+			}
+		}
+		custom_tooltip = can_marry_and_affection_up_greatly
+	}
+}
+#4-2
+country_event = {
+	id = wg_lady.155
+	title = wg_lady.155.name
+	desc = wg_lady.155.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	immediate = {
+		get_player_nickname = yes
+	}
+
+	option = {
+		name = wg_lady.155.a
+		hidden_effect = { 
+			country_event = { id = wg_lady.156 }
+			clear_global_event_target = wsg_player_nickname
+		}
+	}
+}
+#4-3
+country_event = {
+	id = wg_lady.156
+	title = wg_lady.156.name
+	desc = wg_lady.156.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_marry
+	show_sound = event_wg_wedding
+
+	option = {
+		name = wg_lady.156.a
+		hidden_effect = { 
+			set_country_flag = married_wsg_lady
+			if = {
+				limit = { has_country_flag = lady_affection_max }
+				set_variable = { which = lady_affection_level value = 5 }
+				switch = {
+					trigger = has_country_flag
+					lady_governor_active = { 
+						event_target:lady_governor = {
+							remove_lady_governor_affection_trait = yes
+							add_trait = leader_trait_governor_lady_affection_lv5
+						}
+					}
+					lady_warship_active = {
+						random_owned_leader = {
+							limit = { has_leader_flag = wsg_lady_admiral }
+							remove_lady_science_ship_affection_trait = yes
+							add_trait = leader_trait_governor_lady_affection_lv5 
+						}
+					}
+					wsg_lady_armed_science_active = {
+						event_target:lady_survey_scientist = {
+							remove_lady_science_ship_affection_trait = yes
+							add_trait = leader_trait_governor_lady_affection_lv5
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 
 # 数通讯次数

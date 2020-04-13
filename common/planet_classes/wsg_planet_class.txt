@@ -36,5 +36,5 @@ pc_wsg_port = {
 	colonizable = yes
 	starting_planet = no
 	ideal = yes
-	uses_alternative_skies_for_moons = yes
+	uses_alternative_skies_for_moons = no
 }

@@ -197,6 +197,7 @@ check_level_up_lady_governor_affection_trait = {
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}}
+		PREV = { set_country_flag = lady_affection_max }
 		remove_lady_governor_affection_trait = yes
 		if = {
 			limit = { PREV = { has_country_flag = married_wsg_lady }}
@@ -330,21 +331,21 @@ check_level_up_lady_admiral_affection_trait = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv2
-		set_variable = { which = lady_affection_level value = 2 }
+		PREV = { set_variable = { which = lady_affection_level value = 2 }}
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv3
-		set_variable = { which = lady_affection_level value = 3 }
+		PREV = { set_variable = { which = lady_affection_level value = 3 }}
 		break = yes
 	}
 	if = {
 		limit = { PREV = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}}
 		remove_lady_admiral_affection_trait = yes
 		add_trait = leader_trait_admiral_lady_affection_lv4
-		set_variable = { which = lady_affection_level value = 4 }
+		PREV = { set_variable = { which = lady_affection_level value = 4 }}
 		break = yes
 	}
 	if = {
@@ -354,7 +355,7 @@ check_level_up_lady_admiral_affection_trait = {
 		if = {
 			limit = { PREV = { has_country_flag = married_wsg_lady }}
 			add_trait = leader_trait_admiral_lady_affection_lv5
-			set_variable = { which = lady_affection_level value = 5 }
+			PREV = { set_variable = { which = lady_affection_level value = 5 }}
 		}
 		else = {
 			add_trait = leader_trait_admiral_lady_affection_lv4_max
@@ -635,6 +636,41 @@ check_level_up_lady_leader_affection_trait = {
 		wsg_lady_armed_science_active = {
 			event_target:lady_survey_scientist = {
 				check_level_up_lady_survey_scientist_affection_trait = yes
+			}
+		}
+		default = {
+			if = {
+				limit = { 
+					OR = { 
+						has_country_flag = lady_affection_max
+						check_variable = { which = lady_affection_level value >= 5 }
+					}
+				}
+				break = yes #已爆满不需要再测
+			}
+			if = {
+				limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv2 }}
+				set_variable = { which = lady_affection_level value = 2 }
+				break = yes
+			}
+			if = {
+				limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv3 }}
+				set_variable = { which = lady_affection_level value = 3 }
+				break = yes
+			}
+			if = {
+				limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv4 }}
+				set_variable = { which = lady_affection_level value = 4 }
+				break = yes
+			}
+			if = {
+				limit = { check_variable = { which = "lady_affection" value = @lady_affection_to_lv5 }}
+				set_country_flag = lady_affection_max
+				if = {
+					limit = { has_country_flag = married_wsg_lady }
+					set_variable = { which = lady_affection_level value = 5 }
+				}
+				break = yes
 			}
 		}
 	}

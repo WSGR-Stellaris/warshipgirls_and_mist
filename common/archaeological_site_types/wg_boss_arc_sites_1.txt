@@ -1,0 +1,35 @@
+#恩多迪亚
+site_eddy = {
+	desc = "site_eddy_intro"
+	picture = GFX_evt_archaeological_dig
+	stages = 3
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_archaeology_runes_D1
+		event = wg_parit.13
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_archaeology_runes_D2
+		event = wg_parit.14
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_archaeology_runes_D3
+		event = wg_parit.15
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+

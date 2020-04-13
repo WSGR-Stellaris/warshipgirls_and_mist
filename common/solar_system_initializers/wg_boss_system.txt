@@ -1,5 +1,5 @@
 wg_boss_think_tank_system = {
-	class = "rl_standard_stars"
+	class = "sc_g"
 	usage = wg_boss_think_tank_system_init
 	name = "NAME_wg_boss_think_tank_system"
 	
@@ -186,7 +186,7 @@ wg_boss_think_tank_system = {
 
 
 wg_boss_uav_system = {
-	class = "rl_standard_stars"
+	class = "sc_b"
 	usage = wg_boss_uav_system_system_init
 	name = "NAME_wg_boss_uav_system_system"
 	

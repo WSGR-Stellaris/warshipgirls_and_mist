@@ -852,6 +852,19 @@ country_event = {
 	}
 }
 
+# 中期触发事件
+event = {
+	id = wg_fe.20000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:wg_fallen_empire = {
+			country_event = { id = wg_fe.20 days = 5400 random = 1800 }
+		}
+	}
+}
+
 # 中期15年后堕落妈送暗物质科技
 country_event = {
 	id = wg_fe.20
@@ -1716,11 +1729,11 @@ country_event = {
 							}
 							country_event = { id = wg_fe.134 }
 						}
-						20 = { # 大小姐改造事件
+						10 = { # 大小姐改造事件
 							modifier = {
 								factor = 0
 								OR = {
-									mid_game_years_passed < 15
+									has_country_flag = wsg_lady_mod_cd # 获得大小姐后15年不能改造
 									has_country_flag = start_wsg_lady_events
 									has_country_flag = finish_wsg_lady_events
 									NAND = { # 必须有大小姐战舰而且已触发大小姐事件
@@ -1730,8 +1743,8 @@ country_event = {
 								}
                             }
                             modifier = {
-                                factor = 2
-                                mid_game_years_passed > 20
+                                factor = 3
+                                mid_game_years_passed > 0
                             }
 							country_event = { id = wg_lady.1 }
 						}

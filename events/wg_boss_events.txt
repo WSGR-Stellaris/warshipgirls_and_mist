@@ -30,7 +30,7 @@ event = {
 			country_event = { id = wg_boss.19 }
 		}	
 		random_list = { 
-			40 = {
+			70 = {
 				random_country = {
 					limit = {
 						OR = {
@@ -42,7 +42,7 @@ event = {
 					country_event = { id = wg_boss.2 }
 				}
 			}
-			60 = {
+			30 = {
 			}
 		}
 	}
@@ -156,7 +156,7 @@ ship_event = {
 						}
 						is_ai = no
 					}
-					country_event = { id = wg_boss.15 days = 180 random = 180 }
+					country_event = { id = wg_boss.15 days = 360 random = 360 }
 				}
 			}			
 		}		
@@ -346,7 +346,8 @@ country_event = {
 				add_modifier = {
 					modifier = wsg_think_tank_power2
 					days = -1
-				}				
+				}
+				set_fleet_flag = astesia_back_home				
 			}
 		}
 		hidden_effect = {
@@ -450,7 +451,9 @@ country_event = {
 	force_open = yes
 
 	is_triggered_only = yes
-
+	immediate = {
+		set_country_flag = eddy_flag
+	}
 	option = {
 		name = wg_boss.16.a
 		response_text = wg_boss.16.a.response

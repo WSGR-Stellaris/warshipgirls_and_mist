@@ -45,7 +45,7 @@ special_project = {
 special_project = {
 	key = "THINK_TANK_FTL_PROJECT"
 	cost = 0
-	days_to_research = 720
+	days_to_research = 3600
 	tech_department = engineering_technology
 	picture = GFX_evt_think_tank
 	
@@ -74,7 +74,7 @@ special_project = {
 special_project = {
 	key = "THINK_TANK_FTL_PROJECT2"
 	cost = 0
-	days_to_research = 360
+	days_to_research = 720
 	tech_department = engineering_technology
 	picture = GFX_evt_think_tank
 	

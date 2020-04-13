@@ -73,13 +73,8 @@ country_event = {
 	desc = "sh.5.desc"
 	picture = GFX_evt_yamato
 	is_triggered_only = yes
-	
-	option = {
-		name = "sh.5.a"
-		custom_tooltip = sh.5.a.response
-		owner = {
-			add_resource = { unity = 2000 }
-		}
+
+	after = {
 		hidden_effect = {
 			create_species = {
 				name = OVERTIMEMAN
@@ -107,52 +102,28 @@ country_event = {
 					set_leader_flag = wsg_event_leader
 				}				
 			}
+			country_event = { id = sh.520 days = 1 }
 			last_created_leader = {
 				set_age = 114
 				change_leader_portrait = sh65_1
 				set_is_female = yes
+				add_ruler_trait = leader_trait_ruler_shenhai2
 			}
-			country_event = { id = sh.520 days = 1  }
-		}		
+		}
+	}
+	
+	option = {
+		name = "sh.5.a"
+		custom_tooltip = sh.5.a.response
+		owner = {
+			add_resource = { unity = 2000 }
+		}
 	}
 	option = {
 		name = "sh.5.b"
 		custom_tooltip = sh.5.a.response
 		owner = {
 			add_resource = { influence = 150 }
-		}
-		hidden_effect = {
-			create_species = {
-				name = OVERTIMEMAN
-				plural = OVERTIMEMAN
-				class = ART
-				portrait = art13
-				namelist = ART1
-				effect = {
-					save_global_event_target_as = yamato_species
-				}
-			}		
-			create_leader = {
-				class = governor
-				species = event_target:yamato_species
-				name = "Yamato XXIII"
-				skill = 10
-				traits = {
-					trait = leader_trait_governor_yamatoman
-					trait = leader_trait_governor_neversleep
-					trait = leader_trait_governor_shenhai2
-				}
-				event_leader = yes	# prevents this leader from leading factions and winning elections
-				effect = {
-					set_leader_flag = overtime_yamato
-				}	
-			}
-			last_created_leader = {
-				set_age = 114
-				change_leader_portrait = sh65_1
-				set_is_female = yes
-			}
-			country_event = { id = sh.520 }
 		}
 	}
 }
@@ -276,17 +247,15 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop = {
+		random_owned_pop_species = {
 			limit = {
-				is_same_species = root
 				has_trait = sh_trait_shenhai
 			}
-			modify_species = {
-				species = this
+			PREV = { modify_species = {
+				species = prev
 				remove_trait = sh_trait_shenhai
 				add_trait = sh_trait_shenhai1
-			}
-			#owner_species = { save_event_target_as = psionic_species }
+			}}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 	}
@@ -295,99 +264,62 @@ country_event = {
 		name = "sh.1000.a"
 		custom_tooltip = sh.1000.a.tooltip
 		hidden_effect = {
-			every_country = {
+			every_owned_leader = {
 				limit = {
 					OR = {
-						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_same_species = root
+						species = { 
+							OR = {
+								has_trait = sh_trait_shenhai
+								has_trait = sh_trait_shenhai1
+							}
+						}
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait =	leader_trait_admiral_shenhai
+						has_trait =	leader_trait_general_shenhai
+						has_trait =	leader_trait_governor_shenhai
+						has_trait =	leader_trait_scientist_shenhai
+						has_trait =	leader_trait_ruler_shenhai
 					}
 				}
-				every_owned_leader = {
-					limit = {
+				add_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { add_trait = leader_trait_admiral_shenhai }
+					general = { add_trait = leader_trait_general_shenhai }
+					governor = { add_trait = leader_trait_governor_shenhai }
+					scientist = { add_trait = leader_trait_scientist_shenhai }
+					ruler = { add_trait = leader_trait_ruler_shenhai }
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
 						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait =	leader_trait_admiral_shenhai
-							has_trait =	leader_trait_general_shenhai
-							has_trait =	leader_trait_governor_shenhai
-							has_trait =	leader_trait_scientist_shenhai
-							has_trait =	leader_trait_ruler_shenhai
-						}
+						has_leader_flag = wsg_event_leader
 					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
+					NOR = {
+						has_trait = leader_trait_admiral_shenhai
+						has_trait = leader_trait_general_shenhai
+						has_trait = leader_trait_governor_shenhai
+						has_trait = leader_trait_scientist_shenhai
+						has_trait = leader_trait_ruler_shenhai
 					}
 				}
-				every_pool_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait = leader_trait_admiral_shenhai
-							has_trait = leader_trait_general_shenhai
-							has_trait = leader_trait_governor_shenhai
-							has_trait = leader_trait_scientist_shenhai
-							has_trait = leader_trait_ruler_shenhai
-						}
-					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
-					if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_shenhai
-						add_ruler_trait = leader_trait_ruler_shenhai
-					}
+				add_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { add_trait = leader_trait_admiral_shenhai }
+					general = { add_trait = leader_trait_general_shenhai }
+					governor = { add_trait = leader_trait_governor_shenhai }
+					scientist = { add_trait = leader_trait_scientist_shenhai }
+					ruler = { add_trait = leader_trait_ruler_shenhai }
 				}
 			}
 			country_event = { id = sh.1001 }
-		}			
+		}		
 	}
 }
 country_event = {
@@ -469,30 +401,14 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_shenhai }
+				general = { add_trait = leader_trait_general_shenhai }
+				governor = { add_trait = leader_trait_governor_shenhai }
+				scientist = { add_trait = leader_trait_scientist_shenhai }
+				ruler = { add_trait = leader_trait_ruler_shenhai }
 			}
 		}
 	}
@@ -511,31 +427,15 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_shenhai }
+				general = { add_trait = leader_trait_general_shenhai }
+				governor = { add_trait = leader_trait_governor_shenhai }
+				scientist = { add_trait = leader_trait_scientist_shenhai }
+				ruler = { add_trait = leader_trait_ruler_shenhai }
 			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai
-				add_ruler_trait = leader_trait_ruler_shenhai
-			} 
 		}
 	}
 }
@@ -548,17 +448,29 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop = {
+		random_owned_pop_species = {
 			limit = {
-				is_same_species = root
-				has_trait = sh_trait_shenhai1
+				OR = {
+					has_trait = sh_trait_shenhai1
+					has_trait = sh_trait_shenhai
+				}
 			}
-			modify_species = {
-				species = this
-				remove_trait = sh_trait_shenhai1
-				add_trait = sh_trait_shenhai2
+			if = {
+				limit = { has_trait = sh_trait_shenhai }
+				PREV = { modify_species = {
+					species = this
+					remove_trait = sh_trait_shenhai
+					add_trait = sh_trait_shenhai2
+				}}
 			}
-			#owner_species = { save_event_target_as = psionic_species }
+			else_if = {
+				limit = { has_trait = sh_trait_shenhai1 }
+				PREV = { modify_species = {
+					species = this
+					remove_trait = sh_trait_shenhai1
+					add_trait = sh_trait_shenhai2
+				}}
+			}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 		country_event = { id = wg_aft.4 }
@@ -567,114 +479,83 @@ country_event = {
 	option = {
 		name = "sh.2000.a"
 		hidden_effect = {
-			every_country = {
+			every_owned_leader = {
 				limit = {
 					OR = {
-						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_same_species = root
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait =	leader_trait_admiral_shenhai1
+						has_trait =	leader_trait_general_shenhai1
+						has_trait =	leader_trait_governor_shenhai1
+						has_trait =	leader_trait_scientist_shenhai1
+						has_trait =	leader_trait_ruler_shenhai1
 					}
 				}
-				every_owned_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait =	leader_trait_admiral_shenhai1
-							has_trait =	leader_trait_general_shenhai1
-							has_trait =	leader_trait_governor_shenhai1
-							has_trait =	leader_trait_scientist_shenhai1
-							has_trait =	leader_trait_ruler_shenhai1
-						}
-					}
-					if = {
-						limit = { leader_class = admiral }
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { 
 						add_trait = leader_trait_admiral_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_admiral_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = general }
+					general = {
 						add_trait = leader_trait_general_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_general_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = governor }
+					governor = {
 						add_trait = leader_trait_governor_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_governor_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = scientist }
+					scientist = {
 						add_trait = leader_trait_scientist_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = ruler }
+					ruler = {
 						add_trait = leader_trait_ruler_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
 				}
-				every_pool_leader = {
-					limit = {
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
 						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait = leader_trait_admiral_shenhai1
-							has_trait = leader_trait_general_shenhai1
-							has_trait = leader_trait_governor_shenhai1
-							has_trait = leader_trait_scientist_shenhai1
-							has_trait = leader_trait_ruler_shenhai1
-						}
+						has_leader_flag = wsg_event_leader
 					}
-					if = {
-						limit = { leader_class = admiral }
+					NOR = {
+						has_trait = leader_trait_admiral_shenhai1
+						has_trait = leader_trait_general_shenhai1
+						has_trait = leader_trait_governor_shenhai1
+						has_trait = leader_trait_scientist_shenhai1
+						has_trait = leader_trait_ruler_shenhai1
+					}
+				}
+				add_ruler_trait = leader_trait_ruler_shenhai1
+				remove_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { 
 						add_trait = leader_trait_admiral_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_admiral_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = general }
+					general = {
 						add_trait = leader_trait_general_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_general_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = governor }
+					governor = {
 						add_trait = leader_trait_governor_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_governor_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = scientist }
+					scientist = {
 						add_trait = leader_trait_scientist_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = ruler }
+					ruler = {
 						add_trait = leader_trait_ruler_shenhai1
-						add_ruler_trait = leader_trait_ruler_shenhai1
-						remove_trait = leader_trait_ruler_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
+						remove_trait = leader_trait_scientist_shenhai
 					}
 				}
 			}
@@ -695,40 +576,30 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_admiral_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_general_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_governor_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_scientist_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_ruler_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai1
+			remove_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { 
+					add_trait = leader_trait_admiral_shenhai1
+					remove_trait = leader_trait_admiral_shenhai
+				}
+				general = {
+					add_trait = leader_trait_general_shenhai1
+					remove_trait = leader_trait_general_shenhai
+				}
+				governor = {
+					add_trait = leader_trait_governor_shenhai1
+					remove_trait = leader_trait_governor_shenhai
+				}
+				scientist = {
+					add_trait = leader_trait_scientist_shenhai1
+					remove_trait = leader_trait_scientist_shenhai
+				}
+				ruler = {
+					add_trait = leader_trait_ruler_shenhai1
+					remove_trait = leader_trait_scientist_shenhai
+				}
 			}
 		}
 	}
@@ -747,41 +618,31 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_admiral_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai1
+			remove_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { 
+					add_trait = leader_trait_admiral_shenhai1
+					remove_trait = leader_trait_admiral_shenhai
+				}
+				general = {
+					add_trait = leader_trait_general_shenhai1
+					remove_trait = leader_trait_general_shenhai
+				}
+				governor = {
+					add_trait = leader_trait_governor_shenhai1
+					remove_trait = leader_trait_governor_shenhai
+				}
+				scientist = {
+					add_trait = leader_trait_scientist_shenhai1
+					remove_trait = leader_trait_scientist_shenhai
+				}
+				ruler = {
+					add_trait = leader_trait_ruler_shenhai1
+					remove_trait = leader_trait_scientist_shenhai
+				}
 			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_general_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_governor_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_scientist_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai1
-				add_ruler_trait = leader_trait_ruler_shenhai1
-				remove_trait = leader_trait_ruler_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			} 
 		}
 	}
 }
@@ -797,17 +658,29 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop = {
+		random_owned_pop_species = {
 			limit = {
-				is_same_species = root
-				has_trait = sh_trait_shenhai1
+				OR = {
+					has_trait = sh_trait_shenhai1
+					has_trait = sh_trait_shenhai
+				}
 			}
-			modify_species = {
-				species = this
-				remove_trait = sh_trait_shenhai1
-				add_trait = sh_trait_shenhai3
+			if = {
+				limit = { has_trait = sh_trait_shenhai }
+				PREV = { modify_species = {
+					species = this
+					remove_trait = sh_trait_shenhai
+					add_trait = sh_trait_shenhai3
+				}}
 			}
-			#owner_species = { save_event_target_as = psionic_species }
+			else_if = {
+				limit = { has_trait = sh_trait_shenhai1 }
+				PREV = { modify_species = {
+					species = this
+					remove_trait = sh_trait_shenhai1
+					add_trait = sh_trait_shenhai3
+				}}
+			}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 	}
@@ -815,114 +688,83 @@ country_event = {
 	option = {
 		name = "sh.3000.a"
 		hidden_effect = {
-			every_country = {
+			every_owned_leader = {
 				limit = {
 					OR = {
-						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_same_species = root
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait =	leader_trait_admiral_shenhai2
+						has_trait =	leader_trait_general_shenhai2
+						has_trait =	leader_trait_governor_shenhai2
+						has_trait =	leader_trait_scientist_shenhai2
+						has_trait =	leader_trait_ruler_shenhai2
 					}
 				}
-				every_owned_leader = {
-					limit = {
-						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait =	leader_trait_admiral_shenhai2
-							has_trait =	leader_trait_general_shenhai2
-							has_trait =	leader_trait_governor_shenhai2
-							has_trait =	leader_trait_scientist_shenhai2
-							has_trait =	leader_trait_ruler_shenhai2
-						}
-					}
-					if = {
-						limit = { leader_class = admiral }
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { 
 						add_trait = leader_trait_admiral_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_admiral_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = general }
+					general = {
 						add_trait = leader_trait_general_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_general_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = governor }
+					governor = {
 						add_trait = leader_trait_governor_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_governor_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = scientist }
+					scientist = {
 						add_trait = leader_trait_scientist_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = ruler }
+					ruler = {
 						add_trait = leader_trait_ruler_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
 				}
-				every_pool_leader = {
-					limit = {
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
 						is_same_species = root
-						#species = { 
-						#	has_trait = trait_psionic
-						#	is_same_value = event_target:psionic_species
-						#}
-						NOR = {
-							has_trait = leader_trait_admiral_shenhai2
-							has_trait = leader_trait_general_shenhai2
-							has_trait = leader_trait_governor_shenhai2
-							has_trait = leader_trait_scientist_shenhai2
-							has_trait = leader_trait_ruler_shenhai2
-						}
+						has_leader_flag = wsg_event_leader
 					}
-					if = {
-						limit = { leader_class = admiral }
+					NOR = {
+						has_trait = leader_trait_admiral_shenhai2
+						has_trait = leader_trait_general_shenhai2
+						has_trait = leader_trait_governor_shenhai2
+						has_trait = leader_trait_scientist_shenhai2
+						has_trait = leader_trait_ruler_shenhai2
+					}
+				}
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				remove_ruler_trait = leader_trait_ruler_shenhai
+				switch = {
+					trigger = leader_class
+					admiral = { 
 						add_trait = leader_trait_admiral_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_admiral_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = general }
+					general = {
 						add_trait = leader_trait_general_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_general_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = governor }
+					governor = {
 						add_trait = leader_trait_governor_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_governor_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = scientist }
+					scientist = {
 						add_trait = leader_trait_scientist_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_scientist_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
 					}
-					if = {
-						limit = { leader_class = ruler }
+					ruler = {
 						add_trait = leader_trait_ruler_shenhai2
-						add_ruler_trait = leader_trait_ruler_shenhai2
-						remove_trait = leader_trait_ruler_shenhai
-						remove_ruler_trait = leader_trait_ruler_shenhai
+						remove_trait = leader_trait_scientist_shenhai
 					}
 				}
 			}
@@ -943,40 +785,30 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_admiral_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_general_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_governor_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_scientist_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_ruler_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai2
+			remove_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { 
+					add_trait = leader_trait_admiral_shenhai2
+					remove_trait = leader_trait_admiral_shenhai
+				}
+				general = {
+					add_trait = leader_trait_general_shenhai2
+					remove_trait = leader_trait_general_shenhai
+				}
+				governor = {
+					add_trait = leader_trait_governor_shenhai2
+					remove_trait = leader_trait_governor_shenhai
+				}
+				scientist = {
+					add_trait = leader_trait_scientist_shenhai2
+					remove_trait = leader_trait_scientist_shenhai
+				}
+				ruler = {
+					add_trait = leader_trait_ruler_shenhai2
+					remove_trait = leader_trait_scientist_shenhai
+				}
 			}
 		}
 	}
@@ -995,41 +827,31 @@ country_event = {
 
 	immediate = {
 		from = { 
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_admiral_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
+			add_ruler_trait = leader_trait_ruler_shenhai2
+			remove_ruler_trait = leader_trait_ruler_shenhai
+			switch = {
+				trigger = leader_class
+				admiral = { 
+					add_trait = leader_trait_admiral_shenhai2
+					remove_trait = leader_trait_admiral_shenhai
+				}
+				general = {
+					add_trait = leader_trait_general_shenhai2
+					remove_trait = leader_trait_general_shenhai
+				}
+				governor = {
+					add_trait = leader_trait_governor_shenhai2
+					remove_trait = leader_trait_governor_shenhai
+				}
+				scientist = {
+					add_trait = leader_trait_scientist_shenhai2
+					remove_trait = leader_trait_scientist_shenhai
+				}
+				ruler = {
+					add_trait = leader_trait_ruler_shenhai2
+					remove_trait = leader_trait_scientist_shenhai
+				}
 			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_general_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_governor_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_scientist_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_shenhai2
-				add_ruler_trait = leader_trait_ruler_shenhai2
-				remove_trait = leader_trait_ruler_shenhai
-				remove_ruler_trait = leader_trait_ruler_shenhai
-			} 
 		}
 	}
 }
@@ -1904,12 +1726,6 @@ country_event = {
 					graphical_culture = "npf_02"
 					upgradable = no
 				}
-				create_ship = {
-					name = random
-					design = "NAME_uf_buffer"
-					graphical_culture = "npf_03"
-					upgradable = no
-				}
 				set_location = {
 					target = event_target:sh_capital2
 					distance = 0
@@ -1989,7 +1805,7 @@ country_event = {
 			while = {
 				count = 24
 				create_pop = {
-					species = owner_main_species
+					species = owner_species
 				}
 			}		
 		}		

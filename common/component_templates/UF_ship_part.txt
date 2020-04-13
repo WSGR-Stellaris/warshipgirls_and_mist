@@ -36,8 +36,8 @@ strike_craft_component_template = {
 	rotation_speed = 0.25
 	acceleration = 0.8
 	
-	shield_penetration = 5.0
-	armor_penetration = 5.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
 	hull_damage = 3.0
 	
 	ship_behavior = "bombers_behavior"
@@ -288,8 +288,8 @@ weapon_component_template = {
 	total_fire_time = 15
 	range = 55.0
 	accuracy = 1.0
-	shield_penetration = 3.0
-	armor_penetration = 3.0
+	shield_penetration = 2.0
+	armor_penetration = 2.0
 	hull_damage = 5.0
 	tracking = 1.0
 	power = -15
@@ -610,8 +610,8 @@ weapon_component_template = {
 	total_fire_time = 1200
 	range = 450.0
 	accuracy = 1.00
-	shield_penetration = 5.0
-	armor_penetration = 5.0
+	shield_penetration = 2.0
+	armor_penetration = 2.0
 	tracking = 1.0
 	power = 0
 	
@@ -971,16 +971,16 @@ utility_component_template = {
 		apply_on = ships
 		
 		stack_info = {			
-			id = UF_AURA_5
-			priority = 200
+			id = UF_AURA_1
+			priority = 500
 		}
 		
 		modifier = {
-			ship_shield_penetration_mult = -2.0
-			ship_armor_penetration_mult = -2.0		
-			ship_weapon_range_mult = -0.35
-			ship_weapon_damage = -0.35
-			ship_disengage_chance_mult = -1.0
+			ship_shield_penetration_mult = -1.2
+			ship_armor_penetration_mult = -1.2		
+			ship_weapon_range_mult = -0.60
+			ship_weapon_damage = -0.60
+			ship_disengage_chance_mult = -2.0
 		}
 		
 		graphics = {

@@ -1,13 +1,13 @@
-r_sh_book = {
+r_eddy = {
 	activation_duration = @triumph_duration
-	portrait = "GFX_relic_sh_book"
+	portrait = "GFX_relic_eddy"
 	sound = "relic_activation_ether_drake_trophy"
 
 	resources = {
 		category = relics
 		# Activation cost
 		cost = {
-			influence = 100
+			influence = 200
 		}
 	}
 	
@@ -19,14 +19,15 @@ r_sh_book = {
 		potential = {
 			always = yes
 		}
-		country_unity_produces_mult = 0.10
+		ship_hull_mult = 0.05
+		starbase_shipyard_build_speed_mult = 0.30
 	}
 
 	score = 1000
 
 	active_effect = {
 		add_modifier = {
-			modifier = "sh_modifier_book" 
+			modifier = "wg_eddy_maya" 
 			days = 3600
 		}
 		custom_tooltip = relic_triumph_cooldown

@@ -583,6 +583,8 @@
  lexington_ruler_buff_desc:0 "我认为列克星敦就是世界的主宰，所有人都应该成为她忠心的奴仆.jpg"
  sol_III_society_10:0 "奇怪的Sol III"
  sol_III_society_10:0 "通过对Sol III奇怪习俗的研究，可以增加我们对社会学的认知（大嘘）"
+
+ LEX_SPECIES:0 "太太乐"
  ############
  wsg.3077.name:0 "§H星球级誓约§!：在[Root.GetName]上首次举行"
  wsg.3077.desc:0 "今天对于[Root.GetName]上的舰娘们来说是非常特别的一天，每一位舰娘都换上了华丽的婚纱，一同庆祝着这场星球级誓约仪式。"

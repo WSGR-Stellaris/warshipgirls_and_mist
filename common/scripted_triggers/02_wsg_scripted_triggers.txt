@@ -121,6 +121,7 @@ is_wg_leader = {
 				has_trait = sh_trait_shenhai3
 			}
 		}
+		has_leader_flag = wsg_event_leader
 		has_leader_flag = overtime_yamato #劳模
 		has_trait = leader_trait_admiral_Rodney #老罗
 		has_trait = leader_trait_governor_Ella #艾拉

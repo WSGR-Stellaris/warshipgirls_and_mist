@@ -2872,6 +2872,16 @@ country_event = {
 
 	option = {
 		name = wg_crisis.56.a
+		hidden_effect = {
+			switch = {
+				trigger = has_modifier
+				ra_vip = { remove_modifier = ra_vip }
+				ra_vip_sh = { remove_modifier = ra_vip_sh }
+				pay_for_resistant_fleet = { remove_modifier = pay_for_resistant_fleet }
+				wg_pay_for_resistant_fleet = { remove_modifier = pay_for_resistant_fleet }
+				vip_pay_for_resistant_fleet = { remove_modifier = vip_pay_for_resistant_fleet }
+			}
+		}
 	}
 }
 
@@ -3868,36 +3878,35 @@ country_event = {
 }
 
 # 适配旧存档
-country_event = {
-	id = wg_crisis.301
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = { 
-		has_global_flag = wg_invasion_happened
-		is_country_type = wg_crisis_country
-		NOT = { has_country_flag = checked_all_fleet_once }
-	}
-
-	immediate = {
-		log = "savings from before versions, initialising fleet variables"
-		set_country_flag = checked_all_fleet_once
-		every_planet = {
-			limit = { has_planet_flag = target_planet }
-			remove_planet_flag = target_planet
-		}
-		every_planet = {
-			limit = { check_variable = { which = "planet_id" value > 0}}
-			if = { 
-				limit = { is_scope_type = planet }
-				set_variable = { which = "planet_id" value = 0 }
-			}
-		}
-		country_event = { id = wg_crisis.300 }
-	}
-
-}
+#country_event = {
+#	id = wg_crisis.301
+#	hide_window = yes
+#	is_triggered_only = yes
+#	fire_only_once = yes
+#
+#	trigger = { 
+#		has_global_flag = wg_invasion_happened
+#		is_country_type = wg_crisis_country
+#		NOT = { has_country_flag = checked_all_fleet_once }
+#	}
+#
+#	immediate = {
+#		log = "savings from before versions, initialising fleet variables"
+#		set_country_flag = checked_all_fleet_once
+#		every_planet = {
+#			limit = { has_planet_flag = target_planet }
+#			remove_planet_flag = target_planet
+#		}
+#		every_planet = {
+#			limit = { check_variable = { which = "planet_id" value > 0}}
+#			if = { 
+#				limit = { is_scope_type = planet }
+#				set_variable = { which = "planet_id" value = 0 }
+#			}
+#		}
+#		country_event = { id = wg_crisis.300 }
+#	}
+#}
 
 event = { 
 	id = wg_crisis.302

@@ -477,8 +477,6 @@ country_event = {
 				traits = {
 					trait = leader_trait_admiral_Rodney
 					trait = leader_trait_admiral_Rodney2
-					trait = leader_trait_admiral_warshipgirls
-					trait = leader_trait_admiral_mist
 				}
 				event_leader = yes	# prevents this leader from leading factions and winning elections
 				effect = {
@@ -489,6 +487,16 @@ country_event = {
 				set_age = 7
 				change_leader_portrait = wsg9
 				set_is_female = yes
+				if = {
+					limit = { owner = { has_country_flag = wsg_project_r }}
+					add_trait = leader_trait_admiral_warshipgirls
+					add_ruler_trait = leader_trait_ruler_warshipgirls
+				}
+				if = {
+					limit = { owner = { has_country_flag = wsg_mist }}
+					add_trait = leader_trait_admiral_mist
+					add_ruler_trait = leader_trait_ruler_mist
+				}	
 			}
 			country_event = { id = wsg.30272 }
 		}
@@ -1805,15 +1813,23 @@ country_event = {
 			}	
 			traits = {
 				trait = leader_trait_governor_santee
-				trait = leader_trait_governor_warshipgirls
-				trait = leader_trait_governor_mist
 			}
 		}
 		last_created_leader = {
 			set_is_female = yes
 			add_experience = 500
 			set_age = 24
-			change_leader_portrait = wsg9998		
+			change_leader_portrait = wsg9998
+			if = {
+				limit = { owner = { has_country_flag = wsg_project_r }}
+				add_trait = leader_trait_governor_warshipgirls
+				add_ruler_trait = leader_trait_ruler_warshipgirls
+			}
+			if = {
+				limit = { owner = { has_country_flag = wsg_mist }}
+				add_trait = leader_trait_governor_mist
+				add_ruler_trait = leader_trait_ruler_mist
+			}
 		}
 	}
 }
@@ -2030,8 +2046,6 @@ country_event = {
 				skill = 6
 				traits = {
 					trait = leader_trait_general_washington_axe
-					trait = leader_trait_general_warshipgirls
-					trait = leader_trait_general_mist
 				}
 				event_leader = yes	# prevents this leader from leading factions and winning elections
 				effect = {
@@ -2042,6 +2056,16 @@ country_event = {
 				set_age = 25
 				change_leader_portrait = wsg111
 				set_is_female = yes
+				if = {
+					limit = { owner = { has_country_flag = wsg_project_r }}
+					add_trait = leader_trait_general_warshipgirls
+					add_ruler_trait = leader_trait_ruler_warshipgirls
+				}
+				if = {
+					limit = { owner = { has_country_flag = wsg_mist }}
+					add_trait = leader_trait_general_mist
+					add_ruler_trait = leader_trait_ruler_mist
+				}
 			}
 			country_event = { id = wsg.3057 }
 		}
@@ -2679,7 +2703,8 @@ country_event = {
 				uses_naval_capacity = no
 				spawn_debris = no 
 			}
-		}		
+		}
+		set_timed_country_flag = { flag = wsg_lady_mod_cd days = 5400 }
 	}
 }
 
@@ -3180,9 +3205,19 @@ country_event = {
 		name = "wsg.3105.c"
 		custom_tooltip = "wsg.3105.c.tooltip"
 		hidden_effect = {
+			create_species = {
+				name = LEX_SPECIES
+				plural = LEX_SPECIES
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = wsg_lex_species
+				}
+			}
 			create_leader = {
 				class = ruler
-				species = owner_species
+				species = event_target:wsg_lex_species
 				gender = female
 				name = NAME_lexington
 				skill = 10
@@ -3200,19 +3235,11 @@ country_event = {
 				set_leader_flag = wsg_event_leader
 				set_leader_flag = has_gained_level_trait
 				if = {
-					limit = {
-						owner = {
-							has_country_flag = wsg_project_r
-						}	
-					}
+					limit = { owner = { has_country_flag = wsg_project_r }}
 					add_trait = leader_trait_ruler_warshipgirls
 				}
 				if = {
-					limit = {
-						owner = {
-							has_country_flag = wsg_mist
-						}
-					}
+					limit = { owner = { has_country_flag = wsg_mist }}
 					add_trait = leader_trait_ruler_mist
 				}				
 			}
@@ -3341,169 +3368,7 @@ ship_event = {
 	}
 }
 
-# 旧存档适配
-country_event = {
-	id = wsg.3110
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
 
-	trigger = {
-		is_ai = no
-		has_authority = auth_warshipgirls
-		NOR = {
-			has_country_flag = triggered_lex_sol_event
-			has_country_flag = finish_lex_sol_III_event
-			any_country = {
-				has_country_flag = sol_III_country
-				exists = this
-			}
-		}
-		OR = {
-			any_system = {
-				has_star_flag = lex_sol
-				any_system_planet = {
-					is_colonizable = yes
-					has_owner = no
-				}
-			}
-			NOT = { exists = event_target:lex_sol_III }
-		}
-	}
-
-	immediate = {
-		if = { #不存在星系
-			limit = { NOT = { exists = event_target:lex_sol_III }}
-			random_country = {
-				limit = {
-					has_authority = auth_warshipgirls
-					is_ai = no
-				}
-				capital_scope = {
-					closest_system = {
-						min_steps = 5
-						limit = {
-							NOR = {
-								has_star_flag = hostile_system
-								has_star_flag = guardian
-							}
-							OR = {
-								NOT = { exists = space_owner }
-								space_owner = { has_authority = auth_warshipgirls }
-							}
-						}
-						spawn_system = {
-							initializer = "lex_sol_system"
-						}
-					}
-				}
-			}
-		}
-		else = {
-			create_species = {
-				name = Human
-				plural = Humans
-				class = "HUM"
-				portrait = "human"
-				homeworld = event_target:lex_sol_III
-				traits = {
-					trait = "trait_adaptive"
-					trait = "trait_nomadic"	
-					trait = "trait_wasteful"
-				}
-			}
-			create_country = {
-				name = random
-				authority = random
-				day_zero_contact = no
-				civics = {
-					civic = civic_increasing_urbanization
-					civic = civic_atmospheric_pollution
-				}
-				species = last_created
-				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_fanatic_egalitarian"			
-				}
-				flag = {
-					icon = {
-						category = "human"
-						file = "flag_human_9.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "circle.dds"
-					}
-					colors={
-						"dark_blue"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				type = primitive
-			}
-			last_created_country = {
-				set_graphical_culture = industrial_01
-				set_primitive_age = information_age
-				set_country_flag = information_age
-				set_country_flag = sol_III_country
-			}
-			event_target:lex_sol_III = {
-				reset_planet = yes
-				change_pc = pc_continental
-				set_owner = last_created_country
-				create_primitive_blockers = yes
-			
-				create_army = {
-					name = "US Armed Forces West"
-					owner = last_created
-					species = last_created
-					type = "postatomic_army"
-				}
-				create_army = {
-					name = "US Armed Forces East"
-					owner = last_created
-					species = last_created
-					type = "postatomic_army"
-				}
-				create_army = {
-					name = "Chinese PLA"
-					owner = last_created
-					species = last_created
-					type = "postatomic_army"
-				}
-				create_army = {
-					name = "Russian Armed Forces"
-					owner = last_created
-					species = last_created
-					type = "postatomic_army"
-				}
-				create_army = {
-					name = "EU Combined Forces"
-					owner = last_created
-					species = last_created
-					type = "postatomic_army"
-				}
-				while = {
-					count = 28
-					create_pop = {
-						species = last_created
-					}					
-				}
-				add_building = building_lex_monument
-				add_building = building_lex_monument
-				add_building = building_lex_monument
-				add_building = building_lex_monument
-				add_building = building_primitive_capital_lex
-				add_building = building_lex_monument
-			}
-			last_created_country = {
-				capital_scope = { set_name = "Sol III" }
-			}
-		}
-	}
-}
 #####BADSEAL
 country_event = {
 	id = wsg.3111
