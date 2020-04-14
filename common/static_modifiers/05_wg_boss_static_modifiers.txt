@@ -36,6 +36,9 @@ wsg_think_tank_destoryed = {
 wsg_think_tank_destoryed2 = {
     all_technology_research_speed = 0.05
 	country_engineering_tech_research_speed = 0.05
+	country_society_research_produces_add = 25
+	country_physics_research_produces_add = 25
+	country_engineering_research_produces_add = 25	
 }
 
 wsg_Astesia = {
@@ -58,4 +61,8 @@ wg_eddy_maya = {
 	starbase_shipyard_build_speed_mult = 0.50
 	all_technology_research_speed = 0.50	
 }
-
+early_rush = {
+	country_base_alloys_produces_add = 10
+	ship_weapon_damage = 0.10
+	ship_weapon_range_mult = 0.10
+}

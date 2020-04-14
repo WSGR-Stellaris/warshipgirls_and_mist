@@ -1,7 +1,7 @@
 wg_eddy_system = {
 	name = "NAME_eddy_system"
 	class = "sc_g"
-	usage = custom_empire
+	usage = misc_system_init
 	flags = { wg_eddy_system }
 
 	planet = {

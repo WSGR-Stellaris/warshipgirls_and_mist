@@ -70,7 +70,7 @@ weapon_component_template = {
 	power = -100
 	
 	prerequisites = { "tech_boss_weapen_ion" }
-	component_set = "wg_boss_weapen_ion"
+	component_set = "wg_boss_weapen_ion2"
 	projectile_gfx = "wsg_medium_turbolaser_l_b"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }

@@ -4,3 +4,10 @@ component_set = {
 	icon = "GFX_wg_boss_weapen_ion"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "wg_boss_weapen_ion2"
+	
+	icon = "GFX_wg_boss_weapen_ion"
+	icon_frame = 1	
+}

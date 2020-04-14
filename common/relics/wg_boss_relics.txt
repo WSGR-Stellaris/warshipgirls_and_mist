@@ -47,3 +47,54 @@ r_eddy = {
 		}
 	}
 }
+
+
+r_early_rush = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_early_rush"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			food = 200
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_claim_influence_cost_mult = -0.1
+		country_war_exhaustion_mult = -0.1
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "early_rush" 
+			days = 3600
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown" 
+				days = 3600
+			}		
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}
