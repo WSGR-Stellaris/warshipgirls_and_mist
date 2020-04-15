@@ -383,6 +383,9 @@ on_building_observation_station = {
 on_leader_death = {
 	events = {
 		wg_lady.32
+		wg_aft.20
+		wg_aft.21
+		wg_aft.31
 	}
 }
 

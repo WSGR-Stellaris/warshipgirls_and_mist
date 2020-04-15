@@ -6,7 +6,7 @@ sh_pantsu_maker = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -36,7 +36,7 @@ sh_foundry = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -77,7 +77,7 @@ sh_foundry_shpc = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -110,7 +110,7 @@ category = specialist
 	
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -185,7 +185,7 @@ sh_soldier = {
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_assimilated = no
 	}
 

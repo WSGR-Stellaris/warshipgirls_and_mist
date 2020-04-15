@@ -6,7 +6,7 @@ wsg_administrator = {
 	
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -66,7 +66,7 @@ wsg_merchant = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}

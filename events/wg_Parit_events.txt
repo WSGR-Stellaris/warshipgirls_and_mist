@@ -700,7 +700,7 @@ ship_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-               	 	any_country ＝ {			
+               	 	any_country = {			
 			       		has_country_flag = executorbuilding
 					}	
             	}
@@ -813,6 +813,7 @@ country_event = {
 fleet_event = {
 	id = wg_parit.16
 	hide_window = yes
+	is_triggered_only = yes
 
 	trigger = {
 		has_fleet_flag = astesia_back_home

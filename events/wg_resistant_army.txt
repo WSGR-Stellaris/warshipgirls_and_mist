@@ -3168,7 +3168,7 @@ country_event = {
     }
 
     immediate = {
-        divide_variable = { which = "buy_ra_leader_count" value = 1 }
+        change_variable = { which = "buy_ra_leader_count" value = -1 }
         if = {
             limit = { 
                 FROM = { OR = {
@@ -3179,7 +3179,7 @@ country_event = {
                     has_leader_flag = yukikaze
                 }}
             }
-            divide_variable = { which = "SR_num" value = 1 }
+            change_variable = { which = "SR_num" value = -1 }
             break = yes
         }
         if = {
@@ -3191,7 +3191,7 @@ country_event = {
                     has_leader_flag = cobot
                 }}
             }
-            divide_variable = { which = "SSR_num" value = 1 }
+            change_variable = { which = "SSR_num" value = -1 }
             break = yes
         }
     }

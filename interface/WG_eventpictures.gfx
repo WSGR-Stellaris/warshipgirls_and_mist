@@ -509,4 +509,40 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}
+	spriteType = {
+		name = "GFX_evt_revive_leader"
+		texturefile = "gfx/event_pictures/revive_leader.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_revive_yamato"
+		texturefile = "gfx/event_pictures/revive_yamato.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_revive_rodney"
+		texturefile = "gfx/event_pictures/revive_rodney.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_revive_santee"
+		texturefile = "gfx/event_pictures/revive_santee.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_revive_washington"
+		texturefile = "gfx/event_pictures/revive_washington.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_revive_lex"
+		texturefile = "gfx/event_pictures/revive_lex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
 }

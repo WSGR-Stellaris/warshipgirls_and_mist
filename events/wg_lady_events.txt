@@ -599,8 +599,19 @@ country_event = {
 		remove_country_flag = start_wsg_lady_events
 		if = {
 			limit = { NOT = { any_country = { has_country_flag = wsg_lady_country }}}
+			create_species = {
+				name = LADY_SPECIES
+				plural = LADY_SPECIES
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = wsg_lady_species
+				}
+			}
 			create_country = {
 				name = "NAME_lady_Contingency_fleet"
+				species = event_target:wsg_lady_species
 				type = wsg_lady
 				flag = {
 					icon= {
@@ -621,16 +632,6 @@ country_event = {
 				effect = {
 					save_global_event_target_as = wsg_lady_country
 					set_country_flag = wsg_lady_country
-				}
-			}
-			create_species = {
-				name = LADY_SPECIES
-				plural = LADY_SPECIES
-				class = ART
-				portrait = art13
-				namelist = ART1
-				effect = {
-					save_global_event_target_as = wsg_lady_species
 				}
 			}
 		}
@@ -2121,6 +2122,8 @@ country_event = {
 
 	immediate = {
 		get_player_nickname = yes
+		subtract_variable = { which = lady_affection value = @lady_affection_reduce }
+		reset_lady_affection_level = yes
 	}
 
 	option = {
@@ -2150,24 +2153,6 @@ country_event = {
 			remove_country_flag = wsg_lady_talking1
 			remove_country_flag = wsg_lady_talking2
 			remove_country_flag = wsg_lady_talking3
-			if = { # 移除-1岁的bug领袖
-				limit = {
-					AND = {
-						has_country_flag = wsg_lady_governor_active
-						any_owned_leader = {
-							has_leader_flag = wsg_lady_governor
-						}
-					}
-					OR = {
-						has_country_flag = wsg_lady_warship_active
-						has_country_flag = wsg_lady_army_active
-					}
-				}
-				every_owned_leader = {
-					limit = { has_leader_flag = wsg_lady_governor }
-					kill_leader = { show_notification = no }
-				}
-			}
 		}
 	}
 }
@@ -3293,7 +3278,7 @@ country_event = {
 	}
 	option = {
 		name = wg_lady.102.b
-		hidden_effect = { country_event = { id = wg_lady.114 }}
+		hidden_effect = { country_event = { id = wg_lady.115 }}
 	}
 }
 #3-1-1.1
@@ -3653,13 +3638,13 @@ country_event = {
 	option = {
 		name = wg_lady.116.a
 		hidden_effect = { 
-			country_event = { id = wg_lady.118 }
+			country_event = { id = wg_lady.117 }
 		}
 	}
 	option = {
 		name = wg_lady.116.b
 		hidden_effect = { 
-			country_event = { id = wg_lady.120 }
+			country_event = { id = wg_lady.119 }
 		}
 	}
 }
@@ -3684,7 +3669,7 @@ country_event = {
 	option = {
 		name = wg_lady.117.a
 		hidden_effect = { 
-			country_event = { id = wg_lady.119 }
+			country_event = { id = wg_lady.118 }
 		}
 	}
 }
@@ -3805,7 +3790,7 @@ event = {
 
 	immediate = {
 		event_target:wsg_lady_own_country = {
-			country_event = { id = wg_lady.123 days = 60 }
+			country_event = { id = wg_lady.123 days = 30 }
 			remove_country_flag = unlock_lady_affection_event_3_2
 		}
 	}
@@ -3828,7 +3813,7 @@ country_event = {
 	option = {
 		name = wg_lady.123.b
 		hidden_effect = { 
-			country_event = { id = wg_lady.125 days = 14 }
+			country_event = { id = wg_lady.125 days = 13 }
 			set_country_flag = present_bear
 		}
 	}
@@ -3844,13 +3829,13 @@ country_event = {
 	option = {
 		name = wg_lady.124.a
 		hidden_effect = { 
-			country_event = { id = wg_lady.125 days = 14 }
+			country_event = { id = wg_lady.125 days = 13 }
 		}
 	}
 	option = {
 		name = wg_lady.124.b
 		hidden_effect = { 
-			country_event = { id = wg_lady.125 days = 14 }
+			country_event = { id = wg_lady.125 days = 13 }
 		}
 	}
 }
@@ -4324,7 +4309,7 @@ country_event = {
 	option = {
 		name = wg_lady.140.b
 		hidden_effect = { 
-			country_event = { id = wg_lady. }
+			country_event = { id = wg_lady.149 }
 		}
 	}
 }
@@ -4525,7 +4510,7 @@ country_event = {
 #4-1-1.7
 country_event = {
 	id = wg_lady.147
-	title = wg_lady.147.name
+	title = wsg_lady_name
 	desc = wg_lady.147.desc
 	is_triggered_only = yes
 

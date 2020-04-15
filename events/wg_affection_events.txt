@@ -63,6 +63,7 @@ country_event = {
 						has_global_flag = initialize_affection_traits
 						has_affection_trait = no
 					}
+					set_variable = { which = affection_level value = 1 }
 					switch = {
 						trigger = leader_class
 						governor = { add_trait = leader_trait_governor_affection_lv1 }
@@ -79,29 +80,34 @@ country_event = {
 							limit = { ROOT = { any_owned_sector = { leader = { is_same_value = PREVPREVPREV }}}}
 							random_list = {
 								1 = {
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 2 }
-										add = 1
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 4 }
-										add = 2
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 6 }
-										add = 4
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 8 }
-										add = 8
-									}
+									
 									change_variable = { which = "affection" value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
 									check_level_up_governor_affection_trait = yes
 								}
-								14 = {
+								24 = {
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 2 }
+										add = -5
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 4 }
+										add = -5
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 6 }
+										add = -5
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 8 }
+										add = -5
+									}
 									modifier = {
 										check_variable = { which = "months_no_affection" value >= 10 }
+										add = -4
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 12 }
 										factor = 0
 									}
 									change_variable = { which = "months_no_affection" value = 1 }
@@ -122,20 +128,12 @@ country_event = {
 							random_list = {
 								1 = {
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 1 }
-										add = 1
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 2 }
-										add = 2
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 3 }
+										check_variable = { which = "months_no_affection" value >= 8 }
 										add = 4
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 4 }
-										add = 8
+										check_variable = { which = "months_no_affection" value >= 10 }
+										add = 4
 									}
 									change_variable = { which = "affection" value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
@@ -143,7 +141,19 @@ country_event = {
 								}
 								14 = {
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 5 }
+										check_variable = { which = "months_no_affection" value >= 2 }
+										add = -3
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 4 }
+										add = -2
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 6 }
+										add = -5
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 12 }
 										factor = 0
 									}
 									change_variable = { which = "months_no_affection" value = 1 }
@@ -279,7 +289,16 @@ event = {
 				}
 			}
 		}
-		
+		create_country = {
+			type = wg_majia_country
+			name = "传火了"
+			auto_delete = no
+			ignore_initial_colony_error = yes
+			effect = {
+				save_global_event_target_as = majia_country
+				set_country_flag = majia_country
+			}
+		}
 	}
 }
 
@@ -303,30 +322,34 @@ ship_event = {
 	immediate = {
 		leader = { random_list = {
 			1 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 9 }
-					add = 4
-				}
-				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 12 }
-					add = 5
-				}
 				change_variable = { which = "affection" value = 1 }
 				set_variable = { which = "planets_no_affection" value = 0 }
 				check_level_up_scientist_affection_trait = yes
 			}
-			14 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 3 }
-					add = -5
-				}
+			39 = {
 				modifier = {
 					check_variable = { which = "planets_no_affection" value >= 6 }
 					add = -5
 				}
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 15 }
-					factor = 0
+					check_variable = { which = "planets_no_affection" value >= 12 }
+					add = -10
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection" value >= 18 }
+					add = -10
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection" value >= 24 }
+					add = -5
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection" value >= 32 }
+					add = -5
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection" value >= 40 }
+					add = -2
 				}
 				change_variable = { which = "planets_no_affection" value = 1 }
 			}
@@ -354,21 +377,25 @@ ship_event = {
 	immediate = {
 		leader = { random_list = {
 			1 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 1 }
-					add = 1
-				}
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 2 }
-					add = 3
-				}
 				change_variable = { which = "affection" value = 1 }
 				set_variable = { which = "systems_no_affection" value = 0 }
 				check_level_up_scientist_affection_trait = yes
 			}
-			2 = {
+			9 = {
+				modifier = {
+					check_variable = { which = "systems_no_affection" value >= 1 }
+					add = -3
+				}
+				modifier = {
+					check_variable = { which = "systems_no_affection" value >= 2 }
+					add = -2
+				}
 				modifier = {
 					check_variable = { which = "systems_no_affection" value >= 3 }
+					add = -2
+				}
+				modifier = {
+					check_variable = { which = "systems_no_affection" value >= 5 }
 					factor = 0
 				}
 				change_variable = { which = "systems_no_affection" value = 1 }
@@ -397,29 +424,29 @@ country_event = {
 			random_list = {
 				1 = {
 					modifier = {
-						check_variable = { which = "techs_no_affection" value >= 2 }
+						check_variable = { which = "techs_no_affection" value >= 5 }
 						add = 1
-					}
-					modifier = {
-						check_variable = { which = "techs_no_affection" value >= 3 }
-						add = 2
-					}
-					modifier = {
-						check_variable = { which = "techs_no_affection" value >= 4 }
-						add = 4
 					}
 					change_variable = { which = "affection" value = 1 }
 					set_variable = { which = "techs_no_affection" value = 0 }
 					check_level_up_scientist_affection_trait = yes
 				}
-				3 = {
+				19 = {
 					modifier = {
 						check_variable = { which = "techs_no_affection" value >= 1 }
-						add = -1
+						add = -5
 					}
 					modifier = {
-						check_variable = { which = "techs_no_affection" value >= 5 }
-						factor = 0
+						check_variable = { which = "techs_no_affection" value >= 2 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "techs_no_affection" value >= 3 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "techs_no_affection" value >= 4 }
+						add = -3
 					}
 					change_variable = { which = "techs_no_affection" value = 1 }
 				}
@@ -460,7 +487,7 @@ country_event = {
 			}
 			else_if = {
 				limit = { 
-					leader = { has_leader_flag = wsg_lady_admiral }
+					leader = { has_leader_flag = wsg_lady_leader }
 					NOR = { 
 						has_fleet_flag = counting_affection
 						owner = { has_country_flag = lady_affection_max }
@@ -490,7 +517,7 @@ country_event = {
 			}
 			else_if = {
 				limit = { 
-					leader = { has_leader_flag = wsg_lady_admiral }
+					leader = { has_leader_flag = wsg_lady_leader }
 					NOR = { 
 						has_fleet_flag = counting_affection
 						owner = { has_country_flag = lady_affection_max }
@@ -883,7 +910,6 @@ country_event = {
 		set_variable = { which = leader_id value = 0 }
 		country_event = { id = wg_aft.17 }
 	}
-
 }
 
 # 誓约——领袖选择窗口 翻页
@@ -966,17 +992,14 @@ country_event = {
 		}
 		else = { change_variable = { which = leader_id value = 1 }}
 
-		if = {
-			limit = { check_variable = { which = leader_id value <= num_marriable_leader }}
-			random_owned_leader = { # 这页的第五名领袖
-				limit = { 
-					has_leader_flag = can_be_married
-					check_variable = { which = leader_id value = ROOT }
-				}
-				save_event_target_as = leader_tobe_view_5
+		random_owned_leader = { # 这页的第五名领袖
+			limit = { 
+				has_leader_flag = can_be_married
+				check_variable = { which = leader_id value = ROOT }
 			}
-			set_variable = { which = reminder value = 0 }
+			save_event_target_as = leader_tobe_view_5
 		}
+		set_variable = { which = reminder value = 0 }
 		country_event = { id = wg_aft.18 }
 	}
 }
@@ -996,8 +1019,11 @@ country_event = {
 	}
 
 	option = {
-		name = test_only_ring+1
+		name = test_only_add_ring
 		change_variable = { which = wsg_rings value = 1 }
+		custom_tooltip = reminder_for_test
+		is_dialog_only = yes
+		response_text = wg_aft.18.desc
 	}
 	option = {
 		allow = {
@@ -1139,6 +1165,10 @@ country_event = {
 		event_target:married_leader = {
 			set_leader_flag = married
 			if = {
+				limit = { NOT = { has_leader_flag = wsg_event_leader }}
+				set_leader_flag = can_revive
+			}
+			if = {
 				limit = { has_leader_flag = affection_max }
 				set_variable = { which = affection_level value = 5 }
 				switch = {
@@ -1170,6 +1200,7 @@ country_event = {
 
 	option = {
 		name = wg_aft.19.a
+		custom_tooltip = wg_aft.19.a.tooltip
 	}
 }
 
@@ -1213,7 +1244,7 @@ country_event = {
 					add_trait = leader_trait_general_affection_lv4_max
 				}
 				ruler = { 
-					set_variable = { which = "affection" value = 160 }
+					set_variable = { which = "affection" value = 159 }
 					remove_ruler_affection_trait = yes
 					add_ruler_trait = leader_trait_ruler_affection_lv4_max
 				}
@@ -1293,30 +1324,34 @@ ship_event = {
 	immediate = {
 		owner = { random_list = {
 			1 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 9 }
-					add = 4
-				}
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 12 }
-					add = 5
-				}
 				change_variable = { which = "lady_affection" value = 1 }
 				set_variable = { which = "planets_no_affection_lady" value = 0 }
 				check_level_up_lady_science_ship_affection_trait = yes
 			}
-			14 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 3 }
-					add = -5
-				}
+			39 = {
 				modifier = {
 					check_variable = { which = "planets_no_affection_lady" value >= 6 }
 					add = -5
 				}
 				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 15 }
-					factor = 0
+					check_variable = { which = "planets_no_affection_lady" value >= 12 }
+					add = -10
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection_lady" value >= 18 }
+					add = -10
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection_lady" value >= 24 }
+					add = -5
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection_lady" value >= 32 }
+					add = -5
+				}
+				modifier = {
+					check_variable = { which = "planets_no_affection_lady" value >= 40 }
+					add = -2
 				}
 				change_variable = { which = "planets_no_affection_lady" value = 1 }
 			}
@@ -1338,21 +1373,25 @@ ship_event = {
 	immediate = {
 		owner = { random_list = {
 			1 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 1 }
-					add = 1
-				}
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 2 }
-					add = 3
-				}
 				change_variable = { which = "lady_affection" value = 1 }
 				set_variable = { which = "systems_no_affection_lady" value = 0 }
 				check_level_up_lady_science_ship_affection_trait = yes
 			}
-			2 = {
+			9 = {
+				modifier = {
+					check_variable = { which = "systems_no_affection_lady" value >= 1 }
+					add = -3
+				}
+				modifier = {
+					check_variable = { which = "systems_no_affection_lady" value >= 2 }
+					add = -2
+				}
 				modifier = {
 					check_variable = { which = "systems_no_affection_lady" value >= 3 }
+					add = -2
+				}
+				modifier = {
+					check_variable = { which = "systems_no_affection_lady" value >= 5 }
 					factor = 0
 				}
 				change_variable = { which = "systems_no_affection_lady" value = 1 }
@@ -1407,5 +1446,1327 @@ fleet_event = {
 			}
 		}}
 		fleet_event = { id = wg_aft.1003 days = 1 }
+	}
+}
+
+country_event = {
+	id = wg_aft.2000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { which = "num_governor" value = 0 }
+		set_variable = { which = "num_scientist" value = 0 }
+		set_variable = { which = "num_admiral" value = 0 }
+		set_variable = { which = "num_general" value = 0 }
+		every_owned_leader = {
+			limit = {
+				NOT = { has_leader_flag = wsg_lady_leader }
+				is_wg_leader = yes
+			}
+			switch = {
+				trigger = leader_class
+				governor = { 
+					ROOT = { change_variable = { which = "num_governor" value = 1 }}
+					set_variable = { which = "num_governor" value = ROOT }
+					set_variable = { which = "show_id" value = "num_governor" }
+					set_variable = { which = "num_governor" value = 0 }
+					if = {
+						limit = { check_variable = { which = "affection_level" value < 2 }}
+						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv2 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 2 }}
+						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv3 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 3 }}
+						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv4 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 4 }}
+						if = {
+							limit = { has_leader_flag = affection_max }
+							set_variable = { which = "affection_to_level_up" value = 0 }
+						}
+						else = { set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv5 }}
+					}
+				}
+				scientist = { 
+					ROOT = { change_variable = { which = "num_scientist" value = 1 }}
+					set_variable = { which = "num_scientist" value = ROOT }
+					set_variable = { which = "show_id" value = "num_scientist" }
+					set_variable = { which = "num_scientist" value = 0 }
+					if = {
+						limit = { check_variable = { which = "affection_level" value < 2 }}
+						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv2 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 2 }}
+						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv3 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 3 }}
+						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv4 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 4 }}
+						if = {
+							limit = { has_leader_flag = affection_max }
+							set_variable = { which = "affection_to_level_up" value = 0 }
+						}
+						else = { set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv5 }}
+					}
+				}
+				admiral = { 
+					ROOT = { change_variable = { which = "num_admiral" value = 1 }}
+					set_variable = { which = "num_admiral" value = ROOT }
+					set_variable = { which = "show_id" value = "num_admiral" }
+					set_variable = { which = "num_admiral" value = 0 }
+					if = {
+						limit = { check_variable = { which = "affection_level" value < 2 }}
+						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv2 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 2 }}
+						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv3 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 3 }}
+						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv4 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 4 }}
+						if = {
+							limit = { has_leader_flag = affection_max }
+							set_variable = { which = "affection_to_level_up" value = 0 }
+						}
+						else = { set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv5 }}
+					}
+				}
+				general = { 
+					ROOT = { change_variable = { which = "num_general" value = 1 }}
+					set_variable = { which = "num_general" value = ROOT }
+					set_variable = { which = "show_id" value = "num_general" }
+					set_variable = { which = "num_general" value = 0 }
+					if = {
+						limit = { check_variable = { which = "affection_level" value < 2 }}
+						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv2 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 2 }}
+						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv3 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 3 }}
+						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv4 }
+					}
+					else_if = {
+						limit = { check_variable = { which = "affection_level" value = 4 }}
+						if = {
+							limit = { has_leader_flag = affection_max }
+							set_variable = { which = "affection_to_level_up" value = 0 }
+						}
+						else = { set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv5 }}
+					}
+				}
+			}
+			subtract_variable = { which = "affection_to_level_up" value = "affection" }
+		}
+		set_variable = { which = "show_id" value = 0 }
+		set_variable = { which = "show_leader_class" value = 0 }
+		country_event = { id = wg_aft.2005 }
+	}
+}
+# 翻页（总督）
+country_event = {
+	id = wg_aft.2001
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		change_variable = { which = "show_id" value = 1 }
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_governor" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = governor
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_1
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_governor" }}
+			set_variable = { which = "reminder2" value = 2 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_governor" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = governor
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_2
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_governor" }}
+			set_variable = { which = "reminder2" value = 1 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_governor" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = governor
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_3
+			}
+			set_variable = { which = "reminder2" value = 0 }
+			break = yes
+		}
+		country_event = { id = wg_aft.2006 }
+	}
+}
+# 翻页（科学家）
+country_event = {
+	id = wg_aft.2002
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		change_variable = { which = "show_id" value = 1 }
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_scientist" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = scientist
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_1
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
+			set_variable = { which = "reminder2" value = 2 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_scientist" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = scientist
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_2
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
+			set_variable = { which = "reminder2" value = 1 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = scientist
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_3
+			}
+			set_variable = { which = "reminder2" value = 0 }
+			break = yes
+		}
+		country_event = { id = wg_aft.2006 }
+	}
+}
+# 翻页（海军上将）
+country_event = {
+	id = wg_aft.2003
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		change_variable = { which = "show_id" value = 1 }
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_admiral" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = admiral
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_1
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
+			set_variable = { which = "reminder2" value = 2 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_admiral" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = admiral
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_2
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
+			set_variable = { which = "reminder2" value = 1 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = admiral
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_3
+			}
+			set_variable = { which = "reminder2" value = 0 }
+			break = yes
+		}
+		country_event = { id = wg_aft.2006 }
+	}
+}
+# 翻页（陆军将军）
+country_event = {
+	id = wg_aft.2004
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		change_variable = { which = "show_id" value = 1 }
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_general" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = general
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_1
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_general" }}
+			set_variable = { which = "reminder2" value = 2 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value <= "num_general" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = general
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_2
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_general" }}
+			set_variable = { which = "reminder2" value = 1 }
+			country_event = { id = wg_aft.2006 }
+			break = yes
+		}
+		else = { change_variable = { which = "show_id" value = 1 }}
+
+		if = {
+			limit = { check_variable = { which = "show_id" value = "num_general" }}
+			random_owned_leader = { # 这页的第一名领袖
+				limit = { 
+					leader_class = general
+					check_variable = { which = "show_id" value = ROOT }
+				}
+				save_event_target_as = leader_tobe_show_3
+			}
+			set_variable = { which = "reminder2" value = 0 }
+			break = yes
+		}
+		country_event = { id = wg_aft.2006 }
+	}
+}
+
+country_event = {
+	id = wg_aft.2005
+	title = wg_aft.2005.name
+	desc = wg_aft.2005.desc
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			FROM = { is_same_value = ROOT }
+			NOT = {
+				has_active_event = {
+					wg_aft.2005
+					wg_aft.2006
+					wg_aft.2007
+					wg_aft.2008
+				}
+			}
+		}
+	}
+
+	option = { #查看总督的好感度
+		name = wg_aft.2005.a
+		trigger = {
+			check_variable = { which = "num_governor" value > 0 }
+		}
+		hidden_effect = {
+			set_variable = { which = "leader_class_showing" value = 1 }
+			set_variable = { which = "show_id" value = 0 }
+			country_event = { id = wg_aft.2001 }
+		}
+	}
+	option = { #查看科学家的好感度
+		trigger = {
+			check_variable = { which = "num_scientist" value > 0 }
+		}
+		name = wg_aft.2005.b
+		hidden_effect = {
+			set_variable = { which = "leader_class_showing" value = 2 }
+			set_variable = { which = "show_id" value = 0 }
+			country_event = { id = wg_aft.2002 }
+		}
+	}
+	option = { #查看海军上将的好感度
+		trigger = {
+			check_variable = { which = "num_admiral" value > 0 }
+		}
+		name = wg_aft.2005.c
+		hidden_effect = {
+			set_variable = { which = "leader_class_showing" value = 3 }
+			set_variable = { which = "show_id" value = 0 }
+			country_event = { id = wg_aft.2003 }
+		}
+	}
+	option = { #查看陆军将军的好感度
+		trigger = {
+			check_variable = { which = "num_general" value > 0 }
+		}
+		name = wg_aft.2005.d
+		hidden_effect = {
+			set_variable = { which = "leader_class_showing" value = 4 }
+			set_variable = { which = "show_id" value = 0 }
+			country_event = { id = wg_aft.2004 }
+		}
+	}
+	option = { #查看统治者的好感度
+		name = wg_aft.2005.e
+		hidden_effect = {
+			ruler = {
+				if = {
+					limit = { check_variable = { which = "affection_level" value < 2 }}
+					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv2 }
+				}
+				else_if = {
+					limit = { check_variable = { which = "affection_level" value = 2 }}
+					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv3 }
+				}
+				else_if = {
+					limit = { check_variable = { which = "affection_level" value = 3 }}
+					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv4 }
+				}
+				else_if = {
+					limit = { check_variable = { which = "affection_level" value = 4 }}
+					if = {
+						limit = { has_leader_flag = affection_max }
+						set_variable = { which = "affection_to_level_up" value = 0 }
+					}
+					else = { set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv5 }}
+				}
+			}
+			country_event = { id = wg_aft.2007 }
+		}
+	}
+	option = { #查看大小姐的好感度
+		name = wg_aft.2005.f
+		trigger = {
+			has_country_flag = gain_wsg_lady
+		}
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = "lady_affection_level" value < 2 }}
+				set_variable = { which = "lady_affection_to_level_up" value = @ruler_affection_to_lv2 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "lady_affection_level" value = 2 }}
+				set_variable = { which = "lady_affection_to_level_up" value = @ruler_affection_to_lv3 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "lady_affection_level" value = 3 }}
+				set_variable = { which = "lady_affection_to_level_up" value = @ruler_affection_to_lv4 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "lady_affection_level" value = 4 }}
+				if = {
+					limit = { has_country_flag = lady_affection_max }
+					set_variable = { which = "lady_affection_to_level_up" value = 0 }
+				}
+				else = { set_variable = { which = "lady_affection_to_level_up" value = @ruler_affection_to_lv5 }}
+			}
+			country_event = { id = wg_aft.2008 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.2006
+	title = wg_aft.2006.name
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	desc = { # 1N 2N 3N
+		trigger = {
+			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+		}
+		text = wg_aft.2006.desc.a
+	}
+	desc = { # 1Y 2N 3N
+		trigger = {
+			event_target:leader_tobe_show_1 = { has_leader_flag = married }
+			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+		}
+		text = wg_aft.2006.desc.b
+	}
+	desc = { # 1N 2Y 3N
+		trigger = {
+			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+		}
+		text = wg_aft.2006.desc.c
+	}
+	desc = { # 1N 2N 3Y
+		trigger = {
+			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_3 = { has_leader_flag = married }
+		}
+		text = wg_aft.2006.desc.d
+	}
+	desc = { # 1Y 2Y 3N
+		trigger = {
+			event_target:leader_tobe_show_1 = { has_leader_flag = married }
+			event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+		}
+		text = wg_aft.2006.desc.e
+	}
+	desc = { # 1Y 2N 3Y
+		trigger = {
+			event_target:leader_tobe_show_1 = { has_leader_flag = married }
+			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_3 = { has_leader_flag = married }
+		}
+		text = wg_aft.2006.desc.f
+	}
+	desc = { # 1N 2Y 3Y
+		trigger = {
+			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			event_target:leader_tobe_show_3 = { has_leader_flag = married }
+		}
+		text = wg_aft.2006.desc.g
+	}
+	desc = { # 1Y 2Y 3Y
+		trigger = {
+			event_target:leader_tobe_show_1 = { has_leader_flag = married }
+			event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			event_target:leader_tobe_show_3 = { has_leader_flag = married }
+		}
+		text = wg_aft.2006.desc.h
+	}
+
+	option = { #上一页
+		trigger = {
+			check_variable = { which = "show_id" value > 3 }
+		}
+		name = wg_aft.18.a
+		hidden_effect = { 
+			if = {
+				limit = { check_variable = { which = "show_id" value > 6 }}
+				change_variable = { which = "show_id" value = -6 }
+				change_variable = { which = "show_id" value = "reminder2" } 
+			}
+			else = {
+				set_variable = { which = "show_id" value = 0 }
+			}
+			if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 1 }}
+				country_event = { id = wg_aft.2001 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 2 }}
+				country_event = { id = wg_aft.2002 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 3 }}
+				country_event = { id = wg_aft.2003 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 4 }}
+				country_event = { id = wg_aft.2004 }
+			}
+		} 
+	}
+	option = { #下一页
+		trigger = {
+			OR = {
+				AND = {
+					check_variable = { which = "leader_class_showing" value = 1 }
+					check_variable = { which = "show_id" value < "num_governor" }
+				}
+				AND = {
+					check_variable = { which = "leader_class_showing" value = 2 }
+					check_variable = { which = "show_id" value < "num_scientist" }
+				}
+				AND = {
+					check_variable = { which = "leader_class_showing" value = 3 }
+					check_variable = { which = "show_id" value < "num_admiral" }
+				}
+				AND = {
+					check_variable = { which = "leader_class_showing" value = 4 }
+					check_variable = { which = "show_id" value < "num_general" }
+				}
+			}
+		}
+		name = wg_aft.18.b
+		hidden_effect = { 
+			if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 1 }}
+				country_event = { id = wg_aft.2001 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 2 }}
+				country_event = { id = wg_aft.2002 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 3 }}
+				country_event = { id = wg_aft.2003 }
+			}
+			else_if = {
+				limit = { check_variable = { which = "leader_class_showing" value = 4 }}
+				country_event = { id = wg_aft.2004 }
+			}
+		} 
+	}
+	option = { #返回主菜单
+		name = wg_aft.2006.a
+		hidden_effect = {
+			set_variable = { which = "show_id" value = 0 }
+			country_event = { id = wg_aft.2005 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.2007
+	title = wg_aft.2007.name
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { ruler = { NOT = { has_leader_flag = married }}}
+		text = wg_aft.2007.desc.a
+	}
+	desc = {
+		trigger = { ruler = { has_leader_flag = married }}
+		text = wg_aft.2007.desc.b
+	}
+
+	option = { #返回主菜单
+		name = wg_aft.2006.a
+		hidden_effect = {
+			country_event = { id = wg_aft.2005 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.2008
+	title = wg_aft.2008.name
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { NOT = { has_country_flag = married_wsg_lady }}
+		text = wg_aft.2008.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = married_wsg_lady }
+		text = wg_aft.2008.desc.b
+	}
+
+	option = { #返回主菜单
+		name = wg_aft.2006.a
+		hidden_effect = {
+			country_event = { id = wg_aft.2005 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.20
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROM = { 
+			is_wg_leader = yes
+			has_leader_flag = can_revive
+			NOT = { has_leader_flag = wsg_event_leader }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { any_country = { has_country_flag = majia_country }}}
+			create_country = {
+				type = wg_majia_country
+				name = "传火了"
+				auto_delete = no
+				ignore_initial_colony_error = yes
+				effect = {
+					save_global_event_target_as = majia_country
+					set_country_flag = majia_country
+				}
+			}
+		}
+		set_variable = { which = affection value = FROM }
+		set_variable = { which = affection_level value = FROM }
+		save_event_target_as = revive_leader_country
+		FROM = { 
+			if = {
+				limit = { leader_class = governor }
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = governor 
+					effect = { 
+						save_event_target_as = revive_leader
+						set_leader_flag = revive_leader@event_target:revive_leader_country }
+					}
+				}
+				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = scientist 
+					effect = { 
+						save_event_target_as = revive_leader
+						set_leader_flag = revive_leader@event_target:revive_leader_country }
+					}
+				}
+				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
+				break = yes
+			}
+			if = {
+				limit = { leader_class = admiral }
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = admiral 
+					effect = { 
+						save_event_target_as = revive_leader
+						set_leader_flag = revive_leader@event_target:revive_leader_country }
+					}
+				}
+				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = general 
+					effect = { 
+						save_event_target_as = revive_leader
+						set_leader_flag = revive_leader@event_target:revive_leader_country }
+					}
+				}
+				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
+				break = yes
+			}
+			if = { #统治者可直接用exile leader
+				limit = { leader_class = ruler }
+				ROOT = {
+					clone_leader = { target = PREV class = ruler effect = { exile_leader_as = country_ruler }}
+					country_event = { id = wg_aft.32 days = 5 random = 5 } #统治者专用复活事件
+				}
+				break = yes
+			}
+		}
+		if = { #提醒事件
+			limit = { NOT = { has_country_flag = has_married_leader_dead }}
+			set_country_flag = has_married_leader_dead
+			country_event = { id = wg_aft.22 days = 1 }
+		}
+		else = {
+			country_event = { id = wg_aft.30 days = 1}
+		}
+	}
+}
+
+country_event = {
+	id = wg_aft.21
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROM = { 
+			has_leader_flag = wsg_event_leader
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { any_country = {
+				has_country_flag = majia_country
+			}}}
+			create_country = {
+				type = wg_majia_country
+				name = "传火了"
+				auto_delete = no
+				ignore_initial_colony_error = yes
+				effect = {
+					save_global_event_target_as = majia_country
+					set_country_flag = majia_country
+				}
+			}
+		}
+		set_variable = { which = affection value = FROM }
+		set_variable = { which = affection_level value = FROM }
+		FROM = { 
+			if = { #劳模
+				limit = { has_leader_flag = overtime_yamato }
+				ROOT = { 
+					country_event = { id = wg_aft.23 days = 180 random = 180 }
+					set_variable = { which = yamato_affection value = affection }
+					set_variable = { which = yamato_affection_level value = affection_level }
+				}
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = governor effect = { set_leader_flag = Yamato }}
+				}
+				break = yes
+			}
+			if = { #老罗
+				limit = { has_trait = leader_trait_admiral_Rodney }
+				ROOT = { 
+					country_event = { id = wg_aft.24 days = 180 random = 180 }
+					set_variable = { which = rodney_affection value = affection }
+					set_variable = { which = rodney_affection_level value = affection_level }
+				}
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = admiral effect = { set_leader_flag = Rodney }}
+				}
+				break = yes
+			}
+			if = { #艾拉
+				limit = { has_trait = leader_trait_governor_Ella }
+				ROOT = { 
+					country_event = { id = wg_aft.25 days = 180 random = 180}
+					set_variable = { which = ella_affection value = affection }
+					set_variable = { which = ella_affection_level value = affection_level }
+				}
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = governor effect = { set_leader_flag = Ella }}
+				}
+				break = yes
+			}
+			if = { #桑提
+				limit = { has_trait = leader_trait_governor_santee }
+				ROOT = { 
+					country_event = { id = wg_aft.26 days = 180 random = 180 }
+					set_variable = { which = santee_affection value = affection }
+					set_variable = { which = santee_affection_level value = affection_level }
+				}
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = governor effect = { set_leader_flag = Santee }}
+				}
+				break = yes
+			}
+			if = { #花生
+				limit = { has_trait = leader_trait_general_washington_axe }
+				ROOT = { 
+					country_event = { id = wg_aft.27 days = 180 random = 180 }
+					set_variable = { which = washington_affection value = affection }
+					set_variable = { which = washington_affection_level value = affection_level }
+				}
+				event_target:majia_country = { 
+					clone_leader = { target = PREV class = general effect = { set_leader_flag = Washington }}
+				}
+				break = yes
+			}
+			if = { #太太
+				limit = { has_trait = leader_trait_ruler_lexington }
+				ROOT = { 
+					country_event = { id = wg_aft.28 days = 5 random = 5 }
+					set_variable = { which = lex_affection value = affection }
+					set_variable = { which = lex_affection_level value = affection_level }
+					#统治者可以直接放逐然后set leader
+					clone_leader = { target = PREV class = ruler effect = { exile_leader_as = Lexington }} 
+				}
+				break = yes
+			}
+		}
+		set_variable = { which = affection value = 0 }
+		set_variable = { which = affection_level value = 0 }
+	}
+}
+
+country_event = {
+	id = wg_aft.22
+	title = wg_aft.22.name
+	desc = wg_aft.22.desc
+	picture = GFX_evt_revive_leader
+	is_triggered_only = yes
+
+	option = {
+		name = wg_aft.22.a
+	}
+	option = {
+		name = wg_aft.22.b
+	}
+}
+
+country_event = {
+	id = wg_aft.23
+	title = wg_aft.23.name
+	desc = wg_aft.23.desc
+	picture = GFX_evt_revive_yamato
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = Yamato }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = governor 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = Yamato
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = Yamato }
+			set_variable = { which = yamato_affection value = PREV }
+			set_variable = { which = yamato_affection_level value = PREV }
+			set_variable = { which = affection value = yamato_affection }
+			set_variable = { which = affection_level value = yamato_affection_level }
+			subtract_variable = { which = affection value = @governor_affection_to_lv2 }
+			reset_governor_affection_level = yes
+			set_variable = { which = yamato_affection value = 0 }
+			set_variable = { which = yamato_affection_level value = 0 }
+		}
+		set_variable = { which = yamato_affection value = 0 }
+		set_variable = { which = yamato_affection_level value = 0 }
+	}
+
+	option = {
+		name = wg_aft.23.a
+	}
+}
+
+country_event = {
+	id = wg_aft.24
+	title = wg_aft.24.name
+	desc = wg_aft.24.desc
+	picture = GFX_evt_revive_rodney
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = Rodney }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = admiral 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = Rodney
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = Rodney }
+			set_variable = { which = rodney_affection value = PREV }
+			set_variable = { which = rodney_affection_level value = PREV }
+			set_variable = { which = affection value = rodney_affection }
+			set_variable = { which = affection_level value = rodney_affection_level }
+			subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
+			reset_admiral_affection_level = yes
+			set_variable = { which = rodney_affection value = 0 }
+			set_variable = { which = rodney_affection_level value = 0 }
+		}
+		set_variable = { which = rodney_affection value = 0 }
+		set_variable = { which = rodney_affection_level value = 0 }
+	}
+
+	option = {
+		name = wg_aft.24.a
+	}
+}
+
+country_event = {
+	id = wg_aft.25
+	title = wg_aft.25.name
+	desc = wg_aft.25.desc
+	picture = GFX_evt_wsg_Istanbul
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = Ella }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = governor 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = Ella
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = Ella }
+			set_variable = { which = ella_affection value = PREV }
+			set_variable = { which = ella_affection_level value = PREV }
+			set_variable = { which = affection value = ella_affection }
+			set_variable = { which = affection_level value = ella_affection_level }
+			subtract_variable = { which = affection value = @governor_affection_to_lv2 }
+			reset_governor_affection_level = yes
+			set_variable = { which = ella_affection value = 0 }
+			set_variable = { which = ella_affection_level value = 0 }
+		}
+		set_variable = { which = ella_affection value = 0 }
+		set_variable = { which = ella_affection_level value = 0 }
+	}
+
+	option = {
+		name = wg_aft.25.a
+	}
+}
+
+country_event = {
+	id = wg_aft.26
+	title = wg_aft.26.name
+	desc = wg_aft.26.desc
+	picture = GFX_evt_revive_santee
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = Santee }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = governor 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = Santee
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = Santee }
+			set_variable = { which = santee_affection value = PREV }
+			set_variable = { which = santee_affection_level value = PREV }
+			set_variable = { which = affection value = santee_affection }
+			set_variable = { which = affection_level value = santee_affection_level }
+			subtract_variable = { which = affection value = @governor_affection_to_lv2 }
+			reset_governor_affection_level = yes
+			set_variable = { which = santee_affection value = 0 }
+			set_variable = { which = santee_affection_level value = 0 }
+		}
+		set_variable = { which = santee_affection value = 0 }
+		set_variable = { which = santee_affection_level value = 0 }
+	}
+
+	option = {
+		name = wg_aft.26.a
+	}
+}
+
+country_event = {
+	id = wg_aft.27
+	title = wg_aft.27.name
+	desc = wg_aft.27.desc
+	picture = GFX_evt_revive_washington
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = Washington }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = general 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_variable = { which = washington_affection value = ROOT }
+						set_variable = { which = washington_affection_level value = ROOT }
+						set_variable = { which = affection value = washington_affection }
+						set_variable = { which = affection_level value = washington_affection_level }
+						subtract_variable = { which = affection value = @general_affection_to_lv2 }
+						reset_general_affection_level = yes
+						set_variable = { which = washington_affection value = 0 }
+						set_variable = { which = washington_affection_level value = 0 }
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		set_variable = { which = washington_affection value = 0 }
+		set_variable = { which = washington_affection_level value = 0 }
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = wg_aft.28
+	title = wg_aft.28.name
+	desc = wg_aft.28.desc
+	picture = GFX_evt_revive_lex
+	is_triggered_only = yes
+
+	immediate = {
+		set_leader = Lexington
+		ruler = {
+			set_leader_flag = wsg_event_leader
+			set_variable = { which = lex_affection value = PREV }
+			set_variable = { which = lex_affection_level value = PREV }
+			set_variable = { which = affection value = lex_affection }
+			set_variable = { which = affection_level value = lex_affection_level }
+			subtract_variable = { which = affection value = @ruler_affection_to_lv2 }
+			reset_ruler_affection_level = yes
+			set_variable = { which = lex_affection value = 0 }
+			set_variable = { which = lex_affection_level value = 0 }
+			set_age = 17
+			change_leader_portrait = wsg29_3
+		}
+		set_variable = { which = lex_affection value = 0 }
+		set_variable = { which = lex_affection_level value = 0 }
+		set_country_flag = set_lex_as_ruler
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# 非统治者复活事件
+country_event = {
+	id = wg_aft.29
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = revive_leader@root }
+				switch = {
+					trigger = leader_class
+					governor = { 
+						ROOT = { clone_leader = { target = PREV class = governor effect = { set_leader_flag = revive_leader }}}
+					}
+					scientist = { 
+						ROOT = { clone_leader = { target = PREV class = scientist effect = { set_leader_flag = revive_leader }}}
+					}
+					admiral = { 
+						ROOT = { clone_leader = { target = PREV class = admiral effect = { set_leader_flag = revive_leader }}}
+					}
+					general = { 
+						ROOT = { clone_leader = { target = PREV class = general effect = { set_leader_flag = revive_leader }}}
+					}
+					ruler = { 
+					}
+				}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = revive_leader }
+			remove_leader_flag = can_revive #以防万一
+			set_leader_flag = married
+			set_variable = { which = affection value = PREV }
+			set_variable = { which = affection_level value = PREV }
+			switch = {
+				trigger = leader_class
+				governor = { 
+					subtract_variable = { which = affection value = @governor_affection_to_lv2 }
+					reset_governor_affection_level = yes
+				}
+				scientist = { 
+					subtract_variable = { which = affection value = @scientist_affection_to_lv2 }
+					reset_scientist_affection_level = yes
+				}
+				admiral = { 
+					subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
+					reset_admiral_affection_level = yes
+				}
+				general = { 
+					subtract_variable = { which = affection value = @general_affection_to_lv2 }
+					reset_general_affection_level = yes
+				}
+				ruler = { 
+				}
+			}
+		}
+		set_variable = { which = affection value = 0 }
+		set_variable = { which = affection_level value = 0 }
+	}
+}
+
+country_event = {
+	id = wg_aft.30
+	title = wg_aft.22.name
+	desc = wg_aft.30.desc
+	picture = GFX_evt_revive_leader
+	is_triggered_only = yes
+
+	option = {
+		name = wg_aft.22.b
+	}
+}
+
+# 领袖专用
+country_event = {
+	id = wg_aft.32
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_leader = country_ruler
+		ruler = {
+			set_leader_flag = revive_leader
+			set_leader_flag = married
+			remove_leader_flag = can_revive
+			set_variable = { which = affection value = PREV }
+			set_variable = { which = affection_level value = PREV }
+			subtract_variable = { which = affection value = @ruler_affection_to_lv2 }
+			reset_ruler_affection_level = yes
+		}
+		remove_country_flag = set_lex_as_ruler #以防万一
+	}
+}
+
+# 已复活过一次，不可再复活
+country_event = {
+	id = wg_aft.31
+	title = wg_aft.31.name
+	desc = wg_aft.31.desc
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { 
+			is_wg_leader = yes
+			has_leader_flag = revive_leader
+			NOT = { has_leader_flag = can_revive }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = pass_leader }
+	}
+
+	option = {
+		name = wg_aft.31.a
+	}
+}
+
+country_event = {
+	id = wg_aft.12452
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_event_leader }
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_aft.12453
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = married }
+			kill_leader = {
+				show_notification = yes
+			}
+		}
 	}
 }

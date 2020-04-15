@@ -1,0 +1,83 @@
+﻿l_simp_chinese:
+###############################
+ wg_aft.18.name:0 "誓约仪式"
+ test_only_add_ring:0 "买一个戒指"
+ reminder_for_test:0 "§R为了方便测试，这是作弊给你的选项！§!"
+ wg_aft.18.desc:0 "请选择你要进行誓约仪式的对象。\n§Y对该领袖进行誓约仪式后，可解锁最后一阶好感度并获得强力特性。§!"
+ wg_aft.18.leader1:0 "[leader_tobe_view_1.GetName]"
+ wg_aft.18.leader2:0 "[leader_tobe_view_2.GetName]"
+ wg_aft.18.leader3:0 "[leader_tobe_view_3.GetName]"
+ wg_aft.18.leader4:0 "[leader_tobe_view_4.GetName]"
+ wg_aft.18.leader5:0 "[leader_tobe_view_5.GetName]"
+ wg_aft.18.a:0 "上一页"
+ wg_aft.18.b:0 "下一页"
+ wg_aft.18.c:0 "退出"
+
+ wg_aft.19.name:0 "与[married_leader.GetName]的誓约仪式"
+ wg_aft.19.desc:0 "在精心准备好的场地之内，于众人的见证之下，你穿着代表新郎的服装，拿着这个由宇宙最珍贵的结晶铸造成的誓约之戒，逐渐走向前方那宛如太阳般耀眼的她面前..."
+ wg_aft.19.a:0 "嫁给我，好吗？§Y[married_leader.GetName]§!"
+ wg_aft.19.a.tooltip:0 "§Y新娘似乎受到了某种的祝福§!"
+
+ edict_wg_wedding:0 "举行誓约仪式"
+ edict_wg_wedding_desc:0 "准备好戒指了吗？"
+
+ wg_aft.22.name:0 "神秘的黑暗圆环"
+ wg_aft.22.desc:0 "最近，[revive_leader.GetName]在一次事故中被判定为死亡。但数日之后她竟然重新出现原来的办公室中。[revive_leader.GetName]对于之前的发生的事情一无所知，只知道似乎看到一个黑暗的圆环。我们的科学家无法解释这神奇的现象。但一些被称为魂学家的舰娘表示这是一种特殊的一次性黑暗之环，与传说中能令人无数次起死回生的黑暗之环不同，它只能为受到祝福的人抵挡一次死亡的威胁。"
+ wg_aft.22.a:0 "太神奇了！"
+ wg_aft.22.b:0 "我们必须慎重小心！"
+ wg_aft.30.desc:0 "[revive_leader.GetName]在最近的事故中去世了，但[revive_leader.GetName]在之前的誓约仪式中受到过祝福。正如魂学家所说的那样，[revive_leader.GetName]在数日后复活。接下来的日子我们不能在这么粗心大意了！"
+ wg_aft.31.name:0 "奇迹与魔法不是免费的"
+ wg_aft.31.desc:0 "十分遗憾[pass_leader.GetName]，又一次牺牲了，但这一次，我们真的永远的失去了她。"
+ wg_aft.31.a:0 "她会永远在我们心中的"
+ wg_aft.23.name:0 "侥幸逃生的劳模"
+ wg_aft.23.desc:0 "在最近一次事故中被我们判定为不可能存活的大和二十三世突然完好无损地出现在我们眼前，但是她本人表示并不记得事故发生时的事情，因此我们也无从得知缘由。"
+ wg_aft.23.a:0 "太好了，劳模又可以继续做（加）贡（班）献了"
+ wg_aft.24.name:0 "死里逃生的罗德尼"
+ wg_aft.24.desc:0 "最近一场战斗中被我们判定为死亡的海军上将罗德尼，被发现搭乘着一艘救生船返回了我们的首都。据罗德尼上将后来描述，全舰的船员为了让她逃生，一致决定牺牲自己。"
+ wg_aft.24.a:0 "为无名的英雄们默哀"
+ wg_aft.25.name:0 "她如闪电般归来"
+ wg_aft.25.desc:0 "在最近一次事故中被判定为不可能存活的艾拉突然如闪电般归来了！"
+ wg_aft.25.a:0 "全国将会尽情开宴..."
+ wg_aft.26.name:0 "被吊路灯的资本家"
+ wg_aft.26.desc:0 "最近，我们有力的总督桑提突然失踪了，在展开大规模搜索后我们才发现她居然被吊在了一处路灯上！此时的她已经奄奄一息，假如我们来得再晚一点，后果将不堪设想！"
+ wg_aft.26.a:0 "让她不要再卖绳子了"
+ wg_aft.27.name:0 "奇迹般存活的华盛顿"
+ wg_aft.27.desc:0 "在最近一次战斗失踪的华盛顿突然回到了我们的首都！据说她仅用身上的落樱神斧便将包围她的敌人全部反杀并劫持了一艘太空船成功逃生。"
+ wg_aft.28.name:0 "古神的宠儿"
+ wg_aft.28.desc:0 "最近莫名失踪的，我们所有人的精神支柱[THIS.GetRulerTitle]列克星敦突然在一道光芒之下“降临”到我们首都，就如字面意思一般，所有人都目睹到这神圣的一刻。但这一切连她本人也不清楚缘由。可以肯定的是她体内蕴藏的某种神秘力量在暗中救了她一命。"
+
+ wg_aft.2005.name:0 "查看领袖好感度"
+ wg_aft.2005.desc:0 "你可以在此查看领袖的具体好感度数值。\n请注意：领袖池内的领袖是没有好感的。而刚刚被招募的领袖需要到月中才能被系统检测并设定与好感度有关的资料。"
+ wg_aft.2005.a:0 "查看所有§H总督§!的好感度"
+ wg_aft.2005.b:0 "查看所有§H科学家§!的好感度"
+ wg_aft.2005.c:0 "查看所有§H海军上将§!的好感度"
+ wg_aft.2005.d:0 "查看所有§H陆军将军§!的好感度"
+ wg_aft.2005.e:0 "查看§H统治者§!的好感度"
+ wg_aft.2005.f:0 "查看所有§H大小姐§!的好感度"
+ wg_aft.2005.g:0 "退出"
+ wg_aft.2006.name:0 "领袖好感度明细"
+ wg_aft.2006.desc.a:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.b:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.c:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.d:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.e:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.f:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.g:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.h:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.a:0 "查看其它领袖好感度"
+
+ wg_aft.2007.name:0 "查看统治者好感度"
+ wg_aft.2007.desc.a:0 "[Root.GetRulerTitle][Root.GetRulerName]的好感度级别为§H[Root.Leader.affection_level]§!，好感度为§H[Root.Leader.affection]§!，距离下一级好感度还需要§H[Root.Leader.affection_to_level_up]§!点好感。"
+ wg_aft.2007.desc.b:0 "£sr_ring£ [Root.GetRulerTitle][Root.GetRulerName]的好感度级别为§H[Root.Leader.affection_level]§!，好感度为§H[Root.Leader.affection]§!，距离下一级好感度还需要§H[Root.Leader.affection_to_level_up]§!点好感。"
+
+ wg_aft.2008.name:0 "查看大小姐好感度"
+ wg_aft.2008.desc.a:0 "§H大小姐§!的好感度级别为§H[Root.lady_affection_level]§!，好感度为§H[Root.lady_affection]§!，距离下一级好感度还需要§H[Root.lady_affection_to_level_up]§!点好感。"
+ wg_aft.2008.desc.b:0 "£sr_ring£ §H大小姐§!的好感度级别为§H[Root.lady_affection_level]§!，好感度为§H[Root.lady_affection]§!，距离下一级好感度还需要§H[Root.lady_affection_to_level_up]§!点好感。"

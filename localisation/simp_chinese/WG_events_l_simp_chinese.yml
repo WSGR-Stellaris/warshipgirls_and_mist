@@ -703,20 +703,3 @@
  leader_trait_badseal:0 "海豹肉恐惧症"
  leader_trait_badseal_desc:0 "永生难忘的可怕味道。"
  #############
- wg_aft.18.name:0 "誓约仪式"
- wg_aft.18.desc:0 "请选择你要进行誓约仪式的对象。\n§Y对该领袖进行誓约仪式后，可解锁最后一阶好感度并获得强力特性。§!"
- wg_aft.18.leader1:0 "[leader_tobe_view_1.GetName]"
- wg_aft.18.leader2:0 "[leader_tobe_view_2.GetName]"
- wg_aft.18.leader3:0 "[leader_tobe_view_3.GetName]"
- wg_aft.18.leader4:0 "[leader_tobe_view_4.GetName]"
- wg_aft.18.leader5:0 "[leader_tobe_view_5.GetName]"
- wg_aft.18.a:0 "上一页"
- wg_aft.18.b:0 "下一页"
- wg_aft.18.c:0 "退出"
-
- wg_aft.19.name:0 "与[married_leader.GetName]的誓约仪式"
- wg_aft.19.desc:0 "在精心准备好的场地之内，于众人的见证之下，你穿着代表新郎的服装，拿着这个由宇宙最珍贵的结晶铸造成的誓约之戒，逐渐走向前方那宛如太阳般耀眼的她面前..."
- wg_aft.19.a:0 "嫁给我，好吗？§Y[married_leader.GetName]§!"
-
- edict_wg_wedding:0 "举行誓约仪式"
- edict_wg_wedding_desc:0 "准备好戒指了吗？"

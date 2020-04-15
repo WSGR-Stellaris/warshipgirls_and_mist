@@ -35,7 +35,7 @@ building_wsg_yamato_monument = {
 	planet_modifier = {
 		job_entertainer_add = 2
 		planet_jobs_worker_produces_mult = 0.15
-		planet_jobs_slave_produces_mult = 0.30
+		planet_jobs_slave_produces_mult = 0.15
 	}
 	
 	prerequisites = {

@@ -6,7 +6,7 @@ wsg_pantsu_maker = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -35,7 +35,7 @@ wsg_neo_producer = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -63,7 +63,7 @@ barthroom_worker = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -187,7 +187,7 @@ wsg_gas_refiner = {
 	
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -219,7 +219,7 @@ wsg_chemist = {
 	
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -251,7 +251,7 @@ category = specialist
 	
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -283,7 +283,7 @@ wsg_foundry = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
@@ -446,7 +446,7 @@ wsg_soldier = {
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_assimilated = no
 	}
 
@@ -468,7 +468,7 @@ wsg_mahjong = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_enslaved = no
+		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}

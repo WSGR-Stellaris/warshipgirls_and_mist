@@ -1,0 +1,31 @@
+wg_majia_country = {
+	has_difficulty_bonuses = no
+	destroys_starbases = no
+	needs_survey = no
+	has_complete_sensor = yes
+	can_planets_be_attacked = no
+	has_capital = no
+	enforces_borders = no
+	observable = yes
+	government = no
+	orbital_bombardment = no
+	can_use_invalid_technology = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		needs_colony = no
+		hostile = no
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		auto_delete = no
+	}
+
+	custom_diplomacy = yes
+
+	modules = {
+		standard_event_module = {}
+		standard_leader_module = {}
+	}
+}
