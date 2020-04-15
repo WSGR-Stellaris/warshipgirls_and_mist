@@ -46,6 +46,8 @@
  wg_aft.28.name:0 "古神的宠儿"
  wg_aft.28.desc:0 "最近莫名失踪的，我们所有人的精神支柱[THIS.GetRulerTitle]列克星敦突然在一道光芒之下“降临”到我们首都，就如字面意思一般，所有人都目睹到这神圣的一刻。但这一切连她本人也不清楚缘由。可以肯定的是她体内蕴藏的某种神秘力量在暗中救了她一命。"
 
+ edict_check_affection:0 "查看领袖好感度"
+ edict_check_affection_desc:0 "你可以点击此法令查看领袖的具体好感度数值。"
  wg_aft.2005.name:0 "查看领袖好感度"
  wg_aft.2005.desc:0 "你可以在此查看领袖的具体好感度数值。\n请注意：领袖池内的领袖是没有好感的。而刚刚被招募的领袖需要到月中才能被系统检测并设定与好感度有关的资料。"
  wg_aft.2005.a:0 "查看所有§H总督§!的好感度"
@@ -56,6 +58,19 @@
  wg_aft.2005.f:0 "查看所有§H大小姐§!的好感度"
  wg_aft.2005.g:0 "退出"
  wg_aft.2006.name:0 "领袖好感度明细"
+
+ wg_aft.2006.desc.n:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.y:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.nn:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.yn:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.ny:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。"
+
+ wg_aft.2006.desc.yy:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n£sr_ring£ §H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。"
+
  wg_aft.2006.desc.a:0 "§H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
 
  wg_aft.2006.desc.b:0 "£sr_ring£ §H[leader_tobe_show_1.GetName]§!的好感度级别为§H[leader_tobe_show_1.affection_level]§!，好感度为§H[leader_tobe_show_1.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_1.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_2.GetName]§!的好感度级别为§H[leader_tobe_show_2.affection_level]§!，好感度为§H[leader_tobe_show_2.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_2.affection_to_level_up]§!点好感。\n\n§H[leader_tobe_show_3.GetName]§!的好感度级别为§H[leader_tobe_show_3.affection_level]§!，好感度为§H[leader_tobe_show_3.affection]§!，距离下一级好感度还需要§H[leader_tobe_show_3.affection_to_level_up]§!点好感。"
@@ -75,9 +90,9 @@
  wg_aft.2006.a:0 "查看其它领袖好感度"
 
  wg_aft.2007.name:0 "查看统治者好感度"
- wg_aft.2007.desc.a:0 "[Root.GetRulerTitle][Root.GetRulerName]的好感度级别为§H[Root.Leader.affection_level]§!，好感度为§H[Root.Leader.affection]§!，距离下一级好感度还需要§H[Root.Leader.affection_to_level_up]§!点好感。"
- wg_aft.2007.desc.b:0 "£sr_ring£ [Root.GetRulerTitle][Root.GetRulerName]的好感度级别为§H[Root.Leader.affection_level]§!，好感度为§H[Root.Leader.affection]§!，距离下一级好感度还需要§H[Root.Leader.affection_to_level_up]§!点好感。"
+ wg_aft.2007.desc.a:0 "[This.GetRulerTitle][This.GetRulerName]的好感度级别为§H[This.Leader.affection_level]§!，好感度为§H[This.Leader.affection]§!，距离下一级好感度还需要§H[This.Leader.affection_to_level_up]§!点好感。"
+ wg_aft.2007.desc.b:0 "£sr_ring£ [This.GetRulerTitle][This.GetRulerName]的好感度级别为§H[This.Leader.affection_level]§!，好感度为§H[This.Leader.affection]§!，距离下一级好感度还需要§H[This.Leader.affection_to_level_up]§!点好感。"
 
  wg_aft.2008.name:0 "查看大小姐好感度"
- wg_aft.2008.desc.a:0 "§H大小姐§!的好感度级别为§H[Root.lady_affection_level]§!，好感度为§H[Root.lady_affection]§!，距离下一级好感度还需要§H[Root.lady_affection_to_level_up]§!点好感。"
- wg_aft.2008.desc.b:0 "£sr_ring£ §H大小姐§!的好感度级别为§H[Root.lady_affection_level]§!，好感度为§H[Root.lady_affection]§!，距离下一级好感度还需要§H[Root.lady_affection_to_level_up]§!点好感。"
+ wg_aft.2008.desc.a:0 "§H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"
+ wg_aft.2008.desc.b:0 "£sr_ring£ §H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"

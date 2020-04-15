@@ -725,3 +725,34 @@ wg_wedding = {
 		weight = 0
 	}	
 }
+
+check_affection = {
+	length = 0
+
+	potential = {
+		NOT = {
+			has_active_event = {
+				wg_aft.2005
+				wg_aft.2006
+				wg_aft.2007
+				wg_aft.2008
+			}
+		}
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}
+		NOR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}
+	}
+
+	effect = {
+		country_event = { id = wg_aft.2000 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
