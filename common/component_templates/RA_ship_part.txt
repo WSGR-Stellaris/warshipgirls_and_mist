@@ -222,7 +222,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_UNITEDFLEET" }
 	component_set = "RA_weapen_S"
-	projectile_gfx = "gamma_laser_s"
+	projectile_gfx = "wsg_medium_turbolaser_l_r"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 3
@@ -262,7 +262,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_UNITEDFLEET" }
 	component_set = "RA_weapen_L"
-	projectile_gfx = "sh_kinetic_artillery"
+	projectile_gfx = "wsg_heavy_turbo_l_r"
 	tags = { weapon_type_kinetic }
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
@@ -312,7 +312,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_UNITEDFLEET" }
 	component_set = "RA_weapen_X"
-	projectile_gfx = "ra_lance_203"
+	projectile_gfx = "wsg_huge_turbolaser_l_r"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 0

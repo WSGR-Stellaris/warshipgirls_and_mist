@@ -200,6 +200,9 @@ on_fleet_destroyed_victim = {
 		wg_lady.34
 		wg_lady.43
 		wg_boss.23
+		wg_boss.29
+		wg_boss.33
+		wg_boss.37
 	}
 }
 
@@ -356,6 +359,8 @@ on_entering_system = {
 		wg_boss.5
 		wg_boss.20
 		wg_parit.12
+		wg_boss.24
+		wg_boss.36
 	}
 }
 

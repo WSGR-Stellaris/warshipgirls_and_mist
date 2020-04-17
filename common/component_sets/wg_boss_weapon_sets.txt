@@ -11,3 +11,9 @@ component_set = {
 	icon = "GFX_wg_boss_weapen_ion"
 	icon_frame = 1	
 }
+component_set = {
+	key = "wg_boss_gras"
+	
+	icon = "GFX_ship_part_gras"
+	icon_frame = 1	
+}

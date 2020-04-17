@@ -65,35 +65,27 @@ create_wg_fe_fleet = {
 	}					
 }
 create_wg_fe_construction_ship = {					
-	if = {
-		limit = {
-			owner = { has_authority = auth_wg_fe }
-		}
-		create_fleet = {
-			name = "NAME_WG_FE_CONSTRUCTION"
-			effect = {
-                set_owner = event_target:wg_fallen_empire
-                while = {
-                    count = 1
-                    create_ship = {
-                        name = random
-                        design = "NAME_WG_FE_CONSTRUCTION"
-                        graphical_culture = "wsg_04"
-                        upgradable = no
-                    }
-                }					
-                set_location = {
-                    target = PREV
-                    distance = 15
-                    angle = random
-                }
+    create_fleet = {
+        name = "NAME_WG_FE_CONSTRUCTION"
+        effect = {
+            set_owner = event_target:wg_fallen_empire
+            create_ship = {
+                name = random
+                design = "NAME_WG_FE_CONSTRUCTION"
+                graphical_culture = "wsg_04"
+                upgradable = no
             }
-            settings = { 
-                can_upgrade = no 
-                uses_naval_capacity = yes
+            set_location = {
+                target = PREV
+                distance = 15
+                angle = random
             }
-		}						
-	}					
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = yes
+        }
+    }					
 }
 create_wg_fe_colossus = {					
 	if = {

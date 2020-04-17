@@ -81,7 +81,7 @@ country_event = {
 							random_list = {
 								1 = {
 									
-									change_variable = { which = "affection" value = 1 }
+									change_variable = { which = affection value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
 									check_level_up_governor_affection_trait = yes
 								}
@@ -135,7 +135,7 @@ country_event = {
 										check_variable = { which = "months_no_affection" value >= 10 }
 										add = 4
 									}
-									change_variable = { which = "affection" value = 1 }
+									change_variable = { which = affection value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
 									check_level_up_scientist_affection_trait = yes
 								}
@@ -183,7 +183,7 @@ country_event = {
 									check_variable = { which = "months_no_affection" value >= 4 }
 									add = 8
 								}
-								change_variable = { which = "affection" value = 1 }
+								change_variable = { which = affection value = 1 }
 								set_variable = { which = "months_no_affection" value = 0 }
 								check_level_up_ruler_affection_trait = yes
 							}
@@ -227,7 +227,7 @@ country_event = {
 	}
 
 	immediate = {
-		FROM = { change_variable = { which = "affection" value = 3 }}
+		FROM = { change_variable = { which = affection value = 3 }}
 	}
 }
 
@@ -247,7 +247,7 @@ country_event = {
 				general = { remove_general_affection_trait = yes }
 				ruler = { remove_ruler_affection_trait = yes }
 			}
-			set_variable = { which = "affection" value = 0 }
+			set_variable = { which = affection value = 0 }
 		}
 	}
 }
@@ -278,7 +278,7 @@ event = {
 			}
 			every_owned_leader = {
 				limit = { is_wg_leader = yes }
-				set_variable = { which = "affection" value = 1 }
+				set_variable = { which = affection value = 1 }
 				switch = {
 					trigger = leader_class
 					governor = { add_trait = leader_trait_governor_affection_lv1 }
@@ -287,16 +287,6 @@ event = {
 					general = { add_trait = leader_trait_general_affection_lv1 }
 					ruler = { add_ruler_trait = leader_trait_ruler_affection_lv1 }
 				}
-			}
-		}
-		create_country = {
-			type = wg_majia_country
-			name = "传火了"
-			auto_delete = no
-			ignore_initial_colony_error = yes
-			effect = {
-				save_global_event_target_as = majia_country
-				set_country_flag = majia_country
 			}
 		}
 	}
@@ -322,7 +312,7 @@ ship_event = {
 	immediate = {
 		leader = { random_list = {
 			1 = {
-				change_variable = { which = "affection" value = 1 }
+				change_variable = { which = affection value = 1 }
 				set_variable = { which = "planets_no_affection" value = 0 }
 				check_level_up_scientist_affection_trait = yes
 			}
@@ -377,7 +367,7 @@ ship_event = {
 	immediate = {
 		leader = { random_list = {
 			1 = {
-				change_variable = { which = "affection" value = 1 }
+				change_variable = { which = affection value = 1 }
 				set_variable = { which = "systems_no_affection" value = 0 }
 				check_level_up_scientist_affection_trait = yes
 			}
@@ -427,7 +417,7 @@ country_event = {
 						check_variable = { which = "techs_no_affection" value >= 5 }
 						add = 1
 					}
-					change_variable = { which = "affection" value = 1 }
+					change_variable = { which = affection value = 1 }
 					set_variable = { which = "techs_no_affection" value = 0 }
 					check_level_up_scientist_affection_trait = yes
 				}
@@ -558,7 +548,7 @@ fleet_event = {
 					check_variable = { which = "days_combat_no_affection" value >= 16 }
 					add = 6
 				}
-				change_variable = { which = "affection" value = 1 }
+				change_variable = { which = affection value = 1 }
 				set_variable = { which = "days_combat_no_affection" value = 0 }
 				check_level_up_admiral_affection_trait = yes
 			}
@@ -617,7 +607,7 @@ country_event = {
 								check_variable = { which = "battles_won_no_affection" value >= 3 }
 								add = 3
 							}
-							change_variable = { which = "affection" value = 1 }
+							change_variable = { which = affection value = 1 }
 							set_variable = { which = "battles_won_no_affection" value = 0 }
 							check_level_up_admiral_affection_trait = yes
 						}
@@ -745,19 +735,19 @@ country_event = {
 					trigger = leader_class
 					admiral = {
 						while = { count = 3
-							change_variable = { which = "affection" value = 1 }
+							change_variable = { which = affection value = 1 }
 							check_level_up_admiral_affection_trait = yes
 						}
 					}
 					general = {
 						while = { count = 2
-							change_variable = { which = "affection" value = 1 }
+							change_variable = { which = affection value = 1 }
 							check_level_up_general_affection_trait = yes
 						}
 					}
 					ruler = {
 						while = { count = 3
-							change_variable = { which = "affection" value = 1 }
+							change_variable = { which = affection value = 1 }
 							check_level_up_ruler_affection_trait = yes
 						}
 					}
@@ -810,7 +800,7 @@ country_event = {
 				is_wg_leader = yes
 			}}
 			leader = {
-				change_variable = { which = "affection" value = 1 }
+				change_variable = { which = affection value = 1 }
 				check_level_up_general_affection_trait = yes
 			}
 		}}
@@ -847,7 +837,7 @@ country_event = {
 
 	immediate = {
 		ruler = {
-			change_variable = { which = "affection" value = 1 }
+			change_variable = { which = affection value = 1 }
 			check_level_up_ruler_affection_trait = yes
 		}
 	}
@@ -1224,27 +1214,27 @@ country_event = {
 			switch = {
 				trigger = leader_class
 				governor = { 
-					set_variable = { which = "affection" value = 120 }
+					set_variable = { which = affection value = 120 }
 					remove_governor_affection_trait = yes
 					add_trait = leader_trait_governor_affection_lv4_max
 				}
 				scientist = { 
-					set_variable = { which = "affection" value = 200 }
+					set_variable = { which = affection value = 200 }
 					remove_scientist_affection_trait = yes
 					add_trait = leader_trait_scientist_affection_lv4_max 
 				}
 				admiral = { 
-					set_variable = { which = "affection" value = 160 }
+					set_variable = { which = affection value = 160 }
 					remove_admiral_affection_trait = yes
 					add_trait = leader_trait_admiral_affection_lv4_max
 				}
 				general = { 
-					set_variable = { which = "affection" value = 60 }
+					set_variable = { which = affection value = 60 }
 					remove_general_affection_trait = yes
 					add_trait = leader_trait_general_affection_lv4_max
 				}
 				ruler = { 
-					set_variable = { which = "affection" value = 159 }
+					set_variable = { which = affection value = 159 }
 					remove_ruler_affection_trait = yes
 					add_ruler_trait = leader_trait_ruler_affection_lv4_max
 				}
@@ -1455,10 +1445,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_variable = { which = "num_governor" value = 0 }
-		set_variable = { which = "num_scientist" value = 0 }
-		set_variable = { which = "num_admiral" value = 0 }
-		set_variable = { which = "num_general" value = 0 }
+		set_variable = { which = num_governor value = 0 }
+		set_variable = { which = num_scientist value = 0 }
+		set_variable = { which = num_admiral value = 0 }
+		set_variable = { which = num_general value = 0 }
 		every_owned_leader = {
 			limit = {
 				NOT = { has_leader_flag = wsg_lady_leader }
@@ -1467,114 +1457,114 @@ country_event = {
 			switch = {
 				trigger = leader_class
 				governor = { 
-					ROOT = { change_variable = { which = "num_governor" value = 1 }}
-					set_variable = { which = "num_governor" value = ROOT }
-					set_variable = { which = "show_id" value = "num_governor" }
-					set_variable = { which = "num_governor" value = 0 }
+					ROOT = { change_variable = { which = num_governor value = 1 }}
+					set_variable = { which = num_governor value = ROOT }
+					set_variable = { which = show_id value = num_governor }
+					set_variable = { which = num_governor value = 0 }
 					if = {
-						limit = { check_variable = { which = "affection_level" value < 2 }}
-						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv2 }
+						limit = { check_variable = { which = affection_level value < 2 }}
+						set_variable = { which = affection_to_level_up value = @governor_affection_to_lv2 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 2 }}
-						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv3 }
+						limit = { check_variable = { which = affection_level value = 2 }}
+						set_variable = { which = affection_to_level_up value = @governor_affection_to_lv3 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 3 }}
-						set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv4 }
+						limit = { check_variable = { which = affection_level value = 3 }}
+						set_variable = { which = affection_to_level_up value = @governor_affection_to_lv4 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 4 }}
+						limit = { check_variable = { which = affection_level value = 4 }}
 						if = {
 							limit = { has_leader_flag = affection_max }
-							set_variable = { which = "affection_to_level_up" value = 0 }
+							set_variable = { which = affection_to_level_up value = 0 }
 						}
-						else = { set_variable = { which = "affection_to_level_up" value = @governor_affection_to_lv5 }}
+						else = { set_variable = { which = affection_to_level_up value = @governor_affection_to_lv5 }}
 					}
 				}
 				scientist = { 
-					ROOT = { change_variable = { which = "num_scientist" value = 1 }}
-					set_variable = { which = "num_scientist" value = ROOT }
-					set_variable = { which = "show_id" value = "num_scientist" }
-					set_variable = { which = "num_scientist" value = 0 }
+					ROOT = { change_variable = { which = num_scientist value = 1 }}
+					set_variable = { which = num_scientist value = ROOT }
+					set_variable = { which = show_id value = num_scientist }
+					set_variable = { which = num_scientist value = 0 }
 					if = {
-						limit = { check_variable = { which = "affection_level" value < 2 }}
-						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv2 }
+						limit = { check_variable = { which = affection_level value < 2 }}
+						set_variable = { which = affection_to_level_up value = @scientist_affection_to_lv2 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 2 }}
-						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv3 }
+						limit = { check_variable = { which = affection_level value = 2 }}
+						set_variable = { which = affection_to_level_up value = @scientist_affection_to_lv3 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 3 }}
-						set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv4 }
+						limit = { check_variable = { which = affection_level value = 3 }}
+						set_variable = { which = affection_to_level_up value = @scientist_affection_to_lv4 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 4 }}
+						limit = { check_variable = { which = affection_level value = 4 }}
 						if = {
 							limit = { has_leader_flag = affection_max }
-							set_variable = { which = "affection_to_level_up" value = 0 }
+							set_variable = { which = affection_to_level_up value = 0 }
 						}
-						else = { set_variable = { which = "affection_to_level_up" value = @scientist_affection_to_lv5 }}
+						else = { set_variable = { which = affection_to_level_up value = @scientist_affection_to_lv5 }}
 					}
 				}
 				admiral = { 
-					ROOT = { change_variable = { which = "num_admiral" value = 1 }}
-					set_variable = { which = "num_admiral" value = ROOT }
-					set_variable = { which = "show_id" value = "num_admiral" }
-					set_variable = { which = "num_admiral" value = 0 }
+					ROOT = { change_variable = { which = num_admiral value = 1 }}
+					set_variable = { which = num_admiral value = ROOT }
+					set_variable = { which = show_id value = num_admiral }
+					set_variable = { which = num_admiral value = 0 }
 					if = {
-						limit = { check_variable = { which = "affection_level" value < 2 }}
-						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv2 }
+						limit = { check_variable = { which = affection_level value < 2 }}
+						set_variable = { which = affection_to_level_up value = @admiral_affection_to_lv2 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 2 }}
-						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv3 }
+						limit = { check_variable = { which = affection_level value = 2 }}
+						set_variable = { which = affection_to_level_up value = @admiral_affection_to_lv3 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 3 }}
-						set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv4 }
+						limit = { check_variable = { which = affection_level value = 3 }}
+						set_variable = { which = affection_to_level_up value = @admiral_affection_to_lv4 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 4 }}
+						limit = { check_variable = { which = affection_level value = 4 }}
 						if = {
 							limit = { has_leader_flag = affection_max }
-							set_variable = { which = "affection_to_level_up" value = 0 }
+							set_variable = { which = affection_to_level_up value = 0 }
 						}
-						else = { set_variable = { which = "affection_to_level_up" value = @admiral_affection_to_lv5 }}
+						else = { set_variable = { which = affection_to_level_up value = @admiral_affection_to_lv5 }}
 					}
 				}
 				general = { 
-					ROOT = { change_variable = { which = "num_general" value = 1 }}
-					set_variable = { which = "num_general" value = ROOT }
-					set_variable = { which = "show_id" value = "num_general" }
-					set_variable = { which = "num_general" value = 0 }
+					ROOT = { change_variable = { which = num_general value = 1 }}
+					set_variable = { which = num_general value = ROOT }
+					set_variable = { which = show_id value = num_general }
+					set_variable = { which = num_general value = 0 }
 					if = {
-						limit = { check_variable = { which = "affection_level" value < 2 }}
-						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv2 }
+						limit = { check_variable = { which = affection_level value < 2 }}
+						set_variable = { which = affection_to_level_up value = @general_affection_to_lv2 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 2 }}
-						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv3 }
+						limit = { check_variable = { which = affection_level value = 2 }}
+						set_variable = { which = affection_to_level_up value = @general_affection_to_lv3 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 3 }}
-						set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv4 }
+						limit = { check_variable = { which = affection_level value = 3 }}
+						set_variable = { which = affection_to_level_up value = @general_affection_to_lv4 }
 					}
 					else_if = {
-						limit = { check_variable = { which = "affection_level" value = 4 }}
+						limit = { check_variable = { which = affection_level value = 4 }}
 						if = {
 							limit = { has_leader_flag = affection_max }
-							set_variable = { which = "affection_to_level_up" value = 0 }
+							set_variable = { which = affection_to_level_up value = 0 }
 						}
-						else = { set_variable = { which = "affection_to_level_up" value = @general_affection_to_lv5 }}
+						else = { set_variable = { which = affection_to_level_up value = @general_affection_to_lv5 }}
 					}
 				}
 			}
-			subtract_variable = { which = "affection_to_level_up" value = "affection" }
+			subtract_variable = { which = affection_to_level_up value = affection }
 		}
-		set_variable = { which = "show_id" value = 0 }
-		set_variable = { which = "show_leader_class" value = 0 }
+		set_variable = { which = show_id value = 0 }
+		set_variable = { which = leader_class_showing value = 0 }
 		country_event = { id = wg_aft.2005 }
 	}
 }
@@ -1585,54 +1575,57 @@ country_event = {
 	hide_window = yes
 
 	immediate = {
-		change_variable = { which = "show_id" value = 1 }
+		change_variable = { which = show_id value = 1 }
+		set_variable = { which = reminder2 value = 2 }
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_governor" }}
+			limit = { check_variable = { which = show_id value <= num_governor }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = governor
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_1
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_governor" }}
-			set_variable = { which = "reminder2" value = 2 }
+			limit = { check_variable = { which = show_id value = num_governor }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_governor" }}
+			limit = { check_variable = { which = show_id value <= num_governor }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = governor
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_2
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_governor" }}
-			set_variable = { which = "reminder2" value = 1 }
+			limit = { check_variable = { which = show_id value = num_governor }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_governor" }}
+			limit = { check_variable = { which = show_id value = num_governor }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = governor
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_3
 			}
-			set_variable = { which = "reminder2" value = 0 }
-			break = yes
 		}
 		country_event = { id = wg_aft.2006 }
 	}
@@ -1644,54 +1637,57 @@ country_event = {
 	hide_window = yes
 
 	immediate = {
-		change_variable = { which = "show_id" value = 1 }
+		change_variable = { which = show_id value = 1 }
+		set_variable = { which = reminder2 value = 2 }
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_scientist" }}
+			limit = { check_variable = { which = show_id value <= num_scientist }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = scientist
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_1
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
-			set_variable = { which = "reminder2" value = 2 }
+			limit = { check_variable = { which = show_id value = num_scientist }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_scientist" }}
+			limit = { check_variable = { which = show_id value <= num_scientist }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = scientist
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_2
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
-			set_variable = { which = "reminder2" value = 1 }
+			limit = { check_variable = { which = show_id value = num_scientist }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_scientist" }}
+			limit = { check_variable = { which = show_id value = num_scientist }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = scientist
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_3
 			}
-			set_variable = { which = "reminder2" value = 0 }
-			break = yes
 		}
 		country_event = { id = wg_aft.2006 }
 	}
@@ -1703,54 +1699,57 @@ country_event = {
 	hide_window = yes
 
 	immediate = {
-		change_variable = { which = "show_id" value = 1 }
+		change_variable = { which = show_id value = 1 }
+		set_variable = { which = reminder2 value = 2 }
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_admiral" }}
+			limit = { check_variable = { which = show_id value <= num_admiral }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = admiral
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_1
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
-			set_variable = { which = "reminder2" value = 2 }
+			limit = { check_variable = { which = show_id value = num_admiral }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_admiral" }}
+			limit = { check_variable = { which = show_id value <= num_admiral }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = admiral
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_2
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
-			set_variable = { which = "reminder2" value = 1 }
+			limit = { check_variable = { which = show_id value = num_admiral }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_admiral" }}
+			limit = { check_variable = { which = show_id value = num_admiral }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = admiral
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_3
 			}
-			set_variable = { which = "reminder2" value = 0 }
-			break = yes
 		}
 		country_event = { id = wg_aft.2006 }
 	}
@@ -1762,54 +1761,57 @@ country_event = {
 	hide_window = yes
 
 	immediate = {
-		change_variable = { which = "show_id" value = 1 }
+		change_variable = { which = show_id value = 1 }
+		set_variable = { which = reminder2 value = 2 }
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_general" }}
+			limit = { check_variable = { which = show_id value <= num_general }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = general
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_1
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_general" }}
-			set_variable = { which = "reminder2" value = 2 }
+			limit = { check_variable = { which = show_id value = num_general }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value <= "num_general" }}
+			limit = { check_variable = { which = show_id value <= num_general }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = general
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_2
 			}
 		}
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_general" }}
-			set_variable = { which = "reminder2" value = 1 }
+			limit = { check_variable = { which = show_id value = num_general }}
 			country_event = { id = wg_aft.2006 }
 			break = yes
 		}
-		else = { change_variable = { which = "show_id" value = 1 }}
+		else = { 
+			change_variable = { which = show_id value = 1 }
+			change_variable = { which = reminder2 value = -1 }
+		}
 
 		if = {
-			limit = { check_variable = { which = "show_id" value = "num_general" }}
+			limit = { check_variable = { which = show_id value = num_general }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = general
-					check_variable = { which = "show_id" value = ROOT }
+					check_variable = { which = show_id value = ROOT }
 				}
 				save_event_target_as = leader_tobe_show_3
 			}
-			set_variable = { which = "reminder2" value = 0 }
-			break = yes
 		}
 		country_event = { id = wg_aft.2006 }
 	}
@@ -1839,44 +1841,44 @@ country_event = {
 	option = { #查看总督的好感度
 		name = wg_aft.2005.a
 		trigger = {
-			check_variable = { which = "num_governor" value > 0 }
+			check_variable = { which = num_governor value > 0 }
 		}
 		hidden_effect = {
-			set_variable = { which = "leader_class_showing" value = 1 }
-			set_variable = { which = "show_id" value = 0 }
+			set_variable = { which = leader_class_showing value = 1 }
+			set_variable = { which = show_id value = 0 }
 			country_event = { id = wg_aft.2001 }
 		}
 	}
 	option = { #查看科学家的好感度
 		trigger = {
-			check_variable = { which = "num_scientist" value > 0 }
+			check_variable = { which = num_scientist value > 0 }
 		}
 		name = wg_aft.2005.b
 		hidden_effect = {
-			set_variable = { which = "leader_class_showing" value = 2 }
-			set_variable = { which = "show_id" value = 0 }
+			set_variable = { which = leader_class_showing value = 2 }
+			set_variable = { which = show_id value = 0 }
 			country_event = { id = wg_aft.2002 }
 		}
 	}
 	option = { #查看海军上将的好感度
 		trigger = {
-			check_variable = { which = "num_admiral" value > 0 }
+			check_variable = { which = num_admiral value > 0 }
 		}
 		name = wg_aft.2005.c
 		hidden_effect = {
-			set_variable = { which = "leader_class_showing" value = 3 }
-			set_variable = { which = "show_id" value = 0 }
+			set_variable = { which = leader_class_showing value = 3 }
+			set_variable = { which = show_id value = 0 }
 			country_event = { id = wg_aft.2003 }
 		}
 	}
 	option = { #查看陆军将军的好感度
 		trigger = {
-			check_variable = { which = "num_general" value > 0 }
+			check_variable = { which = num_general value > 0 }
 		}
 		name = wg_aft.2005.d
 		hidden_effect = {
-			set_variable = { which = "leader_class_showing" value = 4 }
-			set_variable = { which = "show_id" value = 0 }
+			set_variable = { which = leader_class_showing value = 4 }
+			set_variable = { which = show_id value = 0 }
 			country_event = { id = wg_aft.2004 }
 		}
 	}
@@ -1885,24 +1887,24 @@ country_event = {
 		hidden_effect = {
 			ruler = {
 				if = {
-					limit = { check_variable = { which = "affection_level" value < 2 }}
-					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv2 }
+					limit = { check_variable = { which = affection_level value < 2 }}
+					set_variable = { which = affection_to_level_up value = @ruler_affection_to_lv2 }
 				}
 				else_if = {
-					limit = { check_variable = { which = "affection_level" value = 2 }}
-					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv3 }
+					limit = { check_variable = { which = affection_level value = 2 }}
+					set_variable = { which = affection_to_level_up value = @ruler_affection_to_lv3 }
 				}
 				else_if = {
-					limit = { check_variable = { which = "affection_level" value = 3 }}
-					set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv4 }
+					limit = { check_variable = { which = affection_level value = 3 }}
+					set_variable = { which = affection_to_level_up value = @ruler_affection_to_lv4 }
 				}
 				else_if = {
-					limit = { check_variable = { which = "affection_level" value = 4 }}
+					limit = { check_variable = { which = affection_level value = 4 }}
 					if = {
 						limit = { has_leader_flag = affection_max }
-						set_variable = { which = "affection_to_level_up" value = 0 }
+						set_variable = { which = affection_to_level_up value = 0 }
 					}
-					else = { set_variable = { which = "affection_to_level_up" value = @ruler_affection_to_lv5 }}
+					else = { set_variable = { which = affection_to_level_up value = @ruler_affection_to_lv5 }}
 				}
 			}
 			country_event = { id = wg_aft.2007 }
@@ -1915,24 +1917,24 @@ country_event = {
 		}
 		hidden_effect = {
 			if = {
-				limit = { check_variable = { which = "lady_affection_level" value < 2 }}
-				set_variable = { which = "lady_affection_to_level_up" value = @lady_affection_to_lv2 }
+				limit = { check_variable = { which = lady_affection_level value < 2 }}
+				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv2 }
 			}
 			else_if = {
-				limit = { check_variable = { which = "lady_affection_level" value = 2 }}
-				set_variable = { which = "lady_affection_to_level_up" value = @lady_affection_to_lv3 }
+				limit = { check_variable = { which = lady_affection_level value = 2 }}
+				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv3 }
 			}
 			else_if = {
-				limit = { check_variable = { which = "lady_affection_level" value = 3 }}
-				set_variable = { which = "lady_affection_to_level_up" value = @lady_affection_to_lv4 }
+				limit = { check_variable = { which = lady_affection_level value = 3 }}
+				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv4 }
 			}
 			else_if = {
-				limit = { check_variable = { which = "lady_affection_level" value = 4 }}
+				limit = { check_variable = { which = lady_affection_level value = 4 }}
 				if = {
 					limit = { has_country_flag = lady_affection_max }
-					set_variable = { which = "lady_affection_to_level_up" value = 0 }
+					set_variable = { which = lady_affection_to_level_up value = 0 }
 				}
-				else = { set_variable = { which = "lady_affection_to_level_up" value = @lady_affection_to_lv5 }}
+				else = { set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv5 }}
 			}
 			country_event = { id = wg_aft.2008 }
 		}
@@ -1951,108 +1953,118 @@ country_event = {
 
 	desc = { # 1N 
 		trigger = {
-			check_variable = { which = "reminder2" value = 2 }
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value = 2 }
+			NOT = { event_target:leader_tobe_show_1 = { has_leader_flag = married }}
 		}
 		text = wg_aft.2006.desc.n
 	}
 	desc = { # 1Y
 		trigger = {
-			check_variable = { which = "reminder2" value = 2 }
+			check_variable = { which = reminder2 value = 2 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
 		}
 		text = wg_aft.2006.desc.y
 	}
 	desc = { # 1N 2N
 		trigger = {
-			check_variable = { which = "reminder2" value = 1 }
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value = 1 }
+			NOR = {
+				event_target:leader_tobe_show_1 = { has_leader_flag = married }
+				event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			}
 		}
 		text = wg_aft.2006.desc.nn
 	}
 	desc = { # 1Y 2N
 		trigger = {
-			check_variable = { which = "reminder2" value = 1 }
+			check_variable = { which = reminder2 value = 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			NOT = { event_target:leader_tobe_show_2 = { has_leader_flag = married }}
 		}
-		text = wg_aft.2006.desc.nn
+		text = wg_aft.2006.desc.yn
 	}
 	desc = { # 1N 2Y
 		trigger = {
-			check_variable = { which = "reminder2" value = 1 }
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value = 1 }
+			NOT = { event_target:leader_tobe_show_1 = { has_leader_flag = married }}
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
 		}
-		text = wg_aft.2006.desc.nn
+		text = wg_aft.2006.desc.ny
 	}
 	desc = { # 1Y 2Y
 		trigger = {
-			check_variable = { which = "reminder2" value = 1 }
+			check_variable = { which = reminder2 value = 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
 		}
-		text = wg_aft.2006.desc.nn
+		text = wg_aft.2006.desc.yy
 	}
 	desc = { # 1N 2N 3N
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
-			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value < 1 }
+			NOR = { 
+				event_target:leader_tobe_show_1 = { has_leader_flag = married }
+				event_target:leader_tobe_show_2 = { has_leader_flag = married }
+				event_target:leader_tobe_show_3 = { has_leader_flag = married }
+			}
 		}
 		text = wg_aft.2006.desc.a
 	}
 	desc = { # 1Y 2N 3N
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
+			check_variable = { which = reminder2 value < 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
-			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+			NOR = { 
+				event_target:leader_tobe_show_2 = { has_leader_flag = married }
+				event_target:leader_tobe_show_3 = { has_leader_flag = married }
+			}
 		}
 		text = wg_aft.2006.desc.b
 	}
 	desc = { # 1N 2Y 3N
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value < 1 }
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
-			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+			NOR = { 
+				event_target:leader_tobe_show_1 = { has_leader_flag = married }
+				event_target:leader_tobe_show_3 = { has_leader_flag = married }
+			}
 		}
 		text = wg_aft.2006.desc.c
 	}
 	desc = { # 1N 2N 3Y
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value < 1 }
+			NOR = { 
+				event_target:leader_tobe_show_1 = { has_leader_flag = married }
+				event_target:leader_tobe_show_2 = { has_leader_flag = married }
+			}
 			event_target:leader_tobe_show_3 = { has_leader_flag = married }
 		}
 		text = wg_aft.2006.desc.d
 	}
 	desc = { # 1Y 2Y 3N
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
+			check_variable = { which = reminder2 value < 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
-			event_target:leader_tobe_show_3 = { NOT = { has_leader_flag = married }}
+			NOT = { event_target:leader_tobe_show_3 = { has_leader_flag = married }}
 		}
 		text = wg_aft.2006.desc.e
 	}
 	desc = { # 1Y 2N 3Y
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
+			check_variable = { which = reminder2 value < 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
-			event_target:leader_tobe_show_2 = { NOT = { has_leader_flag = married }}
+			NOT = { event_target:leader_tobe_show_2 = { has_leader_flag = married }}
 			event_target:leader_tobe_show_3 = { has_leader_flag = married }
 		}
 		text = wg_aft.2006.desc.f
 	}
 	desc = { # 1N 2Y 3Y
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
-			event_target:leader_tobe_show_1 = { NOT = { has_leader_flag = married }}
+			check_variable = { which = reminder2 value < 1 }
+			NOT = { event_target:leader_tobe_show_1 = { has_leader_flag = married }}
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
 			event_target:leader_tobe_show_3 = { has_leader_flag = married }
 		}
@@ -2060,7 +2072,7 @@ country_event = {
 	}
 	desc = { # 1Y 2Y 3Y
 		trigger = {
-			NOT = { check_variable = { which = "reminder2" value > 0 }}
+			check_variable = { which = reminder2 value < 1 }
 			event_target:leader_tobe_show_1 = { has_leader_flag = married }
 			event_target:leader_tobe_show_2 = { has_leader_flag = married }
 			event_target:leader_tobe_show_3 = { has_leader_flag = married }
@@ -2070,33 +2082,38 @@ country_event = {
 
 	option = { #上一页
 		trigger = {
-			check_variable = { which = "show_id" value > 3 }
+			check_variable = { which = show_id value > 3 }
 		}
 		name = wg_aft.18.a
 		hidden_effect = { 
 			if = {
-				limit = { check_variable = { which = "show_id" value > 6 }}
-				change_variable = { which = "show_id" value = -6 }
-				change_variable = { which = "show_id" value = "reminder2" } 
-			}
-			else = {
-				set_variable = { which = "show_id" value = 0 }
+				limit = { check_variable = { which = show_id value > 6 }}
+				change_variable = { which = show_id value = -6 }
+				change_variable = { which = show_id value = reminder2 } 
 			}
 			if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 1 }}
+				limit = { check_variable = { which = show_id value <= 6 }}
+				set_variable = { which = show_id value = 0 }
+			}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 1 }}
 				country_event = { id = wg_aft.2001 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 2 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 2 }}
 				country_event = { id = wg_aft.2002 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 3 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 3 }}
 				country_event = { id = wg_aft.2003 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 4 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 4 }}
 				country_event = { id = wg_aft.2004 }
+				break = yes
 			}
 		} 
 	}
@@ -2104,47 +2121,51 @@ country_event = {
 		trigger = {
 			OR = {
 				AND = {
-					check_variable = { which = "leader_class_showing" value = 1 }
-					check_variable = { which = "show_id" value < "num_governor" }
+					check_variable = { which = leader_class_showing value = 1 }
+					check_variable = { which = show_id value < num_governor }
 				}
 				AND = {
-					check_variable = { which = "leader_class_showing" value = 2 }
-					check_variable = { which = "show_id" value < "num_scientist" }
+					check_variable = { which = leader_class_showing value = 2 }
+					check_variable = { which = show_id value < num_scientist }
 				}
 				AND = {
-					check_variable = { which = "leader_class_showing" value = 3 }
-					check_variable = { which = "show_id" value < "num_admiral" }
+					check_variable = { which = leader_class_showing value = 3 }
+					check_variable = { which = show_id value < num_admiral }
 				}
 				AND = {
-					check_variable = { which = "leader_class_showing" value = 4 }
-					check_variable = { which = "show_id" value < "num_general" }
+					check_variable = { which = leader_class_showing value = 4 }
+					check_variable = { which = show_id value < num_general }
 				}
 			}
 		}
 		name = wg_aft.18.b
 		hidden_effect = { 
 			if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 1 }}
+				limit = { check_variable = { which = leader_class_showing value = 1 }}
 				country_event = { id = wg_aft.2001 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 2 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 2 }}
 				country_event = { id = wg_aft.2002 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 3 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 3 }}
 				country_event = { id = wg_aft.2003 }
+				break = yes
 			}
-			else_if = {
-				limit = { check_variable = { which = "leader_class_showing" value = 4 }}
+			if = {
+				limit = { check_variable = { which = leader_class_showing value = 4 }}
 				country_event = { id = wg_aft.2004 }
+				break = yes
 			}
 		} 
 	}
 	option = { #返回主菜单
 		name = wg_aft.2006.a
 		hidden_effect = {
-			set_variable = { which = "show_id" value = 0 }
+			set_variable = { which = show_id value = 0 }
 			country_event = { id = wg_aft.2005 }
 		}
 	}

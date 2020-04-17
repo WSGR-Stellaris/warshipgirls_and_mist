@@ -2024,25 +2024,3 @@ country_event = {
 		}		
 	}		
 }
-
-country_event = {
-	id = wg_parit.2333
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	immediate = {
-	    every_country = {
-			limit = {
-				OR = {
-					is_country_type = wg_crisis_country
-					is_country_type = wg_crisis_sub_gate_country
-				}
-			}
-			add_modifier = {
-				modifier = uf_hidden_buff
-				days = -1
-			}			
-		}
-	}	
-}

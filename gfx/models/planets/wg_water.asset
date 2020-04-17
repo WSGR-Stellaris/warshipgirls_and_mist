@@ -1,0 +1,34 @@
+entity = {
+	name = "wg_water_planet_01_entity"
+	pdxmesh = "planet_clouded_mesh"
+	default_state = "idle"
+	
+	meshsettings = {
+	name = "planet_geosphereShape"
+	texture_diffuse = "wg_water_01_diffuse.dds"
+	texture_normal = "wg_water_01_normals.dds"
+	texture_specular = "wg_water_01_spec.dds"
+	}
+	
+	
+	##cloud texture override
+	meshsettings = {
+	name = "clouds_geosphereShape"
+	texture_diffuse = "clouds_medium_diffuse.dds"
+	texture_normal = "clouds_medium_normal.dds"
+	texture_specular = "clouds_medium_specular.dds"
+	}
+	
+	##cloud shadow texture override
+	meshsettings = {
+	name = "clouds_shadow_geosphereShape"
+	texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+	texture_normal = "nonormal.dds"
+	texture_specular = "nospec.dds"
+	}
+	
+		state = { name = "idle" animation = "idle" time_offset = { 0 100 }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_planet_class" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_planet_class_02" } }
+	}
+}

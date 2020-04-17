@@ -93,3 +93,266 @@ weapon_component_template = {
 		}
 	}
 }
+
+#####GARS
+weapon_component_template = {
+	key = "GARS_weapen_L"
+	size = large
+	entity = "large_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_RA_weapen_L"
+	icon_frame = 1
+	hidden = yes	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 250 max = 600 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 30
+	range = 250.0
+	accuracy = 1.0
+	shield_damage  = 0.5
+	armor_damage = 1.5
+	hull_damage = 1.5
+	tracking = 0.0
+	power = -250
+	
+	component_set = "RA_weapen_L"
+	projectile_gfx = "wsg_heavy_turbo_l_r"
+	tags = { weapon_type_kinetic }
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+		}		
+		upkeep = {
+			energy = 2.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "GARS_weapen_X"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_RA_weapen_X"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	hidden = yes	
+	damage = { min = 6000 max = 8000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 100
+	range = 250.0
+	accuracy = 0.8
+	shield_damage  = 0.8
+	armor_damage = 2.5
+	hull_damage = 1.5
+	tracking = 0.3
+	power = -600
+	
+	component_set = "RA_weapen_X"
+	projectile_gfx = "wsg_huge_turbolaser_l_r"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 350
+		}		
+		upkeep = {
+			energy = 15
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "GARS_weapen_T"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	hidden = yes	
+	damage = { min = 100000 max = 200000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 300
+	range = 350.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.9
+	power = -1200
+	
+	component_set = "RA_weapen_T"
+	projectile_gfx = "ra_lance_381"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1000
+		}		
+		upkeep = {
+			energy = 25
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = point_defence
+	
+	key = "GARS_weapen_P"
+	size = point_defence
+	entity = "turret_point_defence_entity"
+	
+	damage = { min = 20 max = 50 }
+	windup = { min = 2 max = 6 }
+	total_fire_time = 6
+	range = 80.0
+	shield_damage = 1.50
+	armor_damage = 1.00
+	accuracy = 1.0
+	tracking = 1.0
+	power = -25
+	hidden = yes	
+	icon = "GFX_RA_weapen_P"
+	icon_frame = 1
+
+	component_set = "RA_weapen_P"
+	projectile_gfx = "flak_pd_3"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+		upkeep = {
+			energy = 0.3
+			alloys = 0.05
+		}
+	}
+}
+
+utility_component_template = {
+	key = "FIRE_CONTROL_RADAR_GARS"
+	size = aux
+	icon = "GFX_ship_part_gras"
+	icon_frame = 1
+	power = -30
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}
+	}
+	modifier = {
+		ship_tracking_add = 5
+		ship_accuracy_add = 10
+		ship_shield_penetration_mult = 0.1
+		ship_armor_penetration_mult = 0.1	
+	}
+	class_restriction = { shipclass_military }
+	prerequisites = { "tech_wg_gras" }	
+	component_set = "wg_boss_gras"
+	
+	ai_weight = {
+		weight = 15
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 0.5
+			is_preferred_weapons = weapon_type_explosive
+		}	
+	}
+}
+
+###
+weapon_component_template = {
+	key = "DRAGON_weapen_X"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_RA_weapen_X"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	hidden = yes	
+	damage = { min = 10000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 300.0
+	accuracy = 1.0
+	shield_damage  = 5.0
+	armor_damage = 0.8
+	hull_damage = 1.1
+	tracking = 0.3
+	power = -600
+	
+	component_set = "RA_weapen_X"
+	projectile_gfx = "dragon_weapon_B"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 350
+		}		
+		upkeep = {
+			energy = 15
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}

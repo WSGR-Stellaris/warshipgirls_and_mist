@@ -11,3 +11,17 @@ tech_boss_weapen_ion = {
 	gateway = energy_weapons
 	
 }
+
+tech_wg_gras = {
+    area = physics
+    icon = tech_wg_gras
+	cost = @tier4cost2
+	tier = 4
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+}

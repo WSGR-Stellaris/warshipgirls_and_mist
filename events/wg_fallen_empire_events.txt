@@ -248,23 +248,22 @@ country_event = {
 			save_global_event_target_as = wg_fallen_empire
 			set_graphical_culture = wsg_04
 			if = {
-				limit = { count_system = { count < 250 }}
+				limit = { galaxy_size = tiny }
 				country_event = { id = wg_fe.11 }
 			}
 			else_if = {
-				limit = { count_system = { count < 450 }}
+				limit = { galaxy_size = small }
 				country_event = { id = wg_fe.12 }
 			}
 			else_if = {
-				limit = { count_system = { count < 650 }}
+				limit = { galaxy_size = medium }
 				country_event = { id = wg_fe.13 }
 			}
 			else_if = {
-				limit = { count_system = { count < 1050 }}
+				limit = { galaxy_size = large }
 				country_event = { id = wg_fe.14 }
 			}
-			else_if = {
-				limit = { count_system = { count < 9999 }}
+			else = {
 				country_event = { id = wg_fe.15 }
 			}
 			if = {
@@ -857,6 +856,11 @@ event = {
 	id = wg_fe.20000
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		#mid_game_years_passed >= 0
+	}
 
 	immediate = {
 		every_country = {

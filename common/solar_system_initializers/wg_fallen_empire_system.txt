@@ -62,8 +62,7 @@ wg_fallen_empire_capital_system = {
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
-			}
-			create_wg_fe_home_citadel = yes				
+			}		
 		}			
 	}
 	planet = {
@@ -415,7 +414,6 @@ wg_fallen_empire_colony_1_system = {
 					species = event_target:fe_species_sh
 				}
 			}
-			create_wg_fe_citadel = yes
 			create_wg_fe_ark_fleet = yes
 			create_wg_fe_construction_ship = yes			
 		}
@@ -644,8 +642,7 @@ wg_fallen_empire_colony_3_system = {
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
-			}
-			create_wg_fe_citadel = yes	
+			}	
 			create_wg_fe_ark_fleet = yes				
 		}
 	}

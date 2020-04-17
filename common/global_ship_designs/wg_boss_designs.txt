@@ -268,3 +268,250 @@ ship_design = {
 	required_component = "SENSOR_4"
 	required_component = "UAV_THRUSTER_4"
 }
+
+#GARS
+ship_design = {
+	name = "NAME_WG_GARS"
+	ship_size = wg_boss_gars
+	is_event_design = yes
+
+	section = {
+		template = "wg_boss_gars_key"
+		slot = "mid"
+	
+		component = {
+			slot = "TITAN_01"
+			template = "GARS_weapen_T"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GARS_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "GARS_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_03"
+			template = "GARS_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_04"
+			template = "GARS_weapen_X"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "GARS_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "GARS_weapen_L"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "GARS_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "GARS_weapen_L"
+		}
+		component = {
+			slot = "PD_01"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_03"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_04"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_05"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_06"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_07"
+			template = "GARS_weapen_P"
+		}
+		component = {
+			slot = "PD_08"
+			template = "GARS_weapen_P"
+		}		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "FIRE_CONTROL_RADAR_GARS"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "FIRE_CONTROL_RADAR_GARS"
+		}		
+	}
+	required_component="JUMP_DRIVE_1"
+	required_component="SENSOR_4"
+	required_component="COMBAT_COMPUTER_CARRIER_SAPIENT"
+	required_component="BATTLESHIP_ZERO_POINT_REACTOR"
+	required_component="BATTLESHIP_SHIP_THRUSTER_4"
+	required_component = "SHIP_AURA_TARGETING_GRID"
+	required_component = "SHIP_AURA_FOG"
+	required_component = "SHIP_AURA_FIRECONTROL"
+	required_component= "SHIP_AURA_FE"	
+}
+
+#雪风
+ship_design = {
+	name = "NAME_WG_RBQ_Dragon"
+	ship_size = wg_boss_space_dragon_Yukikaze
+	is_event_design = yes
+
+	section = {
+		template = "wg_boss_space_dragon_Yukikaze_key"
+		slot = "mid"
+		
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_weapen_X"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}		
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}			
+		component = {
+			slot = "TERTIARY_GUN_05"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_06"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_07"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_08"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="GUARDIAN_DRIVE"
+	required_component="COMBAT_COMPUTER_ARTILLERY_DEFAULT"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+}

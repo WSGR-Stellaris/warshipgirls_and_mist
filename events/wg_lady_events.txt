@@ -239,7 +239,7 @@ ship_event = {
 		}
 		else = {
 			destroy_ambient_object = event_target:wg_wormhole
-			owner = {
+			event_target:lady_Contingency_owner = {
 				capital_scope = { solar_system = {
 					random_system_planet = {
 						limit = {
@@ -294,10 +294,6 @@ country_event = {
 	location = event_target:wg_wormhole
 
 	immediate = {
-		random_owned_fleet = {
-			limit = { has_fleet_flag = lady_fleet }
-			save_global_event_target_as = lady_contingency_fleet
-		}
 		destroy_ambient_object = event_target:wg_wormhole
 		event_target:lady_contingency_fleet = {
 			delete_fleet = this
@@ -2459,16 +2455,12 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { 
-				any_owned_fleet = { 
-					has_fleet_flag = lady_fleet2
-					exists = this
-				}
-			}
+			limit = { exists = event_target:lady_warship_fleet }
 			capital_scope = { solar_system = { starbase = {
 				save_event_target_as = mod_location
 			}}}
 			set_country_flag = modifing_wsg_lady
+			event_target:lady_warship_fleet = { clear_fleet_actions = this }
 			switch = {
 				trigger = has_country_flag
 				modify_project1 = {
@@ -2476,8 +2468,7 @@ country_event = {
 						name = WSG_LADY_MODIFICATION1
 						location = event_target:mod_location
 					}
-					random_owned_fleet = {
-						limit = { has_fleet_flag = lady_fleet2 }
+					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION1
 							target = event_target:mod_location
@@ -2489,8 +2480,7 @@ country_event = {
 						name = WSG_LADY_MODIFICATION2
 						location = event_target:mod_location
 					}
-					random_owned_fleet = {
-						limit = { has_fleet_flag = lady_fleet2 }
+					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION2
 							target = event_target:mod_location
@@ -2502,8 +2492,7 @@ country_event = {
 						name = WSG_LADY_MODIFICATION3
 						location = event_target:mod_location
 					}
-					random_owned_fleet = {
-						limit = { has_fleet_flag = lady_fleet2 }
+					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION3
 							target = event_target:mod_location
@@ -2511,16 +2500,86 @@ country_event = {
 					}
 				}
 			}
-			random_owned_fleet = {
-				limit = { has_fleet_flag = lady_fleet2 }
+			event_target:lady_warship_fleet = {
 				set_event_locked = yes
 			}
+			country_event = { id = wg_lady.10045 }
 		}
 		else = {
 			country_event = { id = wg_lady.46 }
 		}
 	}
 }
+
+country_event = {
+	id = wg_lady.10045
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = modified_wsg_lady }
+		OR = {
+			has_special_project = WSG_LADY_MODIFICATION1
+			has_special_project = WSG_LADY_MODIFICATION2
+			has_special_project = WSG_LADY_MODIFICATION3
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NAND = { 
+					is_researching_special_project =  WSG_LADY_MODIFICATION1
+					is_researching_special_project =  WSG_LADY_MODIFICATION2
+					is_researching_special_project =  WSG_LADY_MODIFICATION3
+					event_target:lady_warship_fleet = { is_fleet_idle = yes }
+				}
+			}
+			event_target:lady_warship_fleet = { clear_fleet_actions = this }
+			switch = {
+				trigger = has_country_flag
+				modify_project1 = {
+					enable_special_project = {
+						name = WSG_LADY_MODIFICATION1
+						location = event_target:mod_location
+					}
+					event_target:lady_warship_fleet = {
+						fleet_action_research_special_project = {
+							special_project = WSG_LADY_MODIFICATION1
+							target = event_target:mod_location
+						}
+					}
+				}
+				modify_project2 = {
+					enable_special_project = {
+						name = WSG_LADY_MODIFICATION2
+						location = event_target:mod_location
+					}
+					event_target:lady_warship_fleet = {
+						fleet_action_research_special_project = {
+							special_project = WSG_LADY_MODIFICATION2
+							target = event_target:mod_location
+						}
+					}
+				}
+				modify_project3 = {
+					enable_special_project = {
+						name = WSG_LADY_MODIFICATION3
+						location = event_target:mod_location
+					}
+					event_target:lady_warship_fleet = {
+						fleet_action_research_special_project = {
+							special_project = WSG_LADY_MODIFICATION3
+							target = event_target:mod_location
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = wg_lady.10045 days = 15 }
+	}
+}
+
 country_event = {
 	id = wg_lady.46
 	title = wg_lady.46.name
@@ -3069,6 +3128,10 @@ country_event = {
 
 	immediate = {
 		country_event = { id = wg_lady.59 }
+		event_target:wsg_player_nickname = {
+			delete_fleet = this
+		}
+		clear_global_event_target = wsg_player_nickname
 		create_fleet = {
 			name = "WSG_PLAYER_DEFAULT_NICKNAME"
 			effect = {
@@ -3144,7 +3207,19 @@ country_event = {
 
 	option = {
 		name = wg_lady.62.a
-		hidden_effect = { country_event = { id = wg_lady.60 }}
+		hidden_effect = { 
+			every_owned_fleet = {
+				limit = { has_fleet_flag = lady_naming_fleet }
+				delete_fleet = this
+			}
+			event_target:wsg_lady_country = {
+				every_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					delete_fleet = this
+				}
+			}
+			country_event = { id = wg_lady.60 days = 1 }
+		}
 		custom_tooltip = wg_lady.62.a.tooltip
 	}
 }
@@ -3190,13 +3265,17 @@ country_event = {
 	option = {
 		name = wg_lady.63.b
 		hidden_effect = { 
+			every_owned_fleet = {
+				limit = { has_fleet_flag = lady_naming_fleet }
+				delete_fleet = this
+			}
 			event_target:wsg_lady_country = {
 				every_owned_fleet = {
 					limit = { has_fleet_flag = lady_naming_fleet }
 					delete_fleet = this
 				}
 			}
-			country_event = { id = wg_lady.60 }
+			country_event = { id = wg_lady.60 days = 1}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
 	}

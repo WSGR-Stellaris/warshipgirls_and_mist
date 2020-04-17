@@ -2861,6 +2861,7 @@ country_event = {
 		name = wsg.3082.a
 		response_text = wsg.3082.a.response
 		hidden_effect = {
+			clear_global_event_target = lady_contingency_fleet
 			create_fleet = {
 				name = "NAME_lady_Contingency_fleet"
 				effect = {
@@ -2879,7 +2880,8 @@ country_event = {
 						modifier = wg_lady2
 						days = -1
 					}
-					set_fleet_flag = lady_fleet						
+					set_fleet_flag = lady_fleet		
+					save_global_event_target_as = lady_contingency_fleet				
 				}
 				settings = { 
 					can_upgrade = no 

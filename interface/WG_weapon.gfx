@@ -12,6 +12,12 @@ spriteTypes{
 }
 spriteTypes{
 	spriteType = {
+		name = "GFX_ship_part_gras"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_gras.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
 		name = "GFX_UF_portal_weapon"
 		texturefile = "gfx/interface/icons/ship_parts/UF_portal_weapon.dds"
 	}
