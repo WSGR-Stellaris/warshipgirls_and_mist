@@ -1,0 +1,57 @@
+utility_component_template = {
+	key = "MEDIUM_living_metal_bulge"
+	size = medium
+	icon = "GFX_ship_part_living_metal_bulge"
+	icon_frame = 1
+	power = -100
+	modifier = {
+		ship_armor_add = 650
+		ship_hull_add = 400
+		ship_hull_mult = 0.01
+		ship_armor_mult = 0.01
+		#ship_shield_add = 400
+		#ship_shield_regen_add_static = 4
+	}
+	
+	prerequisites = { "tech_living_metal_bulge" }
+	component_set = "wsg_ship_part_living_metal_bulge"
+	resources = {
+		category = ship_components
+		cost = {
+ 			sr_living_metal = 0.7
+			alloys = 35
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 0.5
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_living_metal_bulge"
+	size = large
+	icon = "GFX_ship_part_living_metal_bulge"
+	icon_frame = 1
+	power = -180
+	modifier = {
+		ship_armor_add = 1400
+		ship_hull_add = 1800
+		ship_hull_mult = 0.015
+		ship_armor_mult = 0.015
+	}
+	
+	prerequisites = { "tech_living_metal_bulge" }
+	component_set = "wsg_ship_part_living_metal_bulge"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_living_metal = 2
+			alloys = 50
+		}		
+		upkeep = {
+			energy = 3.5
+			alloys = 1.5
+		}
+	}
+}

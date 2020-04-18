@@ -1,0 +1,58 @@
+ObjectTypes = {
+
+	pdxparticle = {
+		name = "wsg_eng_large_muzzle_particle"
+		type = "wsg_eng_file"
+		
+		scale = 2.0
+	}
+
+	pdxparticle = {
+		name = "wsg_eng_small_muzzle_particle"
+		type = "wsg_eng_file"
+		
+		scale = 1.45
+	}
+
+	pdxparticle = {
+		name = "wsg_203_plasma_idle_particle"
+		type = "wsg_eng_idle_file"
+		
+		scale = 1.5
+	}
+
+	pdxparticle = {
+		name = "wsg_small_eng_idle_particle"
+		type = "wsg_eng_idle_file"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "wsg_203_plasma_idle_drops_particle"
+		type = "wsg_eng_idle_drops_file"
+		
+		scale = 1.5
+	}
+
+	pdxparticle = {
+		name = "wsg_small_eng_idle_drops_particle"
+		type = "wsg_eng_idle_drops_file"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "wsg_eng_large_hit_effect"
+		type = "wsg_eng_hit_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "wsg_eng_small_hit_effect"
+		type = "wsg_eng_hit_effect"
+		
+		scale = 0.67
+	}
+}

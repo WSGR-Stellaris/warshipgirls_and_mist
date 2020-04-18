@@ -1,0 +1,24 @@
+wg_byz_diplomacy_friendly = {
+diplomacy_upkeep_mult = -0.5
+country_claim_influence_cost_mult = 0.1
+country_war_exhaustion_mult = 0.25
+}
+
+wg_byz_diplomacy_hostile = {
+diplomacy_upkeep_mult = 0.5
+country_claim_influence_cost_mult = -0.15
+country_war_exhaustion_mult = -0.25
+}
+
+wg_byz_corp_support = {
+country_naval_cap_mult = 0.1
+ships_upkeep_mult = -0.1
+}
+
+wg_byz_corp_favoring = {
+trade_value_mult = 0.1
+planet_jobs_produces_mult = 0.05
+starbase_shipyard_build_cost_mult = 0.05
+country_ship_upgrade_cost_mult = 0.20
+ships_upkeep_mult = 0.1
+}

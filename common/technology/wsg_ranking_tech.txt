@@ -1,0 +1,164 @@
+tech_wsg_trading_pantsu = {
+    #icon = 
+	cost = 24000
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_interstellar_economics" }
+    is_rare = yes
+
+	potential = {
+		has_authority = auth_warshipgirls
+		has_communications = event_target:pantsu_shop_country
+	}
+    weight = 0 #Hidden Tech
+    modifier = {
+        planet_jobs_sr_pantsu_produces_mult = 0.20
+		trade_value_mult = 0.20
+    }
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_wsg_trading_1 = {
+    #icon = 
+	cost = 12000
+	area = society
+	tier = 1
+	category = { statecraft }
+	prerequisites = { "tech_interplanetary_commerce" "tech_wsg_trading_pantsu" }
+	weight = @tier1weight3
+	modifier = {
+		trade_routes_produces_mult = 0.25
+		country_trade_attractiveness = 0.025
+	}
+	potential = {
+        has_authority = auth_warshipgirls
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_wsg_trading_2 = {
+    #icon = 
+	cost = 14000
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_interstellar_economics" "tech_wsg_trading_pantsu" }
+	weight = @tier3weight1
+
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+	modifier = {
+		trade_routes_produces_mult = 0.25
+		country_trade_attractiveness = 0.025
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_wsg_trading_branch = {
+    #icon = 
+	cost = 16000
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_interstellar_economics" "tech_wsg_trading_pantsu" }
+	weight = @tier3weight2
+
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+	modifier = {
+		branch_office_value_mult = 0.50
+		empire_size_branch_office_mult = -0.50
+		planet_branch_offices_influence_cost_mult = -0.50
+		planet_branch_offices_energy_cost_mult = 0.50
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}

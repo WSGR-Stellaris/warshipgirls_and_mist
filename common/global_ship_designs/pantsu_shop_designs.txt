@@ -1,3 +1,4 @@
+# Starbase
 ship_design = {
 	name = "NAME_pantsu_shop_station"
 	ship_size = pantsu_shop_station
@@ -36,27 +37,27 @@ ship_design = {
 			template = "wsg_weapen_L_203EX"
 		}
 		component = {
-			slot = "MEDIUM_GUN_01"
+			slot = "LARGE_GUN_01"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "MEDIUM_GUN_02"
+			slot = "LARGE_GUN_02"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "MEDIUM_GUN_03"
+			slot = "LARGE_GUN_03"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "MEDIUM_GUN_04"
+			slot = "LARGE_GUN_04"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "MEDIUM_GUN_05"
+			slot = "LARGE_GUN_05"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "MEDIUM_GUN_06"
+			slot = "LARGE_GUN_06"
 			template = "MEDIUM_wsg_weapen_SML_180"
 		}
 		component = {
@@ -92,27 +93,27 @@ ship_design = {
 			template = "wsg_weapen_YL"
 		}		
 		component = {
-			slot = "SMALL_GUN_01"
+			slot = "LARGE_GUN_01"
 			template = "SMALL_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "SMALL_GUN_02"
+			slot = "LARGE_GUN_02"
 			template = "SMALL_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "SMALL_GUN_03"
+			slot = "LARGE_GUN_03"
 			template = "SMALL_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "SMALL_GUN_04"
+			slot = "LARGE_GUN_04"
 			template = "SMALL_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "SMALL_GUN_05"
+			slot = "LARGE_GUN_05"
 			template = "SMALL_wsg_weapen_SML_180"
 		}
 		component = {
-			slot = "SMALL_GUN_06"
+			slot = "LARGE_GUN_06"
 			template = "SMALL_wsg_weapen_SML_180"
 		}		
 		component = {
@@ -205,4 +206,261 @@ ship_design = {
 		}
 	}
 	required_component = "SENSOR_WSG"
+}
+
+# Shop Cruiser
+ship_design = {
+	name = "NAME_shop_cruiser"
+	ship_size = pantsu_shop_cruiser_01
+	is_event_design = yes
+	
+	section = {
+		template = "shop_cruiser_section"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "wsg_weapon_autocannon_152_hidden"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "wsg_weapon_autocannon_152_hidden"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "wsg_weapon_203plasma"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "wsg_weapon_203plasma"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "wsg_weapon_356laser_hidden"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "wsg_weapon_356laser_hidden"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}		
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_LINE_ADVANCED"
+	required_component = "SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "CRUISER_ANTIMATTER_REACTOR"
+}
+
+# Caravan Destroyer
+ship_design = {
+	name = "NAME_shop_destroyer"
+	ship_size = pantsu_shop_destroyer_01
+	is_event_design = yes
+	
+	section = {
+		template = "shop_destroyer_section"
+		slot = "mid"
+		component = {
+			slot = "TORPEDO_01"
+			template = "wsg_weapen_YL"
+		}	
+		component = {
+			slot = "TORPEDO_02"
+			template = "wsg_weapen_YL"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "wsg_weapen_YL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_PICKET_ADVANCED"
+	required_component = "SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "DESTROYER_ANTIMATTER_REACTOR"
+}
+
+# ship carrier
+ship_design = {
+	name = "NAME_shop_carrier"
+	ship_size = pantsu_shop_carrier_01
+	is_event_design = yes
+	
+	section = {
+		template = "shop_carrier_section"
+		slot = "mid"
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "wsg_shop_fighter"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "wsg_shop_fighter"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "wsg_shop_fighter"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "wsg_shop_fighter"	
+		}			
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "wsg_shop_fighter"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "wsg_shop_fighter"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "wsg_shop_fighter"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "wsg_shop_fighter"	
+		}			
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+	}
+
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	required_component = "CRUISER_ANTIMATTER_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_shop_ion_cannon"
+	ship_size = pantsu_shop_ion_cannon_01
+	is_event_design = yes
+	
+	section = {
+		template = "shop_ion_cannon_section"
+		slot = "mid"
+		component = {
+			slot = "ION_01"
+			template = "wsg_shop_ion_cannon"
+		}
+		component = {
+			slot = "PD_01"
+			template = "wsg_weapen_PD"
+		}	
+		component = {
+			slot = "PD_02"
+			template = "wsg_weapen_PD"
+		}
+		component = {
+			slot = "PD_03"
+			template = "wsg_weapen_PD"
+		}
+		component = {
+			slot = "PD_04"
+			template = "wsg_weapen_PD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	required_component = "SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "TITAN_ANTIMATTER_REACTOR"
 }

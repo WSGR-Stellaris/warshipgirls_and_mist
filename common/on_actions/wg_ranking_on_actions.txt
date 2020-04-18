@@ -1,0 +1,129 @@
+on_game_start = {
+	events = {
+        wsgranking.1919
+    }
+}
+
+on_custom_diplomacy = {
+	events = {
+		wsgranking.1001
+        wsgranking.1002
+	}
+}
+
+on_fleet_destroyed_perp = {
+	events = {
+        wsgranking.2000
+    }
+}
+
+# 胖次科技研究完成
+on_tech_increased = {
+	events = {
+        wsgranking.999
+        wsgranking.405
+        wsgranking.406
+        wsgranking.407
+        wsgranking.408
+    }
+}
+
+# Executed right before a country has established communications with another country
+# This = Country which established the communications
+# From = Country which communications were established with
+on_pre_communications_established = {
+	events = {
+        wsgranking.998
+    }
+}
+
+# Triggers event when a system is entered by ships from a country (not pirates or monsters) for the first time
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+    events = {
+        wsgranking.996
+    }
+}
+
+#Ranking Increment Check
+on_monthly_pulse_country = {
+	events = {
+        wsgranking.101
+        wsgranking.102
+        wsgranking.103
+        wsgranking.104
+        wsgranking.111
+        wsgranking.112
+        wsgranking.113
+        wsgranking.114
+        wsgranking.121
+        wsgranking.122
+        wsgranking.123
+        wsgranking.124
+        wsgranking.131
+        wsgranking.132
+        wsgranking.133
+        wsgranking.134
+        wsgranking.211
+        wsgranking.212
+        wsgranking.213
+        wsgranking.214
+        wsgranking.221
+        wsgranking.222
+        wsgranking.223
+        wsgranking.224
+        wsgranking.225
+        wsgranking.226
+        wsgranking.231
+        wsgranking.232
+        wsgranking.233
+        wsgranking.234
+        wsgranking.301
+        wsgranking.302
+        wsgranking.303
+        wsgranking.304
+        wsgranking.311
+        wsgranking.312
+        wsgranking.313
+        wsgranking.314
+        wsgranking.321
+        wsgranking.322
+        wsgranking.323
+        wsgranking.324
+        wsgranking.325
+        wsgranking.3231
+        wsgranking.326
+        wsgranking.327
+        wsgranking.328
+        wsgranking.331
+        wsgranking.332
+        wsgranking.333
+        wsgranking.334
+        wsgranking.335
+        wsgranking.336
+        wsgranking.337
+        wsgranking.338
+        wsgranking.341
+        wsgranking.342
+        wsgranking.343
+        wsgranking.344
+        wsgranking.345
+        wsgranking.346
+        wsgranking.347
+       
+	}
+}
+
+# This = owner of fleet 1 (destroyed)
+# From = owner of fleet 2 (combatant)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_victim = {
+    events = {
+        wsgranking.401
+        wsgranking.402
+        wsgranking.405
+    }
+}

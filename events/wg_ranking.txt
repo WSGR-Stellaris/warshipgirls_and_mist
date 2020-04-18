@@ -1,0 +1,1896 @@
+namespace = wsgranking
+# 创建国家
+
+event = {
+    id = wsgranking.1919
+    hide_window = yes
+    is_triggered_only = yes
+    fire_only_once = yes    
+
+    # 只在有舰娘国家才执行
+    trigger = {
+        any_country = { 
+            OR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+            is_ai = no
+        }
+        NOT = { has_global_flag = pantsu_shop_created }
+    }
+
+    immediate = {
+        create_species = {
+			name = "NAME_pantsu_shop_species"
+			class = "Warship_Girls"
+			portrait = "Warship_girls"
+			traits = random
+			immortal = yes
+			effect = { }
+		}
+		create_country = {
+			name = "NAME_pantsu_shop"
+			species = last_created_species
+			type = pantsu_shop
+			name_list = "WSG"
+			# 旗子，让海豹自己改
+			flag = {
+				icon = {
+					category = "wg_event_flags"
+					file = "wge_flags_01.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"blue"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			ignore_initial_colony_error = yes
+			effect = {
+				save_global_event_target_as = pantsu_shop_country
+				# 加基地设计，创建恒星基地用
+				create_ship_design = { design = "NAME_pantsu_shop_station" }
+				add_ship_design = last_created_design
+                set_country_flag = no_origin
+				# 防止掠夺者打商店
+                # 掠夺者打不过这个商店，让他们尽管送死好了
+				# every_country = {
+				# 	limit = { is_country_type = dormant_marauders }
+				# 	set_faction_hostility = {
+				# 		target = prev
+				# 		set_hostile = no 
+				# 		set_neutral = no
+				# 		set_friendly = yes
+				# 	}
+				# }
+			}
+		}
+        random_country = {
+            limit = {
+                OR = {
+                    has_authority = auth_shenhai
+                    has_authority = auth_warshipgirls
+                }
+                is_ai = no
+            }
+            set_global_flag = pantsu_shop_created
+            capital_scope = {
+                closest_system = {
+                    min_steps = 8
+                    spawn_system = {
+                        min_jumps = 1
+                        max_jumps = 3
+                        hyperlane = yes
+                        initializer = "shop_system" 
+                    }
+                }
+            }
+            event_target:pantsu_shop_system = {
+                random_system_planet = {
+                    create_pantsu_shop_guard_fleets = yes
+                }
+            }
+        }
+    }
+    # save global event target 已经放进去了solar system initializer了，所以不用再save了
+}
+
+country_event = {
+    id = wsgranking.810
+    hide_window = yes
+    is_triggered_only = yes
+    fire_only_once = yes    
+
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_created }
+    }
+
+    immediate = {
+        
+    }
+}
+
+# 旧存档适配 （大概）
+# 已经宣布了不适配旧存档所以大概不需要这个了
+#event = {
+#    id = wsgranking.810
+#    hide_window = yes
+#    fire_only_once = yes
+#
+#    trigger = {
+#        NOT = { has_global_flag = pantsu_shop_created }
+#    }
+#
+#    immediate = {
+#        random_country = {
+#            limit = { is_country_type = global_event }
+#            country_event = { id = wsgranking.1919 }
+#        }
+#        # 旧存档如果已经有胖次科技直接联系
+#        every_playable_country = {
+#            limit = {
+#                OR = {
+#                    has_authority = auth_warshipgirls
+#                    has_authority = auth_shenhai
+#                }
+#                has_technology = tech_wsg_pantsu
+#                NOT = { has_communications = event_target:pantsu_shop_country }
+#            }
+#        }
+#        set_country_flag = establish_communicate_in_normal
+#        establish_communications_no_message = event_target:pantsu_shop_country
+#        country_event = { id = wsgranking.1000 }
+#    }
+#}
+
+
+# 有船路过胖次商店
+# Scope = Ship
+# From = System
+# FromFrom = Country
+ship_event = {
+	id = wsgranking.996
+	hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = event_target:pantsu_shop_country
+        From = { has_star_flag = shop_system_home }
+        FromFrom = { 
+            is_country_type = default 
+            NOT = { has_communications = event_target:pantsu_shop_country }
+        }
+    }
+
+    immediate = {
+        FromFrom = {
+            if = { 
+                limit = { OR = {
+                    has_authority = auth_warshipgirls
+                    has_authority = auth_shenhai
+                }}
+                # 防止事件重复发生
+                set_country_flag = establish_communicate_in_normal
+                establish_communications_no_message = event_target:pantsu_shop_country
+                country_event = { id = wsgranking.1000 }
+            }
+            else = {
+                establish_communications_no_message = event_target:pantsu_shop_country
+                country_event = { id = wsgranking.997 }
+            }
+        }
+    }
+}
+
+# 普通国家遇到胖次商店
+country_event = {
+	id = wsgranking.997
+	title = "action.11.name"
+    desc = wsgranking.997.desc
+
+	diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # 有需求的话自己改名字
+		room = Shop_room
+	}
+
+    option = {
+        name = wsgranking.997.a
+    }
+
+}
+
+# 非正常原因与胖次商店取得联系
+country_event = {
+	id = wsgranking.998
+	hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            is_country_type = pantsu_shop
+        }
+        NOT = { has_country_flag = establish_communicate_in_normal }
+    }
+
+    immediate = {
+        country_event = { id = wsgranking.1000 }
+    }
+
+}
+
+# 胖次科技研究后主动联络胖次商店
+country_event = {
+	id = wsgranking.999
+	title = wsgranking.999.title
+    desc = wsgranking.999.desc
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_authority = auth_warshipgirls
+            has_authority = auth_shenhai
+        }
+        is_ai = no
+        last_increased_tech = tech_wsg_pantsu
+    }
+
+    immediate = {
+        # 防止事件重复发生
+        set_country_flag = establish_communicate_in_normal
+    }
+
+    after = {
+        if = {
+			limit = { NOT = { has_communications = event_target:pantsu_shop_country } }
+			establish_communications_no_message = event_target:pantsu_shop_country
+		}
+        country_event = { id = wsgranking.1000 }
+    }
+
+    option = {
+        name = wsgranking.999.a
+    }
+
+}
+
+# 初次介绍
+country_event = {
+	id = wsgranking.1000
+	title = "TRANSMISSION"
+	desc = wsgranking.1000.desc
+    custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # 有需求的话自己改名字
+		room = Shop_room
+	}
+
+    immediate = {
+        remove_country_flag = establish_communicate_in_normal
+        add_tech_progress = {
+            tech = tech_wsg_trading_pantsu
+            progress = 0.25
+        }
+    }
+
+    # 进入一级菜单
+	option = { 
+        custom_gui = "enclave_caravaneer_option"
+        trigger = { OR = {
+            has_authority = auth_warshipgirls
+            has_authority = auth_shenhai
+        }}
+		name = wsgranking.1000.a
+		hidden_effect = {
+			country_event = { id = wsgranking.1004 }
+		}
+	}
+
+    # 退出
+	option = { 
+        custom_gui = "enclave_caravaneer_option"
+        trigger = { OR = {
+            has_authority = auth_warshipgirls
+            has_authority = auth_shenhai
+        }}
+		name = wsgranking.1000.b
+	}
+}
+
+# 打开商店的主界面
+country_event = {
+	id = wsgranking.1001
+	title = "TRANSMISSION"
+    custom_gui = "enclave_caravaneer_window"
+    trigger = {
+        OR = {
+            has_authority = auth_shenhai
+            has_authority = auth_warshipgirls
+        }
+        exists = event_target:pantsu_shop_country
+        event_target:pantsu_shop_country = {
+            NOT = { is_hostile = root }
+        }
+        NOT = { has_country_flag = pantsu_shop_cooldown }
+        OR = { 
+            #防止视窗多开
+			pantsu_shop_active_diplo = no 
+			from = { is_same_value = root } # returning from open sub-menu
+		}
+        from = { OR = {
+            is_country_type = pantsu_shop
+            is_same_value = root # returned from menu
+        }}
+        is_ai = no
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 介绍1
+	desc = { text = pantsu_shop_hello1 }
+
+    # 介绍2
+	desc = { text = pantsu_shop_hello2 }
+
+    # 介绍3
+	desc = { text = pantsu_shop_hello3 }
+
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+	}
+
+    # 询问军阶点数。
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1001.a
+        response_text = wsgranking.1001.a.response
+        is_dialog_only = yes
+    }
+
+    # 进入兑换。选项：兑换科技/兑换修正/兑换杂项资源。
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1001.b
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 退出
+    option = { 
+    custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+#冷却期间打开胖次商店
+
+country_event = {
+	id = wsgranking.1002
+	title = "TRANSMISSION"
+    custom_gui = "enclave_caravaneer_window"
+    trigger = {
+        OR = {
+            has_authority = auth_shenhai
+            has_authority = auth_warshipgirls
+        }
+        exists = event_target:pantsu_shop_country
+        has_country_flag = pantsu_shop_cooldown
+        event_target:pantsu_shop_country = {
+            NOT = { is_hostile = root }
+        }
+        OR = { 
+            #防止视窗多开
+			pantsu_shop_active_diplo = no 
+			from = { is_same_value = root } # returning from open sub-menu
+		}
+        from = { OR = {
+            is_country_type = pantsu_shop
+            is_same_value = root # returned from menu
+        }}
+        is_ai = no
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 介绍1
+	desc = { text = pantsu_shop_cooldown_desc }
+
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+	}
+
+    # 退出
+    option = { 
+    custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+
+# 非舰娘帝国点进胖次商店
+country_event = {
+    id = wsgranking.1101
+	title = wsgranking.1101.title
+    desc = wsgranking.1101.desc
+    picture = GFX_evt_caravaneers
+    custom_gui = "enclave_caravaneer_window"
+    trigger = {
+        NOR = {
+            has_authority = auth_shenhai
+            has_authority = auth_warshipgirls
+        }
+        from = { is_country_type = pantsu_shop }
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    is_triggered_only = yes
+    
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = OK
+    }
+}
+
+# 敌对时联络
+country_event = {
+    id = wsgranking.1003
+	title = "TRANSMISSION"
+    desc = wsgranking.1003.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+    
+    trigger = {
+        from = { is_country_type = pantsu_shop }
+        OR = {
+            has_authority = auth_shenhai
+            has_authority = auth_warshipgirls
+        }
+        exists = event_target:pantsu_shop_country
+        event_target:pantsu_shop_country = {
+            is_hostile = root
+        }
+        NOT = { has_active_event = { wsgranking.1003 }}
+        OR = { # prevents diplo duplication
+			pantsu_shop_active_diplo = no 
+			from = { is_same_value = root } # returning from open sub-menu
+		}
+        is_ai = no
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 预留了一下恢复和平的选项
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1003.a
+        trigger = {
+            # 显示条件
+        }
+        allow = {
+            # 允许选择的条件
+        }
+        set_faction_hostility = {
+            target = from
+            set_hostile = no 
+            set_neutral = yes
+            set_friendly = no
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+    
+}
+
+# 一级界面 - 进入兑换。
+country_event = {
+	id = wsgranking.1004
+	title = "TRANSMISSION"
+	desc = wsgranking.1004.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+    trigger = {
+        OR = { 
+            #防止视窗多开
+			pantsu_shop_active_diplo = no 
+			from = { is_same_value = root } # returning from open sub-menu
+        }
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+	}
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = wsgranking.1004.a
+        hidden_effect = {
+            country_event = { id = wsgranking.1005 }
+        }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换修正
+        name = wsgranking.1004.b
+        hidden_effect = {
+            #country_event = { id = wsgranking.1006 }
+            country_event = { id = wsgranking.1007 }
+        }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换杂项资源
+        name = wsgranking.1004.c
+        hidden_effect = {
+            #country_event = { id = wsgranking.1008 }
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 买戒指
+        name = wsgranking.1004.d
+        hidden_effect = {
+            country_event = { id = wsgranking.1010 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+# 二级菜单 - 兑换科技
+country_event = {
+	id = wsgranking.1005
+	title = "TRANSMISSION"
+	desc = wsgranking.1005.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = tech_wsg_auto152
+        # 科技前置条件
+        trigger = {
+            has_technology = tech_wsg_203
+            NOT = {
+                has_technology = tech_wsg_auto152
+            }
+        }
+        # 资源花费
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value > 3000 }
+            resource_stockpile_compare = { resource = sr_alpha value > 1500 }
+            check_variable = { which = "rankpts" value > 150 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail
+				check_variable = {
+					which = "rankpts" value > 150
+				}
+			}
+        }
+        add_resource = {
+            sr_pantsu = -3000
+            sr_alpha = -1500
+        }
+        #change_variable = { which = "rankpts" value = -893 }
+        add_research_option = tech_wsg_auto152
+        add_tech_progress = { tech = tech_wsg_auto152 progress = 0.1 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = tech_wsg_203plasma
+        # 科技前置条件
+        trigger = {
+            has_technology = tech_wsg_203
+            NOT = {
+                has_technology = tech_wsg_203plasma
+            }
+        }
+        # 资源花费
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
+            resource_stockpile_compare = { resource = sr_alpha value > 1000 }
+            check_variable = { which = "rankpts" value > 140 }
+        }
+        add_resource = {
+            sr_pantsu = -1919
+            sr_alpha = -810
+        }
+        #change_variable = { which = "rankpts" value = -893 }
+        add_research_option = tech_wsg_203plasma
+        add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = tech_wsg_356laser
+        # 科技前置条件
+        trigger = {
+            has_technology = tech_wsg_203
+            NOT = {
+                has_technology = tech_wsg_356laser
+            }
+        }
+        # 资源花费
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
+            resource_stockpile_compare = { resource = sr_alpha value > 1000 }
+            check_variable = { which = "rankpts" value > 130 }
+        }
+        add_resource = {
+            sr_pantsu = -2500
+            sr_alpha = -1000
+        }
+        #change_variable = { which = "rankpts" value = -893 }
+        add_research_option = tech_wsg_356laser
+        add_tech_progress = { tech = tech_wsg_356laser progress = 0.1 }
+    }
+
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+# 产生随机购买清单
+country_event = {
+	id = wsgranking.1006
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        NOT = { has_country_flag = generated_mod_random_list }
+    }
+
+    immediate = {
+        set_timed_country_flag = { flag = generated_mod_random_list days = 360 }
+        while = { count = 3
+            random_list = {
+                # 用随机列表来产生有时限的flag，然后用flag来判定哪些东西被抽中了
+                # 时限就是刷新CD
+                1 = { set_timed_country_flag = { flag = wsgrank_mod1 days = 360 }}
+                1 = {}
+            }
+        }
+    }
+}
+
+# 二级菜单 - 兑换修正
+country_event = {
+	id = wsgranking.1007
+	title = "TRANSMISSION"
+	desc = wsgranking.1007.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = eyes_power
+        # 前置条件
+        trigger = {
+            has_country_flag = wsgrank_mod1
+        }
+        # 资源花费
+        allow = {
+            check_variable = { which = "rankpts" value > 893 }
+        }
+        change_variable = { which = "rankpts" value = -893 }
+        add_modifier = { modifier = eyes_power days = -1}
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+# 产生随机购买清单 - 待用
+country_event = {
+	id = wsgranking.1008
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        NOT = { has_country_flag = generated_item_random_list }
+    }
+
+    immediate = {
+        set_timed_country_flag = { flag = generated_item_random_list days = 360 }
+        while = { 
+            count = 3
+            random_list = {
+                # 用随机列表来产生有时限的flag，然后用flag来判定哪些东西被抽中了
+                # 时限就是刷新CD
+                1 = { set_timed_country_flag = { flag = wsgrank_item1 days = 360 }}
+                1 = {}
+            }
+        }
+    }
+}
+
+# 二级菜单 - 兑换杂项资源
+country_event = {
+	id = wsgranking.1009
+	title = "TRANSMISSION"
+	desc = wsgranking.1009.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = yjsp1145141919810893
+        # 前置条件
+        trigger = {
+            has_country_flag = wsgrank_item1
+        }
+        # 资源花费
+        allow = {
+            check_variable = { which = "rankpts" value > 50 }
+        }
+        change_variable = { which = "rankpts" value = 1 }
+        add_resource = {
+            energy = 114
+            minerals = 514
+            sr_pantsu = 1919
+            sr_alpha = 810
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+# 三级菜单 - 兑换一次性资源
+country_event = {
+	id = wsgranking.1011
+	title = "TRANSMISSION"
+	desc = wsgranking.1009.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = yjsp1145141919810893
+        # 前置条件
+        trigger = {
+            has_country_flag = wsgrank_item1
+        }
+        # 资源花费
+        allow = {
+            check_variable = { which = "rankpts" value > 50 }
+        }
+        change_variable = { which = "rankpts" value = 1 }
+        add_resource = {
+            energy = 114
+            minerals = 514
+            sr_pantsu = 1919
+            sr_alpha = 810
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+#三级菜单 - 兑换长期资源贸易协议
+country_event = {
+	id = wsgranking.1011
+	title = "TRANSMISSION"
+	desc = wsgranking.10011.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 兑换科技
+        name = yjsp1145141919810893
+        # 前置条件
+        trigger = {
+            has_country_flag = wsgrank_item1
+        }
+        # 资源花费
+        allow = {
+            check_variable = { which = "rankpts" value > 50 }
+        }
+        change_variable = { which = "rankpts" value = 1 }
+        add_resource = {
+            energy = 114
+            minerals = 514
+            sr_pantsu = 1919
+            sr_alpha = 810
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+#三级菜单 - 终止贸易
+
+
+
+#二级菜单 - 购买戒指
+country_event = {
+	id = wsgranking.1010
+	title = "TRANSMISSION"
+	desc = wsgranking.1010.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1010.a
+        # 前置条件
+        trigger = {
+            #has_country_flag = wsgrank_item1
+        }
+        # 限制条件
+        allow = {
+            #check_variable = { which = "rankpts" value > 50 }
+        }
+        change_variable = { which = "wsg_rings" value = 1 }
+        #消耗资源
+        add_resource = {
+            energy = -1919
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1004 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+    }
+}
+
+# 其他国家收到被摧毁消息
+country_event = {
+	id = wsgranking.2001
+	title = wsgranking.2001.title
+	desc = wsgranking.2001.desc
+	picture = GFX_evt_space_debris
+	show_sound = event_ship_bridge
+	location = fromfromfrom
+
+	is_triggered_only = yes
+
+	option = {
+		name = UNFORTUNATE
+	}
+
+	option = {
+		name = EXCELLENT
+		exclusive_trigger = { 
+            is_homicidal = yes 
+        }
+	}
+}
+
+# 有商店通讯之后随机被动增加军阶
+
+country_event = {
+	id = wsgranking.5001
+	hide_window = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 720
+	}
+	trigger = {
+		has_communications = event_target:pantsu_shop_country
+		NOT = {
+			has_country_flag = recent_rank_increment
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_rank_increment
+			days = 180
+		}
+	
+	    random_list = {
+            4 = {
+                change_variable = {
+                    which = rankpts
+                    value = 2
+                }
+            }
+
+            6 = {
+                change_variable = {
+                    which = rankpts
+                    value = 1
+                }
+            }
+
+            10 = {
+                change_variable = {
+                    which = rankpts
+                    value = 0
+                }
+            }
+        }	
+    }
+}
+# 任务增加军阶点（实验性）
+#征集员工 - 1人口，4点数
+country_event = {
+	id = wsgranking.5001
+	title = wsgranking.5001.title
+	desc = wsgranking.5001.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    #is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+	
+	mean_time_to_happen = {
+		years = 30
+		modifier = {
+			factor = 1.2
+			num_pops > 100
+		}
+		modifier = {
+			factor = 1.2
+			num_pops > 80
+		}
+		modifier = {
+			factor = 1.2
+			num_pops > 60
+		}
+		modifier = {
+			factor = 1.2
+			num_pops > 40
+		}
+		modifier = {
+			factor = 0.5
+			num_pops < 30
+		}
+		modifier = {
+			factor = 0.5
+			num_pops < 20
+		}
+	}
+	
+	trigger = {
+		num_pops > 10
+        OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+        has_communications = event_target:pantsu_shop_country
+		NOR = {
+			has_valid_civic = civic_machine_terminator
+			has_valid_civic = civic_fanatic_purifiers
+		}		
+		is_at_war = no
+		any_owned_planet = {
+			num_pops > 1
+			any_owned_pop = {
+				is_same_species = root
+			}
+		}	
+    }
+	immediate = {	
+		random_owned_planet = {
+			limit = {
+				num_pops > 1
+				any_owned_pop = {
+					is_same_species = root
+				}
+			}
+			save_event_target_as = PantsuShopTaskPlanet
+        }	
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5001.a
+        change_variable = {
+            which = rankpts
+            value = 4
+        }
+        add_modifier = {
+            modifier = extended_payout_goodest
+            days = 7200
+        }
+        hidden_effect = {
+			event_target:PantsuShopTaskPlanet = {
+				random_pop = {
+					limit = {
+						is_same_species = root
+					    }
+					    kill_pop = yes
+				    }
+			    }		
+		    }
+        }
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5001.b
+        #custom_tooltip = "name.tooltip"
+    }
+}
+
+# 战利品商店投资
+
+country_event = {
+	id = wsgranking.5002
+	title = wsgranking.5002.title
+	desc = wsgranking.5002.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    #is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+	
+	mean_time_to_happen = {
+		years = 30
+		modifier = {
+            factor = 0.8
+            AND = {
+                resource_stockpile_compare = {
+                    resource = energy
+                    value = 10000
+                }
+                income > 500
+            }
+		}
+		modifier = {
+			factor = 0.5
+            AND = {
+                resource_stockpile_compare = {
+                    resource = energy
+                    value = 20000
+                }
+                income > 1000
+            }
+        }
+        modifier = {
+			factor = 0.2
+            AND = {
+                resource_stockpile_compare = {
+                    resource = energy
+                    value = 40000
+                }
+                income > 2000
+            }
+        }
+	}
+	immediate = {
+        set_timed_country_flag = {
+            flag = pantsu_shop_loan_requested
+            days = 7200
+        }
+    }
+	trigger = {
+		num_pops > 10
+        OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+        has_communications = event_target:pantsu_shop_country
+		NOR = {
+			has_valid_civic = civic_machine_terminator
+            has_valid_civic = civic_fanatic_purifiers
+            has_country_flag = pantsu_shop_loan_requested
+		}		
+		is_at_war = no
+        resource_stockpile_compare = {
+            resource = energy
+            value = 5000
+        }
+    }
+# 5年期5000投资，每月110
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5002.a
+        allow = {
+            resource_stockpile_compare = { resource = energy value >= 5000 }
+        }
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+        add_modifier = {
+            modifier = wg_shop_loan_5k
+            days = 1800
+        }
+        hidden_effect = {
+			add_resource = {
+                energy = -5000
+            }
+        }
+    }
+#10年期10000投资，每月167
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5002.b
+        allow = {
+            resource_stockpile_compare = { resource = energy value >= 10000 }
+        }
+        change_variable = {
+            which = rankpts
+            value = 4
+        }
+
+        add_modifier = {
+            modifier = wg_shop_loan_10k
+            days = 3600
+        }
+        hidden_effect = {
+			add_resource = {
+                energy = -10000
+            }
+        }
+    }
+#20年期30000投资，每月375
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5002.c
+        allow = {
+            resource_stockpile_compare = { resource = energy value >= 20000 }
+        }
+        change_variable = {
+            which = rankpts
+            value = 8
+        }
+        add_modifier = {
+            modifier = wg_shop_loan_30k
+            days = 7200
+        }
+        hidden_effect = {
+            add_resource = {
+                energy = -30000
+            }
+        }
+    }
+
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5002.d
+    }
+}
+
+# 市场拓展任务 - 要求特许经营
+country_event = {
+	id = wsgranking.5003
+	title = wsgranking.5003.title
+	desc = wsgranking.5003.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    #is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+	
+	mean_time_to_happen = {
+		years = 40
+		modifier = {
+			factor = 0.6
+			any_owned_planet = {
+                has_building = building_pantsu_shop
+            }	
+        }
+        modifier = {
+			factor = 0.4
+			any_owned_planet = {
+                AND = {
+                has_building = building_pantsu_shop
+                has_building = building_galactic_stock_exchange
+                }
+            }	
+		}
+	}
+	
+	trigger = {
+		num_pops > 10
+        OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		NOR = {
+			has_valid_civic = civic_machine_terminator
+			has_valid_civic = civic_fanatic_purifiers
+		}		
+		NOT = { has_country_flag = pantsu_shop_franchising }
+		#is_at_war = no
+		
+		any_owned_planet = {
+			num_pops > 50
+			any_owned_pop = {
+				is_same_species = root
+			}
+		}	
+	}
+	
+	immediate = {
+		set_timed_country_flag = {
+            flag = pantsu_shop_franchising
+            days = 14400
+        }
+	
+		random_owned_planet = {
+            limit = {
+				num_pops > 50
+			OR = {
+                has_building = building_pantsu_shop
+                has_building = building_commercial_zone
+                has_building = building_galactic_stock_exchange
+                has_building = building_commercial_megaplex
+                }
+			}
+			save_event_target_as = pantsu_shop_franchising_planet
+        }	
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5003.a
+        change_variable = {
+            which = rankpts
+            value = 8
+        }
+        hidden_effect = {
+            add_resource = {
+                energy = 2000
+            }
+        }
+        event_target:pantsu_shop_franchising_planet = {
+            add_modifier = {
+                modifier = pantsu_shop_franchising
+                days = -1
+            }
+        }
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5003.b
+    }
+}
+
+
+# 给断椅族改善伙食
+country_event = {
+	id = wsgranking.5004
+	title = wsgranking.5004.title
+	desc = wsgranking.5004.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    #is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+	
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.6
+            has_technology = tech_food_processing_2
+
+        }
+	}
+	
+	trigger = {
+		is_gestalt = no
+		is_mechanical_empire = no	
+        is_country_type = default
+        has_technology = tech_food_processing_1
+        OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		NOR = {
+			has_valid_civic = civic_machine_terminator
+			has_valid_civic = civic_fanatic_purifiers
+		}		
+        NOT = {
+            has_country_flag = pantsu_shop_food_granted
+        }
+		#is_at_war = no
+	}
+	
+	immediate = {
+        set_timed_country_flag = {
+            flag = pantsu_shop_food_granted
+            days = 7200
+        }
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5004.a
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+        add_resource = {
+            food = -1000
+            volatile_motes = -50
+        }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5004.b
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+        add_resource = {
+            food = -1000
+            exotic_gases = -50
+        }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5004.c
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+        add_resource = {
+            food = -1000
+            minor_artifacts = -1
+        }
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5004.d
+    }
+}
+#赠送奈拉总督
+country_event = {
+	id = wsgranking.5005
+	title = wsgranking.5005.title
+	desc = wsgranking.5005.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    #is_triggered_only = yes
+    picture_event_data = {
+        room = Shop_room
+    }
+	
+	mean_time_to_happen = {
+		years = 30
+		modifier = {
+			factor = 0.6
+            has_technology = tech_food_processing_2
+
+        }
+	}
+	
+	trigger = {
+		is_gestalt = no
+		is_mechanical_empire = no	
+        is_country_type = default
+        has_technology = tech_food_processing_1
+        OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		NOR = {
+			has_valid_civic = civic_machine_terminator
+			has_valid_civic = civic_fanatic_purifiers
+		}		
+		#is_at_war = no
+	}
+	
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5005.a
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+            hidden_effect = {		
+                create_species = {
+                    name = NAILA
+                    plural = NAILA
+                    class = ART
+                    portrait = art13
+                    namelist = ART1
+                    effect = {
+                        save_global_event_target_as = Naila_species
+                    }
+                }		
+                create_leader = {
+                    class = governor
+                    species = event_target:Naila_species
+                    name = "NAME_naila"
+                    skill = 5
+                    traits = {
+                        trait = leader_trait_governor_naila
+                        trait = leader_trait_governor_chairman
+                    }
+                    event_leader = yes	# prevents this leader from leading factions and winning elections
+                }
+                last_created_leader = {
+                    set_is_female = yes
+                    set_age = 9
+                    change_leader_portrait = cts9998
+                }
+            }	
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5005.b
+    }
+}
+#通知事件
+#通知阿尔法武器上架
+country_event = {
+	id = wsgranking.6000
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+       has_technology = tech_wsg_203
+    }
+
+    immediate = {
+        set_timed_country_flag = { flag = pantsu_shop_cooldown days = 10 }
+    }
+}
+#通知基因科技可以购买
+#通知军阶点数达到某几个关键值
+
+
+
+# 商店被摧毁
+# Fleet 2 - Destroyed by Default country
+country_event = {
+	# This = owner of fleet 1 (combatant)
+	# From = owner of fleet 2 (destroyed)
+	# FromFrom = fleet 1
+	# FromFromFrom = fleet 2
+	# on_fleet_destroyed_perp 
+	id = wsgranking.2000
+	title = wsgranking.2000.title
+	desc = wsgranking.2000.desc
+	picture = GFX_evt_caravaneers
+	show_sound = event_ship_thrusters
+	location = fromfrom
+
+	is_triggered_only = yes
+
+	trigger = {
+        fromfromfrom = { has_fleet_flag = pantsu_shop_guard }
+	}
+
+	immediate = {
+        set_global_flag = pantsu_shop_disabled
+        clear_global_event_target = pantsu_shop_system
+        # 非舰娘国家击破触发重建事件
+        if = {
+            limit = {
+                NOR = { # 非舰娘国家击破
+                    has_authority = auth_warshipgirls
+                    has_authority = auth_shenhai
+                }
+                any_country = { #检查是否有国家符合搬迁条件
+                    has_communications = event_target:pantsu_shop_country
+                    OR = {
+                        has_authority = auth_warshipgirls
+                        has_authority = auth_shenhai
+                    }
+                    NOR = { 
+                        is_hostile = event_target:pantsu_shop_country
+                        has_country_flag = asked_for_immigration
+                    }
+                    is_ai = no
+                }
+                NOT = { has_global_flag = pantsu_shop_rebuilt } # 不能重建两次
+            }
+            random_country = {
+                limit = { #搜索最近的可重建星系
+                    has_communications = event_target:pantsu_shop_country
+                    OR = {
+                        has_authority = auth_warshipgirls
+                        has_authority = auth_shenhai
+                    }
+                    NOR = { 
+                        is_hostile = event_target:pantsu_shop_country
+                        has_country_flag = asked_for_immigration
+                    }
+                    is_ai = no #首先搜索玩家
+				}
+				country_event = { id = wsgranking.2002 } # days should be 60
+			}
+            every_playable_country = { #通知胖次商店被炸掉
+                limit = {
+                    has_communications = event_target:pantsu_shop_country
+                    NOT = { is_same_value = root }
+                }
+                country_event = { id = wsgranking.2001 } # notification
+            }
+        }
+        else = {
+            every_playable_country = { #通知胖次商店被炸掉而且跑了
+                limit = {
+                    has_communications = root.from
+                    NOT = { is_same_value = root }
+                }
+                country_event = { id = wsgranking.2004 } # notification
+            }
+        }
+	}
+
+    # 击破者为普通帝国的选项
+	option = { 
+        trigger = { 
+                NOR = {
+                has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+            }
+        }
+		name = EXCELLENT
+        # 干掉的奖励
+		add_resource = {
+			energy = 4000
+			minerals = 4000
+            #sr_pantsu = 200
+		}
+	}
+
+    # 击破者为舰娘的选项
+    option = {
+        trigger = { OR = {
+            has_authority = auth_warshipgirls
+            has_authority = auth_shenhai
+        }}
+		name = EXCELLENT
+        # 干掉的奖励
+		add_resource = {
+			energy = 2000
+			minerals = 4000
+            sr_pantsu = 400
+		}
+	}
+}
+
+# 询问该国家愿不愿意接受胖次商店入境
+# 觉得不需要这个事件直接删掉就好
+country_event = {
+    id = wsgranking.2002
+    title = wsgranking.2002.name
+    desc = wsgranking.2002.desc
+    picture = GFX_evt_federation_fleet
+    location = root.capital_scope
+
+    is_triggered_only = yes
+
+    immediate = {
+        set_country_flag = asked_for_immigration
+    }
+
+    option = { #接受
+        name = wsgranking.2002.a
+        country_event = { id = wsgranking.2003 }
+        ai_chance = {
+            factor = 999
+        }
+        hidden_effect = { remove_global_flag = pantsu_shop_disabled }
+    }
+    option = { #拒绝
+        name = wsgranking.202.b
+        hidden_effect = {
+            if = {
+                limit = {
+                    any_country = {
+                        has_communications = event_target:pantsu_shop_country
+                        OR = {
+                            has_authority = auth_warshipgirls
+                            has_authority = auth_shenhai
+                        }
+                        NOR = { 
+                            is_hostile = event_target:pantsu_shop_country
+                            has_country_flag = asked_for_immigration
+                        }
+                    }
+                }
+                random_country = {
+                    limit = { #搜索最近的可重建星系
+                        OR = {
+                            has_authority = auth_warshipgirls
+                            has_authority = auth_shenhai
+                        }
+                        NOR = { 
+                            is_hostile = event_target:pantsu_shop_country
+                            has_country_flag = asked_for_immigration
+                        }
+                    }
+                    country_event = { id = wsgranking.2002 } # days should be 60
+                }
+            }
+            else = { # 没有找到备选国家，直接跑路
+                every_country = {
+                    limit = { is_country_type = default }
+                    country_event = { id = wsgranking.2004 } # 通知胖次商店被毁，并且胖次商店跑路了
+                    remove_country_flag = asked_for_immigration
+                }
+            }
+        }
+    }
+}
+
+# 重建事件
+country_event = {
+    id = wsgranking.2003
+    title = wsgranking.2003.name
+    desc = wsgranking.2003.desc
+    picture = GFX_evt_caravaneers
+    location = root.capital_scope
+
+    is_triggered_only = yes
+
+    immediate = {
+        set_global_flag = pantsu_shop_rebuilt
+        every_country = {
+            limit = { has_country_flag = asked_for_immigration }
+            remove_country_flag = asked_for_immigration
+        }
+        capital_scope = { solar_system = {
+            random_system_planet = {
+                limit = { 
+                    is_star = no
+                    NOT = { is_same_value = PREVPREV }
+                }
+                #搞点舰队啥的
+                create_pantsu_shop_guard_fleets = yes
+            }
+            save_global_event_target_as = pantsu_shop_system
+        }}
+        remove_global_flag = pantsu_shop_disabled
+    }
+
+    option = {
+        name = OK
+    }
+    
+}
+
+# 商店被炸掉并跑路的事件
+country_event = {
+    id = wsgranking.2004
+    title = wsgranking.2004.name
+    desc = wsgranking.2004.desc
+    picture = GFX_evt_wsg_no_video
+
+    is_triggered_only = yes
+
+    immediate = {
+        #event_target:pantsu_shop_country = {
+        #    destroy_country = yes
+        #}
+    }
+
+    option = {
+        name = OK
+    }
+}

@@ -1,0 +1,128 @@
+# MUZZLE FLASH
+
+entity = {
+	name = "wsg_eng_small_muzzle_flash_entity"
+	cull_radius = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 7 looping = no
+		event = { time = 0 particle = "wsg_eng_small_muzzle_particle" keep_particle = yes sound = { soundeffect = plasma_fire } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_plasma_fire" } }
+	}
+	
+	scale = 2.0
+}
+
+# PROJECTILE
+
+entity = {
+	name = "wsg_eng_small_entity"
+	cull_radius = 1.0
+	
+	default_state = idle
+	state = { name = "idle"
+		event = { time = 0 particle = "wsg_small_eng_idle_particle" keep_particle = yes }
+		event = { time = 0 particle = "wsg_203_plasma_idle_drops_particle" keep_particle = yes }
+	}
+	
+	scale = 2.0
+}
+
+# HIT EFFECT
+
+entity = {
+	name = "wsg_eng_small_hit_entity"
+	cull_radius = 1.0
+	
+	state = { name = "explode_med_hp" state_time = 0.8 looping = no
+		event = { time = 0.0 particle = "wsg_eng_small_hit_effect" sound = { soundeffect = plasma_hit } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_plasma_hit" } }
+	}
+	state = { name = "explode_med_shield" state_time = 0.8 looping = no
+		event = { time = 0.0 particle = "medium_hit_effect_shield" }
+	}
+	default_state = "explode_med_hp"
+}
+
+entity = {
+	name = "wsg_eng_small_shield_hit_entity"
+	cull_radius = 1.0
+	
+	state = { name = "explode_med_hp" state_time = 5 looping = no
+		event = { time = 0.0 particle = "wsg_eng_small_hit_effect" }
+		event = { time = 0.0 particle = "projectile_large_shield_hit_effect" sound = { soundeffect = shield_hit } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_shield_hit" } } 
+	}
+	default_state = "explode_med_hp"
+}
+
+## 203 Plasma
+entity = {
+	name = "wsg_eng_large_muzzle_flash_entity"
+	cull_radius = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 7 looping = no
+		event = { time = 0 particle = "wsg_eng_large_muzzle_particle" keep_particle = yes sound = { soundeffect = plasma_fire } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_plasma_fire" } }
+	}
+	
+	scale = 2.0
+}
+
+# PROJECTILE
+
+entity = {
+	name = "wsg_eng_large_entity"
+	cull_radius = 1.0
+	
+	default_state = idle
+	state = { name = "idle"
+		event = { time = 0 particle = "wsg_203_plasma_idle_particle" keep_particle = yes }
+		event = { time = 0 particle = "wsg_203_plasma_idle_particle" keep_particle = yes }
+	}
+	
+	scale = 2.0
+}
+
+# HIT EFFECT
+
+entity = {
+	name = "wsg_eng_large_hit_entity"
+	cull_radius = 1.0
+	
+	state = { name = "explode_med_hp" state_time = 0.8 looping = no
+		event = { time = 0.0 particle = "wsg_eng_large_hit_effect" sound = { soundeffect = plasma_hit } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_plasma_hit" } }
+	}
+	state = { name = "explode_med_shield" state_time = 0.8 looping = no
+		event = { time = 0.0 particle = "medium_hit_effect_shield" }
+	}
+	default_state = "explode_med_hp"
+}
+
+entity = {
+	name = "wsg_eng_large_shield_hit_entity"
+	cull_radius = 1.0
+	
+	state = { name = "explode_med_hp" state_time = 5 looping = no
+		event = { time = 0.0 particle = "wsg_eng_large_hit_effect" }
+		event = { time = 0.0 particle = "projectile_large_shield_hit_effect" sound = { soundeffect = shield_hit } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_shield_hit" } } 
+	}
+	default_state = "explode_med_hp"
+}
+
+
+## FLAK DP
+entity = {
+	name = "dpflak_small_hit_entity"
+	cull_radius = 1.0
+	
+	state = { name = "explode_med_hp" state_time = 5 looping = no
+		event = { time = 0.0 particle = "dpflak_small_hit_effect" sound = { soundeffect = missile_hit } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_missile_hit" } }
+	}
+	
+	default_state = "explode_med_hp"
+}

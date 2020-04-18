@@ -1,0 +1,435 @@
+#BYZ
+namespace = wsgflavoring
+country_event = {
+	id = wsgflavoring.101
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.101.name"
+	desc = "wsgflavoring.101.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.101.a"
+		root = {
+			add_resource = {
+				influence = 50
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsgflavoring.102
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.102.name"
+	desc = "wsgflavoring.102.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.102.a"
+		root = {
+			add_resource = {
+				influence = -25
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsgflavoring.103
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.103.name"
+	desc = "wsgflavoring.103.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.103.a"
+		root = {
+			add_modifier = {
+				modifier = wg_byz_diplomacy_friendly
+				days = 900
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsgflavoring.104
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.104.name"
+	desc = "wsgflavoring.104.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.104.a"
+		root = {
+			add_modifier = {
+				modifier = wg_byz_diplomacy_hostile
+				days = 900
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsgflavoring.105
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.105.name"
+	desc = "wsgflavoring.105.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.105.a"
+		root = {
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 6
+			}
+			add_modifier = {
+				modifier = wg_byz_corp_support
+				days = 900
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsgflavoring.106
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.106.name"
+	desc = "wsgflavoring.106.desc"
+	mean_time_to_happen = {
+		days = 1800
+	}
+	trigger = {
+		has_authority = auth_warshipgirls
+		NOT = {
+			has_country_flag = recent_BYZ_factions
+		}
+	}
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_BYZ_factions
+			days = 900
+		}
+	}
+	option = {
+		name = "wsgflavoring.106.a"
+		root = {
+			add_modifier = {
+				modifier = wg_byz_corp_favoring
+				days = 900
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.1145
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.1145.name"
+	desc = "wsgflavoring.1145.desc"
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = excursion_planet
+	}
+	option = {
+		name = "wsgflavoring.1145.desc"
+		owner = {
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 4.0
+				min = 500
+				max = 4000
+			}
+		}
+		#event_target:excursion_planet = {
+		#	add_deposit = d_bison_power_station
+		#}
+	}
+}
+
+#发现一次性资源储藏
+planet_event = {
+	id = wsgflavoring.120
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.120.name"
+	desc = "wsgflavoring.120.desc"
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = excursion_planet
+	}
+	option = {
+		name = "wsgflavoring.120.a"
+		random_list = {
+			10 = {
+
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 4.0
+				min= 500
+				max = 5000
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 4.0
+				min= 500
+				max = 5000
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 4.0
+				min= 500
+				max = 5000
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 4.0
+				min= 500
+				max = 5000
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = food
+				value = 4.0
+				min= 800
+				max = 5000
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 4.0
+				min= 200
+				max = 3000
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_resource = {
+				volatile_motes = 300
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_resource = {
+				exotic_gases = 300
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_resource = {
+				rare_crystals = 300
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsgflavoring.121
+	picture = GFX_evt_metropolis
+	title = "wsgflavoring.121.name"
+	desc = "wsgflavoring.121.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_resource = { rare_crystals = 450 }
+			add_resource = { exotic_gases = 450 }
+			add_resource = { volatile_motes = 450 }
+			add_resource = { sr_dark_matter = 120 }
+		}
+	}
+}
+
+
+
+
+
+
+

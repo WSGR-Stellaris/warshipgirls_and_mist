@@ -1,0 +1,10 @@
+pantsu_shop_active_diplo = {
+	has_active_event = {
+		wsgranking.1001 # 主界面
+		wsgranking.1003 # 敌对时的界面
+		wsgranking.1004 # 一级菜单
+		wsgranking.1005 # 二级菜单 - 兑换科技
+		wsgranking.1007 # 二级菜单 - 兑换修正
+		wsgranking.1009 # 二级菜单 - 兑换杂项资源
+	}
+}

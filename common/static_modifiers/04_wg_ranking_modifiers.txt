@@ -1,0 +1,108 @@
+wg_modifier_storage_habitat = {
+	country_resource_max_add = 4000
+}
+
+wg_modifier_decision = {
+    	planet_decision_enact_speed_mult = 0.20
+		country_resettlement_cost_mult = -0.50
+}
+
+wg_modifier_planetary_construction = {
+	planet_districts_minerals_cost_add = -100
+	planet_building_build_speed_mult = 0.25
+	country_terraform_speed_mult = 0.5
+}
+
+wg_modifier_megastructure_pruduction = {
+	megastructures_resources_produces_mult = 0.20
+}
+
+wg_modifier_megastructure_construction = {
+	megastructure_build_speed_mult = 0.20
+	megastructures_alloys_cost_mult = -0.10
+	megastructures_influence_cost_add = -30
+}
+
+# wg_modifier_diplomacy_friendly = {
+# 	country_border_friction_mult = -0.50
+# 	country_trust_cap_add = 50
+# 	country_trade_attractiveness = 0.05
+# }
+
+wg_modifier_diplomacy_hostile = {
+	country_rivalry_influence_gain = 0.50
+	country_insult_efficiency = 1.00
+	country_claim_influence_cost_mult = -0.20
+}
+
+wg_modifier_diplomacy_envoy = {
+	country_diplomacy_influence_cost = -0.33
+	country_trade_attractiveness = 0.05
+	envoys_add = 1
+}
+
+wg_modifier_combat_hull_algorithm = {
+	ship_hull_damage_mult = 0.1
+	ship_hitpoints_mult = 0.1
+}
+
+wg_modifier_combat_elite_pilot = {
+	weapon_type_strike_craft_weapon_damage_mult = 0.25
+	weapon_type_strike_craft_weapon_fire_rate_mult = 0.5
+}
+
+wg_sr_trade_dark_matter = {
+	monthly_trades_sr_dark_matter_produces_add = 3
+	monthly_trades_sr_pantsu_produces_add = -10
+}
+
+wg_sr_trade_nanite = {
+	monthly_trades_nanites_produces_add = 3
+	monthly_trades_sr_pantsu_produces_add = -10
+}
+
+wg_sr_trade_living_metal = {
+	monthly_trades_sr_living_metal_produces_add = 3
+	monthly_trades_sr_pantsu_produces_add = -10
+}
+
+wg_shop_loan_5k = {
+	country_base_energy_produces_add = 110
+	trade_value_mult = 0.02
+}
+
+wg_shop_loan_10k = {
+	country_base_energy_produces_add = 167
+	trade_value_mult = 0.05
+}
+
+wg_shop_loan_30k = {
+	country_base_energy_produces_add = 375
+	trade_value_mult = 0.10
+}
+
+pantsu_shop_franchising = {
+	job_wsg_merchant_add = 2
+	job_merchant_add = 4
+	trade_value_mult = 0.25
+	planet_jobs_produces_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds"
+}
+
+
+
+wg_modifier_combat_enhancement = {
+	weapon_type_wsg_pantsu_damage_mult = 0.30
+}
+
+#wg_modifier_combat_kinetic_preference= {
+#	weapon_type_energy_weapon_damage_mult = -0.15
+#	weapon_type_kinetic_weapon_damage_mult = 0.35
+#	weapon_type_explosive_weapon_damage_mult = -0.15
+#}
+
+#wg_modifier_combat_explosive_preference= {
+#	weapon_type_energy_weapon_damage_mult = -0.15
+#	weapon_type_kinetic_weapon_damage_mult = -0.15
+#	weapon_type_explosive_weapon_damage_mult = 0.35
+#}

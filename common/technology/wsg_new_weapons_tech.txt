@@ -1,0 +1,409 @@
+tech_wsg_auto57 = {
+	icon = tech_wsg_57
+	cost = @tier1cost2
+	area = engineering
+	tier = 2
+	category = { propulsion }
+	prerequisites = { "tech_autocannons_1" }
+	weight = @tier1weight2
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}
+	}
+}
+
+tech_wsg_auto127 = {
+	icon = tech_wsg_127
+	cost = @tier4cost2
+	area = engineering
+	tier = 3
+	category = { propulsion }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}	}
+}
+
+tech_wsg_pd127 = {
+	icon = tech_wsg_pd_127
+	cost = @tier4cost2
+	area = engineering
+	tier = 3
+	category = { propulsion }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}	}
+}
+
+tech_living_metal_bulge = {
+	icon = tech_living_metal_bulge
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_mine_living_metal" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+
+			}	}
+}
+
+tech_wsg_auto152 = {
+	icon = tech_wsg_152auto
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { propulsion }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}
+	}
+}
+
+tech_wsg_203plasma = {
+	icon = tech_wsg_203plasma
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { particles }
+	prerequisites = { tech_mass_drivers_1 }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				#has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}
+	}
+}
+
+tech_wsg_356laser = {
+	icon = tech_wsg_356laser
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { particles }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				#has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			#has_authority = auth_shenhai
+			}
+	}
+}
+
+tech_wsg_sy10 = {
+	icon = tech_wsg_sy10
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { propulsion }
+	prerequisites = { tech_mass_drivers_1 }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls 
+				#has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+		has_authority = auth_warshipgirls 
+		#has_authority = auth_shenhai
+		}
+	}
+}
+
+# Deprecated
+# tech_sh_dsy10 = {
+# 	icon = tech_sh_dsy10
+# 	cost = @tier5cost2
+# 	area = engineering
+# 	tier = 5
+# 	category = { propulsion }
+# 	prerequisites = { "tech_mass_drivers_1" }
+# 	weight = 0
+# 	is_rare = yes
+
+# 	ai_weight = {
+# 		factor = 0
+# 		modifier = {
+# 			factor = 100
+# 			OR = {
+# 				#has_authority = auth_warshipgirls 
+# 				has_authority = auth_shenhai
+# 			}
+# 		}
+# 	}
+# 	potential = {
+# 		OR = {
+# 			#has_authority = auth_warshipgirls 
+# 			has_authority = auth_shenhai
+# 			}	}
+# }
+
+tech_wsg_rim99 = {
+	icon = tech_wsg_rim99
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { propulsion }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+OR = {
+		has_authority = auth_warshipgirls 
+		has_authority = auth_shenhai
+		}			}
+		}
+	}
+	potential = {
+		# OR = {
+		# 	has_authority = auth_warshipgirls 
+		# 	has_authority = auth_shenhai
+			#}	
+		always = no
+	}
+}
+tech_wsg_dmm = {
+	icon = tech_wsg_dmm
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { particles }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls has_authority = auth_shenhai
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}	}
+}
+
+tech_wsg_f2h = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 4
+	icon = tech_wsg_f2h
+	ai_update_type = military
+	category = { voidcraft }
+	prerequisites = { "tech_building_wsg_alpha" }
+	weight = @tier3weight3
+	is_rare = yes
+	is_reverse_engineerable = no
+
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}	}
+}
+
+tech_wsg_330ion = {
+	area = physics
+	icon = tech_wsg_330ion
+	cost = @tier4cost2
+	tier = 4
+	category = { particles }
+	prerequisites = { "tech_wsg_203" "tech_energy_lance_1" }
+	weight = @tier1weight2
+	is_rare = yes
+	is_reverse_engineerable = no
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls 
+			has_authority = auth_shenhai
+			}	
+		}
+}
+
+#tech_wsg_uavtorp = {
+#
+#}
+#
+#tech_wsg_uavpd = {
+
+#}
+
+#tech_wsg_uavbomber = {
+
+#}
+

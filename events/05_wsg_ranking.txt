@@ -1,0 +1,2323 @@
+ namespace = wsgranking
+
+ # # WSG RANKING EVENTS
+
+# country_event = {
+# 	id = wsgranking.1
+# 	title = "wsgranking.1.name"
+# 	desc = "wsgranking.1.desc"
+# 	picture = GFX_evt_hangar_bay
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	fire_only_once = yes
+# 	trigger = {
+# 		is_ai = no
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			has_authority = auth_shenhai
+# 		}
+# 	}
+# 	immediate = {
+# 		set_country_flag = ranking_system_fired
+# 		set_variable = {
+# 			which = rankpts
+# 			value = 0
+# 		}
+# 	}
+# 	option = {
+# 		name = "OK"
+# 		root = {
+# 			add_resource = {
+# 				influence = 5
+# 			}
+# 		}
+# 	}
+# }
+
+# # DEBUG EVENTS
+# country_event = {
+# 	id = "wsgranking.2"
+# 	title = "wsgranking.2.name"
+# 	desc = "wsgranking.2.desc"
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	option = {
+# 		name = "OK"
+# 	}
+# } 
+
+# country_event = {
+# 	id = "wsgranking.3"
+# 	title = "wsgranking.3.name"
+# 	desc = "wsgranking.3.desc"
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	option = {
+# 		name = "OK"
+# 		change_variable = {
+# 			which = rankpts
+# 			value = 1
+# 		}
+# 	}
+# }
+
+# country_event = {
+# 	id = "wsgranking.4"
+# 	title = "wsgranking.4.name"
+# 	desc = "wsgranking.4.desc"
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	option = {
+# 	name = "OK"
+# 		change_variable = {
+# 			which = rankpts
+# 			value = -1
+# 		}
+# 	}
+# }
+
+# country_event = {
+# 	id = "wsgranking.5"
+# 	title = "wsgranking.5.name"
+# 	desc = "wsgranking.5.desc"
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	option = {
+# 		name = "OK"
+# 		set_timed_country_flag = {
+# 			flag = wsgranking_cd
+# 			days = 10
+# 		}
+# 	}
+# }
+
+# country_event = {
+# 	id = "wsgranking.6"
+# 	title = "wsgranking.6.name"
+# 	desc = "wsgranking.6.desc"
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	option = {
+# 		name = "OK"
+# 		allow = {
+# 			fail_text = "wsgranking.6.fail1"
+# 			NOT = {
+# 				has_country_flag = wsgranking_cd
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = "wsgranking.6.b"
+# 		allow = {
+# 			fail_text = "wsgranking.6.fail2"
+# 			has_country_flag = wsgranking_cd
+# 		}
+# 	}
+# }
+
+# #Main menu legacy
+# country_event = {
+# 	id = wsgranking.10010
+# 	title = "wsgranking.10010.name"
+# 	desc = "wsgranking.10010.desc"
+# 	picture = GFX_evt_hangar_bay
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	trigger = {
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			has_authority = auth_shenhai
+# 		}
+# 	}
+# 	option = {
+# 		name = "OK"
+# 		trigger = {
+# 			NOT = {
+# 				has_country_flag = wsgranking_cd
+# 			}
+# 			check_variable = {
+# 				which = rankpts
+# 				value > 1
+# 			}
+# 		}
+# 		add_resource = {
+# 			alloys = 114514
+# 		}
+# 		hidden_effect = {
+# 			set_timed_country_flag = {
+# 				flag = wsgranking_cd
+# 				days = 1800
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = wsgranking.10010.b
+# 	}
+# 	option = {
+# 		name = wsgranking.10010.c
+# 	}
+# }
+
+# country_event = {
+# 	id = wsgranking.10011
+# 	title = "wsgranking.10011.name"
+# 	desc = "wsgranking.10011.desc"
+# 	picture = GFX_evt_hangar_bay
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	trigger = {
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			has_authority = auth_shenhai
+# 		}
+# 	}
+# 	option = {
+# 		name = "OK"
+# 	}
+# 	option = {
+# 		name = wsgranking.10011.b
+# 	}
+# 	option = {
+# 		name = wsgranking.10011.c
+# 	}
+# }
+
+# country_event = {
+# 	id = wsgranking.10012
+# 	title = "wsgranking.10012.name"
+# 	desc = "wsgranking.10012.desc"
+# 	picture = GFX_evt_hangar_bay
+# 	is_triggered_only = yes
+# 	show_sound = event_celebration
+# 	trigger = {
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			has_authority = auth_shenhai
+# 		}
+# 	}
+# 	option = {
+# 		name = "OK"
+# 	}
+# 	option = {
+# 		name = wsgranking.10012.b
+# 	}
+# 	option = {
+# 		name = wsgranking.10012.c
+# 	}
+# }
+
+#Increment events - resources
+country_event = {
+	id = wsgranking.101
+	title = "wsgranking.101.name"
+	desc = "wsgranking.101.desc"
+	picture = GFX_evt_wsg_rank1
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		income > 100
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.102
+	title = "wsgranking.102.name"
+	desc = "wsgranking.102.desc"
+	picture = GFX_evt_wsg_rank1
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		income > 500
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.103
+	title = "wsgranking.103.name"
+	desc = "wsgranking.103.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		income > 1000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.104
+	title = "wsgranking.104.name"
+	desc = "wsgranking.104.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		income > 4000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.111
+	title = "wsgranking.111.name"
+	desc = "wsgranking.111.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = minerals
+			value > 100
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.112
+	title = "wsgranking.112.name"
+	desc = "wsgranking.112.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = minerals
+			value > 500
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.113
+	title = "wsgranking.113.name"
+	desc = "wsgranking.113.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = minerals
+			value > 1000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.114
+	title = "wsgranking.114.name"
+	desc = "wsgranking.114.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = minerals
+			value > 3000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.121
+	title = "wsgranking.121.name"
+	desc = "wsgranking.121.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = food
+			value > 100
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.122
+	title = "wsgranking.122.name"
+	desc = "wsgranking.122.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = food
+			value > 500
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.123
+	title = "wsgranking.123.name"
+	desc = "wsgranking.123.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = food
+			value > 1000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.124
+	title = "wsgranking.124.name"
+	desc = "wsgranking.124.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = food
+			value > 2000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.131
+	title = "wsgranking.131.name"
+	desc = "wsgranking.131.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = alloys
+			value > 100
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.132
+	title = "wsgranking.132.name"
+	desc = "wsgranking.132.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = alloys
+			value > 500
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.133
+	title = "wsgranking.133.name"
+	desc = "wsgranking.133.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = alloys
+			value > 1000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.134
+	title = "wsgranking.134.name"
+	desc = "wsgranking.134.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank1
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_monthly_income = {
+			resource = alloys
+			value > 2000
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+#Increment events - Fleet power
+country_event = {
+	id = wsgranking.211
+	title = "wsgranking.211.name"
+	desc = "wsgranking.211.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		fleet_power > 5000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.212
+	title = "wsgranking.212.name"
+	desc = "wsgranking.212.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		fleet_power > 50000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.213
+	title = "wsgranking.213.name"
+	desc = "wsgranking.213.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		fleet_power > 500000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 12
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.214
+	title = "wsgranking.214.name"
+	desc = "wsgranking.214.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		fleet_power > 5000000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 20
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+#Increment events - Ship sizes
+country_event = {
+	id = wsgranking.221
+	title = "wsgranking.221.name"
+	desc = "wsgranking.221.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = destroyer
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.222
+	title = "wsgranking.222.name"
+	desc = "wsgranking.222.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = cruiser
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.223
+	title = "wsgranking.223.name"
+	desc = "wsgranking.223.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = battleship
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.224
+	title = "wsgranking.224.name"
+	desc = "wsgranking.224.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = titan
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.225
+	title = "wsgranking.225.name"
+	desc = "wsgranking.225.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = colossus
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.226
+	title = "wsgranking.226.name"
+	desc = "wsgranking.226.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = Dreadnaught
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.227
+	title = "wsgranking.227.name"
+	desc = "wsgranking.227.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = wsg_dreadnought
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 12
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.228
+	title = "wsgranking.228.name"
+	desc = "wsgranking.228.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = Flagship
+			}
+			count > 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 10
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.231
+	title = "wsgranking.231.name"
+	desc = "wsgranking.231.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = battleship
+			}
+			count > 25
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.232
+	title = "wsgranking.232.name"
+	desc = "wsgranking.232.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = battleship
+			}
+			count > 50
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.233
+	title = "wsgranking.233.name"
+	desc = "wsgranking.233.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = battleship
+			}
+			count > 125
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.234
+	title = "wsgranking.234.name"
+	desc = "wsgranking.234.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank2
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_ships = {
+			limit = {
+				is_ship_size = battleship
+			}
+			count > 250
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 12
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.301
+	title = "wsgranking.301.name"
+	desc = "wsgranking.301.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		empire_size > 75
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 1
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.302
+	title = "wsgranking.302.name"
+	desc = "wsgranking.302.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		empire_size > 150
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.303
+	title = "wsgranking.303.name"
+	desc = "wsgranking.303.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		empire_size > 300
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 3
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.304
+	title = "wsgranking.304.name"
+	desc = "wsgranking.304.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		empire_size > 600
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.311
+	title = "wsgranking.311.name"
+	desc = "wsgranking.311.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_megastructure = {
+			count = 1
+		}
+	}
+		immediate = {
+			change_variable = {
+				which = rankpts
+				value = 2
+			}
+		}
+		option = {
+			name = "OK"
+		}
+	}
+
+
+country_event = {
+	id = wsgranking.312
+	title = "wsgranking.312.name"
+	desc = "wsgranking.312.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_megastructure = {
+			count = 3
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.313
+	title = "wsgranking.313.name"
+	desc = "wsgranking.313.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_megastructure = {
+			count = 6
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 3
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.314
+	title = "wsgranking.314.name"
+	desc = "wsgranking.314.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		count_owned_megastructure = {
+			count = 15
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 12
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.321
+	title = "wsgranking.321.name"
+	desc = "wsgranking.321.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = strategic_coordination_center_1
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.322
+	title = "wsgranking.322.name"
+	desc = "wsgranking.322.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = strategic_coordination_center_3
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.323
+	title = "wsgranking.323.name"
+	desc = "wsgranking.323.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = think_tank_1
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.3231
+	title = "wsgranking.3231.name"
+	desc = "wsgranking.3231.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = think_tank_3
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.324
+	title = "wsgranking.324.name"
+	desc = "wsgranking.324.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = spy_orb_1
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.325
+	title = "wsgranking.325.name"
+	desc = "wsgranking.325.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			is_megastructure_type = spy_orb_3
+			count = 1
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.326
+	title = "wsgranking.326.name"
+	desc = "wsgranking.326.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		limit = {
+			has_country_flag = started_first_ring_world
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.327
+	title = "wsgranking.327.name"
+	desc = "wsgranking.327.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		limit = {
+			has_country_flag = finished_ringworld
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 12
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.328
+	title = "wsgranking.328.name"
+	desc = "wsgranking.328.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank3
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_megastructure = {
+			FROM = {
+				is_megastructure_type = ring_world_3_intermediate
+			}
+			FROMFROM = {
+				NOT = {
+					any_system_megastructure = {
+						is_megastructure_type = ring_world_2
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.331
+	title = "wsgranking.331.name"
+	desc = "wsgranking.331.desc"
+	picture = GFX_evt_wsg_rank5
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		num_pops > 50
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 1
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.332
+	title = "wsgranking.332.name"
+	desc = "wsgranking.332.desc"
+	picture = GFX_evt_wsg_rank5
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		num_pops > 200
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 3
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.333
+	title = "wsgranking.333.name"
+	desc = "wsgranking.333.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		num_pops > 500
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 5
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.334
+	title = "wsgranking.334.name"
+	desc = "wsgranking.334.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		num_pops > 1000
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 7
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.335
+	title = "wsgranking.335.name"
+	desc = "wsgranking.335.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_pops > 25
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 1
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.336
+	title = "wsgranking.336.name"
+	desc = "wsgranking.336.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_pops > 50
+		}
+		immediate = {
+			change_variable = {
+				which = rankpts
+				value = 2
+			}
+		}
+		option = {
+			name = "OK"
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.337
+	title = "wsgranking.337.name"
+	desc = "wsgranking.337.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_pops > 125
+		}
+		immediate = {
+			change_variable = {
+				which = rankpts
+				value = 4
+			}
+		}
+		option = {
+			name = "OK"
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.338
+	title = "wsgranking.338.name"
+	desc = "wsgranking.338.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_pops > 250
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.341
+	title = "wsgranking.341.name"
+	desc = "wsgranking.341.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		vassal > 1
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.342
+	title = "wsgranking.342.name"
+	desc = "wsgranking.342.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		vassal > 2
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+#Ã§Â²Â¾Ã§Â½â€”Ã¨ÂÂ½Ã¦Â³Âª
+#Ã¦â€”Â±Ã¥Å“Â°Ã¨Â¡Å’Ã¨Ë†Å¸Ã¯Â¼Å’Ã¦â€“Â°Ã¦Å“ÂÃ©â€ºâ€¦Ã¦â€Â¿
+country_event = {
+	id = wsgranking.343
+	title = "wsgranking.343.name"
+	desc = "wsgranking.343.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_pops > 50
+			free_jobs = 0
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.344
+	title = "wsgranking.344.name"
+	desc = "wsgranking.344.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			AND = {
+				planet_stability = 100
+				planet_crime = 0
+			}
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.345
+	title = "wsgranking.345.name"
+	desc = "wsgranking.345.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_buildings = 16
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.346
+	title = "wsgranking.346.name"
+	desc = "wsgranking.346.desc"
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		any_owned_planet = {
+			num_free_districts = 0
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.347
+	title = "wsgranking.347.name"
+	desc = "wsgranking.347.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank4
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		is_at_war = yes
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+country_event = {
+	id = wsgranking.348
+	title = "wsgranking.348.name"
+	desc = "wsgranking.348.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank4
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+	last_increased_tech = tech_dark_matter_power_core
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+####### Leviathan Ranking Events ######
+country_event = {
+	id = wsgranking.400
+	title = "wsgranking.400.name"
+	desc = "wsgranking.400.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_country_flag = restored_dreadnought
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.401
+	title = "wsgranking.401.name"
+	desc = "wsgranking.401.desc"
+	picture = GFX_evt_wsg_rank4
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		is_country_type = guardian_dreadnought
+		has_country_flag = automated_dreadnought_country
+		FROMFROM = {
+			is_ship_size = npc_warship_01
+		}
+		FROM = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+			is_ai = no
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 2
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.402
+	title = "wsgranking.402.name"
+	desc = "wsgranking.402.desc"
+	picture = GFX_evt_wsg_rank4
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		is_country_type = guardian_horror
+		has_country_flag = dimensional_horror_country
+		FROMFROM = {
+			is_ship_size = dimensional_horror
+		}
+		FROM = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+			is_ai = no
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.403
+	title = "wsgranking.403.name"
+	desc = "wsgranking.403.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_country_flag = stellarite_project_success
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.404
+	title = "wsgranking.404.name"
+	desc = "wsgranking.404.desc"
+	picture = GFX_evt_wsg_rank4
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		has_relic = r_dragon_trophy
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.405
+	title = "wsgranking.405.name"
+	desc = "wsgranking.405.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		OR = {
+		last_increased_tech = tech_enigmatic_encoder
+		last_increased_tech = tech_enigmatic_decoder
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.406
+	title = "wsgranking.406.name"
+	desc = "wsgranking.406.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		OR = {
+		last_increased_tech = tech_gargantuan_evolution
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+
+country_event = {
+	id = wsgranking.407
+	title = "wsgranking.407.name"
+	desc = "wsgranking.407.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		last_increased_tech = tech_neuroregeneration
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = wsgranking.408
+	title = "wsgranking.408.name"
+	desc = "wsgranking.408.desc"
+	picture = GFX_evt_wsg_rank3
+	is_triggered_only = yes
+	show_sound = event_celebration
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		last_increased_tech = tech_nanite_repair_system
+	}
+	immediate = {
+		change_variable = {
+			which = rankpts
+			value = 4
+		}
+	}
+	option = {
+		name = "OK"
+	}
+}
+
+
+country_event = {
+	id = wsgranking.601
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = shop_encountered
+	}
+}

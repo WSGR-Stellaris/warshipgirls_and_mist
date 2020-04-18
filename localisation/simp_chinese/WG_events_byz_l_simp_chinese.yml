@@ -1,0 +1,32 @@
+﻿l_simp_chinese:
+ 
+ #################################
+ #复制紫凤凰事件
+ wsgflavoring.101.name:"港区派系影响政府"
+ wsgflavoring.101.desc:"近来，港区各派要求改善行政，他们支持政府扩张文官体系。"
+ wsgflavoring.101.a:"帝国各地案牍劳形。"
+  
+ wsgflavoring.102.name:"港区派系影响政府"
+ wsgflavoring.102.desc:"文官体系已不受港区重视，当权派系坚持削减行政费用。"
+ wsgflavoring.102.a:"如此一来谁来办事？"
+ 
+ wsgflavoring.103.name:"港区派系影响政府"
+ wsgflavoring.103.desc:"近日，港区派系认为政府应以外交为重，并坚持帝国在对外事务上应以和为贵。"
+ wsgflavoring.103.a:"暴力无法解决问题。"
+ wg_byz_diplomacy_friendly:"鸽派的影响"
+ 
+ wsgflavoring.104.name:"港区派系影响政府"
+ wsgflavoring.104.desc:"近来，港区派系已不再重视外交使团，当权派系正破坏我们的外交努力，并希望我们用我们的剑为我们的犁夺取土地！"
+ wsgflavoring.104.a:"真是穷兵黩武之言！."
+ wg_byz_diplomacy_hostile:"鹰派的影响"
+ 
+ wsgflavoring.105.name:"私人公司支持舰队"
+ wsgflavoring.105.desc:"近来，港区私人公司获得了重大的盈利，频频为我们的舰队美言，希望使帝国更为重视军队事务，并且从根本上保护我们与他们的共同利益"
+ wsgflavoring.105.a:"我可建造更多舰队！"
+ wg_byz_corp_support:"私人企业支持舰队"
+ 
+ wsgflavoring.106.name:"私人公司要求让步"
+ wsgflavoring.106.desc:"近来，港区各私人公司要求一系列让步，包括改革税收制度、放开贸易限制、垄断军品供应以及削减军队开支。"
+ wsgflavoring.106.a:"他们能代上沙场吗？"
+ wg_byz_corp_favoring:"被迫向私人企业让步"
+ 

@@ -1,6 +1,8 @@
 shop_system = {
-	class = "rl_standard_stars"
-	usage = shop_system_init
+	#class = "rl_standard_stars"
+	class = sc_g
+	usage = misc_system_init
+	usage_odds = 0
 	name = "NAME_shop_system"
 	
 	max_instances = 1
@@ -13,13 +15,198 @@ shop_system = {
 		radius = 100
 	}
 
+	init_effect = {
+		save_global_event_target_as = pantsu_shop_system
+		
+	}
 	
 	planet = {
 		class = "pc_g_star"
 		orbit_distance = 0
 		
 		init_effect = {
-
+			event_target:pantsu_shop_country = {
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_pantsu_shop_station"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 40
+							angle = 30
+							#direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 20
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 60
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 100
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 140
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 180
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 220
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 260
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 300
+							direction = out_system
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_pantsu_shop_cannon"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "NAME_shop_ion_cannon"
+							graphical_culture = "caravaneer_01 "
+							upgradable = no
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 75
+							angle = 340
+							direction = out_system
+						}
+					}
+				}
+			}
 			create_ambient_object = {
 				type = caravaneer_billboard_1
 				scale = 4
@@ -127,7 +314,7 @@ shop_system = {
 					distance = 45
 					angle = random
 				}
-			}			
+			}		
 		}
 	}
 	
@@ -141,12 +328,38 @@ shop_system = {
 		orbit_distance = 15
 		change_orbit = @base_moon_distance
 		
+		init_effect = {
+			add_deposit = d_zro_deposit_2
+		}
+
 		moon = {	
 			class = pc_habitat
 			name = "NAME_shop_habitat"
-			count = { min = 0 max = 1 }
-			orbit_distance = 5
-			size = { min = 10 max = 10 }
+			#count = { min = 0 max = 1 }
+			count = 1
+			orbit_distance = 6
+			size = { min = 12 max = 15 }
+			init_effect = {
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = -0 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 5
+						angle = random
+					}
+				}
+				set_planet_flag = energy_habitat
+				#add_deposit = d_arcane_replicator
+				add_deposit = d_smuggling_bay
+				add_deposit = d_hacking_device
+				add_deposit = d_stuffed_strange_storage
+				#add_deposit = d_cleared_strange_storage
+				add_deposit = d_space_scavange_walking
+			}
 		}		
 	}
 

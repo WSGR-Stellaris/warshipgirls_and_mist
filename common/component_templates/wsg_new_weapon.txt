@@ -1,0 +1,1007 @@
+weapon_component_template = {
+	key = "wsg_weapon_autocannon_57"
+	size = small
+	icon = "GFX_ship_part_wsg_autocannon_57"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = instant
+
+	damage = { min = 9 max = 14 }
+	windup = { min = 2.0 max = 3.0 }
+	total_fire_time = 10
+	range = 85
+	accuracy = 0.9
+	power = -11
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 9
+		}
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+
+	hull_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 0.5
+	tracking = 0.65
+
+	prerequisites = { "tech_wsg_auto57" }
+	component_set = "wsg_weapon_autocannon_57"
+	projectile_gfx = "wsg_eng_small"
+	tags = { weapon_type_energy weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_autocannon_127"
+	size = medium
+	icon = "GFX_ship_part_wsg_autocannon_127"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = instant
+
+	damage = { min = 39 max = 46 }
+	windup = { min = 2.0 max = 3.0 }
+	total_fire_time = 13
+	range = 80
+	accuracy = 0.9
+	power = -11
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 12
+		}
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+
+	hull_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 0.5
+	tracking = 0.65
+
+	prerequisites = { "tech_wsg_auto127" }
+	component_set = "wsg_weapon_autocannon_127"
+	projectile_gfx = "wsg_eng_small"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_wsg_pantsu } 
+	ai_tags = { weapon_role_anti_shield }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "wsg_weapon_autocannon_152"
+	size = large
+	icon = "GFX_ship_part_wsg_autocannon_152"
+	icon_frame = 1
+	entity = "large_laser_gun_entity"
+	type = instant
+
+	damage = { min = 119 max = 150 }
+	windup = { min = 3.0 max = 4.0 }
+	total_fire_time = 15
+	range = 140
+	accuracy = 1.0
+	power = -200
+
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 15
+			sr_alpha = 5
+			#sr_dark_matter = 5
+			alloys = 75
+		}
+		upkeep = {
+			energy = 1.0
+			alloys = 0.1
+		}
+	}
+
+	hull_damage = 1.1
+	armor_damage = 1.1
+	shield_damage = 1.5
+	tracking = 0.6
+
+	prerequisites = { "tech_wsg_auto152" }
+	component_set = "wsg_weapon_autocannon_152"
+	projectile_gfx = "gfx_wsg_152auto"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_shield }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "wsg_weapon_203plasma"
+	size = large
+	icon = "GFX_ship_part_wsg_203plasma"
+	icon_frame = 1
+	entity = "large_laser_gun_entity"
+	type = instant
+
+	damage = { min = 320 max = 450 }
+	windup = { min = 7 max = 10 }
+	total_fire_time = 30
+	range = 140
+	accuracy = 0.85
+	power = -130
+
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 15
+			sr_alpha = 5
+			#sr_dark_matter = 5
+			alloys = 75
+		}
+		upkeep = {
+			energy = 1.0
+			alloys = 0.1
+		}
+	}
+
+
+	shield_damage = 0.5
+	armor_damage = 3.0
+	hull_damage = 1.75
+	tracking = 0.2
+
+	prerequisites = { "tech_wsg_203plasma" }
+	component_set = "wsg_weapon_203plasma"
+	projectile_gfx = "gfx_wsg_203plasma"
+	#projectile_gfx = "gfx_wsg_drop_bomb"
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu}
+	ai_tags = { weapon_role_anti_armor }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_356laser"
+	size = large
+	icon = "GFX_ship_part_wsg_356laser"
+	icon_frame = 1
+	entity = "large_laser_gun_entity"
+	type = instant
+
+	damage = { min = 865 max = 1200 }
+	windup = { min = 6.0 max = 13.0 }
+	total_fire_time = 85
+	range = 150
+	accuracy = 1.0
+	power = -115
+
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 10
+			sr_alpha = 2
+			alloys = 80
+		}
+		upkeep = {
+			energy = 0.8
+			alloys = 0.1
+		}
+	}
+
+	shield_damage = 3.25
+	armor_damage = 0.5
+	hull_damage = 1.25
+	tracking = 0.4
+
+	prerequisites = { "tech_wsg_356laser" }
+	component_set = "wsg_weapon_356laser"
+	projectile_gfx = "gfx_wsg_356laser"
+	tags = { weapon_type_energy weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_shield }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_dmm"
+	size = large
+	icon = "GFX_ship_part_wsg_dmm"
+	icon_frame = 1
+	entity = "turret_missile_large_entity"
+	type = instant
+
+	damage = { min = 1444 max = 1821 }
+	windup = { min = 2.0 max = 6.0 }
+	total_fire_time = 135
+	range = 140
+	accuracy = 0.75
+	power = -115
+
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 10
+			sr_alpha = 2
+			alloys = 80
+		}
+		upkeep = {
+			alloys = 0.6
+		}
+	}
+
+	shield_penetration = 1.0
+	armor_damage = 1.5
+	hull_damage = 1.6
+	tracking = 0.25
+
+	prerequisites = { "tech_wsg_dmm" }
+	component_set = "wsg_weapon_dmm"
+	projectile_gfx = "gfx_wsg_dmm_large"
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu}
+	ai_tags = { weapon_role_artillery }
+
+	valid_for_country = {
+		modifier = {
+			factor = 0 # only normal empires should use this component
+			is_fallen_empire = yes
+		}
+	}
+
+	ai_weight = {
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = volatile_motes
+				value < 100
+			}
+		}
+	}
+}
+
+
+
+weapon_component_template = {
+	key = "wsg_weapon_rockets"
+	size = torpedo
+	entity = "turret_missile_small_entity"
+	
+	icon = "GFX_ship_part_wsg_rockets"
+	icon_frame = 1
+	type = missile
+	
+	component_set = "wsg_weapon_rockets"
+	projectile_gfx = "swarmer_missiles_02"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = { min = 24 max = 34 }
+	windup = { min = 2 max = 9 }
+	total_fire_time = 35
+	range = 75.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -10
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+
+	missile_speed = 24
+	missile_evasion = 0.0
+	missile_shield = 6
+	missile_armor = 6
+	missile_health = 20
+	missile_retarget_range = 100
+	
+	shield_penetration = 1.0
+	hull_damage = 1.2
+
+	prerequisites = { " " }
+}
+
+
+
+
+weapon_component_template = {
+	key = "wsg_weapon_rim99"
+	size = small
+	entity = "turret_missile_small_entity"
+	
+	icon = "GFX_ship_part_wsg_rim99"
+	icon_frame = 1
+	type = missile
+	component_set = "wsg_weapon_rim99"
+	projectile_gfx = "small_missile"
+	#projectile_gfx = "wsg_suicidal_fighter"
+	tags = { weapon_type_strike_craft }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = 0
+	windup = { min = 1 max = 2 }
+	total_fire_time = 35
+	range = 75.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -20
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	missile_speed = 42
+	missile_evasion = 0.2
+	missile_shield = 20
+	missile_armor = 0
+	missile_health = 18
+	missile_retarget_range = 100
+	prerequisites = { "tech_wsg_rim99" }
+}
+
+
+
+weapon_component_template = {
+	key = "wsg_weapon_sy10"
+	size = torpedo
+	entity = "turret_missile_large_entity"
+	
+	icon = "GFX_ship_part_wsg_sy10"
+	icon_frame = 1
+	type = missile
+	
+	component_set = "wsg_weapon_sy10"
+	#projectile_gfx = "gfx_sy_missile"
+	projectile_gfx = "large_torpedo_02"
+	
+	tags = { weapon_type_energy weapon_type_explosive }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = { min = 244 max = 329 }
+	#amage = { min = 23 max = 26 }
+	windup = { min = 2 max = 12 }
+	total_fire_time = 40
+	range = 175.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -150
+	
+	resources = {
+		category = ship_components
+		cost = {
+			volatile_motes = 5
+			sr_neo = 2
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+
+	missile_speed = 40
+	missile_evasion = 0.4
+	missile_shield = 50
+	missile_armor = 50
+	missile_health = 50
+	missile_retarget_range = 100
+	
+	shield_penetration = 2.0
+	armor_damage = 1.5
+	hull_damage = 1.1
+
+	prerequisites = { "tech_wsg_sy10" }
+}
+
+# Deprecated
+
+# weapon_component_template = {
+# 	key = "sh_weapon_dsy10"
+# 	size = torpedo
+# 	entity = "turret_missile_medium_entity"
+	
+# 	icon = "GFX_ship_part_sh_dsy10"
+# 	icon_frame = 1
+# 	type = missile
+	
+# 	component_set = "sh_weapon_dsy10"
+# 	#projectile_gfx = "nhsc_swarmer_missiles_4"
+# 	projectile_gfx = "small_missile"
+
+# 	tags = { weapon_type_energy weapon_type_explosive }
+# 	ai_tags = { weapon_role_artillery }
+
+# 	damage = { min = 199 max = 244 }
+# 	windup = { min = 2 max = 12 }
+# 	total_fire_time = 23
+# 	range = 175.0
+# 	accuracy = 1.0
+# 	tracking = 0.5
+# 	power = -20
+	
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = 10
+# 		}		
+# 		upkeep = {
+# 			energy = 0.5
+# 			alloys = 0.5
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		weight = 1
+# 		modifier = {
+# 			factor = 0.0
+# 			has_monthly_income = { resource = volatile_motes value <= 0 }
+# 		}
+# 	}
+
+# 	missile_speed = 18
+# 	missile_evasion = 0.0
+# 	missile_shield = 0
+# 	missile_armor = 60
+# 	missile_health = 50
+# 	missile_retarget_range = 100
+	
+# 	shield_penetration = 1.0
+# 	armor_penetration = 1.0
+# 	hull_damage = 1.1
+
+# 	prerequisites = { "tech_sh_dsy10" }
+# }
+
+weapon_component_template = {
+	key = "ancient_lance"
+	size = extra_large
+	entity = "large_laser_gun_entity"
+	type = instant
+	hidden = yes
+	
+	icon = "GFX_ship_part_energy_lance_1"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 10.0
+	static_rotation = yes
+	use_ship_kill_target = no
+
+	damage = { min = 3000  max = 6000 }
+	windup = { min = 12 max = 26 }
+	total_fire_time = 60
+	range = 200.0
+	accuracy = 1.0
+	tracking = 0.0
+	power = -80
+	
+	prerequisites = { "tech_energy_lance_1" }
+	component_set = "ancient_lance"
+	projectile_gfx = "gfx_wsg_urban"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @xl_t5_cost
+		}		
+		upkeep = {
+			energy = @xl_t5_upkeep_energy
+			alloys = @xl_t5_upkeep_alloys
+		}
+	}
+	
+	shield_damage = 0.8
+	armor_damage = 1.4
+	hull_damage = 1.1
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+	
+weapon_component_template = {
+	key = "wsg_weapon_330ion"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_wsg_330ion"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 10.0
+	static_rotation = yes
+	use_ship_kill_target = no
+
+	damage = { min = 1500 max = 2050 }
+	windup = { min = 15 max = 20 }
+	total_fire_time = 60
+	range = 180.0
+	accuracy = 0.9
+	shield_damage = 2.0
+	armor_damage = 0.55
+	hull_damage = 1.55
+	accuracy = 1.0
+	tracking = 0.2
+	power = -400
+	
+	prerequisites = { "tech_wsg_330ion" }
+	component_set = "wsg_weapon_330ion"
+	projectile_gfx = "ion_cannon"
+	#projectile_gfx = "dimensional_titan_laser"
+	tags = { weapon_type_energy weapon_type_wsg_pantsu  }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 20
+			alloys = 120
+		}		
+		upkeep = {
+			energy = 1.6
+			alloys = 0.2
+		}
+	}
+	
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+strike_craft_component_template = {
+	key = "wsg_weapon_f2h"
+	size = LARGE
+	entity = "fighter_entity"
+	power = -35
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+		}
+		upkeep = {
+			energy = 0.2
+		}
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.10
+	}
+	count = 4
+	#regeneration_per_day = 0.2
+	regeneration_per_day = 0.3
+	launch_time = 1.0
+	
+	
+	damage = { min = 19 max = 30 }
+	cooldown = 1.5
+	range = 50
+	accuracy = 1.0
+	tracking = 0.5
+	
+	health = 60
+	armor = 50
+	shield = 30
+	evasion = 0.5
+	
+	speed = 900
+	rotation_speed = 0.8
+	acceleration = 1
+	
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.0
+	
+	ship_behavior = "fighters_behavior"
+	
+	weapon_type = point_defence
+	#weapon_type = strike_craft
+	projectile_gfx = "blue_laser_pd"
+	
+	component_set = "wsg_weapon_f2h"
+	prerequisites = { "tech_wsg_f2h" }
+	
+	icon = "GFX_ship_part_wsg_f2h"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_point_defence }
+}
+
+strike_craft_component_template = {
+	key = "sh_fighter"
+	size = LARGE
+	entity = "fighter_entity"
+	power = -45
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+			sr_se = 4
+		}
+		upkeep = {
+			energy = 0.5
+			sr_se = 0.01
+		}
+	}
+	count = 2
+	#regeneration_per_day = 0.2
+	regeneration_per_day = 1
+	launch_time = 1.0
+	
+	
+	damage = { min = 12 max = 16 }
+	cooldown = 0.7
+	range = 30
+	accuracy = 1.0
+	tracking = 0.5
+	
+	health = 40
+	armor = 50
+	shield = 30
+	evasion = 0.5
+	
+	speed = 800
+	rotation_speed = 0.8
+	acceleration = 1
+	
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.5
+	
+	ship_behavior = "fighters_behavior"
+	
+	weapon_type = point_defence
+	#weapon_type = strike_craft
+	projectile_gfx = "sh_fighter"
+	
+	component_set = "sh_fighter"
+	prerequisites = { "tech_sh_fighter" }
+	
+	icon = "GFX_ship_part_sh_fh"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+}
+
+
+weapon_component_template = {
+	key = "wsg_weapon_dpflak"
+	size = medium
+	icon = "GFX_ship_part_wsg_127pd"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = point_defence
+
+	damage = { min = 45 max = 69 }
+	windup = { min = 2.0 max = 3.0 }
+	total_fire_time = 18
+	range = 80
+	accuracy = 0.8
+	power = -25
+	tracking = 0.1
+
+	shield_damage = 1.25
+	armor_damage = 0.5
+	hull_damage = 1.0
+
+	prerequisites = { "tech_wsg_pd127" }
+	component_set = "wsg_weapon_dpflak"
+	projectile_gfx = "wsg_dp_flak"
+	tags = { weapon_type_point_defense weapon_type_kinetic weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_point_defense }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}
+		upkeep = {
+			energy = 0.25
+			alloys = 0.03
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "SMALL_sh_weapon_autocannon"
+	size = small
+	icon = "GFX_ship_part_sh_ac"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = point_defence
+
+	damage = { min = 13 max = 16 }
+	windup = { min = 2 max = 5 }
+	total_fire_time = 11
+	range = 60.0
+	accuracy = 0.90
+
+	shield_penetration = 0.5
+	armor_damage = 1.25
+	tracking = 0.6
+	power = -20
+
+	prerequisites = { "tech_sh_autocannon" }
+	component_set = "sh_autocannon"
+	projectile_gfx = "sh_pd_02"
+	tags = {  weapon_type_kinetic weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_hull }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			sr_se = 1
+		}
+		upkeep = {
+			energy = 0.6
+			alloys = 0.3
+		}
+	}
+}
+
+
+
+weapon_component_template = {
+	key = "MEDIUM_sh_weapon_autocannon"
+	size = medium
+	icon = "GFX_ship_part_sh_ac"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = point_defence
+
+	damage = { min = 32 max = 41 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 14
+	range = 120.0
+	accuracy = 0.90
+	shield_penetration = 0.75
+	armor_damage = 1.50
+	tracking = 0.40
+	power = -25
+
+	prerequisites = { "tech_sh_autocannon" }
+	component_set = "sh_autocannon"
+	projectile_gfx = "sh_autocannon_sm"
+	tags = {  weapon_type_kinetic weapon_type_explosive weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_hull }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+			sr_se = 2
+		}
+		upkeep = {
+			energy = 1
+			alloys = 0.5
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "LARGE_sh_weapon_autocannon"
+	size = large
+	icon = "GFX_ship_part_sh_ac"
+	icon_frame = 1
+	entity = "small_laser_gun_entity"
+	type = point_defence
+
+	damage = { min = 120 max = 140}
+	windup = { min = 3 max = 5 }
+	total_fire_time = 15
+	range = 135.0
+	accuracy = 0.90
+	shield_penetration = 1.25
+	armor_damage = 2.0
+	tracking = 0.35
+	power = -120
+
+	prerequisites = { "tech_sh_autocannon" }
+	component_set = "sh_autocannon"
+	projectile_gfx = "sh_autocannon_l"
+	tags = {  weapon_type_kinetic weapon_type_explosive weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_hull }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 85
+			sr_se = 4
+		}
+		upkeep = {
+			energy = 1
+			alloys = 0.5
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "sh_torpedo"
+	size = torpedo
+	entity = "turret_torpedo_entity"
+	
+	icon = "GFX_ship_part_sh_ht"
+	icon_frame = 1
+	type = missile
+	
+	component_set = "sh_torpedo"
+	projectile_gfx = "large_torpedo_01"
+	tags = { weapon_type_explosive weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = { min = 4500 max = 7000 }
+	windup = { min = 20 max = 40 }
+	total_fire_time = 460
+	range = 140.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -180
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 4
+			alloys = 15
+		}		
+		upkeep = {
+			energy = 5
+			alloys = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+
+	missile_speed = 18
+	missile_evasion = 0.30
+	missile_shield = 0
+	missile_armor = 180
+	missile_health = 100
+	missile_retarget_range = 100
+	
+	shield_penetration = 1.3
+	armor_damage = 4.0
+
+	prerequisites = { "tech_sh_torpedo" }
+}
+
+
+
+
+
+
+
+

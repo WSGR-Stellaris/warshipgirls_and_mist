@@ -1,0 +1,59 @@
+﻿l_simp_chinese:
+
+tech_wsg_trading_pantsu:"战利品金融产品化"
+tech_wsg_trading_pantsu_desc:"断椅族开发了多种基于战利品的金融产品，比如胖次期货、胖次WTF和胖次期权。通过学习断椅族将战利品金融化的手段，我们可以大大提高国家的战利品产量与贸易额。"
+
+tech_wsg_trading_1:"断椅族经贸洞见"
+tech_wsg_trading_1_desc:"断椅族世代经商，她们通过互相合作，赚取外星种族的高额利润。学习断椅族商会的贸易方法，我们可以从每一点贸易当中获取更多利润。"
+
+tech_wsg_trading_2:"断椅族经贸揭谛"
+tech_wsg_trading_2_desc:"断椅族的贸易手法令人震惊。再一次，降低市场限制，开放贸易，财源自然将滚滚而来。"
+
+tech_wsg_trading_branch:"断椅族分布式贸易机构构建"
+tech_wsg_trading_branch_desc:"断椅族依靠雇佣当地雇员并给予其充分信任的方法，在银河中构建了千千万万的贸易分部，创造了很多工作岗位。学习她们的这一经验对我们建立企业分部很有益处。"
+
+mod_trade_routes_produces_mult:"£trade_value£ §Y贸易额§!通过£job_merchant£§Y贸易路线§!转化得来的资源"
+mod_planet_branch_offices_influence_cost_mult:"开设分部的£influence£影响力花费"
+mod_planet_branch_offices_energy_cost_mult:"开设分部的£energy£能量币花费"
+
+
+wg_modifier_storage_habitat:"清空的居住站货舱"
+d_smuggling_bay:"走私码头"
+d_smuggling_bay_desc:"断椅族的贸易空间站吸引了大批不法商贩旅居于此从事肮脏的贸易。这些贸易可能有利于我们，但一点都不合法。"
+d_hacking_device:"断椅族交易终端机"
+d_hacking_device_desc:"与贸易空间站联通的交易终端机，用亚空间通讯保证交易的实时性，是银河证券玩家的好帮手。"
+d_stuffed_strange_storage:"杂乱的居住站货舱"
+d_stuffed_strange_storage_desc:"这座货舱当中堆满了不知是哪些商人团体于何时为何抛下的货物。其中不乏珍稀罕贵的材料。"
+d_cleared_strange_storage:"清空的居住站货舱"
+d_cleared_strange_storage_desc:"货舱中杂乱堆放的珍贵货物已经清理一空。现在此处空间可以留作建设和仓储了。"
+d_space_scavange_walking:"太空清障港"
+d_space_scavange_walking_desc:"一些含有活金属的货舰残骸散落在这座居住站附近。这座港湾是为了清理这些坠毁的货舰而开辟的。"
+
+
+
+
+# To Be Continued......
+
+# wg_modifier_toastbread:"吐司面包"
+# wg_modifier_applepie:"苹果派"
+# wg_modifier_bakedbeans:"海军烘豆子"
+# wg_modifier_dwamak_soup:"马赛惰麻汤"
+# wg_modifier_latiao:"辣条"
+# wg_modifier_goldenbun:"金镶玉包子"
+# wg_modifier_fishandchips:"炸鱼薯条"
+
+# wg_modifier_hamburger:"美式汉堡"
+# wg_modifier_friedrice:"什锦叉烧炒饭"
+# wg_modifier_sausageandbeer:"图林根肠啤酒"
+# wg_modifier_curry:"海军咖喱"
+# wg_modifier_pretzel:"白香肠面包圈"
+# wg_modifier_salamipizza:"萨拉米披萨"
+# wg_modifier_dongporou:"东坡肉"
+
+# wg_modifier_sweetandsalty:"甜咸豆腐脑之争"
+# wg_modifier_seastar:"食用了有毒海星"
+# wg_modifier_ooass:"陆军感到不满"
+# wg_modifier_london:"对不明物质的洞见"
+# wg_modifier_surstomming:"至少还有臭气"
+
+
