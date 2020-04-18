@@ -14,6 +14,7 @@ district_city = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	potential = {
@@ -25,6 +26,7 @@ district_city = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	allow = {
@@ -210,6 +212,7 @@ district_hive = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	potential = {
@@ -221,6 +224,7 @@ district_hive = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	allow = {
@@ -367,6 +371,7 @@ district_nexus = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	potential = {
@@ -378,6 +383,7 @@ district_nexus = {
 		NOT = { is_planet_class = pc_wsg_port }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	allow = {

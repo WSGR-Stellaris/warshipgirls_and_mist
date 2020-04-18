@@ -59,7 +59,29 @@
  district_arcology_wsg_military:0 "港区调度区划"
  district_arcology_wsg_military_plural:0 "港区调度区划"
  district_arcology_wsg_military_desc:0 "这个区划掌管整个国家的舰队调度和行政管理。" 
+ ################
+ decision_wsg_rw_project:0 "港区星环企划"
+ decision_wsg_rw_project_desc:0 "我们计划将这伟大的环形世界进行港区化改造。" 
+ decision_wsg_rw_project_requirements:0 "§Y需要将全部区划建造为城市区段!" 
+ decision_wsg_rw_effects:0 "将环形世界改造为港区环世界"
  
+ pc_ringworld_habitable_wsg:0 "港区环世界"
+ pc_ringworld_habitable_wsg_desc:0 "通过对环形世界的二次升级，将其改造为更适合舰娘的超级环世界。"
+ 
+ district_rw_wsg_city:0 "港区宿舍环"
+ district_rw_wsg_city_plural:0 "港区宿舍环"
+ district_rw_wsg_city_desc:0 "舰娘们生活的地方，豪华商业区、大澡堂等设施一应俱全，舒适度爆表。"
+ district_rw_wsg_alloys:0 "港区NEO合金环"
+ district_rw_wsg_alloys_plural:0 "NEO合金环"
+ district_rw_wsg_alloys_desc:0 "通过最优化的布局，NEO合金厂可以大规模的布置且不会造成任何污染。"
+ district_rw_wsg_science:0 "港区科研环"
+ district_rw_wsg_science_plural:0 "港区科研环"
+ district_rw_wsg_science_desc:0 "大量先进的实验设施被布置在这个区域。" 
+ district_rw_wsg_soldier:0 "港区生产环"
+ district_rw_wsg_soldier_plural:0 "港区生产环"
+ district_rw_wsg_soldier_desc:0 "将稀有资源生产搬迁至港区环上，可以大幅度提高稀有资源生产效率。" 
+ 
+###############
  d_AP:0 "深海小型补给站"
  d_AP_desc:0 "这座补给站已经被我们控制，里面的补给舰将日夜不停的生产胖次。"
  

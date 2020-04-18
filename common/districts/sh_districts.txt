@@ -1,5 +1,5 @@
 district_rw_sh_city = {
-	base_buildtime = 360
+	base_buildtime = 720
 	is_capped_by_modifier = no
 	
 	show_on_uncolonized = {
@@ -121,7 +121,7 @@ district_rw_sh_city = {
 }
 
 district_rw_sh_alloys = {
-	base_buildtime = 360
+	base_buildtime = 720
 	is_capped_by_modifier = no
 	icon = district_arcology_arms_industry2
 	
@@ -195,7 +195,7 @@ district_rw_sh_alloys = {
 }
 
 district_rw_sh_goods = {
-	base_buildtime = 360
+	base_buildtime = 720
 	is_capped_by_modifier = no
 	icon = district_rw_science2
 	
@@ -269,7 +269,7 @@ district_rw_sh_goods = {
 }
 
 district_rw_sh_soldier = {
-	base_buildtime = 360
+	base_buildtime = 720
 	is_capped_by_modifier = no
 	icon = district_arcology_civilian_soldier 
 	

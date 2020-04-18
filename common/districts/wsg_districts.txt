@@ -347,3 +347,304 @@ district_arcology_wsg_military = {
 		}
 	}
 }
+
+###################
+district_rw_wsg_city = {
+	base_buildtime = 720
+	is_capped_by_modifier = no
+	icon = district_arcology_wsg_housing
+	
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		is_planet_class = pc_ringworld_habitable_ws
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		is_planet_class = pc_ringworld_habitable_wsg
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2500
+		}
+		upkeep = {
+			energy = 15
+		}		
+	}	
+
+	planet_modifier = {
+		planet_housing_add = 80
+		job_clerk_add = 20
+		job_barthroom_worker_add = 10
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_barthroom_worker_effect_desc
+	}
+
+
+}
+
+district_rw_wsg_alloys = {
+	base_buildtime = 720
+	is_capped_by_modifier = no
+	icon = district_arcology_wsg_neo
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}	
+
+	
+	convert_to = {
+		district_rw_commercial
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 3000
+			sr_neo = 250
+		}
+		upkeep = {
+			energy = 30
+			sr_pantsu = 4
+			sr_neo = 2
+		}		
+	}
+	triggered_desc = {
+		text = job_wsg_foundry_effect_desc
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = 30
+		job_wsg_foundry_add = 30
+	}
+	
+	ai_weight = {
+		weight = 0
+		
+		modifier = {
+			weight = 20000
+
+			owner = { 
+				has_monthly_income = {
+					resource = energy
+					value < 200
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			OR = { 
+				planet = { has_district = district_rw_farming }
+				planet = { has_district = district_rw_science } 
+				planet = { has_district = district_rw_commercial } 
+			}
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_rw_wsg_science = {
+	base_buildtime = 720
+	is_capped_by_modifier = no
+	icon = district_arcology_wsg_science
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}	
+	
+	convert_to = {
+		district_rw_commercial
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 3000
+			sr_neo = 200
+		}
+		upkeep = {
+			energy = 30
+			sr_pantsu = 4
+			sr_neo = 2
+		}		
+	}
+	triggered_desc = {
+		text = job_wsg_researcher_effect_desc
+	}
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}	
+	triggered_planet_modifier = {
+		planet_housing_add = 30
+		job_wsg_researcher_add = 10
+		job_researcher_add = 20
+	}
+	
+	ai_weight = {
+		weight = 0
+		
+		modifier = {
+			weight = 20000
+
+			owner = { 
+				has_monthly_income = {
+					resource = energy
+					value < 200
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			OR = { 
+				planet = { has_district = district_rw_farming }
+				planet = { has_district = district_rw_science } 
+				planet = { has_district = district_rw_commercial } 
+			}
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_rw_wsg_soldier = {
+	base_buildtime = 720
+	is_capped_by_modifier = no
+	icon = district_arcology_wsg_military
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+	}	
+	
+	convert_to = {
+		district_rw_commercial
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 3000
+			sr_neo = 200
+		}
+		upkeep = {
+			energy = 50
+		}		
+	}
+	triggered_desc = {
+		text = pantsu_effect_desc
+	}
+	triggered_desc = {
+		text = neo_effect_desc
+	}
+	triggered_desc = {
+		text = job_wsg_gas_refiner_effect_desc
+	}
+	triggered_desc = {
+		text = job_wsg_chemist_effect_desc
+	}
+	triggered_desc = {
+		text = job_wsg_translucer_effect_desc
+	}
+	triggered_desc = {
+		text = job_wsg_alpha_effect_desc
+	}	
+	triggered_planet_modifier = {
+		planet_housing_add = 30
+		job_wsg_gas_refiner_add = 3
+		job_wsg_chemist_add = 3
+		job_wsg_translucer_add = 3
+		job_wsg_pantsu_maker_add = 8
+		job_wsg_neo_producer_add = 8
+		job_wsg_alpha_add = 5
+	}
+	
+	ai_weight = {
+		weight = 0
+		
+		modifier = {
+			weight = 20000
+
+			owner = { 
+				has_monthly_income = {
+					resource = energy
+					value < 200
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			OR = { 
+				planet = { has_district = district_rw_farming }
+				planet = { has_district = district_rw_science } 
+				planet = { has_district = district_rw_commercial } 
+			}
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			always = yes
+		}
+	}
+}

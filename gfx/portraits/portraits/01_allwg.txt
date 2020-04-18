@@ -135,6 +135,7 @@ portraits = {
 	wsg56_1	 =	{texturefile = "gfx/models/portraits/wsg56_1.dds"  }
 	wsg57	 = 	{texturefile = "gfx/models/portraits/wsg57.dds"  }
 	wsg58	 =	{texturefile = "gfx/models/portraits/wsg58.dds"  }
+	wsg58_1	 =	{texturefile = "gfx/models/portraits/wsg58_1.dds"  }
 	wsg59	 =	{texturefile = "gfx/models/portraits/wsg59.dds"  }
 	wsg59_1	 =	{texturefile = "gfx/models/portraits/wsg59_1.dds"  }
 	wsg59_2	 =	{texturefile = "gfx/models/portraits/wsg59_2.dds"  }
@@ -260,6 +261,7 @@ portraits = {
 	wsg125_1	 =	{texturefile = "gfx/models/portraits/wsg125_1.dds"  }
 	wsg126	 =	{texturefile = "gfx/models/portraits/wsg126.dds"  }
 	wsg126_1 =	{texturefile = "gfx/models/portraits/wsg126_1.dds"  }
+	wsg126_2 =	{texturefile = "gfx/models/portraits/wsg126_2.dds"  }
 	wsg127	 =	{texturefile = "gfx/models/portraits/wsg127.dds"  }
 	wsg128	 =	{texturefile = "gfx/models/portraits/wsg128.dds"  }
 	wsg128_1 =	{texturefile = "gfx/models/portraits/wsg128_1.dds"  }
@@ -399,6 +401,7 @@ portraits = {
 	wsg223	=	{texturefile = "gfx/models/portraits/wsg223.dds"  }
 	wsg223_1	=	{texturefile = "gfx/models/portraits/wsg223_1.dds"  }
 	wsg223_2	=	{texturefile = "gfx/models/portraits/wsg223_2.dds"  }
+	wsg223_3	=	{texturefile = "gfx/models/portraits/wsg223_3.dds"  }
 	wsg224	=	{texturefile = "gfx/models/portraits/wsg224.dds"  }
 	wsg224_2	=	{texturefile = "gfx/models/portraits/wsg224_2.dds"  }
 	wsg225	=	{texturefile = "gfx/models/portraits/wsg225.dds"  }
@@ -469,6 +472,7 @@ portraits = {
 	wsg293	=	{texturefile = "gfx/models/portraits/wsg293.dds"  }
 	wsg294	=	{texturefile = "gfx/models/portraits/wsg294.dds"  }
 	wsg297	=	{texturefile = "gfx/models/portraits/wsg297.dds"  }
+	wsg297_1	=	{texturefile = "gfx/models/portraits/wsg297_1.dds"  }
 	wsg298	=	{texturefile = "gfx/models/portraits/wsg298.dds"  }
 	wsg298_1	=	{texturefile = "gfx/models/portraits/wsg298_1.dds"  }
 	wsg301	=	{texturefile = "gfx/models/portraits/wsg301.dds"  }
@@ -508,6 +512,7 @@ portraits = {
 	wsg324	=	{texturefile = "gfx/models/portraits/wsg324.dds"  }
 	wsg325	=	{texturefile = "gfx/models/portraits/wsg325.dds"  }
 	wsg325_1	=	{texturefile = "gfx/models/portraits/wsg325_1.dds"  }
+	wsg325_2	=	{texturefile = "gfx/models/portraits/wsg325_2.dds"  }
 	wsg326	=	{texturefile = "gfx/models/portraits/wsg326.dds"  }
 	wsg327	=	{texturefile = "gfx/models/portraits/wsg327.dds"  }
 	wsg328	=	{texturefile = "gfx/models/portraits/wsg328.dds"  }
@@ -629,6 +634,8 @@ portraits = {
 	wsg430	=	{texturefile = "gfx/models/portraits/wsg430.dds"  }
 	wsg432	=	{texturefile = "gfx/models/portraits/wsg432.dds"  }
 	wsg433	=	{texturefile = "gfx/models/portraits/wsg433.dds"  }
+	wsg434	=	{texturefile = "gfx/models/portraits/wsg434.dds"  }
+	wsg435	=	{texturefile = "gfx/models/portraits/wsg435.dds"  }
 	wsg9994	=	{texturefile = "gfx/models/portraits/wsg9994.dds"  }
 	wsg9995	=	{texturefile = "gfx/models/portraits/wsg9995.dds"  }	
 	wsg9996	=	{texturefile = "gfx/models/portraits/wsg9996.dds"  }
@@ -781,6 +788,7 @@ portrait_groups = {
 					wsg56_1
 					wsg57
 					wsg58
+					wsg58_1
 					wsg59
 					wsg59_1
 					wsg59_2
@@ -905,6 +913,7 @@ portrait_groups = {
 					wsg125_1
 					wsg126
 					wsg126_1
+					wsg126_2
 					wsg127
 					wsg128
 					wsg128_1
@@ -1045,6 +1054,7 @@ portrait_groups = {
 					wsg223
 					wsg223_1
 					wsg223_2
+					wsg223_3
 					wsg224
 					wsg224_2
 					wsg225
@@ -1115,6 +1125,7 @@ portrait_groups = {
 					wsg293
 					wsg294
 					wsg297
+					wsg297_1
 					wsg298
 					wsg298_1
 					wsg301
@@ -1154,6 +1165,7 @@ portrait_groups = {
 					wsg324
 					wsg325
 					wsg325_1
+					wsg325_2
 					wsg326
 					wsg327
 					wsg328
@@ -1275,6 +1287,8 @@ portrait_groups = {
 					wsg430
 					wsg432
 					wsg433
+					wsg434
+					wsg435
 					wsg9996
 				}
 			}
@@ -1418,6 +1432,7 @@ portrait_groups = {
 					wsg56_1
 					wsg57
 					wsg58
+					wsg58_1
 					wsg59
 					wsg59_1
 					wsg59_2
@@ -1542,6 +1557,7 @@ portrait_groups = {
 					wsg125_1
 					wsg126
 					wsg126_1
+					wsg126_2
 					wsg127
 					wsg128
 					wsg128_1
@@ -1682,6 +1698,7 @@ portrait_groups = {
 					wsg223
 					wsg223_1
 					wsg223_2
+					wsg223_3
 					wsg224
 					wsg224_2
 					wsg225
@@ -1752,6 +1769,7 @@ portrait_groups = {
 					wsg293
 					wsg294
 					wsg297
+					wsg297_1
 					wsg298
 					wsg298_1
 					wsg301
@@ -1791,6 +1809,7 @@ portrait_groups = {
 					wsg324
 					wsg325
 					wsg325_1
+					wsg325_2
 					wsg326
 					wsg327
 					wsg328
@@ -1912,6 +1931,8 @@ portrait_groups = {
 					wsg430
 					wsg432
 					wsg433
+					wsg434
+					wsg435
 				}
 			}
 
@@ -2055,6 +2076,7 @@ portrait_groups = {
 					wsg56_1
 					wsg57
 					wsg58
+					wsg58_1
 					wsg59
 					wsg59_1
 					wsg59_2
@@ -2179,6 +2201,7 @@ portrait_groups = {
 					wsg125_1
 					wsg126
 					wsg126_1
+					wsg126_2
 					wsg127
 					wsg128
 					wsg128_1
@@ -2319,6 +2342,7 @@ portrait_groups = {
 					wsg223
 					wsg223_1
 					wsg223_2
+					wsg223_3
 					wsg224
 					wsg224_2
 					wsg225
@@ -2389,6 +2413,7 @@ portrait_groups = {
 					wsg293
 					wsg294
 					wsg297
+					wsg297_1
 					wsg298
 					wsg298_1
 					wsg301
@@ -2428,6 +2453,7 @@ portrait_groups = {
 					wsg324
 					wsg325
 					wsg325_1
+					wsg325_2
 					wsg326
 					wsg327
 					wsg328
@@ -2549,6 +2575,8 @@ portrait_groups = {
 					wsg430
 					wsg432
 					wsg433
+					wsg434
+					wsg435
 				}
 			}
 
@@ -2691,6 +2719,7 @@ portrait_groups = {
 					wsg56_1
 					wsg57
 					wsg58
+					wsg58_1
 					wsg59
 					wsg59_1
 					wsg59_2
@@ -2815,6 +2844,7 @@ portrait_groups = {
 					wsg125_1
 					wsg126
 					wsg126_1
+					wsg126_2
 					wsg127
 					wsg128
 					wsg128_1
@@ -2955,6 +2985,7 @@ portrait_groups = {
 					wsg223
 					wsg223_1
 					wsg223_2
+					wsg223_3
 					wsg224
 					wsg224_2
 					wsg225
@@ -3025,6 +3056,7 @@ portrait_groups = {
 					wsg293
 					wsg294
 					wsg297
+					wsg297_1
 					wsg298
 					wsg298_1
 					wsg301
@@ -3064,6 +3096,7 @@ portrait_groups = {
 					wsg324
 					wsg325
 					wsg325_1
+					wsg325_2
 					wsg326
 					wsg327
 					wsg328
@@ -3185,6 +3218,8 @@ portrait_groups = {
 					wsg430
 					wsg432
 					wsg433
+					wsg434
+					wsg435
 				}
 			}
 
@@ -3327,6 +3362,7 @@ portrait_groups = {
 					wsg56_1
 					wsg57
 					wsg58
+					wsg58_1
 					wsg59
 					wsg59_1
 					wsg59_2
@@ -3451,6 +3487,7 @@ portrait_groups = {
 					wsg125_1
 					wsg126
 					wsg126_1
+					wsg126_2
 					wsg127
 					wsg128
 					wsg128_1
@@ -3591,6 +3628,7 @@ portrait_groups = {
 					wsg223
 					wsg223_1
 					wsg223_2
+					wsg223_3
 					wsg224
 					wsg224_2
 					wsg225
@@ -3661,6 +3699,7 @@ portrait_groups = {
 					wsg293
 					wsg294
 					wsg297
+					wsg297_1
 					wsg298
 					wsg298_1
 					wsg301
@@ -3700,6 +3739,7 @@ portrait_groups = {
 					wsg324
 					wsg325
 					wsg325_1
+					wsg325_2
 					wsg326
 					wsg327
 					wsg328
@@ -3821,6 +3861,8 @@ portrait_groups = {
 					wsg430
 					wsg432
 					wsg433
+					wsg434
+					wsg435					
 				}
 			}
 		}

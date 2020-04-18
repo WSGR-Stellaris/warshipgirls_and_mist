@@ -10,10 +10,7 @@ wsg_think_tank_power = {
 wsg_think_tank_power2 = {
     ships_upkeep_mult = -0.5
 	ship_weapon_damage = 0.20
-	ship_hull_mult = 0.20
-	ship_armor_mult = 0.20
-	ship_shield_mult = 0.20
-	ship_speed_mult = 0.2
+	ship_speed_mult = 0.3
 }
 
 wsg_boss_uav_power = {
@@ -65,4 +62,10 @@ early_rush = {
 	country_base_alloys_produces_add = 10
 	ship_weapon_damage = 0.10
 	ship_weapon_range_mult = 0.10
+}
+
+RBQ_Dragon_power = {
+	ship_weapon_damage = 1.00
+	ship_hull_mult = 0.2
+	ship_armor_mult = 0.20
 }

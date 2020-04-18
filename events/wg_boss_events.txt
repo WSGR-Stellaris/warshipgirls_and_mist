@@ -173,7 +173,7 @@ ship_event = {
 						}
 						is_ai = no
 					}
-					country_event = { id = wg_boss.15 days = 360 random = 360 }
+					country_event = { id = wg_boss.15 days = 1080 random = 1080 }
 				}
 			}			
 		}		
@@ -369,7 +369,7 @@ country_event = {
 		}
 		hidden_effect = {
 			owner = {
-				country_event = { id = wg_boss.12 days = 1800 random = 1800 }
+				country_event = { id = wg_boss.12 days = 3600 random = 1800 }
 			}			
 		}
 	}	

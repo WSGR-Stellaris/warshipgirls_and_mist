@@ -25,6 +25,7 @@ district_rw_city = {
 		district_rw_nexus
 		district_rw_hive
 		district_rw_sh_city
+		district_rw_wsg_city
 	}	
 
 	resources = {

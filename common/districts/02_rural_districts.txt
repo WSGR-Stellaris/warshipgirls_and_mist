@@ -17,6 +17,7 @@ district_generator = {
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	potential = {
@@ -29,6 +30,7 @@ district_generator = {
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 	}
 	
 	allow = {
@@ -243,6 +245,7 @@ district_mining = {
 		NOT = { is_planet_class = pc_shenhai }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 	}
 	
@@ -255,6 +258,7 @@ district_mining = {
 		NOT = { is_planet_class = pc_shenhai }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 	}
 	
@@ -458,6 +462,7 @@ district_farming = {
 		NOT = { is_planet_class = pc_shenhai }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 	}
 	
@@ -470,6 +475,7 @@ district_farming = {
 		NOT = { is_planet_class = pc_shenhai }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 		NOT = { is_planet_class = pc_ringworld_habitable_sh }
+		NOT = { is_planet_class = pc_ringworld_habitable_wsg }
 		NOT = { is_planet_class = pc_wsg_star_habitat }
 	}
 	

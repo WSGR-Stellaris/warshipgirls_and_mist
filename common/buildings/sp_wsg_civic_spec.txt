@@ -96,12 +96,13 @@ building_wsg_ella_government = {
 
 
     country_modifier = {
-		country_admin_cap_add = 8
+		country_admin_cap_add = 10
+		country_naval_cap_add = 10
 	}
 
 	planet_modifier = {
 		job_administrator_add = 1
-        job_wsg_soldier_add = 2
+        job_wsg_soldier_add = 3
 	}
 
     triggered_desc = {
