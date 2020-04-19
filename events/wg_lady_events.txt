@@ -908,7 +908,7 @@ country_event = {
 		set_country_flag = talking_to_wsg_lady
 		if = {
 			limit = {
-				any_owned_planet = {
+				any_owned_sector = {
 					leader = { has_leader_flag = wsg_lady_governor }
 				}
 			}
@@ -2528,21 +2528,29 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				NAND = { 
-					is_researching_special_project =  WSG_LADY_MODIFICATION1
-					is_researching_special_project =  WSG_LADY_MODIFICATION2
-					is_researching_special_project =  WSG_LADY_MODIFICATION3
+				OR = { 
+					AND = {
+						has_special_project = WSG_LADY_MODIFICATION1
+						NOT = { is_researching_special_project = WSG_LADY_MODIFICATION1 }
+					}
+					AND = {
+						has_special_project = WSG_LADY_MODIFICATION2
+						NOT = { is_researching_special_project = WSG_LADY_MODIFICATION2 }
+					}
+					AND = {
+						has_special_project = WSG_LADY_MODIFICATION3
+						NOT = { is_researching_special_project = WSG_LADY_MODIFICATION3 }
+					}
 					event_target:lady_warship_fleet = { is_fleet_idle = yes }
 				}
 			}
-			event_target:lady_warship_fleet = { clear_fleet_actions = this }
+			event_target:lady_warship_fleet = { 
+				set_event_locked = no
+				clear_fleet_actions = this
+			}
 			switch = {
 				trigger = has_country_flag
 				modify_project1 = {
-					enable_special_project = {
-						name = WSG_LADY_MODIFICATION1
-						location = event_target:mod_location
-					}
 					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION1
@@ -2551,10 +2559,6 @@ country_event = {
 					}
 				}
 				modify_project2 = {
-					enable_special_project = {
-						name = WSG_LADY_MODIFICATION2
-						location = event_target:mod_location
-					}
 					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION2
@@ -2563,10 +2567,6 @@ country_event = {
 					}
 				}
 				modify_project3 = {
-					enable_special_project = {
-						name = WSG_LADY_MODIFICATION3
-						location = event_target:mod_location
-					}
 					event_target:lady_warship_fleet = {
 						fleet_action_research_special_project = {
 							special_project = WSG_LADY_MODIFICATION3
@@ -2574,6 +2574,9 @@ country_event = {
 						}
 					}
 				}
+			}
+			event_target:lady_warship_fleet = { 
+				set_event_locked = yes
 			}
 		}
 		country_event = { id = wg_lady.10045 days = 15 }

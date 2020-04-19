@@ -89,7 +89,57 @@ pantsu_shop_franchising = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds"
 }
 
-
+pantsu_shop_dark_matter_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_sr_dark_matter_produces_add = 6
+}
+pantsu_shop_dark_matter_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_sr_dark_matter_produces_add = 25
+}
+pantsu_shop_zro_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_sr_zro_produces_add = 6
+}
+pantsu_shop_zro_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_sr_zro_produces_add = 25
+}
+pantsu_shop_living_metal_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_sr_living_metal_produces_add = 6
+}
+pantsu_shop_living_metal_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_sr_living_metal_produces_add = 25
+}
+pantsu_shop_nanites_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_nanites_produces_add = 6
+}
+pantsu_shop_nanites_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_nanites_produces_add = 25
+}
+pantsu_shop_alpha_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_sr_alpha_produces_add = 6
+}
+pantsu_shop_alpha_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_sr_alpha_produces_add = 25
+}
+pantsu_shop_se_contract = {
+	country_base_sr_pantsu_produces_add = -30
+	country_base_sr_se_produces_add = 6
+}
+pantsu_shop_se_contract_massive = {
+	country_base_sr_pantsu_produces_add = -100
+	country_base_sr_se_produces_add = 25
+}
+pantsu_shop_contract_break = {
+	country_base_energy_produces_add = -50
+}
 
 wg_modifier_combat_enhancement = {
 	weapon_type_wsg_pantsu_damage_mult = 0.30

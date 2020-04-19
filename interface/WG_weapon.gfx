@@ -461,7 +461,12 @@ spriteTypes{
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_pk_CM.dds"
 	}
 }
-
+spriteTypes{
+	spriteType = {
+		name = "GFX_ship_part_pk_WATERB"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_pk_WATERB.dds"
+	}
+}
 ##################
 spriteTypes{
 	spriteType = {

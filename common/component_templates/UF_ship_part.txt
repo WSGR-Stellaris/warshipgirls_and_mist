@@ -1092,7 +1092,7 @@ utility_component_template = {
 			priority = 200
 		}
 		modifier = {
-			ship_hull_add = -30000000
+			ship_hull_add = -3000000000
 			ship_hull_regen_add_perc = -100
 		}		
 		graphics = {

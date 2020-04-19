@@ -1371,7 +1371,7 @@ country_event = {
 				set_owner = event_target:ovo_country
 				create_ship = {
 					name = "NAME_QUINCY_OVO"
-					design = "NAME_Corrupted_Avatar"
+					design = "NAME_OVO_Avatar"
 				}
 				set_location = event_target:quincy_planet
 				set_fleet_stance = aggressive

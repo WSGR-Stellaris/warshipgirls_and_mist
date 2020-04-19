@@ -369,8 +369,11 @@ country_event = {
 			limit = {
 				OR = {
 					is_country_type = default
+					is_country_type = default_ev
 					is_country_type = fallen_empire
 					is_country_type = awakened_fallen_empire
+					is_country_type = kuat_fallen_empire
+					is_country_type = kuat_awakened_fallen_empire
 				}
 				intel_level = {
 					level = high
@@ -383,8 +386,11 @@ country_event = {
 			limit = {
 				OR = {
 					is_country_type = default
+					is_country_type = default_ev
 					is_country_type = fallen_empire
 					is_country_type = awakened_fallen_empire
+					is_country_type = kuat_fallen_empire
+					is_country_type = kuat_awakened_fallen_empire
 				}
 				NOT = {
 					intel_level = {
@@ -1132,15 +1138,36 @@ event = {
 			limit = {
 				any_country = {
 					is_country_type = wg_crisis_country
-					num_ships < 6
+					count_owned_ships = {
+						limit = { NOT = { is_ship_size = scout_UAV }}
+						count < 10
+					}
+				}
+				any_country = {
+					is_country_type = wg_crisis_sub_gate_country
+					count_owned_ships = {
+						limit = { NOT = { is_ship_size = scout_UAV }}
+						count < 10
+					}
 				}
 			}
-
+			random_country = {
+				limit = {
+					is_country_type = wg_crisis_sub_gate_country
+				}
+				every_owned_fleet = {
+					destroy_fleet = this
+				}
+				destroy_country = yes
+			}
 			random_country = {
 				limit = {
 					is_country_type = wg_crisis_country
 				}
-				destroy_country = yes
+				every_owned_fleet = {
+					destroy_fleet = this
+				}
+				country_event = { id = wg_crisis.50 }
 			}
 		}
 	}
@@ -2582,11 +2609,18 @@ country_event = {
     }
 
     immediate = {
+		if = {
+			limit = { exists = event_target:wg_crisis_country }
+			destroy_country = yes
+		}
         every_country = {
 			limit = {
 				OR = {
 					is_country_type = default
+					is_country_type = default_ev
 					is_country_type = fallen_empire
+					is_country_type = kuat_fallen_empire
+					is_country_type = kuat_awakened_fallen_empire
 				}
 			}
 			country_event = { id = wg_crisis.51 }
@@ -3221,11 +3255,23 @@ country_event = {
 							OR = {
 								is_country_type = fallen_empire
 								is_country_type = awaken_fallen_empire
+								is_country_type = kuat_fallen_empire
+								is_country_type = kuat_awakened_fallen_empire
 								is_country_type = default
+								is_country_type = default_ev
 								is_country_type = wg_crisis_country
 							}
 						}
 						establish_communications_no_message = event_target:wg_crisis_sub_gate_country
+					}
+					if = {
+						limit = { 
+							OR = {
+								has_global_flag = wg_crisis_hard
+								has_global_flag = wg_crisis_insane
+							}
+						}
+						add_modifier = { modifier = uf_hard_buff days = -1 }
 					}
 				}
 			}
@@ -3270,7 +3316,10 @@ country_event = {
 				OR = {
 					is_country_type = fallen_empire
 					is_country_type = awaken_fallen_empire
+					is_country_type = kuat_fallen_empire
+					is_country_type = kuat_awakened_fallen_empire
 					is_country_type = default
+					is_country_type = default_ev
 				}
 			}
 			establish_communications_no_message = event_target:wg_crisis_sub_gate_country
@@ -3747,7 +3796,294 @@ country_event = {
 			}
 		}
 	}
+}
 
+# 补船触发
+fleet_event = { 
+	id = wg_crisis.110
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = this
+		OR = {
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		count_fleet_ships = {
+			limit = { is_ship_size = uf_Juggernaut }
+			count > 0
+		}
+	}
+
+	immediate = {
+		random_list = {
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						check_variable = { which = num_bf value <= 0 }
+						check_variable = { which = num_bf_exist value >= num_bf }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"
+				}
+				change_variable = { which = num_bf_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 300 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 150 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 100 }}
+				}
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						check_variable = { which = num_bf_portal value <= 0 }
+						check_variable = { which = num_bf_portal_exist value >= num_bf_portal }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer_portal"  
+                    effect = { set_ship_flag = bf_portal }
+				}
+				change_variable = { which = num_bf_portal_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 300 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 150 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 100 }}
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						check_variable = { which = num_carrier value <= 0 }
+						check_variable = { which = num_carrier_exist value >= num_carrier }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_WG_CARRIER"
+                    graphical_culture = "wsg_01"
+                }
+				change_variable = { which = num_carrier_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 250 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 120 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 80 }}
+				}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					check_variable = { which = num_titan_exist value >= num_titan }
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_TITAN"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+				}
+				change_variable = { which = num_titan_exist value = 1 }
+				fleet_event = { id = wg_crisis.110 days = 120 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 360 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 250 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 120 }}
+				}
+			}
+			6 = {
+				modifier = {
+					factor = 0
+					check_variable = { which = num_bb_exist value >= num_bb }
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BB"
+                    graphical_culture = "wsg_01"
+					upgradable = no
+				}
+				change_variable = { which = num_bb_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 180 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 100 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 65 }}
+				}
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					check_variable = { which = num_ca_exist value >= num_ca }
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+					name = random
+					design = "NAME_WG_EG_CA"
+					graphical_culture = "wsg_01"
+					upgradable = no
+				}
+				change_variable = { which = num_ca_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 70 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 45 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 25 }}
+				}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					check_variable = { which = num_dd_exist value >= num_dd }
+				}
+				modifier = {
+					factor = 0
+					has_fleet_flag = counting_data
+				}
+				create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_DD"  
+                    graphical_culture = "wsg_01"
+					upgradable = no
+                }
+				change_variable = { which = num_dd_exist value = 1 }
+				switch = {
+					trigger = has_global_flag
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 40 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 25 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 10 }}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						check_variable = { which = num_dd_exist value < num_dd }
+						check_variable = { which = num_ca_exist value < num_ca }
+						check_variable = { which = num_bb_exist value < num_bb }
+						check_variable = { which = num_titan_exist value < num_titan }
+						check_variable = { which = num_carrier_exist value < num_carrier }
+						check_variable = { which = num_bf_portal_exist value < num_bf_portal }
+						check_variable = { which = num_bf_exist value < num_bf }
+						has_fleet_flag = counting_data
+					}
+				}
+				fleet_event = { id = wg_crisis.110 days = 20 random = 15 }
+			}
+			1 = {
+				modifier = {
+					factor = 999
+					has_fleet_flag = counting_data
+				}
+				fleet_event = { id = wg_crisis.110 days = 2 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.111
+	hide_window = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		OR = {
+			exists = event_target:wg_crisis_country
+			exists = event_target:wg_crisis_sub_gate_country
+		}
+		has_global_flag = wg_invasion_happened
+		OR = {
+			is_country_type = wg_crisis_country
+			is_country_type = wg_crisis_sub_gate_country
+		}
+		OR = {
+			has_global_flag = wg_crisis_normal
+			has_global_flag = wg_crisis_hard
+			has_global_flag = wg_crisis_insane
+		}
+		count_owned_ships = {
+			limit = { is_ship_size = uf_Juggernaut }
+			count > 0
+		}
+	}
+
+	immediate = {
+		every_owned_fleet = {
+			limit = { NOT = { has_fleet_flag = drones }}
+			set_fleet_flag = counting_data
+			set_variable = { which = num_carrier_exist value = 0 }
+			set_variable = { which = num_titan_exist value = 0 }
+			set_variable = { which = num_bb_exist value = 0 }
+			set_variable = { which = num_ca_exist value = 0 }
+			set_variable = { which = num_dd_exist value = 0 }
+			set_variable = { which = num_bf_portal_exist value = 0 }
+			set_variable = { which = num_bf_exist value = 0 }
+		}
+		every_owned_ship = {
+			limit = { 
+				NOR = { 
+					is_ship_size = uf_Juggernaut 
+					is_ship_size = scout_UAV
+				}
+			}
+			switch = {
+				trigger = is_ship_size
+				wg_carrier = { fleet = { change_variable = { which = num_carrier_exist value = 1 }}}
+				wg_titan = { fleet = { change_variable = { which = num_titan_exist value = 1 }}}
+				wg_battleship = { fleet = { change_variable = { which = num_bb_exist value = 1 }}}
+				wg_cruiser = { fleet = { change_variable = { which = num_ca_exist value = 1 }}}
+				wg_destroyer = { fleet = { change_variable = { which = num_dd_exist value = 1 }}}
+				uf_buffer = {
+					if = {
+						limit = { has_ship_flag = bf_portal }
+						fleet = { change_variable = { which = num_bf_portal_exist value = 1 }}
+					}
+					else = {
+						fleet = { change_variable = { which = num_bf_exist value = 1 }}
+					}
+				}
+			}
+		}
+		every_owned_fleet = {
+			limit = { NOT = { has_fleet_flag = drones }}
+			remove_fleet_flag = counting_data
+		}
+	}
 }
 
 #fleet_event = { 

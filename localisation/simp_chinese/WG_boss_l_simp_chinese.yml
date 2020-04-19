@@ -3,6 +3,7 @@
  r_early_rush:0 "《早战秘籍》"
  r_early_rush_desc:0 "摘记，早战之神 （第114版）：\n\n非洲星（欧洲星）\n于第一梯队战神（牛头人第三突击队）内，闻名于星河之未知品牌之智械，七余互异之星系萌新崇拜，皆为早战战神也。哀其最终命运尚不可知，然记载其轶事之文书于第6次早战翻车暴毙。自至少（早期）第5次以来，其往事真伪世人都懒得讨论。"
  early_rush:0 "没人比我更懂得早战"
+ WATERB_avatar:"巨大昆西"
 ###############################
  wg_think_tank:0 "科研枢纽"
  wg_boss_weapen_ion:0 "实验型涡轮炮-45号"
@@ -65,7 +66,7 @@
  wg_boss.15.a:0 "接入信号"
  
  wg_boss.16.name:0 "星极"
- wg_boss.16.desc:0 "尊敬的[root.GetName],你们的称自己为[root.GetSpeciesNamePlural]对吗？\n\n我是星极，恩多迪亚帝国的科研枢纽。很抱歉我未经允许在你们的飞船上安装了通讯器，我需要你们的帮助。"
+ wg_boss.16.desc:0 "尊敬的[root.GetName],你们称自己为[root.GetSpeciesNamePlural]对吗？\n\n我是星极，恩多迪亚帝国的科研枢纽。很抱歉我未经允许在你们的飞船上安装了通讯器，我需要你们的帮助。"
  wg_boss.16.a:0 "你是一个科研枢纽？为什么你能说话？"
  wg_boss.16.a.response:0 "确切的说，星极是我上传大脑之前肉身的名字。我的帝国在完成科研枢纽的建造之后，需要一台生物计算机来增强枢纽的运算能力，并担任控制枢纽。\n我自愿选择上传了大脑，担任这座科研枢纽的核心，直到今日。"
  wg_boss.16.b:0 "恩多迪亚帝国去哪里了？"
@@ -142,9 +143,32 @@
 ###########################################
  pc_wg_water:0 "全水星球"
  pc_wg_water_desc:0 "整颗星球被114.514公里深的水淹没，完全找不到任何落脚点。"
+ pc_ringworld_habitable_water:0 "全水环世界"
+ pc_ringworld_habitable_water_desc:0 "整个环世界都被水所淹没，如果不是其114.514公里的深度，真的很适合当巨型游泳池。"
  waterB:0 "§Y（水逼气候）§!"
  wg_boss_space_dragon_Yukikaze:0 "龙王雪风"
  DRAGON_weapen_X:0 "水逼射线"
+ 
+ tech_wg_waterB:0 "龙王喷水"
+ tech_wg_waterB_desc:0 "还记得我们击败的龙王雪风吗？我们最近忽然搞懂它哪里来这么多水了，现在可以将这这项技术运用于巨神兵！"
+ PLANET_KILLER_WATERB:0 "龙王喷水" 
+ PLANET_KILLER_WATERB_DESC:0 "将大量的水喷射到星球上，整个星球都会被水淹没。"
+ is_water_planet:0 "水...太多了" 
+ PLANET_KILLER_WATERB_ACTION:0 "龙王喷水"
+ PLANET_KILLER_WATERB_ACTION_DESC:0 "将大量的水喷射到星球上，整个星球都会被水淹没。"
+ opinion_WATERB_my_world:0 "水淹了我们的星球"
+ opinion_WATERB_a_world:0 "水淹了一个世界"
+ opinion_WATERB_a_primitive_world:0 "水淹了一个原始文明"
+ MESSAGE_DESC_FOR_PLANET_KILLER_WATERB:0 "被龙王淹没"
+ FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_WATERB:0 "准备注水 $PLANET|Y$"
+ wg_boss.44.name:0 "龙王喷水！"
+ wg_boss.44.desc:0 "随着 [From.From.GetName] 的水龙头渐渐拧紧，这宣布着我们已经完成了这颗星球的水淹。数百公里深的水将[From.GetName]彻底淹没成了一个全水世界。"
+ wg_boss.44.a:0 "水真多啊"
+ 
+
+ planet_destruction.1000.A:0 "那就这样吧。"
+ planet_destruction.1000.B:0 "对于那些被飞速转化为等离子体的人来说他们表现的不错。"
+
  
  wg_boss.36.name:0 "雪风巨龙！"
  wg_boss.36.desc:0 "我们进入了大禹星系，这个星系内居然有3个盖亚星球！！即使是最离谱的玄幻小说也不敢轻易描写这种奇观。而它现在却真实的呈现在我们眼前。\n\n然而，似乎天下的确没有免费的午餐，这个美丽的星系中有一条具有领地意识的巨龙，被我们命名为§H<雪风>§!。巨龙雪风将这个美丽的星系是为自己的家，守护着这些瑰宝一般的盖亚星球。"

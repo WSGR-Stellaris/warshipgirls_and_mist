@@ -402,3 +402,33 @@ ship_section_template = {
 	aux_utility_slots = 2
 	large_utility_slots = 4
 }
+
+ship_section_template = {
+	key = "ovo_avatar_section"
+	ship_size = ovo_avatar
+	fits_on_slot = mid
+	entity = "ovo_shroud_creature_corrupted_clouds_01_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+}

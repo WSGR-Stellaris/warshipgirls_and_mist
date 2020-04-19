@@ -25,3 +25,24 @@ tech_wg_gras = {
 	gateway = energy_weapons
 	
 }
+
+tech_wg_waterB = {
+    icon = tech_wg_waterB
+	cost = @tier5cost1
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = 40
+	is_rare = yes
+	is_dangerous = yes
+	
+
+	potential = {
+		has_country_flag = tech_waterB_allowed_flag	
+		has_ascension_perk = ap_colossus
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+		}
+	}
+}

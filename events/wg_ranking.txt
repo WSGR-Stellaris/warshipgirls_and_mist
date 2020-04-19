@@ -67,7 +67,15 @@ event = {
 				# 		set_neutral = no
 				# 		set_friendly = yes
 				# 	}
-				# }
+                # }
+                # 设置变量
+                set_variable = { which = dark_matter_stock value = 30000 }
+                set_variable = { which = living_metal_stock value = 30000 }
+                set_variable = { which = zro_stock value = 30000 }
+                set_variable = { which = nanite_stock value = 10000 }
+                set_variable = { which = alpha_stock value = 20000 }
+                set_variable = { which = se_stock value = 20000 }
+                set_variable = { which = rings_stock value = 3 }
 			}
 		}
         random_country = {
@@ -168,7 +176,7 @@ ship_event = {
     }
 
     immediate = {
-        FromFrom = {
+        owner = {
             if = { 
                 limit = { OR = {
                     has_authority = auth_warshipgirls
@@ -178,6 +186,7 @@ ship_event = {
                 set_country_flag = establish_communicate_in_normal
                 establish_communications_no_message = event_target:pantsu_shop_country
                 country_event = { id = wsgranking.1000 }
+                country_event = { id = wsgranking.20001 }
             }
             else = {
                 establish_communications_no_message = event_target:pantsu_shop_country
@@ -254,12 +263,41 @@ country_event = {
 			establish_communications_no_message = event_target:pantsu_shop_country
 		}
         country_event = { id = wsgranking.1000 }
+        country_event = { id = wsgranking.20001 }
     }
 
     option = {
         name = wsgranking.999.a
     }
+}
 
+country_event = {
+	id = wsgranking.20001
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+        has_communications = event_target:pantsu_shop_country
+        NOT = { has_country_flag = set_buff_limits }
+	}
+	immediate = {
+        set_country_flag = set_buff_limits
+		set_variable = {
+			which = max_allowed_shop_buffs
+			value = 2
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.20002
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
 }
 
 # 初次介绍
@@ -374,10 +412,10 @@ country_event = {
     option = { 
     custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 #冷却期间打开胖次商店
-
 country_event = {
 	id = wsgranking.1002
 	title = "TRANSMISSION"
@@ -420,6 +458,7 @@ country_event = {
     option = { 
     custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
@@ -429,8 +468,15 @@ country_event = {
     id = wsgranking.1101
 	title = wsgranking.1101.title
     desc = wsgranking.1101.desc
-    picture = GFX_evt_caravaneers
+
     custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+    is_triggered_only = yes
+
+    picture_event_data = {
+        room = Shop_room
+    }
+    
     trigger = {
         NOR = {
             has_authority = auth_shenhai
@@ -439,8 +485,6 @@ country_event = {
         from = { is_country_type = pantsu_shop }
         NOT = { has_global_flag = pantsu_shop_disabled }
     }
-
-    is_triggered_only = yes
     
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -501,6 +545,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
     
 }
@@ -565,6 +610,27 @@ country_event = {
         }
     }
 
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        # 取消所有货物协议
+        name = end_all_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1017 }}
+    }
+
     # 返回主选单
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -577,6 +643,7 @@ country_event = {
     # 退出
     option = { custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
@@ -613,12 +680,9 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = sr_pantsu value > 3000 }
             resource_stockpile_compare = { resource = sr_alpha value > 1500 }
-            check_variable = { which = "rankpts" value > 150 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail
-				check_variable = {
-					which = "rankpts" value > 150
-				}
+				check_variable = { which = "rankpts" value > 150 }
 			}
         }
         add_resource = {
@@ -645,13 +709,16 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
             resource_stockpile_compare = { resource = sr_alpha value > 1000 }
-            check_variable = { which = "rankpts" value > 140 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail
+				check_variable = { which = "rankpts" value > 140 }
+			}
         }
         add_resource = {
-            sr_pantsu = -1919
-            sr_alpha = -810
+            sr_pantsu = -2500
+            sr_alpha = -1000
         }
-        #change_variable = { which = "rankpts" value = -893 }
+        #change_variable = { which = "rankpts" value = -140 }
         add_research_option = tech_wsg_203plasma
         add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
     }
@@ -670,7 +737,10 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
             resource_stockpile_compare = { resource = sr_alpha value > 1000 }
-            check_variable = { which = "rankpts" value > 130 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail
+				check_variable = { which = "rankpts" value > 130 }
+			}
         }
         add_resource = {
             sr_pantsu = -2500
@@ -704,6 +774,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
@@ -785,6 +856,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
@@ -832,23 +904,94 @@ country_event = {
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
-        name = yjsp1145141919810893
-        # 前置条件
-        trigger = {
-            has_country_flag = wsgrank_item1
+        # 一次性兑换资源
+        name = wsgranking.1009.a
+        hidden_effect = {
+            country_event = { id = wsgranking.1011 }
         }
-        # 资源花费
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 长期资源交易
+        name = wsgranking.1009.b
+        trigger = { NAND = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
         allow = {
-            check_variable = { which = "rankpts" value > 50 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
         }
-        change_variable = { which = "rankpts" value = 1 }
-        add_resource = {
-            energy = 114
-            minerals = 514
-            sr_pantsu = 1919
-            sr_alpha = 810
+        hidden_effect = {
+            if = {
+                limit = { NAND = {
+                    has_modifier = pantsu_shop_dark_matter_contract
+                    has_modifier = pantsu_shop_zro_contract
+                    has_modifier = pantsu_shop_living_metal_contract
+                    has_modifier = pantsu_shop_nanites_contract
+                    has_modifier = pantsu_shop_alpha_contract
+                    has_modifier = pantsu_shop_se_contract
+                }}
+                country_event = { id = wsgranking.1014 }
+            } else = {
+                country_event = { id = wsgranking.1015 }
+            }
         }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        # 取消货物协议
+        name = end_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1016 }}
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        # 取消所有货物协议
+        name = end_all_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1017 }}
     }
 
     # 返回一级菜单
@@ -873,14 +1016,15 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
-# 三级菜单 - 兑换一次性资源
+# 三级菜单 - 兑换一次性资源 - 少量
 country_event = {
 	id = wsgranking.1011
 	title = "TRANSMISSION"
-	desc = wsgranking.1009.desc
+	desc = wsgranking.1011.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
@@ -894,24 +1038,133 @@ country_event = {
         NOT = { has_global_flag = pantsu_shop_disabled }
     }
 
+    # 切换为中量
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
-        name = yjsp1145141919810893
-        # 前置条件
-        trigger = {
-            has_country_flag = wsgrank_item1
+        name = wsgranking.1011.a
+        hidden_effect = {
+            country_event = { id = wsgranking.1012 }
         }
-        # 资源花费
-        allow = {
-            check_variable = { which = "rankpts" value > 50 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2dm
+        trigger = { has_technology = tech_mine_dark_matter }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = dark_matter_stock value > 200 }
+                }
+                fail_text = dark_matter_sold_out
+            }
         }
-        change_variable = { which = "rankpts" value = 1 }
+        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -200 }}
         add_resource = {
-            energy = 114
-            minerals = 514
-            sr_pantsu = 1919
-            sr_alpha = 810
+            sr_pantsu = -500
+            sr_dark_matter = 200
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2zro
+        trigger = { has_technology = tech_mine_zro }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = zro_stock value > 200 }
+                }
+                fail_text = zro_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -200 }}
+        add_resource = {
+            sr_pantsu = -500
+            sr_zro = 200
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2lm
+        trigger = { has_technology = tech_mine_living_metal }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = living_metal_stock value > 200 }
+                }
+                fail_text = living_metal_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -200 }}
+        add_resource = {
+            sr_pantsu = -500
+            sr_living_metal = 200
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2nanite
+        trigger = { has_technology = tech_nanite_transmutation }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = nanite_stock value > 20 }
+                }
+                fail_text = nanite_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -20 }}
+        add_resource = {
+            sr_pantsu = -500
+            nanites = 20
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2alpha
+        trigger = { has_technology = tech_building_wsg_alpha }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = alpha_stock value > 100 }
+                }
+                fail_text = alpha_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -100 }}
+        add_resource = {
+            sr_pantsu = -500
+            sr_alpha = 100
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2se
+        trigger = { has_technology = tech_sh_senergy }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = se_stock value > 100 }
+                }
+                fail_text = se_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -100 }}
+        add_resource = {
+            sr_pantsu = -500
+            sr_se = 100
         }
     }
 
@@ -920,7 +1173,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_return_to_menu
         hidden_effect = {
-            country_event = { id = wsgranking.1004 }
+            country_event = { id = wsgranking.1009 }
         }
     }
 
@@ -937,14 +1190,364 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
+
+# 三级菜单 - 兑换一次性资源 - 中量
+country_event = {
+	id = wsgranking.1012
+	title = "TRANSMISSION"
+	desc = wsgranking.1011.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 切换为中量
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1012.a
+        hidden_effect = {
+            country_event = { id = wsgranking.1013 }
+        }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2dm
+        trigger = { has_technology = tech_mine_dark_matter }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = dark_matter_stock value > 900 }
+                }
+                fail_text = dark_matter_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -900 }}
+        add_resource = {
+            sr_pantsu = -2000
+            sr_dark_matter = 900
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2zro
+        trigger = { has_technology = tech_mine_zro }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = zro_stock value > 900 }
+                }
+                fail_text = zro_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -900 }}
+        add_resource = {
+            sr_pantsu = -2000
+            sr_zro = 900
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2lm
+        trigger = { has_technology = tech_mine_living_metal }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = living_metal_stock value > 900 }
+                }
+                fail_text = living_metal_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -900 }}
+        add_resource = {
+            sr_pantsu = -2000
+            sr_living_metal = 900
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2nanite
+        trigger = { has_technology = tech_nanite_transmutation }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = nanite_stock value > 100 }
+                }
+                fail_text = nanite_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -100 }}
+        add_resource = {
+            sr_pantsu = -2000
+            nanites = 100
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2alpha
+        trigger = { has_technology = tech_building_wsg_alpha }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = alpha_stock value > 500 }
+                }
+                fail_text = alpha_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -500 }}
+        add_resource = {
+            sr_pantsu = -2000
+            sr_alpha = 500
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2se
+        trigger = { has_technology = tech_sh_senergy }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = se_stock value > 500 }
+                }
+                fail_text = se_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -500 }}
+        add_resource = {
+            sr_pantsu = -2000
+            sr_se = 500
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+# 三级菜单 - 兑换一次性资源 - 大量
+country_event = {
+	id = wsgranking.1013
+	title = "TRANSMISSION"
+	desc = wsgranking.1011.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 切换为少量
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1013.a
+        hidden_effect = {
+            country_event = { id = wsgranking.1011 }
+        }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2dm
+        trigger = { has_technology = tech_mine_dark_matter }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = dark_matter_stock value > 5000 }
+                }
+                fail_text = dark_matter_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -5000 }}
+        add_resource = {
+            sr_pantsu = -10000
+            sr_dark_matter = 5000
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2zro
+        trigger = { has_technology = tech_mine_zro }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = zro_stock value > 5000 }
+                }
+                fail_text = zro_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -5000 }}
+        add_resource = {
+            sr_pantsu = -10000
+            sr_zro = 5000
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2lm
+        trigger = { has_technology = tech_mine_living_metal }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = living_metal_stock value > 5000 }
+                }
+                fail_text = living_metal_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -5000 }}
+        add_resource = {
+            sr_pantsu = -10000
+            sr_living_metal = 5000
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2nanite
+        trigger = { has_technology = tech_nanite_transmutation }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = nanite_stock value > 700 }
+                }
+                fail_text = nanite_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -700 }}
+        add_resource = {
+            sr_pantsu = -10000
+            nanites = 700
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2alpha
+        trigger = { has_technology = tech_building_wsg_alpha }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = alpha_stock value > 3000 }
+                }
+                fail_text = alpha_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -3000 }}
+        add_resource = {
+            sr_pantsu = -10000
+            sr_alpha = 3000
+        }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        is_dialog_only = yes
+        name = pantsu2se
+        trigger = { has_technology = tech_sh_senergy }
+        allow = { 
+            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            custom_tooltip = {
+                event_target:pantsu_shop_country = {
+                    check_variable = { which = se_stock value > 3000 }
+                }
+                fail_text = se_sold_out
+            }
+        }
+        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -3000 }}
+        add_resource = {
+            sr_pantsu = -10000
+            sr_se = 3000
+        }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
 
 #三级菜单 - 兑换长期资源贸易协议
 country_event = {
-	id = wsgranking.1011
+	id = wsgranking.1014
 	title = "TRANSMISSION"
-	desc = wsgranking.10011.desc
+	desc = wsgranking.1014.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
@@ -958,25 +1561,166 @@ country_event = {
         NOT = { has_global_flag = pantsu_shop_disabled }
     }
 
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1014.a
+        trigger = {
+            NAND = {
+                has_modifier = pantsu_shop_dark_matter_contract_massive
+                has_modifier = pantsu_shop_zro_contract_massive
+                has_modifier = pantsu_shop_living_metal_contract_massive
+                has_modifier = pantsu_shop_nanites_contract_massive
+                has_modifier = pantsu_shop_alpha_contract_massive
+                has_modifier = pantsu_shop_se_contract_massive
+            }
+        }
+        allow = {
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        hidden_effect = { country_event = { id = wsgranking.1015 }}
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = end_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1016 }}
+    }
+
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
-        name = yjsp1145141919810893
-        # 前置条件
-        trigger = {
-            has_country_flag = wsgrank_item1
+        name = pantsu2dm_contract
+        trigger = { 
+            has_technology = tech_mine_dark_matter
+            NOT = { has_modifier = pantsu_shop_dark_matter_contract }
         }
-        # 资源花费
-        allow = {
-            check_variable = { which = "rankpts" value > 50 }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
         }
-        change_variable = { which = "rankpts" value = 1 }
-        add_resource = {
-            energy = 114
-            minerals = 514
-            sr_pantsu = 1919
-            sr_alpha = 810
+        if = {
+            limit = { has_modifier = pantsu_shop_dark_matter_contract_massive }
+            remove_modifier = pantsu_shop_dark_matter_contract_massive
         }
+        add_modifier = { modifier = pantsu_shop_dark_matter_contract days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2zro_contract
+        trigger = { 
+            has_technology = tech_mine_zro
+            NOT = { has_modifier = pantsu_shop_zro_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_zro_contract_massive }
+            remove_modifier = pantsu_shop_zro_contract_massive
+        }
+        add_modifier = { modifier = pantsu_shop_zro_contract days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2lm_contract
+        trigger = { 
+            has_technology = tech_mine_living_metal 
+            NOT = { has_modifier = pantsu_shop_living_metal_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_living_metal_contract_massive }
+            remove_modifier = pantsu_shop_living_metal_contract_massive
+        }
+        add_modifier = { modifier = pantsu_shop_living_metal_contract days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2nanite_contract
+        trigger = { 
+            has_technology = tech_nanite_transmutation 
+            NOT = { has_modifier = pantsu_shop_nanites_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_nanites_contract_massive }
+            remove_modifier = pantsu_shop_nanites_contract_massive
+        }
+        add_modifier = { modifier = pantsu_shop_nanites_contract days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2alpha_contract
+        trigger = { 
+            has_technology = tech_building_wsg_alpha 
+            NOT = { has_modifier = pantsu_shop_alpha_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_alpha_contract_massive }
+            remove_modifier = pantsu_shop_alpha_contract_massive
+        }
+        add_modifier = { modifier = pantsu_shop_alpha_contract days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2se_contract
+        trigger = { 
+            has_technology = tech_sh_senergy 
+            NOT = { has_modifier = pantsu_shop_se_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 30 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_se_contract_massive }
+            remove_modifier = pantsu_shop_se_contract_massive
+        }
+        add_modifier = { modifier = pantsu_shop_se_contract days = -1 }
     }
 
     # 返回一级菜单
@@ -984,7 +1728,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_return_to_menu
         hidden_effect = {
-            country_event = { id = wsgranking.1004 }
+            country_event = { id = wsgranking.1009 }
         }
     }
 
@@ -1001,10 +1745,626 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+#三级菜单 - 兑换长期资源贸易协议 - 大量
+country_event = {
+	id = wsgranking.1015
+	title = "TRANSMISSION"
+	desc = wsgranking.1014.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1015.a
+        trigger = {
+            NAND = {
+                has_modifier = pantsu_shop_dark_matter_contract
+                has_modifier = pantsu_shop_zro_contract
+                has_modifier = pantsu_shop_living_metal_contract
+                has_modifier = pantsu_shop_nanites_contract
+                has_modifier = pantsu_shop_alpha_contract
+                has_modifier = pantsu_shop_se_contract
+            }
+        }
+        allow = {
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        hidden_effect = { country_event = { id = wsgranking.1014 }}
+    }
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = end_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1016 }}
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2dm_contract
+        trigger = { 
+            has_technology = tech_mine_dark_matter
+            NOT = { has_modifier = pantsu_shop_dark_matter_contract_massive }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_dark_matter_contract }
+            remove_modifier = pantsu_shop_dark_matter_contract
+        }
+        add_modifier = { modifier = pantsu_shop_dark_matter_contract_massive days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2zro_contract
+        trigger = { 
+            has_technology = tech_mine_zro
+            NOT = { has_modifier = pantsu_shop_zro_contract_massive }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_zro_contract }
+            remove_modifier = pantsu_shop_zro_contract
+        }
+        add_modifier = { modifier = pantsu_shop_zro_contract_massive days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2lm_contract
+        trigger = { 
+            has_technology = tech_mine_living_metal 
+            NOT = { has_modifier = pantsu_shop_living_metal_contract_massive }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_living_metal_contract }
+            remove_modifier = pantsu_shop_living_metal_contract
+        }
+        add_modifier = { modifier = pantsu_shop_living_metal_contract_massive days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2nanite_contract
+        trigger = { 
+            has_technology = tech_nanite_transmutation 
+            NOT = { has_modifier = pantsu_shop_nanites_contract_massive }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_nanites_contract }
+            remove_modifier = pantsu_shop_nanites_contract
+        }
+        add_modifier = { modifier = pantsu_shop_nanites_contract_massive days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2alpha_contract
+        trigger = { 
+            has_technology = tech_building_wsg_alpha 
+            NOT = { has_modifier = pantsu_shop_alpha_contract_massive }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_alpha_contract }
+            remove_modifier = pantsu_shop_alpha_contract
+        }
+        add_modifier = { modifier = pantsu_shop_alpha_contract_massive days = -1 }
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu2se_contract
+        trigger = { 
+            has_technology = tech_sh_senergy 
+            NOT = { has_modifier = pantsu_shop_se_contract }
+        }
+        allow = { 
+            resource_income_compare = { resource = sr_pantsu value >= 100 }
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        if = {
+            limit = { has_modifier = pantsu_shop_se_contract }
+            remove_modifier = pantsu_shop_se_contract
+        }
+        add_modifier = { modifier = pantsu_shop_se_contract_massive days = -1 }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
 #三级菜单 - 终止贸易
+country_event = {
+	id = wsgranking.1016
+	title = "TRANSMISSION"
+	desc = wsgranking.1016.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 长期资源交易
+        name = wsgranking.1009.b
+        trigger = { NAND = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        allow = {
+            custom_tooltip = {
+                NOT = { has_country_flag = pantsu_shop_contract_break }
+                fail_text = prohibit_contract_sign
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = { NAND = {
+                    has_modifier = pantsu_shop_dark_matter_contract
+                    has_modifier = pantsu_shop_zro_contract
+                    has_modifier = pantsu_shop_living_metal_contract
+                    has_modifier = pantsu_shop_nanites_contract
+                    has_modifier = pantsu_shop_alpha_contract
+                    has_modifier = pantsu_shop_se_contract
+                }}
+                country_event = { id = wsgranking.1014 }
+            } else = {
+                country_event = { id = wsgranking.1015 }
+            }
+        }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        # 取消所有货物协议
+        name = end_all_contract
+        trigger = { OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }}
+        hidden_effect = { country_event = { id = wsgranking.1017 }}
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.a
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_dark_matter_contract
+                has_modifier = pantsu_shop_dark_matter_contract_massive 
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_dark_matter_contract
+        remove_modifier = pantsu_shop_dark_matter_contract_massive
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.b
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_zro_contract
+                has_modifier = pantsu_shop_zro_contract_massive 
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_zro_contract
+        remove_modifier = pantsu_shop_zro_contract_massive
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.c
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_living_metal_contract
+                has_modifier = pantsu_shop_living_metal_contract_massive 
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_living_metal_contract
+        remove_modifier = pantsu_shop_living_metal_contract_massive
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.d
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_nanites_contract
+                has_modifier = pantsu_shop_nanites_contract_massive 
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_nanites_contract
+        remove_modifier = pantsu_shop_nanites_contract_massive
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.e
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_alpha_contract 
+                has_modifier = pantsu_shop_alpha_contract_massive 
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_alpha_contract
+        remove_modifier = pantsu_shop_alpha_contract_massive
+    }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1016.f
+        trigger = { 
+            OR = {
+                has_modifier = pantsu_shop_se_contract 
+                has_modifier = pantsu_shop_se_contract_massive
+            }
+        }
+        is_dialog_only = yes
+        response_text = comfirm_cancellation
+        remove_modifier = pantsu_shop_se_contract
+        remove_modifier = pantsu_shop_se_contract_massive
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+# 确认取消所有协议
+country_event = {
+	id = wsgranking.1017
+	title = "TRANSMISSION"
+	desc = wsgranking.1017.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+        # room 有需求的话自己改名字
+		room = Shop_room
+    }
+    
+    trigger = {
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    # 确认取消所有协议
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1017.a
+        remove_modifier = pantsu_shop_dark_matter_contract
+        remove_modifier = pantsu_shop_dark_matter_contract_massive
+        remove_modifier = pantsu_shop_zro_contract
+        remove_modifier = pantsu_shop_zro_contract_massive
+        remove_modifier = pantsu_shop_living_metal_contract
+        remove_modifier = pantsu_shop_living_metal_contract_massive
+        remove_modifier = pantsu_shop_nanites_contract
+        remove_modifier = pantsu_shop_nanites_contract_massive
+        remove_modifier = pantsu_shop_alpha_contract
+        remove_modifier = pantsu_shop_alpha_contract_massive
+        remove_modifier = pantsu_shop_se_contract
+        remove_modifier = pantsu_shop_se_contract_massive
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = {
+            country_event = { id = wsgranking.1009 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = {
+            country_event = { id = wsgranking.1001 }
+        }
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = wsgranking.1018
+    title = "TRANSMISSION"
+	desc = wsgranking.1010.desc
+    custom_gui = "enclave_caravaneer_window"
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = Shop_room
+    }
+
+    trigger = {
+        resource_stockpile_compare = { resource = sr_pantsu value <= 0 }
+        OR = {
+            has_modifier = pantsu_shop_dark_matter_contract
+            has_modifier = pantsu_shop_zro_contract
+            has_modifier = pantsu_shop_living_metal_contract
+            has_modifier = pantsu_shop_nanites_contract
+            has_modifier = pantsu_shop_alpha_contract
+            has_modifier = pantsu_shop_se_contract
+            has_modifier = pantsu_shop_dark_matter_contract_massive
+            has_modifier = pantsu_shop_zro_contract_massive
+            has_modifier = pantsu_shop_living_metal_contract_massive
+            has_modifier = pantsu_shop_nanites_contract_massive
+            has_modifier = pantsu_shop_alpha_contract_massive
+            has_modifier = pantsu_shop_se_contract_massive
+        }
+    }
+
+    option = {
+        name = wsgranking.1018.a
+        response_text = wsgranking.1018.a.response
+        remove_modifier = pantsu_shop_dark_matter_contract
+        remove_modifier = pantsu_shop_dark_matter_contract_massive
+        remove_modifier = pantsu_shop_zro_contract
+        remove_modifier = pantsu_shop_zro_contract_massive
+        remove_modifier = pantsu_shop_living_metal_contract
+        remove_modifier = pantsu_shop_living_metal_contract_massive
+        remove_modifier = pantsu_shop_nanites_contract
+        remove_modifier = pantsu_shop_nanites_contract_massive
+        remove_modifier = pantsu_shop_alpha_contract
+        remove_modifier = pantsu_shop_alpha_contract_massive
+        remove_modifier = pantsu_shop_se_contract
+        remove_modifier = pantsu_shop_se_contract_massive
+        add_modifier = { modifier = pantsu_shop_contract_break days = 1440 }
+        set_timed_country_flag = { flag = pantsu_shop_contract_break days = 3600 }
+    }
+}
+
+country_event = {
+    id = wsgranking.1998
+    hide_window = yes
+
+    trigger = {
+        is_country_type = pantsu_shop
+    }
+
+    mean_time_to_happen = {
+        years = 10
+        modifier = {
+            factor = 0.5
+            check_variable = { which = rings_stock value < 2 }
+        }
+        modifier = {
+            factor = 0.2
+            check_variable = { which = rings_stock value < 1 }
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = { check_variable = { which = rings_stock value < 3 }}
+            random_list = {
+                1 = {
+                    change_variable = { which = rings_stock value = 1 }
+                }
+                2 = {
+                    modifier = {
+                        add = -1
+                        check_variable = { which = rings_stock value < 1 }
+                    }
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wsgranking.1999
+    hide_window = yes
+
+    trigger = {
+        is_country_type = pantsu_shop
+    }
+
+    mean_time_to_happen = {
+        months = 3
+    }
+
+    immediate = {
+        if = {
+            limit = { check_variable = { which = dark_matter_stock value < 30000 }}
+            if = {
+                limit = { check_variable = { which = dark_matter_stock value < 5000 }}
+                change_variable = { which = dark_matter_stock value = 1500 }
+            } else = {
+                change_variable = { which = dark_matter_stock value = 600 }
+            }
+        }
+        if = {
+            limit = { check_variable = { which = living_metal_stock value < 30000 }}
+            if = {
+                limit = { check_variable = { which = living_metal_stock value < 5000 }}
+                change_variable = { which = living_metal_stock value = 1500 }
+            } else = {
+                change_variable = { which = living_metal_stock value = 600 }
+            }
+        }
+        if = {
+            limit = { check_variable = { which = zro_stock value < 30000 }}
+            if = {
+                limit = { check_variable = { which = zro_stock value < 5000 }}
+                change_variable = { which = zro_stock value = 1500 }
+            } else = {
+                change_variable = { which = zro_stock value = 600 }
+            }
+        }
+        if = {
+            limit = { check_variable = { which = nanite_stock value < 10000 }}
+            if = {
+                limit = { check_variable = { which = nanite_stock value < 700 }}
+                change_variable = { which = nanite_stock value = 250 }
+            } else = {
+                change_variable = { which = nanite_stock value = 100 }
+            }
+        }
+        if = {
+            limit = { check_variable = { which = alpha_stock value < 20000 }}
+            if = {
+                limit = { check_variable = { which = alpha_stock value < 6000 }}
+                change_variable = { which = alpha_stock value = 2000 }
+            } else = {
+                change_variable = { which = alpha_stock value = 800 }
+            }
+        }
+        if = {
+            limit = { check_variable = { which = se_stock value < 20000 }}
+            if = {
+                limit = { check_variable = { which = se_stock value < 6000 }}
+                change_variable = { which = se_stock value = 2000 }
+            } else = {
+                change_variable = { which = se_stock value = 800 }
+            }
+        }
+    }
+}
 
 
 
@@ -1030,16 +2390,64 @@ country_event = {
         name = wsgranking.1010.a
         # 前置条件
         trigger = {
-            #has_country_flag = wsgrank_item1
+            has_authority = auth_warshipgirls
         }
         # 限制条件
         allow = {
-            #check_variable = { which = "rankpts" value > 50 }
+            resource_stockpile_compare = { resource = energy value > 6480 }
+            resource_stockpile_compare = { resource = rare_crystals value > 648 }
+            resource_stockpile_compare = { resource = sr_alpha value > 648 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 648 }
+            custom_tooltip = {
+                fail_text = not_enough_rings
+                event_target:pantsu_shop_country = { 
+                    check_variable = { which = rings_stock value > 0 }
+                }
+            }
         }
-        change_variable = { which = "wsg_rings" value = 1 }
+        hidden_effect = { change_variable = { which = "wsg_rings" value = 1 }}
+        event_target:pantsu_shop_country = { 
+            change_variable = { which = rings_stock value = -1 }
+        }
         #消耗资源
         add_resource = {
-            energy = -1919
+            energy = -6480
+            rare_crystals = -648
+            sr_alpha = -648
+            sr_pantsu = -648
+        }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.1010.a
+        # 前置条件
+        trigger = {
+            has_authority = auth_shenhai
+        }
+        # 限制条件
+        allow = {
+            resource_stockpile_compare = { resource = energy value > 6480 }
+            resource_stockpile_compare = { resource = rare_crystals value > 648 }
+            resource_stockpile_compare = { resource = sr_se value > 648 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 648 }
+            custom_tooltip = {
+                fail_text = not_enough_rings
+                event_target:pantsu_shop_country = { 
+                    check_variable = { which = rings_stock value > 0 }
+                }
+            }
+        }
+        change_variable = { which = "wsg_rings" value = 1 }
+        event_target:pantsu_shop_country = { 
+            change_variable = { which = rings_stock value = -1 }
+        }
+        #消耗资源
+        add_resource = {
+            energy = -6480
+            rare_crystals = -648
+            sr_se = -648
+            sr_pantsu = -648
         }
     }
 
@@ -1065,6 +2473,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
+        default_hide_option = yes
     }
 }
 
@@ -1096,7 +2505,6 @@ country_event = {
 country_event = {
 	id = wsgranking.5001
 	hide_window = yes
-	is_triggered_only = yes
 	mean_time_to_happen = {
 		days = 720
 	}
@@ -1109,7 +2517,7 @@ country_event = {
 	immediate = {
 		set_timed_country_flag = {
 			flag = recent_rank_increment
-			days = 180
+			days = 720
 		}
 	
 	    random_list = {
@@ -1128,10 +2536,6 @@ country_event = {
             }
 
             10 = {
-                change_variable = {
-                    which = rankpts
-                    value = 0
-                }
             }
         }	
     }
@@ -1206,6 +2610,7 @@ country_event = {
 			}
 			save_event_target_as = PantsuShopTaskPlanet
         }	
+    }
     option = {
         custom_gui = "enclave_caravaneer_option"
         name = wsgranking.5001.a
@@ -1221,11 +2626,10 @@ country_event = {
 			event_target:PantsuShopTaskPlanet = {
 				random_pop = {
 					limit = {
-						is_same_species = root
-					    }
-					    kill_pop = yes
-				    }
-			    }		
+                    is_same_species = root
+                    }
+                    kill_pop = yes
+                }	
 		    }
         }
     }
@@ -1608,34 +3012,34 @@ country_event = {
             which = rankpts
             value = 2
         }
-            hidden_effect = {		
-                create_species = {
-                    name = NAILA
-                    plural = NAILA
-                    class = ART
-                    portrait = art13
-                    namelist = ART1
-                    effect = {
-                        save_global_event_target_as = Naila_species
-                    }
-                }		
-                create_leader = {
-                    class = governor
-                    species = event_target:Naila_species
-                    name = "NAME_naila"
-                    skill = 5
-                    traits = {
-                        trait = leader_trait_governor_naila
-                        trait = leader_trait_governor_chairman
-                    }
-                    event_leader = yes	# prevents this leader from leading factions and winning elections
+        hidden_effect = {		
+            create_species = {
+                name = NAILA
+                plural = NAILA
+                class = ART
+                portrait = art13
+                namelist = ART1
+                effect = {
+                    save_global_event_target_as = Naila_species
                 }
-                last_created_leader = {
-                    set_is_female = yes
-                    set_age = 9
-                    change_leader_portrait = cts9998
+            }		
+            create_leader = {
+                class = governor
+                species = event_target:Naila_species
+                name = "NAME_naila"
+                skill = 5
+                traits = {
+                    trait = leader_trait_governor_naila
+                    trait = leader_trait_governor_chairman
                 }
-            }	
+                event_leader = yes	# prevents this leader from leading factions and winning elections
+            }
+            last_created_leader = {
+                set_is_female = yes
+                set_age = 9
+                change_leader_portrait = cts9998
+            }
+        }	
     }
     option = {
         custom_gui = "enclave_caravaneer_option"

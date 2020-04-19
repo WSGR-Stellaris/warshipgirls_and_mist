@@ -1619,6 +1619,7 @@ country_event = {
 				has_civic = civic_fanatic_purifiers
 			}
 		}
+		years_passed >= 35
 	}
 
 	mean_time_to_happen = {
@@ -2845,6 +2846,10 @@ country_event = {
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										if = { # 早战debuff
+											limit = { years_passed < 45 }
+											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+										}
 									}
 								}
 							}
@@ -2869,6 +2874,10 @@ country_event = {
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										if = { # 早战debuff
+											limit = { years_passed < 45 }
+											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+										}
 									}
 								}
 							}
@@ -2893,6 +2902,10 @@ country_event = {
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										if = { # 早战debuff
+											limit = { years_passed < 45 }
+											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+										}
 									}
 								}
 							}
@@ -2904,6 +2917,10 @@ country_event = {
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										if = { # 早战debuff
+											limit = { years_passed < 45 }
+											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+										}
 									}
 								}
 							}
@@ -2983,6 +3000,10 @@ country_event = {
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									if = { # 早战debuff
+											limit = { years_passed < 45 }
+										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+									}
 								}
 							}
 						}
@@ -2994,6 +3015,10 @@ country_event = {
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									if = { # 早战debuff
+											limit = { years_passed < 45 }
+										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+									}
 								}
 							}
 						}
@@ -3023,6 +3048,10 @@ country_event = {
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									if = { # 早战debuff
+											limit = { years_passed < 45 }
+										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+									}
 								}
 							}
 						}
@@ -3034,6 +3063,10 @@ country_event = {
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									if = { # 早战debuff
+											limit = { years_passed < 45 }
+										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
+									}
 								}
 							}
 						}

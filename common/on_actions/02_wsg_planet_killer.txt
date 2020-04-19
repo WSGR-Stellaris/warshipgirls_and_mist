@@ -30,3 +30,10 @@ on_destroy_planet_with_PLANET_KILLER_SK_UF = {
 		wg_crisis.202
 	}
 }
+
+on_destroy_planet_with_PLANET_KILLER_WATERB = {
+	events = {
+		wg_boss.43
+		planet_destruction.600 # frag holy world
+	}
+}

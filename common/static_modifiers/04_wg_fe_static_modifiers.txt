@@ -89,3 +89,8 @@ wsg_lady_modify_consume3 = {
 	country_base_nanites_produces_add = -1.5
 }
 retry_modify_wsg_lady_cd = {}
+
+gifted_fleet_early_debuff = {
+	ship_weapon_damage = -0.5
+	ship_fire_rate_mult = -0.5
+}

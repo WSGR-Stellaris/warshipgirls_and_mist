@@ -167,29 +167,33 @@ country_event = {
 					ruler = {
 						random_list = {
 							1 = {
-								modifier = {
-									check_variable = { which = "months_no_affection" value >= 1 }
-									add = 1
-								}
-								modifier = {
-									check_variable = { which = "months_no_affection" value >= 2 }
-									add = 2
-								}
-								modifier = {
-									check_variable = { which = "months_no_affection" value >= 3 }
-									add = 4
-								}
-								modifier = {
-									check_variable = { which = "months_no_affection" value >= 4 }
-									add = 8
-								}
 								change_variable = { which = affection value = 1 }
 								set_variable = { which = "months_no_affection" value = 0 }
 								check_level_up_ruler_affection_trait = yes
 							}
-							4 = {
+							24 = {
 								modifier = {
-									check_variable = { which = "months_no_affection" value >= 5 }
+									check_variable = { which = "months_no_affection" value >= 2 }
+									add = -5
+								}
+								modifier = {
+									check_variable = { which = "months_no_affection" value >= 4 }
+									add = -5
+								}
+								modifier = {
+									check_variable = { which = "months_no_affection" value >= 6 }
+									add = -5
+								}
+								modifier = {
+									check_variable = { which = "months_no_affection" value >= 8 }
+									add = -5
+								}
+								modifier = {
+									check_variable = { which = "months_no_affection" value >= 10 }
+									add = -4
+								}
+								modifier = {
+									check_variable = { which = "months_no_affection" value >= 12 }
 									factor = 0
 								}
 								change_variable = { which = "months_no_affection" value = 1 }
@@ -825,6 +829,9 @@ country_event = {
 		FROM = {
 			OR = {
 				is_country_type = default
+				is_country_type = default_ev
+				is_country_type = kuat_fallen_empire
+				is_country_type = kuat_awakened_fallen_empire
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
 			}

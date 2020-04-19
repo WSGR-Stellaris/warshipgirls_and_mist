@@ -10,10 +10,10 @@
 @governor_affection_to_lv4 = 90
 @governor_affection_to_lv5 = 120
 #科学家
-@scientist_affection_to_lv2 = 75
-@scientist_affection_to_lv3 = 150
-@scientist_affection_to_lv4 = 225
-@scientist_affection_to_lv5 = 300
+@scientist_affection_to_lv2 = 85
+@scientist_affection_to_lv3 = 170
+@scientist_affection_to_lv4 = 265
+@scientist_affection_to_lv5 = 340
 #海军上将
 @admiral_affection_to_lv2 = 40
 @admiral_affection_to_lv3 = 80
@@ -25,10 +25,10 @@
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 40
-@ruler_affection_to_lv3 = 80
-@ruler_affection_to_lv4 = 120
-@ruler_affection_to_lv5 = 160
+@ruler_affection_to_lv2 = 50
+@ruler_affection_to_lv3 = 100
+@ruler_affection_to_lv4 = 150
+@ruler_affection_to_lv5 = 200
 
 # scope: leader
 # PREV scope: country

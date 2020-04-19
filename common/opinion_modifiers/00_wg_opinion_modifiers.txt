@@ -381,3 +381,45 @@ opinion_sh_to_wsg_diplomacy = {
 		}		
 	}
 }
+
+opinion_WATERB_a_world = {
+	opinion = {
+		base = -100
+	}
+
+	accumulative = yes
+	
+	min = -300
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_WATERB_my_world = {
+	opinion = {
+		base = -1000
+	}
+
+	accumulative = yes
+	
+	min = -3000
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_WATERB_a_primitive_world = {
+	opinion = {
+		base = -50
+	}
+
+	accumulative = yes
+	
+	min = -200
+
+	decay = {
+		base = 1
+	}
+}
