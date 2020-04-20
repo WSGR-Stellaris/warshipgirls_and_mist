@@ -367,14 +367,7 @@ country_event = {
 		}
 		every_country = {
 			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = default_ev
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-					is_country_type = kuat_fallen_empire
-					is_country_type = kuat_awakened_fallen_empire
-				}
+				is_default_and_fallen_country = yes
 				intel_level = {
 					level = high
 					system = event_target:first_portal_system
@@ -384,14 +377,7 @@ country_event = {
 		}
 		every_country = {
 			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = default_ev
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-					is_country_type = kuat_fallen_empire
-					is_country_type = kuat_awakened_fallen_empire
-				}
+				is_default_and_fallen_country = yes
 				NOT = {
 					intel_level = {
 						level = high
@@ -655,12 +641,14 @@ planet_event = {
 		add_threat = { who = from amount = 2 }
 		destroy_colony = yes
 		if = {
-			limit = { is_ringworld = yes }
+			limit = { 
+				is_ringworld_wg_wg = yes 
+			}
 			change_pc = pc_ringworld_habitable_damaged
             reset_planet = yes
         }
         else_if = {
-            limit = { is_habitat = yes }
+            limit = { is_habitat_wg_wg = yes }
 			remove_planet = yes
         }
         else = {
@@ -2509,12 +2497,12 @@ planet_event = {
 		}
 		
         if = {
-			limit = { is_ringworld = yes }
+			limit = { is_ringworld_wg = yes }
 			change_pc = pc_ringworld_habitable_damaged
             reset_planet = yes
         }
         else_if = {
-            limit = { is_habitat = yes }
+            limit = { is_habitat_wg = yes }
 			remove_planet = yes
         }
         else = {
@@ -2615,13 +2603,7 @@ country_event = {
 		}
         every_country = {
 			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = default_ev
-					is_country_type = fallen_empire
-					is_country_type = kuat_fallen_empire
-					is_country_type = kuat_awakened_fallen_empire
-				}
+				is_default_and_fallen_country = yes
 			}
 			country_event = { id = wg_crisis.51 }
 			country_event = { id = wg_crisis.52 days = 5 }
@@ -3252,15 +3234,7 @@ country_event = {
 					event_target:wg_crisis_country = { country_event = { id = wg_crisis.91 }}  
 					every_country = {
 						limit = {
-							OR = {
-								is_country_type = fallen_empire
-								is_country_type = awaken_fallen_empire
-								is_country_type = kuat_fallen_empire
-								is_country_type = kuat_awakened_fallen_empire
-								is_country_type = default
-								is_country_type = default_ev
-								is_country_type = wg_crisis_country
-							}
+							is_default_and_fallen_country = yes
 						}
 						establish_communications_no_message = event_target:wg_crisis_sub_gate_country
 					}
@@ -3313,14 +3287,7 @@ country_event = {
 	immediate = {
 		every_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awaken_fallen_empire
-					is_country_type = kuat_fallen_empire
-					is_country_type = kuat_awakened_fallen_empire
-					is_country_type = default
-					is_country_type = default_ev
-				}
+				is_default_and_fallen_country = yes
 			}
 			establish_communications_no_message = event_target:wg_crisis_sub_gate_country
 		}
@@ -3829,7 +3796,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -3853,7 +3823,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -3878,7 +3851,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -3900,7 +3876,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -3924,7 +3903,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -3947,7 +3929,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
 					name = random
@@ -3970,7 +3955,10 @@ fleet_event = {
 				}
 				modifier = {
 					factor = 0
-					has_fleet_flag = counting_data
+					OR = {
+						has_fleet_flag = counting_data
+						is_in_combat = yes
+					}
 				}
 				create_ship = {
                     name = random
@@ -4006,6 +3994,10 @@ fleet_event = {
 				modifier = {
 					factor = 999
 					has_fleet_flag = counting_data
+				}
+				modifier = {
+					factor = 0
+					is_in_combat = yes
 				}
 				fleet_event = { id = wg_crisis.110 days = 2 }
 			}
@@ -4044,7 +4036,10 @@ country_event = {
 
 	immediate = {
 		every_owned_fleet = {
-			limit = { NOT = { has_fleet_flag = drones }}
+			limit = { 
+				NOT = { has_fleet_flag = drones }
+				is_in_combat = no
+			}
 			set_fleet_flag = counting_data
 			set_variable = { which = num_carrier_exist value = 0 }
 			set_variable = { which = num_titan_exist value = 0 }
@@ -4605,7 +4600,6 @@ country_event = {
 	after = {
 		hidden_effect = {
 			country_event = { id = wg_crisis.1 days = 3 }
-			country_event = { id = wg_crisis.10001 }
 		}
 	}
 
@@ -4657,29 +4651,29 @@ country_event = {
 		}
 	}
 }
-
-country_event = {
-	id = wg_crisis.10001
-	title = wg_crisis.10001.name
-	desc = wg_crisis.10001.desc
-	picture = GFX_evt_wg_crisis
-
-	trigger = {
-		is_ai = no
-	}
-	is_triggered_only = yes
-
-	option = {
-		name = wg_crisis.10001.a
-		hidden_effect = {
-			set_global_flag = galactic_crisis_happened
-		}
-	}
-
-	option = {
-		name = wg_crisis.10001.b
-	}
-}
+#已废弃
+#country_event = {
+#	id = wg_crisis.10001
+#	title = wg_crisis.10001.name
+#	desc = wg_crisis.10001.desc
+#	picture = GFX_evt_wg_crisis
+#
+#	trigger = {
+#		is_ai = no
+#	}
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = wg_crisis.10001.a
+#		hidden_effect = {
+#			set_global_flag = galactic_crisis_happened
+#		}
+#	}
+#
+#	option = {
+#		name = wg_crisis.10001.b
+#	}
+#}
 
 
 # 额外天灾触发事件
@@ -4753,6 +4747,52 @@ country_event = {
 		remove_global_flag = wg_crisis_disabled
 		remove_global_flag = galactic_crisis_happened
 		country_event = { id = wg_crisis.10000 }
+	}
+}
+
+event = {
+	id = wg_crisis.10004
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #玩家是舰娘国家
+			limit = { any_country = {
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
+				is_ai = no
+			}}
+			random_country = {
+				limit = {
+					OR = {
+						has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+					}
+					is_ai = no
+				}
+				country_event = { id = wg_crisis.10000 }
+			}
+			break = yes
+		} 
+		if = { #有AI舰娘国家
+			limit = { any_country = {
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
+				is_ai = yes
+			}}
+			random_country = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = can_adjust_wg_crisis_diff
+				country_event = { id = wg_crisis.10000 }
+			}
+			break = yes
+		}
 	}
 }
 

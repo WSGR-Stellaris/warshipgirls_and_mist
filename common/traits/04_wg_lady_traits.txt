@@ -258,12 +258,12 @@ leader_trait_admiral_wsg_lady = {
 	modification = no
 	icon = "gfx/interface/icons/traits/lady_trait.dds"
 	modifier = {
-		ship_hull_mult = 2.50
-		ship_armor_mult = 2.50
-		ship_shield_mult = 2.50
-		ship_weapon_damage = 2.50
+		ship_hull_mult = 3.50
+		ship_armor_mult = 3.50
+		ship_shield_mult = 3.50
+		ship_weapon_damage = 3.50
+		ship_fire_rate_mult = 1.0
 		ship_weapon_range_mult = 0.75
-		ships_sr_se_upkeep_mult = -1.0
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
@@ -280,26 +280,6 @@ leader_trait_admiral_wsg_lady_weaken = {
 		ship_shield_mult = 1.0
 		ship_weapon_damage = 1.0
 		ship_fire_rate_mult = 1.0
-		ships_sr_se_upkeep_mult = -1.0
-	}
-	leader_trait = { admiral }
-	leader_class = { admiral }
-	initial = no
-	randomized = no
-}
-
-leader_trait_admiral_wsg_lady2 = {
-	cost = 0
-	modification = no
-	icon = "gfx/interface/icons/traits/lady_trait.dds"
-	modifier = {
-		ship_hull_mult = 3.50
-		ship_armor_mult = 3.50
-		ship_shield_mult = 3.50
-		ship_weapon_damage = 3.50
-		ship_fire_rate_mult = 1.00
-		ship_weapon_range_mult = 2.00
-		ship_speed_mult = 1.0
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }

@@ -15,3 +15,42 @@ pantsu_shop_active_diplo = {
 		wsgranking.1016 # 三级菜单 - 终止贸易
 	}
 }
+
+has_any_pantsu_shop_contract = {
+	OR = {
+		has_modifier = pantsu_shop_dark_matter_contract
+		has_modifier = pantsu_shop_zro_contract
+		has_modifier = pantsu_shop_living_metal_contract
+		has_modifier = pantsu_shop_nanites_contract
+		has_modifier = pantsu_shop_alpha_contract
+		has_modifier = pantsu_shop_se_contract
+		has_modifier = pantsu_shop_dark_matter_contract_massive
+		has_modifier = pantsu_shop_zro_contract_massive
+		has_modifier = pantsu_shop_living_metal_contract_massive
+		has_modifier = pantsu_shop_nanites_contract_massive
+		has_modifier = pantsu_shop_alpha_contract_massive
+		has_modifier = pantsu_shop_se_contract_massive
+	}
+}
+
+has_any_rare_resource_tech = {
+	OR = {
+		has_technology = tech_mine_dark_matter
+		has_technology = tech_mine_zro
+		has_technology = tech_mine_living_metal
+		has_technology = tech_nanite_transmutation
+		has_technology = tech_building_wsg_alpha
+		has_technology = tech_sh_senergy
+	}
+}
+
+sign_all_pantsu_shop_contract = {
+	AND = {
+		has_modifier = pantsu_shop_dark_matter_contract
+		has_modifier = pantsu_shop_zro_contract
+		has_modifier = pantsu_shop_living_metal_contract
+		has_modifier = pantsu_shop_nanites_contract
+		has_modifier = pantsu_shop_alpha_contract
+		has_modifier = pantsu_shop_se_contract
+	}
+}

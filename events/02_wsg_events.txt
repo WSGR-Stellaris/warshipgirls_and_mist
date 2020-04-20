@@ -1730,59 +1730,60 @@ country_event = {
 	}
 }
 ##########游戏开始
-country_event ={
-	id = wsg.3047
-	title = "wsg.3047.name"
-	desc = "wsg.3047.desc"
-	picture = GFX_evt_wsg_on_star3
-	is_triggered_only = yes
-	fire_only_once = yes
-	force_open = yes
-
-	trigger = {
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		is_ai = no
-	}
-
-	after = {
-		country_event = { id = wg_crisis.10000 }
-	}
-	
-	option = {
-		name = "wsg.3047.a"
-		add_modifier = {
-			modifier = "wg_very_easy" 	
-			days = -1
-		}
-	}
-	option = {
-		name = "wsg.3047.b"
-		add_modifier = {
-			modifier = "wg_easy" 	
-			days = -1
-		}
-	}
-	option = {
-		name = "wsg.3047.c"
-	}
-	option = {
-		name = "wsg.3047.d"
-		add_modifier = {
-			modifier = "wg_hard" 	
-			days = -1
-		}
-	}
-	option = {
-		name = "wsg.3047.e"
-		add_modifier = {
-			modifier = "wg_very_hard" 	
-			days = -1
-		}
-	}
-}
+#已废弃
+#country_event ={
+#	id = wsg.3047
+#	title = "wsg.3047.name"
+#	desc = "wsg.3047.desc"
+#	picture = GFX_evt_wsg_on_star3
+#	is_triggered_only = yes
+#	fire_only_once = yes
+#	force_open = yes
+#
+#	trigger = {
+#		OR = {
+#			has_authority = auth_warshipgirls
+#			has_authority = auth_shenhai
+#		}
+#		is_ai = no
+#	}
+#
+#	after = {
+#		country_event = { id = wg_crisis.10000 }
+#	}
+#	
+#	option = {
+#		name = "wsg.3047.a"
+#		add_modifier = {
+#			modifier = "wg_very_easy" 	
+#			days = -1
+#		}
+#	}
+#	option = {
+#		name = "wsg.3047.b"
+#		add_modifier = {
+#			modifier = "wg_easy" 	
+#			days = -1
+#		}
+#	}
+#	option = {
+#		name = "wsg.3047.c"
+#	}
+#	option = {
+#		name = "wsg.3047.d"
+#		add_modifier = {
+#			modifier = "wg_hard" 	
+#			days = -1
+#		}
+#	}
+#	option = {
+#		name = "wsg.3047.e"
+#		add_modifier = {
+#			modifier = "wg_very_hard" 	
+#			days = -1
+#		}
+#	}
+#}
 ##########
 country_event = {
 	id = wsg.3048

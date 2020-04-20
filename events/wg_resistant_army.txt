@@ -1302,10 +1302,7 @@ country_event = {
             limit = {
                 count_country = {
                     limit = {
-						OR = {
-							is_country_type = default
-							is_country_type = default_ev
-						}
+						is_default_country = yes
                         NOR = {
                             has_authority = auth_shenhai
                             has_authority = auth_warshipgirls
@@ -1320,10 +1317,7 @@ country_event = {
             limit = {
                 count_country = {
                     limit = {
-                        OR = {
-							is_country_type = default
-							is_country_type = default_ev
-						}
+                        is_default_country = yes
                         NOR = {
                             has_authority = auth_shenhai
                             has_authority = auth_warshipgirls
@@ -1340,10 +1334,7 @@ country_event = {
         while = { count = "loop_i"
             random_country = {
                 limit = {
-                    OR = {
-						is_country_type = default
-						is_country_type = default_ev
-					}
+                    is_default_country = yes
                     NOT = { has_country_flag = has_ra_fleet_spawn }
                     NOR = {
                         has_authority = auth_shenhai

@@ -614,20 +614,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 取消所有货物协议
         name = end_all_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = {
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1017 }}
     }
 
@@ -905,6 +894,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         # 一次性兑换资源
+        allow = { has_any_rare_resource_tech = yes }
         name = wsgranking.1009.a
         hidden_effect = {
             country_event = { id = wsgranking.1011 }
@@ -915,21 +905,8 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 长期资源交易
         name = wsgranking.1009.b
-        trigger = { NAND = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
         allow = {
+            has_any_rare_resource_tech = yes
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
                 fail_text = prohibit_contract_sign
@@ -937,14 +914,9 @@ country_event = {
         }
         hidden_effect = {
             if = {
-                limit = { NAND = {
-                    has_modifier = pantsu_shop_dark_matter_contract
-                    has_modifier = pantsu_shop_zro_contract
-                    has_modifier = pantsu_shop_living_metal_contract
-                    has_modifier = pantsu_shop_nanites_contract
-                    has_modifier = pantsu_shop_alpha_contract
-                    has_modifier = pantsu_shop_se_contract
-                }}
+                limit = { 
+                    sign_all_pantsu_shop_contract = no
+                }
                 country_event = { id = wsgranking.1014 }
             } else = {
                 country_event = { id = wsgranking.1015 }
@@ -956,20 +928,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 取消货物协议
         name = end_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = { 
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1016 }}
     }
 
@@ -977,20 +938,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 取消所有货物协议
         name = end_all_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = {
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1017 }}
     }
 
@@ -1051,8 +1001,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = { has_technology = tech_mine_dark_matter }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_dark_matter
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1061,7 +1012,9 @@ country_event = {
                 fail_text = dark_matter_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -200 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -200 }}
+        }
         add_resource = {
             sr_pantsu = -500
             sr_dark_matter = 200
@@ -1071,8 +1024,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = { has_technology = tech_mine_zro }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_zro
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1081,7 +1035,9 @@ country_event = {
                 fail_text = zro_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -200 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -200 }}
+        }
         add_resource = {
             sr_pantsu = -500
             sr_zro = 200
@@ -1091,8 +1047,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = { has_technology = tech_mine_living_metal }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_living_metal
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1101,7 +1058,9 @@ country_event = {
                 fail_text = living_metal_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -200 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -200 }}
+        }
         add_resource = {
             sr_pantsu = -500
             sr_living_metal = 200
@@ -1111,8 +1070,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = { has_technology = tech_nanite_transmutation }
+        trigger = {  }
         allow = { 
+            has_technology = tech_nanite_transmutation
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1121,7 +1081,9 @@ country_event = {
                 fail_text = nanite_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -20 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -20 }}
+        }
         add_resource = {
             sr_pantsu = -500
             nanites = 20
@@ -1131,8 +1093,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = { has_technology = tech_building_wsg_alpha }
+        trigger = {  }
         allow = { 
+            has_technology = tech_building_wsg_alpha
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1141,7 +1104,9 @@ country_event = {
                 fail_text = alpha_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -100 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -100 }}
+        }
         add_resource = {
             sr_pantsu = -500
             sr_alpha = 100
@@ -1151,8 +1116,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = { has_technology = tech_sh_senergy }
+        trigger = {  }
         allow = { 
+            has_technology = tech_sh_senergy
             resource_stockpile_compare = { resource = sr_pantsu value > 500 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1161,7 +1127,9 @@ country_event = {
                 fail_text = se_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -100 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -100 }}
+        }
         add_resource = {
             sr_pantsu = -500
             sr_se = 100
@@ -1225,8 +1193,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = { has_technology = tech_mine_dark_matter }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_dark_matter
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1235,7 +1204,9 @@ country_event = {
                 fail_text = dark_matter_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -900 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -900 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             sr_dark_matter = 900
@@ -1245,8 +1216,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = { has_technology = tech_mine_zro }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_zro
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1255,7 +1227,9 @@ country_event = {
                 fail_text = zro_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -900 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -900 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             sr_zro = 900
@@ -1265,8 +1239,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = { has_technology = tech_mine_living_metal }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_living_metal
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1275,7 +1250,9 @@ country_event = {
                 fail_text = living_metal_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -900 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -900 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             sr_living_metal = 900
@@ -1285,8 +1262,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = { has_technology = tech_nanite_transmutation }
+        trigger = {  }
         allow = { 
+            has_technology = tech_nanite_transmutation
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1295,7 +1273,9 @@ country_event = {
                 fail_text = nanite_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -100 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -100 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             nanites = 100
@@ -1305,8 +1285,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = { has_technology = tech_building_wsg_alpha }
+        trigger = {  }
         allow = { 
+            has_technology = tech_building_wsg_alpha
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1315,7 +1296,9 @@ country_event = {
                 fail_text = alpha_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -500 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -500 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             sr_alpha = 500
@@ -1325,8 +1308,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = { has_technology = tech_sh_senergy }
+        trigger = {  }
         allow = { 
+            has_technology = tech_sh_senergy
             resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1335,7 +1319,9 @@ country_event = {
                 fail_text = se_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -500 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -500 }}
+        }
         add_resource = {
             sr_pantsu = -2000
             sr_se = 500
@@ -1399,8 +1385,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = { has_technology = tech_mine_dark_matter }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_dark_matter
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1409,7 +1396,9 @@ country_event = {
                 fail_text = dark_matter_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -5000 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -5000 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             sr_dark_matter = 5000
@@ -1419,8 +1408,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = { has_technology = tech_mine_zro }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_zro
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1429,7 +1419,9 @@ country_event = {
                 fail_text = zro_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -5000 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -5000 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             sr_zro = 5000
@@ -1439,8 +1431,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = { has_technology = tech_mine_living_metal }
+        trigger = {  }
         allow = { 
+            has_technology = tech_mine_living_metal
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1449,7 +1442,9 @@ country_event = {
                 fail_text = living_metal_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -5000 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -5000 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             sr_living_metal = 5000
@@ -1459,8 +1454,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = { has_technology = tech_nanite_transmutation }
+        trigger = {  }
         allow = { 
+            has_technology = tech_nanite_transmutation
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1469,7 +1465,9 @@ country_event = {
                 fail_text = nanite_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -700 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -700 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             nanites = 700
@@ -1479,8 +1477,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = { has_technology = tech_building_wsg_alpha }
+        trigger = {  }
         allow = { 
+            has_technology = tech_building_wsg_alpha
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1489,7 +1488,9 @@ country_event = {
                 fail_text = alpha_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -3000 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -3000 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             sr_alpha = 3000
@@ -1499,8 +1500,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = { has_technology = tech_sh_senergy }
+        trigger = {  }
         allow = { 
+            has_technology = tech_sh_senergy
             resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
@@ -1509,7 +1511,9 @@ country_event = {
                 fail_text = se_sold_out
             }
         }
-        event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -3000 }}
+        hidden_effect = {
+            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -3000 }}
+        }
         add_resource = {
             sr_pantsu = -10000
             sr_se = 3000
@@ -1564,15 +1568,8 @@ country_event = {
     option = {
         custom_gui = "enclave_caravaneer_option"
         name = wsgranking.1014.a
-        trigger = {
-            NAND = {
-                has_modifier = pantsu_shop_dark_matter_contract_massive
-                has_modifier = pantsu_shop_zro_contract_massive
-                has_modifier = pantsu_shop_living_metal_contract_massive
-                has_modifier = pantsu_shop_nanites_contract_massive
-                has_modifier = pantsu_shop_alpha_contract_massive
-                has_modifier = pantsu_shop_se_contract_massive
-            }
+        trigger = { 
+            sign_all_pantsu_shop_contract = no
         }
         allow = {
             custom_tooltip = {
@@ -1585,20 +1582,9 @@ country_event = {
     option = {
         custom_gui = "enclave_caravaneer_option"
         name = end_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = { 
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1016 }}
     }
 
@@ -1606,10 +1592,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2dm_contract
         trigger = { 
-            has_technology = tech_mine_dark_matter
             NOT = { has_modifier = pantsu_shop_dark_matter_contract }
         }
         allow = { 
+            has_technology = tech_mine_dark_matter
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1626,10 +1612,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2zro_contract
         trigger = { 
-            has_technology = tech_mine_zro
             NOT = { has_modifier = pantsu_shop_zro_contract }
         }
         allow = { 
+            has_technology = tech_mine_zro
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1646,10 +1632,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2lm_contract
         trigger = { 
-            has_technology = tech_mine_living_metal 
             NOT = { has_modifier = pantsu_shop_living_metal_contract }
         }
         allow = { 
+            has_technology = tech_mine_living_metal 
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1666,10 +1652,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2nanite_contract
         trigger = { 
-            has_technology = tech_nanite_transmutation 
             NOT = { has_modifier = pantsu_shop_nanites_contract }
         }
         allow = { 
+            has_technology = tech_nanite_transmutation 
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1686,10 +1672,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2alpha_contract
         trigger = { 
-            has_technology = tech_building_wsg_alpha 
             NOT = { has_modifier = pantsu_shop_alpha_contract }
         }
         allow = { 
+            has_technology = tech_building_wsg_alpha 
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1706,10 +1692,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2se_contract
         trigger = { 
-            has_technology = tech_sh_senergy 
             NOT = { has_modifier = pantsu_shop_se_contract }
         }
         allow = { 
+            has_technology = tech_sh_senergy 
             resource_income_compare = { resource = sr_pantsu value >= 30 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1771,14 +1757,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = wsgranking.1015.a
         trigger = {
-            NAND = {
-                has_modifier = pantsu_shop_dark_matter_contract
-                has_modifier = pantsu_shop_zro_contract
-                has_modifier = pantsu_shop_living_metal_contract
-                has_modifier = pantsu_shop_nanites_contract
-                has_modifier = pantsu_shop_alpha_contract
-                has_modifier = pantsu_shop_se_contract
-            }
+            sign_all_pantsu_shop_contract = no
         }
         allow = {
             custom_tooltip = {
@@ -1791,20 +1770,9 @@ country_event = {
     option = {
         custom_gui = "enclave_caravaneer_option"
         name = end_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = { 
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1016 }}
     }
 
@@ -1812,10 +1780,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2dm_contract
         trigger = { 
-            has_technology = tech_mine_dark_matter
             NOT = { has_modifier = pantsu_shop_dark_matter_contract_massive }
         }
         allow = { 
+            has_technology = tech_mine_dark_matter
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1832,10 +1800,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2zro_contract
         trigger = { 
-            has_technology = tech_mine_zro
             NOT = { has_modifier = pantsu_shop_zro_contract_massive }
         }
         allow = { 
+            has_technology = tech_mine_zro
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1852,10 +1820,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2lm_contract
         trigger = { 
-            has_technology = tech_mine_living_metal 
             NOT = { has_modifier = pantsu_shop_living_metal_contract_massive }
         }
         allow = { 
+            has_technology = tech_mine_living_metal 
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1872,10 +1840,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2nanite_contract
         trigger = { 
-            has_technology = tech_nanite_transmutation 
             NOT = { has_modifier = pantsu_shop_nanites_contract_massive }
         }
         allow = { 
+            has_technology = tech_nanite_transmutation 
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1892,10 +1860,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2alpha_contract
         trigger = { 
-            has_technology = tech_building_wsg_alpha 
             NOT = { has_modifier = pantsu_shop_alpha_contract_massive }
         }
         allow = { 
+            has_technology = tech_building_wsg_alpha 
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1912,10 +1880,10 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu2se_contract
         trigger = { 
-            has_technology = tech_sh_senergy 
             NOT = { has_modifier = pantsu_shop_se_contract }
         }
         allow = { 
+            has_technology = tech_sh_senergy 
             resource_income_compare = { resource = sr_pantsu value >= 100 }
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1977,20 +1945,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 长期资源交易
         name = wsgranking.1009.b
-        trigger = { NAND = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = { }
         allow = {
             custom_tooltip = {
                 NOT = { has_country_flag = pantsu_shop_contract_break }
@@ -1999,14 +1954,9 @@ country_event = {
         }
         hidden_effect = {
             if = {
-                limit = { NAND = {
-                    has_modifier = pantsu_shop_dark_matter_contract
-                    has_modifier = pantsu_shop_zro_contract
-                    has_modifier = pantsu_shop_living_metal_contract
-                    has_modifier = pantsu_shop_nanites_contract
-                    has_modifier = pantsu_shop_alpha_contract
-                    has_modifier = pantsu_shop_se_contract
-                }}
+                limit = {
+                    sign_all_pantsu_shop_contract = no
+                }
                 country_event = { id = wsgranking.1014 }
             } else = {
                 country_event = { id = wsgranking.1015 }
@@ -2018,20 +1968,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 取消所有货物协议
         name = end_all_contract
-        trigger = { OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }}
+        trigger = { 
+            has_any_pantsu_shop_contract = yes
+        }
         hidden_effect = { country_event = { id = wsgranking.1017 }}
     }
 
@@ -2222,20 +2161,7 @@ country_event = {
 
     trigger = {
         resource_stockpile_compare = { resource = sr_pantsu value <= 0 }
-        OR = {
-            has_modifier = pantsu_shop_dark_matter_contract
-            has_modifier = pantsu_shop_zro_contract
-            has_modifier = pantsu_shop_living_metal_contract
-            has_modifier = pantsu_shop_nanites_contract
-            has_modifier = pantsu_shop_alpha_contract
-            has_modifier = pantsu_shop_se_contract
-            has_modifier = pantsu_shop_dark_matter_contract_massive
-            has_modifier = pantsu_shop_zro_contract_massive
-            has_modifier = pantsu_shop_living_metal_contract_massive
-            has_modifier = pantsu_shop_nanites_contract_massive
-            has_modifier = pantsu_shop_alpha_contract_massive
-            has_modifier = pantsu_shop_se_contract_massive
-        }
+        has_any_pantsu_shop_contract = yes
     }
 
     option = {
@@ -2405,9 +2331,11 @@ country_event = {
                 }
             }
         }
-        hidden_effect = { change_variable = { which = "wsg_rings" value = 1 }}
-        event_target:pantsu_shop_country = { 
-            change_variable = { which = rings_stock value = -1 }
+        hidden_effect = { 
+            change_variable = { which = "wsg_rings" value = 1 }
+            event_target:pantsu_shop_country = { 
+                change_variable = { which = rings_stock value = -1 }
+            }
         }
         #消耗资源
         add_resource = {

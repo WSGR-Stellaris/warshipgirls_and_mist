@@ -198,3 +198,21 @@ not_close_with_fe_and_capital = {
 		}
 	}
 }
+
+is_default_and_fallen_country = {
+	OR = {
+		is_country_type = fallen_empire
+		is_country_type = awaken_fallen_empire
+		is_country_type = kuat_fallen_empire
+		is_country_type = kuat_awakened_fallen_empire
+		is_country_type = default
+		is_country_type = default_ev
+	}
+}
+
+is_default_country = {
+	OR = {
+		is_country_type = default
+		is_country_type = default_ev
+	}
+}

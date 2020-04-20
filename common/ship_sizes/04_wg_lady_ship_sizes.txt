@@ -7,8 +7,7 @@ wsg_lady_warship_imdesignable = {
 	collision_radius = @battleship_collision_radius
 	modifier = {
 		ship_evasion_add = 30
-		ships_sr_se_upkeep_mult = -1.0
-		ships_upkeep_mult = -0.5
+		ships_upkeep_mult = -1.0
 		ship_speed_mult = 1.0
 	}
 	max_hitpoints = 2000
@@ -32,6 +31,7 @@ wsg_armed_science_ship = {
 	modifier = {
 		ship_evasion_add = 10
 		ship_piracy_suppression_add = 3
+		ships_upkeep_mult = -1.0
 	}
 	ship_modifier = {
 		ship_hyperlane_range_add = 3
@@ -68,6 +68,7 @@ wsg_lady_warship = {
 	modifier = {
 		ship_armor_add = 20000
 		ship_shield_add = 20000
+		ships_upkeep_mult = -1.0
 	}
 	max_hitpoints = 40000
 	size_multiplier = 16

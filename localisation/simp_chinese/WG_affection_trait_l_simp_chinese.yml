@@ -108,7 +108,7 @@
  leader_trait_ruler_affection_lv4_desc:0 "$leader_trait_ruler_affection_lv3_desc$"
  leader_trait_ruler_affection_lv4_max_desc:0 "该领袖好感度已满，你需要§H与该领袖进行誓约仪式§!以解锁下一等级的好感度。\n当前效果：§G免疫所有原版负面特性§!。"
  leader_trait_ruler_affection_lv5_desc:0 "该领袖好感度已满。\n当前效果：§G免疫所有原版负面特性§!，§G可复活一次§!"
- leader_trait_governor_lady_affection_lv5_tooltip:0 "$mod_planet_building_build_speed_mult$: §G30%§!\n$mod_planet_districts_cost_mult$: §G-20%§!\n$mod_planet_jobs_produces_mult$: §G15%§!\n所有一产区划，所有港区星球区划，所有深海环世界区划建造速度 §G+50%§!"
+ leader_trait_governor_lady_affection_lv5_tooltip:0 "$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$: §G30%§!\n$mod_planet_districts_cost_mult$: §G-20%§!\n$mod_planet_jobs_produces_mult$: §G15%§!\n所有一产区划，所有港区星球区划，所有深海环世界区划建造速度 §G+50%§!"
 
 # 
  mod_planet_district_arcology_housing_build_speed_mult:0 "理想城居住区划建造速度"

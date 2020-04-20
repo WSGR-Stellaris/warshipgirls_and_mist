@@ -1625,7 +1625,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { check_variable = { which = show_id value = num_governor }}
+			limit = { check_variable = { which = show_id value <= num_governor }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = governor
@@ -1687,7 +1687,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { check_variable = { which = show_id value = num_scientist }}
+			limit = { check_variable = { which = show_id value <= num_scientist }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = scientist
@@ -1749,7 +1749,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { check_variable = { which = show_id value = num_admiral }}
+			limit = { check_variable = { which = show_id value <= num_admiral }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = admiral
@@ -1811,7 +1811,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { check_variable = { which = show_id value = num_general }}
+			limit = { check_variable = { which = show_id value <= num_general }}
 			random_owned_leader = { # 这页的第一名领袖
 				limit = { 
 					leader_class = general
@@ -2265,6 +2265,7 @@ country_event = {
 		}
 		set_variable = { which = affection value = FROM }
 		set_variable = { which = affection_level value = FROM }
+		change_variable = { which = revive_leader_count value = 1 }
 		save_event_target_as = revive_leader_country
 		FROM = { 
 			if = {
@@ -2273,8 +2274,12 @@ country_event = {
 					clone_leader = { target = PREV class = governor 
 					effect = { 
 						save_event_target_as = revive_leader
-						set_leader_flag = revive_leader@event_target:revive_leader_country }
-					}
+						set_leader_flag = revive_leader@event_target:revive_leader_country 
+						set_variable = { which = revive_leader_count value = event_target:revive_leader_country }
+						set_variable = { which = reviving_leader value = revive_leader_count }
+						set_variable = { which = affection value = event_target:revive_leader_country }
+						set_variable = { which = affection_level value = event_target:revive_leader_country }
+					}}
 				}
 				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
 				break = yes
@@ -2285,8 +2290,12 @@ country_event = {
 					clone_leader = { target = PREV class = scientist 
 					effect = { 
 						save_event_target_as = revive_leader
-						set_leader_flag = revive_leader@event_target:revive_leader_country }
-					}
+						set_leader_flag = revive_leader@event_target:revive_leader_country 
+						set_variable = { which = revive_leader_count value = event_target:revive_leader_country }
+						set_variable = { which = reviving_leader value = revive_leader_count }
+						set_variable = { which = affection value = event_target:revive_leader_country }
+						set_variable = { which = affection_level value = event_target:revive_leader_country }
+					}}
 				}
 				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
 				break = yes
@@ -2297,8 +2306,12 @@ country_event = {
 					clone_leader = { target = PREV class = admiral 
 					effect = { 
 						save_event_target_as = revive_leader
-						set_leader_flag = revive_leader@event_target:revive_leader_country }
-					}
+						set_leader_flag = revive_leader@event_target:revive_leader_country 
+						set_variable = { which = revive_leader_count value = event_target:revive_leader_country }
+						set_variable = { which = reviving_leader value = revive_leader_count }
+						set_variable = { which = affection value = event_target:revive_leader_country }
+						set_variable = { which = affection_level value = event_target:revive_leader_country }
+					}}
 				}
 				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
 				break = yes
@@ -2309,8 +2322,12 @@ country_event = {
 					clone_leader = { target = PREV class = general 
 					effect = { 
 						save_event_target_as = revive_leader
-						set_leader_flag = revive_leader@event_target:revive_leader_country }
-					}
+						set_leader_flag = revive_leader@event_target:revive_leader_country 
+						set_variable = { which = revive_leader_count value = event_target:revive_leader_country }
+						set_variable = { which = reviving_leader value = revive_leader_count }
+						set_variable = { which = affection value = event_target:revive_leader_country }
+						set_variable = { which = affection_level value = event_target:revive_leader_country }
+					}}
 				}
 				ROOT = { country_event = { id = wg_aft.29 days = 5 random = 5 }}#复活事件
 				break = yes
@@ -2332,6 +2349,8 @@ country_event = {
 		else = {
 			country_event = { id = wg_aft.30 days = 1}
 		}
+		set_variable = { which = affection value = 0 }
+		set_variable = { which = affection_level value = 0 }
 	}
 }
 
@@ -2702,22 +2721,47 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		change_variable = { which = reviving_leader value = 1 }
+		save_event_target_as = reviving_leader_country
 		event_target:majia_country = { 
 			random_owned_leader = {
-				limit = { has_leader_flag = revive_leader@root }
+				limit = { 
+					has_leader_flag = revive_leader@root 
+					check_variable = { which = reviving_leader value = event_target:reviving_leader_country }
+				}
+				root = {  
+					set_variable = { which = affection value = PREV }
+					set_variable = { which = affection_level value = PREV }
+				}
 				switch = {
 					trigger = leader_class
 					governor = { 
-						ROOT = { clone_leader = { target = PREV class = governor effect = { set_leader_flag = revive_leader }}}
+						ROOT = { clone_leader = { target = PREV class = governor 
+						effect = { 
+							set_leader_flag = revive_leader 
+							set_variable = { which = reviving_leader value = event_target:reviving_leader_country }
+						}}}
 					}
 					scientist = { 
-						ROOT = { clone_leader = { target = PREV class = scientist effect = { set_leader_flag = revive_leader }}}
+						ROOT = { clone_leader = { target = PREV class = scientist 
+						effect = { 
+							set_leader_flag = revive_leader 
+							set_variable = { which = reviving_leader value = event_target:reviving_leader_country }
+						}}}
 					}
 					admiral = { 
-						ROOT = { clone_leader = { target = PREV class = admiral effect = { set_leader_flag = revive_leader }}}
+						ROOT = { clone_leader = { target = PREV class = admiral 
+						effect = { 
+							set_leader_flag = revive_leader 
+							set_variable = { which = reviving_leader value = event_target:reviving_leader_country }
+						}}}
 					}
 					general = { 
-						ROOT = { clone_leader = { target = PREV class = general effect = { set_leader_flag = revive_leader }}}
+						ROOT = { clone_leader = { target = PREV class = general 
+						effect = { 
+							set_leader_flag = revive_leader 
+							set_variable = { which = reviving_leader value = event_target:reviving_leader_country }
+						}}}
 					}
 					ruler = { 
 					}
@@ -2726,11 +2770,14 @@ country_event = {
 			}
 		}
 		random_owned_leader = {
-			limit = { has_leader_flag = revive_leader }
-			remove_leader_flag = can_revive #以防万一
-			set_leader_flag = married
+			limit = {
+				has_leader_flag = revive_leader
+				check_variable = { which = reviving_leader value = root }
+			}
 			set_variable = { which = affection value = PREV }
 			set_variable = { which = affection_level value = PREV }
+			remove_leader_flag = can_revive #以防万一
+			set_leader_flag = married
 			switch = {
 				trigger = leader_class
 				governor = { 
@@ -2748,8 +2795,6 @@ country_event = {
 				general = { 
 					subtract_variable = { which = affection value = @general_affection_to_lv2 }
 					reset_general_affection_level = yes
-				}
-				ruler = { 
 				}
 			}
 		}
@@ -2812,6 +2857,54 @@ country_event = {
 
 	option = {
 		name = wg_aft.31.a
+	}
+}
+
+event = {
+	id = wg_aft.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = { 
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
+				any_owned_leader = {
+					is_wg_leader = yes
+				}
+			}
+			country_event = { id = wg_aft.101 days = 50 random = 10 }
+		}
+	}
+}
+#检查好感度数值和等级
+country_event = {
+	id = wg_aft.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			limit = { \
+				is_wg_leader = yes
+				NOT = { has_leader_flag = wsg_lady_leader }
+			}
+			switch = {
+				trigger = leader_class
+				governor = { reset_governor_affection_level = yes }
+				scientist = { reset_scientist_affection_level = yes }
+				admiral = { reset_admiral_affection_level = yes }
+				general = { reset_general_affection_level = yes }
+				ruler = { reset_ruler_affection_level = yes }
+			}
+		}
+		if = {
+			limit = { has_country_flag = gain_wsg_lady }
+			reset_lady_affection_level = yes
+		}
 	}
 }
 
