@@ -426,6 +426,7 @@ tech_building_pantsu_shop = {
 				has_technology = tech_mine_volatile_motes
 				has_technology = tech_volatile_motes
 				has_country_flag = has_market_access
+				has_technology = tech_wsg_pantsu
 			}
 		}
 	}
@@ -2197,7 +2198,9 @@ tech_wsg_B25 = {
 	is_rare = yes
 	is_reverse_engineerable = no
 		
-	
+	modifier = {
+		local_trade_protection_add = 10
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -2233,7 +2236,9 @@ tech_wsg_BTD = {
 	weight = @tier3weight3
 	is_reverse_engineerable = no
 		
-	
+	modifier = {
+		local_trade_protection_add = 10
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -2795,8 +2800,9 @@ tech_wsg_mine = {
 	tier = 5
 	category = { voidcraft }
 	prerequisites = { "tech_wsg_hc" }
-	weight = @tier3weight3
+	weight = 0
 	is_rare = yes 
+	is_dangerous = yes
 	prereqfor_desc = {
 		diplo_action = {
 			title = "wsg_mine_edicts"
@@ -2804,23 +2810,23 @@ tech_wsg_mine = {
 		}
 	}	
 	
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOR = {
-				has_technology = tech_mine_volatile_motes
-				has_technology = tech_volatile_motes
-				has_country_flag = has_market_access
-			}
-		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}			
-		}
-	}
+	# weight_modifier = {
+	# 	modifier = {
+	# 		factor = 0
+	# 		NOR = {
+	# 			has_technology = tech_mine_volatile_motes
+	# 			has_technology = tech_volatile_motes
+	# 			has_country_flag = has_market_access
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		factor = 1.25
+	# 		research_leader = {
+	# 			area = engineering
+	# 			has_trait = "leader_trait_expertise_materials"
+	# 		}			
+	# 	}
+	# }
 	
 	ai_weight = {
 		factor = 0

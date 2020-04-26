@@ -1,15 +1,15 @@
 wg_majia_country = {
-	has_difficulty_bonuses = no
 	destroys_starbases = no
 	needs_survey = no
 	has_complete_sensor = yes
 	can_planets_be_attacked = no
 	has_capital = no
 	enforces_borders = no
-	observable = yes
+	observable = no
+	playable = no
+	show_in_contacts_list = no
+	blocks_piracy = yes
 	government = no
-	orbital_bombardment = no
-	can_use_invalid_technology = yes
 	ai = {
 		enabled = no
 	}

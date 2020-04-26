@@ -193,20 +193,20 @@
  wsgranking.304.desc:"您的帝国规模达到了600，现在您的帝国可能已经面临了管理问题！加把劲！您的军阶点数上升了4."
  wsgranking.304.a:"好的"
 
- wsgranking.311.name:"拥有1个巨构建筑"
- wsgranking.311.desc:"您拥有了第一个巨构建筑！不管是何来源这都很有趣。您的军阶点数上升了2."
+ wsgranking.311.name:"巨构建筑建造完成"
+ wsgranking.311.desc:"您建造了属于你的第一个巨构建筑！不管是什么，这都肯定很壮观。您的军阶点数上升了2."
  wsgranking.311.a:"好的"
 
- wsgranking.312.name:"拥有3个巨构建筑"
- wsgranking.312.desc:"您拥有了3个巨构建筑！您的军阶点数上升了4."
+ wsgranking.312.name:"完成建造3个巨构建筑"
+ wsgranking.312.desc:"您建造了3个巨构建筑！您的军阶点数上升了4."
  wsgranking.312.a:"好的"
 
- wsgranking.313.name:"拥有6个巨构建筑"
- wsgranking.313.desc:"您拥有了6个巨构建筑！如此宏伟！您的军阶点数上升了6."
+ wsgranking.313.name:"完成建造6个巨构建筑"
+ wsgranking.313.desc:"您建造了6个巨构建筑！这是何等宏伟的事业！您的军阶点数上升了6."
  wsgranking.313.a:"好的"
 
- wsgranking.314.name:"拥有15个巨构建筑"
- wsgranking.314.desc:"您拥有了15个巨构建筑！不愧为建筑大师！您的军阶点数上升了10."
+ wsgranking.314.name:"完成建造15个巨构建筑"
+ wsgranking.314.desc:"您建造了15个巨构建筑！您绝对是宇宙中屈指可数的建筑大师！您的军阶点数上升了10."
  wsgranking.314.a:"好的"
 
  wsgranking.321.name:"战略指挥中心奠基"

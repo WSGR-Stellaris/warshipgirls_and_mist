@@ -1,4 +1,51 @@
 weapon_component_template = {
+	key = "Astesia_weapen_T"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	hidden = yes	
+	damage = { min = 10000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 210
+	range = 180.0
+	accuracy = 1.0
+	shield_damage  = 0.8
+	armor_damage = 1.5
+	hull_damage = 1.2
+	tracking = 0.0
+	power = -1200
+	
+	component_set = "TITAN_LASER"
+	projectile_gfx = "titan_laser"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1000
+		}		
+		upkeep = {
+			energy = 25
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
 	key = "wg_boss_weapen_ion"
 	size = large
 	entity = "large_kinetic_gun_entity"
@@ -60,10 +107,10 @@ weapon_component_template = {
 	
 	damage = { min = 40 max = 80 }
 	windup = { min = 1 max = 5 }
-	total_fire_time = 2.5
+	total_fire_time = 3.0
 	range = 130.0
-	accuracy = 0.8
-	shield_damage  = 2.0
+	accuracy = 0.7
+	shield_damage  = 1.5
 	armor_damage = 2.0
 	hull_damage = 1.2
 	tracking = 0.05
@@ -79,6 +126,7 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 75
+			exotic_gases = 5
 		}		
 		upkeep = {
 			energy = 1.0
@@ -345,6 +393,182 @@ weapon_component_template = {
 		}		
 		upkeep = {
 			energy = 15
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+##############################
+weapon_component_template = {
+	key = "SMALL_weapon_bugv"
+	size = small
+	entity = "small_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_SML_152"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 35 max = 70 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 2
+	range = 80.0
+	accuracy = 0.8
+	shield_penetration = 1
+	armor_penetration = 1
+	hull_damage = 1.5
+	tracking = 0.5
+	power = -8
+	
+	hidden = yes
+	component_set = "wsg_weapen_SML_152"
+	projectile_gfx = "wsg_small_turbolaser_l_w"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_weapon_bugv"
+	size = medium
+	entity = "medium_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_SML_152"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 70 max = 150 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 10
+	range = 150.0
+	accuracy = 0.8
+	shield_penetration = 1
+	armor_penetration = 1
+	hull_damage = 1.5
+	tracking = 0.2
+	power = -15
+	
+	hidden = yes
+	component_set = "wsg_weapen_SML_152"
+	projectile_gfx = "wsg_small_turbolaser_l_w"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 30
+		}		
+		upkeep = {
+			energy = 0.6
+			alloys = 0.1
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "LARGE_weapon_bugv"
+	size = large
+	entity = "large_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_SML_152"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 150 max = 250 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 25
+	range = 200.0
+	accuracy = 0.8
+	shield_penetration = 1
+	armor_penetration = 1
+	hull_damage = 1.5
+	tracking = 0.1
+	power = -30
+	
+	hidden = yes
+	component_set = "wsg_weapen_SML_152"
+	projectile_gfx = "wsg_medium_turbolaser_l_w"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 55
+		}		
+		upkeep = {
+			energy = 0.8
+			alloys = 0.2
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "EX_weapon_bugv"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_LADY_weapen_X"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no	
+	damage = { min = 100000 max = 300000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 280.0
+	accuracy = 0.9
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.25	
+	tracking = 0.1
+	power = -600
+	
+	hidden = yes
+	component_set = "LADY_weapen_X"
+	projectile_gfx = "bugv_lance"
+	tags = { weapon_type_energy weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 350
+		}		
+		upkeep = {
+			energy = 10
 		}
 	}
 

@@ -35,6 +35,8 @@ vip_pay_for_resistant_fleet = {
 
 buff_vs_uf = {
 	damage_vs_country_type_wg_crisis_country_mult = 0.3
+	damage_vs_country_type_wg_crisis_sub_gate_country_mult = 0.3
+	custom_tooltip = buff_vs_uf_desc
 }
 
 reduce_fleet_maintenance_95pc = {

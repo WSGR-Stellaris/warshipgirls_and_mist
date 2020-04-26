@@ -25,6 +25,10 @@ on_tech_increased = {
         wsgranking.406
         wsgranking.407
         wsgranking.408
+        wsgranking.6001
+        wsgranking.6002
+        wsgranking.20002
+        wsgranking.20003
     }
 }
 
@@ -84,10 +88,6 @@ on_monthly_pulse_country = {
         wsgranking.302
         wsgranking.303
         wsgranking.304
-        wsgranking.311
-        wsgranking.312
-        wsgranking.313
-        wsgranking.314
         wsgranking.321
         wsgranking.322
         wsgranking.323
@@ -125,5 +125,26 @@ on_fleet_destroyed_victim = {
         wsgranking.401
         wsgranking.402
         wsgranking.405
+    }
+}
+
+# A Megastructure has been built
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
+on_megastructure_built = {
+	events = {
+        wsgranking.315
+    }
+}
+
+# A Megastructure has begun to be upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+on_megastructure_upgraded = {
+	events = {
+        wsgranking.315
     }
 }

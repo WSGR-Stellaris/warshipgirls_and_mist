@@ -1,4 +1,5 @@
 #BYZ
+# 奇奇怪怪的事件-50，先暂停使用，从长计议
 namespace = wsgflavoring
 country_event = {
 	id = wsgflavoring.101
@@ -9,6 +10,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions
@@ -39,6 +41,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions
@@ -69,6 +72,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions
@@ -100,6 +104,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions
@@ -131,6 +136,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions
@@ -166,6 +172,7 @@ country_event = {
 		days = 1800
 	}
 	trigger = {
+		always = no
 		has_authority = auth_warshipgirls
 		NOT = {
 			has_country_flag = recent_BYZ_factions

@@ -1731,59 +1731,7 @@ country_event = {
 }
 ##########游戏开始
 #已废弃
-#country_event ={
-#	id = wsg.3047
-#	title = "wsg.3047.name"
-#	desc = "wsg.3047.desc"
-#	picture = GFX_evt_wsg_on_star3
-#	is_triggered_only = yes
-#	fire_only_once = yes
-#	force_open = yes
-#
-#	trigger = {
-#		OR = {
-#			has_authority = auth_warshipgirls
-#			has_authority = auth_shenhai
-#		}
-#		is_ai = no
-#	}
-#
-#	after = {
-#		country_event = { id = wg_crisis.10000 }
-#	}
-#	
-#	option = {
-#		name = "wsg.3047.a"
-#		add_modifier = {
-#			modifier = "wg_very_easy" 	
-#			days = -1
-#		}
-#	}
-#	option = {
-#		name = "wsg.3047.b"
-#		add_modifier = {
-#			modifier = "wg_easy" 	
-#			days = -1
-#		}
-#	}
-#	option = {
-#		name = "wsg.3047.c"
-#	}
-#	option = {
-#		name = "wsg.3047.d"
-#		add_modifier = {
-#			modifier = "wg_hard" 	
-#			days = -1
-#		}
-#	}
-#	option = {
-#		name = "wsg.3047.e"
-#		add_modifier = {
-#			modifier = "wg_very_hard" 	
-#			days = -1
-#		}
-#	}
-#}
+
 ##########
 country_event = {
 	id = wsg.3048
@@ -3223,7 +3171,7 @@ country_event = {
 				species = event_target:wsg_lex_species
 				gender = female
 				name = NAME_lexington
-				skill = 10
+				skill = 1
 				immortal = yes
 				traits = {
 					trait = leader_trait_ruler_lexington
@@ -3237,6 +3185,7 @@ country_event = {
 				set_leader_flag = set_skills
 				set_leader_flag = wsg_event_leader
 				set_leader_flag = has_gained_level_trait
+				set_leader_flag = has_gained_trait
 				if = {
 					limit = { owner = { has_country_flag = wsg_project_r }}
 					add_trait = leader_trait_ruler_warshipgirls

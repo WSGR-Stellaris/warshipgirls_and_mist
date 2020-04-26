@@ -226,7 +226,7 @@ country_event = {
 								distance = 40
 								angle = random
 							}
-							save_event_target_as = first_dimensional_portal
+							save_global_event_target_as = first_dimensional_portal
 							set_fleet_flag = first_dimensional_portal
 							set_event_locked = yes
 
@@ -642,13 +642,13 @@ planet_event = {
 		destroy_colony = yes
 		if = {
 			limit = { 
-				is_ringworld_wg_wg = yes 
+				is_ringworld_wg = yes 
 			}
 			change_pc = pc_ringworld_habitable_damaged
             reset_planet = yes
         }
         else_if = {
-            limit = { is_habitat_wg_wg = yes }
+            limit = { is_habitat_wg = yes }
 			remove_planet = yes
         }
         else = {
@@ -683,7 +683,6 @@ country_event = {
 
 	trigger = {
 		has_global_flag = wg_invasion_happened
-		NOT = { has_global_flag = wg_crisis_disabled }
 		is_country_type = wg_crisis_country
 	}
  
@@ -702,7 +701,8 @@ country_event = {
 				}
 				if = {
 					limit = { exists = event_target:first_dimensional_portal }
-					event_target:first_dimensional_portal = {
+					random_owned_fleet = {
+						limit = { has_fleet_flag = first_dimensional_portal }
 						set_event_locked = no
 					}
 				}
@@ -742,16 +742,11 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = { exists = event_target:first_dimensional_portal }
-					event_target:first_dimensional_portal = {
-						set_event_locked = no
-					}
-				}
-				else = { random_owned_fleet = {
+				event_target:first_dimensional_portal = { set_event_locked = no }
+				random_owned_fleet = {
 					limit = { has_fleet_flag = first_dimensional_portal }
 					set_event_locked = no
-				}}
+				}
 			}
 			else_if = {
 				limit = { 
@@ -768,16 +763,11 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = { exists = event_target:second_dimensional_portal }
-					event_target:second_dimensional_portal = {
-						set_event_locked = no
-					}
-				}
-				else = { random_owned_fleet = {
+				random_owned_fleet = {
 					limit = { has_fleet_flag = second_dimensional_portal }
 					set_event_locked = no
-				}}
+				}
+				event_target:second_dimensional_portal = { set_event_locked = no }
 			}
 			else_if = {
 				limit = { 
@@ -794,16 +784,11 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = { exists = event_target:third_dimensional_portal }
-					event_target:third_dimensional_portal = {
-						set_event_locked = no
-					}
-				}
-				else = { random_owned_fleet = {
+				event_target:third_dimensional_portal = { set_event_locked = no }
+				random_owned_fleet = {
 					limit = { has_fleet_flag = third_dimensional_portal }
 					set_event_locked = no
-				}}
+				}
 			}
 		}
 	}
@@ -813,13 +798,18 @@ country_event = {
 country_event = {
 	id = wg_crisis.11
 	hide_window = yes
-
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_global_flag = wg_crisis_disabled}
+		NOT = { has_global_flag = wg_crisis_disabled }
 		is_country_type = wg_crisis_country
-		FROMFROM = { is_ship_size = wg_dimensional_portal }
+		FROMFROM = { OR = {
+			is_ship_size = wg_dimensional_portal 
+			has_ship_flag = wg_portal
+			Fleet = { has_fleet_flag = first_dimensional_portal }
+			Fleet = { has_fleet_flag = second_dimensional_portal }
+			Fleet = { has_fleet_flag = third_dimensional_portal }
+		}}
 	}
 
 	immediate = {
@@ -968,6 +958,9 @@ country_event = {
 	immediate = {
 		set_global_flag = all_portal_destroyed
 		event_target:wg_crisis_country = {
+			add_modifier = { modifier = uf_buff_after_portal_destoryed days = -1 }
+		}
+		event_target:wg_crisis_sub_gate_country = {
 			add_modifier = { modifier = uf_buff_after_portal_destoryed days = -1 }
 		}
 		every_playable_country = {
@@ -1342,7 +1335,7 @@ country_event = {
 								distance = 40
 								angle = random
 							}
-							save_event_target_as = second_dimensional_portal
+							save_global_event_target_as = second_dimensional_portal
 							set_fleet_flag = second_dimensional_portal
                             set_event_locked = yes
 							spawn_fleets_insane = yes
@@ -1428,7 +1421,7 @@ country_event = {
 								distance = 40
 								angle = random
 							}
-							save_event_target_as = third_dimensional_portal
+							save_global_event_target_as = third_dimensional_portal
                             set_fleet_flag = third_dimensional_portal
 							set_event_locked = yes
 							spawn_fleets_insane = yes
@@ -3545,6 +3538,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		always = no
 		has_global_flag = wg_invasion_happened
 		NOT = { 
 			has_global_flag = all_portal_destroyed
@@ -3555,6 +3549,7 @@ event = {
 	immediate = {
 		event_target:wg_crisis_country = {
 			country_event = { id = wg_crisis.99 days = 15 }
+			country_event = { id = wg_crisis.100 days = 16 }
 		}
 	}
 }
@@ -3629,7 +3624,7 @@ country_event = {
 						distance = 40
 						angle = random
 					}
-					save_event_target_as = first_dimensional_portal
+					save_global_event_target_as = first_dimensional_portal
 					set_fleet_flag = first_dimensional_portal
 					set_event_locked = yes
 					if = {
@@ -3711,7 +3706,7 @@ country_event = {
 						distance = 40
 						angle = random
 					}
-					save_event_target_as = second_dimensional_portal
+					save_global_event_target_as = second_dimensional_portal
 					set_fleet_flag = second_dimensional_portal
 					set_event_locked = yes
 					spawn_fleets_insane = yes
@@ -3751,7 +3746,7 @@ country_event = {
 						distance = 40
 						angle = random
 					}
-					save_event_target_as = third_dimensional_portal
+					save_global_event_target_as = third_dimensional_portal
 					set_fleet_flag = third_dimensional_portal
 					set_event_locked = yes
 					spawn_fleets_insane = yes
@@ -4362,6 +4357,17 @@ event = {
 					}
 				}
 				if = {
+					limit = { 
+						solar_system = { any_fleet_in_system = {
+							has_fleet_flag = attack_fleet
+							NOR = {
+								has_fleet_flag = moving_to_planet
+								has_fleet_flag = bombarding_planet
+							}
+							owner = { is_country_type = wg_crisis_country }
+							
+						}}
+					}
 					solar_system = { every_fleet_in_system = {
 						limit = {
 							has_fleet_flag = attack_fleet
@@ -4581,9 +4587,14 @@ country_event = {
 	id = wg_crisis.10000
 	title = wg_crisis.10000.name
 	desc = wg_crisis.10000.desc
-	picture = GFX_evt_wg_crisis
 
 	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = wg_start_room
+	}
 
 	trigger = {
 		NOR = {
@@ -4597,17 +4608,13 @@ country_event = {
 		is_ai = no
 	}
 
-	after = {
-		hidden_effect = {
-			country_event = { id = wg_crisis.1 days = 3 }
-		}
-	}
-
 	option = {
 		name = wg_crisis.10000.a
 		custom_tooltip =  wg_crisis.10000.a.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_very_easy
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
 
@@ -4616,6 +4623,8 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.b.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_easy
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
 
@@ -4624,6 +4633,8 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.c.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_normal
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
 
@@ -4632,6 +4643,8 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.d.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_hard
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
 	
@@ -4640,6 +4653,8 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.e.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_insane
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
 
@@ -4648,6 +4663,19 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.f.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_disabled
+			set_country_flag = set_difficulty
+			country_event = { id = wg_crisis.1 days = 3 }
+		}
+	}
+
+	option = {
+		name = wg_crisis.10000.g
+		trigger = {
+			NOT = { has_country_flag = set_difficulty }
+		}
+		custom_tooltip = wg_crisis.10000.g.tooltip
+		hidden_effect = {
+			country_event = { id = wg_crisis.10005 }
 		}
 	}
 }
@@ -4745,7 +4773,6 @@ country_event = {
 		remove_global_flag = wg_crisis_hard
 		remove_global_flag = wg_crisis_insane
 		remove_global_flag = wg_crisis_disabled
-		remove_global_flag = galactic_crisis_happened
 		country_event = { id = wg_crisis.10000 }
 	}
 }
@@ -4796,3 +4823,85 @@ event = {
 	}
 }
 
+country_event = {
+	id = wg_crisis.10005
+	title = "wsg.3047.name"
+	desc = "wsg.3047.desc"
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	trigger = {
+		NOT = { has_country_flag = set_difficulty }
+	}
+
+	picture_event_data = {
+		room = wg_start_room
+	}
+	after = {
+		country_event = { id = wg_crisis.10000 }
+	}
+	
+	option = {
+		name = "wsg.3047.a"
+		hidden_effect = { 
+			remove_modifier = wg_very_easy
+			remove_modifier = wg_easy 
+			remove_modifier = wg_hard 
+			remove_modifier = wg_very_hard  
+		}
+		add_modifier = {
+			modifier = "wg_very_easy" 	
+			days = -1
+		}
+	}
+	option = {
+		name = "wsg.3047.b"
+		hidden_effect = { 
+			remove_modifier = wg_very_easy
+			remove_modifier = wg_easy 
+			remove_modifier = wg_hard 
+			remove_modifier = wg_very_hard  
+		}
+		add_modifier = {
+			modifier = "wg_easy" 	
+			days = -1
+		}
+	}
+	option = {
+		name = "wsg.3047.c"
+		hidden_effect = { 
+			remove_modifier = wg_very_easy
+			remove_modifier = wg_easy 
+			remove_modifier = wg_hard 
+			remove_modifier = wg_very_hard  
+		}
+	}
+	option = {
+		name = "wsg.3047.d"
+		hidden_effect = { 
+			remove_modifier = wg_very_easy
+			remove_modifier = wg_easy 
+			remove_modifier = wg_hard 
+			remove_modifier = wg_very_hard  
+		}
+		add_modifier = {
+			modifier = "wg_hard" 	
+			days = -1
+		}
+	}
+	option = {
+		name = "wsg.3047.e"
+		hidden_effect = { 
+			remove_modifier = wg_very_easy
+			remove_modifier = wg_easy 
+			remove_modifier = wg_hard 
+			remove_modifier = wg_very_hard  
+		}
+		add_modifier = {
+			modifier = "wg_very_hard" 	
+			days = -1
+		}
+	}
+}

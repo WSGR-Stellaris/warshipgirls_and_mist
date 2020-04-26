@@ -78,7 +78,7 @@ VV_buff_fe = {
 }
 wsg_lady_recover_cd = {}
 wsg_lady_modify_consume = {
-	country_base_nanites_produces_add = -1
+	country_base_nanites_produces_add = -3
 	country_base_alloys_produces_add = -50
 }
 wsg_lady_modify_consume2 = {
@@ -86,7 +86,7 @@ wsg_lady_modify_consume2 = {
 	country_base_alloys_produces_add = -40
 }
 wsg_lady_modify_consume3 = {
-	country_base_nanites_produces_add = -1.5
+	country_base_nanites_produces_add = -4
 }
 retry_modify_wsg_lady_cd = {}
 

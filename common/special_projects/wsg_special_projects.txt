@@ -89,3 +89,68 @@ special_project = {
 		}
 	}
 }
+
+special_project = {
+	key = "WG_FIX_BUG_PROJECT"
+	cost = 0
+	days_to_research = 100
+	picture = GFX_evt_wg_bugv
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 7
+	}
+	on_progress_25 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}
+				1 = { }
+			}
+		}
+	}
+	on_progress_50 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}				
+				1 = { }
+			}
+		}
+	}
+	on_progress_75 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}				
+				1 = { }
+			}
+		}
+	}	
+	on_success = {
+		owner = {
+			random_list = {
+				30 = { country_event = { id = wg_boss.61 }}
+				70 = { country_event = { id = wg_boss.62 }}
+			}
+		}
+	}
+}

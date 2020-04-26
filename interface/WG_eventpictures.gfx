@@ -6,6 +6,42 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wg_ella"
+		texturefile = "gfx/event_pictures/wg_ella.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_rabbit"
+		texturefile = "gfx/event_pictures/wg_rabbit.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
+		name = "GFX_evt_wg_big_water_B"
+		texturefile = "gfx/event_pictures/wg_big_water_B.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_bugv"
+		texturefile = "gfx/event_pictures/wg_bugv.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
+		name = "GFX_evt_wg_bugv2"
+		texturefile = "gfx/event_pictures/wg_bugv2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
+		name = "GFX_evt_wg_gars"
+		texturefile = "gfx/event_pictures/wg_gars.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_wsg_on_star3"
 		texturefile = "gfx/event_pictures/wsg_on_star3.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -546,21 +582,10 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
-		name = "GFX_evt_wg_big_water_B"
-		texturefile = "gfx/event_pictures/wg_big_water_B.dds"
-		masking_texture = "gfx/interface/situation_log/event_mask.dds"
-		alwaystransparent = yes	
-	}
-	spriteType = {
-		name = "GFX_evt_wg_gars"
-		texturefile = "gfx/event_pictures/wg_gars.dds"
-		masking_texture = "gfx/interface/situation_log/event_mask.dds"
-		alwaystransparent = yes	
-	}
-	spriteType = {
 		name = "GFX_evt_wsg_rank5"
 		texturefile = "gfx/event_pictures/wsg_rank5.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}
+
 }

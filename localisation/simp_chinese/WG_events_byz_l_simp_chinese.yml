@@ -29,4 +29,11 @@
  wsgflavoring.106.desc:"近来，港区各私人公司要求一系列让步，包括改革税收制度、放开贸易限制、垄断军品供应以及削减军队开支。"
  wsgflavoring.106.a:"他们能代上沙场吗？"
  wg_byz_corp_favoring:"被迫向私人企业让步"
+
+ mod_planet_districts_minerals_cost_add:0 "区划 £minerals£$minerals$花费"
+ mod_megastructures_alloys_cost_mult:0 "巨构建筑$alloys$花费"
+ mod_megastructures_influence_cost_add:0 "巨构建筑$influence$花费"
+ mod_megastructures_produces_mult:0 "巨构建筑产出"
+ mod_diplomacy_influence_upkeep_mult:0 "外交$influence$花费"
+ mod_ships_energy_upkeep_mult:0 "舰船£energy£$energy$维护花费"
  

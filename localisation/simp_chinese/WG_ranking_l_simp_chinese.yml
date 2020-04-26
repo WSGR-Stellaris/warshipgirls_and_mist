@@ -1,14 +1,14 @@
 ﻿l_simp_chinese:
 ###############################
 # 普通国家遇到胖次商店
- wsgranking.997.title:0 ""
- wsgranking.997.desc:0 ""
- wsgranking.997.a:0 ""
+ wsgranking.997.title:0 "神秘的城邦"
+ wsgranking.997.desc:0 "我们的船只探索遇到的这个偏居一偶的文明似乎对我们的通讯要求毫无反应，但显然她们强大的军事堡垒以及战舰依然正常运作着，且并未对我们展露出任何敌意行动。"
 # 胖次科技研究后主动联络胖次商店
- wsgranking.999.title:0 ""
- wsgranking.999.desc:0  ""
+ wsgranking.999.title:0 "断椅族"
+ wsgranking.999.desc:0  "在我们掌握胖次的制备方法后，我们突然从远方收到了一段来自于自称为“断椅族”城邦的讯息。我们的科学家分析认为她们是与我们相同种族的星际游牧文明，且有可能远在我们能够进行太空旅行前她们便开始观察着我们的发展。"
  wsgranking.999.a:0 ""
 # 初次介绍
+ pantsu_shop_name:0 "断椅族城邦"
  wsgranking.1000.desc:0 "远方的客人们你们好，欢迎你们。我们是断椅族城邦，世代居住在太空之中，对舰娘和深海国家经营着货物与服务贸易。我们有一套独有的方法来评估您帝国的实力————对啦，那就是“军阶点数”。与我们交易——大多数时候我们只接受战利品，少数时候我们也接受能量币。"
  wsgranking.1000.a:0 "让我们看看有什么可买的。"
  wsgranking.1000.b:0 "以后再说吧。"
@@ -18,7 +18,7 @@
  pantsu_shop_hello3:0 "我们断椅族没有所谓的老板。每个人都是每个人的老板。但我们的评价标准是绝对公正的，即使在你们发现我们之前，评估系统就已经开始工作了。"
  wsgranking.1001.a:0 "我们有多少军阶点数？。"
  wsgranking.1001.b:0 "我们希望和你们交易。"
- wsgranking.1001.a.response:0 "【军阶相关兑换项目未实装，by VV】据我们的评价，您目前有§Y[Root.rankpts]§! $rankpts$ 游戏中有很多方式可以提高您的军阶点数。提高收入，建造舰队，发展国家，提升战斗力，击落利维坦，如此种种不一而足。."
+ wsgranking.1001.a.response:0 "据我们的评价，您目前有§Y[Root.rankpts]§! $rankpts$ 游戏中有很多方式可以提高您的军阶点数。提高收入，建造舰队，发展国家，提升战斗力，击落利维坦，如此种种不一而足。"
 # 非舰娘帝国点进胖次商店
  pantsu_shop_cooldown_desc:0 "实在抱歉，客官。我们断椅族裔的成员不多了，现在大家都正忙于处理您上一件订单。稍后再来吧。"
  #pantsu_shop_exit:0 "退出"
@@ -27,14 +27,22 @@
  wsgranking.1003.a:0 "关闭通讯。"
 # 一级界面 - 进入兑换。
  wsgranking.1004.desc:0 "我们断椅族从不问您购买我们的商品的用途。即使是用来灭绝种族也无所谓！"
- wsgranking.1004.a:0 "【未实装，by VV】我们希望购买独有的武器和技术."
- wsgranking.1004.b:0 "【未实装，by VV】您的专业团队能为我们做些什么？"
+ wsgranking.1004.a:0 "我们希望购买独有的武器和技术."
+ wsgranking.1004.b:0 "您的专业团队能为我们做些什么？"
  wsgranking.1004.c:0 "也许您能够为我们提供一些稀有资源？"
- wsgranking.1004.d:0 "我们想购买一枚结婚戒指。"
+ wsgranking.1004.d:0 "我们想购买一枚结婚戒指。" 
+ wsgranking.1004.e:0 "我们对你说的终极项目感兴趣。"
 # 二级菜单 - 兑换科技
  wsgranking.1005.desc:0 "这重量。这威力。这光芒！多到数不清的武器，来看看吧！还有，你以前见过这样的尖端技术吗？它正在召唤你。"
+ tech_cooldown_desc:0 "您上一款武器的图纸尚未交易完成，请稍后片刻。"
 # 二级菜单 - 兑换修正
- wsgranking.1007.desc:0 "我们的专业团队将会听您调遣，她们只吃PATPAT牌营养冰淇淋和“没味道”牌面条，且极少制造麻烦。任务的时间也与任务的难度有关！"
+ wsgranking.1007.desc:0 "我们的专业团队将会听您调遣，她们只吃PATPAT牌营养冰淇淋和“没味道”牌面条，且极少制造麻烦。任务的时间也与任务的难度有关！\n目前您还可以再持有 §Y[Root.max_allowed_shop_buffs]§! 个战利品商店增益。"
+ wsgranking.1007.a:0 "我们希望你们来改善我们的工业生产。"
+ wsgranking.1007.b:0 "我们希望你们充当我们的外交使节"
+ wsgranking.1007.c:0 "可否指导我们的军事作战？"
+ wsgranking.1020.desc:0 "我们有各种方法来提升工业生产的效率。奥秘隐藏在我们数千年来对数百个舰娘与深海社会的观察当中。 \n 当然，奇迹和魔法都不是免费的。强大的生产力提升也一样。"
+ wsgranking.1021.desc:0 "是的，是的。我们之所以孑然一身生存至今，坐拥滚滚财源，正是因为擅长和外星佬们打交道。 \n 找我们，就对了。但战场上拿不到的，外交谈判桌上也拿不到。不付钱就更拿不到了。"
+ wsgranking.1022.desc:0 "您这回可找对专家了。我们断椅族能在这个危机丛生又充满变化的宇宙的秘密便是我们领先全宇宙200年的换家战术！正所谓“学会了姐的营运，剩下的就只有F2A了。”"
 # 二级菜单 - 兑换杂项资源
  wsgranking.1009.desc:0 "我们手中有银河系中最稀缺的货物，你绝对想不到它们都是从哪儿来的！ \n\n 产地保密，但绝对上乘。"
  wsgranking.1009.a:0 "我们想购买一些资源"
@@ -102,6 +110,7 @@
  wsgranking.1018.a:0 "非常抱歉"
  wsgranking.1018.a.response:0 "根据合约内容，由于你无法继续履行合约，你需要连续48个月交付50能源币作为违约金，且10年之内禁止签订任何与敝店的合约。那么就此告辞了。"
  pantsu_shop_contract_break:0 "战利品商店毁约赔偿金"
+ wg_modifier_weapon_payment:0 "战利品商店研发费"
 
 ########################################################
 # 商店被摧毁
@@ -111,12 +120,54 @@
  wsgranking.2001.title:0 "战利品商店被摧毁了！"
  wsgranking.2001.desc:0 "战利品商店被摧毁了！她们独特的产品与服务永远消失在了茫茫星海之中。"
 # 商店特殊事件
+
+ wsgranking.5001.desc:"你们好，[Root.GetSpeciesNamePluralCompliment]。我们在经营商店方面遇到了一些困难。千百年来断椅族在星际空间漂流，所剩下的人口已经不是很多了，现在有些难以支撑我们的业务。可否请您提供§Y1个£pops£人口§!帮助我们的经营呢？我们会付你工资的。我们已经听到财富的[Root.GetRandomSpeciesSound]声了！"
+ wsgranking.5001.a:"可以啊。你的报酬令我非常满意，成交。"
+ wsgranking.5001.b:"我们不会让我们的人民承受风险。"
+
+ wsgranking.5002.desc:"[Root.GetSpeciesNamePluralCompliment]，是我们，战利品商店。我们正面临着资金问题。最近我们在某个国家的投资项目急需要一笔资金。这次投资大概有99.61%的机会获得巨大成功，因此我们可以保证分期向您兑付资金，绝不会让您亏本。您的投资额越大，能获得的好处也越多！考虑一下吗？或许我们还会增加您的军阶点数哦！"
+ wsgranking.5002.a:"投资5000£energy£（每月可获得100£energy£，持续5年）"
+ wsgranking.5002.b:"投资10000£energy£（每月获得150£energy£，持续10年）"
+ wsgranking.5002.c:"投资25000£energy£（每月获得250£energy£，持续20年）"
+ wsgranking.5002.d:"我们不会把珍贵的能量币浪费在这种事情上。"
+
+ wsgranking.5003.desc:"[Root.GetName]，这里是战利品商店。我们注意到在您帝国的一颗星球，[pantsu_shop_franchising_planet.GetName]上有许多勤劳工作的[Root.GetSpeciesNamePlural]。让我们开门见山吧：我们想在此处建立一个特许经营分部，保证对当地的经济有益，保证创造大量的就业机会。您只需要给我们一点点政策优待就好了。另外，我们也会提高您的§Y军阶点数§!。"
+ wsgranking.5003.a:"我们允许你们在[pantsu_shop_franchising_planet.GetName]上进行经营。"
+ wsgranking.5003.b:"我们才不会向可恶的骗子们让步。"
+ pantsu_shop_franchising:"断椅族特许经营分部"
+ pantsu_shop_franchising_desc:"这颗星球上有断椅族商人们开设的特许经营分部。她们促进了这颗星球的经济发展，但代价是星球上的一部分资源被这些分部垄断。"
  wsgranking.5004.title:0 "断椅族请求改善伙食"
  wsgranking.5004.desc:0 "不要问你能为断椅族做些什么，而是断椅族能为你做些什么！我们的消化系统一时难以负担PATPAT牌营养冰淇淋和“没味道”牌面条了！你听明白了吗？我们在此请求您用新研发的食品加工技术来为我们提供一些§E餐点§!，一些违反常识的餐点，最好美味到能够引来全银河的食客！"
  wsgranking.5004.a:0 "一块A5级的海豹排，用瑞柑香料调味！"
  wsgranking.5004.b:0 "给你这道极星豆腐！配上银河系含漱爆破药！"
  wsgranking.5004.c:0 "这是恩多迪亚帝国标准军用口粮。全银河系可能就这么一箱了。"
  wsgranking.5004.d:0 "抱歉，我们自己也在凑合过日子呢。"
+ wsgranking.5005.title:0 "奇怪的商人"
+ wsgranking.5005.desc:0 "最近，有一名自称“奈拉”的外星商人因其货舰意外坠毁，被困在我国境内一颗星球。在获救之后，她自称接受过断椅族教育，而且向我们表达了留下为我们工作的意向，顺便向我们推销了她从银河另一端搞来的贝石风味胡萝卜。断椅族城邦看上去对此事漠不关心，甚至在我们第一次询问时并不知晓这号人物的存在。"
+ wsgranking.5005.a:0 "既然她不想回去了，那就让她留下吧。"
+ wsgranking.5005.b:0 "我们不能让来历不明的人进来。送她回去吧！"
+ wsgranking.5005.c:0 "给我也来一根贝石风味胡萝卜！"
+ NAILA:0 "奈拉"
+ leader_trait_governor_chairman:0 "断椅族教育"
+ leader_trait_governor_chairman_desc:0 "奈拉曾经在断椅族城邦接受过商贸教育，因此具有断椅族的一部分知识。"
+ leader_trait_governor_naila:0 "贝石风味胡萝卜"
+ leader_trait_governor_naila_desc:0 "食用了奈拉带来的贝石风味胡萝卜之后，整个星区掀起了喜剧创作的热潮。"
+ mod_pop_category_specialists_unity_produces_add:"专家生产的凝聚力"
+ 
+ wsgranking.6001.desc:0 "好消息，好消息！本店的镇店之宝威力巨大の最终决战兵器四六零式阿尔法结晶千斤宏伟巨炮上架啦！本店良心保证！绝对物超所值！"
+ wsgranking.6002.desc:0 "好消息，好消息！本店的镇店之宝“威力巨大の最终决战兵器四六零式深海能源千斤宏伟巨炮”上架啦！本店良心保证！绝对物超所值！"
+
+ wsgranking.6004.desc:"不会使用那些一戳就会自己变形的液态金属？我们既然经营它们，就有使用它们的技术。为了增加我们的财源，我们决定分享这项技术的部分秘密给您。免费的！"
+
+ #终极物品事件
+ wsgranking.9000.desc:0 "成功了！这套实验性舰装插件能够使得舰队司令官完全与舰艇合而为一，并有限程度地认知全帝国舰队的状况。\n但它的缺憾在于需要极端精密的神经图谱，能够被这位司令官使用也仅仅是巧合。在数百年内我们没办法再为§Y任何其他司令官§!提供同样的设备了。"
+ leader_trait_ascension_implant:0 "传奇型舰装插件"
+ leader_trait_ascension_implant_desc:0 "这套储存了精密神经图谱的传奇指挥套件碰巧与这位司令相容。"
+ leader_trait_inferior_implant:0 "简易型舰装插件"
+ leader_trait_inferior_implant_desc:0 "简便的量产化舰装插件与大多数司令都有一定的匹配性，但效果相对较差。"
+ wsgranking.9001.desc:0 "成功了！原本需要一整座战略指挥中心容纳的大型战斗情报中心现在能够以分布式的形式装载在每一艘舰艇上。现在舰队旗舰可以统合各舰艇的战斗信息，允许旗舰指挥规模更大的舰队。\n§Y全速前进！§!"
+ wsgranking.9002.desc:0 "成功了！现在这些普通武器能够迅速分散赛博伦金属的奇异键。就像热刀切黄油！"
+ wsgranking.9003.desc:"成功了！现在这些水雷场已经真正意义上的不可逾越。"
 
  pantsu_shop_exit:0 "退出"
  pantsu_shop_return_to_main:0 "退回主菜单"
@@ -124,10 +175,21 @@
 
  rankpts:0 "§H军阶点数§!"
  owned_rpts:0 "$rankpts$"
+ reached_max_allowed_shop_buffs:0 "§R已经达到最大同时持有的增益数。请等待至任意一个增益到达期限。§!"
+
+ too_low_rank_fail_30:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y30§R点$rankpts$"
+ too_low_rank_fail_60:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y60§R点$rankpts$"
+ too_low_rank_fail_70:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y70§R点$rankpts$"
+ too_low_rank_fail_90:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y90§R点$rankpts$"
+ too_low_rank_fail_120:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y120§R点$rankpts$"
+ too_low_rank_fail_150:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y150§R点$rankpts$"
+ too_low_rank_fail_180:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y180§R点$rankpts$"
+ too_low_rank_fail_250:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y250§R点$rankpts$"
+ rankpts_not_reach_requirment:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y[Root.rankpts_require]§R点$rankpts$"
 
  wsgranking.2.name:0 "查看军阶数值"
  wsgranking.2.desc:0 "您目前有 §Y[Root.rankpts]§! $rankpts$ .游戏中有很多方式可以提高您的军阶点数。提高收入，建造舰队，发展国家，提升战斗力，击落利维坦，建设巨构建筑，如此种种，不一而足。"
- too_low_rank_fail:0 "您的军阶点数不够高。"
+ too_low_rank_fail:0 "§R您的军阶点数不够高。§!"
  wsgranking.2.a:0 "OK"
 
  weapon_type_wsg_pantsu:"§Y战利品§!"
@@ -145,3 +207,46 @@
  alpha_stock:0 "£sr_alpha£ $sr_alpha$库存"
  se_stock:0 "£sr_se£ $sr_se$库存"
  rings_stock:0 "£sr_ring£ 戒指库存"
+
+ wg_modifier_decision:0 "加速决议颁布"
+ wg_modifier_planetary_construction:0 "星球建筑妖精增派"
+ wg_modifier_megastructure_construction:0 "改进巨构建筑建设"
+ wg_modifier_megastructure_pruduction:0 "巨构建筑生产最优化"
+ wg_modifier_primary_industry:0 "派发营养功能食品"
+ wg_modifier_secondary_industry:0 "建设智能自动制造机"
+ wg_modifier_tertiary_industry:0 "分销新型研究耗材"
+
+ wg_modifier_diplomacy_hostile:0 "改进敌意外交"
+ wg_modifier_diplomacy_envoy:0 "改进友好外交"
+ wg_modifier_diplomacy_trade:0 "促进星际贸易"
+ wg_modifier_diplomacy_weight:0 "增加外交话语权"
+
+ wg_modifier_combat_hull_algorithm:0 "改进舰船结构设计"
+ wg_modifier_combat_elite_pilot:0 "雇佣精英飞行员"
+ wg_modifier_combat_shipcraft:0 "舰船建造经济化"
+ wg_modifier_combat_fleet_control:0 "便携式舰队CIC"
+ wg_modifier_combat_uf:0 "§R对联合舰队紧急预案§!"
+ wg_modifier_combat_enhancement:0 "战利品武器最优化"
+ wg_admiral_emergency_enhancement:0 "安装舰员增强植入物"
+ wg_modifier_implant_coordination:"OTA舰装升级"
+
+ mod_planet_researchers_consumer_goods_upkeep_mult:0 "科研人员消费品维护费"
+ mod_planet_culture_workers_consumer_goods_upkeep_mult:0 "文化工作者消费品维护费"
+ wg_modifier_combat_uf_desc:0 "对普通帝国的伤害: §R-50%§!\n对§R联合舰队§!的伤害: §G+25%§!"
+
+ wsgranking.9005.desc:"我们观察您的帝国很久了，现在来说时机已经成熟了。我们有一些真正宏大的想法，可以极大强化您的舰队，但是这需要您的协助。如果您准备好了，就请联络我们。"
+ wsgranking.9005.a:"……也许有什么不好的事情要发生？"
+ wsgranking.9005.effect:"§Y战利品商店的最终特殊项目已经可用。§!"
+ wsgranking.9006.desc:"这些伟大设计之前还从未有人涉足。也许我们的合作能揭开它的秘密。"
+ implant_request_desc:"我们的舰队司令经验不足。"
+ implant_request_desc_response:"交给我们吧。我们有一套44802周期之前从某个上古失落舰娘帝国舰队中回收的舰装插件。它储存着一系列极其精密的神经图谱，可能与某位舰队司令的神经图谱吻合。我们需要整个国家的科研人员专注于神经图谱的分析，一旦我们找到了吻合者，我们就可以利用可量产的接收器进行舰装OTA升级，将上古舰娘帝国的战斗经验传输给每一位舰队司令。 \n§R项目进行期间帝国的所有研究都会暂停！§!"
+ cic_request_desc:"我们需要更好的指挥舰队的方法！"
+ cic_request_desc_response:"由单一中枢指挥庞大的舰队是几乎不可能的，即使是超级战略指挥中心也不能做到。只有放弃这种过时的想法，由一系列智能机械与人员达成舰队间各舰艇的协调，降低指挥中枢的负担，才能扩大一位司令官能够带领的舰队规模。我们需要整个国家的科研人员专注于设计、制造能够安装在每艘舰艇上的战斗情报设备。\n§R项目进行期间帝国的所有研究都会暂停！§!"
+ weapon_dmm_request_desc:"可否为我们设计一种强力防御武器？"
+ weapon_dmm_request_desc_response:"实际上，如同长春小姐造成的那场巨大爆炸一样，暗物质接触阿尔法晶体时会释放出极其巨大的能量。防御性武器的成本不应该太高，因此我们可以把暗物质与阿尔法结晶分装在合金外壳的两半，制成类似传统水雷的东西。把这些水雷散布在星系中就可以形成难以逾越的雷场。但这个外壳的设计制作、阿尔法晶体和暗物质的预处理都需要大量的资源和研究投入。\n§R项目进行期间帝国的所有研究都会暂停！§!"
+ sh_mine_request_desc_response:"深海能源核心产生大量致命辐射的原因就是，它不稳定。向深海能源核心注入暗物质，其不稳定性更会大幅上升。这种不稳定的核心没有办法制成舰载武器，但散布在星系空间中也许可以充当威力巨大的太空水雷。这个可能引起致命爆炸的项目需要大量的资源和研究投入。\n§R项目进行期间帝国的所有研究都会暂停！§!"
+ combat_uf_request_desc:"联合舰队！你们对他们有什么了解吗？"
+ combat_uf_request_response:"根据我们之前打捞联合舰队战斗残骸的结果显示，联合舰队的舰船物质特性十分独特。组成联合舰队舰船主结构的“赛博伦”合金是一种非碳基的物质。而其中似乎有大量的亚铁成分，并且有一种能量能够对碳基物质的分子结构造成非共振不可逆的影响。同时在它的第1、2、9环上都有不平衡的正电子存在。因此我们可以说它的可能分子结构式是无穷多的。\n通俗的说，实际上存在一种针对联合舰队舰船物质特性的改装方法；\n§Y但采用这种改装的代价是，舰船武器对普通物质的伤害将永久减弱。§! \n§R项目进行期间帝国的所有研究都会暂停！§!"
+ 
+ wg_shop_celebration:"也许我该用招牌惰麻汤来庆祝……"
+ wg_modifier_ultimate_project:"战利品商店最终项目"

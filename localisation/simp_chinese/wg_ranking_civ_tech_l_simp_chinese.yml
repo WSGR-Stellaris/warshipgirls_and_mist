@@ -16,6 +16,11 @@ mod_trade_routes_produces_mult:"£trade_value£ §Y贸易额§!通过£job_merch
 mod_planet_branch_offices_influence_cost_mult:"开设分部的£influence£影响力花费"
 mod_planet_branch_offices_energy_cost_mult:"开设分部的£energy£能量币花费"
 
+ tech_wg_buff_1:0 "战利品商店派员协议（一期）"
+ tech_wg_buff_1_desc:0 "通过向战利品商店派驻额外人员，我们可以要求战利品商店为我们提供更多的服务。"
+ tech_wg_buff_2:0 "战利品商店派员协议（二期）"
+ tech_wg_buff_2_desc:0 "比起深海，舰娘具有更高的亲和力和更强大的商贸天赋，所以我们可以再额外派驻一组人员，再次增加战利品商店的服务能力。"
+ wsg_shop_buff_plus:0 "可同时持有的战利品商店增益:§G+1§"
 
 wg_modifier_storage_habitat:"清空的居住站货舱"
 d_smuggling_bay:"走私码头"

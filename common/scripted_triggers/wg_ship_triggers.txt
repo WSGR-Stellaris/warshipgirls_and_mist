@@ -161,3 +161,14 @@ is_enemy_country = {
 		is_country_type = gray_goo 
 	}
 }
+
+is_lady_army = {
+	OR = {
+		army_type = lady_army
+		army_type = lady_army_dragonslayer
+		army_type = lady_army_affection_3
+		army_type = lady_army_affection_3_dragonslayer
+		army_type = lady_army_affection_5
+		army_type = lady_army_affection_5_dragonslayer
+	}
+}

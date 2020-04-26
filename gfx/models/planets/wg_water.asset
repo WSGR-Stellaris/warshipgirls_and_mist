@@ -14,7 +14,7 @@ entity = {
 	##cloud texture override
 	meshsettings = {
 	name = "clouds_geosphereShape"
-	texture_diffuse = "clouds_medium_diffuse.dds"
+	texture_diffuse = "wg_clouds_medium_03_diff.dds"
 	texture_normal = "clouds_medium_normal.dds"
 	texture_specular = "clouds_medium_specular.dds"
 	}
@@ -22,7 +22,7 @@ entity = {
 	##cloud shadow texture override
 	meshsettings = {
 	name = "clouds_shadow_geosphereShape"
-	texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+	texture_diffuse = "wg_clouds_medium_03_shadow.dds"
 	texture_normal = "nonormal.dds"
 	texture_specular = "nospec.dds"
 	}

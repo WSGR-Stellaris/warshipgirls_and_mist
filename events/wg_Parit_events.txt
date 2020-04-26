@@ -3,40 +3,25 @@ namespace = wg_parit
 #######################################
 # ???
 #######################################
-event = {
-	id = wg_parit.1
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		any_country = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
-			is_ai = no
-		}
-		NOT = { has_global_flag = wg_parit_created }
-	}	
-	immediate = {
-		random_list = { 
-			50 = {
-				random_country = {
-					limit = {
-						OR = {
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
-						is_ai = no
-					}
-					country_event = { id = wg_parit.2 }
-				}
-			}
-			50 = {
-			}
-		}
-	}
-}
+# event = {
+# 	id = wg_parit.1
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	fire_only_once = yes
+# 	trigger = {
+# 		any_country = {
+# 			OR = {
+# 				has_authority = auth_warshipgirls
+# 				has_authority = auth_shenhai
+# 			}
+# 			is_ai = no
+# 		}
+# 		NOT = { has_global_flag = wg_parit_created }
+# 	}	
+# 	immediate = {
+		
+# 	}
+# }
 country_event = {
 	id = wg_parit.2
 	hide_window = yes
@@ -48,13 +33,16 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_parit_created
-		capital_scope = {
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
 			spawn_system = {
 				hyperlane = yes
-				min_jumps = 5
-				max_jumps = 15
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
 				initializer = Parit_system
 			}
+			remove_star_flag = can_spawn_boss_system
 		}
 	}
 }

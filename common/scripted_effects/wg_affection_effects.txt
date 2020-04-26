@@ -1,19 +1,19 @@
 #大小姐
-@lady_affection_to_lv2 = 150 # should be 150
-@lady_affection_to_lv3 = 300 # should be 300
-@lady_affection_to_lv4 = 450 # should be 450
-@lady_affection_to_lv5 = 600 # should be 600
-@lady_affection_reduce = 75 # should be 75
+@lady_affection_to_lv2 = 60 # should be 60
+@lady_affection_to_lv3 = 120 # should be 120
+@lady_affection_to_lv4 = 180 # should be 180
+@lady_affection_to_lv5 = 240 # should be 240
+@lady_affection_reduce = 40 # should be 40
 #总督
 @governor_affection_to_lv2 = 30
 @governor_affection_to_lv3 = 60
 @governor_affection_to_lv4 = 90
 @governor_affection_to_lv5 = 120
 #科学家
-@scientist_affection_to_lv2 = 85
-@scientist_affection_to_lv3 = 170
-@scientist_affection_to_lv4 = 265
-@scientist_affection_to_lv5 = 340
+@scientist_affection_to_lv2 = 55
+@scientist_affection_to_lv3 = 110
+@scientist_affection_to_lv4 = 165
+@scientist_affection_to_lv5 = 220
 #海军上将
 @admiral_affection_to_lv2 = 40
 @admiral_affection_to_lv3 = 80
@@ -34,10 +34,15 @@
 # PREV scope: country
 add_lady_governor_affection_trait = {
 	if = {
-		limit = { PREV = { 
-			has_country_flag = married_wsg_lady
-		}}
-		add_trait = leader_trait_governor_lady_affection_lv5
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value >= @lady_affection_to_lv5
+		}}}
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_governor_lady_affection_lv5
+		} else = {
+			add_trait = leader_trait_governor_lady_affection_lv4_max
+		}
 		break = yes
 	}
 	if = {
@@ -68,21 +73,21 @@ add_lady_governor_affection_trait = {
 		add_trait = leader_trait_governor_lady_affection_lv4
 		break = yes
 	}
-	else = {
-		add_trait = leader_trait_governor_lady_affection_lv4_max
-		break = yes
-	}
-	
 }
 
 # scope: leader
 # PREV scope: country
 add_lady_science_ship_affection_trait = {
 	if = {
-		limit = { PREV = { 
-			has_country_flag = married_wsg_lady 
-		}}
-		add_trait = leader_trait_scientist_lady_affection_science_ship_lv5
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value >= @lady_affection_to_lv5
+		}}}
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_scientist_lady_affection_science_ship_lv5
+		} else = {
+			add_trait = leader_trait_scientist_lady_affection_science_ship_lv4_max
+		}
 		break = yes
 	}
 	if = {
@@ -113,20 +118,21 @@ add_lady_science_ship_affection_trait = {
 		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4
 		break = yes
 	}
-	else = {
-		add_trait = leader_trait_scientist_lady_affection_science_ship_lv4_max
-		break = yes
-	}
 }
 
 # scope: leader
 # PREV scope: country
 add_lady_admiral_affection_trait = {
 	if = {
-		limit = { PREV = { 
-			has_country_flag = married_wsg_lady 
-		}}
-		add_trait = leader_trait_admiral_lady_affection_lv5
+		limit = { PREV = { check_variable = {
+			which = "lady_affection" value >= @lady_affection_to_lv5
+		}}}
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_admiral_lady_affection_lv5
+		} else = {
+			add_trait = leader_trait_admiral_lady_affection_lv4_max
+		}
 		break = yes
 	}
 	if = {
@@ -155,10 +161,6 @@ add_lady_admiral_affection_trait = {
 			which = "lady_affection" value < @lady_affection_to_lv5
 		}}}
 		add_trait = leader_trait_admiral_lady_affection_lv4
-		break = yes
-	}
-	else = {
-		add_trait = leader_trait_admiral_lady_affection_lv4_max
 		break = yes
 	}
 }

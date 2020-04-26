@@ -100,6 +100,7 @@ country_event = {
 				effect = {
 					set_leader_flag = overtime_yamato
 					set_leader_flag = wsg_event_leader
+					set_leader_flag = married
 				}				
 			}
 			country_event = { id = sh.520 days = 1 }
@@ -108,6 +109,8 @@ country_event = {
 				change_leader_portrait = sh65_1
 				set_is_female = yes
 				add_ruler_trait = leader_trait_ruler_shenhai2
+				set_variable = { which = affection value = 30 }
+				reset_governor_affection_level = yes
 			}
 		}
 	}

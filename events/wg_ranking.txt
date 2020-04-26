@@ -69,12 +69,12 @@ event = {
 				# 	}
                 # }
                 # 设置变量
-                set_variable = { which = dark_matter_stock value = 30000 }
-                set_variable = { which = living_metal_stock value = 30000 }
-                set_variable = { which = zro_stock value = 30000 }
-                set_variable = { which = nanite_stock value = 10000 }
-                set_variable = { which = alpha_stock value = 20000 }
-                set_variable = { which = se_stock value = 20000 }
+                set_variable = { which = dark_matter_stock value = 20000 }
+                set_variable = { which = living_metal_stock value = 20000 }
+                set_variable = { which = zro_stock value = 20000 }
+                set_variable = { which = nanite_stock value = 5000 }
+                set_variable = { which = alpha_stock value = 10000 }
+                set_variable = { which = se_stock value = 10000 }
                 set_variable = { which = rings_stock value = 3 }
 			}
 		}
@@ -201,17 +201,10 @@ country_event = {
 	id = wsgranking.997
 	title = "action.11.name"
     desc = wsgranking.997.desc
-
-	diplomatic = yes
-	is_triggered_only = yes
-
-	picture_event_data = {
-        # 有需求的话自己改名字
-		room = Shop_room
-	}
+    is_triggered_only = yes
 
     option = {
-        name = wsgranking.997.a
+        name = WORRYING
     }
 
 }
@@ -239,6 +232,7 @@ country_event = {
 	id = wsgranking.999
 	title = wsgranking.999.title
     desc = wsgranking.999.desc
+    picture = GFX_evt_wg_ella
 
     fire_only_once = yes
     is_triggered_only = yes
@@ -267,7 +261,7 @@ country_event = {
     }
 
     option = {
-        name = wsgranking.999.a
+        name = CURIOUS
     }
 }
 
@@ -292,6 +286,56 @@ country_event = {
 	id = wsgranking.20002
 	is_triggered_only = yes
 	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		last_increased_tech = tech_wg_buff_1
+	}
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.20003
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		last_increased_tech = tech_wg_buff_2
+	}
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.20003
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		last_increased_tech = tech_wg_buff_2
+	}
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
+}
+
+#到期恢复商店BUFF上限
+country_event = {
+	id = wsgranking.20004
+	is_triggered_only = yes
+	hide_window = yes
+	#fire_only_once = yes
 	immediate = {
 		change_variable = {
 			which = max_allowed_shop_buffs
@@ -303,7 +347,7 @@ country_event = {
 # 初次介绍
 country_event = {
 	id = wsgranking.1000
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1000.desc
     custom_gui = "enclave_caravaneer_window"
 	diplomatic = yes
@@ -311,11 +355,13 @@ country_event = {
 
 	picture_event_data = {
         # 有需求的话自己改名字
-		room = Shop_room
+		room = Ella_room
 	}
 
     immediate = {
         remove_country_flag = establish_communicate_in_normal
+        
+        add_research_option = tech_wsg_trading_pantsu
         add_tech_progress = {
             tech = tech_wsg_trading_pantsu
             progress = 0.25
@@ -349,7 +395,7 @@ country_event = {
 # 打开商店的主界面
 country_event = {
 	id = wsgranking.1001
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
     custom_gui = "enclave_caravaneer_window"
     trigger = {
         OR = {
@@ -387,8 +433,7 @@ country_event = {
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
-		room = Shop_room
+		room = Ella_room
 	}
 
     # 询问军阶点数。
@@ -418,7 +463,7 @@ country_event = {
 #冷却期间打开胖次商店
 country_event = {
 	id = wsgranking.1002
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
     custom_gui = "enclave_caravaneer_window"
     trigger = {
         OR = {
@@ -450,8 +495,7 @@ country_event = {
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
-		room = Shop_room
+		room = Ella_room
 	}
 
     # 退出
@@ -474,7 +518,7 @@ country_event = {
     is_triggered_only = yes
 
     picture_event_data = {
-        room = Shop_room
+        room = Ella_room
     }
     
     trigger = {
@@ -495,13 +539,13 @@ country_event = {
 # 敌对时联络
 country_event = {
     id = wsgranking.1003
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
     desc = wsgranking.1003.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
     is_triggered_only = yes
     picture_event_data = {
-        room = Shop_room
+        room = Ella_room
     }
     
     trigger = {
@@ -553,7 +597,7 @@ country_event = {
 # 一级界面 - 进入兑换。
 country_event = {
 	id = wsgranking.1004
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1004.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -569,7 +613,6 @@ country_event = {
     }
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
 	}
 
@@ -577,6 +620,12 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         # 兑换科技
         name = wsgranking.1004.a
+        # trigger = {
+        #     OR = {
+        #         has_technology = tech_wsg_203
+        #         has_technology = tech_sh_Lweapon
+        #     }
+        # }
         hidden_effect = {
             country_event = { id = wsgranking.1005 }
         }
@@ -606,7 +655,17 @@ country_event = {
         # 买戒指
         name = wsgranking.1004.d
         hidden_effect = {
-            country_event = { id = wsgranking.1010 }
+            country_event = { id = wsgranking.1010 }}
+	}
+	option = { 
+        custom_gui = "enclave_caravaneer_option"
+        # 购买终极物品
+		name = wsgranking.1004.e
+		trigger = {
+			has_country_flag = ultimate_items_unlocked
+		}
+        hidden_effect = {
+            country_event = { id = wsgranking.9006 }
         }
     }
 
@@ -639,14 +698,13 @@ country_event = {
 # 二级菜单 - 兑换科技
 country_event = {
 	id = wsgranking.1005
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1005.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -656,90 +714,324 @@ country_event = {
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
+        custom_tooltip = "tech_wsg_rim99_desc"
+        name = tech_wsg_rim99
+        trigger = {
+            has_technology = tech_exotic_gases
+            NOR = {
+                has_tech_option = tech_wsg_rim99
+                has_technology = tech_wsg_rim99
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 200 }
+            resource_stockpile_compare = { resource = exotic_gases value >= 200 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_30
+				check_variable = { which = "rankpts" value > 30 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -200
+            exotic_gases = -200
+        }
+        add_research_option = tech_wsg_rim99
+        add_tech_progress = { tech = tech_wsg_rim99 progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        custom_tooltip = "tech_wsg_pd127"
+        name = tech_wsg_pd127
+        trigger = {
+			has_technology = tech_wsg_152
+            NOR = {
+                has_tech_option = tech_wsg_pd127
+                has_technology = tech_wsg_pd127
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 1000 }
+            resource_stockpile_compare = { resource = rare_crystals value >= 500 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_60
+				check_variable = { which = "rankpts" value > 60 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -1000
+            rare_crystals = -500
+        }
+        add_research_option = tech_wsg_pd127
+        add_tech_progress = { tech = tech_wsg_pd127 progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        custom_tooltip = "tech_wsg_pd127"
+        name = tech_wsg_auto127
+        trigger = {
+			has_technology = tech_wsg_152
+            NOR = {
+                has_tech_option = tech_wsg_auto127
+                has_technology = tech_wsg_auto127
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 1000 }
+            resource_stockpile_compare = { resource = rare_crystals value >= 500 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_60
+				check_variable = { which = "rankpts" value > 60 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -1000
+            rare_crystals = -500
+        }
+        add_research_option = tech_wsg_auto127
+        add_tech_progress = { tech = tech_wsg_auto127 progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = tech_living_metal_bulge
+        custom_tooltip = "tech_living_metal_bulge_desc"
+        trigger = {
+			has_technology = tech_wsg_ia
+            has_technology = tech_mine_living_metal
+            NOR = {
+                has_tech_option = tech_living_metal_bulge
+                has_technology = tech_living_metal_bulge
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 2000 }
+            resource_stockpile_compare = { resource = alloys value >= 5000 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 150 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -2000
+            alloys  = -5000
+        }
+        add_research_option = tech_living_metal_bulge
+        add_tech_progress = { tech = tech_living_metal_bulge progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
         name = tech_wsg_auto152
-        # 科技前置条件
+        custom_tooltip = "tech_wsg_auto152_desc"
         trigger = {
             has_technology = tech_wsg_203
-            NOT = {
+            NOR = {
+                has_tech_option = tech_wsg_auto152
                 has_technology = tech_wsg_auto152
             }
         }
-        # 资源花费
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value > 3000 }
-            resource_stockpile_compare = { resource = sr_alpha value > 1500 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 1500 }
             custom_tooltip = {
-				fail_text = too_low_rank_fail
+				fail_text = too_low_rank_fail_150
 				check_variable = { which = "rankpts" value > 150 }
-			}
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
         }
         add_resource = {
             sr_pantsu = -3000
             sr_alpha = -1500
         }
-        #change_variable = { which = "rankpts" value = -893 }
         add_research_option = tech_wsg_auto152
         add_tech_progress = { tech = tech_wsg_auto152 progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
     }
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
         name = tech_wsg_203plasma
-        # 科技前置条件
+        custom_tooltip = "tech_wsg_203plasma_desc"
         trigger = {
             has_technology = tech_wsg_203
-            NOT = {
+            NOR = {
+                has_tech_option = tech_wsg_203plasma
                 has_technology = tech_wsg_203plasma
             }
         }
-        # 资源花费
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
-            resource_stockpile_compare = { resource = sr_alpha value > 1000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 1000 }
             custom_tooltip = {
-				fail_text = too_low_rank_fail
-				check_variable = { which = "rankpts" value > 140 }
-			}
+				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 150 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
         }
         add_resource = {
             sr_pantsu = -2500
             sr_alpha = -1000
         }
-        #change_variable = { which = "rankpts" value = -140 }
         add_research_option = tech_wsg_203plasma
         add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
         name = tech_wsg_356laser
-        # 科技前置条件
+        custom_tooltip = "tech_wsg_356laser"
         trigger = {
             has_technology = tech_wsg_203
-            NOT = {
+            NOR = {
+                has_tech_option = tech_wsg_356laser
                 has_technology = tech_wsg_356laser
             }
         }
-        # 资源花费
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value > 2500 }
-            resource_stockpile_compare = { resource = sr_alpha value > 1000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 1000 }
             custom_tooltip = {
-				fail_text = too_low_rank_fail
-				check_variable = { which = "rankpts" value > 130 }
-			}
+				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 150 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
         }
         add_resource = {
             sr_pantsu = -2500
             sr_alpha = -1000
         }
-        #change_variable = { which = "rankpts" value = -893 }
         add_research_option = tech_wsg_356laser
         add_tech_progress = { tech = tech_wsg_356laser progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
     }
 
+    ## 深海武器兑换
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_sh_autocannon
+        custom_tooltip = "tech_sh_autocannon_desc"
+		trigger = {
+			has_technology = tech_sh_Lweapon
+			NOR = { 
+                has_tech_option = tech_sh_autocannon
+                has_technology = tech_sh_autocannon 
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2000 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_120
+				check_variable = { which = "rankpts" value > 120 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -2500
+			sr_se = -2000
+		}
+		#change_variable = { which = "rankpts" value = -893 }
+		add_research_option = tech_sh_autocannon
+		add_tech_progress = { tech = tech_sh_autocannon progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_sh_fighter
+        custom_tooltip = "tech_sh_fighter_desc"
+		trigger = {
+			has_technology = tech_sh_Lweapon
+			NOR = { 
+                has_tech_option = tech_sh_fighter
+                has_technology = tech_sh_fighter 
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2000 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 150 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -2500
+			sr_se = -1000
+		}
+		add_research_option = tech_sh_fighter
+		add_tech_progress = { tech = tech_sh_fighter progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_sh_torpedo
+        custom_tooltip = "tech_sh_torpedo_desc"
+		trigger = {
+			has_technology = tech_sh_Lweapon
+			has_technology = tech_sh_Gweapon
+			NOR = { 
+                has_tech_option = tech_sh_torpedo
+                has_technology = tech_sh_torpedo
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2000 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 150 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -2500
+			sr_se = -2000
+		}
+		add_research_option = tech_sh_torpedo
+		add_tech_progress = { tech = tech_sh_torpedo progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+	}
 
     # 返回一级菜单
     option = { 
@@ -793,14 +1085,13 @@ country_event = {
 # 二级菜单 - 兑换修正
 country_event = {
 	id = wsgranking.1007
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1007.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -808,21 +1099,24 @@ country_event = {
         NOT = { has_global_flag = pantsu_shop_disabled }
     }
 
-    option = { 
-        custom_gui = "enclave_caravaneer_option"
-        # 兑换科技
-        name = eyes_power
-        # 前置条件
-        trigger = {
-            has_country_flag = wsgrank_mod1
-        }
-        # 资源花费
-        allow = {
-            check_variable = { which = "rankpts" value > 893 }
-        }
-        change_variable = { which = "rankpts" value = -893 }
-        add_modifier = { modifier = eyes_power days = -1}
-    }
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		# 兑换工业buff
+		name = wsgranking.1007.a
+		hidden_effect = { country_event = { id = wsgranking.1020 }}
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		# 兑换外交buff
+		name = wsgranking.1007.b
+		hidden_effect = { country_event = { id = wsgranking.1021 }}
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		# 兑换战斗buff
+		name = wsgranking.1007.c
+		hidden_effect = { country_event = { id = wsgranking.1022 }}
+	}
 
     # 返回一级菜单
     option = { 
@@ -876,14 +1170,13 @@ country_event = {
 # 二级菜单 - 兑换杂项资源
 country_event = {
 	id = wsgranking.1009
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1009.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -973,14 +1266,13 @@ country_event = {
 # 三级菜单 - 兑换一次性资源 - 少量
 country_event = {
 	id = wsgranking.1011
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1011.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -1001,138 +1293,132 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_dark_matter
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = dark_matter_stock value > 200 }
+                    check_variable = { which = dark_matter_stock value > 250 }
                 }
                 fail_text = dark_matter_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -200 }}
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -250 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            sr_dark_matter = 200
+            sr_pantsu = -200
+            sr_dark_matter = 250
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_zro
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = zro_stock value > 200 }
+                    check_variable = { which = zro_stock value > 250 }
                 }
                 fail_text = zro_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -200 }}
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -250 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            sr_zro = 200
+            sr_pantsu = -200
+            sr_zro = 250
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_living_metal
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = living_metal_stock value > 200 }
+                    check_variable = { which = living_metal_stock value > 250 }
                 }
                 fail_text = living_metal_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -200 }}
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -250 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            sr_living_metal = 200
+            sr_pantsu = -200
+            sr_living_metal = 250
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = {  }
         allow = { 
             has_technology = tech_nanite_transmutation
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = nanite_stock value > 20 }
+                    check_variable = { which = nanite_stock value > 60 }
                 }
                 fail_text = nanite_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -20 }}
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -60 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            nanites = 20
+            sr_pantsu = -200
+            nanites = 60
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = {  }
         allow = { 
             has_technology = tech_building_wsg_alpha
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = alpha_stock value > 100 }
+                    check_variable = { which = alpha_stock value > 120 }
                 }
                 fail_text = alpha_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -100 }}
+            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -120 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            sr_alpha = 100
+            sr_pantsu = -200
+            sr_alpha = 120
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = {  }
         allow = { 
             has_technology = tech_sh_senergy
-            resource_stockpile_compare = { resource = sr_pantsu value > 500 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 200 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = se_stock value > 100 }
+                    check_variable = { which = se_stock value > 120 }
                 }
                 fail_text = se_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -100 }}
+            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -120 }}
         }
         add_resource = {
-            sr_pantsu = -500
-            sr_se = 100
+            sr_pantsu = -200
+            sr_se = 120
         }
     }
 
@@ -1165,14 +1451,13 @@ country_event = {
 # 三级菜单 - 兑换一次性资源 - 中量
 country_event = {
 	id = wsgranking.1012
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1011.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -1193,138 +1478,132 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_dark_matter
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = dark_matter_stock value > 900 }
+                    check_variable = { which = dark_matter_stock value > 1350 }
                 }
                 fail_text = dark_matter_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -900 }}
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -1350 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            sr_dark_matter = 900
+            sr_pantsu = -1000
+            sr_dark_matter = 1350
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_zro
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = zro_stock value > 900 }
+                    check_variable = { which = zro_stock value > 1350 }
                 }
                 fail_text = zro_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -900 }}
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -1350 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            sr_zro = 900
+            sr_pantsu = -1000
+            sr_zro = 1350
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_living_metal
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = living_metal_stock value > 900 }
+                    check_variable = { which = living_metal_stock value > 1350 }
                 }
                 fail_text = living_metal_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -900 }}
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -1350 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            sr_living_metal = 900
+            sr_pantsu = -1000
+            sr_living_metal = 1350
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = {  }
         allow = { 
             has_technology = tech_nanite_transmutation
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = nanite_stock value > 100 }
+                    check_variable = { which = nanite_stock value > 350 }
                 }
                 fail_text = nanite_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -100 }}
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -350 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            nanites = 100
+            sr_pantsu = -1000
+            nanites = 350
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = {  }
         allow = { 
             has_technology = tech_building_wsg_alpha
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = alpha_stock value > 500 }
+                    check_variable = { which = alpha_stock value > 675 }
                 }
                 fail_text = alpha_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -500 }}
+            event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -675 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            sr_alpha = 500
+            sr_pantsu = -1000
+            sr_alpha = 675
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = {  }
         allow = { 
             has_technology = tech_sh_senergy
-            resource_stockpile_compare = { resource = sr_pantsu value > 2000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 1000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = se_stock value > 500 }
+                    check_variable = { which = se_stock value > 675 }
                 }
                 fail_text = se_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -500 }}
+            event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -675 }}
         }
         add_resource = {
-            sr_pantsu = -2000
-            sr_se = 500
+            sr_pantsu = -1000
+            sr_se = 675
         }
     }
 
@@ -1357,14 +1636,13 @@ country_event = {
 # 三级菜单 - 兑换一次性资源 - 大量
 country_event = {
 	id = wsgranking.1013
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1011.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -1385,102 +1663,97 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2dm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_dark_matter
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = dark_matter_stock value > 5000 }
+                    check_variable = { which = dark_matter_stock value > 6000 }
                 }
                 fail_text = dark_matter_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -5000 }}
+            event_target:pantsu_shop_country = { change_variable = { which = dark_matter_stock value = -6000 }}
         }
         add_resource = {
-            sr_pantsu = -10000
-            sr_dark_matter = 5000
+            sr_pantsu = -4000
+            sr_dark_matter = 6000
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2zro
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_zro
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = zro_stock value > 5000 }
+                    check_variable = { which = zro_stock value > 6000 }
                 }
                 fail_text = zro_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -5000 }}
+            event_target:pantsu_shop_country = { change_variable = { which = zro_stock value = -6000 }}
         }
         add_resource = {
-            sr_pantsu = -10000
-            sr_zro = 5000
+            sr_pantsu = -4000
+            sr_zro = 6000
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2lm
-        trigger = {  }
         allow = { 
             has_technology = tech_mine_living_metal
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = living_metal_stock value > 5000 }
+                    check_variable = { which = living_metal_stock value > 6000 }
                 }
                 fail_text = living_metal_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -5000 }}
+            event_target:pantsu_shop_country = { change_variable = { which = living_metal_stock value = -6000 }}
         }
         add_resource = {
-            sr_pantsu = -10000
-            sr_living_metal = 5000
+            sr_pantsu = -4000
+            sr_living_metal = 6000
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2nanite
-        trigger = {  }
         allow = { 
             has_technology = tech_nanite_transmutation
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
-                    check_variable = { which = nanite_stock value > 700 }
+                    check_variable = { which = nanite_stock value > 1600 }
                 }
                 fail_text = nanite_sold_out
             }
         }
         hidden_effect = {
-            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -700 }}
+            event_target:pantsu_shop_country = { change_variable = { which = nanite_stock value = -1600 }}
         }
         add_resource = {
-            sr_pantsu = -10000
-            nanites = 700
+            sr_pantsu = -4000
+            nanites = 1600
         }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2alpha
-        trigger = {  }
         allow = { 
             has_technology = tech_building_wsg_alpha
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
                     check_variable = { which = alpha_stock value > 3000 }
@@ -1492,7 +1765,7 @@ country_event = {
             event_target:pantsu_shop_country = { change_variable = { which = alpha_stock value = -3000 }}
         }
         add_resource = {
-            sr_pantsu = -10000
+            sr_pantsu = -4000
             sr_alpha = 3000
         }
     }
@@ -1500,10 +1773,9 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
         name = pantsu2se
-        trigger = {  }
         allow = { 
             has_technology = tech_sh_senergy
-            resource_stockpile_compare = { resource = sr_pantsu value > 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value > 4000 }
             custom_tooltip = {
                 event_target:pantsu_shop_country = {
                     check_variable = { which = se_stock value > 3000 }
@@ -1515,7 +1787,7 @@ country_event = {
             event_target:pantsu_shop_country = { change_variable = { which = se_stock value = -3000 }}
         }
         add_resource = {
-            sr_pantsu = -10000
+            sr_pantsu = -4000
             sr_se = 3000
         }
     }
@@ -1550,14 +1822,13 @@ country_event = {
 #三级菜单 - 兑换长期资源贸易协议
 country_event = {
 	id = wsgranking.1014
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1014.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -1738,14 +2009,13 @@ country_event = {
 #三级菜单 - 兑换长期资源贸易协议 - 大量
 country_event = {
 	id = wsgranking.1015
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1014.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -1926,14 +2196,13 @@ country_event = {
 #三级菜单 - 终止贸易
 country_event = {
 	id = wsgranking.1016
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1016.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -2088,14 +2357,13 @@ country_event = {
 # 确认取消所有协议
 country_event = {
 	id = wsgranking.1017
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1017.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
 	is_triggered_only = yes
 
 	picture_event_data = {
-        # room 有需求的话自己改名字
 		room = Shop_room
     }
     
@@ -2149,7 +2417,7 @@ country_event = {
 
 country_event = {
     id = wsgranking.1018
-    title = "TRANSMISSION"
+    title = pantsu_shop_name
 	desc = wsgranking.1010.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -2236,68 +2504,66 @@ country_event = {
 
     immediate = {
         if = {
-            limit = { check_variable = { which = dark_matter_stock value < 30000 }}
+            limit = { check_variable = { which = dark_matter_stock value < 20000 }}
             if = {
-                limit = { check_variable = { which = dark_matter_stock value < 5000 }}
-                change_variable = { which = dark_matter_stock value = 1500 }
+                limit = { check_variable = { which = dark_matter_stock value < 6000 }}
+                change_variable = { which = dark_matter_stock value = 2500 }
             } else = {
-                change_variable = { which = dark_matter_stock value = 600 }
+                change_variable = { which = dark_matter_stock value = 1200 }
             }
         }
         if = {
-            limit = { check_variable = { which = living_metal_stock value < 30000 }}
+            limit = { check_variable = { which = living_metal_stock value < 20000 }}
             if = {
-                limit = { check_variable = { which = living_metal_stock value < 5000 }}
-                change_variable = { which = living_metal_stock value = 1500 }
+                limit = { check_variable = { which = living_metal_stock value < 6000 }}
+                change_variable = { which = living_metal_stock value = 1000 }
             } else = {
-                change_variable = { which = living_metal_stock value = 600 }
+                change_variable = { which = living_metal_stock value = 300 }
             }
         }
         if = {
-            limit = { check_variable = { which = zro_stock value < 30000 }}
+            limit = { check_variable = { which = zro_stock value < 20000 }}
             if = {
-                limit = { check_variable = { which = zro_stock value < 5000 }}
-                change_variable = { which = zro_stock value = 1500 }
+                limit = { check_variable = { which = zro_stock value < 6000 }}
+                change_variable = { which = zro_stock value = 1000 }
             } else = {
-                change_variable = { which = zro_stock value = 600 }
+                change_variable = { which = zro_stock value = 300 }
             }
         }
         if = {
-            limit = { check_variable = { which = nanite_stock value < 10000 }}
+            limit = { check_variable = { which = nanite_stock value < 5000 }}
             if = {
-                limit = { check_variable = { which = nanite_stock value < 700 }}
-                change_variable = { which = nanite_stock value = 250 }
+                limit = { check_variable = { which = nanite_stock value < 1600 }}
+                change_variable = { which = nanite_stock value = 200 }
             } else = {
-                change_variable = { which = nanite_stock value = 100 }
+                change_variable = { which = nanite_stock value = 75 }
             }
         }
         if = {
-            limit = { check_variable = { which = alpha_stock value < 20000 }}
+            limit = { check_variable = { which = alpha_stock value < 10000 }}
             if = {
-                limit = { check_variable = { which = alpha_stock value < 6000 }}
-                change_variable = { which = alpha_stock value = 2000 }
+                limit = { check_variable = { which = alpha_stock value < 3000 }}
+                change_variable = { which = alpha_stock value = 1000 }
             } else = {
-                change_variable = { which = alpha_stock value = 800 }
+                change_variable = { which = alpha_stock value = 600 }
             }
         }
         if = {
-            limit = { check_variable = { which = se_stock value < 20000 }}
+            limit = { check_variable = { which = se_stock value < 10000 }}
             if = {
-                limit = { check_variable = { which = se_stock value < 6000 }}
-                change_variable = { which = se_stock value = 2000 }
+                limit = { check_variable = { which = se_stock value < 3000 }}
+                change_variable = { which = se_stock value = 1000 }
             } else = {
-                change_variable = { which = se_stock value = 800 }
+                change_variable = { which = se_stock value = 600 }
             }
         }
     }
 }
 
-
-
 #二级菜单 - 购买戒指
 country_event = {
 	id = wsgranking.1010
-	title = "TRANSMISSION"
+	title = pantsu_shop_name
 	desc = wsgranking.1010.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -2383,20 +2649,386 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_return_to_menu
-        hidden_effect = {
-            country_event = { id = wsgranking.1004 }
-        }
+        hidden_effect = { country_event = { id = wsgranking.1004 }}
     }
 
     # 返回主选单
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_return_to_main
-        hidden_effect = {
-            country_event = { id = wsgranking.1001 }
-        }
+        hidden_effect = { country_event = { id = wsgranking.1001 }}
     }
 
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+#三级菜单 - 分类兑换修正 - 工业系修正
+country_event = {
+	id = wsgranking.1020
+	title = pantsu_shop_name
+	desc = wsgranking.1020.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		# room 有需求的话自己改名字
+		room = Shop_room
+	}
+	trigger = {
+		NOT = {
+			has_global_flag = pantsu_shop_disabled
+		}
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_planetary_construction
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 90 }
+				fail_text = too_low_rank_fail_90
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -2000 }
+		add_modifier = { modifier = wg_modifier_planetary_construction days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_decision
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 120 }
+				fail_text = too_low_rank_fail_120
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_decision days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option" 
+		name = wg_modifier_megastructure_construction 
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 150 }
+				fail_text = too_low_rank_fail_150
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3500 }
+		add_modifier = { modifier = wg_modifier_megastructure_construction days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option" 
+		name = wg_modifier_megastructure_pruduction
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 150 }
+				fail_text = too_low_rank_fail_150
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3500 }
+		add_modifier = { modifier = wg_modifier_megastructure_pruduction days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+    }
+
+    # 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = { country_event = { id = wsgranking.1007 }}
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = { country_event = { id = wsgranking.1001 }}
+    }
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+#三级菜单 - 兑换修正 - 外交系修正
+country_event = {
+	id = wsgranking.1021
+	title = pantsu_shop_name
+	desc = wsgranking.1021.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		# room 有需求的话自己改名字
+		room = Shop_room
+	}
+	trigger = {
+		NOT = {
+			has_global_flag = pantsu_shop_disabled
+		}
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_diplomacy_hostile
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -1000 }
+		add_modifier = { modifier = wg_modifier_diplomacy_hostile days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option" 
+		name = wg_modifier_diplomacy_weight 
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -1000 }
+		add_modifier = { modifier = wg_modifier_diplomacy_weight days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option" 
+		name = wg_modifier_diplomacy_envoy 
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 90 }
+				fail_text = too_low_rank_fail_90
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -2000 }
+		add_modifier = { modifier = wg_modifier_diplomacy_envoy days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_diplomacy_trade
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 120 }
+                fail_text = too_low_rank_fail_120
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { alloys = -3000 }
+		add_modifier = { modifier = wg_modifier_diplomacy_trade days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+	# 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = { country_event = { id = wsgranking.1007 }}
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = { country_event = { id = wsgranking.1001 }}
+    }
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_exit
+        default_hide_option = yes
+    }
+}
+
+#三级菜单 - 兑换修正 - 军事系修正
+country_event = {
+	id = wsgranking.1022
+	title = pantsu_shop_name
+	desc = wsgranking.1022.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		# room 有需求的话自己改名字
+		room = Shop_room
+	}
+	trigger = {
+		NOT = {
+			has_global_flag = pantsu_shop_disabled
+		}
+    }
+
+    immediate = {
+        if = {
+            limit = { years_passed >= 200 }
+            set_variable = { which = rankpts_require value = 250 }
+            break = yes
+        }
+        if = {
+            limit = { years_passed >= 100 }
+            set_variable = { which = rankpts_require value = 120 }
+            break = yes
+        }
+        if = {
+            limit = { years_passed >= 50 }
+            set_variable = { which = rankpts_require value = 60 }
+            break = yes
+        }
+    }
+    
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_combat_elite_pilot
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 30 }
+                fail_text = too_low_rank_fail_30
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -1000 }
+		add_modifier = { modifier = wg_modifier_combat_elite_pilot days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+    }
+    
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_combat_hull_algorithm
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+                fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -2000 }
+		add_modifier = { modifier = wg_modifier_combat_hull_algorithm days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+    }
+    
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_combat_shipcraft
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 90 }
+                fail_text = too_low_rank_fail_90
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_combat_shipcraft days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+    }
+    
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+        name = wg_modifier_combat_uf
+        trigger = {
+            always = no # 暂时屏蔽
+            has_global_flag = wg_invasion_happened
+        }
+		allow = {
+            custom_tooltip = {
+                check_variable = { which = "rankpts" value > rankpts_require }
+                fail_text = rankpts_not_reach_requirment
+            }
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_combat_uf days = 1800 }
+		country_event = { id = wsgranking.20004 days = 1800 }
+	}
+    
+	# 返回一级菜单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_menu
+        hidden_effect = { country_event = { id = wsgranking.1007 }}
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = { country_event = { id = wsgranking.1001 }}
+    }
     # 退出
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2431,7 +3063,7 @@ country_event = {
 # 有商店通讯之后随机被动增加军阶
 
 country_event = {
-	id = wsgranking.5001
+	id = wsgranking.5000
 	hide_window = yes
 	mean_time_to_happen = {
 		days = 720
@@ -2472,7 +3104,7 @@ country_event = {
 #征集员工 - 1人口，4点数
 country_event = {
 	id = wsgranking.5001
-	title = wsgranking.5001.title
+	title = pantsu_shop_name
 	desc = wsgranking.5001.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -2572,7 +3204,7 @@ country_event = {
 
 country_event = {
 	id = wsgranking.5002
-	title = wsgranking.5002.title
+	title = pantsu_shop_name
 	desc = wsgranking.5002.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -2582,34 +3214,32 @@ country_event = {
     }
 	
 	mean_time_to_happen = {
-		years = 30
+        years = 30
+        modifier = {
+			factor = 1000
+			AND = {
+				resource_stockpile_compare = { resource = energy value <= 50000 }
+				income < 500
+			}
+		}
 		modifier = {
             factor = 0.8
             AND = {
-                resource_stockpile_compare = {
-                    resource = energy
-                    value = 10000
-                }
+                resource_stockpile_compare = { resource = energy value >= 10000 }
                 income > 500
             }
 		}
 		modifier = {
 			factor = 0.5
             AND = {
-                resource_stockpile_compare = {
-                    resource = energy
-                    value = 20000
-                }
+                resource_stockpile_compare = { resource = energy value >= 20000 }
                 income > 1000
             }
         }
         modifier = {
 			factor = 0.2
             AND = {
-                resource_stockpile_compare = {
-                    resource = energy
-                    value = 40000
-                }
+                resource_stockpile_compare = { resource = energy value >= 40000 }
                 income > 2000
             }
         }
@@ -2621,6 +3251,7 @@ country_event = {
         }
     }
 	trigger = {
+        always = no
 		num_pops > 10
         OR = {
 			has_authority = auth_warshipgirls
@@ -2645,19 +3276,9 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = energy value >= 5000 }
         }
-        change_variable = {
-            which = rankpts
-            value = 2
-        }
-        add_modifier = {
-            modifier = wg_shop_loan_5k
-            days = 1800
-        }
-        hidden_effect = {
-			add_resource = {
-                energy = -5000
-            }
-        }
+        change_variable = { which = rankpts value = 2 }
+        add_modifier = { modifier = wg_shop_loan_5k days = 1800 }
+        hidden_effect = { add_resource = { energy = -5000 }}
     }
 #10年期10000投资，每月167
     option = {
@@ -2666,20 +3287,9 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = energy value >= 10000 }
         }
-        change_variable = {
-            which = rankpts
-            value = 4
-        }
-
-        add_modifier = {
-            modifier = wg_shop_loan_10k
-            days = 3600
-        }
-        hidden_effect = {
-			add_resource = {
-                energy = -10000
-            }
-        }
+        change_variable = { which = rankpts value = 4 }
+        add_modifier = { modifier = wg_shop_loan_5k days = 3600 }
+        hidden_effect = { add_resource = { energy = -10000 }}
     }
 #20年期30000投资，每月375
     option = {
@@ -2688,19 +3298,9 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = energy value >= 20000 }
         }
-        change_variable = {
-            which = rankpts
-            value = 8
-        }
-        add_modifier = {
-            modifier = wg_shop_loan_30k
-            days = 7200
-        }
-        hidden_effect = {
-            add_resource = {
-                energy = -30000
-            }
-        }
+        change_variable = { which = rankpts value = 8 }
+        add_modifier = { modifier = wg_shop_loan_5k days = 7200 }
+        hidden_effect = { add_resource = { energy = -30000 }}
     }
 
 
@@ -2713,7 +3313,7 @@ country_event = {
 # 市场拓展任务 - 要求特许经营
 country_event = {
 	id = wsgranking.5003
-	title = wsgranking.5003.title
+	title = pantsu_shop_name
 	desc = wsgranking.5003.desc
     custom_gui = "enclave_caravaneer_window"
     diplomatic = yes
@@ -2742,6 +3342,7 @@ country_event = {
 	}
 	
 	trigger = {
+        always = no
 		num_pops > 10
         OR = {
 			has_authority = auth_warshipgirls
@@ -2771,11 +3372,11 @@ country_event = {
 		random_owned_planet = {
             limit = {
 				num_pops > 50
-			OR = {
-                has_building = building_pantsu_shop
-                has_building = building_commercial_zone
-                has_building = building_galactic_stock_exchange
-                has_building = building_commercial_megaplex
+			    OR = {
+                    has_building = building_pantsu_shop
+                    has_building = building_commercial_zone
+                    has_building = building_galactic_stock_exchange
+                    has_building = building_commercial_megaplex
                 }
 			}
 			save_event_target_as = pantsu_shop_franchising_planet
@@ -2816,11 +3417,11 @@ country_event = {
     diplomatic = yes
     #is_triggered_only = yes
     picture_event_data = {
-        room = Shop_room
+        room = Ella_room
     }
 	
 	mean_time_to_happen = {
-		years = 10
+		years = 20
 		modifier = {
 			factor = 0.6
             has_technology = tech_food_processing_2
@@ -2829,6 +3430,7 @@ country_event = {
 	}
 	
 	trigger = {
+        always = no
 		is_gestalt = no
 		is_mechanical_empire = no	
         is_country_type = default
@@ -2901,37 +3503,36 @@ country_event = {
 	id = wsgranking.5005
 	title = wsgranking.5005.title
 	desc = wsgranking.5005.desc
-    custom_gui = "enclave_caravaneer_window"
-    diplomatic = yes
-    #is_triggered_only = yes
-    picture_event_data = {
-        room = Shop_room
-    }
+    picture = GFX_evt_wg_rabbit
 	
 	mean_time_to_happen = {
 		years = 30
 		modifier = {
 			factor = 0.6
             has_technology = tech_food_processing_2
-
         }
 	}
 	
 	trigger = {
-		is_gestalt = no
-		is_mechanical_empire = no	
-        is_country_type = default
+        is_mechanical_empire = no	
+        is_default_country = yes
         has_technology = tech_food_processing_1
         OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
 		NOR = {
-			has_valid_civic = civic_machine_terminator
-			has_valid_civic = civic_fanatic_purifiers
+            has_civic = civic_fanatic_purifiers
+            has_ascension_perk = ap_shenhai_silent
+            has_civic = civic_CM
+            has_country_flag = get_naila
 		}		
 		#is_at_war = no
-	}
+    }
+    
+    immediate = {
+        set_country_flag = get_naila
+    }
 	
     option = {
         custom_gui = "enclave_caravaneer_option"
@@ -2941,55 +3542,176 @@ country_event = {
             value = 2
         }
         hidden_effect = {		
-            create_species = {
-                name = NAILA
-                plural = NAILA
-                class = ART
-                portrait = art13
-                namelist = ART1
-                effect = {
-                    save_global_event_target_as = Naila_species
-                }
-            }		
-            create_leader = {
-                class = governor
-                species = event_target:Naila_species
-                name = "NAME_naila"
-                skill = 5
-                traits = {
-                    trait = leader_trait_governor_naila
-                    trait = leader_trait_governor_chairman
-                }
-                event_leader = yes	# prevents this leader from leading factions and winning elections
-            }
-            last_created_leader = {
-                set_is_female = yes
-                set_age = 9
-                change_leader_portrait = cts9998
-            }
+            country_event = { id = wsgranking.5006 }
         }	
     }
     option = {
         custom_gui = "enclave_caravaneer_option"
         name = wsgranking.5005.b
+        add_resource = {
+            influence = 50
+        }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.5005.c
+        change_variable = {
+            which = rankpts
+            value = 2
+        }
+        add_resource = {
+            food = 1
+            energy = -1
+        }
+        hidden_effect = {		
+            country_event = { id = wsgranking.5006 }
+        }	
     }
 }
+
+country_event = {
+	id = wsgranking.5006
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+		        name = NAILA
+		        plural = NAILA
+		        class = ART
+		        portrait = art13
+		        namelist = ART1
+		        effect = {
+		            save_global_event_target_as = Naila_species
+		        }
+		}		
+		create_leader = {
+			class = governor
+			species = event_target:Naila_species
+			name = "NAME_NAILA"
+			skill = 6
+			traits = {
+			    trait = leader_trait_governor_naila
+			    trait = leader_trait_governor_chairman
+			    trait = leader_trait_governor_affection_lv1
+			}
+			effect = {
+			    set_leader_flag = wsg_event_leader
+			}
+			event_leader = yes	# prevents this leader from leading factions and winning elections
+		}
+		last_created_leader = {
+			set_is_female = yes
+			set_age = 9
+			change_leader_portrait = cts9998
+			set_variable = { which = affection_level value = 1 }
+			set_variable = { which = affection value = 15 }
+		}
+	}
+}
+
 #通知事件
 #通知阿尔法武器上架
 country_event = {
-	id = wsgranking.6000
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-       has_technology = tech_wsg_203
-    }
-
-    immediate = {
-        set_timed_country_flag = { flag = pantsu_shop_cooldown days = 10 }
-    }
+	id = wsgranking.6001
+	title = pantsu_shop_name
+	desc = wsgranking.6001.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	trigger = {
+		last_increased_tech = tech_wsg_203
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = OK
+	}
 }
+
+#通知深海武器上架
+country_event = {
+	id = wsgranking.6002
+	title = pantsu_shop_name
+	desc = wsgranking.6002.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	trigger = {
+		last_increased_tech = tech_sh_Lweapon
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = OK
+	}
+}
+
 #通知基因科技可以购买
+country_event = {
+	id = wsgranking.6003
+	title = pantsu_shop_name
+	desc = wsgranking.6003.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	trigger = {
+		OR = {
+			last_increased_tech = tech_sh_genetic_resequencing
+			last_increased_tech = tech_wsg_genetic_resequencing
+		}
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = OK
+        give_technology = {
+            tech = tech_genetic_resequencing
+        }
+	}
+}
+
+country_event = {
+	id = wsgranking.6004
+	title = pantsu_shop_name
+	desc = wsgranking.6004.desc
+	custom_gui = "enclave_caravaneer_window"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	trigger = {
+		years_passed >= 60
+        resource_stockpile_compare = {
+            resource = sr_living_metal
+            value >=0
+        }
+        NOT = {
+            has_technology = tech_mine_living_metal
+        }
+	}
+	option = {
+        add_research_option = tech_mine_living_metal
+        add_tech_progress = {
+            tech = tech_mine_living_metal
+            progress = 0.2
+        }
+		custom_gui = "enclave_caravaneer_option"
+		name = EXCELLENT
+	}
+}
+
+#终极永久BUFF供货事件
+
+
 #通知军阶点数达到某几个关键值
 
 
@@ -3226,3 +3948,380 @@ country_event = {
         name = OK
     }
 }
+
+#科技触发上限增长
+country_event = {
+	id = wsgranking.8001
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		last_increased_tech = tech_wg_buff_1
+	}
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.8002
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		last_increased_tech = tech_wg_buff_2
+	}
+	immediate = {
+		change_variable = {
+			which = max_allowed_shop_buffs
+			value = 1
+		}
+	}
+}
+
+# #wg_modifier_tertiary_industry
+#紧急战斗植入物
+country_event = {
+	id = wsgranking.9000
+	title = "TRANSMISSION"
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9000.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Shop_room
+	}
+	fire_only_once = yes
+	immediate = {
+		every_owned_leader = {
+			switch = {
+				trigger = leader_class
+				admiral = {
+					add_skill = 5
+					#add_trait = leader_trait_inferior_implant
+				}
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				is_same_species = root
+			}
+			switch = {
+				trigger = leader_class
+				admiral = {
+					add_trait = leader_trait_ascension_implant
+				}
+			}
+		}
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_shop_celebration
+		add_modifier = {
+			modifier = wg_modifier_implant_coordination
+			days = -1
+		}
+	}
+}
+
+#便携式舰队CIC
+country_event = {
+	id = wsgranking.9001
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9001.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	fire_only_once = yes
+	option = {
+		name = wg_shop_celebration
+		custom_gui = "enclave_caravaneer_option"
+		add_modifier = {
+			modifier = wg_modifier_combat_fleet_control
+			days = -1
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.9002
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9002.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	fire_only_once = yes
+	option = {
+		name = wg_shop_celebration
+		custom_gui = "enclave_caravaneer_option"
+		add_modifier = {
+			modifier = wg_modifier_combat_uf
+			days = -1
+		}
+	}
+}
+
+country_event = {
+	id = wsgranking.9003
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9003.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	fire_only_once = yes
+	option = {
+        trigger = {
+            has_authority = auth_warshipgirls    
+        }
+		name = wg_shop_celebration
+		custom_gui = "enclave_caravaneer_option"
+        add_research_option = tech_wsg_dmm
+        add_research_option = tech_wsg_mine
+        add_tech_progress = {
+            tech = tech_wsg_dmm
+            progress = 0.5
+        }
+        
+    }
+    option = {
+        trigger = {
+            has_authority = auth_shenhai    
+        }
+		name = wg_shop_celebration
+		custom_gui = "enclave_caravaneer_option"
+        add_research_option = tech_wsg_mine
+        add_tech_progress = {
+            tech = tech_wsg_mine
+            progress = 0.5
+        }
+    }
+}
+
+country_event = {
+	id = wsgranking.9005
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9005.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	trigger = {
+		mid_game_years_passed >= 30
+        OR = {
+            has_technology = tech_building_wsg_alpha
+            has_technology = tech_sh_senergy            
+        }
+	}
+	immediate = {
+		set_country_flag = ultimate_items_unlocked
+	}
+	option = {
+        custom_gui = "enclave_caravaneer_option"
+		name = wsgranking.9005.a
+        custom_tooltip = "wsgranking.9005.effect"
+	}
+}
+
+country_event = {
+	id = wsgranking.9006
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.9006.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = "implant_request_desc"
+        response_text = "implant_request_desc_response"
+        trigger = {
+            NOT = { 
+                has_country_flag = implant_purchased
+            }
+            #has_country_flag = wg_invasion_happened
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = energy value >= 20000 }
+            custom_tooltip = {
+                fail_text = too_low_rank_fail_250
+                check_variable = { which = "rankpts" value > 250 }
+            }
+        }
+        add_resource = {
+            sr_pantsu = -5000
+            energy = -20000
+        }
+        add_modifier = {
+            modifier = wg_modifier_ultimate_project
+            days = 360
+        }
+        set_country_flag = implant_purchased
+        country_event = { id = wsgranking.9000 days = 360 }
+    }
+
+    
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = "cic_request_desc"
+        response_text = "cic_request_desc_response"
+        trigger = {
+            NOT = { 
+                has_country_flag = cic_purchased
+            }
+            #has_country_flag = wg_invasion_happened
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = alloys value >= 30000 }
+            custom_tooltip = {
+                fail_text = too_low_rank_fail_250
+                check_variable = { which = "rankpts" value > 250 }
+            }
+        }
+        add_resource = {
+            sr_pantsu = -5000
+            alloys = -30000
+        }
+        add_modifier = {
+            modifier = wg_modifier_ultimate_project
+            days = 360
+        }
+        set_country_flag = cic_purchased
+        country_event = { id = wsgranking.9001 days = 360 }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = "combat_uf_request_desc"
+        response_text = "combat_uf_request_response"
+        trigger = {
+            NOT = { 
+                has_country_flag = uf_shop_buff_purchased
+            }
+            #has_country_flag = wg_invasion_happened
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = energy value >= 20000 }
+            custom_tooltip = {
+                fail_text = too_low_rank_fail_250
+                check_variable = { which = "rankpts" value > 250 }
+            }
+        }
+        add_resource = {
+            sr_pantsu = -5000
+            energy = -20000
+        }
+        add_modifier = {
+            modifier = wg_modifier_ultimate_project
+            days = 360
+        }
+        set_country_flag = uf_shop_buff_purchased
+        country_event = { id = wsgranking.9002 days = 360 }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = "weapon_dmm_request_desc"
+        response_text = "weapon_dmm_request_desc_response"
+        trigger = {
+            NOT = { 
+                has_country_flag = uf_shop_buff_purchased
+            }
+            has_authority = auth_warshipgirls
+            #has_country_flag = wg_invasion_happened
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_alpha value >= 5000 }
+            resource_stockpile_compare = { resource = sr_dark_matter value >= 5000 }
+            resource_stockpile_compare = { resource = alloys value >= 10000 }
+            custom_tooltip = {
+                fail_text = too_low_rank_fail_250
+                check_variable = { which = "rankpts" value > 250 }
+            }
+        }
+        add_resource = {
+            sr_alpha = -5000
+            sr_dark_matter = -5000
+            alloys = -10000
+        }
+        add_modifier = {
+            modifier = wg_modifier_ultimate_project
+            days = 360
+        }
+        set_country_flag = uf_shop_buff_purchased
+        country_event = { id = wsgranking.9003 days = 360 }
+    }
+
+    option = {
+        custom_gui = "enclave_caravaneer_option"
+        name = "weapon_dmm_request_desc"
+        response_text = "sh_mine_request_desc_response"
+        trigger = {
+            NOT = { 
+                has_country_flag = uf_shop_buff_purchased
+            }
+            has_authority = auth_shenhai
+            #has_country_flag = wg_invasion_happened
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_se value >= 5000 }
+            resource_stockpile_compare = { resource = sr_dark_matter value >= 5000 }
+            #resource_stockpile_compare = { resource = alloys value >= 10000 }
+            custom_tooltip = {
+                fail_text = too_low_rank_fail_250
+                check_variable = { which = "rankpts" value > 250 }
+            }
+        }
+        add_resource = {
+            sr_se = -5000
+            sr_dark_matter = -5000
+            #alloys = -10000
+        }
+        add_modifier = {
+            modifier = wg_modifier_ultimate_project
+            days = 360
+        }
+        set_country_flag = uf_shop_buff_purchased
+        country_event = { id = wsgranking.9003 days = 360 }
+    }
+
+    option = {
+        name = pantsu_shop_exit
+    }
+}
+
+country_event = {
+    id = wsgranking.32767
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        always = no
+    }
+    immediate = {
+        change_variable = {
+            which = rankpts
+            value = 300
+        }
+    }
+}
+
+

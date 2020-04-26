@@ -162,3 +162,111 @@ tech_wsg_trading_branch = {
 		}
 	}
 }
+
+tech_wg_buff_1 = {
+    #icon = 
+	cost = 14000
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_wsg_trading_pantsu" }
+	weight = @tier3weight2
+	prereqfor_desc = {
+		diplo_action = {
+			title = "wsg_shop_buff_plus"
+			desc = "wsg_shop_buff_plus_desc"
+		}
+	}
+
+	potential = {
+		OR = {
+		has_authority = auth_warshipgirls
+		has_authority = auth_shenhai
+		}
+	}
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				has_communications = event_target:pantsu_shop_country
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_wg_buff_2 = {
+    #icon = 
+	cost = 20000
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_wg_buff_1" }
+	weight = @tier4weight2
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "wsg_shop_buff_plus"
+			desc = "wsg_shop_buff_plus_desc"
+		}
+	}
+
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+	is_rare = yes
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				has_communications = event_target:pantsu_shop_country
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}

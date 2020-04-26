@@ -442,3 +442,118 @@ entity = {
 	
 	scale = 12
 }
+###############################
+######
+# Small Turbolaser
+
+entity = {
+	name = "small_turbolaser_white_large_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
+	
+	scale = 1.5
+}
+######
+# Medium Turbolaser
+######
+
+# MUZZLE FLASH
+
+entity = {
+	name = "medium_turbolaser_w_large_muzzle_entity"
+	cull_radius = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 7 looping = no
+		event = { time = 0 particle = "green_turbolaser_large_muzzle_particle" keep_particle = yes sound = { soundeffect = turbo_medium_01 } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_turbo_medium_01" } }
+	}
+}
+
+# PROJECTILE
+
+entity = {
+	name = "medium_turbolaser_white_large_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
+	attach = { bolt1 = "turbolaser_2_white_small_entity" }
+	
+	scale = 1.9
+}
+
+entity = {
+	name = "turbolaser_2_white_small_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	scale = 1.0
+}
+
+
+######
+# Heavy Turbolaser
+######
+
+# MUZZLE FLASH
+
+entity = {
+	name = "heavy_turbo_w_large_muzzle_entity"
+	cull_radius = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 7 looping = no
+		event = { time = 0 particle = "green_turbolaser_large_muzzle_particle" keep_particle = yes sound = { soundeffect = turbo_heavy_01 } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_turbo_heavy_01" } }
+	}
+}
+
+# PROJECTILE
+
+entity = {
+	name = "heavy_turbo_white_large_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
+	locator = { name = "bolt2" rotation = { 0 0 0 } position = { 1 0 0 } }
+	attach = { bolt1 = "heavy_turbo_white_2_large_entity" }
+	attach = { bolt2 = "heavy_turbo_white_2_large_entity" }
+	
+	scale = 1.9
+}
+
+entity = {
+	name = "heavy_turbo_white_2_large_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	scale = 1.0
+}
+#############
+entity = {
+	name = "huge_turbolaser_white_large_entity"
+	pdxmesh = "sw_turbolaser_w_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
+	
+	scale = 12
+}

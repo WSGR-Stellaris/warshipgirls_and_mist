@@ -201,10 +201,6 @@ country_event = {
 					create_ambient_object = {
 						type = "horror_energy_object"
 						location = this
-						entity_offset = {
-							min = 1
-							max = 100
-						}
 					}
 					last_created_ambient_object = {
 						save_event_target_as = wg_wormhole
@@ -233,6 +229,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		owner = { country_event = { id = wg_lady.7000 days = 5 }}
 		if = {
 			limit = { fleet = { has_fleet_flag = lady_fleet }}
 			owner = { country_event = { id = wg_lady.9 }}
@@ -269,6 +266,24 @@ ship_event = {
 				country_event = { id = wg_lady.8 }
 			}
 		}
+	}
+}
+
+country_event = {
+	id = wg_lady.7000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_fleet = {
+			has_fleet_flag = lady_fleet
+			exists = this
+		}
+		has_special_project = wsg_lady_to_wg_fe
+	}
+
+	immediate = {
+		country_event = { id = wg_lady.9 }
 	}
 }
 
@@ -1136,7 +1151,7 @@ country_event = {
 				fail_text = wg_lady.27.allow.b
 				any_owned_fleet = { 
 					has_fleet_flag = lady_fleet2
-					NOT = { has_hp_percentage < 1.0 }
+					NOT = { has_hp_percentage < 0.7 }
 				}
 			}
 		}
@@ -1166,7 +1181,7 @@ country_event = {
 				fail_text = wg_lady.27.allow.b
 				any_owned_fleet = { 
 					has_fleet_flag = lady_fleet2
-					NOT = { has_hp_percentage < 1.0 }
+					NOT = { has_hp_percentage < 0.7 }
 				}
 			}
 		}
@@ -1196,7 +1211,7 @@ country_event = {
 				fail_text = wg_lady.27.allow.b
 				any_owned_fleet = { 
 					has_fleet_flag = lady_fleet2
-					NOT = { has_hp_percentage < 1.0 }
+					NOT = { has_hp_percentage < 0.7 }
 				}
 			}
 		}
@@ -1300,7 +1315,7 @@ country_event = {
 		has_wsg_lady_active_diplo = no
 		has_country_flag = wsg_lady_army_active
 		any_owned_army = { 
-			army_type = lady_army
+			is_lady_army = yes
 			OR = {
 				exists = planet
 				AND = {
@@ -1352,7 +1367,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {  # To prevent exploit
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1365,7 +1380,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = planet }
 						planet = { has_ground_combat = no }
@@ -1376,7 +1391,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1389,7 +1404,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = fleet }
 						fleet = { is_in_combat = no }
@@ -1411,7 +1426,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {  # To prevent exploit
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1424,7 +1439,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = planet }
 						planet = { has_ground_combat = no }
@@ -1435,7 +1450,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1448,7 +1463,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = fleet }
 						fleet = { is_in_combat = no }
@@ -1470,7 +1485,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {  # To prevent exploit
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1483,7 +1498,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = planet }
 						planet = { has_ground_combat = no }
@@ -1494,7 +1509,7 @@ country_event = {
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -1507,7 +1522,7 @@ country_event = {
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.a
 				any_owned_army = {
-					army_type = lady_army
+					is_lady_army = yes
 					if = {
 						limit = { exists = fleet }
 						fleet = { is_in_combat = no }
@@ -1908,7 +1923,7 @@ country_event = {
 				has_country_flag = wsg_lady_army_active
 				NOT = { 
 					any_owned_army = { 
-						army_type = lady_army
+						is_lady_army = yes
 						OR = {
 							exists = planet
 							AND = {
@@ -2074,7 +2089,7 @@ country_event = {
 		NOT = { has_modifier = wsg_lady_recover_cd }
 		has_country_flag = wsg_lady_army_active
 		any_owned_army = {
-			army_type = lady_army
+			is_lady_army = yes
 			if = {
 				limit = { exists = fleet }
 				fleet = { is_same_value = ROOT.FROMFROM }
@@ -2124,6 +2139,7 @@ country_event = {
 
 	option = {
 		name = wg_lady.35.a
+		custom_tooltip = wg_lady.35.a.tooltip
 		clear_global_event_target = wsg_player_nickname
 	}
 
@@ -2167,7 +2183,7 @@ country_event = {
 				has_country_flag = wsg_lady_changing
 				has_modifier = wsg_lady_recover_cd
 				any_owned_army = { 
-					army_type = lady_army
+					is_lady_army = yes
 					OR = {
 						exists = planet
 						AND = {
@@ -2204,7 +2220,7 @@ country_event = {
 			has_country_flag = wsg_lady_changing
 			has_modifier = wsg_lady_recover_cd
 			any_owned_army = { 
-				army_type = lady_army
+				is_lady_army = yes
 				OR = {
 					exists = planet
 					AND = {
@@ -2258,7 +2274,7 @@ country_event = {
 			has_modifier = wsg_lady_recover_cd
 		}
 		has_country_flag = wsg_lady_army_active
-		NOT = { any_owned_army = { army_type = lady_army }}
+		NOT = { any_owned_army = { is_lady_army = yes }}
 	}
 
 	immediate = {
@@ -2305,12 +2321,12 @@ country_event = {
 			has_modifier = wsg_lady_recover_cd
 		}
 		has_country_flag = wsg_lady_army_active
-		NOT = { any_owned_army = { army_type = lady_army }}
+		NOT = { any_owned_army = { is_lady_army = yes }}
 	}
 
 	immediate = {
 		every_owned_army = {
-			limit = { army_type = lady_army }
+			limit = { is_lady_army = yes }
 			remove_army = yes
 		}
 		remove_country_flag = wsg_lady_army_active
@@ -2679,6 +2695,13 @@ country_event = {
 		}
 		set_country_flag = lady_warship_sun_killer
 	}
+	option = {
+		name = wg_lady.47.i
+		trigger = {
+			has_technology = tech_wg_waterB
+		}
+		set_country_flag = lady_warship_waterB
+	}
 }
 
 #改造期间缺少资源
@@ -2740,6 +2763,7 @@ country_event = {
 					lady_warship_ovo = { remove_country_flag = lady_warship_ovo }
 					lady_warship_psh = { remove_country_flag = lady_warship_psh }
 					lady_warship_sun_killer = { remove_country_flag = lady_warship_sun_killer }
+					lady_warship_waterB = { remove_country_flag = lady_warship_waterB }
 				}
 			}
 			WSG_LADY_MODIFICATION2 = { 
@@ -2828,6 +2852,7 @@ country_event = {
 			has_technology = tech_wsg_pk_ovo
 			has_technology = tech_sh_pk_psh
 			has_technology = tech_sh_sunkiller
+			has_technology = tech_wg_waterB
 		}
 	}
 
@@ -2842,6 +2867,7 @@ country_event = {
 				has_country_flag = lady_warship_ovo
 				has_country_flag = lady_warship_psh
 				has_country_flag = lady_warship_sun_killer
+				has_country_flag = lady_warship_waterB
 			}}
 			if = {
 				limit = {
@@ -3284,6 +3310,24 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wg_lady.90
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { 
+			is_country_type = guardian_dragon 
+			NOT = { has_country_flag = rubricator_dragon_country }
+		}
+		FROMFROM = { has_fleet_flag = lady_fleet2 }
+	}
+
+	immediate = {
+		set_country_flag = dragonslayer_wsg_lady
+	}
+}
+
 # 触发三级好感事件
 country_event = {
 	id = wg_lady.100
@@ -3659,10 +3703,8 @@ country_event = {
 	option = {
 		name = wg_lady.114.a
 		hidden_effect = { 
-			while = { count = 3
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 3 }
+			reset_lady_affection_level = yes
 		}
 		custom_tooltip = wg_lady_affection_up
 	}
@@ -4106,10 +4148,8 @@ country_event = {
 	option = {
 		name = wg_lady.131.a
 		hidden_effect = { 
-			while = { count = 5
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 5 }
+			reset_lady_affection_level = yes
 			remove_country_flag = present_choco
 			remove_country_flag = present_bear
 		}
@@ -4163,10 +4203,8 @@ country_event = {
 	option = {
 		name = wg_lady.133.a
 		hidden_effect = { 
-			while = { count = 5
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 5 }
+			reset_lady_affection_level = yes
 			remove_country_flag = present_choco
 			remove_country_flag = present_bear
 		}
@@ -4227,10 +4265,8 @@ country_event = {
 		name = wg_lady.136.a
 		hidden_effect = { 
 			set_country_flag = can_marry_wsg_lady
-			while = { count = 20
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 20 }
+			reset_lady_affection_level = yes
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
 	}
@@ -4313,10 +4349,8 @@ country_event = {
 	option = {
 		name = wg_lady.138.b
 		hidden_effect = {
-			while = { count = 5
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 5 }
+			reset_lady_affection_level = yes
 		}
 		custom_tooltip = wg_lady_affection_up
 		response_text = wg_lady.131.a.response
@@ -4615,10 +4649,8 @@ country_event = {
 		name = wg_lady.147.a
 		hidden_effect = { 
 			set_country_flag = can_marry_wsg_lady
-			while = { count = 20
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 20 }
+			reset_lady_affection_level = yes
 			clear_global_event_target = wsg_player_nickname
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
@@ -4796,10 +4828,8 @@ country_event = {
 		name = wg_lady.154.a
 		hidden_effect = { 
 			set_country_flag = can_marry_wsg_lady
-			while = { count = 20
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_leader_affection_trait = yes
-			}
+			change_variable = { which = lady_affection value = 20 }
+			reset_lady_affection_level = yes
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
 	}

@@ -14,26 +14,26 @@
 
 #好感度
 #大小姐
-@lady_affection_to_lv2 = 150 # should be 150
-@lady_affection_to_lv3 = 300 # should be 300
-@lady_affection_to_lv4 = 450 # should be 450
-@lady_affection_to_lv5 = 600 # should be 600
-@lady_affection_reduce = 75 # should be 75
+@lady_affection_to_lv2 = 60 # should be 60
+@lady_affection_to_lv3 = 120 # should be 120
+@lady_affection_to_lv4 = 180 # should be 180
+@lady_affection_to_lv5 = 240 # should be 240
+@lady_affection_reduce = 40 # should be 40
 #总督
-@governor_affection_to_lv2 = 30
-@governor_affection_to_lv3 = 60
-@governor_affection_to_lv4 = 90
-@governor_affection_to_lv5 = 120
+@governor_affection_to_lv2 = 25
+@governor_affection_to_lv3 = 50
+@governor_affection_to_lv4 = 75
+@governor_affection_to_lv5 = 100
 #科学家
-@scientist_affection_to_lv2 = 85
-@scientist_affection_to_lv3 = 170
-@scientist_affection_to_lv4 = 265
-@scientist_affection_to_lv5 = 340
+@scientist_affection_to_lv2 = 55
+@scientist_affection_to_lv3 = 110
+@scientist_affection_to_lv4 = 165
+@scientist_affection_to_lv5 = 220
 #海军上将
-@admiral_affection_to_lv2 = 40
-@admiral_affection_to_lv3 = 80
-@admiral_affection_to_lv4 = 120
-@admiral_affection_to_lv5 = 160
+@admiral_affection_to_lv2 = 30
+@admiral_affection_to_lv3 = 60
+@admiral_affection_to_lv4 = 90
+@admiral_affection_to_lv5 = 120
 #陆军将军
 @general_affection_to_lv2 = 15
 @general_affection_to_lv3 = 30

@@ -502,21 +502,21 @@ fleet_event = {
 							create_ship = {
 								name = "NAME_Combat_Drone4"
 								design = "NAME_Combat_Drone4"
-								#graphical_culture = ROOT
+								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
 							}
 						}
 						while = { count = 25
 							create_ship = {
 								name = "NAME_Combat_Drone5"
 								design = "NAME_Combat_Drone5"
-								#graphical_culture = ROOT
+								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
 							}
 						}
 						while = { count = 15
 							create_ship = {
 								name = "NAME_Combat_Drone6"
 								design = "NAME_Combat_Drone6"
-								#graphical_culture = ROOT
+								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
 							}	
 						}					
 						set_location = {
@@ -527,9 +527,8 @@ fleet_event = {
 						set_fleet_stance = aggressive
 						set_aggro_range_measure_from = self
 						set_aggro_range = 500
-						#last_created_ship = { ship_event = { id = mwsge_drone.5 days = 90} }
 						# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
-						fleet_event = { id = mwsge_drone.24 days = 45}
+						fleet_event = { id = mwsge_drone.24 days = 30 }
 						#set_event_locked = yes
 					}
 				}
@@ -673,7 +672,11 @@ fleet_event = {
 
 	immediate = {
 		solar_system = { change_variable = { which = "system_drones_count" value = -1 }}
-		destroy_fleet = THIS
+		delete_fleet = {
+			target = this
+			destroy_template = yes
+			kill_leader = no
+		}
 	}
 }
 
@@ -683,7 +686,11 @@ fleet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		destroy_fleet = THIS
+		delete_fleet = {
+			target = this
+			destroy_template = yes
+			kill_leader = no
+		}
 	}
 }
 

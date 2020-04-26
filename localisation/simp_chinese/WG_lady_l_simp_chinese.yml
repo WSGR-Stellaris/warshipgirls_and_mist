@@ -3,8 +3,18 @@
 ### 其他描述
 ##############################
  lady_army:0 "大小姐"
+ lady_army_affection_3:0 "$lady_army$"
+ lady_army_affection_5:0 "$lady_army$"
+ lady_army_dragonslayer:0 "$lady_army$"
+ lady_army_affection_3_dragonslayer:0 "$lady_army$"
+ lady_army_affection_5_dragonslayer:0 "$lady_army$"
  LADY_SPECIES:0 "纳米机器个体"
  lady_army_desc:0 "纳米机械的大小姐变化成为的陆军。她能根据战场变化成任意类型的作战单位，并对敌方造成致命性的打击，在战场上是十分恐怖的单位。"
+ lady_army_affection_3_desc:0 "$lady_army_desc$"
+ lady_army_affection_5_desc:0 "$lady_army_desc$"
+ lady_army_dragonslayer_desc:0 "$lady_army_desc$"
+ lady_army_affection_3_dragonslayer_desc:0 "$lady_army_desc$"
+ lady_army_affection_5_dragonslayer_desc:0 "$lady_army_desc$"
  wsg_lady_recover_cd:0 "大小姐被大破"
  wsg_lady_recover_cd_desc:0 "大小姐目前正在泡澡中..."
  leader_trait_governor_wsg_lady:0 "纳米管理模组"
@@ -85,7 +95,7 @@
 ### 大小姐通讯界面(陆军)
 ##############################
  wg_lady.27.allow.a:0 "大小姐不能处于战场中"
- wg_lady.27.allow.b:0 "大小姐必须处于未受损的状态"
+ wg_lady.27.allow.b:0 "大小姐不能在受损较为严重的状态更换形态"
  wg_lady.27.desc.a:0 "就给你们见识一下本小姐刚学会的穿插迂回！我跑我跑——打不到本小姐了吧！"
  wg_lady.27.desc.b:0 "给本小姐炸！哇哈哈哈哈，这片爆炸云看着真舒服！"
  wg_lady.27.desc.c:0 "全炮台发射！火力就是正义！"
@@ -137,7 +147,8 @@
  wg_lady.35.desc.a:0 "本！小！姐！满！血！复！活！"
  wg_lady.35.desc.b:0 "有机体！为时已晚！嘿嘿，骗你的，吓到了吗？"
  wg_lady.35.desc.c:0 "修复好啦！§H[wsg_player_nickname.GetName]§!想本小姐吗？哼，本小姐才没有特别高兴呢！"
- wg_lady.35.a:0 "欢迎回来"
+ wg_lady.35.a:0 "£sr_wg_down£ 欢迎回来"
+ wg_lady.35.a.tooltip:0 "§R因为你摔了大小姐，她的好感度降低了。§!"
 
 ##############################
 ### 大小姐其他相关
@@ -151,10 +162,12 @@
  wsg_lady_designable_warship:0 "战舰形态"
  tech_disignable_wsg_lady:0 "宏观纳米机械操控"
  tech_disignable_wsg_lady_desc:0 "通过对大小姐机体和纳米机械的研究，我们掌握了纳米机械的构造以及其应用。但如何制造纳米级的可活动机械依然是个迷。"
- wsg_lady_sh_senergy_REACTOR:0 "$CORVETTE_sh_senergy_REACTOR$"
- wsg_lady_SHIP_THRUSTER_SH:0 "$SHIP_THRUSTER_SH$"
- wsg_lady_SHIP_THRUSTER_SH_DESC:0 "$SHIP_THRUSTER_SH_DESC$"
- wsg_lady_alpha_REACTOR:0 "$CORVETTE_wsg_alpha_REACTOR$"
- wsg_lady_SHIP_THRUSTER_WSG:0 "$SHIP_THRUSTER_WSG$"
- wsg_lady_SHIP_THRUSTER_WSG_DESC:0 "$SHIP_THRUSTER_WSG_DESC$"
+ wsg_lady_REACTOR:0 "大小姐核心能源"
+ wsg_lady_REACTOR_DESC:0 "动力强劲，一节能顶10节用"
+ wsg_lady_SHIP_THRUSTER:0 "大小姐核心推进器"
+ wsg_lady_SHIP_THRUSTER_DESC:0 "红色，有角，三倍速，要素齐全"
  mod_ships_sr_se_upkeep_mult:0 "舰船$sr_se$£sr_se£维护费"
+ LADY_weapen_X:0 "威严（全向）" 
+ LADY_weapen_X_DESC:0 "大小姐的全向X炮，可以打击从任何角度来犯的无礼之徒。"  
+ LADY_weapen_T:0 "优雅（全向）" 
+ LADY_weapen_T_DESC:0 "大小姐的全向T炮，可以打击从任何角度来犯的无礼之徒。"  

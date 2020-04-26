@@ -1,7 +1,10 @@
 ﻿l_simp_chinese:
 ###################################
-tech_wsg_auto57:"57CM等离子自动火炮"
-tech_wsg_auto57_desc:"结合了自动火炮与等离子火炮的技术特点产生的武器。这款武器发射的等离子不仅具有极高的热能，同时具备非常快的速度。但我们的技术不足以扩大它的尺寸，也许我们要找其他人来帮我们。"
+tech_wsg_auto57:"57CM脉冲激光炮"
+tech_wsg_auto57_desc:"一种由研究实验室使用的脉冲激光点火装置改良而来的武器——只是勉强达到了武器级。"
+
+tech_wsg_rockets:"X-28 Mod12型火箭炮"
+tech_wsg_rockets_desc:"我们与深海战斗的时候时常使用X-28型火箭炮压制深海舰队基地和空军。如今，这种武器被装载在我们的舰船上，为我们的星际征服所用。"
 
 tech_wsg_auto127:"127CM等离子自动火炮"
 tech_wsg_auto127_desc:"来自战利品商店的中尺寸等离子自动炮，比57CM型口径更大，容弹更多，威力更强，但占地面积较大。"
@@ -12,6 +15,13 @@ tech_wsg_auto152_desc:"来自战利品商店的152CM等离子自动炮。威力�
 tech_wsg_203plasma:"203DM奇异团火炮"
 tech_wsg_203plasma_desc:"来自战利品商店的阿尔法武器，藉由奇异物质杀伤敌人。"
 
+tech_wsg_f2h:"S-F2H太空战斗机"
+tech_wsg_f2h_desc:"摒弃多余装饰，使用小型脉冲发动机的高速截击机。"
+
+tech_wsg_330ion:"330M改良离子炮"
+tech_wsg_330ion_desc:"由笨重的离子加农炮改良而来，对护盾系统尤其有用，但对护甲的侵彻力不足。你能看到这个武器说明出了什么错误或者使用了控制台。"
+
+
 tech_wsg_356laser:"356M护盾干扰束"
 tech_wsg_356laser_desc:"来自战利品商店的阿尔法武器。这种干扰束与敌方护盾的相干频率完美匹配，只需要数次持续照射就可以有效解除敌方的护盾。"
 
@@ -19,7 +29,7 @@ tech_wsg_rim99:"RIM-99点防御诱饵"
 tech_wsg_rim99_desc:"可以干扰敌方点防御系统的小型诱饵弹药，不能造成有效的伤害，但可以消耗敌方的防御系统的拦截能力。"
 
 tech_wsg_sy10:"上游-10导弹"
-tech_wsg_sy10_desc:"来自战利品商店。这种导弹不像阿尔法鱼雷一样射速缓慢，非常容易爆炸。"
+tech_wsg_sy10_desc:"这种导弹不像阿尔法鱼雷一样射速缓慢，非常容易爆炸。提供G槽单装发射器和L槽双联装发射器。"
 
 tech_sh_dsy10:"D-上游-10导弹"
 tech_sh_dsy10_desc:"深海舰队从舰娘船厂垃圾站里捡来的上游10导弹。除了涂装，与原品性能没有差别。"
@@ -42,8 +52,11 @@ tech_sh_fighter_desc:"使用深海能源核心反应堆的深海战斗机。其�
 tech_sh_torpedo:"深海重型鱼雷"
 tech_sh_torpedo_desc:"弹头中大量运用深海能源核心、包覆深海合金甲壳的重型导弹，行动迟缓，射程较近，射速极其缓慢，但威力绝对无可置疑。"
 
-wsg_weapon_autocannon_57:"57CM等离子自动火炮"
-wsg_weapon_autocannon_57_DESC:"小型等离子自动火炮，是自动火炮科技与等离子武器科技的结合。"
+wsg_weapon_autocannon_57:"57C脉冲激光炮"
+wsg_weapon_autocannon_57_DESC:"一种由研究实验室使用的脉冲激光点火装置改良而来的武器——只是勉强达到了武器级。"
+
+wsg_weapon_rockets:"X-28 Mod12型火箭炮"
+wsg_weapon_rockets_DESC:"们与深海战斗的时候时常使用X-28型火箭炮压制深海舰队基地和空军。如今，这种武器被装载在我们的舰船上，为我们的星际征服所用。"
 
 wsg_weapon_autocannon_127:"127CM等离子自动火炮"
 wsg_weapon_autocannon_127_DESC:"中尺寸等离子自动炮，还是自动火炮科技与等离子武器科技的结合。"
@@ -62,6 +75,9 @@ wsg_weapon_rim99_DESC:"诱饵导弹，能够干扰敌方点防御系统。"
 
 wsg_weapon_sy10:"上游-10导弹"
 wsg_weapon_sy10_DESC:"中尺寸能量弹头导弹武器，有着均衡的性能"
+
+wsg_weapon_sy10_dual:"双联装上游-10导弹"
+wsg_weapon_sy10_dual_DESC:"上游导弹的双联装版本，有着接近双倍的威力。"
 
 sh_weapon_dsy10:"D-上游-10导弹"
 sh_weapon_dsy10_DESC:"深海舰队从舰娘船厂垃圾站里捡来的上游10导弹。"

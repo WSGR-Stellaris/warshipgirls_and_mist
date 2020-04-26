@@ -20,7 +20,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_sh_weapon2" }
 	component_set = "sh_weapen_flak1"
-	projectile_gfx = "stormfire_auto_cannons_s"
+	projectile_gfx = "sh_pd_01"
 	tags = { weapon_type_point_defense weapon_type_kinetic }
 	ai_tags = { weapon_role_point_defense }
 	upgrades_to = "sh_weapen_flak2"
@@ -59,7 +59,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_sh_flak2" }
 	component_set = "sh_weapen_flak2"
-	projectile_gfx = "stormfire_auto_cannons_s"
+	projectile_gfx = "sh_pd_02"
 	tags = { weapon_type_point_defense weapon_type_kinetic }
 	ai_tags = { weapon_role_point_defense }
 

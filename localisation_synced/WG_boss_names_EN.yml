@@ -1,0 +1,58 @@
+﻿l_english:
+###############################
+ NAME_WG_THINK_TANK:"Le Penseur"
+ NAME_WG_THINK_TANK2:"Mysterious Science Nexus"
+ NAME_wg_boss_think_tank_system:"Gate of Tears"
+ NAME_wg_think_tank:"Science Nexus"
+ NAME_WG_THINK_TANK_RUINED:"Broken Science Nexus"
+ NAME_Astesia:"Astesia"
+
+ NAME_wg_boss_uav_system_system:"Echo" 
+ NAME_WG_SMALL_UAV:"Worker"
+ NAME_WG_MEDIUM_UAV:"Soldier"
+ NAME_WG_LARGE_UAV:"Drone"
+ NAME_WG_FLETCHER:"UAV Master"
+ NAME_wg_uav_country:"Fletcher UAV Swarm"
+ NAME_uav_fleet1:"Scraps"
+ NAME_uav_fleet2:"Forgottens"
+ NAME_uav_fleet3:"Fletcher" 
+ NAME_FLETCHER:"Queen" 
+ 
+ NAME_parit_fleet2:"Parit Forgotten Fleet" 
+ NAME_eddy_system:"Endordia" 
+ 
+ NAME_wg_machine_system:"CK901"
+NAME_WG_NO_NAME:" "
+ NAME_machine_prison:"Prison" 
+ NAME_WG_Defensive:"GARS Defense Unit" 
+ NAME_Administrator_wsg:"GARS Control Hub" 
+ NAME_WG_GARS:"GARS" 
+ NAME_WG_GARS2:"Number 3"
+ NAME_WG_GARS3:"Berserk GARS"
+ NAME_wg_gars_country:"Berserk GARS" 
+ 
+ NAME_wg_boss_water_system:"Hvergelmir" 
+ NAME_wg_water2m:"Sylgr" 
+ NAME_wg_water3m:"Ylgr"  
+ NAME_wg_water4m:"Vid"
+ NAME_wg_water1:"Fjorm" 
+ NAME_wg_water2:"Vimur"                #盖亚
+ NAME_wg_water3:"Svol"              #盖亚
+ NAME_wg_water4:"Gunnthra"         #盖亚
+ NAME_wg_water5:"Fimbulthul"
+ NAME_wg_water6:"Slid"
+ NAME_wg_water7:"Hrid"
+ NAME_WG_RBQ_Dragon:"Edelweiss"
+ NAME_WG_RBQ_Dragon_country:"Niflheim"
+ NAME_WG_RBQ_Dragon1:"Aquarius"
+ 
+ NAME_OVO_Avatar:"Ferocious OVO"
+
+ NAME_wg_boss_bugvv_system:"BUG"
+ NAME_BUG_VV:"Code Infinite"
+ NAME_WG_BUGV:"Flying 381"
+ NAME_WG_BUGV2:"Debugger"
+ NAME_WG_BUGV3:"VV"
+ 
+ NAME_wg_blue_cloud_system:"Blue cloud"
+ NAME_WG_BC:"Bisber"

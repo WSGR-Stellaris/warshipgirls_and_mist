@@ -15,11 +15,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -215,11 +215,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -321,11 +321,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -428,11 +428,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -534,11 +534,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -640,11 +640,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -746,11 +746,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -852,11 +852,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -958,11 +958,11 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -1039,25 +1039,20 @@ ship_design = {
 	required_component = "STARBASE_sh_senergy_REACTOR"
 	required_component = "DESTROYER_SHIP_THRUSTER_SH"
 }
-
 ####################
-# 主宰大小姐
+# 水笔
 ####################
 
 ship_design = {
-	name = "NAME_WG_LADY_T"
+	name = "NAME_WG_LADY_WATERB"
 	ship_size = wsg_lady_warship_imdesignable
 	section = {
-		template = "wg_ai_T_warship"
+		template = "wg_ai_W_warship"
 		slot = "mid"
 		
 		component = {
-			slot = "TITANIC_01"
-			template = "sh_weapen_T2"
-		}
-		component = {
-			slot = "TITANIC_02"
-			template = "sh_weapen_T2"
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_WATERB"
 		}
 		component = {
 			slot = "PD_01"
@@ -1069,11 +1064,121 @@ ship_design = {
 		}		
 		component = {
 			slot = "EXTRA_LARGE_01"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "EXTRA_LARGE_02"
-			template = "sh_weapen_X2"
+			template = "LADY_weapen_X"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHELL_sh"
+		}
+	}	
+	required_component = "SH_JUMP_DRIVE"
+	required_component = "SENSOR_SH"
+	required_component = "COMBAT_COMPUTER_UAV"
+	required_component = "STARBASE_sh_senergy_REACTOR"
+	required_component = "DESTROYER_SHIP_THRUSTER_SH"
+}
+####################
+# T槽大小姐
+####################
+
+ship_design = {
+	name = "NAME_WG_LADY_T"
+	ship_size = wsg_lady_warship_imdesignable
+	section = {
+		template = "wg_ai_T_warship"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "LADY_weapen_T"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "LADY_weapen_T"
+		}
+		component = {
+			slot = "PD_01"
+			template = "sh_weapen_flak2"
+		}
+		component = {
+			slot = "PD_02"
+			template = "sh_weapen_flak2"
+		}		
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "LADY_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "LADY_weapen_X"
 		}
 		component = {
 			slot = "LARGE_GUN_01"

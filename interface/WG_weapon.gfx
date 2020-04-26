@@ -697,3 +697,17 @@ spriteTypes{
 		texturefile = "gfx/interface/icons/ship_parts/UF_THRUSTER.dds"
 	}
 }
+
+spriteTypes{
+	spriteType = {
+		name = "GFX_LADY_weapen_X"
+		texturefile = "gfx/interface/icons/ship_parts/LADY_weapen_X.dds"
+	}
+}
+
+spriteTypes{
+	spriteType = {
+		name = "GFX_LADY_weapen_T"
+		texturefile = "gfx/interface/icons/ship_parts/LADY_weapen_T.dds"
+	}
+}

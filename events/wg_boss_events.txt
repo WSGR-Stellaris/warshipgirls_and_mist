@@ -27,9 +27,46 @@ event = {
 				}
 				is_ai = no
 			}		
+			capital_scope = {
+				every_system = {
+					limit = { 
+						distance = { 
+							source = PREV 
+							min_jumps = 5
+							max_jumps = 15 
+							type = hyperlane 
+							use_bypasses = no
+						}
+						NOT = { closest_system = {
+							exists = space_owner
+							min_steps = 0
+							max_steps = 2
+						}}
+					}
+					set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
+				}
+			}
 			country_event = { id = wg_boss.19 }
 			country_event = { id = wg_boss.35 }
 		}	
+		random_list = { 
+			1 = {
+				#modifier = { factor = 0 always = yes } #不注释这行就必定不会生成
+				random_country = {
+					limit = {
+						OR = {
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.45 }
+				}
+			}
+			9 = {
+				 #不注释这行就会必定生成
+			}
+		}
 		random_list = { 
 			60 = {
 				random_country = {
@@ -44,6 +81,7 @@ event = {
 				}
 			}
 			40 = {
+				#modifier = { factor = 0 always = yes } #不注释这行就会必定生成
 			}
 		}		
 		random_list = { 
@@ -60,6 +98,7 @@ event = {
 				}
 			}
 			30 = {
+				#modifier = { factor = 0 always = yes } #不注释这行就会必定生成
 			}
 		}
 	}
@@ -75,13 +114,16 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_boss_created
-		capital_scope = {
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
 			spawn_system = {
 				hyperlane = yes
-				min_steps = 10
-				max_steps = 20
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
 				initializer = wg_boss_think_tank_system
 			}
+			remove_star_flag = can_spawn_boss_system
 		}
 	}
 }
@@ -560,13 +602,16 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_boss_uav_created
-		capital_scope = {
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
 			spawn_system = {
 				hyperlane = yes
-				min_steps = 15
-				max_steps = 25
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
 				initializer = wg_boss_uav_system
 			}
+			remove_star_flag = can_spawn_boss_system
 		}
 	}
 }
@@ -932,13 +977,16 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_boss_machine_created
-		capital_scope = {
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
 			spawn_system = {
 				hyperlane = yes
-				min_steps = 15
-				max_steps = 25
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
 				initializer = wg_machine_system
 			}
+			remove_star_flag = can_spawn_boss_system
 		}
 	}
 }
@@ -1206,13 +1254,16 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_boss_RBQ_created
-		capital_scope = {
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
 			spawn_system = {
 				hyperlane = yes
-				min_jumps = 5
-				max_jumps = 15
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
 				initializer = wg_boss_water_system
 			}
+			remove_star_flag = can_spawn_boss_system
 		}
 	}
 }
@@ -1613,3 +1664,643 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = wg_boss.45
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_bugv_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_boss_bugv_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = no
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
+				initializer = wg_boss_bugvv_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+		random_system = { #确保没有超空间航道
+			limit = { has_star_flag = wg_boss_bugvv_system_home }
+			isolate_system = yes
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.46
+	title = "wg_boss.46.name"
+	desc = "wg_boss.46.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_bugv
+	fire_only_once = yes
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_bugvv_system_home
+		}
+		FROMFROM = {
+			NOT = { has_country_flag = triggered_wg_boss_bugv_event }
+		}
+	}
+
+	immediate = {	
+		FROMFROM = {
+			set_country_flag = triggered_wg_boss_bugv_event
+			country_event = { id = wg_boss.49 days = 30 }
+		}		
+	}
+
+	option = {
+		name = "wg_boss.46.a"		
+	}
+	option = {
+		name = "wg_boss.46.b"
+		trigger = {
+		owner = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.46.c"
+		trigger = {
+		owner = {
+			OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+				}
+			}
+		}
+	}	
+}
+
+country_event = {
+	id = wg_boss.47
+	hide_window = yes
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		years = 40
+	}
+
+	trigger = {
+		has_global_flag = wg_boss_bugv_created
+		NOT = { has_global_flag = bugv_wormhole_created } 
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		is_ai = no
+	}
+
+	immediate = {
+		set_global_flag = bugv_wormhole_created 
+		random_system = {
+			limit = { has_star_flag = wg_boss_bugvv_system_home }
+			save_global_event_target_as = bugvv_system
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+				orbit_angle = 360
+			}
+		}		
+		random_system_within_border = {
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+				orbit_angle = 360
+			}
+			link_wormholes = event_target:bugvv_system
+			save_event_target_as = wg_wormhole_system
+		}
+		country_event = { id = wg_boss.48 } #提示事件
+	}
+}
+
+country_event = {
+	id = wg_boss.48
+	title = "wg_boss.48.name"
+	desc = "wg_boss.48.desc"
+	picture = GFX_evt_wg_bugv2
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_modifier = wg_bug
+				}
+			}
+			add_modifier = {
+				modifier = wg_bug
+				days = -1
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			set_country_flag = encountered_first_wormhole
+			add_seen_bypass_type = wormhole
+		}
+	}	
+	option = {
+		name = "wg_boss.48.a"
+		custom_tooltip = wg_boss.48.tooltip
+		owner={
+			add_research_option = "tech_wormhole_stabilization"
+			add_tech_progress = {
+				tech = tech_wormhole_stabilization
+				progress = 0.50
+			}
+		}		
+	}	
+}
+#BUGV通讯
+country_event = {
+	id = wg_boss.49
+	title = "wg_boss.49.name"
+	desc = "wg_boss.49.desc"
+	show_sound = event_administrative_work
+	location = from.from.from
+	fire_only_once = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.49.a
+		response_text = wg_boss.49.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.49.b
+		response_text = wg_boss.49.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.49.c
+		hidden_effect = {
+			country_event = { id = wg_boss.50 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.50
+	title = "wg_boss.50.name"
+	desc = "wg_boss.50.desc"
+	show_sound = event_administrative_work
+	location = event_target:wg_bugv_fleet_ship
+	fire_only_once = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.50.a
+		response_text = wg_boss.50.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.50.b
+		hidden_effect = {
+			country_event = { id = wg_boss.58 days = 2 }
+		}
+	}
+}
+#击杀BUGV
+country_event = {
+	id = wg_boss.51
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_bugv_fleet
+		}
+	}
+	immediate = {	
+		FROM = {
+			country_event = { id = wg_boss.52 days = 5 }
+		}	
+	}	
+}
+country_event = {
+	id = wg_boss.52
+	title = wg_boss.52.name
+	desc = wg_boss.52.desc
+	picture = GFX_evt_large_explosion
+	location = from
+	
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_modifier = wg_bug4
+				}
+			}
+			add_modifier = {
+				modifier = wg_bug4
+				days = -1
+			}
+		}
+	}	
+	option = {
+		name = wg_boss.52.a
+		custom_tooltip = wg_boss.52.tooltip
+		add_modifier = {
+			modifier = "wg_bugv_murder" 	
+			days = 7200
+		}
+		hidden_effect = {
+			owner = {
+				abort_special_project = {
+					type = WG_FIX_BUG_PROJECT
+					location = event_target:bugv_fix_location	
+				}
+			}
+		}		
+	}
+}
+
+#BUG1
+country_event = {
+	id = wg_boss.53
+	title = wg_boss.53.name
+	desc = wg_boss.53.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_bugvv_system_home
+			}
+			create_ambient_object = {
+				type = "bug2_object"
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = bug_object_flag
+				set_location = {
+					target = event_target:wg_bug_location	
+					distance = 5
+					angle = random
+				}
+			}			
+		}	
+	}	
+	option = {
+		name = wg_boss.53.a
+		add_modifier = {
+			modifier = "wg_bug2" 	
+			days = 720
+		}				
+	}
+}
+
+#BUG2
+country_event = {
+	id = wg_boss.54
+	title = wg_boss.54.name
+	desc = wg_boss.54.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_bugvv_system_home
+			}
+			create_ambient_object = {
+				type = "bug2_object"
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = bug_object_flag
+				set_location = {
+					target = event_target:wg_bug_location	
+					distance = 5
+					angle = random
+				}
+			}			
+		}	
+	}	
+	option = {
+		name = wg_boss.54.a
+		add_modifier = {
+			modifier = "wg_bug3" 	
+			days = 720
+		}				
+	}
+}
+
+#BUG3
+country_event = {
+	id = wg_boss.55
+	title = wg_boss.55.name
+	desc = wg_boss.55.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_bugvv_system_home
+			}
+			create_ambient_object = {
+				type = "bug_object"
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = bug_object_flag
+				set_location = {
+					target = event_target:wg_bug_location	
+					distance = 5
+					angle = random
+				}
+			}			
+		}	
+	}	
+	option = {
+		name = wg_boss.55.a
+		add_modifier = {
+			modifier = "wg_bug4" 	
+			days = 720
+		}				
+	}
+}
+
+#BUG4
+country_event = {
+	id = wg_boss.56
+	title = wg_boss.56.name
+	desc = wg_boss.56.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_bugvv_system_home
+			}
+			create_ambient_object = {
+				type = "bug_object"
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = bug_object_flag
+				set_location = {
+					target = event_target:wg_bug_location	
+					distance = 5
+					angle = random
+				}
+			}			
+		}	
+	}	
+	option = {
+		name = wg_boss.56.a
+		add_modifier = {
+			modifier = "wg_bug5" 	
+			days = 720
+		}				
+	}
+}
+
+#BUG5
+country_event = {
+	id = wg_boss.57
+	title = wg_boss.57.name
+	desc = wg_boss.57.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_bugvv_system_home
+			}
+			create_ambient_object = {
+				type = "bug_object"
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = bug_object_flag
+				set_location = {
+					target = event_target:wg_bug_location	
+					distance = 5
+					angle = random
+				}
+			}			
+		}	
+	}	
+	option = {
+		name = wg_boss.57.a
+		add_modifier = {
+			modifier = "wg_bug6" 	
+			days = 720
+		}				
+	}
+}
+
+country_event = {
+	id = wg_boss.58
+	title = "wg_boss.58.name"
+	desc = "wg_boss.58.desc"
+	picture = GFX_evt_wg_bugv
+	location = FROM
+	trackable = yes
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = bugv_location_planet }
+			save_event_target_as = bugv_fix_location
+		}		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "wg_boss.6.a"
+		enable_special_project = {
+			name = "WG_FIX_BUG_PROJECT"
+			location = event_target:bugv_fix_location	
+		}		
+	}
+}
+#给BUFF
+country_event = {
+	id = wg_boss.59
+	title = wg_boss.59.name
+	desc = wg_boss.59.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = wg_boss.59.a
+		add_modifier = {
+			modifier = "wg_bugv_buff" 	
+			days = 720
+		}				
+	}
+}
+
+#给BUFF2
+country_event = {
+	id = wg_boss.60
+	title = wg_boss.60.name
+	desc = wg_boss.60.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = wg_boss.60.a
+		add_modifier = {
+			modifier = "wg_bugv_buff2" 	
+			days = 720
+		}				
+	}
+}
+
+#修好了BUG
+country_event = {
+	id = wg_boss.61
+	title = wg_boss.61.name
+	desc = wg_boss.61.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = bugv_location_planet }
+			clear_deposits = yes
+			add_deposit = d_wg_bugv
+		}
+		random_country = {
+			limit = { is_country_type = guardian_wg_bugv }
+			destroy_country = yes
+		}
+		random_ambient_object = {
+			limit = { has_ambient_object_flag = bug_object_flag }
+			destroy_ambient_object = this
+		}	
+		every_country = {
+			limit = {
+				has_modifier = wg_bug
+			}
+			remove_modifier = "wg_bug"
+		}		
+	}	
+	option = {
+		name = wg_boss.61.a
+		custom_tooltip = wg_boss.61.tooltip
+		add_modifier = {
+			modifier = "wg_bugv_buff3" 	
+			days = -1
+		}				
+	}
+}
+
+#懒得修了
+country_event = {
+	id = wg_boss.62
+	title = wg_boss.62.name
+	desc = wg_boss.62.desc
+	location = from
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = bugv_location_planet }
+			clear_deposits = yes
+			add_deposit = d_wg_bugv2
+		}
+		random_country = {
+			limit = { is_country_type = guardian_wg_bugv }
+			destroy_country = yes
+		}		
+	}	
+	option = {
+		name = wg_boss.62.a
+		custom_tooltip = wg_boss.61.tooltip				
+	}
+}
+####云

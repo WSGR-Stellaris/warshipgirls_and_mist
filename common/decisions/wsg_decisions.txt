@@ -304,6 +304,8 @@ decision_port_project = {
 			is_planet_class = pc_city
 			is_planet_class = pc_wsg_port
 			is_planet_class = pc_ringworld_habitable_sh
+			is_planet_class = pc_ringworld_habitable_wsg
+			is_planet_class = pc_ringworld_habitable			
 			is_planet_class = pc_relic
 			has_modifier = resort_colony
 			has_modifier = penal_colony
@@ -518,7 +520,7 @@ decision_wsg_rw_project = {
 	
 	effect = {
 		# Make city-planet
-		custom_tooltip = decision_sh_rw_effects
+		custom_tooltip = decision_wsg_rw_effects
 		hidden_effect = {		
 			change_pc = pc_ringworld_habitable_wsg
 			set_planet_entity = {

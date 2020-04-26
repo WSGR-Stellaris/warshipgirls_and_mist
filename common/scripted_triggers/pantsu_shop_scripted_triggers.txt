@@ -13,6 +13,9 @@ pantsu_shop_active_diplo = {
 		wsgranking.1014 # 三级菜单 - 兑换长期资源贸易协议
 		wsgranking.1015 # 三级菜单 - 兑换长期资源贸易协议 - 大量
 		wsgranking.1016 # 三级菜单 - 终止贸易
+		wsgranking.1020 # 三级菜单 - 分类兑换修正 - 工业系修正
+		wsgranking.1021 # 三级菜单 - 兑换修正 - 外交系修正
+		wsgranking.1022 # 三级菜单 - 兑换修正 - 军事系修正
 	}
 }
 

@@ -5,10 +5,11 @@ wsg_lady_warship_imdesignable = {
 	acceleration = 0.2
 	rotation_speed = 0.15
 	collision_radius = @battleship_collision_radius
-	modifier = {
+	ship_modifier = {
 		ship_evasion_add = 30
-		ships_upkeep_mult = -1.0
 		ship_speed_mult = 1.0
+		ship_piracy_suppression_add = 100
+		ships_upkeep_mult = -1.0
 	}
 	max_hitpoints = 2000
 	size_multiplier = 8
@@ -28,13 +29,11 @@ wsg_armed_science_ship = {
 	rotation_speed = 0.2
 	max_hitpoints = 2000
 	entity = "ai_01_lady_warship_entity"
-	modifier = {
-		ship_evasion_add = 10
-		ship_piracy_suppression_add = 3
-		ships_upkeep_mult = -1.0
-	}
 	ship_modifier = {
+		ship_evasion_add = 10
 		ship_hyperlane_range_add = 3
+		ship_piracy_suppression_add = 100
+		ships_upkeep_mult = -1.0
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1
@@ -65,10 +64,11 @@ wsg_lady_warship = {
 	acceleration = 0.2
 	rotation_speed = 0.15
 	collision_radius = 5
-	modifier = {
+	ship_modifier = {
 		ship_armor_add = 20000
 		ship_shield_add = 20000
 		ships_upkeep_mult = -1.0
+		ship_piracy_suppression_add = 100
 	}
 	max_hitpoints = 40000
 	size_multiplier = 16
@@ -84,7 +84,7 @@ wsg_lady_warship = {
 	icon_frame = 6
 	class = shipclass_military
 	
-	prerequisites = { "tech_disignable_wsg_lady" }		#科技：灰风母舰解析
+	prerequisites = { "tech_disignable_wsg_lady" }		
 	
 	required_component_set = "power_core"				#能源
 	required_component_set = "ftl_components"			#ftl引擎
@@ -92,6 +92,12 @@ wsg_lady_warship = {
 	required_component_set = "sensor_components"		#探测器
 	required_component_set = "combat_computers"			#计算机
 	required_component_set = "ship_aura_components"		#光环
+	required_component_set = "ship_aura_components"		#光环
+	required_component_set = "ai_behaviour"
+	required_component_set = "c_ship_crew"
+	required_component_set = "special_ship_slot"
+	required_component_set = "special_ship_slot"
+	required_component_set = "special_ship_slot"
 	
 	resources = {
 		category = ships
@@ -105,13 +111,11 @@ wsg_lady_warship = {
 	}
 
 	possible_starbase = {
-		always = no
-	}
-	potential_starbase = {
-		always = no
+		has_starbase_size = starbase_outpost
+		has_starbase_building = colossus_yards
 	}
 
 	min_upgrade_cost = {
-		alloys = 8
+		alloys = 1
 	}
 }

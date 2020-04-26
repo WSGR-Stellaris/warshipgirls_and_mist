@@ -33,7 +33,7 @@ weapon_component_template = {
 	shield_damage = 1.5
 	tracking = 0.6
 
-	prerequisites = { "tech_wsg_auto152" }
+	prerequisites = { "" }
 	component_set = "wsg_weapon_autocannon_152_hidden"
 	projectile_gfx = "gfx_wsg_152auto"
 	tags = { weapon_type_energy weapon_type_kinetic }
@@ -134,7 +134,7 @@ weapon_component_template = {
 	hull_damage = 1.25
 	tracking = 0.4
 
-	prerequisites = { "tech_wsg_356laser" }
+	prerequisites = { "" }
 	component_set = "wsg_weapon_356laser_hidden"
 	projectile_gfx = "gfx_wsg_356laser"
 	tags = { weapon_type_energy }
@@ -196,7 +196,7 @@ strike_craft_component_template = {
 	icon = "GFX_ship_part_strike_craft_fighter_3"
 	icon_frame = 1
 	component_set = "wsg_shop_fighter"
-	prerequisites = { "tech_strike_craft_3" }
+	prerequisites = { "" }
 
 	tags = { weapon_type_strike_craft }
 	ai_tags = { weapon_role_point_defense }

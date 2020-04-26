@@ -6,10 +6,10 @@ weapon_component_template = {
 	entity = "small_laser_gun_entity"
 	type = instant
 
-	damage = { min = 9 max = 14 }
+	damage = { min = 4 max = 7 }
 	windup = { min = 2.0 max = 3.0 }
-	total_fire_time = 10
-	range = 85
+	total_fire_time = 12
+	range = 50
 	accuracy = 0.9
 	power = -11
 
@@ -24,16 +24,17 @@ weapon_component_template = {
 		}
 	}
 
-	hull_damage = 1.5
-	armor_damage = 1.5
-	shield_penetration = 0.5
-	tracking = 0.65
+	hull_damage = 1.2
+	shield_damage = 1.5
+	#shield_penetration = 0.5
+	tracking = 0.25
 
 	prerequisites = { "tech_wsg_auto57" }
 	component_set = "wsg_weapon_autocannon_57"
 	projectile_gfx = "wsg_eng_small"
 	tags = { weapon_type_energy weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield }
+	upgrades_to = wsg_weapen_autocannon
 
 	valid_for_country = {
 		modifier = {
@@ -73,6 +74,7 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 12
+			sr_pantsu = 2
 		}
 		upkeep = {
 			energy = 0.5
@@ -87,7 +89,7 @@ weapon_component_template = {
 
 	prerequisites = { "tech_wsg_auto127" }
 	component_set = "wsg_weapon_autocannon_127"
-	projectile_gfx = "wsg_eng_small"
+	projectile_gfx = "wsg_eng_medium"
 	tags = { weapon_type_energy weapon_type_kinetic weapon_type_wsg_pantsu } 
 	ai_tags = { weapon_role_anti_shield }
 
@@ -128,9 +130,8 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_neo = 15
-			sr_alpha = 5
-			#sr_dark_matter = 5
+			sr_alpha = 8
+			sr_pantsu = 8
 			alloys = 75
 		}
 		upkeep = {
@@ -188,9 +189,8 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_neo = 15
-			sr_alpha = 5
-			#sr_dark_matter = 5
+			sr_alpha = 8
+			sr_pantsu = 8
 			alloys = 75
 		}
 		upkeep = {
@@ -249,8 +249,8 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_neo = 10
-			sr_alpha = 2
+			sr_alpha = 8
+			sr_pantsu = 8
 			alloys = 80
 		}
 		upkeep = {
@@ -307,12 +307,12 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_neo = 10
-			sr_alpha = 2
-			alloys = 80
+			sr_dark_matter = 10
+			sr_alpha = 12
+			alloys = 60
 		}
 		upkeep = {
-			alloys = 0.6
+			alloys = 1
 		}
 	}
 
@@ -362,7 +362,7 @@ weapon_component_template = {
 	tags = { weapon_type_explosive }
 	ai_tags = { weapon_role_anti_shield }
 
-	damage = { min = 24 max = 34 }
+	damage = { min = 22 max = 32 }
 	windup = { min = 2 max = 9 }
 	total_fire_time = 35
 	range = 75.0
@@ -373,11 +373,11 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 10
+			alloys = 12
 		}		
 		upkeep = {
 			energy = 0.5
-			alloys = 0.5
+			alloys = 0.05
 		}
 	}
 
@@ -398,8 +398,8 @@ weapon_component_template = {
 	
 	shield_penetration = 1.0
 	hull_damage = 1.2
-
-	prerequisites = { " " }
+	upgrades_to = wsg_weapen_YL
+	prerequisites = { "tech_wsg_rockets" }
 }
 
 
@@ -431,6 +431,7 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 5
+			sr_pantsu = 1
 		}		
 		upkeep = {
 			energy = 0.5
@@ -463,16 +464,16 @@ weapon_component_template = {
 	type = missile
 	
 	component_set = "wsg_weapon_sy10"
-	#projectile_gfx = "gfx_sy_missile"
+	#projectile_gfx = "wsg_sy_missile_dual"
 	projectile_gfx = "large_torpedo_02"
 	
-	tags = { weapon_type_energy weapon_type_explosive }
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu }
 	ai_tags = { weapon_role_anti_shield }
 
-	damage = { min = 244 max = 329 }
+	damage = { min = 224 max = 359 }
 	#amage = { min = 23 max = 26 }
 	windup = { min = 2 max = 12 }
-	total_fire_time = 40
+	total_fire_time = 55
 	range = 175.0
 	accuracy = 1.0
 	tracking = 0.5
@@ -482,7 +483,9 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			volatile_motes = 5
-			sr_neo = 2
+			sr_alpha = 5
+			sr_pantsu = 5
+			alloys = 30
 		}		
 		upkeep = {
 			energy = 0.5
@@ -512,6 +515,67 @@ weapon_component_template = {
 	prerequisites = { "tech_wsg_sy10" }
 }
 
+#wsg_weapon_sy10_dual
+weapon_component_template = {
+	key = "wsg_weapon_sy10_dual"
+	size = large
+	entity = "turret_missile_large_entity"
+	
+	icon = "GFX_ship_part_wsg_sy10"
+	icon_frame = 1
+	type = missile
+	
+	component_set = "wsg_weapon_sy10"
+	projectile_gfx = "wsg_sy_missile_dual"
+	#projectile_gfx = "large_torpedo_02"
+	
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_anti_shield }
+
+	damage = { min = 450 max = 680 }
+	#amage = { min = 23 max = 26 }
+	windup = { min = 6 max = 12 }
+	total_fire_time = 70
+	range = 200.0
+	accuracy = 0.95
+	tracking = 0.4
+	power = -200
+	
+	resources = {
+		category = ship_components
+		cost = {
+			volatile_motes = 5
+			sr_alpha = 5
+			sr_pantsu = 5
+			alloys = 75
+		}		
+		upkeep = {
+			energy = 1
+			alloys = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = volatile_motes value <= 0 }
+		}
+	}
+
+	missile_speed = 40
+	missile_evasion = 0.4
+	missile_shield = 100
+	missile_armor = 100
+	missile_health = 100
+	missile_retarget_range = 100
+	
+	shield_penetration = 2.0
+	armor_damage = 1.5
+	hull_damage = 1.1
+
+	prerequisites = { "tech_wsg_sy10" }
+}
 # Deprecated
 
 # weapon_component_template = {
@@ -638,14 +702,14 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 
-	damage = { min = 1500 max = 2050 }
+	damage = { min = 1200 max = 1880 }
 	windup = { min = 15 max = 20 }
-	total_fire_time = 60
-	range = 180.0
+	total_fire_time = 65
+	range = 170.0
 	accuracy = 0.9
 	shield_damage = 2.0
-	armor_damage = 0.55
-	hull_damage = 1.55
+	armor_damage = 0.5
+	hull_damage = 1.0
 	accuracy = 1.0
 	tracking = 0.2
 	power = -400
@@ -660,7 +724,8 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_neo = 20
+			sr_pantsu = 20
+			sr_alpha = 20
 			alloys = 120
 		}		
 		upkeep = {
@@ -688,7 +753,9 @@ strike_craft_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 25
+			alloys = 35
+			sr_alpha = 4
+			sr_pantsu = 4
 		}
 		upkeep = {
 			energy = 0.2
@@ -746,12 +813,13 @@ strike_craft_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 25
-			sr_se = 4
+			alloys = 35
+			sr_se = 6
+			sr_pantsu = 6
 		}
 		upkeep = {
-			energy = 0.5
-			sr_se = 0.01
+			energy = 1
+			sr_se = 0.02
 		}
 	}
 	count = 2
@@ -760,8 +828,8 @@ strike_craft_component_template = {
 	launch_time = 1.0
 	
 	
-	damage = { min = 12 max = 16 }
-	cooldown = 0.7
+	damage = { min = 14 max = 18 }
+	cooldown = 0.6
 	range = 30
 	accuracy = 1.0
 	tracking = 0.5
@@ -823,7 +891,9 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 15
+			alloys = 20
+			volatile_motes = 4
+			sr_pantsu = 4
 		}
 		upkeep = {
 			energy = 0.25
@@ -838,9 +908,9 @@ weapon_component_template = {
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
 	entity = "small_laser_gun_entity"
-	type = point_defence
+	#type = point_defence
 
-	damage = { min = 13 max = 16 }
+	damage = { min = 14 max = 19 }
 	windup = { min = 2 max = 5 }
 	total_fire_time = 11
 	range = 60.0
@@ -876,12 +946,12 @@ weapon_component_template = {
 	size = medium
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
-	type = point_defence
+	entity = "medium_kinetic_gun_entity"
+	#type = point_defence
 
 	damage = { min = 32 max = 41 }
 	windup = { min = 1 max = 5 }
-	total_fire_time = 14
+	total_fire_time = 12
 	range = 120.0
 	accuracy = 0.90
 	shield_penetration = 0.75
@@ -899,6 +969,7 @@ weapon_component_template = {
 		cost = {
 			alloys = 25
 			sr_se = 2
+			sr_pantsu = 2
 		}
 		upkeep = {
 			energy = 1
@@ -912,12 +983,12 @@ weapon_component_template = {
 	size = large
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
-	type = point_defence
+	entity = "large_kinetic_gun_entity"
+	#type = point_defence
 
-	damage = { min = 120 max = 140}
+	damage = { min = 135 max = 160 }
 	windup = { min = 3 max = 5 }
-	total_fire_time = 15
+	total_fire_time = 14
 	range = 135.0
 	accuracy = 0.90
 	shield_penetration = 1.25
@@ -935,6 +1006,7 @@ weapon_component_template = {
 		cost = {
 			alloys = 85
 			sr_se = 4
+			sr_pantsu = 4
 		}
 		upkeep = {
 			energy = 1
@@ -968,12 +1040,14 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_se = 4
-			alloys = 15
+			alloys = 40
+			sr_se = 5
+			sr_pantsu = 5
 		}		
 		upkeep = {
 			energy = 5
 			alloys = 1
+			sr_se = 0.05
 		}
 	}
 

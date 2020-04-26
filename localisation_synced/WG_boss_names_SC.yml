@@ -21,9 +21,11 @@
  NAME_parit_fleet2:"帕里特遗忘舰队" 
  NAME_eddy_system:"恩多迪亚" 
  
- NAME_wg_machine_system:"CK901" 
- NAME_machine_prison:"古拉格" 
+ NAME_wg_machine_system:"CK901"
+NAME_WG_NO_NAME:" "
+ NAME_machine_prison:"工核星" 
  NAME_WG_Defensive:"GARS防御单元" 
+ NAME_Administrator_wsg:"GARS总控中心" 
  NAME_WG_GARS:"GARS" 
  NAME_WG_GARS2:"三号"
  NAME_WG_GARS3:"GARS失控机体"
@@ -31,6 +33,8 @@
  
  NAME_wg_boss_water_system:"大禹" 
  NAME_wg_water2m:"宅" 
+ NAME_wg_water3m:"西里西亚公爵"  
+ NAME_wg_water4m:"仙龙"
  NAME_wg_water1:"盖亚方舟" 
  NAME_wg_water2:"你群"                #盖亚
  NAME_wg_water3:"台服吧"              #盖亚
@@ -43,3 +47,12 @@
  NAME_WG_RBQ_Dragon1:"龙王喷水"
  
  NAME_OVO_Avatar:"恶昆"
+ 
+ NAME_wg_boss_bugvv_system:"巴格"
+ NAME_BUG_VV:"无限代码机"
+ NAME_WG_BUGV:"飞翔的381"
+ NAME_WG_BUGV2:"修复者"
+ NAME_WG_BUGV3:"VV"
+ 
+ NAME_wg_blue_cloud_system:"云之蓝"
+ NAME_WG_BC:"平斯贝"

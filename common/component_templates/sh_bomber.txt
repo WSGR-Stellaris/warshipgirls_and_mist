@@ -72,8 +72,8 @@ strike_craft_component_template = {
 	ship_modifier = {
 		ship_orbital_bombardment_mult = 0.05
 	}
-	count = 1
-	regeneration_per_day = 5.4
+	count = 2
+	regeneration_per_day = 1.5
 	launch_time = 3.0
 		
 	damage = { min = 400 max = 900 }

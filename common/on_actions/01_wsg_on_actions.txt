@@ -30,7 +30,6 @@ on_game_start = {
 	events = {
 		wg_traits.1
 		sh_traits.1
-		wsg.4
 		wg_parit.1
 		wg_aft.5
 		wsg.3076
@@ -63,7 +62,6 @@ on_monthly_pulse_country = {
 		wg_lady.30
 		wg_lady.44
 		wg_lady.48
-		wg_crisis.100
 	}
 }
 
@@ -76,7 +74,6 @@ on_yearly_pulse = {
 		sh.3016	
 		wsgancrel.100
 		wg_lady.122
-		wg_aft.100
 	}
 }
 on_yearly_pulse_country = {
@@ -208,6 +205,16 @@ on_fleet_destroyed_victim = {
 	}
 }
 
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+		wg_lady.90
+	}
+}
+
 on_building_complete = {
 	events = {
 		wsg.3033
@@ -234,6 +241,7 @@ on_entering_battle = {
 	events = {
 		mwsge_drone.1
 		mwsge_drone.11
+		wg_aft.9
 	}
 }
 
@@ -253,6 +261,8 @@ on_custom_diplomacy = {
 		wg_lady.28
 		wg_lady.1000
 		wg_lady.1001
+		wg_lady.10000
+		wg_lady.10001
 	}
 }
 
@@ -363,6 +373,7 @@ on_entering_system = {
 		wg_parit.12
 		wg_boss.24
 		wg_boss.36
+		wg_boss.46
 	}
 }
 
@@ -471,5 +482,21 @@ on_post_communications_established = {
 on_mid_game_pulse = {
 	events = {
 		wg_fe.20000
+	}
+}
+
+# This = Fleet ( science vessel )
+# From = Archaeological Site
+on_arch_stage_finished = {
+	events = {
+		wg_aft.33
+		wg_aft.1004
+	}
+}
+
+on_arch_site_finished = {
+	events = {
+		wg_aft.34
+		wg_aft.1005
 	}
 }

@@ -313,29 +313,6 @@ ovo_army = {
 	}
 }
 
-lady_army = {
-	health = 100
-	damage = 50
-	morale = 50
-	morale_damage = 5
-	collateral_damage = 2.00
-	war_exhaustion = 0.5
-	time = 5
-	icon_frame = 2
-	has_species = no
-
-	resources = {
-		category = armies
-		upkeep = {
-			energy = 50
-		}
-	}
-
-	potential = {
-		always = no
-	}
-}
-
 Parit_army = {
 	defensive = yes
 	damage = 10.0

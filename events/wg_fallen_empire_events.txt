@@ -248,19 +248,19 @@ country_event = {
 			save_global_event_target_as = wg_fallen_empire
 			set_graphical_culture = wsg_04
 			if = {
-				limit = { galaxy_size = tiny }
+				limit = { count_system = { count <= 250 }}
 				country_event = { id = wg_fe.11 }
 			}
 			else_if = {
-				limit = { galaxy_size = small }
+				limit = { count_system = { count <= 450 } }
 				country_event = { id = wg_fe.12 }
 			}
 			else_if = {
-				limit = { galaxy_size = medium }
+				limit = { count_system = { count <= 650 } }
 				country_event = { id = wg_fe.13 }
 			}
 			else_if = {
-				limit = { galaxy_size = large }
+				limit = { count_system = { count <= 850 } }
 				country_event = { id = wg_fe.14 }
 			}
 			else = {
@@ -383,8 +383,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 320
-				max_distance <= 340
+				min_distance >= 340
+				max_distance <= 360
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -474,8 +474,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 435
-				max_distance <= 450
+				min_distance >= 445
+				max_distance <= 460
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"

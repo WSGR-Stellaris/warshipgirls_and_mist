@@ -24,3 +24,17 @@ component_set = {
 	icon = "GFX_ship_part_pk_WATERB"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "LADY_weapen_X"
+	
+	icon = "GFX_LADY_weapen_X"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "LADY_weapen_T"
+	
+	icon = "GFX_LADY_weapen_T"
+	icon_frame = 1	
+}

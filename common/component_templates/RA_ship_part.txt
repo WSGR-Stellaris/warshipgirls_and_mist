@@ -41,8 +41,8 @@ strike_craft_component_template = {
 	
 	ship_behavior = "bombers_behavior"
 	
-	weapon_type = instant
-	projectile_gfx = "small_space_amoeba_weapon"
+	weapon_type = point_defence
+	projectile_gfx = "sh_pd_01"
 	
 	component_set = "RA_weapen_H"
 	prerequisites = { "tech_UNITEDFLEET" }
