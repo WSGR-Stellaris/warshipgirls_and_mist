@@ -1,36 +1,5 @@
 ﻿l_simp_chinese:
 ##############################
-### 其他描述
-##############################
- lady_army:0 "大小姐"
- lady_army_affection_3:0 "$lady_army$"
- lady_army_affection_5:0 "$lady_army$"
- lady_army_dragonslayer:0 "$lady_army$"
- lady_army_affection_3_dragonslayer:0 "$lady_army$"
- lady_army_affection_5_dragonslayer:0 "$lady_army$"
- LADY_SPECIES:0 "纳米机器个体"
- lady_army_desc:0 "纳米机械的大小姐变化成为的陆军。她能根据战场变化成任意类型的作战单位，并对敌方造成致命性的打击，在战场上是十分恐怖的单位。"
- lady_army_affection_3_desc:0 "$lady_army_desc$"
- lady_army_affection_5_desc:0 "$lady_army_desc$"
- lady_army_dragonslayer_desc:0 "$lady_army_desc$"
- lady_army_affection_3_dragonslayer_desc:0 "$lady_army_desc$"
- lady_army_affection_5_dragonslayer_desc:0 "$lady_army_desc$"
- wsg_lady_recover_cd:0 "大小姐被大破"
- wsg_lady_recover_cd_desc:0 "大小姐目前正在泡澡中..."
- leader_trait_governor_wsg_lady:0 "纳米管理模组"
- leader_trait_governor_wsg_lady_desc:0 "舰娘堕落为大小姐安装的强大的管理模块能让大小姐胜任一切工作，但似乎她本人并不太喜欢干这种活..."
- leader_trait_governor_wsg_lady_weaken:0 "纳米管理模组（弱化）"
- leader_trait_governor_wsg_lady_weaken_desc:0 "舰娘堕落为大小姐安装的强大的管理模块能让大小姐胜任一切工作，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
- leader_trait_admiral_wsg_lady:0 "大小姐战斗模块"
- leader_trait_admiral_wsg_lady_desc:0 "堕落妈大幅升级了大小姐的战斗能力和装备，使得大小姐能够匹敌数支舰队，甚至是比她体型大上数十倍的利维坦。"
- leader_trait_admiral_wsg_lady_weaken:0 "大小姐战斗模块（弱化）"
- leader_trait_admiral_wsg_lady_weaken_desc:0 "堕落妈大幅升级了大小姐的战斗能力和装备，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
- leader_trait_scientist_wsg_lady_science_ship:0 "大小姐科研模组"
- leader_trait_scientist_wsg_lady_science_ship_desc:0 "大小姐似乎能连接到舰娘堕落的资料库，使她有能力解决一切问题。不过她有时候也因此比较粗心..."
- leader_trait_scientist_wsg_lady_science_ship_weaken:0 "大小姐科研模组"
- leader_trait_scientist_wsg_lady_science_ship_weaken_desc:0 "大小姐似乎能连接到舰娘堕落的资料库以读取资料，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
-
-##############################
 ### 大小姐通讯界面(未变身)
 ##############################
  wsg_lady_name:0 "大小姐"
@@ -151,15 +120,49 @@
  wg_lady.35.a.tooltip:0 "§R因为你摔了大小姐，她的好感度降低了。§!"
 
 ##############################
-### 大小姐其他相关
+### 其他描述
 ##############################
+# 杂项
  wsg_lady_warship:0 "大小姐战舰"
  wsg_lady_warship_plural:0 "大小姐战舰"
  wsg_lady_warship_imdesignable:0 "大小姐战舰"
  wsg_lady_warship_imdesignable_plural:0 "大小姐战舰"
  wsg_armed_science_ship:0 "武装科研船"
  wsg_armed_science_ship_plural:0 "武装科研船"
+ wsg_lady_juggernaut:0 "大小姐主宰"
+ wsg_lady_juggernaut_plural:0 "$wsg_lady_juggernaut$"
  wsg_lady_designable_warship:0 "战舰形态"
+ lady_army:0 "大小姐"
+ lady_army_affection_3:0 "$lady_army$"
+ lady_army_affection_5:0 "$lady_army$"
+ lady_army_dragonslayer:0 "$lady_army$"
+ lady_army_affection_3_dragonslayer:0 "$lady_army$"
+ lady_army_affection_5_dragonslayer:0 "$lady_army$"
+ LADY_SPECIES:0 "纳米机器个体"
+ lady_army_desc:0 "纳米机械的大小姐变化成为的陆军。她能根据战场变化成任意类型的作战单位，并对敌方造成致命性的打击，在战场上是十分恐怖的单位。"
+ lady_army_affection_3_desc:0 "$lady_army_desc$"
+ lady_army_affection_5_desc:0 "$lady_army_desc$"
+ lady_army_dragonslayer_desc:0 "$lady_army_desc$"
+ lady_army_affection_3_dragonslayer_desc:0 "$lady_army_desc$"
+ lady_army_affection_5_dragonslayer_desc:0 "$lady_army_desc$"
+ wsg_lady_recover_cd:0 "大小姐被大破"
+ wsg_lady_recover_cd_desc:0 "大小姐目前正在泡澡中..."
+
+# 特性
+ leader_trait_governor_wsg_lady:0 "纳米管理模组"
+ leader_trait_governor_wsg_lady_desc:0 "舰娘堕落为大小姐安装的强大的管理模块能让大小姐胜任一切工作，但似乎她本人并不太喜欢干这种活..."
+ leader_trait_governor_wsg_lady_weaken:0 "纳米管理模组（弱化）"
+ leader_trait_governor_wsg_lady_weaken_desc:0 "舰娘堕落为大小姐安装的强大的管理模块能让大小姐胜任一切工作，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
+ leader_trait_admiral_wsg_lady:0 "大小姐战斗模块"
+ leader_trait_admiral_wsg_lady_desc:0 "堕落妈大幅升级了大小姐的战斗能力和装备，使得大小姐能够匹敌数支舰队，甚至是比她体型大上数十倍的利维坦。"
+ leader_trait_admiral_wsg_lady_weaken:0 "大小姐战斗模块（弱化）"
+ leader_trait_admiral_wsg_lady_weaken_desc:0 "堕落妈大幅升级了大小姐的战斗能力和装备，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
+ leader_trait_scientist_wsg_lady_science_ship:0 "大小姐科研模组"
+ leader_trait_scientist_wsg_lady_science_ship_desc:0 "大小姐似乎能连接到舰娘堕落的资料库，使她有能力解决一切问题。不过她有时候也因此比较粗心..."
+ leader_trait_scientist_wsg_lady_science_ship_weaken:0 "大小姐科研模组"
+ leader_trait_scientist_wsg_lady_science_ship_weaken_desc:0 "大小姐似乎能连接到舰娘堕落的资料库以读取资料，但目前大小姐仍未适应新的身体，因此无法很好地发挥全部功能。"
+
+# 战舰相关
  tech_disignable_wsg_lady:0 "宏观纳米机械操控"
  tech_disignable_wsg_lady_desc:0 "通过对大小姐机体和纳米机械的研究，我们掌握了纳米机械的构造以及其应用。但如何制造纳米级的可活动机械依然是个迷。"
  wsg_lady_REACTOR:0 "大小姐核心能源"

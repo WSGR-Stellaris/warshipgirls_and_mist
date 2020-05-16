@@ -38,3 +38,17 @@ component_set = {
 	icon = "GFX_LADY_weapen_T"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "wg_weapon_sunflower"
+	
+	icon = "GFX_wg_weapon_sunflower"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "bugv_weapen"
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1	
+}

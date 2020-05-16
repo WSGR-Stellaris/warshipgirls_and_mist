@@ -140,6 +140,7 @@ ap_shenhai_silent = {
 		custom_tooltip = "shenhai_silent_tooltip"
 		hidden_effect = {
 			country_event = { id = sh.2000 }
+			country_event = { id = sh.3039 }
 			set_country_flag = sh_shenhai_flag_silent
 		}
 		add_research_option = tech_sh_genetic_resequencing	

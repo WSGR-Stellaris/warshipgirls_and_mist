@@ -241,7 +241,7 @@ sh_modifier_engm2 = {
 	country_megastructure_build_cap_add = 2
 }
 sh_modifier_book = {
-	planet_pop_assembly_mult = 0.3
+	planet_pop_assembly_mult = 0.15
 }
 sh_modifier_sf = {
 	country_unity_produces_mult = 0.10
@@ -249,6 +249,8 @@ sh_modifier_sf = {
 
 sh_sf = {
 	ship_weapon_damage = -2.50
+	ship_hull_mult = -0.80
+	ship_shield_mult = -0.80
 }
 
 sh_juggernaut = {
@@ -422,4 +424,7 @@ uf_hidden_buff = {
 	ship_speed_mult = 2.0
 	planet_orbital_bombardment_damage = 10.0
 	ship_evasion_mult = 10.0
+	ship_hull_regen_add_perc = 50
+	ship_shield_regen_add_perc  = 50
+	ship_armor_regen_add_perc  = 50	
 }

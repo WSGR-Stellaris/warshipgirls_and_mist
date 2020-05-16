@@ -187,30 +187,18 @@ country_event = {
 		room = event_target:wg_fallen_empire.ruler
 	}
 
+	immediate = {
+		random_owned_fleet = {
+			limit = { has_fleet_flag = lady_fleet }
+			save_global_event_target_as = lady_contingency_fleet
+		}
+	}
+
 	option = {
 		name = wg_lady.6.a
-		hidden_effect = {
-			capital_scope = { solar_system = {
-				random_system_planet = {
-					limit = {
-						NOR = {
-							is_same_value = PREVPREV
-							is_star = yes
-						}
-					}
-					create_ambient_object = {
-						type = "horror_energy_object"
-						location = this
-					}
-					last_created_ambient_object = {
-						save_event_target_as = wg_wormhole
-					}
-				}
-			}}
-		}
 		enable_special_project = {
-			name = wsg_lady_to_wg_fe
-			location = event_target:wg_wormhole
+			name = pre_wsg_lady_to_wg_fe
+			location = capital_scope
 		}
 	}
 	option = {
@@ -222,46 +210,64 @@ country_event = {
 	}
 }
 
-# 判断是否大小姐在完成特别项目
-ship_event = {
+# 判断大小姐是否能执行项目
+country_event = {
 	id = wg_lady.7
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
-		owner = { country_event = { id = wg_lady.7000 days = 5 }}
 		if = {
-			limit = { fleet = { has_fleet_flag = lady_fleet }}
-			owner = { country_event = { id = wg_lady.9 }}
-		}
-		else = {
-			destroy_ambient_object = event_target:wg_wormhole
-			event_target:lady_Contingency_owner = {
-				capital_scope = { solar_system = {
-					random_system_planet = {
-						limit = {
-							NOR = {
-								is_same_value = PREVPREV
-								is_star = yes
-							}
-						}
-						create_ambient_object = {
-							type = "horror_energy_object"
-							location = this
-							entity_offset = {
-								min = 1
-								max = 100
-							}
-						}
-						last_created_ambient_object = {
-							save_event_target_as = wg_wormhole
+			limit = { 
+				event_target:lady_contingency_fleet = {
+					exists = this
+					is_in_combat = no
+				}
+			}
+			random_owned_ship = {
+				limit = { fleet = { has_fleet_flag = lady_fleet }}
+				set_ship_flag = researching_special_project
+				fleet = { save_global_event_target_as = lady_contingency_fleet }
+			}
+			# set_country_flag = modifing_wsg_lady
+			event_target:lady_contingency_fleet = { clear_fleet_actions = this }
+			capital_scope = { solar_system = {
+				random_system_planet = {
+					limit = { NOR = {
+						is_same_value = PREVPREV
+						is_star = yes
+					}}
+					create_ambient_object = {
+						type = "horror_energy_object"
+						location = this
+						entity_offset = {
+							min = 1
+							max = 100
 						}
 					}
-				}}
-			
-				enable_special_project = {
-					name = wsg_lady_to_wg_fe
-					location = event_target:wg_wormhole
+					last_created_ambient_object = {
+						save_event_target_as = wg_wormhole
+					}
+				}
+			}}
+			enable_special_project = {
+				name = wsg_lady_to_wg_fe
+				location = event_target:wg_wormhole
+			}
+			event_target:lady_contingency_fleet = {
+				fleet_action_research_special_project = {
+					special_project = wsg_lady_to_wg_fe
+					target = event_target:wg_wormhole
+				}
+			}
+			event_target:lady_contingency_fleet = { set_event_locked = yes }
+			country_event = { id = wg_lady.7001 days = 1 }
+			country_event = { id = wg_lady.7002 days = 3 }
+		}
+		else = {
+			owner = {
+				abort_special_project = {
+					type = pre_wsg_lady_to_wg_fe
 				}
 				country_event = { id = wg_lady.8 }
 			}
@@ -269,22 +275,115 @@ ship_event = {
 	}
 }
 
-country_event = {
+# 判断是否大小姐在执行项目
+fleet_event = {
 	id = wg_lady.7000
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {
-		any_owned_fleet = {
-			has_fleet_flag = lady_fleet
-			exists = this
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_fleet_flag = lady_fleet }
+					count_owned_ship = { count > 1 }
+					any_owned_ship = {
+						NOT = { has_ship_flag = researching_special_project }
+					}
+				}
+			}
+			owner = {
+				abort_special_project = {
+					type = pre_wsg_lady_to_wg_fe
+				}
+				abort_special_project = {
+					type = wsg_lady_to_wg_fe
+				}
+				country_event = { id = wg_lady.8 }
+			}
+			event_target:lady_contingency_fleet = {
+				set_event_locked = no
+				clear_fleet_actions = this
+			}
+		} else = {
+			owner = {
+				country_event = { id = wg_lady.7002 }
+			}
 		}
+	}
+}
+
+country_event = {
+	id = wg_lady.7001
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = finish_wsg_lady_to_wg_fe_project }
 		has_special_project = wsg_lady_to_wg_fe
 	}
 
 	immediate = {
-		country_event = { id = wg_lady.9 }
+		event_target:lady_contingency_fleet = { set_event_locked = yes }
+		if = {
+			limit = {
+				has_special_project = wsg_lady_to_wg_fe
+				NOT = { is_researching_special_project = wsg_lady_to_wg_fe }
+				event_target:lady_contingency_fleet = {
+					is_fleet_idle = yes
+				}
+			}
+			if = {
+				limit = { exists = event_target:lady_contingency_fleet }
+				event_target:lady_contingency_fleet = {
+					set_event_locked = no
+					clear_fleet_actions = this
+	
+					fleet_action_research_special_project = {
+						special_project = wsg_lady_to_wg_fe
+						target = event_target:wg_wormhole
+					}
+				}
+			} 
+			country_event = { id = wg_lady.7001 days = 1 }
+		} else = {
+			country_event = { id = wg_lady.7001 days = 15 }
+		}
 	}
+}
+
+country_event = {
+	id = wg_lady.7002
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_special_project = wsg_lady_to_wg_fe
+				is_researching_special_project = wsg_lady_to_wg_fe
+				any_owned_fleet = {
+					has_fleet_flag = lady_fleet
+					has_fleet_order = collect_data_fleet_order
+					solar_system = {
+						any_system_ambient_object = {
+							is_same_value = event_target:wg_wormhole
+						}
+					}
+				}
+			}
+			abort_special_project = {
+				type = pre_wsg_lady_to_wg_fe
+			}
+			abort_special_project = {
+				type = wsg_lady_to_wg_fe
+			}
+			country_event = { id = wg_lady.9 }
+		} else = {
+			country_event = { id = wg_lady.7002 days = 10 }
+		}
+	}
+
 }
 
 country_event = {
@@ -296,6 +395,11 @@ country_event = {
 
 	option = {
 		name = OK
+		hidden_effect = { destroy_ambient_object = event_target:wg_wormhole }
+		enable_special_project = {
+			name = pre_wsg_lady_to_wg_fe
+			location = capital_scope
+		}
 	}
 }
 
@@ -306,9 +410,11 @@ country_event = {
 	picture = GFX_evt_wsg_lady2
 	show_sound = event_ship_thrusters
 	is_triggered_only = yes
-	location = event_target:wg_wormhole
+	fire_only_once = yes
 
 	immediate = {
+		# set_country_flag = modifing_wsg_lady
+		set_country_flag = finish_wsg_lady_to_wg_fe_project
 		destroy_ambient_object = event_target:wg_wormhole
 		event_target:lady_contingency_fleet = {
 			delete_fleet = this
@@ -607,7 +713,9 @@ country_event = {
 	}
 
 	immediate = {
+		set_country_flag = gain_wsg_lady
 		remove_country_flag = start_wsg_lady_events
+		# remove_country_flag = modifing_wsg_lady
 		if = {
 			limit = { NOT = { any_country = { has_country_flag = wsg_lady_country }}}
 			create_species = {
@@ -658,7 +766,6 @@ country_event = {
 	after = {
 		hidden_effect = {
 			set_country_flag = finish_wsg_lady_events
-			set_country_flag = gain_wsg_lady
 		}
 	}
 
@@ -1917,7 +2024,10 @@ country_event = {
 			}
 			AND = {
 				has_country_flag = wsg_lady_warship_active
-				NOT = { any_owned_fleet = { has_fleet_flag = lady_fleet2 }}
+				NOR = { 
+					any_owned_fleet = { has_fleet_flag = lady_fleet2 }
+					any_owned_ship = { is_ship_size = wsg_lady_juggernaut }
+				}
 			}
 			AND = {
 				has_country_flag = wsg_lady_army_active
@@ -2427,8 +2537,8 @@ country_event = {
 	option = {
 		allow = {
 			custom_tooltip = {
-				fail_text = require_titan_tech
-				has_technology = tech_titans
+				fail_text = require_juggernaut_tech
+				has_technology = tech_juggernaut
 			}
 		}
 		name = wg_lady.44.b
@@ -2716,16 +2826,8 @@ country_event = {
 		has_country_flag = modifing_wsg_lady
 		OR = {
 			AND = {
-				OR = {
-					AND = {
-						is_researching_special_project = WSG_LADY_MODIFICATION1
-						has_modifier = wsg_lady_modify_consume
-					}
-					AND = {
-						is_researching_special_project = WSG_LADY_MODIFICATION2
-						has_modifier = wsg_lady_modify_consume2
-					}
-				}
+				is_researching_special_project = WSG_LADY_MODIFICATION1
+				has_modifier = wsg_lady_modify_consume
 				OR = {
 					resource_stockpile_compare = {
 						resource = nanites
@@ -2733,6 +2835,24 @@ country_event = {
 					}
 					resource_stockpile_compare = {
 						resource = alloys
+						value < 1
+					}
+				}
+			}
+			AND = {
+				is_researching_special_project = WSG_LADY_MODIFICATION2
+				has_modifier = wsg_lady_modify_consume2
+				OR = {
+					resource_stockpile_compare = {
+						resource = nanites
+						value < 1
+					}
+					resource_stockpile_compare = {
+						resource = alloys
+						value < 1
+					}
+					resource_stockpile_compare = {
+						resource = minerals
 						value < 1
 					}
 				}
@@ -2925,8 +3045,8 @@ country_event = {
 	option = {
 		allow = {
 			custom_tooltip = {
-				fail_text = require_titan_tech
-				has_technology = tech_titans
+				fail_text = require_juggernaut_tech
+				has_technology = tech_juggernaut
 			}
 		}
 		name = wg_lady.44.b
@@ -3061,9 +3181,11 @@ country_event = {
 
 	immediate = {
 		remove_modifier = wsg_lady_modify_consume2
-        remove_country_flag = modifing_wsg_lady
+		remove_country_flag = modifing_wsg_lady
+		# create_ship_design = { design = "NAME_WG_LADY_JUGGERNAUT" }
+		# add_ship_design = last_created_design
 		set_country_flag = modified_wsg_lady
-		set_country_flag = lady_warship_T_slot
+		set_country_flag = lady_juggernaut
 		every_owned_fleet = {
 			limit = { has_fleet_flag = lady_fleet2 }
 			delete_fleet = {
@@ -3493,7 +3615,7 @@ country_event = {
 		name = wg_lady.106.a
 		hidden_effect = { 
 			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_leader_affection_trait = yes
+			check_level_up_lady_affection_trait = yes
 		}
 		custom_tooltip = wg_lady_affection_up_less
 	}
@@ -3619,7 +3741,7 @@ country_event = {
 		name = wg_lady.110.a
 		hidden_effect = { 
 			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_leader_affection_trait = yes
+			check_level_up_lady_affection_trait = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
 		custom_tooltip = wg_lady_affection_up_less
@@ -3819,7 +3941,7 @@ country_event = {
 		name = wg_lady.118.a
 		hidden_effect = { 
 			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_leader_affection_trait = yes
+			check_level_up_lady_affection_trait = yes
 		}
 		custom_tooltip = wg_lady_affection_up_less
 	}
@@ -3891,7 +4013,7 @@ country_event = {
 		name = wg_lady.121.a
 		hidden_effect = { 
 			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_leader_affection_trait = yes
+			check_level_up_lady_affection_trait = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
 		custom_tooltip = wg_lady_affection_up_less
@@ -4384,9 +4506,9 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		years = 10
+		years = 2
 		modifier = {
-			mid_game_years_passed >= 10
+			mid_game_years_passed >= 20
 			factor = 0.2
 		}
 		modifier = {
@@ -4394,12 +4516,8 @@ country_event = {
 			factor = 0.5
 		}
 		modifier = {
-			check_variable = { which = lady_affection_level value >= 4 }
-			factor = 0.25	
-		}
-		modifier = {
-			has_country_flag = married_wsg_lady
-			factor = 999999
+			has_country_flag = lady_affection_max
+			factor = 0.1	
 		}
 	}
 

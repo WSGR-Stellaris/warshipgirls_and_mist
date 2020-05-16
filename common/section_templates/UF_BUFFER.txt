@@ -1,5 +1,5 @@
 ship_section_template = {
-	key = "uf_buffer_key"
+	key = "buffer_section_entity"
 	ship_size = uf_buffer
 	fits_on_slot = mid
 	entity = "x901_entity"

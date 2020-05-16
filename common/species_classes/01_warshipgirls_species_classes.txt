@@ -84,4 +84,13 @@
 	move_pop_sound_effect = "moving_pop_confirmation"
 }
 
-	
+"Star_wars_girls" = {
+	archetype = BIOLOGICAL
+	randomized = no
+	gender = no
+	portraits = {
+		"Starwars"
+	}
+	graphical_culture = wsg_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}	

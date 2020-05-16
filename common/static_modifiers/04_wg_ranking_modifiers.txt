@@ -106,9 +106,8 @@ wg_modifier_combat_shipcraft = {
 }
 
 wg_modifier_combat_uf = {
-	damage_vs_country_type_default_mult = -0.5
-	damage_vs_country_type_wg_crisis_country_mult = 0.25
-	damage_vs_country_type_wg_crisis_sub_gate_country_mult = 0.25
+	damage_vs_country_type_wg_crisis_country_mult = 0.2
+	damage_vs_country_type_wg_crisis_sub_gate_country_mult = 0.2
 	custom_tooltip = wg_modifier_combat_uf_desc
 }
 

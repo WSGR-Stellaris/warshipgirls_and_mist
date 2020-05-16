@@ -3,21 +3,23 @@ namespace = wg_boss
 #######################################
 # 利维坦
 #######################################
-event = {
+country_event = {
 	id = wg_boss.1
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	trigger = {
 		any_country = {
 			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
 			is_ai = no
 		}
 		NOT = { has_global_flag = wg_boss_created }
 	}	
+
 	immediate = {
 		random_country = {
 			limit = {
@@ -28,30 +30,57 @@ event = {
 				is_ai = no
 			}		
 			capital_scope = {
+				solar_system = { 
+					if = {
+						limit = { 
+							any_neighbor_system = { 
+								ignore_hyperlanes = yes 
+								has_hyperlane_to = PREV 
+							}
+						}
+						save_event_target_as = spawn_boss_system_source
+					} 
+					else = {
+						random_neighbor_system = {
+							limit = { 
+								NOT = { has_star_flag = sealed_system }
+								any_neighbor_system = { 
+									ignore_hyperlanes = yes 
+									has_hyperlane_to = PREV 
+								}
+							}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_boss_system_source
+						}
+					}
+				}
 				every_system = {
 					limit = { 
 						distance = { 
-							source = PREV 
-							min_jumps = 5
-							max_jumps = 15 
+							source = event_target:spawn_boss_system_source
+							min_jumps = 4
+							max_jumps = 9
 							type = hyperlane 
 							use_bypasses = no
 						}
-						NOT = { closest_system = {
-							exists = space_owner
-							min_steps = 0
-							max_steps = 2
-						}}
+						NOR = { 
+							closest_system = {
+								exists = space_owner
+								min_steps = 0
+								max_steps = 2
+							}
+							has_star_flag = sealed_system
+						}
 					}
-					set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
+					set_timed_star_flag = { flag = can_spawn_boss_system days = 6 }
 				}
 			}
-			country_event = { id = wg_boss.19 }
-			country_event = { id = wg_boss.35 }
+			country_event = { id = wg_boss.19 days = 1 }#无人机之主
+			country_event = { id = wg_boss.35 days = 2 }#雪风
+			country_event = { id = wsgranking.1919 days = 3 }#胖次商店
 		}	
 		random_list = { 
-			1 = {
-				#modifier = { factor = 0 always = yes } #不注释这行就必定不会生成
+			4 = {
 				random_country = {
 					limit = {
 						OR = {
@@ -60,12 +89,10 @@ event = {
 						}
 						is_ai = no
 					}
-					country_event = { id = wg_boss.45 }
+					country_event = { id = wg_boss.45 days = 4 }#巴格维
 				}
 			}
-			9 = {
-				 #不注释这行就会必定生成
-			}
+			6 = { }
 		}
 		random_list = { 
 			60 = {
@@ -77,15 +104,13 @@ event = {
 						}
 						is_ai = no
 					}
-					country_event = { id = wg_boss.26 }
+					country_event = { id = wg_boss.26 days = 4 }#GARS
 				}
 			}
-			40 = {
-				#modifier = { factor = 0 always = yes } #不注释这行就会必定生成
-			}
+			40 = { }
 		}		
 		random_list = { 
-			70 = {
+			60 = {
 				random_country = {
 					limit = {
 						OR = {
@@ -94,13 +119,26 @@ event = {
 						}
 						is_ai = no
 					}
-					country_event = { id = wg_boss.2 }
+					country_event = { id = wg_boss.2 days = 5 }#星极
 				}
 			}
-			30 = {
-				#modifier = { factor = 0 always = yes } #不注释这行就会必定生成
-			}
+			40 = { }
 		}
+		random_list = { 
+			30 = {
+				random_country = {
+					limit = {
+						OR = {
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.72 days = 5 }#向日葵
+				}
+			}
+			70 = { }
+		}		
 	}
 }
 country_event = {
@@ -172,6 +210,7 @@ country_event = {
 
 	option = {
 		name = wg_boss.4.a
+		change_variable = { which = rankpts value = 4 }
 		add_modifier = {
 			modifier = "wsg_think_tank_destoryed" 	
 			days = -1
@@ -272,9 +311,9 @@ country_event = {
 	}
 	option = {
 		name = "wg_boss.7.a"
-			enable_special_project = {
-				name = "THINK_TANK_FTL_PROJECT2"
-				location = event_target:wg_think_tank_location
+		enable_special_project = {
+			name = "THINK_TANK_FTL_PROJECT2"
+			location = event_target:wg_think_tank_location
 		}
 	}
 }
@@ -291,6 +330,7 @@ country_event = {
 	option = {
 		name = wg_boss.8.a
 		custom_tooltip = wg_boss.8.tooltip
+		change_variable = { which = rankpts value = 4 }
 		add_modifier = {
 			modifier = "wsg_think_tank_destoryed" 	
 			days = -1
@@ -323,6 +363,7 @@ country_event = {
 	option = {
 		name = wg_boss.9.a
 		custom_tooltip = wg_boss.9.tooltip
+		change_variable = { which = rankpts value = 3 }
 		hidden_effect = {
 			random_country = {
 				limit = { is_country_type = guardian_wg_think_tank }
@@ -358,6 +399,7 @@ country_event = {
 	
 	option = {
 		name = wg_boss.10.a
+		change_variable = { which = rankpts value = 2 }
 		add_modifier = {
 			modifier = "wsg_think_tank_destoryed2" 	
 			days = -1
@@ -384,6 +426,7 @@ country_event = {
 	
 	option = {
 		name = "wg_boss.11.a"
+		change_variable = { which = rankpts value = 3 }
 		add_modifier = {
 			modifier = "wsg_Astesia2" 	
 			days = -1
@@ -440,7 +483,6 @@ country_event = {
 country_event = {
 	id = wg_boss.13
 	hide_window = yes
-	
 	is_triggered_only = yes
 	
 	immediate = {
@@ -627,9 +669,7 @@ ship_event = {
 		FROM = {
 			has_star_flag = wg_boss_uav_system_home
 		}
-		FROMFROM = {
-			NOT = { has_country_flag = triggered_wg_boss_uav_event }
-		}
+		NOT = { has_global_flag = triggered_wg_boss_uav_event }
 	}
 
 	immediate = {
@@ -647,9 +687,7 @@ ship_event = {
 				save_event_target_as = hidden_uav_boss_location
 			}	
 		}	
-		FROMFROM = {
-			set_country_flag = triggered_wg_boss_uav_event
-		}		
+		set_global_flag = triggered_wg_boss_uav_event	
 	}
 
 	option = {
@@ -828,14 +866,13 @@ country_event = {
                 has_authority = auth_warshipgirls
             }
 			NOT = { has_technology = tech_uav4 }
-        }
-		owner={
-			add_research_option = "tech_uav4"
-			add_tech_progress = {
-				tech = tech_uav4
-				progress = 0.50
-			}
-		}		
+		}
+		change_variable = { which = rankpts value = 6 }
+		add_research_option = "tech_uav4"
+		add_tech_progress = {
+			tech = tech_uav4
+			progress = 0.50
+		}
 	}
     option = {
 		name = wg_boss.22.a
@@ -845,15 +882,14 @@ country_event = {
                 has_authority = auth_warshipgirls
             }
 			has_technology = tech_uav4
-        }
-		owner = {
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = @tier5researchreward
-				min = @tier5researchmin
-				max = @tier5researchmax
-			}
-		}		
+		}
+		change_variable = { which = rankpts value = 6 }
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}	
 	}
 	option = {
 		name = wg_boss.22.a
@@ -877,7 +913,6 @@ country_event = {
 country_event = {
 	id = wg_boss.23
 	hide_window = yes
-	
 	is_triggered_only = yes
 	trigger = {
 		fromfrom = { 
@@ -885,24 +920,19 @@ country_event = {
 		}
 	}
 	immediate = {
-		every_country = {
+		FROM = { country_event = { id = wg_boss.22 days = 5 }}
+		random_country = {
 			limit = {
 				has_country_flag = wg_uav_fleet_country_flag
 			}
 			destroy_country = yes	
 		}
 	}	
-    option = {
-		From = {
-			country_event = { id = wg_boss.22 days = 5 }
-		}	
-	}	
 }
 ship_event = {
 	id = wg_boss.24
 	title = "wg_boss.24.name"
 	desc = "wg_boss.24.desc"
-
 	is_triggered_only = yes
 	picture = GFX_evt_contingency_planet
 
@@ -1144,6 +1174,7 @@ country_event = {
 		country_event = { id = wg_boss.32 days = 55 }
 	}		
 	option = {
+		change_variable = { which = rankpts value = 4 }
 		name = "wg_boss.31.a"		
 	}	
 }
@@ -1233,6 +1264,7 @@ country_event = {
 	}		
 	option = {
 		name = "wg_boss.34.a"
+		change_variable = { which = rankpts value = 6 }
 		owner={
 			add_research_option = "tech_wg_gras"
 			add_tech_progress = {
@@ -1322,6 +1354,7 @@ country_event = {
 	
 	option = {
 		name = "wg_boss.38.a"
+		change_variable = { which = rankpts value = 6 }
 		owner = {
 			add_resource = { unity = 2000 }
 		}		
@@ -1569,18 +1602,14 @@ planet_event = {
 		}		
 		if = {
 			limit = {
-				is_planet_class = pc_habitat
+				is_habitat_wg = yes
 			}
 			spawn_habitat_cracker_effect = yes
 			remove_planet = yes
 		}
 		else_if = {
 			limit = {
-				OR = {
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_ringworld_habitable_sh
-					is_planet_class = pc_ringworld_habitable_wsg
-				}	
+				is_ringworld_wg = yes	
 			}
 			change_pc = pc_ringworld_habitable_water
 			clear_deposits = yes
@@ -1640,12 +1669,8 @@ country_event = {
 	trigger = {
 		NOT = { has_country_flag = fired_water }
 		FROM = {
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
-				is_planet_class = pc_ringworld_habitable_wsg
-				is_planet_class = pc_ringworld_habitable_sh
-			}
+			is_habitat_wg = no
+			is_ringworld_wg = no
 		}
 	}
 
@@ -1676,8 +1701,7 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_boss_bugv_created
-		random_system = {
-			limit = { has_star_flag = can_spawn_boss_system }
+		random_rim_system = {
 			spawn_system = {
 				hyperlane = no
 				is_discovered = no
@@ -1685,7 +1709,6 @@ country_event = {
 				max_distance = 20
 				initializer = wg_boss_bugvv_system
 			}
-			remove_star_flag = can_spawn_boss_system
 		}
 		random_system = { #确保没有超空间航道
 			limit = { has_star_flag = wg_boss_bugvv_system_home }
@@ -1718,6 +1741,8 @@ ship_event = {
 		}		
 	}
 
+	after = { owner = { change_variable = { which = rankpts value = 1 }}}
+
 	option = {
 		name = "wg_boss.46.a"		
 	}
@@ -1735,10 +1760,10 @@ ship_event = {
 	option = {
 		name = "wg_boss.46.c"
 		trigger = {
-		owner = {
-			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_spiritualist
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
 				}
 			}
 		}
@@ -1806,21 +1831,23 @@ country_event = {
 				days = -1
 			}
 		}
-	}
-	immediate = {
 		owner = {
 			set_country_flag = encountered_first_wormhole
 			add_seen_bypass_type = wormhole
 		}
-	}	
+	}
+	
 	option = {
 		name = "wg_boss.48.a"
 		custom_tooltip = wg_boss.48.tooltip
-		owner={
-			add_research_option = "tech_wormhole_stabilization"
-			add_tech_progress = {
-				tech = tech_wormhole_stabilization
-				progress = 0.50
+		owner = {
+			if = {
+				limit = { NOT = { has_technology = tech_wormhole_stabilization }}
+				add_research_option = "tech_wormhole_stabilization"
+				add_tech_progress = {
+					tech = tech_wormhole_stabilization
+					progress = 0.50
+				}
 			}
 		}		
 	}	
@@ -1835,7 +1862,7 @@ country_event = {
 	fire_only_once = yes
 
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes
@@ -1869,7 +1896,7 @@ country_event = {
 	fire_only_once = yes
 
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes
@@ -1895,6 +1922,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	trigger = {
+		NOT = { has_global_flag = bugv_get_mad }
 		fromfrom = { 
 			has_fleet_flag = wg_bugv_fleet
 		}
@@ -1910,9 +1938,10 @@ country_event = {
 	title = wg_boss.52.name
 	desc = wg_boss.52.desc
 	picture = GFX_evt_large_explosion
-	location = from
+	location = FROMFROMFROM
 	
 	is_triggered_only = yes
+
 	immediate = {
 		every_country = {
 			limit = {
@@ -1929,6 +1958,7 @@ country_event = {
 	option = {
 		name = wg_boss.52.a
 		custom_tooltip = wg_boss.52.tooltip
+		change_variable = { which = rankpts value = 5 }
 		add_modifier = {
 			modifier = "wg_bugv_murder" 	
 			days = 7200
@@ -1952,7 +1982,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -1994,7 +2024,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2036,7 +2066,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2078,7 +2108,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2120,7 +2150,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2184,7 +2214,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2209,7 +2239,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2234,7 +2264,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2280,7 +2310,7 @@ country_event = {
 	location = from
 	
 	picture_event_data = {
-		room = no_video_feed_room
+		room = bugv_room
 	}
 	diplomatic = yes
 	force_open = yes	
@@ -2295,12 +2325,724 @@ country_event = {
 		}
 		random_country = {
 			limit = { is_country_type = guardian_wg_bugv }
+			every_owned_fleet = {
+				create_ambient_object = {
+					type = explosion_particle_object
+					location = THIS
+					duration = 5
+					
+					use_3d_location = yes
+					
+					entity_offset = { min = 0 max = 0 }
+					entity_offset_angle = { min = 0 max = 0 }
+					entity_offset_height = { min = 0 max = 0 }
+					
+					entity_scale_to_size = yes
+					scale = 100
+				}
+				delete_fleet = this
+			}
 			destroy_country = yes
-		}		
+		}
 	}	
 	option = {
 		name = wg_boss.62.a
 		custom_tooltip = wg_boss.61.tooltip				
 	}
 }
-####云
+
+# 大成功
+country_event = {
+	id = wg_boss.63
+	title = wg_boss.62.name
+	desc = wg_boss.63.desc
+	location = from
+	
+	picture_event_data = {
+		room = bugv_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	after = {
+		country_event = { id = wg_boss.64 }
+	}
+	
+	option = {
+		name = wg_boss.63.a			
+	}
+	option = {
+		name = wg_boss.63.b	
+	}
+}
+
+country_event = {
+	id = wg_boss.64
+	title = wg_boss.62.name
+	desc = wg_boss.64.desc
+	location = fromfrom
+	
+	picture_event_data = {
+		room = bugv_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = wg_boss.64.a
+		country_event = { id = wg_boss.65 }
+	}
+}
+
+country_event = {
+	id = wg_boss.65
+	title = wg_boss.62.name
+	desc = wg_boss.65.desc
+	location = fromfromfrom
+	
+	picture_event_data = {
+		room = bugv_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = bugv_location_planet }
+			clear_deposits = yes
+			add_deposit = d_wg_bugv
+		}
+		random_country = {
+			limit = { is_country_type = guardian_wg_bugv }
+			destroy_country = yes
+		}
+		random_ambient_object = {
+			limit = { has_ambient_object_flag = bug_object_flag }
+			destroy_ambient_object = this
+		}	
+		every_country = {
+			limit = {
+				has_modifier = wg_bug
+			}
+			remove_modifier = "wg_bug"
+		}		
+	}
+	
+	option = {
+		name = wg_boss.65.a
+		custom_tooltip = wg_boss.61.tooltip
+		add_modifier = {
+			modifier = "wg_bugv_buff4" 	
+			days = -1
+		}
+	}
+	option = {
+		name = wg_boss.65.b
+		custom_tooltip = wg_boss.61.tooltip
+		add_modifier = {
+			modifier = "wg_bugv_buff4" 	
+			days = -1
+		}
+	}
+}
+
+# 疯了
+country_event = {
+	id = wg_boss.66
+	title = wg_boss.62.name
+	desc = wg_boss.66.desc
+	location = from
+	
+	picture_event_data = {
+		room = bugv_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = wg_boss.66.a
+		country_event = { id = wg_boss.67 }
+	}
+}
+
+country_event = {
+	id = wg_boss.67
+	title = wg_boss.62.name
+	desc = wg_boss.67.desc
+	location = fromfrom
+	
+	picture_event_data = {
+		room = bugv_room
+	}
+	diplomatic = yes
+	force_open = yes	
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	after = {
+		hidden_effect = {
+			save_event_target_as = bugv_mad_from_country
+			set_global_flag = bugv_get_mad
+			random_country = {
+				limit = { has_country_flag = guardian_wg_bugv_country_flag }
+				save_global_event_target_as = guardian_wg_bugv_country
+				random_owned_fleet = {
+					limit = { has_fleet_flag = wg_bugv_fleet }
+					save_global_event_target_as = wg_bugv_fleet_ship
+				}
+			}
+			every_country = {
+				limit = { is_default_country = yes }
+				set_faction_hostility = {
+					target = event_target:guardian_wg_bugv_country
+					set_neutral = no
+					set_hostile = yes
+				}
+			}
+			event_target:wg_bugv_fleet_ship = {
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 20
+				queue_actions = {
+					repeat = {
+						find_closest_system = {
+							trigger = {
+								id = bugv.1.trigger.1
+								NOR = {
+									any_fleet_in_system = {
+										is_same_value = event_target:wg_bugv_fleet_ship
+									}
+									has_star_flag = bugv_visited
+								}
+							}
+							found_system = {
+								move_to = this
+								effect = { 
+									id = bugv.1.effect.1
+									set_star_flag = bugv_visited
+								}
+								find_closest_planet = {
+									trigger = {
+										id = bugv.1.trigger.2
+										is_star = yes
+									}
+									found_planet = {
+										move_to = this
+										#orbit_planet = this
+										wait = {
+											duration = 10
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wg_boss.67.a
+		change_variable = { which = rankpts value = 2 }
+		random_owned_leader = {
+			limit = { has_leader_flag = badseal_flag }
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.68
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = bugv_get_mad
+		fromfromfrom = { 
+			has_fleet_flag = wg_bugv_fleet
+		}
+	}
+
+	immediate = {
+		set_country_flag = bugv_killer
+		if = {
+			limit = { 
+				NOT = { is_same_value = event_target:bugv_mad_from_country }
+				is_ai = no
+			}
+			country_event = { id = wg_boss.70 }
+		} 
+		event_target:bugv_mad_from_country = { 
+			country_event = { id = wg_boss.69 }
+		}
+		remove_global_flag = bugv_get_mad
+	}
+}
+
+country_event = {
+	id = wg_boss.69
+	title = wg_boss.52.name
+	picture = GFX_evt_large_explosion
+	location = FROMFROMFROM
+	
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { has_country_flag = bugv_killer }
+		text = wg_boss.69.desc
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = bugv_killer }}
+		text = wg_boss.69.desc2
+	}
+
+	trigger = {
+		has_global_flag = bugv_get_mad
+	}
+
+	after = { hidden_effect = { remove_country_flag = bugv_killer }}
+
+	option = {
+		trigger = {
+			has_country_flag = bugv_killer
+		}
+		name = wg_boss.52.a
+		change_variable = { which = rankpts value = 5 }	
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+	option = {
+		trigger = {
+			NOT = { has_country_flag = bugv_killer }
+		}
+		name = wg_boss.52.a
+	}
+}
+
+country_event = {
+	id = wg_boss.70
+	title = wg_boss.52.name
+	desc = wg_boss.70.desc
+	picture = GFX_evt_large_explosion
+	location = FROMFROMFROM
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = bugv_get_mad
+	}
+
+	option = {
+		name = EXCELLENT
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+		if = {
+			limit = {
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+			}
+			change_variable = { which = rankpts value = 5 }	
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_boss.71
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = bugv_get_mad
+		has_fleet_flag = wg_bugv_fleet
+	}
+
+	immediate = {
+		FROM = { set_star_flag = bugv_visited }
+	}
+}
+####向日葵
+country_event = {
+	id = wg_boss.72
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_sunflower_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_boss_sunflower_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 5
+				max_distance = 20
+				initializer = wg_boss_sunflower_system
+			}
+			remove_star_flag = can_spawn_boss_system	
+		}
+		country_event = { id = wg_boss.75 days = 1 }
+	}
+}
+
+ship_event = {
+	id = wg_boss.73
+	title = "wg_boss.73.name"
+	desc = "wg_boss.73.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_ship_in_orbit
+
+	trigger = {
+		FROM = {
+			has_star_flag = sunflower_waring
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_sunflowe_event }
+			NOT = { has_country_flag = triggered_wg_sunflowe_system_event }			
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_sunflowe_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.73.a"
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_boss.74 }
+			}	
+		}
+	}	
+}
+country_event = {
+	id = wg_boss.74
+	title = "wg_boss.74.name"
+	desc = "wg_boss.74.desc"
+	location = from.from.from
+
+	picture_event_data = {
+		room = personality_spiritual_seekers_room
+		portrait = wsg9993
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = sun_flag
+	}
+	option = {
+		name = wg_boss.74.a
+	}
+}
+
+country_event = {
+	id = wg_boss.75
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes	
+
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = wg_boss_sunflower_system_home
+			}		
+    		closest_system = {
+				min_steps = 1
+				max_steps = 1
+				set_star_flag = sunflower_waring
+			}	
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.76
+	title = "wg_boss.76.name"
+	desc = "wg_boss.76.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_livestar
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_sunflower_system_home
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_sunflowe_system_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_sunflowe_system_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.76.a"
+	}	
+}
+
+ship_event = {
+	id = wg_boss.77
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ship_flag = sunflower_ship
+	}
+	
+	immediate = {
+		FROM = { owner = { country_event = { id = wg_boss.78 days = 5 } } }
+	}
+}
+
+country_event = {
+	id = wg_boss.78
+	title = "wg_boss.78.name"
+	desc = "wg_boss.78.desc"
+	picture = GFX_evt_wg_livestar
+	show_sound = event_space_battle
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { save_event_target_as = disabled_sunflower_ship }
+	}
+	option = {
+		name = "wg_boss.78.a"
+		custom_tooltip = wg_boss.78.tooltip
+		owner = {
+			add_resource = { unity = 2000 }
+		}
+		owner = {
+			add_resource = { influence = 500 }
+		}		
+		hidden_effect = {
+			random_country = {
+				limit = { is_country_type = sunflower_country_flag }
+				destroy_country = yes
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.78.b"
+		from = {
+			enable_special_project = {
+				name = "WG_BOARD_LIVESTAR"
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.79
+	title = "wg_boss.79.name"
+	desc = "wg_boss.79.desc"
+	picture = GFX_evt_wg_livestar
+	show_sound = event_space_battle
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { save_event_target_as = disabled_sunflower_ship }
+	}
+	option = {
+		name = "wg_boss.79.a"
+		custom_tooltip = wg_boss.78.tooltip
+		owner = {
+			add_resource = { food = 10000 }
+			add_resource = { energy = 10000 }
+			add_resource = { influence = 1000 }
+		}		
+		hidden_effect = {
+			random_country = {
+				limit = { has_country_flag  = sunflower_country_flag }
+				destroy_country = yes
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.79.b"
+		owner = {
+			add_resource = { food = 10000 }
+			add_resource = { energy = 10000 }
+		}		
+		from = {
+			enable_special_project = {
+				name = "WG_FIX_LIVESTAR"
+				location = event_target:sunflower_ship
+				owner = root
+			}
+		}
+	}
+	option = {
+		name = "wg_boss.79.c"
+		random_owned_planet = {
+			weights = {
+				base = 1
+				modifier = {
+					add = 5
+					free_housing > 0
+				}
+				modifier = {
+					add = 10
+					free_housing > 3
+				}
+			}
+			create_species = {
+				name = "NAME_xie_sunflower"
+				class = PLANT
+				portrait = wsg9993
+				traits = {
+					ideal_planet_class = "pc_desert"
+					trait = trait_wg_sunflower
+				}
+				homeworld = this
+				effect = {
+					save_event_target_as = sunflowe_species
+				}				
+			}
+			while = {
+				count = 1
+				#limit = { free_housing > 0 }
+				create_pop = {
+					species = event_target:sunflowe_species
+				}				
+			}
+		}		
+		from = {
+			enable_special_project = {
+				name = "WG_FIX_LIVESTAR"
+				location = event_target:sunflower_ship
+				owner = root
+			}
+		}
+	}	
+}
+
+country_event = {
+	id = wg_boss.80
+	title = "wg_boss.80.name"
+	desc = "wg_boss.80.desc"
+	picture = GFX_evt_wg_livestar
+	location = fromfrom
+	
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			save_event_target_as = wg_sunflower_owner
+		}
+	}
+
+	option = {
+		name = "wg_boss.80.a"		
+		create_fleet = {
+			name = "NAME_WG_SUNFLOWER2"
+			effect = {
+				set_owner = event_target:wg_sunflower_owner
+				create_ship = {
+					name = random
+					design = "NAME_WG_LIVE_STAR"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:livestar_loaction		
+					distance = 0
+					angle = 0
+				}				
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = { has_country_flag  = sunflower_country_flag }
+				destroy_country = yes
+			}
+		}		
+	}	
+}
+
+event = { #延迟生成星系
+	id = wg_boss.1000
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		if = {
+			limit = { any_country = {
+				OR = {
+					has_authority = auth_shenhai
+					has_authority = auth_warshipgirls
+				}
+				is_ai = no
+			}}
+			random_country = {
+				limit = {
+					OR = {
+						has_authority = auth_shenhai
+						has_authority = auth_warshipgirls
+					}
+					is_ai = no
+				}
+				country_event = { id =  wg_boss.1 days = 5 } #boss
+				random_list = {
+					50 = { country_event = { id =  wg_parit.1 days = 4 }} #帕里特
+					50 = {}
+				}
+			}
+		}
+		if = {
+			limit = { any_country = {
+				has_authority = auth_warshipgirls
+				is_ai = no
+			}}
+			random_country = {
+				limit = {
+					has_authority = auth_warshipgirls
+					is_ai = no
+				}
+				country_event = { id = wsg.4 days = 4 } #sol3
+			}
+		}
+	}
+}

@@ -798,7 +798,13 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "wg_cruiser_bow_M2_entity"
 	icon = "GFX_ship_part_core_bow"
-	
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}	
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -953,4 +959,227 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 	}
+}
+#dreadnought
+ship_section_template = {
+	key = "WG_EG_DREADNOUGHT_BOW"
+	ship_size = wg_dreadnought
+	fits_on_slot = bow
+	entity = "UF_wsg_01_Dreadnought_bow_L1M1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { "tech_UNITEDFLEET" }
+
+	component_slot = {
+		name = "TITANIC_01"
+		template = "invisible_titanic_fixed"
+		
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_03"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_08"
+		template = "large_turret"
+		
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_09"
+		template = "large_turret"
+		
+		locatorname = "large_gun_04"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_10"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_11"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_12"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}	
+
+	large_utility_slots = 20
+}
+
+ship_section_template = {
+	key = "WG_EG_DREADNOUGHT_STERN"
+	ship_size = wg_dreadnought
+	fits_on_slot = stern
+	entity = "UF_wsg_01_Dreadnought_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	prerequisites = { "tech_UNITEDFLEET" }
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}	
+	aux_utility_slots = 3
+	
+}
+
+#battlecrusier
+ship_section_template = {
+	key = "WG_EG_BC_BOW"
+	ship_size = wg_battlecrusier
+	fits_on_slot = bow
+	entity = "UF_wsg_01_Battlecruiser_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { "tech_UNITEDFLEET" }
+
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}	
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}	
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	large_utility_slots = 6
+	medium_utility_slots = 2
+	aux_utility_slots = 2
 }

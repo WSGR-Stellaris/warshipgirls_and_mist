@@ -15,8 +15,10 @@
  NAME_flagship_Fleet:"联合旗舰舰队"
  NAME_auxiliary_guard_fleet:"联合辅助守卫舰队"
  NAME_WG_CARRIER:"航母X"
+ NAME_WG_EG_DREADNOUGHT:"无畏W"
  NAME_WG_EG_TITAN:"泰坦Y"
  NAME_WG_EG_BB:"战列B"
+ NAME_WG_EG_BC:"战巡O" 
  NAME_WG_EG_DD:"驱逐T"
  NAME_WG_EG_CA:"巡洋C" 
  NAME_WG_Starbase:"总控基地"
@@ -30,5 +32,5 @@
  NAME_WG_resistant_army_country:"火凤凰反抗军"
  
  NAME_WG_RA_TITAN:"不死鸟"
- NAME_WG_RA_BB:"巨鲸"
+ NAME_WG_RA_BB:"猎鹰"
  NAME_WG_RA_DD:"海燕" 

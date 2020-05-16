@@ -95,7 +95,7 @@ is_finished_megastructure = {
 # Plentiful Traditions
 		is_megastructure_type = habitat_1 
 		is_megastructure_type = habitat_2 
-# 凡尘时空
+# fanchen
 		is_megastructure_type = mass_relay_1 
 		is_megastructure_type = kerrnewman_blackhole 
 # ACOT Megastructures

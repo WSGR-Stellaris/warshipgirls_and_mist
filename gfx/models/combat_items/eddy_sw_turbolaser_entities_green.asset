@@ -321,7 +321,6 @@ entity = {
 	state = { name = "idle" }
 	
 	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
-	attach = { "root" = "perdition_beam_muzzle_windup_entity" }
 	
 	scale = 8
 }
@@ -556,4 +555,31 @@ entity = {
 	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
 	
 	scale = 12
+}
+#################机炮束
+entity = {
+	name = "triple_turbolaser_yellow_large_entity"
+	pdxmesh = "sw_turbolaser_y_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { 0 0 5 } }
+	locator = { name = "bolt2" rotation = { 0 0 0 } position = { 0 0 -5 } }
+	attach = { bolt1 = "turbolaser_triple_yellow_small_entity" }
+	attach = { bolt2 = "turbolaser_triple_yellow_small_entity" }
+	
+	scale = 0.5
+}
+
+entity = {
+	name = "turbolaser_triple_yellow_small_entity"
+	pdxmesh = "sw_turbolaser_y_01_mesh"
+	
+	
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	scale = 0.7
 }

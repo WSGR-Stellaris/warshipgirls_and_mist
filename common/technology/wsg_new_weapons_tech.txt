@@ -233,7 +233,7 @@ tech_wsg_rim99 = {
 	ai_weight = {
 		factor = 0
 		modifier = {
-			factor = 100
+			add = 100
 			has_authority = auth_warshipgirls 
 		}
 	}
@@ -290,6 +290,28 @@ tech_wsg_f2h = {
 		has_authority = auth_warshipgirls 
 	}
 }
+tech_wsg_410 = {
+	icon = tech_wsg_410
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { particles }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			has_authority = auth_warshipgirls 
+		}
+	}
+	potential = {
+		has_authority = auth_warshipgirls 
+	}
+}
+
 
 tech_wsg_330ion = {
 	area = physics

@@ -66,7 +66,24 @@ trait_intelligent_galo ={
 	}
 	opposites = { }
 }
-
+trait_wg_sunflower ={
+	cost = 2
+	initial = no
+	modification = no
+	allowed_archetypes={ SUNFLOWER }
+	sorting_priority = 30
+	icon="gfx/interface/icons/traits/wg_sunflower.dds"
+	custom_tooltip = TRAIT_WG_SUNFLOWER_EFFECT
+	modifier={
+		pop_category_rulers_energy_produces_add = 10
+		pop_category_specialists_energy_produces_add = 10
+		pop_category_workers_energy_produces_add = 10	
+		pop_category_slave_energy_produces_add = 10	
+		planet_livestock_food_produces_add = 2
+		planet_livestock_energy_produces_add = 5
+	}
+	opposites = { }
+}
 wsg_trait_GALO={
 	cost=1
 	initial = no

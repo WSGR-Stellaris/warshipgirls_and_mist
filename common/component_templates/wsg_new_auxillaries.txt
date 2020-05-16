@@ -4,7 +4,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_nsc_compat_aura"
 	icon_frame = 1
 	power = 0
-	size_restriction = { titan Flagship }
+	size_restriction = { Flagship }
 	component_set = "wsg_nsc_compat_aura"
 	prerequisites = { tech_Dreadnought_1 }
 	#hidden = yes
@@ -13,7 +13,7 @@ utility_component_template = {
 		ship_shield_mult = -0.25
 	}
 	hostile_aura = {
-		name = "SHIP_AURA_dreadnought1"
+		name = "SHIP_AURA_WG_NSC"
 		radius = 450
 		apply_on = ships
 		

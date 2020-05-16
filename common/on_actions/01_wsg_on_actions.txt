@@ -30,11 +30,11 @@ on_game_start = {
 	events = {
 		wg_traits.1
 		sh_traits.1
-		wg_parit.1
 		wg_aft.5
 		wsg.3076
-		wg_boss.1
+		wg_boss.1000
 		wg_crisis.10004
+		wg_kuat.1
 	}
 }
 
@@ -82,7 +82,6 @@ on_yearly_pulse_country = {
 		wg_fe.5
 		wsg.3106
 		wsg.3110
-		wg_crisis.10005
 		wg_crisis.301
 		wg_crisis.97
 		wg_crisis.73
@@ -115,6 +114,7 @@ on_tech_increased = {
 		sh.3029
 		wsgancrel.120
 		wg_aft.8
+		wsg.3118
 	}
 }
 
@@ -202,6 +202,7 @@ on_fleet_destroyed_victim = {
 		wg_boss.29
 		wg_boss.33
 		wg_boss.37
+		wg_boss.51
 	}
 }
 
@@ -212,6 +213,7 @@ on_fleet_destroyed_victim = {
 on_fleet_destroyed_perp = {
 	events = {
 		wg_lady.90
+		wg_boss.68
 	}
 }
 
@@ -302,7 +304,7 @@ on_five_year_pulse = {
 # this = country
 on_five_year_pulse_country = {
 	events = {
-		wg_crisis.10005
+		# wg_crisis.10005
 	}
 }
 
@@ -349,6 +351,16 @@ on_planet_attackers_win = {
 	}
 }
 
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_win = {
+	events = {
+		wg_aft.13
+	}
+}
+
 # Triggers country_event for the attacker upon defeat
 # This = country, attack leader
 # From = country, planet owner
@@ -374,6 +386,8 @@ on_entering_system = {
 		wg_boss.24
 		wg_boss.36
 		wg_boss.46
+		wg_boss.73
+		wg_boss.76		
 	}
 }
 
@@ -383,6 +397,7 @@ on_entering_system = {
 on_entering_system_fleet = {
 	events = {
 		wg_parit.16
+		wg_boss.71
 	}
 }
 
@@ -498,5 +513,10 @@ on_arch_site_finished = {
 	events = {
 		wg_aft.34
 		wg_aft.1005
+	}
+}
+on_ship_disabled = {
+	events = {
+		wg_boss.77
 	}
 }

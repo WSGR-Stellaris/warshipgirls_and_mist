@@ -37,28 +37,28 @@ ship_design = {
 			template = "wsg_weapen_L_203EX"
 		}
 		component = {
-			slot = "LARGE_GUN_01"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_01"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
-			slot = "LARGE_GUN_02"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_02"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
-			slot = "LARGE_GUN_03"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_03"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
-			slot = "LARGE_GUN_04"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_04"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
-			slot = "LARGE_GUN_05"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_05"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
-			slot = "LARGE_GUN_06"
-			template = "MEDIUM_wsg_weapen_SML_180"
+			slot = "MEDIUM_GUN_06"
+			template = "wsg_weapon_autocannon_127"
 		}
 		component = {
 			slot = "PD_01"
@@ -93,28 +93,28 @@ ship_design = {
 			template = "wsg_weapen_YL"
 		}		
 		component = {
-			slot = "LARGE_GUN_01"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_01"
+			template = "wsg_weapon_autocannon_57"
 		}
 		component = {
-			slot = "LARGE_GUN_02"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_02"
+			template = "wsg_weapon_autocannon_57"
 		}
 		component = {
-			slot = "LARGE_GUN_03"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_03"
+			template = "wsg_weapon_autocannon_57"
 		}
 		component = {
-			slot = "LARGE_GUN_04"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_04"
+			template = "wsg_weapon_autocannon_57"
 		}
 		component = {
-			slot = "LARGE_GUN_05"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_05"
+			template = "wsg_weapon_autocannon_57"
 		}
 		component = {
-			slot = "LARGE_GUN_06"
-			template = "SMALL_wsg_weapen_SML_180"
+			slot = "SMALL_GUN_06"
+			template = "wsg_weapon_autocannon_57"
 		}		
 		component = {
 			slot = "LARGE_UTILITY_1"
@@ -288,17 +288,18 @@ ship_design = {
 		template = "shop_destroyer_section"
 		slot = "mid"
 		component = {
+			slot = "LARGE_GUN_01"
+			template = "wsg_weapon_356laser_hidden"
+		}		
+		component = {
 			slot = "TORPEDO_01"
-			template = "wsg_weapen_YL"
+			template = "wsg_weapon_rockets"
 		}	
 		component = {
 			slot = "TORPEDO_02"
 			template = "wsg_weapen_YL"
 		}
-		component = {
-			slot = "TORPEDO_03"
-			template = "wsg_weapen_YL"
-		}
+
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_wsg_ship_part_wsg_ia2"
@@ -381,6 +382,14 @@ ship_design = {
 			template = "DAMAGE_CONTROL_wsg"
 		}
 		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "DAMAGE_CONTROL_wsg"
+		}		
+		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_wsg_ship_part_wsg_ia2"
 		}
@@ -404,6 +413,30 @@ ship_design = {
 			slot = "LARGE_UTILITY_6"
 			template = "LARGE_wsg_ship_part_wsg_ia2"
 		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_wsg_ship_part_wsg_ia2"
+		}		
 	}
 
 	required_component = "HYPER_DRIVE_3"

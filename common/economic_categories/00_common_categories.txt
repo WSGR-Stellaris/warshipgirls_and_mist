@@ -322,66 +322,66 @@ ships = {
 	}
 	
 	
-	triggered_produces_modifier = {
-		key = ship_homeless_ev
-		modifier_types = {
-			mult
-			add
-		}
-		trigger = {
-			is_scope_valid = yes #When called from ship designer the design is not valid yet.
-			OR = {
-				is_ship_size = homeless_ship_starbase
-				is_ship_size = homeless_ship 
-				is_ship_size = mini_homeless_ship
-				is_ship_size = megastructures_homeless_ship
-			}
-		}
-	}
-	
-	triggered_upkeep_modifier = {
-		key = ship_homeless_ev
-		modifier_types = {
-			mult
-			add
-		}
-		trigger = {
-			is_scope_valid = yes #When called from ship designer the design is not valid yet.
-			OR = {
-				is_ship_size = homeless_ship_starbase
-				is_ship_size = homeless_ship 
-				is_ship_size = mini_homeless_ship
-				is_ship_size = megastructures_homeless_ship
-			}
-		}
-	}
-	
-	triggered_produces_modifier = {
-		key = ship_private_homeless_ev
-		modifier_types = {
-			mult
-			add
-		}
-		trigger = {
-			is_scope_valid = yes #When called from ship designer the design is not valid yet.
-			is_ship_size = private_homeless_ship
-			is_ship_size = private_homeless_ship_starbase
-		}
-	}
-	
-	triggered_upkeep_modifier = {
-		key = ship_private_homeless_ev
-
-		modifier_types = {
-			mult
-			add
-		}
-		trigger = {
-			is_scope_valid = yes #When called from ship designer the design is not valid yet.
-			is_ship_size = private_homeless_ship
-			is_ship_size = private_homeless_ship_starbase
-		}
-	}
+	#triggered_produces_modifier = {
+	#	key = ship_homeless_ev
+	#	modifier_types = {
+	#		mult
+	#		add
+	#	}
+	#	trigger = {
+	#		is_scope_valid = yes #When called from ship designer the design is not valid yet.
+	#		OR = {
+	#			is_ship_size = homeless_ship_starbase
+	#			is_ship_size = homeless_ship 
+	#			is_ship_size = mini_homeless_ship
+	#			is_ship_size = megastructures_homeless_ship
+	#		}
+	#	}
+	#}
+	#
+	#triggered_upkeep_modifier = {
+	#	key = ship_homeless_ev
+	#	modifier_types = {
+	#		mult
+	#		add
+	#	}
+	#	trigger = {
+	#		is_scope_valid = yes #When called from ship designer the design is not valid yet.
+	#		OR = {
+	#			is_ship_size = homeless_ship_starbase
+	#			is_ship_size = homeless_ship 
+	#			is_ship_size = mini_homeless_ship
+	#			is_ship_size = megastructures_homeless_ship
+	#		}
+	#	}
+	#}
+	#
+	#triggered_produces_modifier = {
+	#	key = ship_private_homeless_ev
+	#	modifier_types = {
+	#		mult
+	#		add
+	#	}
+	#	trigger = {
+	#		is_scope_valid = yes #When called from ship designer the design is not valid yet.
+	#		is_ship_size = private_homeless_ship
+	#		is_ship_size = private_homeless_ship_starbase
+	#	}
+	#}
+	#
+	#triggered_upkeep_modifier = {
+	#	key = ship_private_homeless_ev
+#
+	#	modifier_types = {
+	#		mult
+	#		add
+	#	}
+	#	trigger = {
+	#		is_scope_valid = yes #When called from ship designer the design is not valid yet.
+	#		is_ship_size = private_homeless_ship
+	#		is_ship_size = private_homeless_ship_starbase
+	#	}
+	#}
 	#---太虚结束---#
 	
 	
@@ -1016,8 +1016,35 @@ ship_components = {
 }
 
 #太虚家园舰
+#ship_homeless_ev = {
+#	#parent = country
+#	generate_mult_modifiers = {
+#		cost
+#		produces
+#		upkeep
+#	}
+#	generate_add_modifiers = {
+#		cost
+#		produces
+#		upkeep
+#	} 
+#	
+#	triggered_produces_modifier = {
+#		key = ship_components_minerals
+#		use_parent_icon = yes
+#		modifier_types = {
+#			mult
+#			add
+#		}
+#
+#		trigger = {
+#			always = yes
+#		}
+#	}	
+#}
+
 ship_components_minerals = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1028,10 +1055,82 @@ ship_components_minerals = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	
 }
 
 ship_components_energy = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1042,10 +1141,81 @@ ship_components_energy = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_food = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1056,10 +1226,81 @@ ship_components_food = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_alloys = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1070,10 +1311,81 @@ ship_components_alloys = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_consumer_goods = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1084,10 +1396,81 @@ ship_components_consumer_goods = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_volatile_motes = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1098,10 +1481,81 @@ ship_components_volatile_motes = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_rare_crystals = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1112,10 +1566,81 @@ ship_components_rare_crystals = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_exotic_gases = {
-	parent = ships
+	parent = country
   generate_mult_modifiers = {
 		cost
 		produces
@@ -1126,10 +1651,81 @@ ship_components_exotic_gases = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_research = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1140,10 +1736,81 @@ ship_components_research = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_modifier_PD = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1154,10 +1821,81 @@ ship_components_modifier_PD = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_food_energy = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1168,10 +1906,81 @@ ship_components_food_energy = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_manpower = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1182,10 +1991,81 @@ ship_components_manpower = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_pop_kill = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1196,10 +2076,81 @@ ship_components_pop_kill = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 ship_components_build_ship = {
-	parent = ships
+	parent = country
 	generate_mult_modifiers = {
 		cost
 		produces
@@ -1210,6 +2161,77 @@ ship_components_build_ship = {
 		produces
 		upkeep
 	} 
+	triggered_produces_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			OR = {
+				is_ship_size = homeless_ship_starbase
+				is_ship_size = homeless_ship 
+				is_ship_size = mini_homeless_ship
+				is_ship_size = megastructures_homeless_ship
+			}
+		}
+	}
+		#
+	triggered_produces_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+		#
+	triggered_upkeep_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_private_homeless_ev
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the d
+			is_ship_size = private_homeless_ship
+			is_ship_size = private_homeless_ship_starbase
+		}
+	}
 }
 
 #####太虚结束
@@ -1454,6 +2476,7 @@ planet_branch_offices = {
 	}
 
 	generate_add_modifiers = {
+		cost
 		produces
 	}
 }
@@ -2213,6 +3236,19 @@ planet_administrators = {
 	}
 }
 
+planet_bureaucrats = {
+	icon = "job_bureaucrat"
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
 planet_researchers = {
 	icon = "job_researcher"
 	parent = planet_jobs
@@ -2240,6 +3276,31 @@ planet_metallurgists = {
 }
 
 planet_culture_workers = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+
+planet_evaluators = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_synapse_drones = {
 	parent = planet_jobs
 	generate_add_modifiers = {
 		produces
@@ -2396,19 +3457,19 @@ planet_artisans = {
 	}
 }
 
-planet_bureaucrats = {
-	icon = "job_bureaucrat"
-	parent = planet_jobs
-	generate_add_modifiers = {
-		produces
-    upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-	
-}
+#planet_bureaucrats = {
+#	icon = "job_bureaucrat"
+#	parent = planet_jobs
+#	generate_add_modifiers = {
+#		produces
+#    upkeep
+#	}
+#	generate_mult_modifiers = {
+#		produces
+#		upkeep
+#	}
+#	
+#}
 
 
 #Duelists are entertainers in disguise#

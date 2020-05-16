@@ -1,4 +1,4 @@
-@wg_fe_exchange_consumer_goods_cost_base = -500.00
+@wg_fe_exchange_consumer_goods_cost_base = -375.00
 @wg_fe_exchange_energy_base = 750.00
 @wg_fe_exchange_minerals_base = 750.00
 @wg_fe_exchange_alloys_base = 875.00
@@ -14,16 +14,16 @@
 
 #好感度
 #大小姐
-@lady_affection_to_lv2 = 60 # should be 60
-@lady_affection_to_lv3 = 120 # should be 120
-@lady_affection_to_lv4 = 180 # should be 180
-@lady_affection_to_lv5 = 240 # should be 240
-@lady_affection_reduce = 40 # should be 40
+@lady_affection_to_lv2 = 30
+@lady_affection_to_lv3 = 70
+@lady_affection_to_lv4 = 125
+@lady_affection_to_lv5 = 200
+@lady_affection_reduce = 40
 #总督
-@governor_affection_to_lv2 = 25
-@governor_affection_to_lv3 = 50
-@governor_affection_to_lv4 = 75
-@governor_affection_to_lv5 = 100
+@governor_affection_to_lv2 = 40
+@governor_affection_to_lv3 = 80
+@governor_affection_to_lv4 = 120
+@governor_affection_to_lv5 = 160
 #科学家
 @scientist_affection_to_lv2 = 55
 @scientist_affection_to_lv3 = 110
@@ -40,10 +40,10 @@
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 50
-@ruler_affection_to_lv3 = 100
-@ruler_affection_to_lv4 = 150
-@ruler_affection_to_lv5 = 200
+@ruler_affection_to_lv2 = 40
+@ruler_affection_to_lv3 = 80
+@ruler_affection_to_lv4 = 120
+@ruler_affection_to_lv5 = 160
 
 ######################################
 #反抗军舰队持有上限

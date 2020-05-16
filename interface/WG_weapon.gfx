@@ -72,6 +72,12 @@ spriteTypes{
 }
 spriteTypes{
 	spriteType = {
+		name = "GFX_wg_weapon_sunflower"
+		texturefile = "gfx/interface/icons/ship_parts/wg_weapon_sunflower.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
 		name = "GFX_wsg_weapon_T_S460"
 		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_T_S460.dds"
 	}
@@ -478,6 +484,12 @@ spriteTypes{
 	spriteType = {
 		name = "GFX_UF_weapen_X2"
 		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_X2.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
+		name = "GFX_UF_weapen_X3"
+		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_X3.dds"
 	}
 }
 spriteTypes{

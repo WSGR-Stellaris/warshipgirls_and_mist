@@ -34,7 +34,7 @@ pc_shenhai = {
 	
 	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
 	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
-	
+	district_set = sh_world
 	colonizable = yes
 	starting_planet = no
 	ideal = yes
@@ -66,6 +66,7 @@ pc_ringworld_habitable_sh = {
 	has_colonization_influence_cost = no		# applies when within own borders
 
 	is_artificial_planet = yes
+	district_set = rw_sh_world
 
 	modifier = {
 		planet_housing_add = 20

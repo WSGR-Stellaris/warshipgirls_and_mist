@@ -743,7 +743,6 @@ wg_boss_water_system = {
 	}	
 }
 
-
 wg_boss_bugvv_system = {
 	class = "sc_b"
 	usage = wg_boss_bugvv_system_system_init
@@ -752,7 +751,7 @@ wg_boss_bugvv_system = {
 	max_instances = 1
 	spawn_chance = 9999
 	
-	flags = { wg_boss_bugvv_system_home }
+	flags = { wg_boss_bugvv_system_home lcluster }
 	
 	planet = {
 		class = "pc_b_star"
@@ -1146,5 +1145,169 @@ wg_blue_cloud_system = {
 		class = pc_frozen
 		orbit_distance = 60
 		size = { min = 15 max = 20 }
+	}	
+}
+
+wg_boss_sunflower_system = {
+	class = "sc_m"
+	usage = wg_boss_sunflower_system_init
+	name = "NAME_wg_boss_sunflower_system"
+	
+	max_instances = 1
+	spawn_chance = 9999
+	
+	flags = { wg_boss_sunflower_system_home }
+
+
+	planet = {
+		class = "pc_m_star"
+		size = { min = 25 max = 25 }
+		orbit_distance = 0
+		
+		init_effect = {			
+		}
+	}
+	planet = {
+		count = 1
+		orbit_distance = 60
+	}	
+	change_orbit = 60
+	
+
+	planet = {
+		class = pc_molten
+		orbit_distance = 20
+		size = { min = 10 max = 20 }
+	}	
+	planet = {
+		class = pc_barren
+		orbit_distance = 20
+		size = { min = 20 max = 25 }
+	}	
+	planet = {
+		class = pc_gas_giant
+		orbit_distance = 20
+		size = { min = 20 max = 30 }
+		init_effect = {
+			save_global_event_target_as = livestar_loaction		
+		}		
+	}	
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 30
+		size = { min = 15 max = 20 }
+		change_orbit = @base_moon_distance
+		
+		moon = {	
+			class = pc_barren_cold		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		class = pc_frozen
+		orbit_distance = 30
+		size = { min = 15 max = 25 }
+
+	}
+	planet = {
+		class = pc_frozen
+		orbit_distance = 30
+		size = { min = 10 max = 25 }
+
+	}
+	planet = {
+		class = pc_frozen
+		orbit_distance = 30
+		size = { min = 20 max = 30 }
+	}
+	planet = {
+		class = pc_frozen
+		orbit_distance = 30
+		size = { min = 10 max = 25 }
+
+	}
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 30
+		size = { min = 15 max = 20 }
+		change_orbit = @base_moon_distance
+		
+		moon = {	
+			class = pc_barren_cold		
+			count = { min = 0 max = 2 }
+			orbit_distance = 5
+		}
+	}	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = sunflower_waring
+		}	
+		random_system_planet = {
+			limit = {
+				is_planet_class = pc_gas_giant
+			}
+			clear_deposits = yes
+			create_country = {
+				name = "NAME_wg_sunflower_country"
+				type = faction
+				flag = {
+					icon = {
+						category = "wg_event_flags"
+						file = "wge_flags_03.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors={
+						"green"
+						"green"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					establish_communications_no_message = root.owner
+					set_country_flag = sunflower_country_flag
+				}				
+			}
+			last_created_country = {
+				save_global_event_target_as = sunflower_country			
+				create_fleet = {
+					name = "NAME_WG_SUNFLOWER"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:sunflower_country
+						create_ship = {
+							name = "NAME_WG_SUNFLOWER2"
+							design = "NAME_WG_LIVE_STAR"
+							effect = {
+								set_ship_flag = sunflower_ship
+								set_disable_at_health = 0.05
+								save_global_event_target_as = sunflower_ship
+							}
+						}
+						set_fleet_flag = wsg_sunflower_fleet
+						set_location = {
+							target = prevprev
+							distance = 0
+							angle = 0
+						}
+						add_modifier = {
+							modifier = wsg_livestar
+							days = -1
+						}						
+						set_fleet_stance = passive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 100
+						save_global_event_target_as = sunflower_ship
+				 	}
+				}
+			}
+		}
 	}	
 }

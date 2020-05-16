@@ -13,7 +13,7 @@ country_event = {
 				limit = {
 					ROOT = { 
 						has_country_flag = shoukaku_relic_returned
-						count_owned_ships = {
+						count_owned_ship = {
 							limit = {
 								leader = { has_leader_flag = shoukaku }
 								FLEET = { is_same_value = event_target:fleet_cur }
@@ -32,7 +32,7 @@ country_event = {
 				limit = {
 					ROOT = { 
 						has_country_flag = shoukaku_relic_returned
-						count_owned_ships = {
+						count_owned_ship = {
 							limit = {
 								leader = { has_leader_flag = shoukaku }
 								FLEET = { is_same_value = event_target:fleet_cur }
@@ -159,7 +159,7 @@ country_event = {
 			if = {
 				limit = {
 					ROOT = {
-						count_owned_ships = {
+						count_owned_ship = {
 							limit = {
 								is_ship_size = wg_carrier
 								FLEET = { is_same_value = event_target:fleet_cur }
@@ -177,7 +177,7 @@ country_event = {
 			if = {
 				limit = {
 					ROOT = {
-						count_owned_ships = {
+						count_owned_ship = {
 							limit = {
 								is_ship_size = wg_carrier
 								FLEET = { is_same_value = event_target:fleet_cur }

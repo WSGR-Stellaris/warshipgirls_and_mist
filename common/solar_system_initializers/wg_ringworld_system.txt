@@ -33,7 +33,6 @@ wg_ring_world_system = {
 			add_building = building_wg_fe_energy
 			add_building = building_wg_fe_dimensional_fabricator
 			add_building = building_wg_fe_foundry
-
 			while = {
 				count = 2
 				add_district = district_rw_sh_city

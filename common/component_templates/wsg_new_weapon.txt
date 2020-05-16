@@ -60,13 +60,13 @@ weapon_component_template = {
 	size = medium
 	icon = "GFX_ship_part_wsg_autocannon_127"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
+	entity = "medium_laser_gun_entity"
 	type = instant
 
-	damage = { min = 39 max = 46 }
+	damage = { min = 40 max = 50 }
 	windup = { min = 2.0 max = 3.0 }
-	total_fire_time = 13
-	range = 80
+	total_fire_time = 20
+	range = 85
 	accuracy = 0.9
 	power = -11
 
@@ -84,8 +84,7 @@ weapon_component_template = {
 
 	hull_damage = 1.5
 	armor_damage = 1.5
-	shield_penetration = 0.5
-	tracking = 0.65
+	tracking = 0.40
 
 	prerequisites = { "tech_wsg_auto127" }
 	component_set = "wsg_weapon_autocannon_127"
@@ -120,10 +119,10 @@ weapon_component_template = {
 	entity = "large_laser_gun_entity"
 	type = instant
 
-	damage = { min = 119 max = 150 }
+	damage = { min = 90 max = 120 }
 	windup = { min = 3.0 max = 4.0 }
 	total_fire_time = 15
-	range = 140
+	range = 120
 	accuracy = 1.0
 	power = -200
 
@@ -132,7 +131,7 @@ weapon_component_template = {
 		cost = {
 			sr_alpha = 8
 			sr_pantsu = 8
-			alloys = 75
+			alloys = 80
 		}
 		upkeep = {
 			energy = 1.0
@@ -140,10 +139,9 @@ weapon_component_template = {
 		}
 	}
 
-	hull_damage = 1.1
 	armor_damage = 1.1
 	shield_damage = 1.5
-	tracking = 0.6
+	tracking = 0.2
 
 	prerequisites = { "tech_wsg_auto152" }
 	component_set = "wsg_weapon_autocannon_152"
@@ -239,10 +237,10 @@ weapon_component_template = {
 	entity = "large_laser_gun_entity"
 	type = instant
 
-	damage = { min = 865 max = 1200 }
+	damage = { min = 850 max = 1200 }
 	windup = { min = 6.0 max = 13.0 }
-	total_fire_time = 85
-	range = 150
+	total_fire_time = 90
+	range = 155
 	accuracy = 1.0
 	power = -115
 
@@ -262,7 +260,7 @@ weapon_component_template = {
 	shield_damage = 3.25
 	armor_damage = 0.5
 	hull_damage = 1.25
-	tracking = 0.4
+	tracking = 0.2
 
 	prerequisites = { "tech_wsg_356laser" }
 	component_set = "wsg_weapon_356laser"
@@ -297,12 +295,12 @@ weapon_component_template = {
 	entity = "turret_missile_large_entity"
 	type = instant
 
-	damage = { min = 1444 max = 1821 }
+	damage = { min = 1500 max = 2000 }
 	windup = { min = 2.0 max = 6.0 }
 	total_fire_time = 135
-	range = 140
+	range = 150
 	accuracy = 0.75
-	power = -115
+	power = -250
 
 	resources = {
 		category = ship_components
@@ -319,7 +317,7 @@ weapon_component_template = {
 	shield_penetration = 1.0
 	armor_damage = 1.5
 	hull_damage = 1.6
-	tracking = 0.25
+	tracking = 0.10
 
 	prerequisites = { "tech_wsg_dmm" }
 	component_set = "wsg_weapon_dmm"
@@ -470,7 +468,7 @@ weapon_component_template = {
 	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu }
 	ai_tags = { weapon_role_anti_shield }
 
-	damage = { min = 224 max = 359 }
+	damage = { min = 250 max = 360 }
 	#amage = { min = 23 max = 26 }
 	windup = { min = 2 max = 12 }
 	total_fire_time = 55
@@ -634,59 +632,6 @@ weapon_component_template = {
 
 # 	prerequisites = { "tech_sh_dsy10" }
 # }
-
-weapon_component_template = {
-	key = "ancient_lance"
-	size = extra_large
-	entity = "large_laser_gun_entity"
-	type = instant
-	hidden = yes
-	
-	icon = "GFX_ship_part_energy_lance_1"
-	icon_frame = 1
-	
-	firing_arc = 25.0
-	min_range = 10.0
-	static_rotation = yes
-	use_ship_kill_target = no
-
-	damage = { min = 3000  max = 6000 }
-	windup = { min = 12 max = 26 }
-	total_fire_time = 60
-	range = 200.0
-	accuracy = 1.0
-	tracking = 0.0
-	power = -80
-	
-	prerequisites = { "tech_energy_lance_1" }
-	component_set = "ancient_lance"
-	projectile_gfx = "gfx_wsg_urban"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_artillery }
-	ai_tag_weight = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @xl_t5_cost
-		}		
-		upkeep = {
-			energy = @xl_t5_upkeep_energy
-			alloys = @xl_t5_upkeep_alloys
-		}
-	}
-	
-	shield_damage = 0.8
-	armor_damage = 1.4
-	hull_damage = 1.1
-
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0.0
-			has_monthly_income = { resource = rare_crystals value <= 0 }
-		}
-	}
-}
 	
 weapon_component_template = {
 	key = "wsg_weapon_330ion"
@@ -713,7 +658,7 @@ weapon_component_template = {
 	accuracy = 1.0
 	tracking = 0.2
 	power = -400
-	
+	hidden = yes
 	prerequisites = { "tech_wsg_330ion" }
 	component_set = "wsg_weapon_330ion"
 	projectile_gfx = "ion_cannon"
@@ -871,13 +816,13 @@ weapon_component_template = {
 	entity = "small_laser_gun_entity"
 	type = point_defence
 
-	damage = { min = 45 max = 69 }
+	damage = { min = 45 max = 65 }
 	windup = { min = 2.0 max = 3.0 }
 	total_fire_time = 18
 	range = 80
 	accuracy = 0.8
 	power = -25
-	tracking = 0.1
+	tracking = 0.3
 
 	shield_damage = 1.25
 	armor_damage = 0.5
@@ -910,13 +855,13 @@ weapon_component_template = {
 	entity = "small_laser_gun_entity"
 	#type = point_defence
 
-	damage = { min = 14 max = 19 }
+	damage = { min = 15 max = 20 }
 	windup = { min = 2 max = 5 }
-	total_fire_time = 11
+	total_fire_time = 10
 	range = 60.0
 	accuracy = 0.90
 
-	shield_penetration = 0.5
+	shield_penetration = 0.75
 	armor_damage = 1.25
 	tracking = 0.6
 	power = -20
@@ -949,14 +894,14 @@ weapon_component_template = {
 	entity = "medium_kinetic_gun_entity"
 	#type = point_defence
 
-	damage = { min = 32 max = 41 }
+	damage = { min = 30 max = 40 }
 	windup = { min = 1 max = 5 }
 	total_fire_time = 12
-	range = 120.0
+	range = 100.0
 	accuracy = 0.90
 	shield_penetration = 0.75
 	armor_damage = 1.50
-	tracking = 0.40
+	tracking = 0.30
 	power = -25
 
 	prerequisites = { "tech_sh_autocannon" }
@@ -986,15 +931,15 @@ weapon_component_template = {
 	entity = "large_kinetic_gun_entity"
 	#type = point_defence
 
-	damage = { min = 135 max = 160 }
+	damage = { min = 80 max = 120 }
 	windup = { min = 3 max = 5 }
-	total_fire_time = 14
-	range = 135.0
+	total_fire_time = 15
+	range = 125.0
 	accuracy = 0.90
-	shield_penetration = 1.25
-	armor_damage = 2.0
-	tracking = 0.35
-	power = -120
+	shield_penetration = 0.75
+	armor_damage = 1.5
+	tracking = 0.15
+	power = -150
 
 	prerequisites = { "tech_sh_autocannon" }
 	component_set = "sh_autocannon"
@@ -1004,7 +949,7 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 85
+			alloys = 90
 			sr_se = 4
 			sr_pantsu = 4
 		}
@@ -1031,8 +976,8 @@ weapon_component_template = {
 
 	damage = { min = 4500 max = 7000 }
 	windup = { min = 20 max = 40 }
-	total_fire_time = 460
-	range = 140.0
+	total_fire_time = 450
+	range = 150.0
 	accuracy = 1.0
 	tracking = 0.5
 	power = -180
@@ -1040,7 +985,7 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 40
+			alloys = 80
 			sr_se = 5
 			sr_pantsu = 5
 		}		
@@ -1061,8 +1006,8 @@ weapon_component_template = {
 
 	missile_speed = 18
 	missile_evasion = 0.30
-	missile_shield = 0
-	missile_armor = 180
+	missile_shield = 200
+	missile_armor = 100
 	missile_health = 100
 	missile_retarget_range = 100
 	
@@ -1072,6 +1017,58 @@ weapon_component_template = {
 	prerequisites = { "tech_sh_torpedo" }
 }
 
+weapon_component_template = {
+	key = "wsg_weapen_X_410"
+	size = extra_large
+	
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_wsg_weapen_X_410"
+	icon_frame = 1
+	
+	firing_arc = 30.0
+	min_range = 20.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 2500 max = 8000 }
+	windup = { min = 15 max = 35 }
+	total_fire_time = 135
+	range = 190.0
+	accuracy = 0.90
+	shield_damage = 2.0
+	armor_damage = 2.5	
+	tracking = 0.10
+	power = -650
+	
+	prerequisites = { "tech_wsg_410" }
+	component_set = "wsg_weapen_X_410"
+	projectile_gfx = "wsg_lance_406"
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu}
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_pantsu = 25
+			sr_alpha = 8
+			sr_dark_matter = 6
+			alloys = 200
+		}		
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_neo value <= 0 }
+		}
+	}
+}
 
 
 

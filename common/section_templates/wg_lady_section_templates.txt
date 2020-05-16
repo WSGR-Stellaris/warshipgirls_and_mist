@@ -68,7 +68,7 @@ ship_section_template = {
 	key = "wg_ai_W_warship"
 	ship_size = wsg_lady_warship_imdesignable
 	fits_on_slot = mid
-	entity = "lady_warship_entity"
+	entity = "ai_01_lady2_warship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	component_slot = {
@@ -136,10 +136,10 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "wg_ai_T_warship"
-	ship_size = wsg_lady_warship_imdesignable
+	key = "wg_lady_juggernaut"
+	ship_size = wsg_lady_juggernaut
 	fits_on_slot = mid
-	entity = "lady_warship_entity"
+	entity = "ai_01_lady2_warship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	component_slot = {

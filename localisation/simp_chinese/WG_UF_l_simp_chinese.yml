@@ -6,6 +6,8 @@
  UF_weapen_L:0 "联合L型203火炮"
  UF_weapen_X:0 "联合X型406火炮" 
  UF_weapen_X2:0 "联合X型381火炮" 
+ UF_weapen_X3:0 "联合X型356短程聚能火炮" 
+ UF_weapen_X4:0 "联合X型356火炮" 
  UF_weapen_T:0 "联合T型533火炮" 
  UF_weapen_T2:0 "联合T型533火炮（全向）" 
  UF_weapen_P:0 "联合P型防空炮"  
@@ -45,7 +47,9 @@
  PLANET_KILLER_SK_UF_ACTION_DESC:0 "联合导航者上的恒星毁灭武器，可以在数天之内将恒星系转化为黑洞。"
  MESSAGE_DESC_FOR_PLANET_KILLER_SK_UF:0 "被转化为黑洞，执行者是"
  FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_SK_UF:0 "准备终结恒星 $PLANET|Y$" 
- 
+
+ wg_battlecrusier:0 "联合战列巡洋舰" 
+ wg_dreadnought:0 "联合无畏舰" 
  uf_buffer:0 "联合电子战战舰" 
  wg_dimensional_small_portal: "侧窗"
  wg_dimensional_small_portal_plural: "侧窗" 
@@ -67,6 +71,9 @@
  requires_uf_hidden_actived:0 "§!§R炼狱难度已启动§!" 
  r_uf_active:0 "启动联合炼狱难度"
  requires_uf_insane:0 "§!§R联合舰队必须已经出现且难度为天灾§!"
+ 
+ tech_UNITEDFLEET2:0 "联合跃迁引擎"
+ tech_UNITEDFLEET2_desc:0 "联合舰队赠予我们的科技，是一款可以适应各种宇宙常数的跃迁引擎，可以轻易带领我们离开这片银河。"
  
  RA_weapen_S:0 "啄木鸟S型152火炮" 
  RA_weapen_L:0 "雨燕L型203火炮"

@@ -1,0 +1,45 @@
+objectTypes = {
+	pdxmesh = {
+		name = "specialds_mesh"
+		file = "gfx/models/ships/specialds/specialds.mesh"
+		scale = 1.0
+
+		animation = { id = "idle"	type = "specialds_idle_animation" }
+
+		meshsettings = {
+			name = "BodyShape"
+			index = 0
+			texture_diffuse = "Empire_Death_Star_Hull.dds"
+			texture_normal = "Empire_Death_Star_Hull_B.dds"
+			texture_specular = "Empire_Death_Star_Hull_spec.dds"
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "SuperstructureShape"
+			index = 0
+			texture_diffuse = "Empire_Death_Star_Superstructure.dds"
+			texture_normal = "Empire_Death_Star_Superstructure_B.dds"
+			texture_specular = "Empire_Death_Star_Superstructure_spec.dds"
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "TrenchShape"
+			index = 0
+			texture_diffuse = "Empire_Death_Star_Trench.dds"
+			texture_normal = "Empire_Death_Star_Trench_B.dds"
+			texture_specular = "Empire_Death_Star_Trench_spec.dds"
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "DishShape"
+			index = 0
+			texture_diffuse = "Empire_Death_Star_Dish.dds"
+			texture_normal = "Empire_Death_Star_Dish_B.dds"
+			texture_specular = "Empire_Death_Star_Dish_Spec.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

@@ -16,6 +16,7 @@ decision_planet_kt = {
 		}		
 		NOR = {
 			has_modifier = planet_kt
+			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_ringworld_habitable_sh
 			is_planet_class = pc_ringworld_habitable_wsg
 			is_planet_class = pc_ringworld_habitabl			
@@ -248,13 +249,11 @@ decision_shenhai_rw_project = {
 	}
 	
 	potential = {
-		OR = {
-			is_planet_class = pc_ringworld_habitable
-		}
+		is_initial_ringworld_wg = yes
 		exists = owner
 		owner = { 
 			is_regular_empire = yes 
-			has_authority="auth_shenhai"
+			has_authority = "auth_shenhai"
 		}
 	}
 	

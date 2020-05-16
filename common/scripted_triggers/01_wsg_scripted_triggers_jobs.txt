@@ -5,6 +5,7 @@ is_organic_species = {
 			is_archetype = WARSHIPGIRL
 			is_archetype = SHENHAI
 			is_archetype = LITHOID
+			is_archetype = STARSHIPGIRLS
 		}
 	}
 }

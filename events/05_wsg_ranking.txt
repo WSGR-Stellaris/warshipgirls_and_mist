@@ -788,7 +788,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = destroyer
 			}
@@ -819,7 +819,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = cruiser
 			}
@@ -850,7 +850,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
 			}
@@ -881,7 +881,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = titan
 			}
@@ -912,7 +912,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = colossus
 			}
@@ -943,7 +943,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = Dreadnaught
 			}
@@ -974,7 +974,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = wsg_dreadnought
 			}
@@ -1005,7 +1005,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = Flagship
 			}
@@ -1036,7 +1036,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
 			}
@@ -1067,7 +1067,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
 			}
@@ -1098,7 +1098,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
 			}
@@ -1129,7 +1129,7 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
 			}
@@ -1616,15 +1616,13 @@ country_event = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
-			FROM = {
-				is_megastructure_type = ring_world_3_intermediate
-			}
-			FROMFROM = {
-				NOT = {
-					any_system_megastructure = {
-						is_megastructure_type = ring_world_2
-					}
+		FROM = {
+			is_megastructure_type = ring_world_3_intermediate
+		}
+		FROMFROM = {
+			NOT = {
+				any_system_megastructure = {
+					is_megastructure_type = ring_world_2
 				}
 			}
 		}

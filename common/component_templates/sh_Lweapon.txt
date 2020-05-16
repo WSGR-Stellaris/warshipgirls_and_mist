@@ -14,7 +14,7 @@ weapon_component_template = {
 	damage = { min = 500 max = 1300 }
 	windup = { min = 15 max = 25 }
 	total_fire_time = 70
-	range = 135.0
+	range = 130.0
 	accuracy = 0.60
 	shield_penetration = 1.0
 	armor_penetration = 1.0
@@ -52,10 +52,10 @@ weapon_component_template = {
 	static_rotation = yes
 	use_ship_kill_target = no
 	
-	damage = { min = 500 max = 1350 }
+	damage = { min = 500 max = 1300 }
 	windup = { min = 15 max = 25 }
 	total_fire_time = 70
-	range = 135.0
+	range = 130.0
 	accuracy = 0.75
 	shield_penetration = 1.0
 	armor_penetration = 1.0

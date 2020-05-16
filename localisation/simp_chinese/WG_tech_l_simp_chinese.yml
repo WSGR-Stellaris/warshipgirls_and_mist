@@ -80,6 +80,8 @@
  tech_wsg_genetic_resequencing_desc:0 "如今的我们已经可以将将基因随意的改造。"   
  tech_wsg_toy:0 "NEO消费品生产"
  tech_wsg_toy_desc:0 "NEO合金工厂在生产合金的同时会生产一些诸如玩具之类的消费品，但会略微提高NEO的需求量。"   
+ tech_wsg_moyu:0 "摸鱼法案通过"
+ tech_wsg_moyu_desc:0 "我们的社会已经足够先进发达，可以允许大量人口摸鱼这种行为，现在为我们的人民提供一个摸鱼场所，用享乐主义来取代失业。"    
  
  wsg_toy_edicts:0 "现在£job£NEO合金生产者将额外生产2个£consumer_goods£，略微提升NEO需求"
  wsg_toy_edicts_desc:0 "NEO合金工厂在生产合金的同时会生产一些诸如玩具之类的消费品。"

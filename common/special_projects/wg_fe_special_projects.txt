@@ -44,19 +44,42 @@ special_project = {
 	}
 }
 
+# 触发大小姐一改特殊项目
+special_project = {
+	key = "pre_wsg_lady_to_wg_fe"
+	event_scope = planet_event
+	cost = 0
+	picture = GFX_evt_wormhole
+	days_to_research = 1
+	on_success = { 
+		owner = {
+			country_event = { id = wg_lady.7 }
+		}
+	}
+}
+
 # 将大小姐送给堕落妈
 special_project = {
 	key = wsg_lady_to_wg_fe
 	cost = 0
 	picture = GFX_evt_wormhole
 	event_scope = ship_event
+	days_to_research = 99999
 
 	requirements = {
 		shipclass_military = 1
 	}
 
+	on_start = {
+		from.fleet = {
+			fleet_event = { id = wg_lady.7000 }
+		}
+	}
+
 	on_success = {
-		ship_event = { id = wg_lady.7 }
+		from.fleet = {
+			fleet_event = { id = wg_lady.7000 }
+		}
 	}
 
 	on_fail = {
@@ -68,7 +91,7 @@ special_project = {
 	key = "WSG_LADY_MODIFICATION"
 	event_scope = planet_event
 	cost = 0
-	days_to_research = 2
+	days_to_research = 1
 	picture = GFX_evt_planet_beam
 	on_success = { 
 		owner = {
@@ -79,8 +102,8 @@ special_project = {
 
 special_project = {
 	key = "WSG_LADY_MODIFICATION1"
-	cost = 100000 # should be 100000
-	#days_to_research = 1080 # should be 1080
+	# cost = 100000 # should be 100000
+	days_to_research = 1080 # should be 1080
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
@@ -102,11 +125,6 @@ special_project = {
 		}
 	}
 
-	on_progress_50 = {
-		owner = {
-			country_event = { id = wg_lady.47 }
-		}
-	}
 	on_progress_75 = {
 		owner = {
 			country_event = { id = wg_lady.47 }
@@ -126,8 +144,8 @@ special_project = {
 
 special_project = {
 	key = "WSG_LADY_MODIFICATION2"
-	cost = 65000 # should be 65000
-	#days_to_research = 1080 # should be 1080
+	# cost = 65000 # should be 65000
+	days_to_research = 1080 # should be 1080
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
@@ -161,7 +179,7 @@ special_project = {
 special_project = {
 	key = "WSG_LADY_MODIFICATION3"
 	cost = 65000 # should be 65000
-	#days_to_research = 1080 # should be 1080
+	# days_to_research = 1080 # should be 1080
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam

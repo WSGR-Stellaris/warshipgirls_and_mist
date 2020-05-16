@@ -184,6 +184,7 @@
  too_low_rank_fail_120:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y120§R点$rankpts$"
  too_low_rank_fail_150:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y150§R点$rankpts$"
  too_low_rank_fail_180:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y180§R点$rankpts$"
+ too_low_rank_fail_210:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y210§R点$rankpts$" 
  too_low_rank_fail_250:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y250§R点$rankpts$"
  rankpts_not_reach_requirment:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y[Root.rankpts_require]§R点$rankpts$"
 
@@ -230,9 +231,10 @@
  wg_admiral_emergency_enhancement:0 "安装舰员增强植入物"
  wg_modifier_implant_coordination:"OTA舰装升级"
 
+ mod_ships_energy_upkeep_mult:0 "飞船£energy£ §Y$energy$§!维护费"
  mod_planet_researchers_consumer_goods_upkeep_mult:0 "科研人员消费品维护费"
  mod_planet_culture_workers_consumer_goods_upkeep_mult:0 "文化工作者消费品维护费"
- wg_modifier_combat_uf_desc:0 "对普通帝国的伤害: §R-50%§!\n对§R联合舰队§!的伤害: §G+25%§!"
+ wg_modifier_combat_uf_desc:0 "对§R联合舰队§!的伤害: §G+20%§!"
 
  wsgranking.9005.desc:"我们观察您的帝国很久了，现在来说时机已经成熟了。我们有一些真正宏大的想法，可以极大强化您的舰队，但是这需要您的协助。如果您准备好了，就请联络我们。"
  wsgranking.9005.a:"……也许有什么不好的事情要发生？"
@@ -246,7 +248,7 @@
  weapon_dmm_request_desc_response:"实际上，如同长春小姐造成的那场巨大爆炸一样，暗物质接触阿尔法晶体时会释放出极其巨大的能量。防御性武器的成本不应该太高，因此我们可以把暗物质与阿尔法结晶分装在合金外壳的两半，制成类似传统水雷的东西。把这些水雷散布在星系中就可以形成难以逾越的雷场。但这个外壳的设计制作、阿尔法晶体和暗物质的预处理都需要大量的资源和研究投入。\n§R项目进行期间帝国的所有研究都会暂停！§!"
  sh_mine_request_desc_response:"深海能源核心产生大量致命辐射的原因就是，它不稳定。向深海能源核心注入暗物质，其不稳定性更会大幅上升。这种不稳定的核心没有办法制成舰载武器，但散布在星系空间中也许可以充当威力巨大的太空水雷。这个可能引起致命爆炸的项目需要大量的资源和研究投入。\n§R项目进行期间帝国的所有研究都会暂停！§!"
  combat_uf_request_desc:"联合舰队！你们对他们有什么了解吗？"
- combat_uf_request_response:"根据我们之前打捞联合舰队战斗残骸的结果显示，联合舰队的舰船物质特性十分独特。组成联合舰队舰船主结构的“赛博伦”合金是一种非碳基的物质。而其中似乎有大量的亚铁成分，并且有一种能量能够对碳基物质的分子结构造成非共振不可逆的影响。同时在它的第1、2、9环上都有不平衡的正电子存在。因此我们可以说它的可能分子结构式是无穷多的。\n通俗的说，实际上存在一种针对联合舰队舰船物质特性的改装方法；\n§Y但采用这种改装的代价是，舰船武器对普通物质的伤害将永久减弱。§! \n§R项目进行期间帝国的所有研究都会暂停！§!"
+ combat_uf_request_response:"联合是我们的老朋友了，我们对她们可以说是相当相当的了解，我们知道一些连你们红色小朋友都不知道的弱点。\n当然这些弱点需要对你们的武器进行大幅度的改装，需要时间。§! \n§R项目进行期间帝国的所有研究都会暂停！§!"
  
  wg_shop_celebration:"也许我该用招牌惰麻汤来庆祝……"
  wg_modifier_ultimate_project:"战利品商店最终项目"

@@ -46,3 +46,24 @@ tech_wg_waterB = {
 		}
 	}
 }
+
+
+tech_UNITEDFLEET2 = {
+    area = physics
+    icon = tech_UF
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+			is_country_type = wg_crisis_country
+		}
+	}	
+}

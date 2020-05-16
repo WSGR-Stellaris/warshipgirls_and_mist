@@ -103,7 +103,12 @@ wg_bugv_buff2 = {
 wg_bugv_buff3 = {
     planet_jobs_produces_mult = 0.05
 }
+wg_bugv_buff4 = {
+    planet_jobs_produces_mult = 0.1
+}
 wg_bugv_murder = {
     all_technology_research_speed = 0.30
 }
-	
+wsg_livestar = {
+	ship_speed_mult = -10.0
+}	

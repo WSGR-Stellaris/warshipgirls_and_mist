@@ -17,7 +17,9 @@ d_smuggling_bay = {
 			species = owner
 		}
 	}
-
+	drop_weight = {
+		weight = 0
+	}
 	resources = {
 		category = deposit_blockers
 		cost = {
@@ -34,7 +36,9 @@ d_hacking_device = {
 		planet_jobs_energy_produces_mult = 0.20
 		job_merchant_per_pop = 0.05
 	}
-	
+	drop_weight = {
+		weight = 0
+	}	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -64,7 +68,9 @@ d_stuffed_strange_storage = {
 	blocker_swap_types = {
 		d_cleared_strange_storage
 	}
-
+	drop_weight = {
+		weight = 0
+	}
 	on_cleared = {
 		owner = { 
 			add_resource = { 
@@ -114,7 +120,9 @@ d_space_scavange_walking = {
 			sr_living_metal = 1
 		}
 	}
-	
+	drop_weight = {
+		weight = 0
+	}	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner

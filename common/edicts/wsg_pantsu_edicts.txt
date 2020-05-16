@@ -1,6 +1,9 @@
 wsg_remove_pantsu = {
-	length = 7200
+	length = -1
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
 	resources = {
+		category = edicts
 		cost = {
 			influence = 50
 		}
@@ -27,8 +30,11 @@ wsg_remove_pantsu = {
 }
 
 wsg_folding_chair = {
-	length = 3600
+	length = -1
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
 	resources = {
+		category = edicts
 		cost = {
 			influence = 50
 		}
@@ -294,8 +300,11 @@ wsg_Stuitu = {
 }
 #########################深海
 sh_remove_pantsu = {
-	length = 7200
+	length = -1
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
 	resources = {
+		category = edicts
 		cost = {
 			influence = 50
 		}
@@ -322,8 +331,11 @@ sh_remove_pantsu = {
 }
 
 sh_double_pantsu = {
-	length = 4800
+	length = -1
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
 	resources = {
+		category = edicts
 		cost = {
 			influence = 100
 		}
@@ -594,7 +606,10 @@ wg_readjust_crisis = {
 			has_authority = auth_warshipgirls
 			has_country_flag = can_adjust_wg_crisis_diff
 		}
-		NOT = { has_global_flag = wg_crisis_triggered }
+		NOR = { 
+			has_global_flag = wg_crisis_triggered 
+			has_global_flag = wg_invasion_happened
+		}
 		is_ai = no
 	}
 
@@ -660,12 +675,12 @@ recall_wsg_lady_modification_project = {
 			is_researching_special_project = WSG_LADY_MODIFICATION1
 			is_researching_special_project = WSG_LADY_MODIFICATION2
 			is_researching_special_project = WSG_LADY_MODIFICATION3
-			has_active_event = { wg_fe.187 }
+			has_active_event = { wg_lady.52 }
 		}
 	}
 
 	effect = {
-		country_event = { id = wg_fe.185 }
+		country_event = { id = wg_lady.50 }
 	}
 	
 	ai_weight = {

@@ -33,6 +33,7 @@ origin_wsg_diplomacy = {
 	modifier = { 
 		envoys_add = 2 
 		diplo_weight_mult = 0.2
+		country_edict_cap_add = 1
 	}
 	
 	random_weight = {

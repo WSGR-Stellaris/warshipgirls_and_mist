@@ -62,7 +62,7 @@ ship_section_template = {
 		locatorname = "root"
     }
 	
-	large_utility_slots = 18
+	large_utility_slots = 12
 	aux_utility_slots = 3
 }
 
@@ -117,6 +117,11 @@ ship_section_template = {
 	entity = "wsg_caravaneer_destroyer_01_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	
+    component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "small_gun_01"
+    }
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "medium_missile_turret"
@@ -124,11 +129,6 @@ ship_section_template = {
 	}
 	component_slot = {
 		name = "TORPEDO_02"
-		template = "medium_missile_turret"
-		locatorname = "small_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_03"
 		template = "medium_missile_turret"
 		locatorname = "small_gun_01"
 	}

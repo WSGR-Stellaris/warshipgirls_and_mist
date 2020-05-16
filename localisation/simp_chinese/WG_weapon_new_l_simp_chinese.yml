@@ -9,8 +9,8 @@ tech_wsg_rockets_desc:"我们与深海战斗的时候时常使用X-28型火箭�
 tech_wsg_auto127:"127CM等离子自动火炮"
 tech_wsg_auto127_desc:"来自战利品商店的中尺寸等离子自动炮，比57CM型口径更大，容弹更多，威力更强，但占地面积较大。"
 
-tech_wsg_auto152:"152CM等离子自动火炮"
-tech_wsg_auto152_desc:"来自战利品商店的152CM等离子自动炮。威力极其强大的大型自动武器，可以快速撕碎来犯的敌人。"
+tech_wsg_auto152:"152DM等离子自动火炮"
+tech_wsg_auto152_desc:"来自战利品商店的152DM等离子自动炮。威力极其强大的大型自动武器，可以快速撕碎来犯的敌人。"
 
 tech_wsg_203plasma:"203DM奇异团火炮"
 tech_wsg_203plasma_desc:"来自战利品商店的阿尔法武器，藉由奇异物质杀伤敌人。"
@@ -22,8 +22,11 @@ tech_wsg_330ion:"330M改良离子炮"
 tech_wsg_330ion_desc:"由笨重的离子加农炮改良而来，对护盾系统尤其有用，但对护甲的侵彻力不足。你能看到这个武器说明出了什么错误或者使用了控制台。"
 
 
-tech_wsg_356laser:"356M护盾干扰束"
+tech_wsg_356laser:"356DM护盾干扰束"
 tech_wsg_356laser_desc:"来自战利品商店的阿尔法武器。这种干扰束与敌方护盾的相干频率完美匹配，只需要数次持续照射就可以有效解除敌方的护盾。"
+
+tech_wsg_410:"410M暗物质阿尔法聚能炮"
+tech_wsg_410_desc:"彻底牺牲了对护盾装甲的穿透力，转为对其的侵蚀力。"
 
 tech_wsg_rim99:"RIM-99点防御诱饵"
 tech_wsg_rim99_desc:"可以干扰敌方点防御系统的小型诱饵弹药，不能造成有效的伤害，但可以消耗敌方的防御系统的拦截能力。"
@@ -61,14 +64,17 @@ wsg_weapon_rockets_DESC:"们与深海战斗的时候时常使用X-28型火箭炮
 wsg_weapon_autocannon_127:"127CM等离子自动火炮"
 wsg_weapon_autocannon_127_DESC:"中尺寸等离子自动炮，还是自动火炮科技与等离子武器科技的结合。"
 
-wsg_weapon_autocannon_152:"152CM等离子自动火炮"
+wsg_weapon_autocannon_152:"152DM等离子自动火炮"
 wsg_weapon_autocannon_152_DESC:"大型等离子自动炮，强力多用途武器，能够熔化来犯的多数敌人。"
 
 wsg_weapon_203plasma:"203DM奇异团火炮"
 wsg_weapon_203plasma_DESC:"通过发射奇异团高速毁坏舰船的物质部分，但会被护盾轻易偏转。"
 
-wsg_weapon_356laser:"356M护盾干扰束"
+wsg_weapon_356laser:"356DM护盾干扰束"
 wsg_weapon_356laser_DESC:"干扰束与敌方护盾的相干频率完美匹配，但装甲完全不吃这一套。"
+
+wsg_weapen_X_410:"410M暗物质阿尔法聚能炮"
+wsg_weapen_X_410_DESC:"彻底牺牲了对护盾装甲的穿透力，转为对其的侵蚀力。。"
 
 wsg_weapon_rim99:"RIM-99点防御诱饵"
 wsg_weapon_rim99_DESC:"诱饵导弹，能够干扰敌方点防御系统。"
@@ -94,7 +100,7 @@ wsg_ship_part_living_metal_bulge:"活金属普列塞系统"
 wsg_ship_part_living_metal_bulge_desc:"活金属普列塞系统仅限中型和大型舰艇装备。"
 
 wsg_nsc_compat_aura:"神秘电子设备"
-wsg_nsc_compat_aura_DESC:"神秘的电子设备，能够减弱敌方武器的穿透性能。安装多个并不能得到多倍的效果！！"
+wsg_nsc_compat_aura_DESC:"神秘的电子设备，能够减弱敌方武器的穿透性能。§!§R光环效果无法叠加§!"
 
 SMALL_sh_weapon_autocannon:"小型深海疾速炮"
 MEDIUM_sh_weapon_autocannon:"中型深海疾速炮"
@@ -111,7 +117,7 @@ sh_fighter_DESC:"使用深海能源核心反应堆的深海战斗机。"
 wsg_weapon_dmm:"暗物质阿尔法水雷"
 wsg_weapon_dmm_DESC:"不管这款武器将我们的舰队导向何处，我们决定选择希望。"
 
-
+SHIP_AURA_WG_NSC:0 "神秘的电子设备"
 
 
 ## Hidden weapon

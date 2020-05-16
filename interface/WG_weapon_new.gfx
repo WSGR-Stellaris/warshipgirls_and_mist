@@ -215,5 +215,9 @@ spriteTypes = {
 		name = "tech_wsg_f2h"
 		texturefile = "gfx/interface/icons/technologies/tech_wsg_f2h.dds"
 	}
-
+	spriteType = {
+		name = "GFX_wsg_weapen_X_410"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapen_X_410.dds"
+	}
+}
 }

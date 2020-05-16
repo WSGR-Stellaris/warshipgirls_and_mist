@@ -93,7 +93,7 @@ tech_wsg_pantsu = {
 	area = society
 	tier = 2
 	category = { biology }
-	prerequisites = { "tech_basic_science_lab_1" }
+	prerequisites = {}
 	weight = @tier2weight2
 	is_rare = yes
 		
@@ -116,9 +116,17 @@ tech_wsg_pantsu = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
+				area = society
+				has_trait = leader_trait_expertise_biology
 			}
+		}
+		modifier = {
+			factor = 1.5
+			has_technology = tech_mine_exotic_gases
+		}
+		modifier = {
+			factor = 1.5
+			has_technology = tech_exotic_gases
 		}
 	}
 	potential = {
@@ -1347,7 +1355,7 @@ tech_wsg_unite = {
 	is_rare = yes
 	
 	modifier = {		
-		empire_size_penalty_mult = -0.1
+		empire_size_pops_mult = -0.10
 	}		
 	ai_weight = {
 		factor = 0
@@ -3216,5 +3224,41 @@ tech_wg_badseal = {
 	
 	potential = {
 		has_country_flag = badseal_cannon_flag
+	}
+}
+
+tech_wsg_moyu = {
+    icon = tech_wsg_moyu
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	is_rare = yes
+	prerequisites = { "tech_wsg_alpha_power" }	
+	weight = @tier4weight3
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+	potential = {
+		has_authority = auth_warshipgirls
 	}
 }

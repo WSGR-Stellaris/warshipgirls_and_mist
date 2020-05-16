@@ -66,6 +66,7 @@ uf_easy_debuff = {
 	ship_shield_penetration_mult = -0.3
 	ship_armor_penetration_mult = -0.3
 	ship_weapon_range_mult = -0.50
+		
 }
 
 uf_hard_buff = {
@@ -75,12 +76,24 @@ uf_hard_buff = {
 	ship_weapon_damage = 0.30
 	ship_fire_rate_mult = 0.30
 	ship_evasion_mult = 0.30
-	ship_speed_mult = 0.10
+	ship_speed_mult = 0.10	
+}
+
+uf_special_buff = {
+	damage_vs_country_type_swarm_mult = 3
+	damage_vs_country_type_extradimensional_mult = 3
+	damage_vs_country_type_extradimensional_2_mult = 3
+	damage_vs_country_type_extradimensional_3_mult = 3
+	damage_vs_country_type_ai_empire_mult = 3
+	damage_vs_country_type_original_empire_active_mult = 20
+	damage_vs_country_type_original_empire_mult = 20
+	damage_vs_country_type_sofe_anti_ae_chosen_mult = 20
+	damage_vs_country_type_sofe_sentinel_active_mult = 20
 }
 
 uf_buff_after_portal_destoryed = {
 	ship_fire_rate_mult = 0.25
-	ship_speed_mult = 0.40
+	ship_speed_mult = 0.30
 }
 
 ra_regen_buff = {

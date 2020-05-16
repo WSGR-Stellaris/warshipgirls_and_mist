@@ -87,7 +87,8 @@ portraits = {
 		sh83	=	{texturefile = "gfx/models/portraits/sh83.dds"  }	
 		sh84	=	{texturefile = "gfx/models/portraits/sh84.dds"  }	
 		sh85	=	{texturefile = "gfx/models/portraits/sh85.dds"  }	
-
+        sh86	=	{texturefile = "gfx/models/portraits/sh86.dds"  }
+        sh87	=	{texturefile = "gfx/models/portraits/sh87.dds"  }
 
 }	
 
@@ -142,6 +143,8 @@ shenhai = {
 					sh83
 					sh84
 					sh85
+					sh86
+					sh87
 				}
 			}
 
@@ -194,6 +197,8 @@ shenhai = {
 					sh83
 					sh84
 					sh85
+					sh86
+					sh87
 				}
 			}
 
@@ -288,6 +293,8 @@ shenhai = {
 					sh83
 					sh84
 					sh85
+					sh86
+					sh87
 				}
 			}
 
@@ -380,6 +387,8 @@ shenhai = {
 					sh83
 					sh84
 					sh85
+					sh86
+					sh87
 				}
 			}
 		}

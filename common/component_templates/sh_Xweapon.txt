@@ -68,7 +68,7 @@ weapon_component_template = {
 	damage = { min = 3000 max = 6000 }
 	windup = { min = 15 max = 25 }
 	total_fire_time = 100
-	range = 185.0
+	range = 175.0
 	accuracy = 0.75
 	shield_penetration = 1.0
 	armor_penetration = 1.0
@@ -120,7 +120,7 @@ weapon_component_template = {
 	damage = { min = 3000 max = 6000 }
 	windup = { min = 15 max = 25 }
 	total_fire_time = 100
-	range = 185.0
+	range = 180.0
 	accuracy = 0.75
 	shield_penetration = 1.0
 	armor_penetration = 1.0

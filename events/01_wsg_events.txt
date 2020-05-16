@@ -68,9 +68,18 @@ country_event = {
 	}
 	immediate = {
 		random_owned_planet = {
+			limit = {
+				is_capital = yes
+				NOT = { has_planet_flag = wg_ring_world_start_planet }
+			}
 			add_district = district_farming
 			add_district = district_generator
 			add_district = district_mining
+		}	
+		random_owned_planet = {
+			limit = {
+				is_capital = yes
+			}			
 			create_species = {
 				name = "NAME_ice_breaking_species_SH"
 				class = "ShenHai"
@@ -122,7 +131,7 @@ country_event = {
 	}
 }
 
-event = {
+country_event = {
 	id = wsg.4
 	hide_window = yes
 	is_triggered_only = yes
@@ -130,34 +139,62 @@ event = {
 
 	trigger = {
 		NOT = { has_global_flag = wg_solIII_created }
-		any_country = {
-			has_authority = auth_warshipgirls
-			is_ai = no
-		}
 	}
 
 	immediate = {
-		set_global_flag = wg_solIII_created
 		random_country = {
 			limit = {
 				has_authority = auth_warshipgirls
 				is_ai = no
 			}
-			capital_scope = {
-				closest_system = {
-					min_steps = 5
+			capital_scope = { 
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = spawn_sol_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { 
+								NOT = { has_star_flag = sealed_system }
+								any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
+							}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_sol_system_source
+						}
+					}
+				}
+				every_system = {
 					limit = {
+						distance = {
+							source = event_target:spawn_sol_system_source
+							min_jumps = 0
+							max_jumps = 4
+							type = hyperlane 
+							use_bypasses = no
+						}
 						NOR = {
 							exists = space_owner
 							has_star_flag = hostile_system
 							has_star_flag = guardian
+							has_star_flag = sealed_system
+							has_star_flag = wg_Parit_system
 						}
 					}
-					spawn_system = {
-						initializer = "lex_sol_system"
-					}
+					set_timed_star_flag = { flag = can_spawn_sol_system days = 1 }
 				}
 			}
+		}
+		random_system = {
+			limit = { has_star_flag = can_spawn_sol_system }
+			spawn_system = { 
+				min_distance = 10
+				max_distance = 30
+				hyperlane = yes
+				is_discovered = no
+				initializer = "lex_sol_system"
+			}
+			set_global_flag = wg_solIII_created
+			remove_star_flag = can_spawn_sol_system
 		}
 	}
 
@@ -175,7 +212,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_species = {
+		every_owned_pop_species = {
 			limit = { has_trait = wsg_trait_warshipgirls }
 			PREV = { modify_species = {
 				species = prev
@@ -419,7 +456,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_pop_species = {
+		every_owned_pop_species = {
 			limit = { has_trait = wsg_trait_warshipgirls }
 			ROOT = {
 				modify_species = {

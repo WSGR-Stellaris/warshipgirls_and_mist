@@ -199,6 +199,17 @@ is_ringworld_wg = {
 	}
 }
 
+is_initial_ringworld_wg = {
+	OR = {
+		is_planet_class = pc_ringworld_habitable
+# gigastructure
+		is_planet_class = pc_ringworld_city
+		is_planet_class = pc_city_ringworld_habitable
+		is_planet_class = pc_gigaorbital_ring
+		is_planet_class = pc_giga_ringworld_habitable
+	}
+}
+
 is_habitat_wg = {
 	OR = {
 		is_planet_class = pc_habitat
@@ -209,5 +220,17 @@ is_habitat_wg = {
 # Plentiful Traditions
 		is_planet_class = pc_mem_vazuran_habitat
 		is_planet_class = pc_habitat_robot
+#PD - Planetary Habitats
+		is_planet_class = pc_gghab
+		is_planet_class = pc_tmhab
+		is_planet_class = pc_tmhab2
+		is_planet_class = pc_mmhab
+		is_planet_class = pc_mmhab2
+		is_planet_class = pc_bhab
+		is_planet_class = pc_bchab
+		is_planet_class = pc_mhab
+		is_planet_class = pc_fhab
+		is_planet_class = pc_fmhab
+		is_planet_class = pc_mehab
 	}
 }

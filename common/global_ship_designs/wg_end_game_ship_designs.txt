@@ -712,6 +712,10 @@ ship_design = {
 		template = "WG_EG_CA_BOW"
 		slot = "bow"
 		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "UF_weapen_X3"
+		}		
+		component = {
 			slot = "LARGE_GUN_01"
 			template = "UF_weapen_L"
 		}
@@ -819,4 +823,303 @@ ship_design = {
 	required_component = "UF_THRUSTER"
 	required_component = "UF_REACTOR"
 	required_component = "UF_COMPUTER_1"
+}
+
+
+#dreadnought
+ship_design = {
+	name = "NAME_WG_EG_DREADNOUGHT"
+	ship_size = wg_dreadnought
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_DREADNOUGHT_BOW"
+		slot = "bow"
+
+		component = {
+			slot = "TITANIC_01"
+			template = "UF_weapen_T"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "UF_weapen_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_03"
+			template = "UF_weapen_X2"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "UF_weapen_L"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "UF_weapen_IA"
+		}		
+	}
+
+	section = {
+		template = "WG_EG_DREADNOUGHT_STERN"
+		slot = "stern"
+
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_03"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_04"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}		
+	}
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_1"
+	required_component = "SHIP_AURA_SHIELD_DAMPENER"
+}
+
+#BC
+ship_design = {
+	name = "NAME_WG_EG_BC"
+	ship_size = wg_battlecrusier
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_BC_BOW"
+		slot = "bow"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "UF_weapen_X4"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "UF_weapen_L"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "UF_weapen_S2"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "UF_weapen_S2"
+		}	
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "UF_weapen_P"
+		}	
+		component = {
+			slot = "PD_03"
+			template = "UF_weapen_P"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "UF_weapen_IA_M"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}		
+	}
+
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_3"
 }

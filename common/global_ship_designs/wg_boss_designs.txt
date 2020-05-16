@@ -768,3 +768,161 @@ ship_design = {
 	required_component="COMBAT_COMPUTER_LINE_SAPIENT"
 	required_component="SHIP_THRUSTER_4"
 }
+#活星
+ship_design = {
+	name = "NAME_WG_LIVE_STAR"
+	ship_size = wg_livestar
+	is_event_design = yes
+
+	section = {
+		template = "wg_livestar_key"
+		slot = "mid"
+	
+		component = {
+			slot = "TITAN_01"
+			template = "WG_weapen_SF_T"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "WG_weapen_SF_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "WG_weapen_SF_X"
+		}		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "WG_weapen_SF_L"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "WG_weapen_SF_L"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "WG_weapen_SF_L"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "WG_weapen_SF_L"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "WG_weapen_SF_L"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "WG_weapen_SF_L"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "WG_weapen_SF_L"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "WG_weapen_SF_L"
+		}						
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "WG_weapen_SF_M"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_05"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_06"
+			template = "WG_weapen_SF_M"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_07"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "MEDIUM_GUN_08"
+			template = "WG_weapen_SF_M"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "WG_weapen_SF_S"
+		}	
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "WG_weapen_SF_S"
+		}			
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_07"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_08"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_09"
+			template = "WG_weapen_SF_S"
+		}	
+		component = {
+			slot = "SMALL_GUN_10"
+			template = "WG_weapen_SF_S"
+		}			
+		component = {
+			slot = "SMALL_GUN_11"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "SMALL_GUN_12"
+			template = "WG_weapen_SF_S"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AUTO_REPAIR"
+		}		
+	}
+	required_component="PSI_JUMP_DRIVE_1"
+	required_component="SENSOR_4"
+	required_component="COMBAT_COMPUTER_CARRIER_SAPIENT"
+	required_component="TITAN_DARK_MATTER_REACTOR"
+	required_component="TITAN_SHIP_THRUSTER_5"
+	required_component = "SHIP_AURA_TARGETING_GRID"
+}

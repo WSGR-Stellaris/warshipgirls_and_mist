@@ -170,7 +170,7 @@ ship_event = {
         exists = event_target:pantsu_shop_country
         From = { has_star_flag = shop_system_home }
         FromFrom = { 
-            is_country_type = default 
+            is_default_country = yes
             NOT = { has_communications = event_target:pantsu_shop_country }
         }
     }
@@ -178,10 +178,13 @@ ship_event = {
     immediate = {
         owner = {
             if = { 
-                limit = { OR = {
-                    has_authority = auth_warshipgirls
-                    has_authority = auth_shenhai
-                }}
+                limit = { 
+                    OR = {
+                        has_authority = auth_warshipgirls
+                        has_authority = auth_shenhai
+                    }
+                    is_ai = no
+                }
                 # 防止事件重复发生
                 set_country_flag = establish_communicate_in_normal
                 establish_communications_no_message = event_target:pantsu_shop_country
@@ -262,6 +265,42 @@ country_event = {
 
     option = {
         name = CURIOUS
+    }
+}
+
+# （深海）胖次建筑建造后自动联系
+planet_event = {
+	id = wsgranking.995
+	title = wsgranking.999.title
+    desc = wsgranking.999.desc
+    picture = GFX_evt_wg_ella
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            has_authority = auth_shenhai
+            is_ai = no
+            NOT = { has_communications = event_target:pantsu_shop_country }
+        }
+        last_building_changed = building_sh_pantsu
+    }
+
+    immediate = {
+        # 防止事件重复发生
+        owner = { set_country_flag = establish_communicate_in_normal }
+    }
+
+    option = {
+        name = CURIOUS
+        hidden_effect = {
+            owner = { 
+                establish_communications_no_message = event_target:pantsu_shop_country
+                country_event = { id = wsgranking.1000 }
+                country_event = { id = wsgranking.20001 }
+            }
+        }
     }
 }
 
@@ -717,7 +756,11 @@ country_event = {
         custom_tooltip = "tech_wsg_rim99_desc"
         name = tech_wsg_rim99
         trigger = {
-            has_technology = tech_exotic_gases
+            has_authority = auth_warshipgirls
+            OR = {
+                has_technology = tech_exotic_gases
+                has_technology = tech_mine_exotic_gases
+            }
             NOR = {
                 has_tech_option = tech_wsg_rim99
                 has_technology = tech_wsg_rim99
@@ -746,10 +789,11 @@ country_event = {
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        custom_tooltip = "tech_wsg_pd127"
+        custom_tooltip = "tech_wsg_pd127_desc"
         name = tech_wsg_pd127
         trigger = {
-			has_technology = tech_wsg_152
+            has_authority = auth_warshipgirls
+            has_technology = tech_wsg_152
             NOR = {
                 has_tech_option = tech_wsg_pd127
                 has_technology = tech_wsg_pd127
@@ -778,9 +822,10 @@ country_event = {
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
-        custom_tooltip = "tech_wsg_pd127"
+        custom_tooltip = "tech_wsg_auto127_desc"
         name = tech_wsg_auto127
         trigger = {
+            has_authority = auth_warshipgirls
 			has_technology = tech_wsg_152
             NOR = {
                 has_tech_option = tech_wsg_auto127
@@ -813,6 +858,7 @@ country_event = {
         name = tech_living_metal_bulge
         custom_tooltip = "tech_living_metal_bulge_desc"
         trigger = {
+            has_authority = auth_warshipgirls
 			has_technology = tech_wsg_ia
             has_technology = tech_mine_living_metal
             NOR = {
@@ -834,7 +880,7 @@ country_event = {
         }
         add_resource = {
             sr_pantsu = -2000
-            alloys  = -5000
+            alloys = -5000
         }
         add_research_option = tech_living_metal_bulge
         add_tech_progress = { tech = tech_living_metal_bulge progress = 0.1 }
@@ -846,6 +892,7 @@ country_event = {
         name = tech_wsg_auto152
         custom_tooltip = "tech_wsg_auto152_desc"
         trigger = {
+            has_authority = auth_warshipgirls
             has_technology = tech_wsg_203
             NOR = {
                 has_tech_option = tech_wsg_auto152
@@ -853,11 +900,11 @@ country_event = {
             }
         }
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
-            resource_stockpile_compare = { resource = sr_alpha value >= 1500 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 1000 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 500 }
             custom_tooltip = {
-				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				fail_text = too_low_rank_fail_90
+				check_variable = { which = "rankpts" value > 90 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -865,8 +912,8 @@ country_event = {
             }
         }
         add_resource = {
-            sr_pantsu = -3000
-            sr_alpha = -1500
+            sr_pantsu = -1000
+            sr_alpha = -500
         }
         add_research_option = tech_wsg_auto152
         add_tech_progress = { tech = tech_wsg_auto152 progress = 0.1 }
@@ -878,6 +925,7 @@ country_event = {
         name = tech_wsg_203plasma
         custom_tooltip = "tech_wsg_203plasma_desc"
         trigger = {
+            has_authority = auth_warshipgirls
             has_technology = tech_wsg_203
             NOR = {
                 has_tech_option = tech_wsg_203plasma
@@ -885,11 +933,11 @@ country_event = {
             }
         }
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
-            resource_stockpile_compare = { resource = sr_alpha value >= 1000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 1500 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 500 }
             custom_tooltip = {
-				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				fail_text = too_low_rank_fail_120
+				check_variable = { which = "rankpts" value > 120 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -897,8 +945,8 @@ country_event = {
             }
         }
         add_resource = {
-            sr_pantsu = -2500
-            sr_alpha = -1000
+            sr_pantsu = -1500
+            sr_alpha = -500
         }
         add_research_option = tech_wsg_203plasma
         add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
@@ -909,6 +957,7 @@ country_event = {
         name = tech_wsg_356laser
         custom_tooltip = "tech_wsg_356laser"
         trigger = {
+            has_authority = auth_warshipgirls
             has_technology = tech_wsg_203
             NOR = {
                 has_tech_option = tech_wsg_356laser
@@ -916,7 +965,7 @@ country_event = {
             }
         }
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 2000 }
             resource_stockpile_compare = { resource = sr_alpha value >= 1000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_150
@@ -928,20 +977,52 @@ country_event = {
             }
         }
         add_resource = {
-            sr_pantsu = -2500
+            sr_pantsu = -2000
             sr_alpha = -1000
         }
         add_research_option = tech_wsg_356laser
         add_tech_progress = { tech = tech_wsg_356laser progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
     }
-
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = tech_wsg_410
+        custom_tooltip = "tech_wsg_410"
+        trigger = {
+            has_authority = auth_warshipgirls
+            has_technology = tech_wsg_406
+            NOR = {
+                has_tech_option = tech_wsg_410
+                has_technology = tech_wsg_410
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_210
+				check_variable = { which = "rankpts" value > 210 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -5000
+            sr_alpha = -3000
+        }
+        add_research_option = tech_wsg_410
+        add_tech_progress = { tech = tech_wsg_410 progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+    }
     ## 深海武器兑换
 	option = {
 		custom_gui = "enclave_caravaneer_option"
 		name = tech_sh_autocannon
         custom_tooltip = "tech_sh_autocannon_desc"
 		trigger = {
+            has_authority = auth_shenhai
 			has_technology = tech_sh_Lweapon
 			NOR = { 
                 has_tech_option = tech_sh_autocannon
@@ -964,7 +1045,6 @@ country_event = {
 			sr_pantsu = -2500
 			sr_se = -2000
 		}
-		#change_variable = { which = "rankpts" value = -893 }
 		add_research_option = tech_sh_autocannon
 		add_tech_progress = { tech = tech_sh_autocannon progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
@@ -974,6 +1054,7 @@ country_event = {
 		name = tech_sh_fighter
         custom_tooltip = "tech_sh_fighter_desc"
 		trigger = {
+            has_authority = auth_shenhai
 			has_technology = tech_sh_Lweapon
 			NOR = { 
                 has_tech_option = tech_sh_fighter
@@ -1005,6 +1086,7 @@ country_event = {
 		name = tech_sh_torpedo
         custom_tooltip = "tech_sh_torpedo_desc"
 		trigger = {
+            has_authority = auth_shenhai
 			has_technology = tech_sh_Lweapon
 			has_technology = tech_sh_Gweapon
 			NOR = { 
@@ -1092,7 +1174,7 @@ country_event = {
 	is_triggered_only = yes
 
 	picture_event_data = {
-		room = Shop_room
+		room = Martes_room
     }
     
     trigger = {
@@ -2464,6 +2546,10 @@ country_event = {
         years = 10
         modifier = {
             factor = 0.5
+            check_variable = { which = rings_stock value < 3 }
+        }
+        modifier = {
+            factor = 0.5
             check_variable = { which = rings_stock value < 2 }
         }
         modifier = {
@@ -2586,10 +2672,10 @@ country_event = {
         }
         # 限制条件
         allow = {
-            resource_stockpile_compare = { resource = energy value > 6480 }
-            resource_stockpile_compare = { resource = rare_crystals value > 648 }
-            resource_stockpile_compare = { resource = sr_alpha value > 648 }
-            resource_stockpile_compare = { resource = sr_pantsu value > 648 }
+            resource_stockpile_compare = { resource = energy value >= 2500 }
+            resource_stockpile_compare = { resource = rare_crystals value >= 648 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 648 }
             custom_tooltip = {
                 fail_text = not_enough_rings
                 event_target:pantsu_shop_country = { 
@@ -2605,7 +2691,7 @@ country_event = {
         }
         #消耗资源
         add_resource = {
-            energy = -6480
+            energy = -2500
             rare_crystals = -648
             sr_alpha = -648
             sr_pantsu = -648
@@ -2677,7 +2763,7 @@ country_event = {
 	is_triggered_only = yes
 	picture_event_data = {
 		# room 有需求的话自己改名字
-		room = Shop_room
+		room = Martes_room
 	}
 	trigger = {
 		NOT = {
@@ -2792,7 +2878,7 @@ country_event = {
 	is_triggered_only = yes
 	picture_event_data = {
 		# room 有需求的话自己改名字
-		room = Shop_room
+		room = Martes_room
 	}
 	trigger = {
 		NOT = {
@@ -2906,7 +2992,7 @@ country_event = {
 	is_triggered_only = yes
 	picture_event_data = {
 		# room 有需求的话自己改名字
-		room = Shop_room
+		room = Martes_room
 	}
 	trigger = {
 		NOT = {

@@ -1,6 +1,6 @@
 on_game_start = {
 	events = {
-        wsgranking.1919
+        # wsgranking.1919
     }
 }
 
@@ -96,7 +96,6 @@ on_monthly_pulse_country = {
         wsgranking.3231
         wsgranking.326
         wsgranking.327
-        wsgranking.328
         wsgranking.331
         wsgranking.332
         wsgranking.333
@@ -124,7 +123,6 @@ on_fleet_destroyed_victim = {
     events = {
         wsgranking.401
         wsgranking.402
-        wsgranking.405
     }
 }
 
@@ -146,5 +144,14 @@ on_megastructure_built = {
 on_megastructure_upgraded = {
 	events = {
         wsgranking.315
+        wsgranking.328
+    }
+}
+
+#A building construction has been completed.
+# This = Planet
+on_building_complete = {
+	events = {
+        wsgranking.995
     }
 }

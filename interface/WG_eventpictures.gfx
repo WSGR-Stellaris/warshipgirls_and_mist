@@ -6,11 +6,23 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_Bismark"
+		texturefile = "gfx/event_pictures/wg_Bismark.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
+	spriteType = {
 		name = "GFX_evt_wg_ella"
 		texturefile = "gfx/event_pictures/wg_ella.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}
+	spriteType = {
+		name = "GFX_evt_wg_livestar"
+		texturefile = "gfx/event_pictures/wg_livestar.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}	
 	spriteType = {
 		name = "GFX_evt_wg_rabbit"
 		texturefile = "gfx/event_pictures/wg_rabbit.dds"

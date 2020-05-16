@@ -29,6 +29,7 @@ portraits = {
 	nf243	= {texturefile = "gfx/models/portraits/nf243.dds"}
 	nf249	= {texturefile = "gfx/models/portraits/nf249.dds"}
 	nf260	= {texturefile = "gfx/models/portraits/nf260.dds"}
+	nf261	= {texturefile = "gfx/models/portraits/nf261.dds"}
 
 }	
 	
@@ -71,6 +72,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 				}
 			}
 
@@ -109,6 +111,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 				}
 			}
 
@@ -148,6 +151,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 				}
 			}
 
@@ -186,6 +190,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 				}
 			}
 
@@ -224,6 +229,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 				}
 			}
 		}

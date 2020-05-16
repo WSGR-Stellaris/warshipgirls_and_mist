@@ -1921,7 +1921,7 @@ fleet_event = {
                     }
                 }
                 random_owned_ship = {
-                    destroy_ship = this
+                    ship_event = { id = mwsge_drone.5 days = 1}
                 }
             }
             24 = {}

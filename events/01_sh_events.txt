@@ -250,13 +250,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_pop_species = {
-			limit = {
-				has_trait = sh_trait_shenhai
-			}
+		every_owned_pop_species = {
+			limit = { has_trait = sh_trait_shenhai }
 			PREV = { modify_species = {
 				species = prev
-				remove_trait = sh_trait_shenhai
 				add_trait = sh_trait_shenhai1
 			}}
 		}
@@ -451,7 +448,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_pop_species = {
+		every_owned_pop_species = {
 			limit = {
 				OR = {
 					has_trait = sh_trait_shenhai1
@@ -463,17 +460,13 @@ country_event = {
 				PREV = { modify_species = {
 					species = this
 					remove_trait = sh_trait_shenhai
-					add_trait = sh_trait_shenhai2
 				}}
 			}
-			else_if = {
-				limit = { has_trait = sh_trait_shenhai1 }
-				PREV = { modify_species = {
-					species = this
-					remove_trait = sh_trait_shenhai1
-					add_trait = sh_trait_shenhai2
-				}}
-			}
+			PREV = { modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai1
+				add_trait = sh_trait_shenhai2
+			}}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 		country_event = { id = wg_aft.4 }
@@ -661,29 +654,22 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_pop_species = {
+		every_owned_pop_species = {
 			limit = {
 				OR = {
 					has_trait = sh_trait_shenhai1
 					has_trait = sh_trait_shenhai
 				}
 			}
-			if = {
-				limit = { has_trait = sh_trait_shenhai }
-				PREV = { modify_species = {
-					species = this
-					remove_trait = sh_trait_shenhai
-					add_trait = sh_trait_shenhai3
-				}}
-			}
-			else_if = {
-				limit = { has_trait = sh_trait_shenhai1 }
-				PREV = { modify_species = {
-					species = this
-					remove_trait = sh_trait_shenhai1
-					add_trait = sh_trait_shenhai3
-				}}
-			}
+			PREV = { modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai
+			}}
+			PREV = { modify_species = {
+				species = this
+				remove_trait = sh_trait_shenhai1
+				add_trait = sh_trait_shenhai3
+			}}
 		}
 		change_dominant_species = { species = last_created change_all = yes }
 	}
@@ -1619,8 +1605,9 @@ planet_event = {
 				}
 			}
 		}	
-		set_asteroid_belt = { radius = 0 }
 		solar_system = {
+			set_star_flag = ring_world_built
+			set_asteroid_belt = { radius = 0 }
 			every_system_planet = {
 				if = {
 					limit = { is_star = yes }
@@ -1642,11 +1629,11 @@ planet_event = {
 				else = { 
 					remove_planet = yes 
 				}
-				set_asteroid_belt = { radius = 0 }
 			}
-			every_megastructure = {
-				remove_megastructure= yes
+			every_system_megastructure = {
+				remove_megastructure = this
 			}			
+			remove_star_flag = ring_world_built
 		}
 	}
 }
@@ -1818,9 +1805,7 @@ country_event = {
 planet_event = {
 	id = sh.3031
 	hide_window = yes
-
 	is_triggered_only = yes
-	
 	trigger = {
         planet_devastation >= 100
 		OR = {
@@ -1833,7 +1818,7 @@ planet_event = {
 				has_authority = auth_warshipgirls
 			}
 		}
-		habitable_planet = yes
+		has_owner = yes	
 	}	
 	
 	immediate = {
@@ -1846,7 +1831,20 @@ planet_event = {
 			country_event = { id = sh.3032 } 
 		}
 		from = { country_event = { id = sh.3033 } }
-		change_pc = pc_broken
+		if = {
+			limit = { 
+				is_ringworld_wg = yes 
+			}
+			change_pc = pc_ringworld_habitable_damaged
+            reset_planet = yes
+        }
+        else_if = {
+            limit = { is_habitat_wg = yes }
+			remove_planet = yes
+        }		
+        else = {
+			change_pc = pc_broken
+        }
 		remove_all_buildings = yes
 		reroll_deposits = yes
 		remove_modifier = "natural_beauty"
@@ -2011,8 +2009,14 @@ country_event = {
 		random_owned_planet = {
 			limit = {
 				is_capital = yes
+				NOT = { has_planet_flag = wg_ring_world_start_planet }
 			}
 			add_district = district_generator
+		}	
+		random_owned_planet = {
+			limit = {
+				is_capital = yes
+			}			
 			add_building = building_urban_dwellings_sh
 			add_deposit = d_bomb_crater
 			add_deposit = d_bomb_crater
@@ -2026,4 +2030,84 @@ country_event = {
 			add_resource = { sr_pantsu = 300 }
 		}		
 	}		
+}
+#####深海猫领袖
+country_event = {
+	id = sh.3039
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_ascension_perk = ap_shenhai_silent
+	}
+	immediate = {
+		country_event = { id = sh.3040 days = 720 }
+	}
+}
+country_event = {
+	id = sh.3040
+	title = "sh.3040.name"
+	desc = "sh.3040.desc"
+	picture = GFX_evt_Bismark
+	is_triggered_only = yes
+
+	after = {
+		hidden_effect = {
+			create_species = {
+				name = Bismark_sh
+				plural = Bismark_sh
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = Bismark_sh_species
+				}
+			}		
+			create_leader = {
+				class = admiral
+				species = event_target:Bismark_sh_species
+				name = "Bismark"
+				skill = 10
+				traits = {
+					trait = leader_trait_admiral_Bismark
+					trait = leader_trait_admiral_shenhai1
+				}
+				event_leader = yes	# prevents this leader from leading factions and winning elections
+				effect = {
+					set_leader_flag = Bismark_sh_flag
+					set_leader_flag = wsg_event_leader
+				}				
+			}
+			country_event = { id = sh.3041 days = 1 }
+			last_created_leader = {
+				set_age = 24
+				change_leader_portrait = sh31
+				set_is_female = yes
+				add_ruler_trait = leader_trait_ruler_shenhai2
+				set_variable = { which = affection value = 30 }
+			}
+		}
+	}
+	
+	option = {
+		name = "sh.3040.a"
+		owner = {
+			add_resource = { unity = 2000 }
+		}
+	}
+}
+country_event = {
+	id = sh.3041
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			if = {
+				limit = {
+					has_leader_flag = Bismark_sh_flag
+				}
+				change_leader_portrait = sh31
+			}	
+		}
+	}
 }

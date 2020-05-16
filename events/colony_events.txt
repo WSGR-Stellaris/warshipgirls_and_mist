@@ -211,7 +211,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_country_flag = burned_forests_rampaged
+		has_country_flag = burned_forests_rampaged_country
 		FROMFROM = { has_planet_flag = burned_forests_rampaged_planet }
 	}
 
@@ -489,6 +489,7 @@ planet_event = {
 
 	trigger = {
 		has_modifier = "migrating_forests"
+		NOT = { has_planet_flag = recent_migrating_forests_movement }
 	}
 
 	mean_time_to_happen = {
@@ -496,14 +497,15 @@ planet_event = {
 	}
 
 	immediate = {
-		add_planet_devastation = 10
+		set_timed_planet_flag = {
+			flag = recent_migrating_forests_movement
+			days = 360
+		}
 	}
 
 	option = {
 		name = PECULIAR
-		tooltip = {
-			add_planet_devastation = 10
-		}
+		add_planet_devastation = 10
 	}
 }
 
@@ -716,7 +718,6 @@ country_event = {
 			add_deposit = d_underground_contact_zone
 			#set_planet_flag = trade_size_increase
 		}
-		custom_tooltip = underground_expansion_tooltip
 	}
 	option = {
 		name = colony.53.c
@@ -943,7 +944,6 @@ country_event = {
 	picture_event_data = {
 		portrait = event_target:subterranean_empire
 		planet_background = event_target:conquered_planet
-		graphical_culture = event_target:conquered_planet
 		graphical_culture = event_target:conquered_planet
 		room = event_target:subterranean_empire.ruler
 	}
@@ -1946,18 +1946,21 @@ planet_event = {
 
 	trigger = {
 		num_pops > 0
+		habitable_planet = yes
+		uses_district_set = standard
 		NOR = {
 			has_planet_flag = abandoned_terraforming_planet
 			has_planet_flag = colony_event
 			is_planet_class = pc_nuked
 			is_planet_class = pc_gaia
+			is_planet_class = pc_relic
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_ringworld_habitable_sh
 			is_planet_class = pc_shenhai
 			is_planet_class = pc_wsg_port
 			is_planet_class = pc_habitat
 			is_planet_class = pc_city
-			is_planet_class = pc_relic
+			is_planet_class = pc_ringworld_habitable_wsg
 			owner = { has_country_flag = abandoned_terraforming_country }
 			owner = { has_authority = auth_machine_intelligence }
 			AND = {
@@ -2326,6 +2329,19 @@ planet_event = {
 						15 = { change_pc = pc_savannah }
 					}
 				}
+				default = {
+					random_list = {
+						15 = { change_pc = pc_tropical }
+						15 = { change_pc = pc_arid }
+						15 = { change_pc = pc_continental }
+						15 = { change_pc = pc_ocean }
+						15 = { change_pc = pc_tundra }
+						15 = { change_pc = pc_arctic }
+						15 = { change_pc = pc_alpine }
+						15 = { change_pc = pc_desert }
+						15 = { change_pc = pc_savannah }
+					}
+				}
 			}
 		}
 	}
@@ -2454,6 +2470,19 @@ planet_event = {
 						15 = { change_pc = pc_savannah }
 					}
 				}
+				default = {
+					random_list = {
+						15 = { change_pc = pc_tropical }
+						15 = { change_pc = pc_arid }
+						15 = { change_pc = pc_continental }
+						15 = { change_pc = pc_ocean }
+						15 = { change_pc = pc_tundra }
+						15 = { change_pc = pc_arctic }
+						15 = { change_pc = pc_alpine }
+						15 = { change_pc = pc_desert }
+						15 = { change_pc = pc_savannah }
+					}
+				}
 			}
 			remove_modifier = "abandoned_terraforming"
 			owner = { set_country_flag = terraforming_mutants_invade_country }
@@ -2520,7 +2549,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			NOR = {
-				owner = { has_civic = civic_post_apocalyptic}
+				owner = { has_origin = origin_post_apocalyptic }
 				owner.species = { has_trait = trait_pc_nuked_preference }
 			}
 		}
@@ -2529,7 +2558,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			OR = {
-				owner = { has_civic = civic_post_apocalyptic}
+				owner = { has_origin = origin_post_apocalyptic }
 				owner.species = { has_trait = trait_pc_nuked_preference }
 			}
 		}
@@ -2544,7 +2573,7 @@ planet_event = {
 	option = {
 		trigger = {
 			NOR = {
-				owner = { has_civic = civic_post_apocalyptic}
+				owner = { has_origin = origin_post_apocalyptic }
 				owner.species = { has_trait = trait_pc_nuked_preference }
 			}
 		}
@@ -2586,7 +2615,7 @@ planet_event = {
 	option = {
 		trigger = {
 			OR = {
-				owner = { has_civic = civic_post_apocalyptic}
+				owner = { has_origin = origin_post_apocalyptic }
 				owner.species = { has_trait = trait_pc_nuked_preference }
 			}
 		}

@@ -1150,10 +1150,10 @@ ship_design = {
 ####################
 
 ship_design = {
-	name = "NAME_WG_LADY_T"
-	ship_size = wsg_lady_warship_imdesignable
+	name = "NAME_WG_LADY_JUGGERNAUT"
+	ship_size = wsg_lady_juggernaut
 	section = {
-		template = "wg_ai_T_warship"
+		template = "wg_lady_juggernaut"
 		slot = "mid"
 		
 		component = {
@@ -1246,7 +1246,7 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_2"
-			template = "SHELL_sh"
+			template = "DAMAGE_CONTROL_wsg"
 		}
 	}	
 	required_component = "SH_JUMP_DRIVE"

@@ -1,0 +1,28 @@
+namespace = wg_kuat
+event = {
+	id = wg_kuat.1
+	hide_window = yes
+	is_triggered_only = yes
+
+    trigger = {
+		any_country = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+
+    immediate = {
+        random_country = {
+			limit = {
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
+				is_ai = no
+			}
+			set_global_flag = has_wg_country
+		}		
+    }
+}  

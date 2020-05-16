@@ -29,6 +29,7 @@ portraits = {
 	nf243	= {texturefile = "gfx/models/portraits/nf243.dds"}
 	nf249	= {texturefile = "gfx/models/portraits/nf249.dds"}
 	nf260	= {texturefile = "gfx/models/portraits/nf260.dds"}
+	nf261	= {texturefile = "gfx/models/portraits/nf261.dds"}
 	wsg1	 =	{texturefile = "gfx/models/portraits/wsg1.dds"  }
 	wsg1_1	 =	{texturefile = "gfx/models/portraits/wsg1_1.dds"  }
 	wsg1_2	 =	{texturefile = "gfx/models/portraits/wsg1_2.dds"  }
@@ -636,6 +637,10 @@ portraits = {
 	wsg433	=	{texturefile = "gfx/models/portraits/wsg433.dds"  }
 	wsg434	=	{texturefile = "gfx/models/portraits/wsg434.dds"  }
 	wsg435	=	{texturefile = "gfx/models/portraits/wsg435.dds"  }
+	wsg436	=	{texturefile = "gfx/models/portraits/wsg436.dds"  }
+	wsg439	=	{texturefile = "gfx/models/portraits/wsg439.dds"  }
+	wsg440	=	{texturefile = "gfx/models/portraits/wsg440.dds"  }
+	wsg9993	=	{texturefile = "gfx/models/portraits/wsg9993.dds"  }
 	wsg9994	=	{texturefile = "gfx/models/portraits/wsg9994.dds"  }
 	wsg9995	=	{texturefile = "gfx/models/portraits/wsg9995.dds"  }	
 	wsg9996	=	{texturefile = "gfx/models/portraits/wsg9996.dds"  }
@@ -685,6 +690,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 					wsg1
 					wsg1_1
 					wsg1_2
@@ -1289,6 +1295,9 @@ portrait_groups = {
 					wsg433
 					wsg434
 					wsg435
+					wsg436
+					wsg439
+					wsg440
 					wsg9996
 				}
 			}
@@ -1328,6 +1337,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 					wsg1
 					wsg1_1
 					wsg1_2
@@ -1933,6 +1943,9 @@ portrait_groups = {
 					wsg433
 					wsg434
 					wsg435
+					wsg436
+					wsg439
+					wsg440
 				}
 			}
 
@@ -1972,6 +1985,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 					wsg1
 					wsg1_1
 					wsg1_2
@@ -2577,6 +2591,9 @@ portrait_groups = {
 					wsg433
 					wsg434
 					wsg435
+					wsg436
+					wsg439
+					wsg440
 				}
 			}
 
@@ -2615,6 +2632,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 					wsg1
 					wsg1_1
 					wsg1_2
@@ -3220,6 +3238,9 @@ portrait_groups = {
 					wsg433
 					wsg434
 					wsg435
+					wsg436
+					wsg439
+					wsg440
 				}
 			}
 
@@ -3258,6 +3279,7 @@ portrait_groups = {
 					nf243
 					nf249
 					nf260
+					nf261
 					wsg1
 					wsg1_1
 					wsg1_2
@@ -3862,7 +3884,10 @@ portrait_groups = {
 					wsg432
 					wsg433
 					wsg434
-					wsg435					
+					wsg435	
+					wsg436
+					wsg439
+					wsg440
 				}
 			}
 		}

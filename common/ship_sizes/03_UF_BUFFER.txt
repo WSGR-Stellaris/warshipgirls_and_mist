@@ -1,5 +1,5 @@
 uf_buffer = {
-	entity = "x901_entity"
+	entity = "buffer_entity"
 	graphical_culture = no
 	max_speed = 150
 	acceleration = 0.2

@@ -49,6 +49,10 @@ country_event = {
                 set_graphical_culture = mammalian_01
                 add_modifier = { modifier = ra_regen_buff days = -1 }
                 if = {
+                    limit = { has_global_flag = wg_crisis_easy }
+                    add_modifier = { modifier = uf_easy_debuff days = -1 }
+                }
+                if = {
                     limit = { 
                         OR = {
                             has_global_flag = wg_crisis_normal
@@ -1172,6 +1176,15 @@ country_event = {
     picture = GFX_evt_fleet_neutral
     is_triggered_only = yes
 
+    trigger = {
+        any_country = {
+            OR = {
+                is_country_type = wg_crisis_country
+                is_country_type = wg_resistant_army
+            }
+        }
+    }
+
     after = {
         hidden_effect = {
             capital_scope = { save_event_target_as = spawn_resistance_fleet_location }
@@ -1451,7 +1464,7 @@ country_event = {
 
     trigger = {
         event_target:wg_resistant_country = {
-            count_owned_ships = {
+            count_owned_ship = {
                 limit = { Fleet = { has_fleet_flag = ra_defence_fleet@root }}
                 count > 0
             }

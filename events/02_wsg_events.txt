@@ -1921,35 +1921,35 @@ country_event = {
 		}
 	}
 }
-########
-country_event = {
-	id = wsg.3053
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		has_authority = auth_warshipgirls
-	}
-	immediate = {
-		country_event = { id = wsg.3054 days = 10800  }
-	}
-}
-country_event = {
-	id = wsg.3054
-	title = "wsg.3054.name"
-	desc = "wsg.3054.desc"
-	picture = GFX_evt_big_ass
-	is_triggered_only = yes
+# ########
+# country_event = {
+# 	id = wsg.3053
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		has_authority = auth_warshipgirls
+# 	}
+# 	immediate = {
+# 		country_event = { id = wsg.3054 days = 10800  }
+# 	}
+# }
+# country_event = {
+# 	id = wsg.3054
+# 	title = "wsg.3054.name"
+# 	desc = "wsg.3054.desc"
+# 	picture = GFX_evt_big_ass
+# 	is_triggered_only = yes
 
-	trigger = {
-		NOT = { has_technology = tech_exotic_gases }	
-	}
-	option = {
-		name = "wsg.3054.a"
-		owner={
-			give_technology = { tech = tech_exotic_gases }
-		}		
-	}
-}
+# 	trigger = {
+# 		NOT = { has_technology = tech_exotic_gases }	
+# 	}
+# 	option = {
+# 		name = "wsg.3054.a"
+# 		owner={
+# 			give_technology = { tech = tech_exotic_gases }
+# 		}		
+# 	}
+# }
 #######
 country_event = {
 	id = wsg.3055
@@ -2208,6 +2208,11 @@ country_event = {
 								is_country_type = wg_crisis_country 
 								is_country_type = kuat_fallen_empire
 								is_country_type = kuat_awakened_fallen_empire
+								is_country_type = ag_kuat_invasion_country
+								is_country_type = ag_ancient_primitive_crisis
+								is_country_type = ag_ancient_gamma_guardian
+								is_country_type = ag_zeta_crisis_country
+								is_country_type = ag_ancient_psi_guardian
 							}
 						}
 					}
@@ -2777,7 +2782,10 @@ country_event = {
 		OR = {
 			has_authority = auth_shenhai
 			has_authority = auth_warshipgirls
+		}
+		OR = {
 			is_same_value = event_target:lady_Contingency_owner
+			has_country_flag = gain_lady_Contingency
 		}
 		fromfrom = { 
 			OR = {
@@ -2810,7 +2818,6 @@ country_event = {
 		name = wsg.3082.a
 		response_text = wsg.3082.a.response
 		hidden_effect = {
-			clear_global_event_target = lady_contingency_fleet
 			create_fleet = {
 				name = "NAME_lady_Contingency_fleet"
 				effect = {
@@ -2845,6 +2852,34 @@ country_event = {
 	}
 }
 
+# country_event = {
+# 	id = wsg.3082
+# 	is_triggered_only = yes
+# 	hide_window = yes
+
+# 	trigger = {
+# 		OR = {
+# 			has_country_flag = gain_lady_Contingency
+# 			is_same_value = event_target:lady_Contingency_owner
+# 		}
+# 		NOR = { 
+# 			any_owned_fleet = {
+# 				OR = {
+# 					has_fleet_flag = lady_fleet	
+# 					is_same_value = event_target:lady_contingency_fleet
+# 				}
+# 				exists = this
+# 			}
+# 			has_country_flag = modifing_wsg_lady
+# 			has_country_flag = gain_wsg_lady
+# 			exists = event_target:wsg_lady_own_country
+# 		}
+# 	}
+
+# 	immediate = {
+# 		country_event = { id = wsg.3082 days = 1800 } # for test, should be 1800
+# 	}
+# }
 
 ship_event = {
 	id = wsg.3100
@@ -3476,4 +3511,29 @@ country_event = {
 			add_trait = leader_trait_badseal
 		}		
 	}	
+}
+#时之虫救VV
+country_event = {
+	id = wsg.3118
+	title = "wsg.3118.name"
+	desc = "wsg.3118.desc"
+	picture = GFX_evt_VV4
+	show_sound = event_alien_nature
+	
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_warshipgirls
+		last_increased_tech = "tech_akx_worm_1"
+	}	
+	option = {
+		name = "wsg.3118.a"
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}	
+	}
 }

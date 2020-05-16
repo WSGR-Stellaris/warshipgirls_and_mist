@@ -1,23 +1,14 @@
 ﻿l_english:
-#################################
- Warship_Girls:0 "Warship Girl Race"
+ Warship_Girls:0 "Warship Girl"
  warship_girls:0 "Warship Girls"
  Warship_Girl:0 "Warship Girl Avatar"
  warship_girl:0 "Warship Girl"
- FLAG_CATEGORY_warshipgirls:0 "Warship Girl R Flag"
+ FLAG_CATEGORY_warshipgirls:0 "Warship Girls R Flag"
  wsg_trait_warshipgirls:0 "Warship Girls"
- wsg_trait_warshipgirls_desc:0 "Warship Girls are designed by the Mengmeng Group by studying the Abyssal fleet in reverse. Their purpose is to resist the invasion of the Abyssal fleet and protect human civilization.
-
- MACHINE_Warship_Girls:0 "Mechanical Warship girls"
- MACHINE_Shenhai:0 "Mechanical Abyssal"
+ wsg_trait_warshipgirls_desc:0 "Warship Girls are designed by Illumoe Inc. through reverse engineering of Abyssal Fleet's technology. Their purpose is to resist the invasion of the Abyssal Fleet and save human civilization."
+ MACHINE_Warship_Girls:0 "Mechanical Warship Girl"
+ MACHINE_Shenhai:0 "Mechanical Abyssal Shipgirl"
  United_fleet:0 "United Fleet"
- 
- START_SCREEN_WSG:0 "After breaking the last line of defense in the Abyssal, the remaining Abyssal fleet completely disappeared from our home star. In the Abyssal central computer, we deciphered that the remaining Abyssal fleet flew to the unknown through a hyperspace engine In the deep space of the universe. Now that we also have hyperspace technology, it is time to end our enemies. "
- 
-
- 
- 
- 
- 
- building_warshipgirl_assembly_plant:0 "Minato Builder"
- building_warshipgirl_assembly_plant_desc:0 "Under Dr. Yubari's transformation, the Minato Builder can continue to be used."
+ START_SCREEN_WSG:0 "After defeating the Abyssal Fleet's last defense line, the rest of Abyssal shipgirls suddenly disappear off our homeworld. From the decrypted data in the Abyssal's base, we had known that the remainders of them ran away into deep space with hyperspace engines. Now we have eventually developed these technologies, and it's time to put an end to our old enemy."
+ building_warshipgirl_assembly_plant:0 "Harbor Constructor"
+ building_warshipgirl_assembly_plant_desc:0 "With Dr. Yubari's technology, the Harbor Constructor is now available to us."

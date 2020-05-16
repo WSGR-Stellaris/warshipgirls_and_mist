@@ -2386,147 +2386,302 @@ country_event = {
 
 	after = {
 		hidden_effect = {
-			random_list = {
-				5 = { 
-					modifier = {
-						factor = 3
-						years_passed < 100
-					}
-					set_country_flag = exchange_result1
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "energy_out" value = @wg_fe_exchange_energy_base }
-					multiply_variable = { which = "energy_out" value = "exchange_mutliplier" }
-					set_variable = { which = "minerals_out" value = @wg_fe_exchange_minerals_base }
-					multiply_variable = { which = "minerals_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 2
-						years_passed > 70
-					}
-					modifier = { factor = 100 always = yes }
-					set_country_flag = exchange_result2 
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "alloys_out" value = @wg_fe_exchange_alloys_base }
-					multiply_variable = { which = "alloys_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 2
-						years_passed > 70
-					}
-					set_country_flag = exchange_result3 
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "sr_pantsu_out" value = @wg_fe_exchange_sr_pantsu_base }
-					multiply_variable = { which = "sr_pantsu_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 1.6
-						years_passed < 100
-					}
-					set_country_flag = exchange_result4 
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "volatile_motes_out" value = @wg_fe_exchange_volatile_motes_base }
-					multiply_variable = { which = "volatile_motes_out" value = "exchange_mutliplier" }
-					set_variable = { which = "rare_crystals_out" value = @wg_fe_exchange_rare_crystals_base }
-					multiply_variable = { which = "rare_crystals_out" value = "exchange_mutliplier" }
-					set_variable = { which = "exotic_gases_out" value = @wg_fe_exchange_exotic_gases_base }
-					multiply_variable = { which = "exotic_gases_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 0.4
-						years_passed < 70
-					}
-					set_country_flag = exchange_result5
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "sr_living_metal_out" value = @wg_fe_exchange_sr_living_metal_base }
-					multiply_variable = { which = "sr_living_metal_out" value = "exchange_mutliplier" }
-					set_variable = { which = "sr_dark_matter_out" value = @wg_fe_exchange_sr_dark_matter_cost }
-					multiply_variable = { which = "sr_dark_matter_out" value = "exchange_mutliplier" }
-					set_variable = { which = "sr_zro_out" value = @wg_fe_exchange_sr_zro_base }
-					multiply_variable = { which = "sr_zro_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 0
-						NOT = { has_authority = auth_shenhai }
-					}
-					modifier = {
-						factor = 1.6
-						years_passed > 50
-					}
-					set_country_flag = exchange_result6
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "sr_se_out" value = @wg_fe_exchange_sr_se_base }
-					multiply_variable = { which = "sr_se_out" value = "exchange_mutliplier" }
-				}
-				5 = { 
-					modifier = {
-						factor = 0
-						years_passed < 50
-					}
-					modifier = {
-						factor = 2
-						years_passed > 120
-					}
-					set_country_flag = exchange_result7 
-				}
-				5 = { 
-					modifier = {
-						factor = 0
-						years_passed < 50
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							count_tech_options = { area = physics count < 1 }
-							count_tech_options = { area = society count < 1 }
-							count_tech_options = { area = engineering count < 1 }
+			while = { count = 3 
+				random_list = {
+					10 = { 
+						modifier = {
+							factor = 1.5
+							years_passed < 100
 						}
+						modifier = {
+							factor = 1.5
+							years_passed < 100
+							years_passed > 75
+							resource_income_compare = { resource = energy value < 200 }
+							resource_stockpile_compare = { resource = energy value < 10000 }
+							resource_income_compare = { resource = minerals value < 200 }
+							resource_stockpile_compare = { resource = minerals value < 10000 }
+						}
+						modifier = {
+							factor = 2
+							years_passed < 75
+							years_passed > 25
+							resource_income_compare = { resource = energy value < 100 }
+							resource_stockpile_compare = { resource = energy value < 5000 }
+							resource_income_compare = { resource = minerals value < 100 }
+							resource_stockpile_compare = { resource = minerals value < 5000 }
+						}
+						modifier = {
+							factor = 0.6
+							OR = {
+								resource_stockpile_compare = { resource = energy value < 30000 }
+								resource_stockpile_compare = { resource = minerals value < 30000 }
+							}
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result1 }   
+						set_country_flag = exchange_result1
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "energy_out" value = @wg_fe_exchange_energy_base }
+						multiply_variable = { which = "energy_out" value = "exchange_mutliplier" }
+						set_variable = { which = "minerals_out" value = @wg_fe_exchange_minerals_base }
+						multiply_variable = { which = "minerals_out" value = "exchange_mutliplier" }
 					}
-					modifier = {
-						factor = 2
-						years_passed > 80
+					10 = { 
+						modifier = {
+							factor = 1.5
+							years_passed < 100
+							years_passed > 75
+							resource_income_compare = { resource = alloys value < 200 }
+							resource_stockpile_compare = { resource = alloys value < 10000 }
+						}
+						modifier = {
+							factor = 2
+							years_passed < 75
+							years_passed > 25
+							resource_income_compare = { resource = alloys value < 100 }
+							resource_stockpile_compare = { resource = alloys value < 5000 }
+						}
+						modifier = {
+							factor = 0.6
+							resource_stockpile_compare = { resource = alloys value < 50000 }
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result2 }  
+						set_country_flag = exchange_result2 
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "alloys_out" value = @wg_fe_exchange_alloys_base }
+						multiply_variable = { which = "alloys_out" value = "exchange_mutliplier" }
 					}
-					set_country_flag = exchange_result8 
-				}
-				5 = { 
-					modifier = {
-						factor = 0
-						years_passed < 50
+					10 = { 
+						modifier = {
+							factor = 1.5
+							years_passed < 150
+							years_passed > 75
+							resource_income_compare = { resource = sr_pantsu value < 40 }
+							resource_stockpile_compare = { resource = sr_pantsu value < 1000 }
+						}
+						modifier = {
+							factor = 2
+							years_passed < 75
+							years_passed > 25
+							resource_income_compare = { resource = sr_pantsu value < 20 }
+							resource_stockpile_compare = { resource = sr_pantsu value < 500 }
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result3 }  
+						set_country_flag = exchange_result3 
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "sr_pantsu_out" value = @wg_fe_exchange_sr_pantsu_base }
+						multiply_variable = { which = "sr_pantsu_out" value = "exchange_mutliplier" }
 					}
-					modifier = {
-						factor = 2
-						years_passed > 120
+					10 = { 
+						modifier = {
+							factor = 1.6
+							years_passed < 100
+						}
+						modifier = {
+							factor = 2
+							years_passed < 75
+							years_passed > 25
+							OR = {
+								AND = {
+									resource_income_compare = { resource = volatile_motes value < 10 }
+									resource_stockpile_compare = { resource = volatile_motes value < 500 }
+								}
+								AND = {
+									resource_income_compare = { resource = rare_crystals value < 10 }
+									resource_stockpile_compare = { resource = rare_crystals value < 500 }
+								}
+								AND = {
+									resource_income_compare = { resource = exotic_gases value < 10 }
+									resource_stockpile_compare = { resource = exotic_gases value < 500 }
+								}
+							}
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result4 }  
+						set_country_flag = exchange_result4 
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "volatile_motes_out" value = @wg_fe_exchange_volatile_motes_base }
+						multiply_variable = { which = "volatile_motes_out" value = "exchange_mutliplier" }
+						set_variable = { which = "rare_crystals_out" value = @wg_fe_exchange_rare_crystals_base }
+						multiply_variable = { which = "rare_crystals_out" value = "exchange_mutliplier" }
+						set_variable = { which = "exotic_gases_out" value = @wg_fe_exchange_exotic_gases_base }
+						multiply_variable = { which = "exotic_gases_out" value = "exchange_mutliplier" }
 					}
-					set_country_flag = exchange_result9
-				}
-				5 = { 
-					modifier = {
-						factor = 0
-						NOT = { has_global_flag = lgates_activated_globally }
+					5 = { 
+						modifier = {
+							factor = 0.4
+							years_passed < 70
+						}
+						modifier = {
+							factor = 2
+							years_passed > 70
+							OR = {
+								AND = {
+									has_technology = tech_mine_living_metal
+									resource_income_compare = { resource = sr_living_metal value < 5 }
+									resource_stockpile_compare = { resource = volatile_motes value < 250 }
+								}
+								AND = {
+									has_technology = tech_mine_dark_matter
+									resource_income_compare = { resource = sr_dark_matter value < 5 }
+									resource_stockpile_compare = { resource = sr_dark_matter value < 250 }
+								}
+								AND = {
+									has_technology = tech_mine_zro
+									resource_income_compare = { resource = sr_zro value < 5 }
+									resource_stockpile_compare = { resource = sr_zro value < 250 }
+								}
+							}
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result5 }  
+						set_country_flag = exchange_result5
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "sr_living_metal_out" value = @wg_fe_exchange_sr_living_metal_base }
+						multiply_variable = { which = "sr_living_metal_out" value = "exchange_mutliplier" }
+						set_variable = { which = "sr_dark_matter_out" value = @wg_fe_exchange_sr_dark_matter_cost }
+						multiply_variable = { which = "sr_dark_matter_out" value = "exchange_mutliplier" }
+						set_variable = { which = "sr_zro_out" value = @wg_fe_exchange_sr_zro_base }
+						multiply_variable = { which = "sr_zro_out" value = "exchange_mutliplier" }
 					}
-					modifier = {
-						factor = 2
-						has_country_flag = gain_wsg_lady
+					5 = { 
+						modifier = {
+							factor = 0
+							NAND = { 
+								resource_stockpile_compare = { resource = sr_se value > 0 }
+								has_technology = tech_sh_senergy
+							}
+						}
+						modifier = {
+							factor = 1.6
+							years_passed > 50
+						}
+						modifier = {
+							factor = 2
+							years_passed < 75
+							years_passed > 25
+							resource_income_compare = { resource = sr_se value < 10 }
+							resource_stockpile_compare = { resource = sr_se value < 250 }
+						}
+						modifier = {
+							factor = 2.5
+							years_passed > 75
+							resource_income_compare = { resource = sr_se value < 15 }
+							resource_stockpile_compare = { resource = sr_se value < 500 }
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result6 }  
+						set_country_flag = exchange_result6
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "sr_se_out" value = @wg_fe_exchange_sr_se_base }
+						multiply_variable = { which = "sr_se_out" value = "exchange_mutliplier" }
 					}
-					modifier = {
-						factor = 2
-						has_special_project = WSG_LADY_MODIFICATION
+					5 = { 
+						modifier = {
+							factor = 0
+							years_passed < 50
+						}
+						modifier = {
+							factor = 2
+							years_passed > 120
+							mid_game_years_passed > 0
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result7 }
+						modifier = {
+							factor = 0
+							check_variable = { which = buy_fe_fleet_count value >= 5 }
+						}  
+						modifier = {
+							factor = 0.8
+							check_variable = { which = buy_fe_fleet_count value >= 1 }
+						}
+						modifier = {
+							factor = 0.5
+							check_variable = { which = buy_fe_fleet_count value >= 3 }
+						}
+						modifier = {
+							factor = 1.3
+							fleet_power < 10000
+							count_owned_ship = {
+								count < 10
+								limit = {
+									fleet = { NOR = {
+										has_fleet_flag = lady_fleet
+										has_fleet_flag = lady_fleet2
+									}}
+								}
+							}
+							NOR = { 
+								has_country_flag = gain_wsg_lady
+								has_country_flag = gain_lady_Contingency
+							}
+						}
+						set_country_flag = exchange_result7 
 					}
-					set_country_flag = exchange_result10
-					set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
-					multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
-					set_variable = { which = "nanites_out" value = @wg_fe_exchange_nanites_base }
-					multiply_variable = { which = "nanites_out" value = "exchange_mutliplier" }
+					5 = { 
+						modifier = {
+							factor = 0
+							years_passed < 50
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								count_tech_options = { area = physics count < 1 }
+								count_tech_options = { area = society count < 1 }
+								count_tech_options = { area = engineering count < 1 }
+							}
+						}
+						modifier = {
+							factor = 2
+							years_passed > 80
+						}
+						modifier = {
+							factor = 0.5
+							tech_unlocked_ratio = { who = THIS ratio > 0.5 }
+						}
+						modifier = {
+							factor = 1.5
+							tech_unlocked_ratio = { who = THIS ratio < 0.35 }
+						}
+						modifier = {
+							factor = 2
+							tech_unlocked_ratio = { who = THIS ratio < 0.1 }
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result8 }  
+						set_country_flag = exchange_result8 
+					}
+					5 = { 
+						modifier = {
+							factor = 0
+							years_passed < 50
+						}
+						modifier = {
+							factor = 2
+							years_passed > 120
+							mid_game_years_passed > 0
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result9 }  
+						set_country_flag = exchange_result9
+					}
+					5 = { 
+						modifier = {
+							factor = 0
+							NOT = { has_global_flag = lgates_activated_globally }
+						}
+						modifier = {
+							factor = 10
+							has_special_project = WSG_LADY_MODIFICATION
+						}
+						modifier = { factor = 0 has_country_flag = exchange_result10 }  
+						set_country_flag = exchange_result10
+						set_variable = { which = "consumer_goods_cost" value = @wg_fe_exchange_consumer_goods_cost_base }
+						multiply_variable = { which = "consumer_goods_cost" value = "exchange_mutliplier" }
+						set_variable = { which = "nanites_out" value = @wg_fe_exchange_nanites_base }
+						multiply_variable = { which = "nanites_out" value = "exchange_mutliplier" }
+					}
 				}
 			}
 			country_event = { id = wg_fe.129 }
@@ -2542,20 +2697,7 @@ country_event = {
 	id = wg_fe.129
 	title = "TRANSMISSION"
 
-	desc = {
-		trigger = {
-			OR = {
-				has_country_flag = exchange_result1
-				has_country_flag = exchange_result2
-				has_country_flag = exchange_result3
-				has_country_flag = exchange_result4
-				has_country_flag = exchange_result5
-				has_country_flag = exchange_result6
-				has_country_flag = exchange_result10
-			}
-		}
-		text = wg_fe.129.desc_1
-	}
+	desc = wg_fe.129.desc
 	desc = {
 		trigger = {
 			has_country_flag = exchange_result7
@@ -2581,7 +2723,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = wsg7_2
-		planet_background = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire.capital_scope
 		graphical_culture = event_target:wg_fallen_empire
 		city_level = event_target:wg_fallen_empire
 		room = event_target:wg_fallen_empire.ruler
@@ -2610,6 +2752,7 @@ country_event = {
 		}
 		name = wg_fe.129.a
 		custom_tooltip = wg_fe.129.tooltip.1
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2628,8 +2771,9 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.b
 		custom_tooltip = wg_fe.129.tooltip.2
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2647,8 +2791,9 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.c
 		custom_tooltip = wg_fe.129.tooltip.3
+		response_text = wg_fe.129.response2
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2666,8 +2811,9 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.d
 		custom_tooltip = wg_fe.129.tooltip.4
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2687,8 +2833,9 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.e
 		custom_tooltip = wg_fe.129.tooltip.5
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2708,8 +2855,9 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.f
 		custom_tooltip = wg_fe.129.tooltip.6
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
@@ -2722,26 +2870,28 @@ country_event = {
 	option = {
 		trigger = { has_country_flag = exchange_result7 }
 		allow = { 
-			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+			resource_stockpile_compare = { resource = consumer_goods value > 3000 }
 		}
-		name = wg_fe.129.a
-		response_text = wg_fe.129.a.response
+		name = wg_fe.129.g
+		response_text = wg_fe.129.response3
 		add_resource = {
-			consumer_goods = -2000
+			consumer_goods = -3000
 		}
 		hidden_effect = {
+			change_variable = { which = buy_fe_fleet_count value = 1 }
 			country_event = { id = wg_fe.130 days = 30 }
 		}
 	}
 	option = {
 		trigger = { has_country_flag = exchange_result8 }
 		allow = { 
-			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+			resource_stockpile_compare = { resource = consumer_goods value > 2500 }
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.h
 		add_resource = {
-			consumer_goods = -2000
+			consumer_goods = -2500
 		}
+		response_text = wg_fe.129.response4
 		locked_random_list = {
 			1 = { add_random_research_option = {
 				add_progress = 0.5
@@ -2787,12 +2937,11 @@ country_event = {
 	option = {
 		trigger = { has_country_flag = exchange_result9 }
 		allow = { 
-			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+			resource_stockpile_compare = { resource = consumer_goods value > 1500 }
 		}
-		name = wg_fe.129.a
-		add_resource = {
-			consumer_goods = -2000
-		}
+		name = wg_fe.129.i
+		add_resource = { consumer_goods = -1500 }
+		response_text = wg_fe.129.response5
 		locked_random_list = {
 			1 = { add_modifier = { modifier = game_buff1 days = 1800 }}
 			1 = { add_modifier = { modifier = game_buff2 days = 1800 }}
@@ -2808,19 +2957,20 @@ country_event = {
 				has_enough_consumer_goods = yes
 			}
 		}
-		name = wg_fe.129.a
+		name = wg_fe.129.j
 		custom_tooltip = wg_fe.129.tooltip.10
+		response_text = wg_fe.129.response1
 		hidden_effect = {
 			while = { count = "exchange_mutliplier"
 				add_resource = {
 					consumer_goods = @wg_fe_exchange_consumer_goods_cost_base
-					sr_se = @wg_fe_exchange_sr_se_base
+					nanites = @wg_fe_exchange_nanites_base
 				}
 			}
 		}
 	}
 	option = {
-		name = wg_fe.129.b
+		name = wg_fe.129.k
 	}
 }
 
