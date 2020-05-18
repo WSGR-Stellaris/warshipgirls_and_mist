@@ -247,6 +247,7 @@ country_event = {
         }
         is_ai = no
         last_increased_tech = tech_wsg_pantsu
+	NOT = { has_communications = event_target:pantsu_shop_country }
     }
 
     immediate = {
@@ -255,10 +256,7 @@ country_event = {
     }
 
     after = {
-        if = {
-			limit = { NOT = { has_communications = event_target:pantsu_shop_country } }
-			establish_communications_no_message = event_target:pantsu_shop_country
-		}
+        establish_communications_no_message = event_target:pantsu_shop_country
         country_event = { id = wsgranking.1000 }
         country_event = { id = wsgranking.20001 }
     }
@@ -784,7 +782,7 @@ country_event = {
         }
         add_research_option = tech_wsg_rim99
         add_tech_progress = { tech = tech_wsg_rim99 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
 
     option = { 
@@ -817,7 +815,7 @@ country_event = {
         }
         add_research_option = tech_wsg_pd127
         add_tech_progress = { tech = tech_wsg_pd127 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
 
     option = { 
@@ -850,7 +848,7 @@ country_event = {
         }
         add_research_option = tech_wsg_auto127
         add_tech_progress = { tech = tech_wsg_auto127 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
 
     option = { 
@@ -884,7 +882,7 @@ country_event = {
         }
         add_research_option = tech_living_metal_bulge
         add_tech_progress = { tech = tech_living_metal_bulge progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
 
     option = { 
@@ -917,7 +915,7 @@ country_event = {
         }
         add_research_option = tech_wsg_auto152
         add_tech_progress = { tech = tech_wsg_auto152 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
 
     option = { 
@@ -950,7 +948,7 @@ country_event = {
         }
         add_research_option = tech_wsg_203plasma
         add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -982,7 +980,7 @@ country_event = {
         }
         add_research_option = tech_wsg_356laser
         add_tech_progress = { tech = tech_wsg_356laser progress = 0.1 }
-        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1014,7 +1012,7 @@ country_event = {
         }
         add_research_option = tech_wsg_410
         add_tech_progress = { tech = tech_wsg_410 progress = 0.1 }
-        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
     ## 深海武器兑换
 	option = {
@@ -1047,7 +1045,7 @@ country_event = {
 		}
 		add_research_option = tech_sh_autocannon
 		add_tech_progress = { tech = tech_sh_autocannon progress = 0.1 }
-        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -1079,7 +1077,7 @@ country_event = {
 		}
 		add_research_option = tech_sh_fighter
 		add_tech_progress = { tech = tech_sh_fighter progress = 0.1 }
-        add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -1112,7 +1110,7 @@ country_event = {
 		}
 		add_research_option = tech_sh_torpedo
 		add_tech_progress = { tech = tech_sh_torpedo progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 1800 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
 	}
 
     # 返回一级菜单
@@ -2772,11 +2770,11 @@ country_event = {
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_planetary_construction
+		name = wg_modifier_primary_industry
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 90 }
-				fail_text = too_low_rank_fail_90
+				check_variable = { which = "rankpts" value > 40 }
+				fail_text = too_low_rank_fail_40
 			}
 			custom_tooltip = {
 				check_variable = { which = max_allowed_shop_buffs value > 0 }
@@ -2786,12 +2784,88 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -2000 }
-		add_modifier = { modifier = wg_modifier_planetary_construction days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_primary_industry days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_secondary_industry
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_secondary_industry days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_tertiary_industry
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_tertiary_industry days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+	}	
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_planetary_construction
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_planetary_construction days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option"
 		name = wg_modifier_decision
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+				fail_text = too_low_rank_fail_60
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+			}
+			resource_stockpile_compare = { resource = energy value >= 3000 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -3000 }
+		add_modifier = { modifier = wg_modifier_decision days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+	}
+    option = {
+		custom_gui = "enclave_caravaneer_option" 
+		name = wg_modifier_megastructure_construction 
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 120 }
@@ -2801,50 +2875,31 @@ country_event = {
 				check_variable = { which = max_allowed_shop_buffs value > 0 }
                 fail_text = reached_max_allowed_shop_buffs
 			}
-			resource_stockpile_compare = { resource = energy value >= 2000 }
-		}
-		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
-        add_resource = { energy = -3000 }
-		add_modifier = { modifier = wg_modifier_decision days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
-	}
-    option = {
-		custom_gui = "enclave_caravaneer_option" 
-		name = wg_modifier_megastructure_construction 
-		allow = {
-			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 150 }
-				fail_text = too_low_rank_fail_150
-			}
-			custom_tooltip = {
-				check_variable = { which = max_allowed_shop_buffs value > 0 }
-                fail_text = reached_max_allowed_shop_buffs
-			}
-			resource_stockpile_compare = { resource = energy value >= 2000 }
+			resource_stockpile_compare = { resource = energy value >= 3500 }
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -3500 }
-		add_modifier = { modifier = wg_modifier_megastructure_construction days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_megastructure_construction days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
 		name = wg_modifier_megastructure_pruduction
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 150 }
-				fail_text = too_low_rank_fail_150
+				check_variable = { which = "rankpts" value > 120 }
+				fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
 				check_variable = { which = max_allowed_shop_buffs value > 0 }
                 fail_text = reached_max_allowed_shop_buffs
 			}
-			resource_stockpile_compare = { resource = energy value >= 2000 }
+			resource_stockpile_compare = { resource = energy value >= 3500 }
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -3500 }
-		add_modifier = { modifier = wg_modifier_megastructure_pruduction days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_megastructure_pruduction days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
     }
 
     # 返回一级菜单
@@ -2890,8 +2945,8 @@ country_event = {
 		name = wg_modifier_diplomacy_hostile
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
-				fail_text = too_low_rank_fail_60
+				check_variable = { which = "rankpts" value > 30 }
+				fail_text = too_low_rank_fail_30
 			}
 			custom_tooltip = {
 				check_variable = { which = max_allowed_shop_buffs value > 0 }
@@ -2901,8 +2956,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -1000 }
-		add_modifier = { modifier = wg_modifier_diplomacy_hostile days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_diplomacy_hostile days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
@@ -2920,8 +2975,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -1000 }
-		add_modifier = { modifier = wg_modifier_diplomacy_weight days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_diplomacy_weight days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
@@ -2939,8 +2994,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -2000 }
-		add_modifier = { modifier = wg_modifier_diplomacy_envoy days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_diplomacy_envoy days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -2958,8 +3013,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { alloys = -3000 }
-		add_modifier = { modifier = wg_modifier_diplomacy_trade days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_diplomacy_trade days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
 	# 返回一级菜单
     option = { 
@@ -3017,7 +3072,44 @@ country_event = {
             break = yes
         }
     }
-    
+ 	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_ship_repair
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 20 }
+                fail_text = too_low_rank_fail_20
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 500 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -500 }
+		add_modifier = { modifier = wg_modifier_ship_repair days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+    } 	
+ 	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = wg_modifier_ship_speed
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 20 }
+                fail_text = too_low_rank_fail_20
+			}
+			custom_tooltip = {
+				check_variable = { which = max_allowed_shop_buffs value > 0 }
+                fail_text = reached_max_allowed_shop_buffs
+            }
+            resource_stockpile_compare = { resource = energy value >= 500 }
+		}
+		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
+        add_resource = { energy = -500 }
+		add_modifier = { modifier = wg_modifier_ship_speed days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
+    }   
 	option = {
 		custom_gui = "enclave_caravaneer_option"
 		name = wg_modifier_combat_elite_pilot
@@ -3034,8 +3126,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -1000 }
-		add_modifier = { modifier = wg_modifier_combat_elite_pilot days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_combat_elite_pilot days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
     }
     
     option = {
@@ -3054,8 +3146,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -2000 }
-		add_modifier = { modifier = wg_modifier_combat_hull_algorithm days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_combat_hull_algorithm days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
     }
     
     option = {
@@ -3074,8 +3166,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -3000 }
-		add_modifier = { modifier = wg_modifier_combat_shipcraft days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_combat_shipcraft days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
     }
     
     option = {
@@ -3098,8 +3190,8 @@ country_event = {
 		}
 		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
         add_resource = { energy = -3000 }
-		add_modifier = { modifier = wg_modifier_combat_uf days = 1800 }
-		country_event = { id = wsgranking.20004 days = 1800 }
+		add_modifier = { modifier = wg_modifier_combat_uf days = 3600 }
+		country_event = { id = wsgranking.20004 days = 3600 }
 	}
     
 	# 返回一级菜单

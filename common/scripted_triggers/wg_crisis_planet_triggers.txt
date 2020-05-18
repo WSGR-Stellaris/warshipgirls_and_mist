@@ -140,6 +140,23 @@ UF_target_planet = {
 		is_planet_class = pc_omega_ringworld_habitable
 		is_planet_class = pc_golden_fortress
 		is_planet_class = pc_golden_world_habitable
+# AE
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_city
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_ocean
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_shrouded
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_machine
+		}
 	}
 }
 
@@ -196,6 +213,23 @@ is_ringworld_wg = {
 # acot
 		is_planet_class = pc_omega_ringworld_seam
 		is_planet_class = pc_omega_ringworld_habitable
+# AE
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_city
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_ocean
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_shrouded
+		}
+		AND = {
+			has_global_flag = has_ancient_empire_mod
+			is_planet_class = pc_ag_ringworld_machine
+		}
 	}
 }
 

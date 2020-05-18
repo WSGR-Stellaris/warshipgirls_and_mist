@@ -23,7 +23,6 @@ tech_wsg_auto57 = {
 	cost = @tier1cost2
 	area = engineering
 	tier = 2
-	start_tech = yes
 	category = { propulsion }
 	prerequisites = { "tech_autocannons_1" }
 	weight = @tier1weight2

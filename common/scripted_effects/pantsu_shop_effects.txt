@@ -3,9 +3,12 @@ create_pantsu_shop_guard_fleets = {
     event_target:pantsu_shop_country = {
 		create_fleet = {
 			name = "NAME_pantsu_shop_guard"
+			settings = {
+				spawn_debris = no
+			}
 			effect = {
 				set_owner = PREV
-				while = { count = 6
+				while = { count = 10
 					create_ship = {
 						name = random
 						design = "NAME_shop_carrier"
@@ -13,7 +16,7 @@ create_pantsu_shop_guard_fleets = {
 						upgradable = no
 					}
 				}
-				while = { count = 10
+				while = { count = 20
 					create_ship = {
 						name = random
 						design = "NAME_shop_cruiser"
@@ -21,7 +24,7 @@ create_pantsu_shop_guard_fleets = {
 						upgradable = no
 					}
 				}
-				while = { count = 25
+				while = { count = 30
 					create_ship = {
 						name = random
 						design = "NAME_shop_destroyer"  

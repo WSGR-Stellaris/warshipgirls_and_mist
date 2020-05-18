@@ -177,7 +177,10 @@
  owned_rpts:0 "$rankpts$"
  reached_max_allowed_shop_buffs:0 "§R已经达到最大同时持有的增益数。请等待至任意一个增益到达期限。§!"
 
+ too_low_rank_fail_20:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y20§R点$rankpts$"
  too_low_rank_fail_30:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y30§R点$rankpts$"
+ too_low_rank_fail_40:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y40§R点$rankpts$" 
+ too_low_rank_fail_50:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y50§R点$rankpts$" 
  too_low_rank_fail_60:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y60§R点$rankpts$"
  too_low_rank_fail_70:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y70§R点$rankpts$"
  too_low_rank_fail_90:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y90§R点$rankpts$"
@@ -213,15 +216,17 @@
  wg_modifier_planetary_construction:0 "星球建筑妖精增派"
  wg_modifier_megastructure_construction:0 "改进巨构建筑建设"
  wg_modifier_megastructure_pruduction:0 "巨构建筑生产最优化"
- wg_modifier_primary_industry:0 "派发营养功能食品"
- wg_modifier_secondary_industry:0 "建设智能自动制造机"
- wg_modifier_tertiary_industry:0 "分销新型研究耗材"
+ wg_modifier_primary_industry:0 "基础产业结构改善"
+ wg_modifier_secondary_industry:0 "二级工业产业结构改善"
+ wg_modifier_tertiary_industry:0 "科研协助协议"
 
  wg_modifier_diplomacy_hostile:0 "改进敌意外交"
  wg_modifier_diplomacy_envoy:0 "改进友好外交"
  wg_modifier_diplomacy_trade:0 "促进星际贸易"
  wg_modifier_diplomacy_weight:0 "增加外交话语权"
-
+ 
+ wg_modifier_ship_repair:0 "老练的损管妖精"
+ wg_modifier_ship_speed:0 "低德导航线路图"
  wg_modifier_combat_hull_algorithm:0 "改进舰船结构设计"
  wg_modifier_combat_elite_pilot:0 "雇佣精英飞行员"
  wg_modifier_combat_shipcraft:0 "舰船建造经济化"
@@ -231,6 +236,10 @@
  wg_admiral_emergency_enhancement:0 "安装舰员增强植入物"
  wg_modifier_implant_coordination:"OTA舰装升级"
 
+ mod_megastructures_alloys_cost_mult:0 "巨型建筑£alloys£ §Y$alloys$§!建造费用"
+ mod_megastructures_influence_cost_add:0 "巨型建筑£influence£ §Y$influence$§!花费"
+ mod_megastructures_produces_mult:0 "巨型建筑产能"
+ mod_planet_districts_minerals_cost_add:0 "区划£minerals£ §Y$minerals$§!建造费用"
  mod_ships_energy_upkeep_mult:0 "飞船£energy£ §Y$energy$§!维护费"
  mod_planet_researchers_consumer_goods_upkeep_mult:0 "科研人员消费品维护费"
  mod_planet_culture_workers_consumer_goods_upkeep_mult:0 "文化工作者消费品维护费"

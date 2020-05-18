@@ -28,6 +28,9 @@ shop_system = {
 			event_target:pantsu_shop_country = {
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -46,6 +49,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -64,6 +70,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -82,6 +91,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -100,6 +112,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -118,6 +133,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -136,6 +154,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -154,6 +175,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -172,6 +196,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
@@ -190,6 +217,9 @@ shop_system = {
 				}
 				create_fleet = {
 					name = "NAME_pantsu_shop_cannon"
+					settings = {
+						spawn_debris = no
+					}
 					effect = {
 						set_owner = PREV
 						create_ship = {
