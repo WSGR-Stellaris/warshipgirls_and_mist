@@ -1309,7 +1309,7 @@ reset_lady_affection_level = {
 	if = {
 		limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv5 }}
 		if = {
-			limit = { has_leader_flag = married }
+			limit = { has_country_flag = married_wsg_lady }
 			if = {
 				limit = { 
 					NOT = { check_variable = { which = "lady_affection_level" value = 5 }}
