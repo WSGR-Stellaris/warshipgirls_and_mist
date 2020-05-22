@@ -174,7 +174,7 @@ create_wg_crisis_weaker_admiral = {
 }
 
 create_wg_crisis_raider_admiral = {
-    event_target:wg_crisis_sub_gate_country = {
+    event_target:wg_crisis_country = {
         random_list = {
             50 = {
                 create_leader = {

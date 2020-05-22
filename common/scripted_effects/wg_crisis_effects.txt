@@ -65,3 +65,26 @@ initialize_third_portal_system_select = {
 		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
 	}
 }
+
+# scope: system
+create_UF_ambient_object = {
+	random_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
+			type = UF_extradimensional_1
+			entity_offset_angle = { min = 0 max = 360 }
+			entity_offset = { min = 30 max = 200 }
+			location = this
+			use_3d_location = no
+			entity_face_object = this
+		}
+		create_ambient_object = {
+			type = UF_extradimensional_2
+			entity_offset_angle = { min = 0 max = 360 }
+			entity_offset = { min = 30 max = 200 }
+			location = this
+			use_3d_location = no
+			entity_face_object = this
+		}
+	}
+}

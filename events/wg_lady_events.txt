@@ -1962,7 +1962,7 @@ country_event = {
 		planet_background = root
 		graphical_culture = root
 		city_level = root
-		room = root
+		room = bathhouse_room
 	}
 
 	trigger = {
@@ -3614,8 +3614,7 @@ country_event = {
 	option = {
 		name = wg_lady.106.a
 		hidden_effect = { 
-			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_affection_trait = yes
+			add_lady_affection = yes
 		}
 		custom_tooltip = wg_lady_affection_up_less
 	}
@@ -3740,8 +3739,7 @@ country_event = {
 	option = {
 		name = wg_lady.110.a
 		hidden_effect = { 
-			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_affection_trait = yes
+			add_lady_affection = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
 		custom_tooltip = wg_lady_affection_up_less
@@ -3940,8 +3938,7 @@ country_event = {
 	option = {
 		name = wg_lady.118.a
 		hidden_effect = { 
-			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_affection_trait = yes
+			add_lady_affection = yes
 		}
 		custom_tooltip = wg_lady_affection_up_less
 	}
@@ -4012,8 +4009,7 @@ country_event = {
 	option = {
 		name = wg_lady.121.a
 		hidden_effect = { 
-			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_affection_trait = yes
+			add_lady_affection = yes
 			set_country_flag = unlock_lady_affection_event_3_2
 		}
 		custom_tooltip = wg_lady_affection_up_less

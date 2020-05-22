@@ -542,6 +542,12 @@ spriteTypes{
 }
 spriteTypes{
 	spriteType = {
+		name = "GFX_UF_weapen_H2"
+		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_H2.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
 		name = "GFX_UF_weapen_IA"
 		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_IA.dds"
 	}

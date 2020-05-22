@@ -19,6 +19,12 @@
 @lady_affection_to_lv4 = 125
 @lady_affection_to_lv5 = 200
 @lady_affection_reduce = 40
+#岛风
+@shimakaze_affection_to_lv2 = 36
+@shimakaze_affection_to_lv3 = 84
+@shimakaze_affection_to_lv4 = 150
+@shimakaze_affection_to_lv5 = 240
+@shimakaze_affection_reduce = 40
 #总督
 @governor_affection_to_lv2 = 40
 @governor_affection_to_lv3 = 80

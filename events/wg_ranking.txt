@@ -247,7 +247,7 @@ country_event = {
         }
         is_ai = no
         last_increased_tech = tech_wsg_pantsu
-	NOT = { has_communications = event_target:pantsu_shop_country }
+	    NOT = { has_communications = event_target:pantsu_shop_country }
     }
 
     immediate = {
@@ -995,7 +995,7 @@ country_event = {
             }
         }
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
             resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_210
@@ -1007,13 +1007,45 @@ country_event = {
             }
         }
         add_resource = {
-            sr_pantsu = -5000
+            sr_pantsu = -3000
             sr_alpha = -3000
         }
         add_research_option = tech_wsg_410
         add_tech_progress = { tech = tech_wsg_410 progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = tech_wsg_EW
+        custom_tooltip = "tech_wsg_EW"
+        trigger = {
+            has_authority = auth_warshipgirls
+            has_technology = tech_wsg_406
+            NOR = {
+                has_tech_option = tech_wsg_EW
+                has_technology = tech_wsg_EW
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 4000 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_230
+				check_variable = { which = "rankpts" value > 230 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -4000
+            sr_alpha = -3000
+        }
+        add_research_option = tech_wsg_EW
+        add_tech_progress = { tech = tech_wsg_EW progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+    }	
     ## 深海武器兑换
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -2770,7 +2802,8 @@ country_event = {
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_primary_industry
+        name = wg_modifier_primary_industry
+        trigger = { NOT = { has_modifier = wg_modifier_primary_industry }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 40 }
@@ -2789,7 +2822,8 @@ country_event = {
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_secondary_industry
+        name = wg_modifier_secondary_industry
+        trigger = { NOT = { has_modifier = wg_modifier_secondary_industry }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -2808,7 +2842,8 @@ country_event = {
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_tertiary_industry
+        name = wg_modifier_tertiary_industry
+        trigger = { NOT = { has_modifier = wg_modifier_tertiary_industry }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -2827,7 +2862,8 @@ country_event = {
 	}	
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_planetary_construction
+        name = wg_modifier_planetary_construction
+        trigger = { NOT = { has_modifier = wg_modifier_planetary_construction }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -2846,7 +2882,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_decision
+        name = wg_modifier_decision
+        trigger = { NOT = { has_modifier = wg_modifier_decision }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -2865,7 +2902,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
-		name = wg_modifier_megastructure_construction 
+        name = wg_modifier_megastructure_construction 
+        trigger = { NOT = { has_modifier = wg_modifier_megastructure_construction }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 120 }
@@ -2884,7 +2922,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
-		name = wg_modifier_megastructure_pruduction
+        name = wg_modifier_megastructure_pruduction
+        trigger = { NOT = { has_modifier = wg_modifier_megastructure_pruduction }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 120 }
@@ -2942,7 +2981,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_diplomacy_hostile
+        name = wg_modifier_diplomacy_hostile
+        trigger = { NOT = { has_modifier = wg_modifier_diplomacy_hostile }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 30 }
@@ -2961,7 +3001,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
-		name = wg_modifier_diplomacy_weight 
+        name = wg_modifier_diplomacy_weight 
+        trigger = { NOT = { has_modifier = wg_modifier_diplomacy_weight }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -2980,7 +3021,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option" 
-		name = wg_modifier_diplomacy_envoy 
+        name = wg_modifier_diplomacy_envoy 
+        trigger = { NOT = { has_modifier = wg_modifier_diplomacy_envoy }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 90 }
@@ -2999,7 +3041,8 @@ country_event = {
 	}
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_diplomacy_trade
+        name = wg_modifier_diplomacy_trade
+        trigger = { NOT = { has_modifier = wg_modifier_diplomacy_trade }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 120 }
@@ -3074,7 +3117,8 @@ country_event = {
     }
  	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_ship_repair
+        name = wg_modifier_ship_repair
+        trigger = { NOT = { has_modifier = wg_modifier_ship_repair }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 20 }
@@ -3093,7 +3137,8 @@ country_event = {
     } 	
  	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_ship_speed
+        name = wg_modifier_ship_speed
+        trigger = { NOT = { has_modifier = wg_modifier_ship_speed }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 20 }
@@ -3112,7 +3157,8 @@ country_event = {
     }   
 	option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_combat_elite_pilot
+        name = wg_modifier_combat_elite_pilot
+        trigger = { NOT = { has_modifier = wg_modifier_combat_elite_pilot }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 30 }
@@ -3132,7 +3178,8 @@ country_event = {
     
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_combat_hull_algorithm
+        name = wg_modifier_combat_hull_algorithm
+        trigger = { NOT = { has_modifier = wg_modifier_combat_hull_algorithm }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 60 }
@@ -3152,7 +3199,8 @@ country_event = {
     
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = wg_modifier_combat_shipcraft
+        name = wg_modifier_combat_shipcraft
+        trigger = { NOT = { has_modifier = wg_modifier_combat_shipcraft }}
 		allow = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 90 }

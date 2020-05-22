@@ -374,7 +374,7 @@ country_event ={
 	option = {
 		name = "wsg.1100.a"
 		hidden_effect = {
-			country_event = { id = wsg.1101 days = 30 }
+			country_event = { id = wsg.1101 days = 10 }
 		}
 	}
 }
@@ -390,13 +390,13 @@ country_event = {
 	option = {
 		name = "wsg.1101.a"
 		hidden_effect = {
-			country_event = { id = wsg.1102 days = 30 }
+			country_event = { id = wsg.1102 days = 10 }
 		}
 	}
 	option = {
 		name = "wsg.1101.b"
 		hidden_effect = {
-			country_event = { id = wsg.1102 days = 30 }
+			country_event = { id = wsg.1102 days = 10 }
 		}
 	}
 }
@@ -412,13 +412,13 @@ country_event = {
 	option = {
 		name = "wsg.1102.a"
 		hidden_effect = {
-			country_event = { id = wsg.1103 days = 30 }
+			country_event = { id = wsg.1103 days = 10 }
 		}
 	}
 	option = {
 		name = "wsg.1102.b"
 		hidden_effect = {
-			country_event = { id = wsg.1103 days = 30 }
+			country_event = { id = wsg.1103 days = 10 }
 		}
 	}
 }
@@ -435,11 +435,21 @@ country_event = {
 	option = {
 		name = "wsg.1103.a"
 			add_research_option = "tech_building_wsg_neo"
+		hidden_effect = {
+			country_event = { 
+				id = wsg_shimakaze.1
+				days = 10 
+			}
 		}
+	}
 	option = {
 		name = "wsg.1103.b"
-			owner={
 			add_research_option = "tech_building_wsg_neo"
+		hidden_effect = {
+			country_event = { 
+				id = wsg_shimakaze.1
+				days = 10 
+			}
 		}
 	}
 }

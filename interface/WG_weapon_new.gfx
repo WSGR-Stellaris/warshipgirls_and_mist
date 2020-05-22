@@ -219,5 +219,9 @@ spriteTypes = {
 		name = "GFX_wsg_weapen_X_410"
 		texturefile = "gfx/interface/icons/ship_parts/wsg_weapen_X_410.dds"
 	}
-}
+	spriteType = {
+		name = "GFX_wsg_weapen_X_EW"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapen_X_EW.dds"
+	}	
+	
 }

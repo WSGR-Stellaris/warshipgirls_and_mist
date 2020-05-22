@@ -127,6 +127,13 @@ component_set = {
 	icon = "GFX_wsg_weapen_X_410"
 	icon_frame = 1	
 }
+component_set = {
+	key = "wsg_weapen_X_EW"
+	
+	icon = "GFX_wsg_weapen_X_EW"
+	icon_frame = 1	
+}
+
 #component_set = {
 #	key = "sh_weapon_energy2"
 #	icon = "GFX_ship_part_energy_lance_2"

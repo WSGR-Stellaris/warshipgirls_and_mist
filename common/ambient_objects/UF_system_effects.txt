@@ -1,0 +1,13 @@
+ambient_object = {
+	name = "UF_extradimensional_1"
+	entity = "UF_dimensional_crisis_system_effect_entity"
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {
+	name = "UF_extradimensional_2"
+	entity = "UF_dimensional_crisis_core_system_effect_entity"
+	selectable = no
+	show_name = no
+}

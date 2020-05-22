@@ -110,6 +110,14 @@ has_enough_consumer_goods = {
 }
 
 is_wg_leader = {
+	# 岛风是是特殊好感度领袖，不需要检查普通好感度特性
+	NOT = { has_leader_flag = wsg_special_affection_leader }
+	owner = {
+		NOR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}
+	}
 	OR = { 
 		species = { 
 			OR = {
@@ -128,6 +136,29 @@ is_wg_leader = {
 		has_trait = leader_trait_governor_santee #桑提
 		has_trait = leader_trait_general_washington_axe #花生
 		has_trait = leader_trait_ruler_lexington #太太
+	}
+}
+
+is_wg_leader_with_affection_not_full = {
+	OR = {
+		AND = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = affection_max }
+		}
+		AND = {
+			has_leader_flag = wsg_shimakaze_scientist
+			owner = { 
+				has_country_flag = get_wsg_shimakaze 
+				NOT = { has_country_flag = shimakaze_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = wsg_lady_leader
+			owner = { 
+				has_country_flag = gain_wsg_lady 
+				NOT = { has_country_flag = lady_affection_max }
+			}
+		}
 	}
 }
 
@@ -168,5 +199,37 @@ has_affection_trait = {
 		has_ruler_trait = leader_trait_ruler_affection_lv4
 		has_ruler_trait = leader_trait_ruler_affection_lv4_max
 		has_ruler_trait = leader_trait_ruler_affection_lv5
+
+		# #岛风总督
+		# has_trait = leader_trait_governor_shimakaze_affection_lv1
+		# has_trait = leader_trait_governor_shimakaze_affection_lv2
+		# has_trait = leader_trait_governor_shimakaze_affection_lv3
+		# has_trait = leader_trait_governor_shimakaze_affection_lv4
+		# has_trait = leader_trait_governor_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_governor_shimakaze_affection_lv5
+
+		# #岛风科学家
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv1
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv2
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv3
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv4
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv5
+
+		# #岛风海军上将
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv1
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv2
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv3
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv4
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv5
+
+		# #岛风陆军
+		# has_trait = leader_trait_general_shimakaze_affection_lv1
+		# has_trait = leader_trait_general_shimakaze_affection_lv2
+		# has_trait = leader_trait_general_shimakaze_affection_lv3
+		# has_trait = leader_trait_general_shimakaze_affection_lv4
+		# has_trait = leader_trait_general_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_general_shimakaze_affection_lv5
 	}
 }

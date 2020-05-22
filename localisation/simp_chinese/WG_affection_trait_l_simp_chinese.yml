@@ -8,6 +8,8 @@
  max_affection_lady:0 "大小姐好感度已满。"
  require_engagement:0 "你需要§H与该领袖进行誓约仪式§!以解锁下一等级的好感度。"
  require_engagement_lady:0 "你需要§H与大小姐进行誓约仪式§!以解锁下一等级的好感度。"
+ max_affection_shimakaze: "岛风好感度已满"
+ require_engagement_shimakaze: "你需要§H与岛风进行誓约仪式§!以解锁下一等级的好感度。"
 
 #################################################
 # 总督
@@ -26,6 +28,20 @@
  leader_trait_governor_lady_affection_lv4_max_desc:0 "$max_affection_lady$$require_engagement_lady$"
  leader_trait_governor_lady_affection_lv5_desc:0 "$max_affection_lady$"
 
+#岛风
+ leader_trait_governor_shimakaze_affection_lv1: "好感度：低下"
+ leader_trait_governor_shimakaze_affection_lv2: "好感度：较低"
+ leader_trait_governor_shimakaze_affection_lv3: "好感度：中等"
+ leader_trait_governor_shimakaze_affection_lv4: "好感度：较高"
+ leader_trait_governor_shimakaze_affection_lv4_max: "好感度：较高（已满）"
+ leader_trait_governor_shimakaze_affection_lv5: "好感度：最高"
+ leader_trait_governor_shimakaze_affection_lv1_desc: "好感度可以通过§Y委任该总督到星区工作§!提升。"
+ leader_trait_governor_shimakaze_affection_lv2_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv3_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv4_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv4_max_desc: "$max_affection_shimakaze$$require_engagement_shimakaze$"
+ leader_trait_governor_shimakaze_affection_lv5_desc: "$max_affection_shimakaze$"
+
 # 其他领袖
  leader_trait_governor_affection_lv1:0 "好感度：低下"
  leader_trait_governor_affection_lv2:0 "好感度：较低"
@@ -36,7 +52,7 @@
  leader_trait_governor_affection_lv1_desc:0 "好感度可以通过§Y委任该总督到星区工作§!提升。领袖§Y等级提升时§!亦会增加好感度。"
  leader_trait_governor_affection_lv2_desc:0 "$leader_trait_governor_affection_lv1_desc$"
  leader_trait_governor_affection_lv3_desc:0 "$leader_trait_governor_affection_lv1_desc$\n当前效果：$immune_negative_trait$"
- leader_trait_governor_affection_lv4_desc:0 "$leader_trait_governor_affection_lv3_desc$"
+ leader_trait_governor_affection_lv4_desc:0 "$leader_trait_governor_affection_lv1_desc$"
  leader_trait_governor_affection_lv4_max_desc:0 "$max_affection$$require_engagement$\n当前效果：$immune_negative_trait$"
  leader_trait_governor_affection_lv5_desc:0 "$max_affection$\n当前效果：$immune_negative_trait$，$can_revive$"
 
@@ -57,6 +73,20 @@
  leader_trait_scientist_lady_affection_science_ship_lv4_max_desc:0 "$max_affection_lady$$require_engagement_lady$"
  leader_trait_scientist_lady_affection_science_ship_lv5_desc:0 "$max_affection_lady$"
 
+#岛风
+ leader_trait_scientist_shimakaze_affection_lv1: "好感度：低下"
+ leader_trait_scientist_shimakaze_affection_lv2: "好感度：较低"
+ leader_trait_scientist_shimakaze_affection_lv3: "好感度：中等"
+ leader_trait_scientist_shimakaze_affection_lv4: "好感度：较高"
+ leader_trait_scientist_shimakaze_affection_lv4_max: "好感度：较高（已满）"
+ leader_trait_scientist_shimakaze_affection_lv5: "好感度：最高"
+ leader_trait_scientist_shimakaze_affection_lv1_desc: "好感度可以通过§Y委任该科学家为任意科研领域领袖§!，派遣到科研船中§Y探索星系§!，§Y进行考古活动§!或§Y对殖民地进行辅助研究§!提升。当该科学家§Y完全探索一个星系§!时，有较高几率获得好感度；§Y完成整个考古项目§!时必定获得较多好感度；此外，每有§Y一项科技完成研究§!时，所有正在研究科技的科学家都有几率获得好感度。领袖§Y等级提升§!时亦会增加好感度。"
+ leader_trait_scientist_shimakaze_affection_lv2_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv3_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv4_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv4_max_desc: "$max_affection_shimakaze$$require_engagement_shimakaze$"
+ leader_trait_scientist_shimakaze_affection_lv5_desc: "$max_affection_shimakaze$"
+ 
 # 其他领袖
  leader_trait_scientist_affection_lv1:0 "好感度：低下"
  leader_trait_scientist_affection_lv2:0 "好感度：较低"
@@ -88,6 +118,20 @@
  leader_trait_admiral_lady_affection_lv4_max_desc:0 "$max_affection$$require_engagement_lady$"
  leader_trait_admiral_lady_affection_lv5_desc:0 "$max_affection$"
 
+#岛风
+ leader_trait_admiral_shimakaze_affection_lv1:0 "好感度：低下"
+ leader_trait_admiral_shimakaze_affection_lv2:0 "好感度：较低"
+ leader_trait_admiral_shimakaze_affection_lv3:0 "好感度：中等"
+ leader_trait_admiral_shimakaze_affection_lv4:0 "好感度：较高"
+ leader_trait_admiral_shimakaze_affection_lv4_max:0 "好感度：较高（已满）"
+ leader_trait_admiral_shimakaze_affection_lv5:0 "好感度：最高"
+ leader_trait_admiral_shimakaze_affection_lv1_desc:0 "好感度可以通过§Y派遣该名海军上将到舰队指挥战斗§!提升。每§Y胜出一场战斗§!将有较高几率提升好感度。此外，领袖§Y等级提升§!时亦会增加好感度。"
+ leader_trait_admiral_shimakaze_affection_lv2_desc:0 "$leader_trait_admiral_affection_lv1_desc$"
+ leader_trait_admiral_shimakaze_affection_lv3_desc:0 "$leader_trait_admiral_affection_lv1_desc$\n当前效果：$immune_negative_trait$"
+ leader_trait_admiral_shimakaze_affection_lv4_desc:0 "$leader_trait_admiral_affection_lv3_desc$"
+ leader_trait_admiral_shimakaze_affection_lv4_max_desc:0 "$max_affection_shimakaze$$require_engagement_shimakaze$"
+ leader_trait_admiral_shimakaze_affection_lv5_desc:0 "$max_affection_shimakaze$"
+
 # 其他领袖
  leader_trait_admiral_affection_lv1:0 "好感度：低下"
  leader_trait_admiral_affection_lv2:0 "好感度：较低"
@@ -105,6 +149,20 @@
 #################################################
 # 陆军将军
 #################################################
+#岛风
+ leader_trait_general_shimakaze_affection_lv1:0 "好感度：低下"
+ leader_trait_general_shimakaze_affection_lv2:0 "好感度：较低"
+ leader_trait_general_shimakaze_affection_lv3:0 "好感度：中等"
+ leader_trait_general_shimakaze_affection_lv4:0 "好感度：较高"
+ leader_trait_general_shimakaze_affection_lv4_max:0 "好感度：较高（已满）"
+ leader_trait_general_shimakaze_affection_lv5:0 "好感度：最高"
+ leader_trait_general_shimakaze_affection_lv1_desc:0 "好感度可以通过§Y派遣该名将军指挥地面战斗§!提升。每§Y胜出一场战斗§!将有较高几率提升好感度。此外，领袖§Y等级提升时§!亦会增加好感度。"
+ leader_trait_general_shimakaze_affection_lv2_desc:0 "$leader_trait_general_affection_lv1_desc$"
+ leader_trait_general_shimakaze_affection_lv3_desc:0 "$leader_trait_general_affection_lv1_desc$\n当前效果：$immune_negative_trait$"
+ leader_trait_general_shimakaze_affection_lv4_desc:0 "$leader_trait_general_affection_lv3_desc$"
+ leader_trait_general_shimakaze_affection_lv4_max_desc:0 "$max_affection_shimakaze$$require_engagement_shimakaze$"
+ leader_trait_general_shimakaze_affection_lv5_desc:0 "$max_affection_shimakaze$"
+
 # 其他领袖
  leader_trait_general_affection_lv1:0 "好感度：低下"
  leader_trait_general_affection_lv2:0 "好感度：较低"

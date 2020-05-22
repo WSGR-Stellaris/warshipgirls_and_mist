@@ -121,15 +121,15 @@ ship_design = {
 		}
 		component = {
 			slot = "STRIKE_CRAFT_04"
-			template = "UF_weapen_H"
+			template = "UF_weapen_H2"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_05"
-			template = "UF_weapen_H"
+			template = "UF_weapen_H2"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_06"
-			template = "UF_weapen_H"
+			template = "UF_weapen_H2"
 		}
 		component = {
 			slot = "PD_01"

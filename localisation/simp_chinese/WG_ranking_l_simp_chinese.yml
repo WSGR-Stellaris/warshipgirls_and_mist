@@ -188,6 +188,7 @@
  too_low_rank_fail_150:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y150§R点$rankpts$"
  too_low_rank_fail_180:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y180§R点$rankpts$"
  too_low_rank_fail_210:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y210§R点$rankpts$" 
+ too_low_rank_fail_230:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y230§R点$rankpts$"
  too_low_rank_fail_250:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y250§R点$rankpts$"
  rankpts_not_reach_requirment:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y[Root.rankpts_require]§R点$rankpts$"
 

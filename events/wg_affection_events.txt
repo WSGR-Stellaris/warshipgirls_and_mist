@@ -22,10 +22,10 @@ event = {
 				}
 				is_ai = no
 			}
-			country_event = { id = wg_aft.2 days = 14 }
-			country_event = { id = wg_aft.1000 days = 15 }
-			country_event = { id = wg_aft.15 days = 16 }
-			country_event = { id = wg_aft.35 days = 17 }
+			country_event = { id = wg_aft.2 days = 11 }
+			country_event = { id = wg_aft.15 days = 12 }
+			# country_event = { id = wg_aft.33 days = 13 }
+			country_event = { id = wg_aft.35 days = 14 }
 			country_event = { id = wg_aft.100 days = 20 }
 		}
 		every_country = {
@@ -69,16 +69,13 @@ country_event = {
 		else = {
 			every_owned_leader = {
 				limit = { 
-					is_wg_leader = yes
-					NOR = {
-						has_leader_flag = wsg_lady_leader
-						has_leader_flag = affection_max
-					}
+					is_wg_leader_with_affection_not_full = yes
 				}
 				if = {
 					limit = {
 						has_global_flag = initialize_affection_traits
 						has_affection_trait = no
+						NOT = { has_leader_flag = wsg_shimakaze_leader }
 					}
 					set_variable = { which = affection_level value = 1 }
 					switch = {
@@ -113,40 +110,44 @@ country_event = {
 									}
 									modifier = {
 										check_variable = { which = "admin_colonies" value >= 3 }
-										add = 2
+										add = 1
 									}
 									modifier = {
 										check_variable = { which = "admin_colonies" value >= 4 }
-										add = 3
+										add = 2
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 12 }
+										check_variable = { which = "months_no_affection" value >= 18 }
 										add = 3
 									}
-									change_variable = { which = affection value = 1 }
 									set_variable = { which = "months_no_affection" value = 0 }
-									check_level_up_governor_affection_trait = yes
+									switch = {
+										trigger = has_leader_flag
+										wsg_shimakaze_leader = { add_shimakaze_governor_affection = yes }
+										wsg_lady_leader = { add_lady_governor_affection = yes }
+										default = { add_governor_affection = yes }
+									}
 								}
-								24 = {
+								39 = {
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 2 }
-										add = -3
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 4 }
-										add = -3
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 6 }
-										add = -4
-									}
-									modifier = {
-										check_variable = { which = "months_no_affection" value >= 8 }
+										check_variable = { which = "months_no_affection" value >= 3 }
 										add = -5
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 10 }
+										check_variable = { which = "months_no_affection" value >= 6 }
 										add = -6
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 9 }
+										add = -6
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 12 }
+										add = -8
+									}
+									modifier = {
+										check_variable = { which = "months_no_affection" value >= 15 }
+										add = -10
 									}
 									change_variable = { which = "months_no_affection" value = 1 }
 								}
@@ -162,7 +163,11 @@ country_event = {
 									is_researching_area = engineering
 								}
 							}
-							add_scientist_affection_monthly = yes
+							switch = {
+								trigger = has_leader_flag
+								wsg_shimakaze_leader = { add_shimakaze_scientist_affection_monthly = yes }
+								default = { add_scientist_affection_monthly = yes }
+							}
 						}
 					}
 					ruler = {
@@ -202,7 +207,7 @@ country_event = {
 		FROM = { 
 			change_variable = { which = affection value = 2 }
 			random_list = {
-				25 = { change_variable = { which = lady_affection value = 1 }}
+				25 = { change_variable = { which = affection value = 1 }}
 				75 = {
 					modifier = {
 						factor = 1.4
@@ -223,7 +228,7 @@ country_event = {
 				}
 			}
 			random_list = {
-				15 = { change_variable = { which = lady_affection value = 1 }}
+				15 = { change_variable = { which = affection value = 1 }}
 				85 = {
 					modifier = {
 						factor = 0.75
@@ -247,6 +252,36 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wg_aft.10003
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = get_wsg_shimakaze
+		FROM = { 
+			has_leader_flag = wsg_shimakaze_leader
+		}
+	}
+
+	immediate = {
+		change_variable = { which = shimakaze_affection value = 2 }
+		random_list = {
+			40 = { change_variable = { which = shimakaze_affection value = 1 }}
+			60 = {}
+		}
+		random_list = {
+			20 = { change_variable = { which = shimakaze_affection value = 1 }}
+			80 = {}
+		}
+		reset_shimakaze_affection_level = yes
+		if = {
+			limit = { check_variable = { which = shimakaze_level value <= 10 }}
+			change_variable = { which = shimakaze_level value = 1 }
+		}
+	}
+}
+
 # 缄默移除好感
 country_event = {
 	id = wg_aft.4
@@ -264,6 +299,7 @@ country_event = {
 				ruler = { remove_ruler_affection_trait = yes }
 			}
 			set_variable = { which = affection value = 0 }
+			set_variable = { which = affection_level value = 0 }
 		}
 	}
 }
@@ -328,11 +364,8 @@ ship_event = {
 	trigger = {
 		exists = leader
 		leader = { 
-			is_wg_leader = yes
-			NOR = { 
-				has_leader_flag = wsg_lady_leader
-				has_leader_flag = affection_max
-			}
+			leader_class = scientist
+			is_wg_leader_with_affection_not_full = yes 
 		}
 	}
 
@@ -343,9 +376,24 @@ ship_event = {
 					check_variable = { which = "planets_no_affection" value >= 12 }
 					add = 2
 				}
-				change_variable = { which = affection value = 1 }
+				switch = {
+					trigger = has_leader_flag
+					wsg_lady_leader = {
+						owner = { event_target:lady_survey_scientist = {
+							add_lady_survey_scientist_affection = yes
+						}}
+					}
+					wsg_shimakaze_leader = {
+						owner = { event_target:shimakaze_scientist = { 
+							add_shimakaze_scientist_affection = yes
+						}}
+					}
+					default = {
+						add_scientist_affection = yes
+					}
+				}
 				set_variable = { which = "planets_no_affection" value = 0 }
-				check_level_up_scientist_affection_trait = yes
+				
 			}
 			7 = {
 				modifier = {
@@ -379,11 +427,8 @@ ship_event = {
 	trigger = {
 		exists = leader
 		leader = { 
-			is_wg_leader = yes
-			NOR = { 
-				has_leader_flag = wsg_lady_leader
-				has_leader_flag = affection_max
-			}
+			leader_class = scientist
+			is_wg_leader_with_affection_not_full = yes 
 		}
 	}
 
@@ -394,9 +439,23 @@ ship_event = {
 					check_variable = { which = "systems_no_affection" value >= 3 }
 					add = 1
 				}
-				change_variable = { which = affection value = 1 }
 				set_variable = { which = "systems_no_affection" value = 0 }
-				check_level_up_scientist_affection_trait = yes
+				switch = {
+					trigger = has_leader_flag
+					wsg_lady_leader = {
+						owner = { event_target:lady_survey_scientist = {
+							add_lady_survey_scientist_affection = yes
+						}}
+					}
+					wsg_shimakaze_leader = {
+						owner = { event_target:shimakaze_scientist = { 
+							add_shimakaze_scientist_affection = yes
+						}}
+					}
+					default = {
+						add_scientist_affection = yes
+					}
+				}
 			}
 			3 = {
 				modifier = {
@@ -432,7 +491,16 @@ country_event = {
 					is_researching_area = society
 					is_researching_area = engineering
 				}
-				NOT = { has_leader_flag = affection_max }
+				OR = { 
+					AND = {
+						is_wg_leader = yes
+						NOT = { has_leader_flag = affection_max }
+					}
+					AND = {
+						has_leader_flag = wsg_shimakaze_leader
+						NOT = { ROOT = { has_country_flag = shimakaze_affection_max }}
+					}
+				}
 			}
 			random_list = {
 				1 = {
@@ -440,9 +508,13 @@ country_event = {
 						check_variable = { which = "techs_no_affection" value >= 5 }
 						add = 1
 					}
-					change_variable = { which = affection value = 1 }
 					set_variable = { which = "techs_no_affection" value = 0 }
-					check_level_up_scientist_affection_trait = yes
+					if = {
+						limit = { has_leader_flag = wsg_shimakaze_leader }
+						add_shimakaze_scientist_affection = yes
+					} else = {
+						add_scientist_affection = yes
+					}
 				}
 				19 = {
 					modifier = {
@@ -493,11 +565,17 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						is_wg_leader = yes
-						NOR = {
-							has_leader_flag = wsg_lady_leader
-							has_leader_flag = affection_max
+						OR = { 
+							AND = {
+								is_wg_leader = yes
+								NOT = { has_leader_flag = affection_max }
+							}
+							AND = {
+								has_leader_flag = wsg_shimakaze_leader
+								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+							}
 						}
+						NOT = { has_leader_flag = wsg_lady_leader }
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -524,11 +602,17 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						is_wg_leader = yes
-						NOR = {
-							has_leader_flag = wsg_lady_leader
-							has_leader_flag = affection_max
+						OR = { 
+							AND = {
+								is_wg_leader = yes
+								NOT = { has_leader_flag = affection_max }
+							}
+							AND = {
+								has_leader_flag = wsg_shimakaze_leader
+								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+							}
 						}
+						NOT = { has_leader_flag = wsg_lady_leader }
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -581,9 +665,13 @@ fleet_event = {
 						check_variable = { which = "days_combat_no_affection" value >= 16 }
 						add = 6
 					}
-					change_variable = { which = affection value = 1 }
 					set_variable = { which = "days_combat_no_affection" value = 0 }
-					check_level_up_admiral_affection_trait = yes
+					if = {
+						limit = { has_leader_flag = wsg_shimakaze_leader }
+						add_shimakaze_admiral_affection = yes
+					} else = {
+						add_admiral_affection = yes
+					}
 				}
 				9 = {
 					modifier = {
@@ -631,11 +719,17 @@ country_event = {
 				limit = { 
 					exists = leader
 					leader = { 
-						NOR = { 
-							has_leader_flag = wsg_lady_leader
-							has_leader_flag = affection_max 
+						NOT = { has_leader_flag = wsg_lady_leader }
+						OR = {
+							AND = {
+								is_wg_leader = yes
+								NOT = { has_leader_flag = affection_max }
+							}
+							AND = {
+								has_leader_flag = wsg_shimakaze_leader
+								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+							}
 						}
-						is_wg_leader = yes
 					}
 					has_fleet_flag = counting_affection
 				}
@@ -652,9 +746,13 @@ country_event = {
 								check_variable = { which = "battles_won_no_affection" value >= 3 }
 								add = 3
 							}
-							change_variable = { which = affection value = 1 }
 							set_variable = { which = "battles_won_no_affection" value = 0 }
-							check_level_up_admiral_affection_trait = yes
+							if = {
+								limit = { owner = { has_country_flag = shimakaze_affection_max }}
+								add_shimakaze_admiral_affection = yes
+							} else = {
+								add_admiral_affection = yes
+							}
 						}
 						4 = {
 							modifier = {
@@ -695,9 +793,8 @@ country_event = {
 								check_variable = { which = "battles_won_no_affection_lady" value >= 3 }
 								add = 3
 							}
-							change_variable = { which = "lady_affection" value = 1 }
 							set_variable = { which = "battles_won_no_affection_lady" value = 0 }
-							check_level_up_lady_affection_trait = yes
+							add_lady_affection = yes
 						}
 						4 = {
 							modifier = {
@@ -717,7 +814,7 @@ country_event = {
 	}
 }
 
-# 战争胜利后统治者，海军提督+3好感，陆军将领+2好感，大小姐+3好感
+# 战争胜利后统治者，海军提督+3好感，陆军将领+2好感，特殊领袖+3好感
 country_event = {
 	id = wg_aft.12
 	hide_window = yes
@@ -760,46 +857,29 @@ country_event = {
 				switch = {
 					trigger = leader_class
 					admiral = {
-						while = { count = 3
-							change_variable = { which = affection value = 1 }
-							check_level_up_admiral_affection_trait = yes
-						}
+						change_variable = { which = affection value = 3 }
+						reset_admiral_affection_level = yes
 					}
 					general = {
-						while = { count = 2
-							change_variable = { which = affection value = 1 }
-							check_level_up_general_affection_trait = yes
-						}
+						change_variable = { which = affection value = 3 }
+						reset_general_affection_level = yes
 					}
 					ruler = {
-						while = { count = 3
-							change_variable = { which = affection value = 1 }
-							check_level_up_ruler_affection_trait = yes
-						}
+						change_variable = { which = affection value = 3 }
+						reset_ruler_affection_level = yes
 					}
 					default = {}
 				}
 			}
 			if = {
 				limit = { has_country_flag = gain_wsg_lady }
-				while = { count = 3
-					change_variable = { which = "lady_affection" value = 1 }
-					switch = {
-						trigger = has_country_flag
-						wsg_lady_governor_active = {
-							random_owned_leader = {
-								limit = { has_leader_flag = wsg_lady_governor }
-								check_level_up_lady_governor_affection_trait = yes
-							} 
-						}
-						wsg_lady_armed_science_active = {
-							random_owned_fleet = {
-								limit = { has_fleet_flag = lady_armed_science }
-								ROOT = { check_level_up_lady_science_ship_affection_trait = yes }
-							}
-						}
-					}
-				}
+				change_variable = { which = lady_affection value = 3 }
+				reset_lady_affection_level = yes
+			}
+			if = {
+				limit = { has_country_flag = get_wsg_shimakaze }
+				change_variable = { which = shimakaze_affection value = 3 }
+				reset_shimakaze_affection_level = yes
 			}
 		}
 	}
@@ -833,25 +913,39 @@ country_event = {
 				}
 			}
 			change_variable = { which = lady_affection value = 1 }
-			check_level_up_lady_army_affection = yes
+			add_lady_army_affection = yes
 		}
 		if = { # 其他陆军陆军
 			limit = {
 				any_owned_army = {
 					exists = planet
 					planet = { is_same_value = event_target:victory_planet }
-					leader = { is_wg_leader = yes }
+					leader = { 
+						OR = {
+							has_leader_flag = wsg_shimakaze_leader
+							is_wg_leader = yes 
+						}
+					}
 				}
 			}
 			every_owned_army = {
 				limit = {
 					exists = planet
 					planet = { is_same_value = event_target:victory_planet }
-					leader = { is_wg_leader = yes }
+					leader = { 
+						OR = {
+							has_leader_flag = wsg_shimakaze_leader
+							is_wg_leader = yes 
+						}
+					}
 				}
 				leader = { 
-					change_variable = { which = affection value = 1 }
-					check_level_up_general_affection_trait = yes
+					if = {
+						limit = { has_leader_flag = wsg_shimakaze_leader }
+						add_shimakaze_general_affection = yes
+					} else = {
+						add_general_affection = yes
+					}
 				}
 			}
 		} 
@@ -938,13 +1032,12 @@ country_event = {
 
 	immediate = {
 		ruler = {
-			change_variable = { which = affection value = 1 }
-			check_level_up_ruler_affection_trait = yes
+			add_ruler_affection = yes
 		}
 	}
 }
 
-# 为3级以上好感领袖移除负面特性
+# 为3级以上好感领袖或特殊领袖移除负面特性
 country_event = {
 	id = wg_aft.15
 	hide_window = yes
@@ -953,8 +1046,14 @@ country_event = {
 	immediate = {
 		every_owned_leader = {
 			limit = {
-				is_wg_leader = yes
-				check_variable = { which = affection_level value >= 3 }
+				OR = {
+					AND = {
+						is_wg_leader = yes
+						check_variable = { which = affection_level value >= 3 }
+					}
+					has_leader_flag = wsg_shimakaze_leader
+					has_leader_flag = wsg_lady_leader
+				}
 			}
 			switch = {
 				trigger = leader_class
@@ -1347,173 +1446,6 @@ country_event = {
 	}
 }
 
-
-# 添加好感度（大小姐，总督）
-country_event = {
-	id = wg_aft.1000
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_country_flag = gain_wsg_lady
-		has_country_flag = wsg_lady_governor_active
-		any_owned_sector = {
-			leader = { has_leader_flag = wsg_lady_governor }
-		}
-	}
-
-	immediate = {
-		random_owned_leader = {
-			limit = { 
-				has_leader_flag = wsg_lady_governor
-				ROOT = { any_owned_sector = { leader = { is_same_value = PREVPREVPREV }}}
-			}
-			set_variable = { which = admin_colonies value = 0 }
-			ROOT = { random_owned_sector = {
-				limit = { leader = { is_same_value = PREVPREVPREV }}
-				ROOT = { every_owned_planet = {
-					limit = { sector = { is_same_value = PREVPREVPREV }}
-					PREVPREVPREVPREV = { change_variable = {
-						which = admin_colonies value = 1
-					}}
-				}}
-			}}
-			random_list = {
-				1 = {
-					modifier = {
-						check_variable = { which = "admin_colonies" value >= 2 }
-						add = 2
-					}
-					modifier = {
-						check_variable = { which = "admin_colonies" value >= 4 }
-						add = 3
-					}
-					modifier = {
-						check_variable = { which = "admin_colonies" value >= 5 }
-						add = 4
-					}
-					ROOT = { change_variable = { which = "lady_affection" value = 1 }}
-					set_variable = { which = "months_no_affection_lady" value = 0 }
-					check_level_up_lady_governor_affection_trait = yes
-				}
-				24 = {
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 2 }
-						add = -5
-					}
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 4 }
-						add = -5
-					}
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 6 }
-						add = -5
-					}
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 8 }
-						add = -5
-					}
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 10 }
-						add = -4
-					}
-					modifier = {
-						check_variable = { which = "months_no_affection_lady" value >= 12 }
-						factor = 0
-					}
-					change_variable = { which = "months_no_affection_lady" value = 1 }
-				}
-			}
-		}
-	}
-}
-
-# 科研船扫球加好感（大小姐）
-ship_event = {
-	id = wg_aft.1001
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		exists = leader
-		leader = { has_leader_flag = wsg_lady_scientist }
-	}
-
-	immediate = {
-		owner = { random_list = {
-			1 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 14 }
-					add = 2
-				}
-				change_variable = { which = "lady_affection" value = 1 }
-				set_variable = { which = "planets_no_affection_lady" value = 0 }
-				check_level_up_lady_science_ship_affection_trait = yes
-			}
-			9 = {
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 4 }
-					add = -2
-				}
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 8 }
-					add = -3
-				}
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 10 }
-					add = -3
-				}
-				modifier = {
-					check_variable = { which = "planets_no_affection_lady" value >= 20 }
-					factor = 0
-				}
-				change_variable = { which = "planets_no_affection_lady" value = 1 }
-			}
-		}}
-	}
-}
-
-# 科研船扫星系加好感（大小姐）
-ship_event = {
-	id = wg_aft.1002
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		exists = leader
-		leader = { has_leader_flag = wsg_lady_scientist }
-	}
-
-	immediate = {
-		owner = { random_list = {
-			1 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 3 }
-					add = 1
-				}
-				change_variable = { which = "lady_affection" value = 1 }
-				set_variable = { which = "systems_no_affection_lady" value = 0 }
-				check_level_up_lady_science_ship_affection_trait = yes
-			}
-			5 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 1 }
-					add = -2
-				}
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 2 }
-					add = -2
-				}
-				modifier = {
-					check_variable = { which = "systems_no_affection_lady" value >= 5 }
-					factor = 0
-				}
-				change_variable = { which = "systems_no_affection_lady" value = 1 }
-			}
-		}}
-	}
-}
-
 # 战斗中每日计算好感
 fleet_event = {
 	id = wg_aft.1003
@@ -1534,9 +1466,8 @@ fleet_event = {
 			owner = { 
 				random_list = {
 					1 = {
-						change_variable = { which = "lady_affection" value = 1 }
 						set_variable = { which = "days_combat_no_affection_lady" value = 0 }
-						check_level_up_lady_affection_trait = yes
+						add_lady_affection = yes
 					}
 					24 = {
 						modifier = {
@@ -1568,81 +1499,6 @@ fleet_event = {
 		else = {
 			remove_fleet_flag = counting_affection
 			owner = { set_variable = { which = "days_combat_no_affection_lady" value = 0 }}
-		}
-	}
-}
-
-#考古完成一个阶段50%加好感
-fleet_event = {
-	id = wg_aft.1004
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		leader = { has_leader_flag = wsg_lady_leader }
-		owner = { has_country_flag = gain_wsg_lady }
-	}
-
-	immediate = {
-		owner = { random_list = {
-			1 = {
-				modifier = {
-					check_variable = { which = "arch_stages_no_affection_lady" value >= 1 }
-					add = 1
-				}
-				change_variable = { which = lady_affection value = 1 }
-				set_variable = { which = "arch_stages_no_affection_lady" value = 0 }
-				check_level_up_lady_science_ship_affection_trait = yes
-			}
-			1 = {
-				modifier = {
-					check_variable = { which = "arch_stages_no_affection_lady" value >= 3 }
-					factor = 0
-				}
-				change_variable = { which = "arch_stages_no_affection_lady" value = 1 }
-			}
-		}}
-	}
-}
-
-#考古完成一个坟加2~5好感
-fleet_event = {
-	id = wg_aft.1005
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		leader = { has_leader_flag = wsg_lady_leader }
-		owner = { has_country_flag = gain_wsg_lady }
-	}
-
-	immediate = {
-		owner = {
-			while = { count = 2
-				change_variable = { which = lady_affection value = 1 }
-				check_level_up_lady_science_ship_affection_trait = yes
-			}
-			random_list = {
-				35 = {
-					change_variable = { which = lady_affection value = 1 }
-					check_level_up_lady_science_ship_affection_trait = yes
-				}
-				65 = {}
-			}
-			random_list = {
-				25 = {
-					change_variable = { which = lady_affection value = 1 }
-					check_level_up_lady_science_ship_affection_trait = yes
-				}
-				75 = {}
-			}
-			random_list = {
-				15 = {
-					change_variable = { which = lady_affection value = 1 }
-					check_level_up_lady_science_ship_affection_trait = yes
-				}
-				85 = {}
-			}
 		}
 	}
 }
@@ -2960,58 +2816,154 @@ country_event = {
 	}
 }
 
-#考古完成一个阶段50%加好感
-fleet_event = {
+# #考古完成一个阶段50%加好感
+# fleet_event = {
+# 	id = wg_aft.33
+# 	hide_window = yes
+# 	is_triggered_only = yes
+
+# 	trigger = {
+# 		exists = leader
+# 		leader = {
+# 			OR = {
+# 				AND = {
+# 					is_wg_leader = yes
+# 					NOT = { has_leader_flag = affection_max }
+# 				}
+# 				AND = {
+# 					has_leader_flag = wsg_shimakaze_scientist
+# 					owner = { 
+# 						has_country_flag = get_wsg_shimakaze 
+# 						NOT = { has_country_flag = shimakaze_affection_max }
+# 					}
+# 				}
+# 				AND = {
+# 					has_leader_flag = wsg_lady_leader
+# 					owner = { 
+# 						has_country_flag = gain_wsg_lady 
+# 						NOT = { has_country_flag = lady_affection_max }
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	immediate = {
+# 		leader = { random_list = {
+# 			1 = {
+# 				modifier = {
+# 					check_variable = { which = "arch_stages_no_affection" value >= 1 }
+# 					add = 1
+# 				}
+# 				set_variable = { which = "arch_stages_no_affection" value = 0 }
+# 				switch = {
+# 					trigger = has_leader_flag
+# 					wsg_shimakaze_scientist = { 
+# 						owner = { PREV = { add_shimakaze_scientist_affection = yes }}
+# 					}
+# 					wsg_lady_leader = {
+# 						owner = { PREV = { add_lady_survey_scientist_affection = yes }}
+# 					}
+# 					default = { add_scientist_affection = yes }
+# 				}
+# 			}
+# 			1 = {
+# 				modifier = {
+# 					check_variable = { which = "arch_stages_no_affection" value >= 3 }
+# 					factor = 0
+# 				}
+# 				change_variable = { which = "arch_stages_no_affection" value = 1 }
+# 			}
+# 		}}
+# 	}
+# }
+
+# on monthly pulse
+# 每月进行考古时增加好感度
+# 不知道为啥并不生效，等待下一步测试
+country_event = {
 	id = wg_aft.33
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {
-		leader = {
-			is_wg_leader = yes
-			NOT = { has_leader_flag = wsg_lady_leader }
-		}
-	}
-
 	immediate = {
-		leader = { random_list = {
-			1 = {
-				modifier = {
-					check_variable = { which = "arch_stages_no_affection" value >= 1 }
-					add = 1
+		every_system_within_border = {
+			every_system_planet = {
+				limit = { 
+					exists = archaeological_site 
+					archaeological_site = { 
+						is_site_completed = no
+						is_site_under_excavation = yes 
+					}
 				}
-				change_variable = { which = affection value = 1 }
-				set_variable = { which = "arch_stages_no_affection" value = 0 }
-				check_level_up_scientist_affection_trait = yes
-			}
-			1 = {
-				modifier = {
-					check_variable = { which = "arch_stages_no_affection" value >= 3 }
-					factor = 0
+				random_fleet_in_orbit = {
+					limit = { 
+						exists = leader
+						leader = { 
+							leader_class = scientist
+							is_wg_leader_with_affection_not_full = yes 
+						}
+					}
+					leader = { 
+						if = {
+							limit = { has_leader_flag = wsg_lady_scientist }
+							owner = { PREV = { add_lady_scientist_affection_monthly = yes }}
+						}
+						else_if = {
+							limit = { has_leader_flag = wsg_shimakaze_leader }
+							owner = { PREV = { add_shimakaze_scientist_affection_monthly = yes }}
+						}
+						else = {
+							add_scientist_affection_monthly = yes 
+						}
+					}
 				}
-				change_variable = { which = "arch_stages_no_affection" value = 1 }
 			}
-		}}
+		}
 	}
 }
 
-#考古完成一个坟加3好感
+#考古完成一个坟加4~7好感
 fleet_event = {
 	id = wg_aft.34
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
+		exists = leader
 		leader = {
-			is_wg_leader = yes
-			NOT = { has_leader_flag = wsg_lady_leader }
+			leader_class = scientist
+			is_wg_leader_with_affection_not_full = yes
 		}
 	}
 
 	immediate = {
 		leader = {
-			change_variable = { which = affection value = 3 }
-			reset_scientist_affection_level = yes
+			while = { count = 4
+				add_scientist_affection_no_check = yes
+			}
+			random_list = {
+				40 = { add_scientist_affection_no_check = yes }
+				60 = {}
+			}
+			random_list = {
+				25 = { add_scientist_affection_no_check = yes }
+				75 = {}
+			}
+			random_list = {
+				15 = { add_scientist_affection_no_check = yes }
+				85 = {}
+			}
+			switch = {
+				trigger = has_leader_flag
+				wsg_shimakaze_scientist = { 
+					owner = { reset_shimakaze_affection_level = yes }
+				}
+				wsg_lady_leader = { 
+					owner = { reset_lady_affection_level = yes }
+				}
+				default = { reset_scientist_affection_level = yes }
+			}
 		}
 	}
 }
@@ -3026,59 +2978,25 @@ country_event = {
 		every_owned_planet = {
 			limit = { has_modifier = assist_research }
 			random_fleet_in_orbit = {
-				limit = { leader = { leader_class = scientist }}
-				if = {
-					limit = { leader = { has_leader_flag = wsg_lady_scientist }}
-					ROOT = { random_list = {
-						1 = {
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 8 }
-								add = 4
-							}
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 10 }
-								add = 4
-							}
-							change_variable = { which = lady_affection value = 1 }
-							set_variable = { which = "months_no_affection_lady" value = 0 }
-							if = {
-								limit = { exists = event_target:lady_survey_scientist }
-								event_target:lady_survey_scientist = {
-									check_level_up_lady_survey_scientist_affection_trait = yes
-								}
-							} else = {
-								random_owned_leader = {
-									limit = { has_leader_flag = wsg_lady_scientist }
-									check_level_up_lady_survey_scientist_affection_trait = yes
-								}
-							}
-						}
-						14 = {
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 2 }
-								add = -3
-							}
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 4 }
-								add = -2
-							}
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 6 }
-								add = -5
-							}
-							modifier = {
-								check_variable = { which = "months_no_affection_lady" value >= 12 }
-								factor = 0
-							}
-							change_variable = { which = "months_no_affection_lady" value = 1 }
-						}
-					}}
-					break = yes
+				limit = { 
+					exists = leader
+					leader = {
+						leader_class = scientist
+						is_wg_leader_with_affection_not_full = yes
+					}
 				}
-				if = {
-					limit = { leader = { is_wg_leader = yes }}
-					leader = { add_scientist_affection_monthly = yes }
-					break = yes
+				leader = { 
+					if = {
+						limit = { has_leader_flag = wsg_lady_scientist }
+						owner = { PREV = { add_lady_scientist_affection_monthly = yes }}
+					}
+					else_if = {
+						limit = { has_leader_flag = wsg_shimakaze_leader }
+						owner = { PREV = { add_shimakaze_scientist_affection_monthly = yes }}
+					}
+					else = {
+						add_scientist_affection_monthly = yes 
+					}
 				}
 			}
 		}
@@ -3123,6 +3041,10 @@ country_event = {
 			limit = { has_country_flag = gain_wsg_lady }
 			reset_lady_affection_level = yes
 		}
+		if = {
+			limit = { has_country_flag = get_wsg_shimakaze }
+			reset_shimakaze_affection_level = yes
+		}
 	}
 }
 
@@ -3135,11 +3057,14 @@ country_event = {
 	immediate = {
 		every_owned_leader = {
 			limit = { has_affection_trait = yes }
-			remove_governor_affection_trait = yes 
-			remove_scientist_affection_trait = yes 
-			remove_admiral_affection_trait = yes 
-			remove_general_affection_trait = yes 
-			remove_ruler_affection_trait = yes 
+			switch = {
+				trigger = leader_class
+				governor = { remove_governor_affection_trait = yes }
+				scientist = { remove_scientist_affection_trait = yes }
+				admiral = { remove_admiral_affection_trait = yes }
+				general = { remove_general_affection_trait = yes }
+				ruler = { remove_ruler_affection_trait = yes }
+			}
 			set_variable = { which = affection value = 0 }
 			set_variable = { which = affection_level value = 0 }
 		}

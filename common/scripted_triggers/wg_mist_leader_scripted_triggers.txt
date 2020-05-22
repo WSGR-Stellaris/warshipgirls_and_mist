@@ -1,0 +1,27 @@
+	shimakaze_active_diplo = {
+		has_active_event = {
+			wsg_shimakaze.3
+			wsg_shimakaze.4
+			wsg_shimakaze.5
+			wsg_shimakaze.6
+			wsg_shimakaze.8
+			wsg_shimakaze.9
+			wsg_shimakaze.30001
+			wsg_shimakaze.30002
+			wsg_shimakaze.30003
+			wsg_shimakaze.30004
+			wsg_shimakaze.30005
+			wsg_shimakaze.30006
+			wsg_shimakaze.30007
+			wsg_shimakaze.30008
+			wsg_shimakaze.30010
+			wsg_shimakaze.30011
+			wsg_shimakaze.30012
+			wsg_shimakaze.30013
+			wsg_shimakaze.30101
+			wsg_shimakaze.30102
+			wsg_shimakaze.30201
+			wsg_shimakaze.30203
+			wsg_shimakaze.30205
+		}
+	}

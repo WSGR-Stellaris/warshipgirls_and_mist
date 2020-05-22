@@ -16,8 +16,8 @@ on_game_start_country = {
 		sh.3017
 		wsg.3046
 #		wsg.3047
-		wsg.3053
-		wsg.3076
+		# wsg.3053
+		# wsg.3076
 		wsgancrel.1191
 		sh.3030
 		sh.3034
@@ -62,6 +62,9 @@ on_monthly_pulse_country = {
 		wg_lady.30
 		wg_lady.44
 		wg_lady.48
+		wsg_shimakaze.30200
+		wsg_shimakaze.30202
+		wsg_shimakaze.30204
 	}
 }
 
@@ -82,9 +85,10 @@ on_yearly_pulse_country = {
 		wg_fe.5
 		wsg.3106
 		wsg.3110
-		wg_crisis.301
+		# wg_crisis.301
 		wg_crisis.97
 		wg_crisis.73
+		wsg_shimakaze.30100
 	}
 }
 
@@ -102,10 +106,10 @@ on_monthly_pulse = {
 on_tech_increased = {
 	events = {
 		wsg.1100
-		wsg.1150
-		wsg.1151
-		wsg.1152
-		wsg.1153
+		#wsg.1150
+		#wsg.1151
+		#wsg.1152
+		#wsg.1153
 		wsg.3010
 		wsgancrel.20
 		sh.6
@@ -265,6 +269,9 @@ on_custom_diplomacy = {
 		wg_lady.1001
 		wg_lady.10000
 		wg_lady.10001
+		# ??
+		wsg_shimakaze.3
+		wsg_shimakaze.5
 	}
 }
 
@@ -419,6 +426,7 @@ on_leader_death = {
 		wg_aft.20
 		wg_aft.21
 		wg_aft.31
+		wsg_shimakaze.7
 	}
 }
 
@@ -451,7 +459,6 @@ on_leader_level_up = {
 on_survey = {
 	events = {
 		wg_aft.6
-		wg_aft.1001
 	}
 }
 
@@ -461,7 +468,6 @@ on_survey = {
 on_system_survey_ship = {
 	events = {
 		wg_aft.7
-		wg_aft.1002
 	}
 }
 
@@ -504,15 +510,14 @@ on_mid_game_pulse = {
 # From = Archaeological Site
 on_arch_stage_finished = {
 	events = {
-		wg_aft.33
-		wg_aft.1004
+		# wg_aft.33
+		# wg_aft.1919
 	}
 }
 
 on_arch_site_finished = {
 	events = {
 		wg_aft.34
-		wg_aft.1005
 	}
 }
 on_ship_disabled = {

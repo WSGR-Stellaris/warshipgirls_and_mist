@@ -18,12 +18,12 @@ strike_craft_component_template = {
 		ship_orbital_bombardment_mult = 0.20
 	}
 	count = 1
-	regeneration_per_day = 0.1
+	regeneration_per_day = 0.2
 	launch_time = 2.0
 	
-	damage = { min = 50 max = 120 }
+	damage = { min = 60 max = 120 }
 	cooldown = 2
-	range = 50
+	range = 60
 	accuracy = 1.0
 	tracking = 1.0
 	
@@ -36,9 +36,9 @@ strike_craft_component_template = {
 	rotation_speed = 0.25
 	acceleration = 0.8
 	
-	shield_penetration = 1.0
-	armor_penetration = 1.0
-	hull_damage = 3.0
+	shield_penetration = 1.5
+	armor_penetration = 1.5
+	hull_damage = 3.5
 	
 	ship_behavior = "bombers_behavior"
 	
@@ -54,6 +54,64 @@ strike_craft_component_template = {
 	ai_tags = { weapon_role_anti_shield }
 }
 
+strike_craft_component_template = {
+	key = "UF_weapen_H2"
+	size = LARGE
+	entity = "fighter_entity"
+	power = -35
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+		}
+		upkeep = {
+			energy = 0.2
+		}
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.10
+	}
+	count = 1
+	#regeneration_per_day = 0.2
+	regeneration_per_day = 0.3
+	launch_time = 1.0
+	
+	
+	damage = { min = 50 max = 80 }
+	cooldown = 1.5
+	range = 50
+	accuracy = 1.0
+	tracking = 1.0
+	
+	health = 50
+	armor = 50
+	shield = 50
+	evasion = 0.9
+	
+	speed = 800
+	rotation_speed = 0.8
+	acceleration = 1
+	
+	shield_penetration = 2.0
+	armor_penetration = 2.0
+	hull_damage = 2.0
+	
+	ship_behavior = "fighters_behavior"
+	
+	weapon_type = point_defence
+	#weapon_type = strike_craft
+	projectile_gfx = "white_laser_pd"
+	
+	component_set = "UF_weapen_H2"
+	
+	hidden = yes
+	
+	icon = "GFX_UF_weapen_H2"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_point_defence }
+}
 utility_component_template = {
 	key = "UF_weapen_IA"
 	size = large

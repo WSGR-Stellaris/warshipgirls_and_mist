@@ -821,7 +821,7 @@ create_wg_crisis_raider_fleet = {
     create_fleet = {
         name = "NAME_Raider_Fleet"
         effect = {
-            set_owner = event_target:wg_crisis_sub_gate_country
+            set_owner = event_target:wg_crisis_country
             while = {
                 count = 5
                 create_ship = {
@@ -860,22 +860,22 @@ create_wg_crisis_raider_fleet = {
             set_aggro_range = 500
             assign_leader = last_created_leader
             set_fleet_flag = raider_fleet
-            #fleet_event = { id = wg_crisis.96 } #交由新ai随便玩耍
-            if = {
-                limit = { has_global_flag = wg_crisis_normal }
-                add_modifier = {
-                    modifier = uf_easy_debuff days = -1
-                }
-                add_modifier = {
-                    modifier = uf_very_easy_debuff days = -1
-                }
-            }
-            if = {
-                limit = { has_global_flag = wg_crisis_hard }
-                add_modifier = {
-                    modifier = uf_very_easy_debuff days = -1
-                }
-            }
+            fleet_event = { id = wg_crisis.96 } 
+            # if = {
+            #     limit = { has_global_flag = wg_crisis_normal }
+            #     add_modifier = {
+            #         modifier = uf_easy_debuff days = -1
+            #     }
+            #     add_modifier = {
+            #         modifier = uf_very_easy_debuff days = -1
+            #     }
+            # }
+            # if = {
+            #     limit = { has_global_flag = wg_crisis_hard }
+            #     add_modifier = {
+            #         modifier = uf_hard_buff days = -1
+            #     }
+            # }
         }
         settings = { 
             can_upgrade = no 
@@ -902,6 +902,13 @@ create_portal = {
 
 # scope = fleet (portal)
 spawn_fleets_insane = {
+    while = { count = 12
+        create_wg_crisis_raider_admiral = yes
+        create_wg_crisis_raider_fleet = yes
+    }
+    while = { count = 6
+        fleet_event = { id = wg_crisis.4 days = 200 }
+    }
     fleet_event = { id = wg_crisis.4 days = 360 } 
     fleet_event = { id = wg_crisis.4 days = 420 } 
     fleet_event = { id = wg_crisis.4 days = 480 } 
@@ -912,6 +919,23 @@ spawn_fleets_insane = {
     fleet_event = { id = wg_crisis.4 days = 780 }
     fleet_event = { id = wg_crisis.4 days = 840 }
     fleet_event = { id = wg_crisis.4 days = 900 } 
-
-    fleet_event = { id = wg_crisis.102 } #循环刷辅助守家舰队
+    while = { count = 2
+        create_wg_crisis_greater_admiral = yes
+        create_wg_crisis_greater_fleet = yes
+        last_created_fleet = {
+            set_name = "联合辅助守卫舰队"
+            set_timed_fleet_flag = { flag = defence_fleet days = 4500 }
+            fleet_event = { id = wg_crisis.401 days = 4501 }
+        }
+    }
+    while = { count = 2
+        create_wg_crisis_greater_admiral = yes
+        create_wg_crisis_greater_fleet = yes
+        last_created_fleet = {
+            set_name = "联合辅助守卫舰队"
+            set_timed_fleet_flag = { flag = defence_fleet days = 6000 }
+            fleet_event = { id = wg_crisis.401 days = 6001 }
+        }
+    }
+    fleet_event = { id = wg_crisis.102 days = 9000 } #循环刷辅助守家舰队
 }
